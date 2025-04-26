@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Testimonial {
@@ -13,36 +12,36 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Amanda Johnson",
-    image: "https://randomuser.me/api/portraits/women/32.jpg",
-    content: "Roll On Painting transformed our living room with their exceptional attention to detail. The team was professional, courteous, and completed the job ahead of schedule. I wouldn't hesitate to recommend them to anyone looking for quality painting services.",
+    name: "Lauren Vaage",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLVC6RH6Gd1tBHX_O3OpwhlDqclP4Wve9ZgmSAehb8P=w36-h36-p-rp-mo-br100",
+    content: "Roll On did an amazing job on our house interior! High quality and professional work with focus on the details to perfection and extremely clean, tidy and courteous. Project completed on schedule. Great company! Highly recommend Roll On Painting!",
     rating: 5,
     location: "Portland, OR"
   },
   {
     id: 2,
-    name: "Michael Thompson",
-    image: "https://randomuser.me/api/portraits/men/41.jpg",
-    content: "Chad and his team did an amazing job on our home exterior. They took the time to properly prep all surfaces and the final result exceeded our expectations. They were also very communicative throughout the entire process.",
-    rating: 5,
-    location: "Seattle, WA"
-  },
-  {
-    id: 3,
-    name: "Sarah Williams",
-    image: "https://randomuser.me/api/portraits/women/67.jpg",
-    content: "We hired Roll On Painting for our office space renovation and couldn't be happier with the results. Their attention to detail and clean work environment made it possible for us to continue operations with minimal disruption.",
-    rating: 5,
-    location: "Vancouver, WA"
-  },
-  {
-    id: 4,
-    name: "Robert Davis",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-    content: "The cabinet refinishing service from Roll On Painting gave our kitchen a complete makeover without the cost of a full renovation. The team was skilled, efficient, and left our space spotless when they finished.",
+    name: "Sean Syrett",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLAGWiqh_8ROJ_aU_GVQuZiNLL2MUCfD5xI47DCcXnp=w36-h36-p-rp-mo-br100",
+    content: "Chad and his crew did a fantastic job painting my house. They were professional, courteous and very meticulous with their work. I would highly recommend Roll On Painting for any painting needs.",
     rating: 5,
     location: "Portland, OR"
   },
+  {
+    id: 3,
+    name: "Tim Neville",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjXJD3sOum6MGFNG7JXAhxYtIokLmMoZuOLNXuDn6Ftp4y8=w36-h36-p-rp-mo-br100",
+    content: "Chad was responsive, professional, and delivered quality work at a fair price. His team was efficient and clean, and the paint job came out just as we wanted. I would absolutely hire them again.",
+    rating: 5,
+    location: "Portland, OR"
+  },
+  {
+    id: 4,
+    name: "Anne Gentling",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocK4n06_MFZJou0KQ7gbm4l6U85ydvhP4bdl3NHt7fZE=w36-h36-p-rp-mo-br100",
+    content: "Chad and his team transformed my house with excellent painting inside and out. They were professional, reliable, and focused on quality work. They did all the prep work needed, thoroughly cleaned up, and the results are beautiful. Highly recommend!",
+    rating: 5,
+    location: "Portland, OR"
+  }
 ];
 
 const TestimonialsSection = () => {
