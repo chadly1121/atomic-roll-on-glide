@@ -1,9 +1,6 @@
-
 import React from 'react';
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-24 relative overflow-hidden bg-accent/30">
+  return <section id="about" className="py-24 relative overflow-hidden bg-accent/30">
       {/* Decorative elements */}
       <div className="atomic-circle w-80 h-80 top-10 -right-20 border-atomic-orange"></div>
       <div className="atomic-starburst w-60 h-60 bottom-20 left-40"></div>
@@ -22,18 +19,14 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold mb-3 text-atomic-navy">
                 Our <span className="text-atomic-turquoise">Story</span>
               </h3>
-              <p className="text-gray-600">
-                Founded by Chad Gilchrist, Roll On Painting has grown from a small local operation to a trusted name in the painting industry. With over 15 years of experience, we've built our reputation on quality workmanship and exceptional customer service.
-              </p>
+              <p className="text-gray-600">Purchased by Chad Gilchrist, Roll On Painting has grown from a small local operation to a trusted name in the painting industry. With over 25 years of experience, we've built our reputation on quality workmanship and exceptional customer service.</p>
             </div>
             
             <div>
               <h3 className="text-2xl font-bold mb-3 text-atomic-navy">
                 Our <span className="text-atomic-orange">Mission</span>
               </h3>
-              <p className="text-gray-600">
-                We're committed to delivering premium painting services that exceed expectations. Every brush stroke is applied with precision, every surface prepared with care, and every project completed with pride.
-              </p>
+              <p className="text-gray-600">We're committed to delivering premium painting services that exceed expectations. Every brush stroke or sprayed product is applied with precision, every surface prepared with care, and every project completed with pride.</p>
             </div>
             
             <div>
@@ -73,42 +66,24 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img 
-                    src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/exterior-painting-5-scaled.jpg" 
-                    alt="Exterior Painting" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/exterior-painting-5-scaled.jpg" alt="Exterior Painting" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-40 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img 
-                    src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/services_feature3.jpg" 
-                    alt="Painting Services" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/services_feature3.jpg" alt="Painting Services" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-10">
                 <div className="rounded-2xl overflow-hidden h-40 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img 
-                    src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-painting-process3-scaled.jpg" 
-                    alt="Interior Painting Process" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-painting-process3-scaled.jpg" alt="Interior Painting Process" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img 
-                    src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-3-scaled.jpg" 
-                    alt="Interior Painting" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-3-scaled.jpg" alt="Interior Painting" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
