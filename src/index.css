@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -75,7 +74,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-nunito;
+    @apply bg-atomic-cream text-atomic-navy font-nunito;
     scroll-behavior: smooth;
   }
 
@@ -91,17 +90,16 @@
   
   .atomic-shape::before {
     content: '';
-    @apply absolute w-44 h-44 rounded-full bg-atomic-turquoise/20 -z-10 blur-2xl;
+    @apply absolute w-44 h-44 rounded-full bg-atomic-orange/20 -z-10 blur-2xl;
   }
 
   .atomic-circle {
     @apply absolute rounded-full animate-spin-slow opacity-50;
-    border: 2px dashed theme('colors.atomic.turquoise');
   }
 
   .atomic-starburst {
     @apply absolute -z-10;
-    background: radial-gradient(circle, rgba(255,107,107,0.2) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(255,255,255,0) 70%);
   }
   
   .section-heading {
@@ -114,12 +112,12 @@
   }
 
   .nav-link {
-    @apply relative font-poppins text-foreground hover:text-atomic-turquoise transition-colors duration-300;
+    @apply relative font-poppins text-atomic-navy hover:text-atomic-orange transition-colors duration-300;
   }
   
   .nav-link::after {
     content: '';
-    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-atomic-turquoise transition-all duration-300;
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-atomic-orange transition-all duration-300;
   }
   
   .nav-link:hover::after {
@@ -127,7 +125,7 @@
   }
 
   .retro-card {
-    @apply bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all;
+    @apply bg-white rounded-xl shadow-lg overflow-hidden border-2 border-atomic-orange/10 hover:shadow-xl transition-all;
     border-radius: 16px 16px 16px 60px;
   }
 
@@ -137,11 +135,11 @@
   
   .atomic-button::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 -z-10;
+    @apply absolute inset-0 bg-gradient-to-r from-atomic-orange to-atomic-orange/80 -z-10;
   }
   
   .atomic-button:hover::before {
-    @apply bg-gradient-to-r from-atomic-turquoise/90 to-atomic-turquoise;
+    @apply bg-gradient-to-r from-atomic-orange/90 to-atomic-orange;
   }
   
   .atomic-button-secondary {
@@ -149,10 +147,10 @@
   }
   
   .atomic-button-secondary::before {
-    @apply bg-gradient-to-r from-atomic-orange to-atomic-orange/80;
+    @apply bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80;
   }
   
   .atomic-button-secondary:hover::before {
-    @apply bg-gradient-to-r from-atomic-orange/90 to-atomic-orange;
+    @apply bg-gradient-to-r from-atomic-turquoise/90 to-atomic-turquoise;
   }
 }
