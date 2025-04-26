@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Atom } from 'lucide-react';
-
 const HeroSection = () => {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -14,9 +12,7 @@ const HeroSection = () => {
       });
     }
   };
-
-  return (
-    <section id="hero" className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
+  return <section id="hero" className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
       {/* Background elements */}
       <div className="atomic-circle w-64 h-64 -top-20 -left-20 border-atomic-orange"></div>
       <div className="atomic-circle w-96 h-96 -bottom-40 -right-20 border-atomic-turquoise"></div>
@@ -35,7 +31,7 @@ const HeroSection = () => {
             <div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
                 Transform Your Space With
-                <span className="text-atomic-orange block">Professional Painting</span>
+                <span className="text-atomic-orange block">Roll On Painting</span>
               </h1>
               <p className="mt-6 text-lg text-atomic-navy/70">
                 Roll On Painting delivers exceptional quality and craftsmanship for residential and commercial projects. 
@@ -44,37 +40,21 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a 
-                href="#contact" 
-                className="atomic-button group border-2 border-atomic-orange"
-                onClick={handleScrollToContact}
-              >
+              <a href="#contact" className="atomic-button group border-2 border-atomic-orange" onClick={handleScrollToContact}>
                 <span className="relative z-10 flex items-center">
                   Request A Quote
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M13 7l5 5m0 0l-5 5m5-5H6" 
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
               </a>
-              <a 
-                href="#services" 
-                className="atomic-button-secondary border-2 border-atomic-turquoise"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
+              <a href="#services" className="atomic-button-secondary border-2 border-atomic-turquoise" onClick={e => {
+              e.preventDefault();
+              document.querySelector('#services')?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }}>
                 <span className="relative z-10">Our Services</span>
               </a>
             </div>
@@ -91,17 +71,11 @@ const HeroSection = () => {
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl transform hover:rotate-0 transition-transform duration-500 border-4 border-atomic-orange/20">
-              <img 
-                src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-5-e1608121023242-1024x694.jpg" 
-                alt="Roll On Painting Project" 
-                className="w-full h-auto object-cover"
-              />
+              <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-5-e1608121023242-1024x694.jpg" alt="Roll On Painting Project" className="w-full h-auto object-cover" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
