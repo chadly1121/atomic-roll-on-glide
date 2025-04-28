@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [{
   image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
   content: "Great job, had whole exterior of cottage and garage done. They came when they said they would, neat and tidy, would highly recommend.",
   rating: 5,
-  location: "Muskoka, ON",
+  location: "Huntsville, ON",
   date: "Jan 24, 2024"
 }, {
   id: 5,
@@ -77,7 +77,7 @@ const testimonials: Testimonial[] = [{
   image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
   content: "Roll-On-Painting is a one shop stop business. Chad and team are amazing, painting is not the only thing they do, ask, they do more than that. If not, he knows a guy/gal that does. Highly-qualified, highly recommend. Steve",
   rating: 5,
-  location: "Muskoka, ON",
+  location: "Parry Sound, ON",
   date: "Jan 26, 2023"
 }];
 
