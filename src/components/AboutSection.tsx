@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+
 const AboutSection = () => {
   return <section id="about" className="py-24 relative overflow-hidden bg-accent/30">
       {/* Decorative elements */}
@@ -101,7 +103,11 @@ const AboutSection = () => {
                   </a>
                   <a href="https://g.co/kgs/hH1mnMH" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M7.008 16.255l-.36-1.2h-2.4l-.36 1.2h-1.32l2.04-6.48h1.68l2.04 6.48h-1.32zm-1.56-5.28l-.84 2.88h1.68l-.84-2.88zm5.359 5.28v-6.48h2.64c.56 0 1.07.093 1.53.28s.823.453 1.09.8c.267.347.4.767.4 1.26 0 .493-.133.913-.4 1.26-.267.347-.63.617-1.09.81s-.97.29-1.53.29h-1.32v1.78h-1.32zm1.32-2.96h1.32c.267 0 .493-.05.68-.15s.33-.237.43-.41.15-.367.15-.58c0-.213-.05-.407-.15-.58s-.243-.307-.43-.4c-.187-.093-.413-.14-.68-.14h-1.32v2.26z"></path>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                      <path d="M11 7.5v3h-3v3h3v3h3v-3h3v-3h-3v-3z" fill="currentColor"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.01 14.01c-1.4 0-2.01-.83-2.01-1.99V12h1.98c.55 0 .99-.44.99-.99 0-.55-.44-.99-.99-.99H15V8.03c0-.55-.44-.99-.99-.99s-.99.44-.99.99V10h-1.98c-.55 0-.99.44-.99.99 0 .55.44.99.99.99H13v2.02c0 1.16-.61 1.99-2.01 1.99-.55 0-.99.44-.99.99s.44.99.99.99c1.66 0 2.97-.84 3.49-2.03A3.814 3.814 0 0017.01 18c.55 0 .99-.44.99-.99 0-.56-.44-1-.99-1z" fill="none"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+                      <path d="M9.93 8.25L8.5 9.52l3.93 4.7 6.07-7.3-1.38-1.15-4.74 5.7z" fill="currentColor"/>
                     </svg>
                   </a>
                 </div>
@@ -133,4 +139,5 @@ const AboutSection = () => {
       </div>
     </section>;
 };
+
 export default AboutSection;
