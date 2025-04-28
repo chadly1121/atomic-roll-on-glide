@@ -1,15 +1,13 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Button } from './ui/button';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { MapPin } from '@/lib/lucide-icons'; // Import the MapPin icon
 
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const circleRadius = 100; // 100km radius
-  const isMobile = useIsMobile();
   
   // Bracebridge, Ontario coordinates
   const bracebridgeCoordinates: [number, number] = [-79.3090, 45.0370];
@@ -61,8 +59,28 @@ const ServiceAreaMap = () => {
         }
       });
       
-      // Add Bracebridge marker (center point)
-      new mapboxgl.Marker({ color: '#f97316' })
+      // Create a custom marker element for the office location
+      const markerEl = document.createElement('div');
+      markerEl.className = 'office-marker';
+      markerEl.innerHTML = `
+        <div class="flex flex-col items-center">
+          <div class="bg-atomic-orange text-white p-2 rounded-full shadow-lg">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle>
+            </svg>
+          </div>
+          <div class="bg-white px-2 py-1 rounded-md shadow-md mt-1 text-xs font-bold">
+            Roll On Painting
+          </div>
+        </div>
+      `;
+      
+      // Add the custom marker to the map
+      new mapboxgl.Marker({
+        element: markerEl,
+        anchor: 'bottom',
+      })
         .setLngLat(bracebridgeCoordinates)
         .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>Bracebridge, Ontario</p>'))
         .addTo(newMap);
