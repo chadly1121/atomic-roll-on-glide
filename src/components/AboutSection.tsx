@@ -122,7 +122,7 @@ const AboutSection = () => {
                   <img alt="Interior Painting Process" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866781/IMG_5080_k6y99w.jpg" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img alt="Interior Painting" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866829/PXL_20210915_185630588_olhtoa.jpg" />
+                  <img alt="Interior Painting" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866779/IMG_3975_hwsrpd.jpg" />
                 </div>
               </div>
             </div>
