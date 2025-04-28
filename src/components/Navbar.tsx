@@ -15,6 +15,7 @@ const navLinks: NavLink[] = [
   { name: 'Gallery', href: '#gallery' },
   { name: 'GoNano', href: '#gonano' },
   { name: 'Pricing', href: '#pricing' },
+  { name: 'As Seen on TV', href: '#asseenontv' },
   { name: 'Blog', href: '#blog' },
   { name: 'Trends', href: '#trends' },
   { name: 'Contact', href: '#contact' }
@@ -70,7 +71,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             transition={{ duration: 0.5 }}
             src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745867167/RollOnPaintingLogo_cplgbj.jpg" 
             alt="Roll On Painting Muskoka Logo" 
-            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </a>
 
