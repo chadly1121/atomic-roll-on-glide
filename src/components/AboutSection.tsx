@@ -77,7 +77,7 @@ const AboutSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2 text-atomic-turquoise" />
-                  <p className="text-gray-600">836 Greer Road, Huntsville, Ontario, Canada</p>
+                  <p className="text-gray-600">836 Greer Road, Port Sydney, Ontario, Canada</p>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 text-atomic-turquoise" />
