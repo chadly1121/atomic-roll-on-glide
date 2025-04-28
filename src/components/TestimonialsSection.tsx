@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjWR0P7LkOFTCrBsn931OB5T1Nc3o1-DEK3yGAnt1wK5wCI=s120-c-rp-mo-br100",
     content: "Finally found painters in Muskoka who are reliable and professional in every way. Chad, Simon and the crew did the interior of our cottage and we are extremely pleased with their work. Will definitely have them back to do the exterior when the time comes.",
     rating: 5,
-    location: "Port Sydney, ON",
+    location: "Utterson, ON",
     date: "2 months ago"
   },
   {
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocIik4N-nTowg6aQ7DG3YxSQGTKgAqokVAq3JuQql91PqQcB=s120-c-rp-mo-br100",
     content: "What a fabulous job Chad and his team did painting our cottage! Everything from the initial consultation to the final product was excellent. They are extremely professional and efficient. I would highly recommend Roll On for all painting needs!",
     rating: 5,
-    location: "Muskoka, ON",
+    location: "Utterson, ON",
     date: "3 months ago"
   },
   {
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocILwybYIspMIm9ZTo29X9hrLWIpa-s3pCGGVe__Kg-w1_2N=s120-c-rp-mo-br100",
     content: "Roll on Painting quoted and completed our interior paint project of our cottage that just went through a renovation. Very professional!!! Worked to accommodate our schedule requirements as we were selling the property and had a tight timeline. Would recommend them to anyone!",
     rating: 5,
-    location: "Muskoka, ON",
+    location: "Utterson, ON",
     date: "4 months ago"
   },
   {
@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjX4kUDQxUwwz58E30hAQsl0Uwbwpv64KhGzpf-qmgjUgpA=s120-c-rp-mo-br100",
     content: "Chad and his team were efficient, professional, and helpful. They painted the interior of our home and did an exceptional job. Highly recommended!",
     rating: 5,
-    location: "Port Sydney, ON",
+    location: "Utterson, ON",
     date: "7 months ago"
   },
   {
@@ -64,7 +64,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjX6gow_dMEMsVlAym7o_LD6BBg6DQZ8ipVnlL36nwL2DGA=s120-c-rp-mo-br100",
     content: "Absolutely fantastic service. Our cottage is beautiful and the team was professional, hard working, reliable and finished on time. We highly recommend this company.",
     rating: 5,
-    location: "Muskoka, ON",
+    location: "Utterson, ON",
     date: "7 months ago"
   },
   {
@@ -73,7 +73,7 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocJ9k7C9FpFnh5d5K5Qlu5rvf5bb4x9eIh06rC0H2Ewg=s120-c-rp-mo-br100",
     content: "Super professional, great communication, quality workmanship and very responsive. They did a great job painting the interior of our cottage. I highly recommend them.",
     rating: 5,
-    location: "Port Sydney, ON",
+    location: "Utterson, ON",
     date: "8 months ago"
   }
 ];
