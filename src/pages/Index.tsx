@@ -6,8 +6,6 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import GallerySection from '../components/GallerySection';
 import TestimonialsSection from '../components/TestimonialsSection';
-import AsSeenonTVSection from '../components/AsSeenonTVSection';
-import PricingSection from '../components/PricingSection';
 import BlogSection from '../components/BlogSection';
 import TrendsSection from '../components/TrendsSection';
 import ContactSection from '../components/ContactSection';
@@ -82,8 +80,6 @@ const Index = () => {
       <ServicesSection />
       <GallerySection />
       <TestimonialsSection />
-      <AsSeenonTVSection />
-      <PricingSection />
       <BlogSection />
       <TrendsSection />
       <ContactSection />
