@@ -1,5 +1,14 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import { MessageSquare } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -8,8 +17,10 @@ interface Testimonial {
   content: string;
   rating: number;
   location: string;
+  date?: string;
 }
 
+// Real Roll On Painting reviews from Google
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -17,7 +28,8 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a-/ALV-UjWR0P7LkOFTCrBsn931OB5T1Nc3o1-DEK3yGAnt1wK5wCI=s120-c-rp-mo-br100",
     content: "Finally found painters in Muskoka who are reliable and professional in every way. Chad, Simon and the crew did the interior of our cottage and we are extremely pleased with their work. Will definitely have them back to do the exterior when the time comes.",
     rating: 5,
-    location: "Port Sydney, ON"
+    location: "Port Sydney, ON",
+    date: "2 months ago"
   },
   {
     id: 2,
@@ -25,23 +37,44 @@ const testimonials: Testimonial[] = [
     image: "https://lh3.googleusercontent.com/a/ACg8ocIik4N-nTowg6aQ7DG3YxSQGTKgAqokVAq3JuQql91PqQcB=s120-c-rp-mo-br100",
     content: "What a fabulous job Chad and his team did painting our cottage! Everything from the initial consultation to the final product was excellent. They are extremely professional and efficient. I would highly recommend Roll On for all painting needs!",
     rating: 5,
-    location: "Muskoka, ON"
+    location: "Muskoka, ON",
+    date: "3 months ago"
   },
   {
     id: 3,
+    name: "Mike LaChapelle",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocILwybYIspMIm9ZTo29X9hrLWIpa-s3pCGGVe__Kg-w1_2N=s120-c-rp-mo-br100",
+    content: "Roll on Painting quoted and completed our interior paint project of our cottage that just went through a renovation. Very professional!!! Worked to accommodate our schedule requirements as we were selling the property and had a tight timeline. Would recommend them to anyone!",
+    rating: 5,
+    location: "Muskoka, ON",
+    date: "4 months ago"
+  },
+  {
+    id: 4,
     name: "Dan Rankin",
     image: "https://lh3.googleusercontent.com/a-/ALV-UjX4kUDQxUwwz58E30hAQsl0Uwbwpv64KhGzpf-qmgjUgpA=s120-c-rp-mo-br100",
     content: "Chad and his team were efficient, professional, and helpful. They painted the interior of our home and did an exceptional job. Highly recommended!",
     rating: 5,
-    location: "Port Sydney, ON"
+    location: "Port Sydney, ON",
+    date: "7 months ago"
   },
   {
-    id: 4,
+    id: 5,
     name: "Mary Stanley",
     image: "https://lh3.googleusercontent.com/a-/ALV-UjX6gow_dMEMsVlAym7o_LD6BBg6DQZ8ipVnlL36nwL2DGA=s120-c-rp-mo-br100",
     content: "Absolutely fantastic service. Our cottage is beautiful and the team was professional, hard working, reliable and finished on time. We highly recommend this company.",
     rating: 5,
-    location: "Muskoka, ON"
+    location: "Muskoka, ON",
+    date: "7 months ago"
+  },
+  {
+    id: 6,
+    name: "Mark Reynolds",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjUNKkOWPIVljhKXP_9TpC8e_0lULVh9IgznTTUK87E-l14=s120-c-rp-mo-br100",
+    content: "The team at Roll On Painting did a fantastic job with attention to detail. They transformed our cottage into a beautiful home. I highly recommend Chad and his team.",
+    rating: 5,
+    location: "Muskoka, ON",
+    date: "8 months ago"
   }
 ];
 
@@ -117,11 +150,15 @@ const TestimonialsSection = () => {
                             src={testimonial.image} 
                             alt={testimonial.name} 
                             className="h-full w-full object-cover"
+                            onError={(e) => {
+                              // Fallback for broken images
+                              (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=' + testimonial.name.replace(' ', '+') + '&background=0D8ABC&color=fff';
+                            }}
                           />
                         </div>
                         <div>
                           <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                          <p className="text-gray-500 text-sm">{testimonial.location}</p>
+                          <p className="text-gray-500 text-sm">{testimonial.location} {testimonial.date && `· ${testimonial.date}`}</p>
                           <div className="flex mt-1">
                             {[...Array(5)].map((_, i) => (
                               <svg 
@@ -184,7 +221,7 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://g.co/kgs/hH1mnMH" 
+            href="https://www.google.com/search?q=Roll+On+Painting+Reviews" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
