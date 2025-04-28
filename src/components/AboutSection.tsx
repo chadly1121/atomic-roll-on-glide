@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
-
 const AboutSection = () => {
   return <section id="about" className="py-24 relative overflow-hidden bg-accent/30">
       {/* Decorative elements */}
@@ -90,38 +88,18 @@ const AboutSection = () => {
                   <a href="mailto:info@rollonpainting.com" className="text-gray-600 hover:text-atomic-orange transition-colors">info@rollonpainting.com</a>
                 </div>
                 <div className="flex space-x-3 mt-4">
-                  <a 
-                    href="https://www.instagram.com/roll_on_painting/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors"
-                  >
+                  <a href="https://www.instagram.com/roll_on_painting/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
                     <Instagram className="h-5 w-5 text-atomic-turquoise" />
                   </a>
-                  <a 
-                    href="https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors"
-                  >
+                  <a href="https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                     </svg>
                   </a>
-                  <a 
-                    href="https://www.linkedin.com/company/roll-onpainting/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors"
-                  >
+                  <a href="https://www.linkedin.com/company/roll-onpainting/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
                     <Linkedin className="h-5 w-5 text-atomic-turquoise" />
                   </a>
-                  <a 
-                    href="https://g.co/kgs/hH1mnMH" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors"
-                  >
+                  <a href="https://g.co/kgs/hH1mnMH" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M7.008 16.255l-.36-1.2h-2.4l-.36 1.2h-1.32l2.04-6.48h1.68l2.04 6.48h-1.32zm-1.56-5.28l-.84 2.88h1.68l-.84-2.88zm5.359 5.28v-6.48h2.64c.56 0 1.07.093 1.53.28s.823.453 1.09.8c.267.347.4.767.4 1.26 0 .493-.133.913-.4 1.26-.267.347-.63.617-1.09.81s-.97.29-1.53.29h-1.32v1.78h-1.32zm1.32-2.96h1.32c.267 0 .493-.05.68-.15s.33-.237.43-.41.15-.367.15-.58c0-.213-.05-.407-.15-.58s-.243-.307-.43-.4c-.187-.093-.413-.14-.68-.14h-1.32v2.26z"></path>
                     </svg>
@@ -135,7 +113,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img src="https://lh3.googleusercontent.com/p/AF1QipPutw-6_bXURx63ShkpKm1y3ZLHT-_XrFVOAAZm=w768-h768-n-o-v1" alt="Exterior Painting" className="w-full h-full object-cover" />
+                  <img alt="Exterior Painting" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866842/PXL_20220729_143220227_g0vkxt.jpg" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-40 shadow-lg transform hover:-translate-y-2 transition-transform">
                   <img src="https://lh3.googleusercontent.com/p/AF1QipMSVJJK54qlLq9k9aHYcC9BJYkV4xtdHFAKxPMZ=w768-h768-n-o-v1" alt="Painting Services" className="w-full h-full object-cover" />
