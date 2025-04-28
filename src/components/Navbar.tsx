@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface NavLink {
   name: string;
@@ -28,6 +29,8 @@ interface NavbarProps {
 const Navbar = ({ activeSection = '' }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,19 +45,36 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    if (href?.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        window.scrollTo({
-          top: element.getBoundingClientRect().top + window.scrollY - 100,
-          behavior: 'smooth'
-        });
+    
+    // Check if we're on the homepage
+    if (location.pathname === '/') {
+      // On homepage, scroll to the section
+      if (href.startsWith('#')) {
+        const element = document.querySelector(href);
+        if (element) {
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: 'smooth'
+          });
+        }
+      }
+    } else {
+      // On other pages, navigate to homepage first and then handle the hash
+      if (href === '#blog') {
+        navigate('/blog');
+      } else {
+        navigate(`/${href}`);
       }
     }
+    
     setMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/');
   };
 
   return (
@@ -64,7 +84,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center hover:opacity-90 transition-opacity group">
+        <a href="#" className="flex items-center hover:opacity-90 transition-opacity group" onClick={handleLogoClick}>
           <motion.img 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -84,7 +104,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
               className={`nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full ${
                 activeSection === link.href.substring(1) ? "text-atomic-orange" : ""
               }`}
-              onClick={handleNavLinkClick}
+              onClick={(e) => handleNavLinkClick(e, link.href)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -98,7 +118,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
           <motion.a 
             href="#contact" 
             className="atomic-button group overflow-hidden relative border-2 border-atomic-orange transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            onClick={handleNavLinkClick}
+            onClick={(e) => handleNavLinkClick(e, '#contact')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -149,7 +169,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
                 key={link.name} 
                 href={link.href} 
                 className="py-3 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors"
-                onClick={handleNavLinkClick}
+                onClick={(e) => handleNavLinkClick(e, link.href)}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: navLinks.indexOf(link) * 0.05 }}
@@ -161,7 +181,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             <motion.a 
               href="#contact" 
               className="atomic-button-secondary mt-4 mb-2 text-center group"
-              onClick={handleNavLinkClick}
+              onClick={(e) => handleNavLinkClick(e, '#contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
