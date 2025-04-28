@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Testimonial {
@@ -13,33 +12,33 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Kelly McCauley",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocJXz8b6oYlCrVS33r_Sdl3j-KtuNOZxTfxmrwC6V2o=w36-h36-p-rp-mo-br100",
-    content: "Ben and his crew were amazing from start to finish. They showed up on time, were polite, professional and very thorough. We had the exterior of our home painted and couldn't be happier with how everything turned out.",
+    name: "Cathy Cameron",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjWR0P7LkOFTCrBsn931OB5T1Nc3o1-DEK3yGAnt1wK5wCI=s120-c-rp-mo-br100",
+    content: "Finally found painters in Muskoka who are reliable and professional in every way. Chad, Simon and the crew did the interior of our cottage and we are extremely pleased with their work. Will definitely have them back to do the exterior when the time comes.",
     rating: 5,
-    location: "Muskoka, ON"
+    location: "Port Sydney, ON"
   },
   {
     id: 2,
-    name: "Craig Carson",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocIlY8-b7VO9suRfRu81ogcZvZoHJziCSr8nCtj1K1Qv=w36-h36-p-rp-mo-br100",
-    content: "Ben and his crew painted my cottage in Huntsville, it was a complete overhaul with inside walls, trim, ceilings and some outside work. The transformation from dark wood to white is breathtaking. His professionalism and attention to detail were amazing. Would gladly recommend his services.",
+    name: "Sarah Playford",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIik4N-nTowg6aQ7DG3YxSQGTKgAqokVAq3JuQql91PqQcB=s120-c-rp-mo-br100",
+    content: "What a fabulous job Chad and his team did painting our cottage! Everything from the initial consultation to the final product was excellent. They are extremely professional and efficient. I would highly recommend Roll On for all painting needs!",
     rating: 5,
     location: "Muskoka, ON"
   },
   {
     id: 3,
-    name: "Krista Walker",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocIJMV4Fv5s9fzlEShiIbzMuUk4vMj4yIeMgtw3h40Q=w36-h36-p-rp-mo-br100",
-    content: "Ben and his team painted our new cottage this fall. They were very professional, the work and attention to detail was amazing. I would use them again without hesitation. Thank you!",
+    name: "Dan Rankin",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjX4kUDQxUwwz58E30hAQsl0Uwbwpv64KhGzpf-qmgjUgpA=s120-c-rp-mo-br100",
+    content: "Chad and his team were efficient, professional, and helpful. They painted the interior of our home and did an exceptional job. Highly recommended!",
     rating: 5,
-    location: "Muskoka, ON"
+    location: "Port Sydney, ON"
   },
   {
     id: 4,
-    name: "Dan Holliday",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjU0mZ1HEBnhUp8e64z1-zz_gB4SsbA-BUhU5TbsxYgHHJE=w36-h36-p-rp-mo-br100",
-    content: "Ben and his team did a great job painting our place. Great communication and the worksite was spotless when they were done.",
+    name: "Mary Stanley",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjX6gow_dMEMsVlAym7o_LD6BBg6DQZ8ipVnlL36nwL2DGA=s120-c-rp-mo-br100",
+    content: "Absolutely fantastic service. Our cottage is beautiful and the team was professional, hard working, reliable and finished on time. We highly recommend this company.",
     rating: 5,
     location: "Muskoka, ON"
   }
@@ -100,7 +99,6 @@ const TestimonialsSection = () => {
         
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Testimonial Cards */}
             <div className="overflow-hidden">
               <div 
                 className="transition-transform duration-500 ease-in-out flex"
@@ -149,7 +147,6 @@ const TestimonialsSection = () => {
               </div>
             </div>
             
-            {/* Navigation Arrows */}
             <button 
               onClick={prevTestimonial}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 h-10 w-10 rounded-full bg-white/30 hover:bg-white/70 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110"
@@ -170,8 +167,7 @@ const TestimonialsSection = () => {
             </button>
           </div>
           
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
+          <div className="flex justify-center mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -187,7 +183,7 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://g.co/kgs/wMVjW8Q" 
+            href="https://g.co/kgs/hH1mnMH" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
