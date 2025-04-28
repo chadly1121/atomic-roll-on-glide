@@ -7,10 +7,10 @@ import { MapPin } from '@/lib/lucide-icons'; // Import the MapPin icon
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const circleRadius = 100; // 100km radius
+  const circleRadius = 70; // 70km radius
   
-  // Bracebridge, Ontario coordinates
-  const bracebridgeCoordinates: [number, number] = [-79.3090, 45.0370];
+  // Port Sydney, Ontario coordinates (836 Greer Road)
+  const officeLoc: [number, number] = [-79.2784, 45.1932]; // 836 Greer Road, Port Sydney
   
   const initializeMap = () => {
     if (!mapContainer.current || map.current) return;
@@ -21,7 +21,7 @@ const ServiceAreaMap = () => {
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: bracebridgeCoordinates,
+      center: officeLoc,
       zoom: 8,
       attributionControl: true
     });
@@ -32,7 +32,7 @@ const ServiceAreaMap = () => {
       // Create a source for the service area circle
       newMap.addSource('service-area', {
         type: 'geojson',
-        data: createGeoJSONCircle(bracebridgeCoordinates, circleRadius)
+        data: createGeoJSONCircle(officeLoc, circleRadius)
       });
       
       // Add the fill area
@@ -81,10 +81,10 @@ const ServiceAreaMap = () => {
         element: markerEl,
         anchor: 'bottom',
       })
-        .setLngLat(bracebridgeCoordinates)
-        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>Bracebridge, Ontario</p>'))
+        .setLngLat(officeLoc)
+        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Port Sydney, Ontario</p>'))
         .addTo(newMap);
-      
+        
       // Add Huntsville marker
       new mapboxgl.Marker({ color: '#3b82f6' })
         .setLngLat([-79.2972, 45.3226])
@@ -153,10 +153,10 @@ const ServiceAreaMap = () => {
     <div className="rounded-xl overflow-hidden shadow-lg relative">
       <div ref={mapContainer} className="h-[400px] w-full" />
       <div className="absolute top-2 left-2 bg-white px-3 py-1 rounded-md shadow-md z-10">
-        <h3 className="font-bold text-sm">100km Service Radius</h3>
+        <h3 className="font-bold text-sm">70km Service Radius</h3>
       </div>
       <div className="absolute bottom-2 right-2 bg-white/80 px-3 py-1 rounded-md text-xs">
-        Centered on Bracebridge, Ontario
+        Centered on Port Sydney, Ontario
       </div>
     </div>
   );
