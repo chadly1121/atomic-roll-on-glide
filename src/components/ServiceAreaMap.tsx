@@ -7,14 +7,17 @@ const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   
-  // This defines the area polygon for the Muskoka service area
+  // This defines the expanded area polygon for the Muskoka service area
   const serviceAreaCoordinates = [
-    [-79.3128, 45.3369], // Dwight
+    [-79.0362, 45.2647], // Dorset
+    [-78.8975, 45.5800], // Highway 35 North end
+    [-79.0320, 45.3370], // Dwight
     [-80.0358, 45.3479], // Parry Sound
     [-80.2176, 44.5075], // Collingwood
     [-79.6903, 44.3894], // Barrie
-    [-79.3713, 45.0623], // Highway 11 intersection with 118
-    [-79.3128, 45.3369]  // Back to Dwight to close the polygon
+    [-79.4227, 44.6062], // Orillia
+    [-79.1682, 44.7511], // Highway 35 at Highway 118
+    [-79.0362, 45.2647]  // Back to Dorset to close the polygon
   ];
   
   useEffect(() => {
@@ -26,8 +29,8 @@ const ServiceAreaMap = () => {
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-79.5, 44.9], // Center of the service area
-      zoom: 7.5,
+      center: [-79.3, 44.9], // Adjusted center for the expanded service area
+      zoom: 7.3,             // Slightly zoomed out to show the expanded area
       attributionControl: true
     });
     
@@ -71,10 +74,23 @@ const ServiceAreaMap = () => {
         }
       });
       
-      // Add a marker for the company location in Huntsville
+      // Add key locations as markers
+      // Huntsville (Company HQ)
       new mapboxgl.Marker({ color: '#f97316' })
-        .setLngLat([-79.2972, 45.3226]) // Huntsville coordinates
+        .setLngLat([-79.2972, 45.3226])
         .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Huntsville</p>'))
+        .addTo(newMap);
+      
+      // Orillia marker
+      new mapboxgl.Marker({ color: '#3b82f6' })
+        .setLngLat([-79.4227, 44.6062])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Orillia</p>'))
+        .addTo(newMap);
+        
+      // Dorset marker
+      new mapboxgl.Marker({ color: '#3b82f6' })
+        .setLngLat([-79.0362, 45.2647])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Dorset</p>'))
         .addTo(newMap);
     });
     
