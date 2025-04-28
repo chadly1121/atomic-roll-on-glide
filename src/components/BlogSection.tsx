@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface BlogPost {
   id: number;
@@ -71,27 +72,27 @@ const BlogSection = () => {
                   {post.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <a 
-                  href="#"
+                <Link 
+                  to={`/blog/${post.id}`}
                   className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
                 >
                   Read More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <a 
-            href="#" 
+          <Link 
+            to="/blog" 
             className="atomic-button-secondary"
           >
             <span className="relative z-10">View All Blog Posts</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
