@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Service {
   id: number;
@@ -16,42 +15,70 @@ const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with our premium interior painting services, featuring expert color consultation and flawless finishes.",
     icon: "🏠",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-3-scaled.jpg"
+    image: "https://lh3.googleusercontent.com/p/AF1QipP8f7e4b3580VMrNchHsOiYHeV8hifgA2EZyiqr=w768-h768-n-o-v1"
   },
   {
     id: 2,
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our durable exterior painting services that withstand the elements while looking beautiful.",
     icon: "🏡",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/exterior-painting-5-scaled.jpg"
+    image: "https://lh3.googleusercontent.com/p/AF1QipPutw-6_bXURx63ShkpKm1y3ZLHT-_XrFVOAAZm=w768-h768-n-o-v1"
   },
   {
     id: 3,
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/commercial-painting.jpg"
+    image: "https://lh3.googleusercontent.com/p/AF1QipOCxhCQTf67h55TND-LRHa3HJMNmWYISwmTrr4h=w768-h768-n-o-v1"
   },
   {
     id: 4,
-    title: "Cabinet Refinishing",
+    title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-5-e1608121023242.jpg"
+    image: "https://lh3.googleusercontent.com/p/AF1QipMSVJJK54qlLq9k9aHYcC9BJYkV4xtdHFAKxPMZ=w768-h768-n-o-v1"
   },
   {
     id: 5,
     title: "Deck & Fence Staining",
     description: "Protect and beautify your outdoor wooden surfaces with our expert staining services for decks, fences, and more.",
     icon: "🌳",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/services_feature3.jpg"
+    image: "https://lh3.googleusercontent.com/p/AF1QipNdJ5dqulNz8LpPgcd-TYcEaf7y0zyUls5poURI=w768-h768-n-o-v1"
   },
   {
     id: 6,
-    title: "Color Consultation",
-    description: "Not sure which colors will work best? Our professional color consultation helps you choose the perfect palette for your space.",
-    icon: "🎨",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-painting-process3-scaled.jpg"
+    title: "Institutional Painting",
+    description: "Our specialized institutional painting services for schools, hospitals, and government buildings meet all regulatory requirements.",
+    icon: "🏫",
+    image: "https://lh3.googleusercontent.com/p/AF1QipMJcJv3Pn7RvOWXBFKbCGEU-RW7lepnRvxoJAQi=w1080-h608-p-no-v0"
+  },
+  {
+    id: 7,
+    title: "Pre-Finishing",
+    description: "Get professional pre-finishing for your new construction materials, ensuring durability and perfect appearance.",
+    icon: "🔨",
+    image: "https://lh3.googleusercontent.com/p/AF1QipNcZtGKrh3rYrV0wbCdyxM74oi7dXj5lyQ3PwpQ=w768-h768-n-o-v1"
+  },
+  {
+    id: 8,
+    title: "Wallpaper Installation",
+    description: "Add character and style to your spaces with our professional wallpaper installation services.",
+    icon: "🖼️",
+    image: "https://lh3.googleusercontent.com/p/AF1QipPl_-jCqoXlOl_Mc8Xk4SaFrIMzRbTsgrKYk9p9=w768-h768-n-o-v1"
+  },
+  {
+    id: 9,
+    title: "Epoxy Coatings",
+    description: "Durable, attractive epoxy coatings for floors, countertops, and more, with expert application for lasting results.",
+    icon: "✨",
+    image: "https://lh3.googleusercontent.com/p/AF1QipMh6la7I0gaYKQbVIgl3g0cCs9erhTiIVAfvcQW=w768-h768-n-o-v1"
+  },
+  {
+    id: 10,
+    title: "Power & Soft Washing",
+    description: "Professional cleaning services to remove dirt, grime, mold, and mildew from your exterior surfaces.",
+    icon: "💦",
+    image: "https://lh3.googleusercontent.com/p/AF1QipNMowS3FKFpBReXsawTvBaECeRDUKGJzoy8Hsv7=w768-h768-n-o-v1"
   }
 ];
 
@@ -122,6 +149,81 @@ const ServicesSection = () => {
           >
             <span className="relative z-10">Request Custom Service</span>
           </a>
+        </div>
+        
+        {/* GoNano Products Section */}
+        <div className="mt-24 pt-16 border-t border-gray-200">
+          <div className="text-center mb-16">
+            <h2 className="section-heading">GoNano Products</h2>
+            <p className="max-w-2xl mx-auto text-lg text-gray-600">
+              As an authorized dealer and installer of GoNano products, we offer advanced nanotechnology solutions for your surfaces.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-atomic-navy">Revolutionary Surface Protection</h3>
+              <p className="text-gray-600">
+                GoNano products use cutting-edge nanotechnology to provide exceptional protection for various surfaces. Their environmentally friendly solutions offer powerful protection against water, stains, UV damage, and more.
+              </p>
+              <h3 className="text-2xl font-bold text-atomic-navy">Benefits of GoNano:</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <div className="mt-1 mr-2 text-atomic-turquoise">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Long-lasting hydrophobic protection</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="mt-1 mr-2 text-atomic-turquoise">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Prevents mold, mildew, and algae growth</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="mt-1 mr-2 text-atomic-turquoise">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Reduces cleaning time and maintenance costs</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="mt-1 mr-2 text-atomic-turquoise">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Non-toxic, environmentally friendly formulations</span>
+                </li>
+              </ul>
+              <a 
+                href="https://www.gonano.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-6 inline-block atomic-button-secondary"
+              >
+                <span className="relative z-10">Learn More About GoNano</span>
+              </a>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <img 
+                src="https://gonano.com/wp-content/uploads/2022/10/beading.jpg" 
+                alt="GoNano Water Beading" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
+                <p className="text-gray-600">
+                  Contact us today to learn how GoNano products can protect your surfaces and add value to your property.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

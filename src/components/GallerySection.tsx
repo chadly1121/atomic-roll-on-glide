@@ -1,44 +1,61 @@
 
 import React, { useState } from 'react';
 
-// These would be replaced with actual images from Roll On Painting's gallery
 const galleryImages = [
   {
     id: 1,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-5-e1608121023242.jpg",
+    src: "https://lh3.googleusercontent.com/p/AF1QipP8f7e4b3580VMrNchHsOiYHeV8hifgA2EZyiqr=w768-h768-n-o-v1",
     category: "interior",
     title: "Modern Living Room"
   },
   {
     id: 2,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-3-scaled.jpg",
-    category: "interior",
-    title: "Elegant Dining Area"
-  },
-  {
-    id: 3,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/exterior-painting-5-scaled.jpg",
+    src: "https://lh3.googleusercontent.com/p/AF1QipPutw-6_bXURx63ShkpKm1y3ZLHT-_XrFVOAAZm=w768-h768-n-o-v1",
     category: "exterior",
     title: "Home Exterior"
   },
   {
+    id: 3,
+    src: "https://lh3.googleusercontent.com/p/AF1QipMSVJJK54qlLq9k9aHYcC9BJYkV4xtdHFAKxPMZ=w768-h768-n-o-v1",
+    category: "interior",
+    title: "Kitchen Cabinets"
+  },
+  {
     id: 4,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/services_feature3.jpg",
+    src: "https://lh3.googleusercontent.com/p/AF1QipNdJ5dqulNz8LpPgcd-TYcEaf7y0zyUls5poURI=w768-h768-n-o-v1",
     category: "exterior",
     title: "Deck Staining"
   },
   {
     id: 5,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/commercial-painting.jpg",
+    src: "https://lh3.googleusercontent.com/p/AF1QipOCxhCQTf67h55TND-LRHa3HJMNmWYISwmTrr4h=w768-h768-n-o-v1",
     category: "commercial",
-    title: "Office Space"
+    title: "Commercial Space"
   },
   {
     id: 6,
-    src: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-painting-process3-scaled.jpg",
+    src: "https://lh3.googleusercontent.com/p/AF1QipMJcJv3Pn7RvOWXBFKbCGEU-RW7lepnRvxoJAQi=w1080-h608-p-no-v0",
     category: "interior",
-    title: "Bedroom Transformation"
+    title: "Residential Painting"
   },
+  {
+    id: 7,
+    src: "https://lh3.googleusercontent.com/p/AF1QipNcZtGKrh3rYrV0wbCdyxM74oi7dXj5lyQ3PwpQ=w768-h768-n-o-v1",
+    category: "interior",
+    title: "Interior Detail"
+  },
+  {
+    id: 8,
+    src: "https://lh3.googleusercontent.com/p/AF1QipPl_-jCqoXlOl_Mc8Xk4SaFrIMzRbTsgrKYk9p9=w768-h768-n-o-v1",
+    category: "interior",
+    title: "Stairway Renovation"
+  },
+  {
+    id: 9,
+    src: "https://lh3.googleusercontent.com/p/AF1QipMh6la7I0gaYKQbVIgl3g0cCs9erhTiIVAfvcQW=w768-h768-n-o-v1",
+    category: "commercial",
+    title: "Commercial Project"
+  }
 ];
 
 const GallerySection = () => {

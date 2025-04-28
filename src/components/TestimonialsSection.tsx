@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Testimonial {
@@ -12,35 +13,35 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Lauren Vaage",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocLVC6RH6Gd1tBHX_O3OpwhlDqclP4Wve9ZgmSAehb8P=w36-h36-p-rp-mo-br100",
-    content: "Roll On did an amazing job on our house interior! High quality and professional work with focus on the details to perfection and extremely clean, tidy and courteous. Project completed on schedule. Great company! Highly recommend Roll On Painting!",
+    name: "Kelly McCauley",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJXz8b6oYlCrVS33r_Sdl3j-KtuNOZxTfxmrwC6V2o=w36-h36-p-rp-mo-br100",
+    content: "Ben and his crew were amazing from start to finish. They showed up on time, were polite, professional and very thorough. We had the exterior of our home painted and couldn't be happier with how everything turned out.",
     rating: 5,
-    location: "Portland, OR"
+    location: "Muskoka, ON"
   },
   {
     id: 2,
-    name: "Sean Syrett",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocLAGWiqh_8ROJ_aU_GVQuZiNLL2MUCfD5xI47DCcXnp=w36-h36-p-rp-mo-br100",
-    content: "Chad and his crew did a fantastic job painting my house. They were professional, courteous and very meticulous with their work. I would highly recommend Roll On Painting for any painting needs.",
+    name: "Craig Carson",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIlY8-b7VO9suRfRu81ogcZvZoHJziCSr8nCtj1K1Qv=w36-h36-p-rp-mo-br100",
+    content: "Ben and his crew painted my cottage in Huntsville, it was a complete overhaul with inside walls, trim, ceilings and some outside work. The transformation from dark wood to white is breathtaking. His professionalism and attention to detail were amazing. Would gladly recommend his services.",
     rating: 5,
-    location: "Portland, OR"
+    location: "Muskoka, ON"
   },
   {
     id: 3,
-    name: "Tim Neville",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjXJD3sOum6MGFNG7JXAhxYtIokLmMoZuOLNXuDn6Ftp4y8=w36-h36-p-rp-mo-br100",
-    content: "Chad was responsive, professional, and delivered quality work at a fair price. His team was efficient and clean, and the paint job came out just as we wanted. I would absolutely hire them again.",
+    name: "Krista Walker",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocIJMV4Fv5s9fzlEShiIbzMuUk4vMj4yIeMgtw3h40Q=w36-h36-p-rp-mo-br100",
+    content: "Ben and his team painted our new cottage this fall. They were very professional, the work and attention to detail was amazing. I would use them again without hesitation. Thank you!",
     rating: 5,
-    location: "Portland, OR"
+    location: "Muskoka, ON"
   },
   {
     id: 4,
-    name: "Anne Gentling",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocK4n06_MFZJou0KQ7gbm4l6U85ydvhP4bdl3NHt7fZE=w36-h36-p-rp-mo-br100",
-    content: "Chad and his team transformed my house with excellent painting inside and out. They were professional, reliable, and focused on quality work. They did all the prep work needed, thoroughly cleaned up, and the results are beautiful. Highly recommend!",
+    name: "Dan Holliday",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjU0mZ1HEBnhUp8e64z1-zz_gB4SsbA-BUhU5TbsxYgHHJE=w36-h36-p-rp-mo-br100",
+    content: "Ben and his team did a great job painting our place. Great communication and the worksite was spotless when they were done.",
     rating: 5,
-    location: "Portland, OR"
+    location: "Muskoka, ON"
   }
 ];
 
@@ -184,7 +185,7 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://www.google.com/search?q=roll+on+painting+reviews" 
+            href="https://g.co/kgs/hH1mnMH" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
