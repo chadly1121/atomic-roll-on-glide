@@ -14,31 +14,31 @@ interface Testimonial {
   date?: string;
 }
 
-// Actual Roll On Painting reviews from Google
+// Updated Roll On Painting reviews from Google with the requested changes
 const testimonials: Testimonial[] = [{
   id: 1,
   name: "Jacki Hart",
   image: "https://lh3.googleusercontent.com/a/ACg8ocKqLUnuF_yXpnNyqOGYAGYj_2AwyaKdAMbCSx8CCnClhOs=w36-h36-p-rp-mo-br100",
   content: "I never call anyone other than the great team at Roll On Painting - especially for the tough jobs that I can't do myself. They are detail oriented, meticulous on their after care clean up, leave my walls trim and house exterior looking like brand new... They have painted four different homes for me over the past ten years. Chad leads his team with passion, technical expertise and precision. They are second to none.",
   rating: 5,
-  location: "Utterson, ON",
+  location: "Bracebridge, ON",
   date: "7 months ago"
 }, {
   id: 2,
-  name: "Randy Hamelin",
+  name: "David Tattle",
   image: "https://lh3.googleusercontent.com/a-/ALV-UjUCalmgg3j3Q6UQtS5s3_r59vl9nqMCM48fGm_XvsZUug=w36-h36-p-rp-mo-br100",
-  content: "Chad and his team are amazing! They are always professional, prompt and extremely detail oriented. They do quality work at a very reasonable price. I highly recommend Roll On Painting!",
+  content: "Chad and his team went the extra mile at every turn. They provide a high quality product and they are a pleasure having them in your home! Highly recommend!!!!!",
   rating: 5,
-  location: "Utterson, ON",
+  location: "Gravenhurst, ON",
   date: "a year ago"
 }, {
   id: 3,
-  name: "Jo Ann Wilson",
+  name: "John Chapman",
   image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
-  content: "Chad and his team of painters are reliable, professional and honest. We have hired them before and will definitely request their services again as needed.",
+  content: "Chad and all the Roll On crew were knowledgeable efficient and courteous! The amount of moss algae and accumulated pine needles over the last 20 years was considerable and ugly. After four days of effort our roof is almost new again! We wholeheartedly recommend Roll On",
   rating: 5,
-  location: "Utterson, ON",
-  date: "a year ago"
+  location: "Port Carling, ON",
+  date: "41 weeks ago"
 }, {
   id: 4,
   name: "Bill Hawley",
