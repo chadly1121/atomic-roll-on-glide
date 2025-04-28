@@ -211,11 +211,17 @@ const ServicesSection = () => {
               </a>
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
-              <img 
-                src="https://gonano.com/wp-content/uploads/2022/10/beading.jpg" 
-                alt="GoNano Water Beading" 
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
-              />
+                poster="https://gonano.com/wp-content/uploads/2022/10/beading.jpg"
+              >
+                <source src="https://gonano.com/wp-content/uploads/2022/01/Small-Indoor-window-H2O-Specifically.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <div className="p-6 bg-white">
                 <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
                 <p className="text-gray-600">
