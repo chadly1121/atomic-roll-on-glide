@@ -1,42 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  image: string;
-  category: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "2023 Color Trends For Your Home",
-    excerpt: "Discover the hottest color trends of the year and how to incorporate them into your home design.",
-    date: "June 12, 2023",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-3-scaled.jpg",
-    category: "Design Trends"
-  },
-  {
-    id: 2,
-    title: "How to Choose the Right Paint Finish",
-    excerpt: "Learn about different paint finishes and which ones work best for specific areas of your home.",
-    date: "May 23, 2023",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/services_feature3.jpg",
-    category: "Painting Tips"
-  },
-  {
-    id: 3,
-    title: "The Benefits of Professional Painting",
-    excerpt: "Why hiring professionals can save you time, money, and provide superior results for your painting project.",
-    date: "April 15, 2023",
-    image: "https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-painting-process3-scaled.jpg",
-    category: "Professional Services"
-  }
-];
+import { blogPosts } from '../data/blogData';
 
 const BlogSection = () => {
   return (
@@ -52,7 +17,7 @@ const BlogSection = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.slice(0, 3).map((post) => (
             <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
                 <img 
