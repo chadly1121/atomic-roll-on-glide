@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import ServiceAreaMap from './ServiceAreaMap';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -192,8 +192,8 @@ const ContactSection = () => {
                 
                 <div className="flex items-start">
                   <div className="mr-4 bg-atomic-turquoise/20 p-3 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-atomic-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                     </svg>
                   </div>
                   <div>
@@ -276,6 +276,19 @@ const ContactSection = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+        
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold">Our Service Area</h3>
+            <p className="max-w-2xl mx-auto text-gray-300 mt-2">
+              We proudly serve the Muskoka region and surrounding areas from Dwight to Parry Sound, 
+              down to Collingwood and Barrie, and back up Highway 11 to Highway 118.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <ServiceAreaMap />
           </div>
         </div>
       </div>
