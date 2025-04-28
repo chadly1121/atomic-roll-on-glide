@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Carousel,
@@ -24,57 +23,57 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Cathy Cameron",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjWR0P7LkOFTCrBsn931OB5T1Nc3o1-DEK3yGAnt1wK5wCI=s120-c-rp-mo-br100",
-    content: "Finally found painters in Muskoka who are reliable and professional in every way. Chad, Simon and the crew did the interior of our cottage and we are extremely pleased with their work. Will definitely have them back to do the exterior when the time comes.",
+    name: "Jacki Hart",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocKqLUnuF_yXpnNyqOGYAGYj_2AwyaKdAMbCSx8CCnClhOs=w36-h36-p-rp-mo-br100",
+    content: "I never call anyone other than the great team at Roll On Painting - especially for the tough jobs that I can't do myself. They are detail oriented, meticulous on their after care clean up, leave my walls trim and house exterior looking like brand new... They have painted four different homes for me over the past ten years. Chad leads his team with passion, technical expertise and precision. They are second to none.",
     rating: 5,
     location: "Utterson, ON",
-    date: "2 months ago"
+    date: "7 months ago"
   },
   {
     id: 2,
-    name: "Sarah Playford",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocIik4N-nTowg6aQ7DG3YxSQGTKgAqokVAq3JuQql91PqQcB=s120-c-rp-mo-br100",
-    content: "What a fabulous job Chad and his team did painting our cottage! Everything from the initial consultation to the final product was excellent. They are extremely professional and efficient. I would highly recommend Roll On for all painting needs!",
+    name: "Randy Hamelin",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjUCalmgg3j3Q6UQtS5s3_r59vl9nqMCM48fGm_XvsZUug=w36-h36-p-rp-mo-br100",
+    content: "Chad and his team are amazing! They are always professional, prompt and extremely detail oriented. They do quality work at a very reasonable price. I highly recommend Roll On Painting!",
     rating: 5,
     location: "Utterson, ON",
-    date: "3 months ago"
+    date: "a year ago"
   },
   {
     id: 3,
-    name: "Mike LaChapelle",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocILwybYIspMIm9ZTo29X9hrLWIpa-s3pCGGVe__Kg-w1_2N=s120-c-rp-mo-br100",
-    content: "Roll on Painting quoted and completed our interior paint project of our cottage that just went through a renovation. Very professional!!! Worked to accommodate our schedule requirements as we were selling the property and had a tight timeline. Would recommend them to anyone!",
+    name: "Jo Ann Wilson",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+    content: "Chad and his team of painters are reliable, professional and honest. We have hired them before and will definitely request their services again as needed.",
     rating: 5,
     location: "Utterson, ON",
-    date: "4 months ago"
+    date: "a year ago"
   },
   {
     id: 4,
-    name: "Dan Rankin",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjX4kUDQxUwwz58E30hAQsl0Uwbwpv64KhGzpf-qmgjUgpA=s120-c-rp-mo-br100",
-    content: "Chad and his team were efficient, professional, and helpful. They painted the interior of our home and did an exceptional job. Highly recommended!",
+    name: "Bill Hawley",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjXDn_O1L5gqnq40W40rB3yXnS09KGPXRkZY8q39LTpUsQ=w36-h36-p-rp-mo-br100",
+    content: "The roll on painting crew did a outstanding job the attention to detail and the quality of the workmanship is second to none. Thanks guys!",
     rating: 5,
     location: "Utterson, ON",
-    date: "7 months ago"
+    date: "a year ago"
   },
   {
     id: 5,
-    name: "Mary Stanley",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjX6gow_dMEMsVlAym7o_LD6BBg6DQZ8ipVnlL36nwL2DGA=s120-c-rp-mo-br100",
-    content: "Absolutely fantastic service. Our cottage is beautiful and the team was professional, hard working, reliable and finished on time. We highly recommend this company.",
+    name: "Terry Mckay",
+    image: "https://lh3.googleusercontent.com/a-/ALV-UjWu6MXQQFw2nIjTioag9ATrbGi7jtvXwkH1GJ7gVuHZlg=w36-h36-p-rp-mo-br100",
+    content: "I have been using Roll on Painting for over 20 years. They painted the inside of my house and now they have done the outside. I am impressed with them always! Great clean cut young men who work hard, know their trade. Never would I call anyone else for a painting job.",
     rating: 5,
     location: "Utterson, ON",
-    date: "7 months ago"
+    date: "a year ago"
   },
   {
     id: 6,
-    name: "Ilana Prince",
-    image: "https://lh3.googleusercontent.com/a/ACg8ocJ9k7C9FpFnh5d5K5Qlu5rvf5bb4x9eIh06rC0H2Ewg=s120-c-rp-mo-br100",
-    content: "Super professional, great communication, quality workmanship and very responsive. They did a great job painting the interior of our cottage. I highly recommend them.",
+    name: "Mark Hazen",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocLxkopz6PcgL26eeRIpBANj2by9mLkd71jmuSHX3kI_=w36-h36-p-rp-mo-br100",
+    content: "A great local business. Recently repainted our boathouse and did an excellent job. Very professional, punctual and the job was completed on time. Will definitely use again.",
     rating: 5,
     location: "Utterson, ON",
-    date: "8 months ago"
+    date: "a year ago"
   }
 ];
 
@@ -221,7 +220,7 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://www.google.com/search?q=Roll+On+Painting+Reviews" 
+            href="https://www.google.com/maps/place/Roll+On+Painting/@45.2042095,-79.3084404,17z/data=!4m8!3m7!1s0x4d2a81346c7e41b5:0x674c0540cc9af033!8m2!3d45.2042095!4d-79.3084404!9m1!1b1!16s%2Fg%2F11c0w730_g?entry=ttu" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
