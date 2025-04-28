@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogPosts } from '../data/blogData';
@@ -10,6 +10,7 @@ const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState(blogPosts.find(post => post.id === Number(id)));
   const { toast } = useToast();
+  const navigate = useNavigate();
   
   useEffect(() => {
     if (!post) {
@@ -24,6 +25,16 @@ const BlogPostPage = () => {
     }
   }, [post, toast]);
 
+  const handleBackToBlog = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/blog');
+  };
+
+  const handleBackToHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection="blog" />
@@ -32,12 +43,29 @@ const BlogPostPage = () => {
         <div className="container mx-auto px-4">
           {post ? (
             <div className="max-w-3xl mx-auto">
-              <Link to="/blog" className="inline-flex items-center text-atomic-turquoise mb-6 hover:text-atomic-orange transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
-                </svg>
-                Back to Blog
-              </Link>
+              <div className="flex space-x-4 mb-6">
+                <Link 
+                  to="/blog" 
+                  onClick={handleBackToBlog}
+                  className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                  </svg>
+                  Back to Blog
+                </Link>
+
+                <Link 
+                  to="/" 
+                  onClick={handleBackToHome}
+                  className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                  </svg>
+                  Back to Home
+                </Link>
+              </div>
               
               <div className="prose prose-lg max-w-none">
                 <div className="mb-4 flex items-center text-sm text-gray-500 space-x-4">
@@ -112,12 +140,20 @@ const BlogPostPage = () => {
             <div className="text-center py-16">
               <h2 className="text-2xl font-bold">Blog Post Not Found</h2>
               <p className="mt-4">The post you're looking for doesn't exist or has been removed.</p>
-              <Link 
-                to="/blog" 
-                className="mt-8 inline-block atomic-button-secondary"
-              >
-                <span className="relative z-10">Return to Blog</span>
-              </Link>
+              <div className="flex justify-center space-x-4 mt-8">
+                <Link 
+                  to="/blog" 
+                  className="inline-block atomic-button-secondary"
+                >
+                  <span className="relative z-10">Return to Blog</span>
+                </Link>
+                <Link 
+                  to="/" 
+                  className="inline-block atomic-button"
+                >
+                  <span className="relative z-10">Return to Home</span>
+                </Link>
+              </div>
             </div>
           )}
         </div>
