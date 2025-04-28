@@ -9,12 +9,12 @@ interface Testimonial {
   name: string;
   image: string;
   content: string;
-  rating: number;
+  rating: 5;
   location: string;
   date?: string;
 }
 
-// Updated Roll On Painting reviews from Google with the requested changes
+// Updated Roll On Painting reviews from Google
 const testimonials: Testimonial[] = [{
   id: 1,
   name: "Jacki Hart",
@@ -41,28 +41,44 @@ const testimonials: Testimonial[] = [{
   date: "41 weeks ago"
 }, {
   id: 4,
-  name: "Bill Hawley",
-  image: "https://lh3.googleusercontent.com/a-/ALV-UjXDn_O1L5gqnq40W40rB3yXnS09KGPXRkZY8q39LTpUsQ=w36-h36-p-rp-mo-br100",
-  content: "The roll on painting crew did a outstanding job the attention to detail and the quality of the workmanship is second to none. Thanks guys!",
+  name: "Leo Ciccone",
+  image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+  content: "Great job, had whole exterior of cottage and garage done. They came when they said they would, neat and tidy, would highly recommend.",
   rating: 5,
-  location: "Utterson, ON",
-  date: "a year ago"
+  location: "Muskoka, ON",
+  date: "Jan 24, 2024"
 }, {
   id: 5,
-  name: "Terry Mckay",
-  image: "https://lh3.googleusercontent.com/a-/ALV-UjWu6MXQQFw2nIjTioag9ATrbGi7jtvXwkH1GJ7gVuHZlg=w36-h36-p-rp-mo-br100",
-  content: "I have been using Roll on Painting for over 20 years. They painted the inside of my house and now they have done the outside. I am impressed with them always! Great clean cut young men who work hard, know their trade. Never would I call anyone else for a painting job.",
+  name: "Ray Rahni",
+  image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+  content: "I'm a painting contractor in New York and have known Chad throughout the years in our trade association and other professional business organizations we both belong to. I've come to know and trust him as a skillful craftsman and someone you can count on when it comes to anything painting or staining. He's been always willing to share his knowledge with others in regards to wood preservation, staining, and painting. I won't hesitate to recommend Roll on Painting to anyone looking to hire professional company for their next interior or exterior painting.",
   rating: 5,
-  location: "Utterson, ON",
-  date: "a year ago"
+  location: "New York",
+  date: "Jan 28, 2023"
 }, {
   id: 6,
-  name: "Mark Hazen",
-  image: "https://lh3.googleusercontent.com/a/ACg8ocLxkopz6PcgL26eeRIpBANj2by9mLkd71jmuSHX3kI_=w36-h36-p-rp-mo-br100",
-  content: "A great local business. Recently repainted our boathouse and did an excellent job. Very professional, punctual and the job was completed on time. Will definitely use again.",
+  name: "Steve Warren",
+  image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+  content: "Chad is very professional and gets the job done right.",
   rating: 5,
-  location: "Utterson, ON",
-  date: "a year ago"
+  location: "Muskoka, ON",
+  date: "Jan 26, 2023"
+}, {
+  id: 7,
+  name: "Mike Jensen",
+  image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+  content: "It was a pleasure having Chad and his team to our cottage this winter. Price was fair, quality was high and we definitely have Roll-On back for our future painting needs. Mike & Kelly Jensen",
+  rating: 5,
+  location: "Muskoka, ON",
+  date: "Jan 26, 2023"
+}, {
+  id: 8,
+  name: "Steve McCaig",
+  image: "https://lh3.googleusercontent.com/a/ACg8ocI6QjYQCGkZTufo9Cuq7R3d2psXY7OSW00E7P-_qFJl=w36-h36-p-rp-mo-br100",
+  content: "Roll-On-Painting is a one shop stop business. Chad and team are amazing, painting is not the only thing they do, ask, they do more than that. If not, he knows a guy/gal that does. Highly-qualified, highly recommend. Steve",
+  rating: 5,
+  location: "Muskoka, ON",
+  date: "Jan 26, 2023"
 }];
 
 const TestimonialsSection = () => {
