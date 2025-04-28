@@ -71,7 +71,7 @@ const HeroSection = () => {
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl transform hover:rotate-0 transition-transform duration-500 border-4 border-atomic-orange/20">
-              <img src="https://www.roll-onpainting.com/wp-content/uploads/2020/12/interior-paint-5-e1608121023242-1024x694.jpg" alt="Roll On Painting Project" className="w-full h-auto object-cover" />
+              <img alt="Roll On Painting Project" className="w-full h-auto object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866861/PXL_20240209_164221623.PANO_t6iosa.jpg" />
             </div>
           </div>
         </div>
