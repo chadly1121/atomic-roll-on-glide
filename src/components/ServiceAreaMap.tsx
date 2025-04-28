@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { MapPin } from '@/lib/lucide-icons'; // Import the MapPin icon
 
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -160,11 +159,9 @@ const ServiceAreaMap = () => {
   return (
     <div className="rounded-xl overflow-hidden shadow-lg relative">
       <div ref={mapContainer} className="h-[400px] w-full" />
-      <div className="absolute top-2 left-2 bg-white px-3 py-1 rounded-md shadow-md z-10">
-        <h3 className="font-bold text-sm">70km Service Radius</h3>
-      </div>
-      <div className="absolute bottom-2 right-2 bg-white/80 px-3 py-1 rounded-md text-xs">
-        Coverage includes Port Sydney, Barrie and Collingwood
+      <div className="absolute top-2 left-2 bg-white px-3 py-2 rounded-md shadow-md z-10 max-w-md">
+        <h3 className="font-bold text-sm mb-1">Our Service Area</h3>
+        <p className="text-sm">Located in Muskoka we service: Huntsville, Dwight, Lake of Bays, Bracebridge, Port Carling, Parry Sound, Port Severn, Midland, Orillia and Barrie.</p>
       </div>
     </div>
   );
