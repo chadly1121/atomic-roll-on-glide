@@ -12,6 +12,7 @@ const navLinks: NavLink[] = [
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
   { name: 'Gallery', href: '#gallery' },
+  { name: 'GoNano', href: '#gonano' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '#blog' },
   { name: 'Trends', href: '#trends' },
@@ -57,11 +58,11 @@ const Navbar = () => {
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center hover:opacity-90 transition-opacity">
+        <a href="#" className="flex items-center hover:opacity-90 transition-opacity group">
           <img 
-            src="https://lh3.googleusercontent.com/pw/AP1GczPXpne0XfmHhoZNF5sGV1sOfoR1ZE3n3kxyUK2YwQcdm8ssD2x-gBuDNR1EJ6pB4OGlsoYQPC6OQnoe2D-YWeD59ZavgYt-zaK9tpTOLwwlEq2wmHcb_1VZzRPO3WE1YJ0LyYRRKEC8c6JpNGBFLH0pYw=w1200-h600-s-no-gm" 
+            src="https://lh3.googleusercontent.com/pw/AP1GczMSEi70lm2YA9JXdh1KCKy3yBwu5Lyc1F8Y8bwvWyPI3fvkuD9ZV3mf8pYy_RmEV93fYaXPSF721hpVlmW9L1u-ZgVNgShQQeHeee_eKWrz0bIxSG_bKH3EQytLvrHZAj2Ipnew19EckOYHYi3yaXvz=w1280-h228-s-no-gm" 
             alt="Roll On Painting Muskoka Logo" 
-            className="h-12 w-auto"
+            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </a>
 
@@ -83,7 +84,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a 
             href="#contact" 
-            className="atomic-button group overflow-hidden relative border-2 border-atomic-orange transition-all duration-300 hover:shadow-lg"
+            className="atomic-button group overflow-hidden relative border-2 border-atomic-orange transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             onClick={handleNavLinkClick}
           >
             <span className="relative z-10 flex items-center group-hover:translate-x-1 transition-transform duration-300">

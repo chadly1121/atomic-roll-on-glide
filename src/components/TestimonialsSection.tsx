@@ -87,8 +87,8 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-24 relative overflow-hidden bg-atomic-navy text-white">
-      <div className="atomic-circle w-80 h-80 -top-40 right-20 border-atomic-orange/30"></div>
-      <div className="atomic-circle w-64 h-64 -bottom-32 left-20 border-atomic-turquoise/40"></div>
+      <div className="atomic-circle w-80 h-80 -top-40 right-20 border-atomic-orange/30 animate-spin-slow"></div>
+      <div className="atomic-circle w-64 h-64 -bottom-32 left-20 border-atomic-turquoise/40 animate-spin-slow"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -111,9 +111,9 @@ const TestimonialsSection = () => {
                     key={testimonial.id}
                     className="min-w-full px-4"
                   >
-                    <div className="bg-white text-atomic-navy p-8 rounded-2xl shadow-xl">
+                    <div className="bg-white text-atomic-navy p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                       <div className="flex items-center mb-6">
-                        <div className="h-16 w-16 rounded-full overflow-hidden mr-4">
+                        <div className="h-16 w-16 rounded-full overflow-hidden mr-4 border-2 border-atomic-turquoise shadow-lg">
                           <img 
                             src={testimonial.image} 
                             alt={testimonial.name} 
@@ -128,7 +128,9 @@ const TestimonialsSection = () => {
                               <svg 
                                 key={i}
                                 xmlns="http://www.w3.org/2000/svg" 
-                                className={`h-4 w-4 ${i < testimonial.rating ? 'text-atomic-orange' : 'text-gray-300'}`}
+                                className={`h-4 w-4 ${i < testimonial.rating ? 'text-atomic-orange' : 'text-gray-300'} ${
+                                  i < testimonial.rating ? 'animate-pulse' : ''
+                                }`}
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                               >
@@ -139,7 +141,7 @@ const TestimonialsSection = () => {
                         </div>
                       </div>
                       <blockquote>
-                        <p className="text-gray-600 italic">"{testimonial.content}"</p>
+                        <p className="text-gray-600 italic">"<span className="animate-scale-in inline-block">{testimonial.content}</span>"</p>
                       </blockquote>
                     </div>
                   </div>
@@ -150,7 +152,7 @@ const TestimonialsSection = () => {
             {/* Navigation Arrows */}
             <button 
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 h-10 w-10 rounded-full bg-white/30 hover:bg-white/50 flex items-center justify-center backdrop-blur-sm transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 h-10 w-10 rounded-full bg-white/30 hover:bg-white/70 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110"
               aria-label="Previous testimonial"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -159,7 +161,7 @@ const TestimonialsSection = () => {
             </button>
             <button 
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 h-10 w-10 rounded-full bg-white/30 hover:bg-white/50 flex items-center justify-center backdrop-blur-sm transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 h-10 w-10 rounded-full bg-white/30 hover:bg-white/70 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110"
               aria-label="Next testimonial"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,8 +176,8 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`h-3 w-3 rounded-full transition-colors ${
-                  activeIndex === index ? 'bg-atomic-turquoise' : 'bg-white/30 hover:bg-white/50'
+                className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                  activeIndex === index ? 'bg-atomic-turquoise scale-125' : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -185,12 +187,12 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://g.co/kgs/hH1mnMH" 
+            href="https://g.co/kgs/wMVjW8Q" 
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
+            className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="h-5 w-5 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="h-5 w-5 mr-2 group-hover:text-atomic-orange transition-colors">
               <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
             </svg>
             See All Google Reviews

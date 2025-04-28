@@ -95,7 +95,7 @@
   }
 
   .atomic-circle {
-    @apply absolute rounded-full animate-spin-slow opacity-50;
+    @apply absolute rounded-full opacity-50;
   }
 
   .atomic-starburst {
@@ -179,12 +179,25 @@
   }
 }
 
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out forwards;
 }
 
 .animate-scale-in {
   animation: scale-in 0.2s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 
 /* Enhanced hover effects */

@@ -11,10 +11,12 @@ import BlogSection from '../components/BlogSection';
 import TrendsSection from '../components/TrendsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = React.useState(false);
+  const { toast } = useToast();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +27,19 @@ const Index = () => {
       }
     };
 
+    // Show welcome toast
+    setTimeout(() => {
+      toast({
+        title: "Welcome to Roll On Painting",
+        description: "Muskoka's premier painting company. Scroll down to explore our services.",
+        variant: "default",
+        duration: 5000,
+      });
+    }, 1500);
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [toast]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -50,11 +62,11 @@ const Index = () => {
       <ContactSection />
       <Footer />
       
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top Button with enhanced animation */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 p-3 bg-atomic-turquoise text-white rounded-full shadow-lg hover:bg-atomic-turquoise/90 transition-colors focus:outline-none"
+          className="fixed bottom-8 right-8 z-40 p-3 bg-atomic-turquoise text-white rounded-full shadow-lg hover:bg-atomic-turquoise/90 transition-all duration-300 animate-bounce hover:animate-none hover:scale-110 focus:outline-none"
           aria-label="Scroll to top"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

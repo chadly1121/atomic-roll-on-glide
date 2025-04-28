@@ -86,10 +86,10 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 relative overflow-hidden">
       <div className="atomic-starburst w-72 h-72 top-20 left-20"></div>
-      <div className="atomic-circle w-96 h-96 -bottom-48 right-0 border-atomic-turquoise/30"></div>
+      <div className="atomic-circle w-96 h-96 -bottom-48 right-0 border-atomic-turquoise/30 animate-spin-slow"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="section-heading">Our Services</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Professional painting services tailored to your specific needs, delivering quality results that last.
@@ -98,7 +98,7 @@ const ServicesSection = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.id} className="retro-card group">
+            <div key={service.id} className="retro-card group hover-lift transform transition-all duration-500">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={service.image} 
@@ -108,15 +108,15 @@ const ServicesSection = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-atomic-turquoise/20 flex items-center justify-center text-2xl mr-3">
+                  <div className="w-12 h-12 rounded-full bg-atomic-turquoise/20 flex items-center justify-center text-2xl mr-3 group-hover:bg-atomic-turquoise/40 transition-colors">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold">{service.title}</h3>
+                  <h3 className="text-xl font-bold group-hover:text-atomic-turquoise transition-colors">{service.title}</h3>
                 </div>
                 <p className="text-gray-600">{service.description}</p>
                 <a 
                   href="#contact" 
-                  className="mt-4 inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
+                  className="mt-4 inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors group-hover:translate-x-1 transition-transform duration-300"
                   onClick={(e) => {
                     e.preventDefault();
                     document.querySelector('#contact')?.scrollIntoView({ 
@@ -126,7 +126,7 @@ const ServicesSection = () => {
                   }}
                 >
                   Get A Quote
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -138,7 +138,7 @@ const ServicesSection = () => {
         <div className="mt-16 text-center">
           <a 
             href="#contact" 
-            className="atomic-button"
+            className="atomic-button button-pulse"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ 
@@ -152,8 +152,8 @@ const ServicesSection = () => {
         </div>
         
         {/* GoNano Products Section */}
-        <div className="mt-24 pt-16 border-t border-gray-200">
-          <div className="text-center mb-16">
+        <div id="gonano" className="mt-24 pt-16 border-t border-gray-200 scroll-mt-24">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="section-heading">GoNano Products</h2>
             <p className="max-w-2xl mx-auto text-lg text-gray-600">
               As an authorized dealer and installer of GoNano products, we offer advanced nanotechnology solutions for your surfaces.
@@ -161,14 +161,14 @@ const ServicesSection = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 animate-fade-in">
               <h3 className="text-2xl font-bold text-atomic-navy">Revolutionary Surface Protection</h3>
               <p className="text-gray-600">
                 GoNano products use cutting-edge nanotechnology to provide exceptional protection for various surfaces. Their environmentally friendly solutions offer powerful protection against water, stains, UV damage, and more.
               </p>
               <h3 className="text-2xl font-bold text-atomic-navy">Benefits of GoNano:</h3>
               <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
+                <li className="flex items-start hover:-translate-y-1 transition-transform duration-300">
                   <div className="mt-1 mr-2 text-atomic-turquoise">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -176,7 +176,7 @@ const ServicesSection = () => {
                   </div>
                   <span>Long-lasting hydrophobic protection</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start hover:-translate-y-1 transition-transform duration-300">
                   <div className="mt-1 mr-2 text-atomic-turquoise">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -184,7 +184,7 @@ const ServicesSection = () => {
                   </div>
                   <span>Prevents mold, mildew, and algae growth</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start hover:-translate-y-1 transition-transform duration-300">
                   <div className="mt-1 mr-2 text-atomic-turquoise">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -192,7 +192,7 @@ const ServicesSection = () => {
                   </div>
                   <span>Reduces cleaning time and maintenance costs</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start hover:-translate-y-1 transition-transform duration-300">
                   <div className="mt-1 mr-2 text-atomic-turquoise">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -205,16 +205,16 @@ const ServicesSection = () => {
                 href="https://www.gonano.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="mt-6 inline-block atomic-button-secondary"
+                className="mt-6 inline-block atomic-button-secondary hover:shadow-lg transform transition-transform hover:-translate-y-1"
               >
                 <span className="relative z-10">Learn More About GoNano</span>
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl">
+            <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
               <img 
                 src="https://gonano.com/wp-content/uploads/2022/10/beading.jpg" 
                 alt="GoNano Water Beading" 
-                className="w-full h-80 object-cover"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
               />
               <div className="p-6 bg-white">
                 <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
