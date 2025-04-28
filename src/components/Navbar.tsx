@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,7 @@ const navLinks: NavLink[] = [
   { name: 'Services', href: '#services' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'GoNano', href: '#gonano' },
+  { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '#blog' },
   { name: 'Trends', href: '#trends' },
   { name: 'Contact', href: '#contact' }

@@ -63,7 +63,7 @@ const PricingSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-heading">Our Pricing</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Transparent pricing with no hidden costs. Get an estimate with our calculator or contact us for a custom quote.
+            Transparent pricing with no hidden costs. Contact us for a custom quote tailored to your project.
           </p>
         </div>
         
@@ -116,30 +116,6 @@ const PricingSection = () => {
               </a>
             </div>
           ))}
-        </div>
-        
-        {/* PriceGuide.ai Pricing Calculator */}
-        <div className="mt-16">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold mb-2">Pricing Calculator</h3>
-            <p className="text-gray-600">Get an instant estimate for your project</p>
-          </div>
-          <div className="max-w-5xl mx-auto">
-            <iframe 
-              src="https://app.priceguide.ai/estimator/reckirOLZi1hciaNn" 
-              width="100%" 
-              height="75vh" 
-              style={{ 
-                width: "100%", 
-                height: "75vh", 
-                borderTop: "1px solid #999", 
-                borderBottom: "1px solid #999" 
-              }} 
-              frameBorder="0" 
-              title="Roll On Painting Pricing Calculator"
-              className="rounded-lg shadow-lg"
-            />
-          </div>
         </div>
       </div>
     </section>
