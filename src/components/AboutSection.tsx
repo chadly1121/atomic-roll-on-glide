@@ -20,7 +20,7 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold mb-3 text-atomic-navy">
                 Our <span className="text-atomic-turquoise">Story</span>
               </h3>
-              <p className="text-gray-600">Purchased by Chad Gilchrist, Roll On Painting has grown from a small local operation to a trusted name in the painting industry throughout Muskoka, Ontario and surrounding areas. With over 25 years of experience, we've built our reputation on quality workmanship and exceptional customer service.</p>
+              <p className="text-gray-600">Purchased by Chad Gilchrist in 2014, Roll On Painting has grown from a small local operation to a trusted name in the painting industry throughout Muskoka, Ontario and surrounding areas. With over 25 years of experience, we've built our reputation on quality workmanship and exceptional customer service.</p>
             </div>
             
             <div>
