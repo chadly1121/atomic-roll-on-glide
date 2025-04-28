@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 const AboutSection = () => {
   return <section id="about" className="py-24 relative overflow-hidden bg-accent/30">
@@ -89,25 +88,19 @@ const AboutSection = () => {
                   <Mail className="h-5 w-5 mr-2 text-atomic-turquoise" />
                   <a href="mailto:info@rollonpainting.com" className="text-gray-600 hover:text-atomic-orange transition-colors">info@rollonpainting.com</a>
                 </div>
-                <div className="flex space-x-3 mt-4">
-                  <a href="https://www.instagram.com/roll_on_painting/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
-                    <Instagram className="h-5 w-5 text-atomic-turquoise" />
+                <div className="flex space-x-4 mt-4">
+                  <a href="https://www.instagram.com/roll_on_painting/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-atomic-navy flex items-center justify-center hover:bg-atomic-navy/80 transition-colors">
+                    <Instagram className="h-6 w-6 text-white" />
                   </a>
-                  <a href="https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
+                  <a href="https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-atomic-navy flex items-center justify-center hover:bg-atomic-navy/80 transition-colors">
+                    <Facebook className="h-6 w-6 text-white" />
                   </a>
-                  <a href="https://www.linkedin.com/company/roll-onpainting/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
-                    <Linkedin className="h-5 w-5 text-atomic-turquoise" />
+                  <a href="https://www.linkedin.com/company/roll-onpainting/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-atomic-navy flex items-center justify-center hover:bg-atomic-navy/80 transition-colors">
+                    <Linkedin className="h-6 w-6 text-white" />
                   </a>
-                  <a href="https://g.co/kgs/hH1mnMH" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-atomic-turquoise/20 flex items-center justify-center hover:bg-atomic-turquoise/40 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                      <path d="M11 7.5v3h-3v3h3v3h3v-3h3v-3h-3v-3z" fill="currentColor"/>
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.01 14.01c-1.4 0-2.01-.83-2.01-1.99V12h1.98c.55 0 .99-.44.99-.99 0-.55-.44-.99-.99-.99H15V8.03c0-.55-.44-.99-.99-.99s-.99.44-.99.99V10h-1.98c-.55 0-.99.44-.99.99 0 .55.44.99.99.99H13v2.02c0 1.16-.61 1.99-2.01 1.99-.55 0-.99.44-.99.99s.44.99.99.99c1.66 0 2.97-.84 3.49-2.03A3.814 3.814 0 0017.01 18c.55 0 .99-.44.99-.99 0-.56-.44-1-.99-1z" fill="none"/>
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
-                      <path d="M9.93 8.25L8.5 9.52l3.93 4.7 6.07-7.3-1.38-1.15-4.74 5.7z" fill="currentColor"/>
+                  <a href="https://g.co/kgs/hH1mnMH" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-atomic-navy flex items-center justify-center hover:bg-atomic-navy/80 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="white">
+                      <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032 s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2 C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
                     </svg>
                   </a>
                 </div>
