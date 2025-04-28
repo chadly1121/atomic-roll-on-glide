@@ -8,78 +8,79 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Using direct image URLs from the provided Google Photos links
+// Using direct image URLs from your shared Google Photos links
 const galleryImages = [
   {
     id: 1,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczO3pMf-srlZSxjLAWSE7wMR0rGrrLiOmALSDK27yDqzeTkYjTBlHCFoTY0e0S3nOlO9jYwoKkMwvC6Rs9OJ-NWLaKHb1bS0F4oDeMdEq2Djkgq1v4A=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNhIBJdvRX0hzC_9-XI1MTXdRrtcV_XUc50J3LUvIsb3STmZKLHfMg4G8MR50LwZn56jvEkDU6tU6bzfcwFNIXLVAbwgdfO2TShV-GuceFYPejC1Pk=w2400", 
     category: "interior",
     title: "Interior Painting Project"
   },
   {
     id: 2,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczNqYnbwCc-p0SCWStSG90mVj9RozJYJe1nNULa-FTXODLtH8v5wAsCoOUfOzQzYM4Y63egj1rMJ2DmqYEQ7f9oEBGAhN7-6qi6YyLbmVZPSFKQ4GJ0=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNbgiqiTSrZO0Gg2exHO8bDKmKDbrb6ZuUGphvWYBCRbfSUvExyrhTRnio4Qgf6MCPZveTh7-Qhb5wUw2IUfudNJqOQoJQfbYACBPKVeqq1jY3z4a8=w2400", 
     category: "exterior",
     title: "Exterior Home Transformation"
   },
   {
     id: 3,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczM_hBaruOaWDZ4I8JnJ-VmqeooStoqgH9NUX04gaMSNseoNQXAbH0cI3LOCj_ByZd43fXvGH9S9XMKkYYNgQKN2q6erIqi8mkO4EXaOopf5pPQNAGc=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPnuKfdHxsNLEcOOjiuw1jrH1PzKz0A1RTXfFiSV9LZxvUvdf2KI9dsQrh4MdqA1TO6Jgx8bTISjGDJCCflJad3Iah-wGZBxzk2-JrO-mZaeuPJuZ0=w2400", 
     category: "interior",
     title: "Kitchen Cabinet Refinishing"
   },
   {
     id: 4,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczNGqy7K9RQXNe63Y4FhClYPj590tmI08zox_3E0nshLneOJL6WfsSPetVx735KqeLeZdOqgiSIr65UA-LI_QZ8QXTZwiiTy3jmdl7AkdcBcPVUUUTE=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczMXsm2FCF1mxlCL2FyPi9T8VB8uEsk-p-cgmLzkCPy5xXHK_b-9t5iljiBYdMdonnx7oTqNaXTgUobUg3zpJx5OIWOru5pjE-Bk8wGJOj4iZpmaGDM=w2400", 
     category: "exterior",
     title: "Deck Transformation"
   },
   {
     id: 5,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczPP7fAjQDPBsJODTeJAq2mqKrhyf6SQXrN1LRx8XA3jK6pP3gGdR6jsf5yVR2Eanp0XqUZPcNd4cB_hhSotXprOjmQ7yJTfemlurFq_Jcf950vLwrA=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczM7wLK9caudK-p7CJs8N1P4LrMbkQ0q0YLu-KIyhduBC3Tok08vxNM4x65UiOpuBVn2432p88LBxrHwOpktOqcStq6cu12Oj-no1KN4mLswtwdKd7c=w2400",
     category: "commercial",
     title: "Commercial Project"
   },
   {
     id: 6,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOcPNV2uUSxqxgjDKQSBGXg7SQeJwMWSzB3dL9Qg4tq0LNBP2940T34KScBtE45Rfc5Ezp-yyQaDIM-l3wQphOXYoqm0rVu-NqgfsDdMMmL-Vs8JVU=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOcULO5ByttswlWwLQiYkOtgFeT0cMa33ICj8Omh7BulP-zZ2BE2t5D4_dypSkv3Yg3G6aJZBj-ihLJahwQH8zP3nqQgJgn9YsMusqtNq8FWEoegYE=w2400",
     category: "interior",
     title: "Living Room Refresh"
   },
   {
     id: 7,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOvHsLu2XzwxPo5zkMc8ct2TNdV3UBwTVYkhw57WNOQSzSht5yZBLQTXbpLkiCZGbJskgKuVtvphWiyTdi5B3xWT7GAXTqEjdK-cvLqV3vnkEf-xMk=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczM-XazT6A9OuFhdDlpD1tSLZb0s-_mCxJJvZ5GaRWYOCcr7Bo1yvtP0MRD_LwM1PSWDwbhcbT-jSZHNdACkB2ZzzaL0DzSuYacB7oJJoFqL4MKmA8U=w2400",
     category: "interior",
     title: "Interior Transformation"
   },
   {
     id: 8,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczMirX_VShPnTvnl6h8_SYnYGSa3vvFiBktIN5MB8t0f8EGXRafN0taQTMGCAKpv24Ih4uulgFbBspWq4s7SQUg6xK7zVyCpXfD8is9yqZxoSTzPB_Y=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPviA4cwqiRQgKl_9pnQMMO44BJUV-ZA4owFREafzBgEGYQou7N1hJipQPZXyVe5Xf_cngJ8AEFPR_9YrDefzXN1qihV1m6EoM1MIBuMBtvSiy6Fn4=w2400",
     category: "interior",
     title: "Staircase Renovation"
   },
   {
     id: 9,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczN0g4jtVSqTnxXJWGGnlSMGyL66gxAaQB9V8RvMm7y300xz3nDprE13aCXKNCtTvaMJdDYFCWKD2lR_Jdq-Yv_e_R9uCe5uJxxGkQeRBPlUMAR9h5k=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPyeR5EDzGxnoZkcabW8XDXZpaJGodMZhzEkd62n-Hbvsm3UJ_YpzCdmXcOKjGrFfXAzOMPYmbohdv_n4Q14NnPo42CDgl7vkCq7eZG-syP_2VOXeY=w2400",
     category: "commercial",
     title: "Office Transformation"
   },
   {
     id: 10,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczMQOB1ZIQm5c7tmnwMOj6yOgxwhM6q-eE5fsHphlmyjE0hTqRJonXvuXZkvblJe1NsdG_0GcHAGBxU5kOYa0SM7Mzy6v6kbjGsgRhVQEH5sV0IsS9w=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczN2LnF28pp6_QA_UiYYMkW8C8BSJ1gMu-9gAA0gpc1_EDCiPmh7vJLW3Qo8FRKGE1nSoyJBCBmiz-ARJ4AKVDOn9tO-s3sFWh6vrbGIr2z_zNwPDNM=w2400",
     category: "exterior",
     title: "Beautiful Home Exterior"
   },
   {
     id: 11,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczNskiMsCkee0bU4ICcJZ7x4jDheO_edyybAlVA57_GhOjP9W7y3coZqRqCBK5ymkyAtpGGUtpfKYS-ED82IsQAK3UcdIrYCqjljZ0jTE4OpEG0vZ_I=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPuAoGi6gm1AM3ZLAEh8XCdgkiOMkVyDVirOlf2yZk6DsvcLJbNE9C-HZ1E-mbJY4bikMaPSkU9w79mPMUhfXuhhtx_sh74Fz--AiJ5xkVGv10b50U=w2400",
     category: "interior",
     title: "Bathroom Renovation"
   },
   {
     id: 12,
-    src: "https://lh3.googleusercontent.com/pw/AP1GczOmshwoJm-_IxQ--OfyJIASx3FUK_Qxb4XT6kMcdAPrTVKiw4z9HourdzhynHB0bXbgw7zkrVd5fg1TNR6f4CVOiLOraklajWXcmv0LYo01f_cKoYo=w2400",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNm_X84bUL31U9hGPfLbmgZ7O_3pZwyFjVGJiDgUqDdQBRwGi7-rUaMDavkoFYi_xswHxiHkBDuibOj_zB92RMqZsivKRV2U0nNx4Gmb3tPRJBzPAg=w2400",
     category: "exterior",
     title: "Finished Exterior Project"
   }
@@ -106,16 +107,19 @@ const GallerySection = () => {
   useEffect(() => {
     // Preload images
     const preloadImages = async () => {
-      const imagePromises = galleryImages.map((image) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = image.src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
-      
       try {
+        const imagePromises = galleryImages.map((image) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = image.src;
+            img.onload = resolve;
+            img.onerror = (err) => {
+              console.error(`Failed to load image: ${image.src}`, err);
+              reject(err);
+            };
+          });
+        });
+        
         await Promise.all(imagePromises);
         setIsImagesLoaded(true);
       } catch (error) {
@@ -177,28 +181,42 @@ const GallerySection = () => {
       <div className="atomic-circle w-72 h-72 -bottom-32 left-20 border-atomic-orange/30 animate-spin-slow"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-heading">Our Work</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Browse through our gallery of completed projects and get inspired for your next transformation.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="flex justify-center space-x-2 mb-12 overflow-x-auto pb-4">
+        <motion.div 
+          className="flex justify-center space-x-2 mb-12 overflow-x-auto pb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
           {categories.map(category => (
-            <button
+            <motion.button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 transform ${
                 activeCategory === category.id 
                   ? 'bg-atomic-turquoise text-white shadow-lg' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:shadow'
               }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {category.name}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
         
         {!isImagesLoaded ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -209,12 +227,17 @@ const GallerySection = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredImages.map((image, index) => (
-              <div 
+              <motion.div 
                 key={image.id} 
                 className="rounded-xl overflow-hidden shadow-md cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl group"
                 onClick={() => handleImageClick(image.id)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
               >
                 <div className="relative h-64">
                   <img 
@@ -231,28 +254,36 @@ const GallerySection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
         
-        <div className="mt-16">
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <h3 className="text-2xl font-bold mb-6 text-center">Featured Projects</h3>
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {galleryImages.map((image) => (
                 <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <div 
+                    <motion.div 
                       className="rounded-xl overflow-hidden h-64 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
                       onClick={() => handleImageClick(image.id)}
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       <img 
                         src={image.src} 
                         alt={image.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
-                    </div>
+                    </motion.div>
                     <h4 className="text-center mt-2 font-medium">{image.title}</h4>
                   </div>
                 </CarouselItem>
@@ -261,62 +292,78 @@ const GallerySection = () => {
             <CarouselPrevious className="left-0 bg-white/80 hover:bg-white" />
             <CarouselNext className="right-0 bg-white/80 hover:bg-white" />
           </Carousel>
-        </div>
+        </motion.div>
         
         {/* Lightbox Modal with animated transitions */}
-        {selectedImage !== null && (
-          <div 
-            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in"
-            onClick={closeModal}
-          >
-            <div 
-              className="relative max-w-5xl max-h-[90vh] bg-white rounded-xl overflow-hidden shadow-2xl animate-scale-in"
-              onClick={(e) => e.stopPropagation()}
+        <AnimatePresence>
+          {selectedImage !== null && (
+            <motion.div 
+              className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+              onClick={closeModal}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 z-10 bg-gradient-to-b from-black/70 to-transparent text-white">
-                <h3 className="text-lg font-bold">
-                  {galleryImages.find(img => img.id === selectedImage)?.title}
-                </h3>
-                <button 
-                  onClick={closeModal}
-                  className="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/50 transition-colors"
-                  aria-label="Close modal"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-              
-              <img 
-                src={galleryImages.find(img => img.id === selectedImage)?.src} 
-                alt={galleryImages.find(img => img.id === selectedImage)?.title}
-                className="w-full h-auto max-h-[90vh] object-contain"
-              />
-              
-              <div className="absolute inset-x-0 bottom-0 flex justify-between items-center p-4 bg-gradient-to-t from-black/70 to-transparent">
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigateImages('prev');
-                  }}
-                  className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300 hover:scale-110"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigateImages('next');
-                  }}
-                  className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300 hover:scale-110"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+              <motion.div 
+                className="relative max-w-5xl max-h-[90vh] bg-white rounded-xl overflow-hidden shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 z-10 bg-gradient-to-b from-black/70 to-transparent text-white">
+                  <h3 className="text-lg font-bold">
+                    {galleryImages.find(img => img.id === selectedImage)?.title}
+                  </h3>
+                  <motion.button 
+                    onClick={closeModal}
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/50 transition-colors"
+                    aria-label="Close modal"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </motion.button>
+                </div>
+                
+                <img 
+                  src={galleryImages.find(img => img.id === selectedImage)?.src} 
+                  alt={galleryImages.find(img => img.id === selectedImage)?.title}
+                  className="w-full h-auto max-h-[90vh] object-contain"
+                />
+                
+                <div className="absolute inset-x-0 bottom-0 flex justify-between items-center p-4 bg-gradient-to-t from-black/70 to-transparent">
+                  <motion.button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateImages('prev');
+                    }}
+                    className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </motion.button>
+                  <motion.button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateImages('next');
+                    }}
+                    className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </motion.button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

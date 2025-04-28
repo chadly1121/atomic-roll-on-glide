@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -12,10 +12,12 @@ import TrendsSection from '../components/TrendsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import { useToast } from "@/components/ui/use-toast";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('home');
   const { toast } = useToast();
 
   React.useEffect(() => {
@@ -26,6 +28,26 @@ const Index = () => {
         setShowScrollTop(false);
       }
     };
+
+    // Track which section is currently in view
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -80% 0px', // Adjust these values as needed
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section[id]').forEach(section => {
+      sectionObserver.observe(section);
+    });
 
     // Show welcome toast
     setTimeout(() => {
@@ -38,7 +60,10 @@ const Index = () => {
     }, 1500);
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sectionObserver.disconnect();
+    };
   }, [toast]);
 
   const scrollToTop = () => {
@@ -50,7 +75,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar activeSection={activeSection} />
       <HeroSection />
       <AboutSection />
       <ServicesSection />
@@ -63,17 +88,24 @@ const Index = () => {
       <Footer />
       
       {/* Scroll to Top Button with enhanced animation */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 p-3 bg-atomic-turquoise text-white rounded-full shadow-lg hover:bg-atomic-turquoise/90 transition-all duration-300 animate-bounce hover:animate-none hover:scale-110 focus:outline-none"
-          aria-label="Scroll to top"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-          </svg>
-        </button>
-      )}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-40 p-3 bg-atomic-turquoise text-white rounded-full shadow-lg hover:bg-atomic-orange transition-all duration-300 focus:outline-none"
+            aria-label="Scroll to top"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
