@@ -1,5 +1,7 @@
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Switch } from "@/components/ui/switch";
+import { VolumeX, Volume2 } from "lucide-react";
 
 interface Service {
   id: number;
@@ -83,6 +85,40 @@ const services: Service[] = [
 ];
 
 const ServicesSection = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const goNanoSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleToggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  // Detect when user scrolls to GoNano section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // When GoNano section enters viewport and user has clicked to unmute
+        if (entries[0].isIntersecting && !isMuted && videoRef.current) {
+          videoRef.current.muted = false;
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (goNanoSectionRef.current) {
+      observer.observe(goNanoSectionRef.current);
+    }
+
+    return () => {
+      if (goNanoSectionRef.current) {
+        observer.unobserve(goNanoSectionRef.current);
+      }
+    };
+  }, [isMuted]);
+
   return (
     <section id="services" className="py-24 relative overflow-hidden">
       <div className="atomic-starburst w-72 h-72 top-20 left-20"></div>
@@ -152,7 +188,7 @@ const ServicesSection = () => {
         </div>
         
         {/* GoNano Products Section */}
-        <div id="gonano" className="mt-24 pt-16 border-t border-gray-200 scroll-mt-24">
+        <div id="gonano" ref={goNanoSectionRef} className="mt-24 pt-16 border-t border-gray-200 scroll-mt-24">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="section-heading">GoNano Products</h2>
             <p className="max-w-2xl mx-auto text-lg text-gray-600">
@@ -210,8 +246,9 @@ const ServicesSection = () => {
                 <span className="relative z-10">Learn More About GoNano</span>
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
+            <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in relative">
               <video 
+                ref={videoRef}
                 autoPlay 
                 loop 
                 muted 
@@ -219,11 +256,21 @@ const ServicesSection = () => {
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
                 poster="https://gonano.com/wp-content/uploads/2022/10/beading.jpg"
               >
-                <source src="https://gonano.com/wp-content/uploads/2022/01/Small-Indoor-window-H2O-Specifically.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dxqfou8jh/video/upload/v1745874209/No_stress_no_mess_Vertical_Format_lgznrn.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="p-6 bg-white">
-                <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
+                <div className="flex items-center justify-between">
+                  <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
+                  <div className="flex items-center gap-2">
+                    {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                    <Switch
+                      checked={!isMuted}
+                      onCheckedChange={handleToggleMute}
+                      aria-label={isMuted ? "Unmute video" : "Mute video"}
+                    />
+                  </div>
+                </div>
                 <p className="text-gray-600">
                   Contact us today to learn how GoNano products can protect your surfaces and add value to your property.
                 </p>
