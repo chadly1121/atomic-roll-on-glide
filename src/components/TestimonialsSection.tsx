@@ -20,7 +20,7 @@ interface Testimonial {
   date?: string;
 }
 
-// Real Roll On Painting reviews from Google
+// Actual Roll On Painting reviews from Google
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -69,11 +69,11 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 6,
-    name: "Mark Reynolds",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjUNKkOWPIVljhKXP_9TpC8e_0lULVh9IgznTTUK87E-l14=s120-c-rp-mo-br100",
-    content: "The team at Roll On Painting did a fantastic job with attention to detail. They transformed our cottage into a beautiful home. I highly recommend Chad and his team.",
+    name: "Ilana Prince",
+    image: "https://lh3.googleusercontent.com/a/ACg8ocJ9k7C9FpFnh5d5K5Qlu5rvf5bb4x9eIh06rC0H2Ewg=s120-c-rp-mo-br100",
+    content: "Super professional, great communication, quality workmanship and very responsive. They did a great job painting the interior of our cottage. I highly recommend them.",
     rating: 5,
-    location: "Muskoka, ON",
+    location: "Port Sydney, ON",
     date: "8 months ago"
   }
 ];
