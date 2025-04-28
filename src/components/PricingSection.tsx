@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PricingCalculator from './PricingCalculator';
 
 interface PricingTier {
   id: number;
@@ -119,13 +118,28 @@ const PricingSection = () => {
           ))}
         </div>
         
-        {/* Pricing Calculator */}
+        {/* PriceGuide.ai Pricing Calculator */}
         <div className="mt-16">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold mb-2">Pricing Calculator</h3>
             <p className="text-gray-600">Get an instant estimate for your project</p>
           </div>
-          <PricingCalculator />
+          <div className="max-w-5xl mx-auto">
+            <iframe 
+              src="https://app.priceguide.ai/estimator/reckirOLZi1hciaNn" 
+              width="100%" 
+              height="75vh" 
+              style={{ 
+                width: "100%", 
+                height: "75vh", 
+                borderTop: "1px solid #999", 
+                borderBottom: "1px solid #999" 
+              }} 
+              frameBorder="0" 
+              title="Roll On Painting Pricing Calculator"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
