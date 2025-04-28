@@ -68,7 +68,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            src="https://lh3.googleusercontent.com/pw/AP1GczP3X-Blh9T480BYXnhFbWGEk67a_vk4aoVAoWDUzQ69iQMjtD1N-DY9WBPDzrvecsL7WoXdUQ2gX-KFdkmKooc3J1HcY4bOOvjPKGX7D8l_U_Cz5MgNH52cuJ5dm2VOM1P_V5Q8dPoRMXo-jepH9895=w1434-h277-s-no-gm" 
+            src="https://lh3.googleusercontent.com/pw/AP1GczMynoRqIQh_WWESc3V53UKdXMhjlp0_6aBkEJnNL0xCKnNqpHkP65-YOLUuLYkcpQSYQcvK3uYWhsaFp_FK0zwtmJmWsocC48q-gJcUiU0j4_KP-kU=w2400" 
             alt="Roll On Painting Muskoka Logo" 
             className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
