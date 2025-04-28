@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Switch } from "@/components/ui/switch";
 import { VolumeX, Volume2 } from "lucide-react";
@@ -96,11 +95,9 @@ const ServicesSection = () => {
     }
   };
 
-  // Detect when user scrolls to GoNano section
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        // When GoNano section enters viewport and user has clicked to unmute
         if (entries[0].isIntersecting && !isMuted && videoRef.current) {
           videoRef.current.muted = false;
         }
@@ -187,7 +184,6 @@ const ServicesSection = () => {
           </a>
         </div>
         
-        {/* GoNano Products Section */}
         <div id="gonano" ref={goNanoSectionRef} className="mt-24 pt-16 border-t border-gray-200 scroll-mt-24">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="section-heading">GoNano Products</h2>
@@ -246,20 +242,22 @@ const ServicesSection = () => {
                 <span className="relative z-10">Learn More About GoNano</span>
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in relative">
-              <video 
-                ref={videoRef}
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
-                poster="https://gonano.com/wp-content/uploads/2022/10/beading.jpg"
-              >
-                <source src="https://res.cloudinary.com/dxqfou8jh/video/upload/v1745874209/No_stress_no_mess_Vertical_Format_lgznrn.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="p-6 bg-white">
+            <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in relative flex justify-center">
+              <div className="w-3/4 md:w-2/3 lg:w-1/2 aspect-[9/16] rounded-xl overflow-hidden">
+                <video 
+                  ref={videoRef}
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-contain bg-black"
+                  poster="https://gonano.com/wp-content/uploads/2022/10/beading.jpg"
+                >
+                  <source src="https://res.cloudinary.com/dxqfou8jh/video/upload/v1745874209/No_stress_no_mess_Vertical_Format_lgznrn.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6 bg-white w-full">
                 <div className="flex items-center justify-between">
                   <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
                   <div className="flex items-center gap-2">
