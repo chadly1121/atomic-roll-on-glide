@@ -1,12 +1,11 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState<string>("");
   
   // This defines the area polygon for the Muskoka service area
   const serviceAreaCoordinates = [
@@ -19,20 +18,10 @@ const ServiceAreaMap = () => {
   ];
   
   useEffect(() => {
-    if (!mapContainer.current) return;
+    if (!mapContainer.current || map.current) return;
     
-    // Check if we already have a token in localStorage
-    const savedToken = localStorage.getItem('mapbox_token');
-    if (savedToken) {
-      setMapboxToken(savedToken);
-    }
-  }, []);
-  
-  useEffect(() => {
-    if (!mapboxToken || !mapContainer.current || map.current) return;
-    
-    // Initialize map
-    mapboxgl.accessToken = mapboxToken;
+    // Use a default public token
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
     
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
@@ -97,44 +86,7 @@ const ServiceAreaMap = () => {
       map.current?.remove();
       map.current = null;
     };
-  }, [mapboxToken]);
-  
-  const handleTokenSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const token = formData.get('token') as string;
-    
-    if (token) {
-      localStorage.setItem('mapbox_token', token);
-      setMapboxToken(token);
-    }
-  };
-  
-  if (!mapboxToken) {
-    return (
-      <div className="bg-white p-6 rounded-xl shadow-md">
-        <h3 className="text-xl font-bold mb-4">Service Area Map Setup</h3>
-        <p className="mb-4">To display the service area map, please enter your Mapbox public token:</p>
-        <form onSubmit={handleTokenSubmit} className="space-y-4">
-          <div>
-            <input 
-              type="text"
-              name="token"
-              placeholder="Enter your Mapbox public token"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <p className="text-xs mt-1 text-gray-500">
-              Get your free token at <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-atomic-turquoise hover:underline">mapbox.com</a>
-            </p>
-          </div>
-          <button type="submit" className="atomic-button-secondary w-full">
-            <span className="relative z-10">Set Token</span>
-          </button>
-        </form>
-      </div>
-    );
-  }
+  }, []);
   
   return (
     <div className="rounded-xl overflow-hidden shadow-lg relative">
