@@ -20,8 +20,8 @@ const ServiceAreaMap = () => {
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
     
-    // Use a default public token
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+    // Use the provided Mapbox token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhZGx5MTEyMTExMjEiLCJhIjoiY21hMW5ncGpoMTRydTJyb2s1ZGEzZjNvOSJ9.3dOdlxYDu7hjPshi-JACmw';
     
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
