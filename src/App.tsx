@@ -10,7 +10,14 @@ import NotFound from "./pages/NotFound";
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

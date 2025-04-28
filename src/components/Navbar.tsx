@@ -57,13 +57,12 @@ const Navbar = () => {
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center">
-          <div className="h-12 w-12 rounded-full bg-atomic-turquoise flex items-center justify-center overflow-hidden">
-            <span className="text-white font-bold text-xl">R</span>
-          </div>
-          <div className="ml-2">
-            <h1 className="text-xl font-bold text-atomic-navy">Roll On <span className="text-atomic-turquoise">Painting</span></h1>
-          </div>
+        <a href="#" className="flex items-center hover:opacity-90 transition-opacity">
+          <img 
+            src="https://lh3.googleusercontent.com/pw/AP1GczPXpne0XfmHhoZNF5sGV1sOfoR1ZE3n3kxyUK2YwQcdm8ssD2x-gBuDNR1EJ6pB4OGlsoYQPC6OQnoe2D-YWeD59ZavgYt-zaK9tpTOLwwlEq2wmHcb_1VZzRPO3WE1YJ0LyYRRKEC8c6JpNGBFLH0pYw=w1200-h600-s-no-gm" 
+            alt="Roll On Painting Muskoka Logo" 
+            className="h-12 w-auto"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -72,7 +71,7 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="nav-link"
+              className="nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full"
               onClick={handleNavLinkClick}
             >
               {link.name}
@@ -84,17 +83,22 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a 
             href="#contact" 
-            className="atomic-button"
+            className="atomic-button group overflow-hidden relative border-2 border-atomic-orange transition-all duration-300 hover:shadow-lg"
             onClick={handleNavLinkClick}
           >
-            Request A Quote
+            <span className="relative z-10 flex items-center group-hover:translate-x-1 transition-transform duration-300">
+              Request A Quote
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-          className="md:hidden text-atomic-navy focus:outline-none"
+          className="md:hidden text-atomic-navy focus:outline-none transform transition-transform hover:scale-110"
           aria-label="Toggle menu"
         >
           <svg 
@@ -116,13 +120,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white shadow-lg animate-fade-in">
           <nav className="flex flex-col px-4 py-2">
             {navLinks.map(link => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="py-3 border-b border-gray-100 last:border-0 font-poppins"
+                className="py-3 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors"
                 onClick={handleNavLinkClick}
               >
                 {link.name}
@@ -130,10 +134,15 @@ const Navbar = () => {
             ))}
             <a 
               href="#contact" 
-              className="atomic-button-secondary mt-4 mb-2 text-center"
+              className="atomic-button-secondary mt-4 mb-2 text-center group"
               onClick={handleNavLinkClick}
             >
-              Request A Quote
+              <span className="relative z-10 flex items-center justify-center">
+                Request A Quote
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </a>
           </nav>
         </div>
