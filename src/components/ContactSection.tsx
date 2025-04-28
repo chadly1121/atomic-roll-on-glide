@@ -5,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
-import ServiceAreaMap from './ServiceAreaMap';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -276,19 +275,6 @@ const ContactSection = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-        
-        <div className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold">Our Service Area</h3>
-            <p className="max-w-2xl mx-auto text-gray-300 mt-2">
-              We proudly serve the Muskoka region and surrounding areas from Dwight to Parry Sound, 
-              down to Collingwood and Barrie, and back up Highway 11 to Highway 118.
-            </p>
-          </div>
-          <div className="max-w-5xl mx-auto">
-            <ServiceAreaMap />
           </div>
         </div>
       </div>
