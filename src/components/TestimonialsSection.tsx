@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Carousel,
@@ -220,7 +221,7 @@ const TestimonialsSection = () => {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="https://www.google.com/maps/place/Roll+On+Painting/@45.2042095,-79.3084404,17z/data=!4m8!3m7!1s0x4d2a81346c7e41b5:0x674c0540cc9af033!8m2!3d45.2042095!4d-79.3084404!9m1!1b1!16s%2Fg%2F11c0w730_g?entry=ttu" 
+            href="https://g.page/r/CTad7LzFXozZEAE/review" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-white text-atomic-navy px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
