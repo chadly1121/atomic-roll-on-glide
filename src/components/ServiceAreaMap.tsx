@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -12,6 +11,9 @@ const ServiceAreaMap = () => {
   // Port Sydney, Ontario coordinates (836 Greer Road)
   const officeLoc: [number, number] = [-79.2784, 45.1932]; // 836 Greer Road, Port Sydney
   
+  // Adjusted center for the service area circle to include Barrie and Collingwood
+  const serviceAreaCenter: [number, number] = [-79.7000, 44.5000]; // Adjusted center point to include Barrie and Collingwood
+  
   const initializeMap = () => {
     if (!mapContainer.current || map.current) return;
     
@@ -21,8 +23,8 @@ const ServiceAreaMap = () => {
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: officeLoc,
-      zoom: 8,
+      center: [-79.5000, 44.8000], // Set view center between Port Sydney and Barrie
+      zoom: 7.5, // Zoom out a bit to show the entire service area
       attributionControl: true
     });
     
@@ -32,7 +34,7 @@ const ServiceAreaMap = () => {
       // Create a source for the service area circle
       newMap.addSource('service-area', {
         type: 'geojson',
-        data: createGeoJSONCircle(officeLoc, circleRadius)
+        data: createGeoJSONCircle(serviceAreaCenter, circleRadius)
       });
       
       // Add the fill area
@@ -91,10 +93,16 @@ const ServiceAreaMap = () => {
         .setPopup(new mapboxgl.Popup().setHTML('<p>Huntsville</p>'))
         .addTo(newMap);
         
-      // Add Orillia marker
+      // Add Barrie marker
       new mapboxgl.Marker({ color: '#3b82f6' })
-        .setLngLat([-79.4227, 44.6062])
-        .setPopup(new mapboxgl.Popup().setHTML('<p>Orillia</p>'))
+        .setLngLat([-79.6903, 44.3894])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Barrie</p>'))
+        .addTo(newMap);
+      
+      // Add Collingwood marker
+      new mapboxgl.Marker({ color: '#3b82f6' })
+        .setLngLat([-80.2167, 44.5008])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Collingwood</p>'))
         .addTo(newMap);
     });
     
@@ -156,7 +164,7 @@ const ServiceAreaMap = () => {
         <h3 className="font-bold text-sm">70km Service Radius</h3>
       </div>
       <div className="absolute bottom-2 right-2 bg-white/80 px-3 py-1 rounded-md text-xs">
-        Centered on Port Sydney, Ontario
+        Coverage includes Port Sydney, Barrie and Collingwood
       </div>
     </div>
   );
