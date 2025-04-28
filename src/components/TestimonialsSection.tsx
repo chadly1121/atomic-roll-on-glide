@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Testimonial {
@@ -85,7 +86,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-atomic-navy text-white">
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
       <div className="atomic-circle w-80 h-80 -top-40 right-20 border-atomic-orange/30 animate-spin-slow"></div>
       <div className="atomic-circle w-64 h-64 -bottom-32 left-20 border-atomic-turquoise/40 animate-spin-slow"></div>
       
@@ -172,7 +173,7 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                className={`h-3 w-3 rounded-full mx-1 transition-all duration-300 ${
                   activeIndex === index ? 'bg-atomic-turquoise scale-125' : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
