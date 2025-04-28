@@ -25,13 +25,11 @@ const BlogPostPage = () => {
     }
   }, [post, toast]);
 
-  const handleBackToBlog = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleBackToBlog = () => {
     navigate('/blog');
   };
 
-  const handleBackToHome = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleBackToHome = () => {
     navigate('/');
   };
 
@@ -44,8 +42,7 @@ const BlogPostPage = () => {
           {post ? (
             <div className="max-w-3xl mx-auto">
               <div className="flex space-x-4 mb-6">
-                <Link 
-                  to="/blog" 
+                <button 
                   onClick={handleBackToBlog}
                   className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
                 >
@@ -53,10 +50,9 @@ const BlogPostPage = () => {
                     <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
                   </svg>
                   Back to Blog
-                </Link>
+                </button>
 
-                <Link 
-                  to="/" 
+                <button 
                   onClick={handleBackToHome}
                   className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
                 >
@@ -64,7 +60,7 @@ const BlogPostPage = () => {
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                   </svg>
                   Back to Home
-                </Link>
+                </button>
               </div>
               
               <div className="prose prose-lg max-w-none">
@@ -117,21 +113,26 @@ const BlogPostPage = () => {
                     .filter(relatedPost => relatedPost.id !== post.id)
                     .slice(0, 2)
                     .map(relatedPost => (
-                      <Link key={relatedPost.id} to={`/blog/${relatedPost.id}`} className="group">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-24 h-24 flex-shrink-0 rounded-md overflow-hidden">
-                            <img 
-                              src={relatedPost.image} 
-                              alt={relatedPost.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                          <div>
-                            <h4 className="font-bold group-hover:text-atomic-turquoise transition-colors">{relatedPost.title}</h4>
-                            <p className="text-sm text-gray-500 mt-1">{relatedPost.date}</p>
-                          </div>
+                      <div 
+                        key={relatedPost.id} 
+                        onClick={() => {
+                          navigate(`/blog/${relatedPost.id}`);
+                          window.scrollTo(0, 0);
+                        }} 
+                        className="group flex items-start space-x-4 cursor-pointer"
+                      >
+                        <div className="w-24 h-24 flex-shrink-0 rounded-md overflow-hidden">
+                          <img 
+                            src={relatedPost.image} 
+                            alt={relatedPost.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
                         </div>
-                      </Link>
+                        <div>
+                          <h4 className="font-bold group-hover:text-atomic-turquoise transition-colors">{relatedPost.title}</h4>
+                          <p className="text-sm text-gray-500 mt-1">{relatedPost.date}</p>
+                        </div>
+                      </div>
                     ))}
                 </div>
               </div>
@@ -141,18 +142,18 @@ const BlogPostPage = () => {
               <h2 className="text-2xl font-bold">Blog Post Not Found</h2>
               <p className="mt-4">The post you're looking for doesn't exist or has been removed.</p>
               <div className="flex justify-center space-x-4 mt-8">
-                <Link 
-                  to="/blog" 
+                <button 
+                  onClick={handleBackToBlog}
                   className="inline-block atomic-button-secondary"
                 >
                   <span className="relative z-10">Return to Blog</span>
-                </Link>
-                <Link 
-                  to="/" 
+                </button>
+                <button 
+                  onClick={handleBackToHome}
                   className="inline-block atomic-button"
                 >
                   <span className="relative z-10">Return to Home</span>
-                </Link>
+                </button>
               </div>
             </div>
           )}
