@@ -7,7 +7,17 @@ import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
-import { useMediaQuery } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
+
+// Define the type for draw events
+interface DrawCreateEvent {
+  features: Array<{
+    geometry: {
+      coordinates: number[][][];
+      type: string;
+    };
+  }>;
+}
 
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -15,7 +25,7 @@ const ServiceAreaMap = () => {
   const draw = useRef<any>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [drawnArea, setDrawnArea] = useState<any>(null);
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useIsMobile();
   
   // This defines the expanded area polygon for the Muskoka service area
   const serviceAreaCoordinates = [
@@ -121,20 +131,23 @@ const ServiceAreaMap = () => {
     newMap.addControl(new mapboxgl.NavigationControl(), 'top-right');
     
     // Setup drawing-related event listeners
-    newMap.on('draw.create', (e) => {
-      setDrawnArea(e.features[0]);
-      setIsDrawing(false);
-      
-      // Update the service area on the map
-      if (newMap.getSource('service-area')) {
-        newMap.getSource('service-area').setData({
-          type: 'Feature',
-          geometry: e.features[0].geometry,
-          properties: {}
-        });
+    newMap.on('draw.create', (e: DrawCreateEvent) => {
+      if (e.features && e.features.length > 0) {
+        setDrawnArea(e.features[0]);
+        setIsDrawing(false);
+        
+        // Update the service area on the map
+        if (newMap.getSource('service-area')) {
+          const source = newMap.getSource('service-area') as mapboxgl.GeoJSONSource;
+          source.setData({
+            type: 'Feature',
+            geometry: e.features[0].geometry,
+            properties: {}
+          });
+        }
+        
+        console.log('Drawn coordinates:', JSON.stringify(e.features[0].geometry.coordinates));
       }
-      
-      console.log('Drawn coordinates:', JSON.stringify(e.features[0].geometry.coordinates));
     });
     
     newMap.on('draw.delete', () => {
@@ -142,7 +155,8 @@ const ServiceAreaMap = () => {
       
       // Restore the original service area
       if (newMap.getSource('service-area')) {
-        newMap.getSource('service-area').setData({
+        const source = newMap.getSource('service-area') as mapboxgl.GeoJSONSource;
+        source.setData({
           type: 'Feature',
           geometry: {
             type: 'Polygon',
