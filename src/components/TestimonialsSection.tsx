@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare } from "lucide-react";
 
@@ -95,58 +94,42 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {testimonials.slice(0, 6).map((testimonial) => (
+            <Card key={testimonial.id} className="bg-white/10 backdrop-blur-sm border-0 h-full">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="shrink-0">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="rounded-full w-12 h-12 object-cover border-2 border-atomic-turquoise"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
+                    <div className="flex items-center gap-1">
+                      <span className="text-xs text-yellow-400 font-medium">5/5 on Google reviews</span>
+                      <span className="text-xs text-gray-300 ml-1">• {testimonial.location} • {testimonial.date}</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-200">"{testimonial.content}"</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="mt-10 text-center">
+          <a 
+            href="https://g.page/r/CTad7LzFXozZEAE/review" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-atomic-turquoise hover:text-atomic-orange transition-colors"
           >
-            <CarouselContent className="-ml-4">
-              {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="bg-white/10 backdrop-blur-sm border-0 h-full">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="shrink-0">
-                          <img 
-                            src={testimonial.image} 
-                            alt={testimonial.name}
-                            className="rounded-full w-12 h-12 object-cover border-2 border-atomic-turquoise"
-                          />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
-                          <div className="flex items-center gap-1">
-                            <span className="text-xs text-yellow-400 font-medium">5/5 on Google reviews</span>
-                            <span className="text-xs text-gray-300 ml-1">• {testimonial.location} • {testimonial.date}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-200">"{testimonial.content}"</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center gap-2 mt-8">
-              <CarouselPrevious className="relative inset-0 translate-y-0 bg-atomic-turquoise hover:bg-atomic-turquoise/80 border-0" />
-              <CarouselNext className="relative inset-0 translate-y-0 bg-atomic-turquoise hover:bg-atomic-turquoise/80 border-0" />
-            </div>
-          </Carousel>
-          
-          <div className="mt-10 text-center">
-            <a 
-              href="https://g.page/r/CTad7LzFXozZEAE/review" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-atomic-turquoise hover:text-atomic-orange transition-colors"
-            >
-              <MessageSquare className="h-5 w-5" /> 
-              <span className="font-semibold">View All Google Reviews</span>
-            </a>
-          </div>
+            <MessageSquare className="h-5 w-5" /> 
+            <span className="font-semibold">View All Google Reviews</span>
+          </a>
         </div>
       </div>
     </section>
