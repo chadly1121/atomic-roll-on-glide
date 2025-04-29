@@ -10,11 +10,20 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-// Sample gallery images - you can replace these with your uploaded images
+// Updated gallery images with client's actual project photos
 const galleryImages = [
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220531_120614527_bbb3te.jpg",
-  "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1470&auto=format&fit=crop"
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941177/1000000519_vxsvyh.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240320_114244609_wvn8ru.jpg", 
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941073/PXL_20240209_150136935_ai7mgs.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941017/PXL_20221031_143749288_lpjtju.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940981/PXL_20220729_194141640_nznwhm.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940978/PXL_20220511_190838626_erdkwk.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940774/IMG_20181206_082735_azfv0p.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940773/IMG_20181119_132931_nljipa.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6195_temgmp.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1121_sgh9qw.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940692/IMG_1224_b4bqib.jpg",
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940662/PXL_20241017_182116190_gbtvla.jpg"
 ];
 
 const HeroSection = () => {
