@@ -1,7 +1,21 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Atom, FileImage } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+
+// Sample gallery images - you can replace these with your uploaded images
+const galleryImages = [
+  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220531_120614527_bbb3te.jpg",
+  "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1470&auto=format&fit=crop"
+];
 
 const HeroSection = () => {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -79,8 +93,24 @@ const HeroSection = () => {
           
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl transform hover:rotate-0 transition-transform duration-500 border-4 border-atomic-orange/20">
-              <img alt="Roll On Painting Project" className="w-full h-auto object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220531_120614527_bbb3te.jpg" />
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-atomic-orange/20">
+              <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll>
+                <CarouselContent>
+                  {galleryImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1">
+                        <img 
+                          alt={`Roll On Painting Project ${index + 1}`} 
+                          className="w-full h-[400px] object-cover transition-all duration-300" 
+                          src={image}
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2 bg-atomic-turquoise hover:bg-atomic-turquoise/80 text-white border-0" />
+                <CarouselNext className="right-2 bg-atomic-orange hover:bg-atomic-orange/80 text-white border-0" />
+              </Carousel>
             </div>
           </div>
         </div>

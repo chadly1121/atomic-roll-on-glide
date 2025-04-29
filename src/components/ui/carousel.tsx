@@ -17,6 +17,8 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  autoScroll?: boolean
+  autoScrollInterval?: number
 }
 
 type CarouselContextProps = {
@@ -52,6 +54,8 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      autoScroll = false,
+      autoScrollInterval = 5000,
       ...props
     },
     ref
@@ -96,6 +100,17 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
+    // Auto-scrolling functionality
+    React.useEffect(() => {
+      if (!api || !autoScroll) return;
+      
+      const intervalId = setInterval(() => {
+        api.scrollNext();
+      }, autoScrollInterval);
+      
+      return () => clearInterval(intervalId);
+    }, [api, autoScroll, autoScrollInterval]);
+
     React.useEffect(() => {
       if (!api || !setApi) {
         return
@@ -130,6 +145,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          autoScroll,
+          autoScrollInterval,
         }}
       >
         <div
