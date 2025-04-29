@@ -103,7 +103,7 @@ const HeroSection = () => {
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-atomic-orange/20">
-              <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll autoScrollInterval={2000}>
+              <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll autoScrollInterval={3000}>
                 <CarouselContent>
                   {galleryImages.map((image, index) => (
                     <CarouselItem key={index}>
