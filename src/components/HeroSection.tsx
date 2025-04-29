@@ -73,7 +73,7 @@ const HeroSection = () => {
                 <div className="w-10 h-10 rounded-full bg-atomic-orange text-white flex items-center justify-center font-bold">5</div>
                 <div className="w-10 h-10 rounded-full bg-atomic-turquoise text-white flex items-center justify-center font-bold">★</div>
               </div>
-              <p className="text-sm text-atomic-navy"><span className="font-bold">4.9/5</span> from over 150+ Google reviews</p>
+              <p className="text-sm text-atomic-navy"><span className="font-bold">5/5</span> from Google reviews</p>
             </div>
           </div>
           
