@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Atom } from 'lucide-react';
+import { Atom, FileImage } from 'lucide-react';
+
 const HeroSection = () => {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -12,6 +14,7 @@ const HeroSection = () => {
       });
     }
   };
+  
   return <section id="hero" className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
       {/* Background elements */}
       <div className="atomic-circle w-64 h-64 -top-20 -left-20 border-atomic-orange"></div>
@@ -39,13 +42,19 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
               <a href="#contact" className="atomic-button group border-2 border-atomic-orange" onClick={handleScrollToContact}>
                 <span className="relative z-10 flex items-center">
                   Request A Quote
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
+                </span>
+              </a>
+              <a href="#contact" className="atomic-button-secondary group border-2 border-atomic-turquoise" onClick={handleScrollToContact}>
+                <span className="relative z-10 flex items-center">
+                  <FileImage className="h-5 w-5 mr-2" />
+                  Send Us Your Plans
                 </span>
               </a>
               <a href="#services" className="atomic-button-secondary border-2 border-atomic-turquoise" onClick={e => {
@@ -78,4 +87,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;

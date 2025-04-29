@@ -1,10 +1,12 @@
+
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import { Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Linkedin, MapPin, Phone, Mail, FileImage } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -16,12 +18,24 @@ const ContactSection = () => {
     message: '',
   });
   
+  const [file, setFile] = useState<File | null>(null);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
+  };
+  
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+      toast({
+        title: "File Uploaded",
+        description: `${e.target.files[0].name} has been attached to your request.`,
+      });
+    }
   };
   
   const handleServiceChange = (value: string) => {
@@ -36,6 +50,7 @@ const ContactSection = () => {
     
     // In a real implementation, you would send the form data to your server
     console.log('Form submitted:', formData);
+    console.log('File attached:', file);
     
     // Show success toast
     toast({
@@ -51,6 +66,7 @@ const ContactSection = () => {
       service: '',
       message: '',
     });
+    setFile(null);
   };
 
   return (
@@ -133,6 +149,36 @@ const ContactSection = () => {
                       <SelectItem value="other">Other Services</SelectItem>
                     </SelectContent>
                   </Select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="plans">Upload Your Plans (Optional)</Label>
+                  <div className="flex items-center gap-2">
+                    <label htmlFor="plans" className="flex-1">
+                      <div className="border border-gray-300 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-50 transition-colors flex items-center gap-2">
+                        <FileImage className="h-5 w-5 text-atomic-turquoise" />
+                        <span>{file ? file.name : "Choose file..."}</span>
+                      </div>
+                      <input 
+                        type="file" 
+                        id="plans" 
+                        className="sr-only" 
+                        accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                        onChange={handleFileChange}
+                      />
+                    </label>
+                    {file && (
+                      <Button 
+                        type="button" 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={() => setFile(null)}
+                      >
+                        Clear
+                      </Button>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-500">Upload blueprints, plans or photos (PDF, DOC, PNG, JPG)</p>
                 </div>
                 
                 <div className="space-y-2">
