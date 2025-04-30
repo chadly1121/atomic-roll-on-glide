@@ -1,13 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Using direct image URLs from your shared Google Photos links
@@ -258,41 +251,6 @@ const GallerySection = () => {
             ))}
           </div>
         )}
-        
-        <motion.div 
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <h3 className="text-2xl font-bold mb-6 text-center">Featured Projects</h3>
-          <Carousel className="w-full max-w-4xl mx-auto">
-            <CarouselContent>
-              {galleryImages.map((image) => (
-                <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <motion.div 
-                      className="rounded-xl overflow-hidden h-64 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-                      onClick={() => handleImageClick(image.id)}
-                      whileHover={{ y: -5, scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </motion.div>
-                    <h4 className="text-center mt-2 font-medium">{image.title}</h4>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0 bg-white/80 hover:bg-white" />
-            <CarouselNext className="right-0 bg-white/80 hover:bg-white" />
-          </Carousel>
-        </motion.div>
         
         {/* Lightbox Modal with animated transitions */}
         <AnimatePresence>
