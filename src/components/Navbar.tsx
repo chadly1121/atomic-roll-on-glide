@@ -53,10 +53,15 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
       if (href.startsWith('#')) {
         const element = document.querySelector(href);
         if (element) {
-          window.scrollTo({
-            top: element.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
           });
+          
+          // Add a small delay before closing the mobile menu to ensure scroll starts
+          setTimeout(() => {
+            setMobileMenuOpen(false);
+          }, 300);
         }
       }
     } else {
@@ -67,8 +72,6 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
         navigate(`/${href}`);
       }
     }
-    
-    setMobileMenuOpen(false);
   };
 
   const handleLogoClick = (e: React.MouseEvent) => {
