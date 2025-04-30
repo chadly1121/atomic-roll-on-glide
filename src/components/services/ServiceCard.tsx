@@ -28,7 +28,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
   
   return (
     <div className="retro-card group hover-lift transform transition-all duration-500">
-      <div className="h-48 overflow-hidden">
+      <div className="h-64 overflow-hidden">
         <img 
           src={service.image} 
           alt={service.title} 
