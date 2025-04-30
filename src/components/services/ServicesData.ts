@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -142,6 +141,18 @@ export const services: Service[] = [
     title: "Power & Soft Washing",
     description: "Professional cleaning services to remove dirt, grime, mold, and mildew from your exterior surfaces.",
     icon: "💦",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866858/PXL_20231123_170616012_ynrtrl.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866858/PXL_20231123_170616012_ynrtrl.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941177/1000000519_vxsvyh.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941069/PXL_20231123_170616012_k1wpqo.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941069/PXL_20231123_170900155_fapupa.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941023/PXL_20230616_182041267_mr0n5a.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940950/IMG_20221026_105857_01_bjzrtv.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940759/MVIMG_20180927_123116_zozkyy.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940723/IMG_4004_ragatu.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3999_dcvksq.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866856/PXL_20230922_165011996_2_xjugpt.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866856/PXL_20230923_191348940_2_pu3mmv.jpg"
+    ]
   }
 ];
