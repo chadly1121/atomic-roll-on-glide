@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -7,7 +6,18 @@ export const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with our premium interior painting services, featuring expert color consultation and flawless finishes.",
     icon: "🏠",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866782/IMG_5202_dc1oyk.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240504_135021045_xzxdrq.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240501_164116367_w3gee6.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941072/PXL_20240209_164221623.PANO_gvzejd.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941073/PXL_20240209_150136935_ai7mgs.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941022/PXL_20230602_180644260_w59tb3.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941017/PXL_20221031_143749288_lpjtju.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940978/PXL_20220622_151513914_hibdbc.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940725/IMG_5202_zxnacz.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940725/IMG_5153_s81or7.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940724/IMG_5082_d2kzpu.jpg"
+    ]
   },
   {
     id: 2,
