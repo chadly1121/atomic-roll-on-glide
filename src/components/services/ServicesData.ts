@@ -152,7 +152,13 @@ export const services: Service[] = [
     title: "Institutional Painting",
     description: "Our specialized institutional painting services for schools, hospitals, and government buildings meet all regulatory requirements.",
     icon: "🏫",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866778/IMG_3395_ub753y.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866778/IMG_3395_ub753y.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3394_l7ndu1.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940713/IMG_3395_s05dpy.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1121_sgh9qw.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940690/IMG_1009_vcw5il.jpg"
+    ]
   },
   {
     id: 7,

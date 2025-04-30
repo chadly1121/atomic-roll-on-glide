@@ -48,9 +48,6 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-// Adding the Dialog component to make Dialog.Close work
-Dialog.Close = DialogClose;
-
 const DialogHeader = ({
   className,
   ...props
@@ -105,6 +102,9 @@ const DialogDescription = React.forwardRef<
   />
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
+
+// Properly add the Close to the Dialog namespace
+Object.assign(Dialog, { Close: DialogClose })
 
 export {
   Dialog,
