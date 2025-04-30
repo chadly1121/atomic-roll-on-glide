@@ -89,7 +89,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
                 </Carousel>
                 
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center z-10">
-                  <DialogClose className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300">
+                  <DialogClose className="px-6 py-2 rounded-full bg-gradient-to-r from-atomic-turquoise to-atomic-orange backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300">
                     <ArrowLeft className="w-4 h-4 mr-1" />
                     Back
                   </DialogClose>

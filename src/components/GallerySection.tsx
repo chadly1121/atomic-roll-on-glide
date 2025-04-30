@@ -277,7 +277,7 @@ const GallerySection = () => {
                   </h3>
                   <motion.button 
                     onClick={closeModal}
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/50 transition-colors"
+                    className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-r from-atomic-turquoise to-atomic-orange backdrop-blur-sm text-white hover:bg-white/50 transition-colors"
                     aria-label="Close modal"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -300,7 +300,7 @@ const GallerySection = () => {
                       e.stopPropagation();
                       navigateImages('prev');
                     }}
-                    className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -311,7 +311,7 @@ const GallerySection = () => {
                       e.stopPropagation();
                       navigateImages('next');
                     }}
-                    className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-gradient-to-r from-atomic-orange/20 to-atomic-orange backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
