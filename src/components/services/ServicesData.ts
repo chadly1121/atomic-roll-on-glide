@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -9,6 +8,7 @@ export const services: Service[] = [
     icon: "🏠",
     image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941018/PXL_20221031_170158104_he7az5.jpg",
     galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940809/image3_smxknm.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240501_164116367_w3gee6.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240504_135021045_xzxdrq.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941072/PXL_20240209_164221623.PANO_gvzejd.jpg",
@@ -192,7 +192,14 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style to your spaces with our professional wallpaper installation services.",
     icon: "🖼️",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866786/IMG_6169_jx9rlx.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866786/IMG_6169_jx9rlx.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940741/IMG_6179_wqdbz7.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940741/IMG_6169_wjchba.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940702/IMG_2827_mpwzo9.jpg"
+    ]
   },
   {
     id: 9,
