@@ -10,10 +10,11 @@ interface NavLink {
   href: string;
 }
 
+// Update the navLinks array so that Gallery href points to #services instead of #gallery
 const navLinks: NavLink[] = [
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'Gallery', href: '#gallery' },
+  { name: 'Gallery', href: '#services' },  // Changed from #gallery to #services
   { name: 'GoNano', href: '#gonano' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '#blog' },

@@ -77,7 +77,7 @@ const Index = () => {
       <Navbar activeSection={activeSection} />
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
+      <ServicesSection /> {/* This now serves as both Services and Gallery */}
       <TestimonialsSection />
       <PricingSection />
       <BlogSection />
