@@ -70,11 +70,6 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
                 </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-4xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
-                <div className="absolute top-4 left-4 z-10">
-                  <DialogClose className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300">
-                    <ArrowLeft className="w-5 h-5" />
-                  </DialogClose>
-                </div>
                 <Carousel className="w-full" opts={{ loop: true, align: "center" }}>
                   <CarouselContent>
                     {service.galleryImages.map((image, index) => (
@@ -92,6 +87,13 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
                   <CarouselPrevious className="left-2 h-10 w-10 bg-atomic-turquoise hover:bg-atomic-turquoise/80 text-white border-0 opacity-70 hover:opacity-100" />
                   <CarouselNext className="right-2 h-10 w-10 bg-atomic-orange hover:bg-atomic-orange/80 text-white border-0 opacity-70 hover:opacity-100" />
                 </Carousel>
+                
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center z-10">
+                  <DialogClose className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300">
+                    <ArrowLeft className="w-4 h-4 mr-1" />
+                    Back
+                  </DialogClose>
+                </div>
               </DialogContent>
             </Dialog>
           )}
