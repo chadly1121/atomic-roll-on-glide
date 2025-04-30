@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogPosts } from '../data/blogData';
+import { Button } from '@/components/ui/button';
+import { PenLine, Plus } from 'lucide-react';
 
 const BlogPage = () => {
   // Group blog posts by category
@@ -16,18 +18,33 @@ const BlogPage = () => {
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="section-heading">Our Blog</h1>
-              <p className="max-w-2xl mx-auto text-lg text-gray-600">
-                Get inspired with the latest painting trends, tips, and insights from our experienced team.
-              </p>
+            <div className="flex justify-between items-center mb-16">
+              <div>
+                <h1 className="section-heading mb-2">Our Blog</h1>
+                <p className="max-w-2xl text-lg text-gray-600">
+                  Get inspired with the latest painting trends, tips, and insights from our experienced team.
+                </p>
+              </div>
+              <Link to="/blog/new">
+                <Button className="flex items-center gap-2">
+                  <Plus size={16} />
+                  New Blog
+                </Button>
+              </Link>
             </div>
             
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6">Latest Articles</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {blogPosts.slice(0, 2).map(post => (
-                  <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow">
+                  <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow relative">
+                    <Link 
+                      to={`/blog/edit/${post.id}`}
+                      className="absolute right-2 top-2 z-10 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+                      title="Edit blog"
+                    >
+                      <PenLine size={16} className="text-atomic-turquoise" />
+                    </Link>
                     <div className="h-60 overflow-hidden">
                       <img 
                         src={post.image} 
@@ -68,7 +85,14 @@ const BlogPage = () => {
                   {blogPosts
                     .filter(post => post.category === category)
                     .map(post => (
-                      <div key={post.id} className="rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <div key={post.id} className="rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
+                        <Link 
+                          to={`/blog/edit/${post.id}`}
+                          className="absolute right-1 top-1 z-10 bg-white/80 p-1.5 rounded-full hover:bg-white transition-colors"
+                          title="Edit blog"
+                        >
+                          <PenLine size={14} className="text-atomic-turquoise" />
+                        </Link>
                         <div className="h-40 overflow-hidden">
                           <img 
                             src={post.image} 

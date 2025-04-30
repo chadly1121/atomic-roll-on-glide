@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
+import { PenLine } from 'lucide-react';
 
 const BlogSection = () => {
   return (
@@ -18,7 +19,14 @@ const BlogSection = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.slice(0, 3).map((post) => (
-            <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow">
+            <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow relative">
+              <Link 
+                to={`/blog/edit/${post.id}`}
+                className="absolute right-2 top-2 z-10 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+                title="Edit blog"
+              >
+                <PenLine size={16} className="text-atomic-turquoise" />
+              </Link>
               <div className="h-48 overflow-hidden">
                 <img 
                   src={post.image} 

@@ -4,7 +4,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogPosts } from '../data/blogData';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+import { Button } from '@/components/ui/button';
+import { PenLine } from 'lucide-react';
 
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,6 +35,10 @@ const BlogPostPage = () => {
     navigate('/');
   };
 
+  const handleEdit = () => {
+    navigate(`/blog/edit/${id}`);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection="blog" />
@@ -41,26 +47,33 @@ const BlogPostPage = () => {
         <div className="container mx-auto px-4">
           {post ? (
             <div className="max-w-3xl mx-auto">
-              <div className="flex space-x-4 mb-6">
-                <button 
-                  onClick={handleBackToBlog}
-                  className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
-                  </svg>
-                  Back to Blog
-                </button>
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex space-x-4">
+                  <button 
+                    onClick={handleBackToBlog}
+                    className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                    </svg>
+                    Back to Blog
+                  </button>
 
-                <button 
-                  onClick={handleBackToHome}
-                  className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                  </svg>
-                  Back to Home
-                </button>
+                  <button 
+                    onClick={handleBackToHome}
+                    className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                    Back to Home
+                  </button>
+                </div>
+                
+                <Button onClick={handleEdit} className="flex items-center gap-2">
+                  <PenLine size={16} />
+                  Edit Post
+                </Button>
               </div>
               
               <div className="prose prose-lg max-w-none">

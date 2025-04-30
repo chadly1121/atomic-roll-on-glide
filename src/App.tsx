@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import BlogEditorPage from "./pages/BlogEditorPage";
 import NotFound from "./pages/NotFound";
 
 // Import lucide icons to make them available globally
@@ -31,6 +32,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
+          <Route path="/blog/new" element={<BlogEditorPage />} />
+          <Route path="/blog/edit/:id" element={<BlogEditorPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

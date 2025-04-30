@@ -1,4 +1,19 @@
 
+/**
+ * Blog data structure
+ * 
+ * This file contains sample blog data. In a real application, this would likely
+ * be stored in a database and retrieved via API calls.
+ * 
+ * The BlogEditor component provides a UI for "editing" these blog posts, but
+ * the changes aren't actually persisted since this is a static file. In a real
+ * application, you would:
+ * 
+ * 1. Create API endpoints for CRUD operations on blog posts
+ * 2. Use a database to store the blog posts
+ * 3. Update the BlogEditor component to make API calls
+ */
+
 export interface BlogPost {
   id: number;
   title: string;
