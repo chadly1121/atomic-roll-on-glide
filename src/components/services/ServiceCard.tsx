@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -70,6 +70,11 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
                 </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-4xl max-h-[90vh] p-0 bg-transparent border-none shadow-none">
+                <div className="absolute top-4 left-4 z-10">
+                  <Dialog.Close className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300">
+                    <ArrowLeft className="w-5 h-5" />
+                  </Dialog.Close>
+                </div>
                 <Carousel className="w-full" opts={{ loop: true, align: "center" }}>
                   <CarouselContent>
                     {service.galleryImages.map((image, index) => (

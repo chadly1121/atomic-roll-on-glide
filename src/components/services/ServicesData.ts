@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -134,7 +133,19 @@ export const services: Service[] = [
     title: "Deck & Fence Staining",
     description: "Protect and beautify your outdoor wooden surfaces with our expert staining services for decks, fences, and more.",
     icon: "🌳",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220708_134757148_h0pcfr.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220708_134757148_h0pcfr.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866808/IMG_20200813_211052_ndyf6a.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866830/PXL_20211110_142417065_logkoq.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941179/PXL_20250129_211848218.MP_ohwfmm.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940976/PXL_20220531_120614527_ntvylh.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940951/PXL_20211110_172626098_lcfzdb.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940949/PXL_20211109_173735095_bedk5h.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940759/MVIMG_20180927_123116_zozkyy.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940758/IMG_6596_np2pnw.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940757/IMG_6543_byqhzn.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220708_134757148_h0pcfr.jpg"
+    ]
   },
   {
     id: 6,
