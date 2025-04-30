@@ -7,7 +7,7 @@ export const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with our premium interior painting services, featuring expert color consultation and flawless finishes.",
     icon: "🏠",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240504_135021045_xzxdrq.jpg",
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941018/PXL_20221031_170158104_he7az5.jpg",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240501_164116367_w3gee6.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941135/PXL_20240504_135021045_xzxdrq.jpg",
