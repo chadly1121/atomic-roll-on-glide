@@ -104,9 +104,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             <motion.a 
               key={link.name} 
               href={link.href} 
-              className={`nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full ${
-                activeSection === link.href.substring(1) ? "text-atomic-orange" : ""
-              }`}
+              className={`nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full text-atomic-navy hover:text-atomic-orange`}
               onClick={(e) => handleNavLinkClick(e, link.href)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -171,7 +169,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
               <motion.a 
                 key={link.name} 
                 href={link.href} 
-                className="py-3 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors"
+                className="py-3 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors text-atomic-navy"
                 onClick={(e) => handleNavLinkClick(e, link.href)}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
