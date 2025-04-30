@@ -1,3 +1,4 @@
+
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -165,7 +166,26 @@ export const services: Service[] = [
     title: "Pre-Finishing",
     description: "Get professional pre-finishing for your new construction materials, ensuring durability and perfect appearance.",
     icon: "🔨",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866853/PXL_20230301_172056011_tbgdg9.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941021/PXL_20230301_172056011_lovcfe.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941179/PXL_20240125_200928310_v5puf7.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941178/PXL_20250129_211855471_v9uveo.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941176/1000000146_eu326y.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941176/1000004090_hrhoge.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941176/IMG_0263._rkvefs.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941174/1000000681_eepslg.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941172/PXL_20211221_194137967_ui5cx1.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941171/PXL_20201203_144421837_kzlxrz.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941022/PXL_20230301_172123922_excf0l.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941019/IMG_20221207_112107_01_1_bxaa14.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940952/PXL_20211221_194142532_bqdzgn.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940924/PXL_20210819_165014609_d2z8nm.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940892/PXL_20210817_170641700_fwxy23.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940861/PXL_20210322_184826080_iaz79i.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940862/PXL_20210322_184857504_rkddyp.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940694/IMG_6239_df7zoe.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941021/PXL_20230301_172056011_lovcfe.jpg"
+    ]
   },
   {
     id: 8,
