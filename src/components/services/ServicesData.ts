@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -71,7 +70,6 @@ export const services: Service[] = [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940726/IMG_5212_h3wwkm.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940723/IMG_5057_rruila.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940723/IMG_4033_et4v10.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/IMG_2915_sqte03.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940692/IMG_1221_nx7y66.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940661/1000005639_qj1rre.jpg"
     ]
@@ -88,7 +86,17 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866776/IMG_2914_j5ks9n.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866776/IMG_2914_j5ks9n.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/IMG_2915_sqte03.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/IMG_2913_wanw27.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940662/PXL_20241017_182116190_gbtvla.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866864/PXL_20240320_113929979_kkivih.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866853/PXL_20230602_180644260_xw0dgc.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866834/PXL_20211024_152204632_tsugcr.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866793/IMG_20181206_082735_sou5we.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866786/IMG_6194_tdwrsr.jpg"
+    ]
   },
   {
     id: 5,
