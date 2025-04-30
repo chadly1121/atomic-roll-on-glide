@@ -1,3 +1,4 @@
+
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -88,6 +89,9 @@ export const services: Service[] = [
     icon: "🪑",
     image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866776/IMG_2914_j5ks9n.jpg",
     galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941134/PXL_20240401_133600423_bp15e0.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240324_131802061_pmmm6w.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940757/IMG_6433_ntyxop.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/IMG_2915_sqte03.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/IMG_2913_wanw27.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940662/PXL_20241017_182116190_gbtvla.jpg",
