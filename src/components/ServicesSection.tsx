@@ -16,7 +16,7 @@ const ServicesSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="section-heading">Our Services</h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Professional painting services tailored to your specific needs, delivering quality results that last.
+            Browse our professional painting services and project galleries. Click on "View Gallery" to see examples of our completed work in each service area.
           </p>
         </div>
         
