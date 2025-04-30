@@ -1,3 +1,4 @@
+
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -61,8 +62,6 @@ export const services: Service[] = [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940787/IMG_20190920_121835_osn9jp.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940787/IMG_20190920_120908_ahkucm.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940773/IMG_6831_dwinnk.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940772/IMG_6821_pwzrez.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940772/IMG_6819_wqxbjk.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940758/IMG_6596_np2pnw.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940757/IMG_6543_byqhzn.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940740/IMG_5579_yxrmmb.jpg",
@@ -79,7 +78,36 @@ export const services: Service[] = [
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866778/IMG_3321_hoa7zz.jpg"
+    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866778/IMG_3321_hoa7zz.jpg",
+    galleryImages: [
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940977/PXL_20220615_182007011_kassny.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940893/PXL_20210703_121648899_aasjsk.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940867/PXL_20210716_144342728_k3n8p7.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940864/PXL_20210423_170706914_d88cfj.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940860/PXL_20210716_144141345_rnuth8.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940793/00000IMG_00000_BURST20190516130333879_COVER_rddnlh.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940792/IMG_20200224_104507_hmn9ey.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940791/MVIMG_20190607_091705_vgjkou.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940785/IMG_20191213_144315_nqiktx.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940773/IMG_20181119_132931_nljipa.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940773/IMG_20181119_132940_r8oujn.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940756/IMG_6247_maoqox.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940746/IMG_6240_kkoxbs.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940743/IMG_6208_xmv3tl.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940743/IMG_6220_pddqot.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940741/IMG_5526_mekjfn.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3321_glkbki.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3330_z63svq.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940703/MVIMG_20190607_111121_zocibs.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940702/IMG_2860_wxloix.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940701/IMG_2585_pdvegq.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940692/IMG_2171_dnvtbb.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940692/IMG_1224_b4bqib.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1017_ujza44.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940690/IMG_1016_hzvnzk.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940690/IMG_1008_sewbe1.jpg",
+      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866839/PXL_20220312_181834798_hkikg2.jpg"
+    ]
   },
   {
     id: 4,
