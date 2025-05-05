@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -214,9 +213,12 @@ const ContactForm = () => {
           </div>
         </div>
         
-        <button type="submit" className="atomic-button w-full">
-          <span className="relative z-10">Submit Request</span>
-        </button>
+        <Button 
+          type="submit" 
+          className="atomic-button w-full flex items-center justify-center gap-2"
+        >
+          <span className="relative z-10">Request a Free Quote</span>
+        </Button>
       </form>
     </div>
   );
