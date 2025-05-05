@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
@@ -88,18 +87,8 @@ const Index = () => {
       <AboutSection />
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
       
-      {/* Second FreeTouchUpsButton before Testimonials */}
-      <div className="container mx-auto px-4 py-4">
-        <FreeTouchUpsButton />
-      </div>
-      
       <TestimonialsSection />
       <PricingSection />
-      
-      {/* Third FreeTouchUpsButton before Blog */}
-      <div className="container mx-auto px-4 py-4">
-        <FreeTouchUpsButton />
-      </div>
       
       <BlogSection />
       <TrendsSection />

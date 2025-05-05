@@ -4,7 +4,6 @@ import ContactForm from './contact/ContactForm';
 import ContactInfo from './contact/ContactInfo';
 import SocialLinks from './contact/SocialLinks';
 import FeatureBenefits from './contact/FeatureBenefits';
-import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 const ContactSection = () => {
   return (
@@ -20,10 +19,7 @@ const ContactSection = () => {
           </p>
         </div>
         
-        {/* Free Touch Ups Button */}
-        <div className="mb-8">
-          <FreeTouchUpsButton />
-        </div>
+        {/* Removed FreeTouchUpsButton from here */}
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <ContactForm />

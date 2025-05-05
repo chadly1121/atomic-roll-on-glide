@@ -1,6 +1,5 @@
 
 import React from 'react';
-import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 interface PricingTier {
   id: number;
@@ -68,10 +67,7 @@ const PricingSection = () => {
           </p>
         </div>
         
-        {/* Free Touch Ups Button */}
-        <div className="mb-8">
-          <FreeTouchUpsButton />
-        </div>
+        {/* Removed FreeTouchUpsButton from here */}
         
         {/* Pricing Tiers */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
