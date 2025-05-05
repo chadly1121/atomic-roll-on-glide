@@ -4,6 +4,7 @@ import ContactForm from './contact/ContactForm';
 import ContactInfo from './contact/ContactInfo';
 import SocialLinks from './contact/SocialLinks';
 import FeatureBenefits from './contact/FeatureBenefits';
+import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 const ContactSection = () => {
   return (
@@ -17,6 +18,11 @@ const ContactSection = () => {
           <p className="max-w-2xl mx-auto text-lg text-gray-300">
             Ready to transform your space? Reach out for a free quote or to discuss your project.
           </p>
+        </div>
+        
+        {/* Free Touch Ups Button */}
+        <div className="mb-8">
+          <FreeTouchUpsButton />
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">

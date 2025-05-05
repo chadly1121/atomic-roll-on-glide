@@ -10,6 +10,7 @@ import BlogSection from '../components/BlogSection';
 import TrendsSection from '../components/TrendsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import { useToast } from "@/components/ui/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -76,10 +77,29 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} />
       <HeroSection />
+      
+      {/* First FreeTouchUpsButton after Hero */}
+      <div className="container mx-auto px-4 py-4">
+        <FreeTouchUpsButton />
+      </div>
+      
       <AboutSection />
+      
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
+      
+      {/* Second FreeTouchUpsButton before Testimonials */}
+      <div className="container mx-auto px-4 py-4">
+        <FreeTouchUpsButton />
+      </div>
+      
       <TestimonialsSection />
       <PricingSection />
+      
+      {/* Third FreeTouchUpsButton before Blog */}
+      <div className="container mx-auto px-4 py-4">
+        <FreeTouchUpsButton />
+      </div>
+      
       <BlogSection />
       <TrendsSection />
       <ContactSection />

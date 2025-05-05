@@ -1,5 +1,6 @@
 
 import React from 'react';
+import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 interface PricingTier {
   id: number;
@@ -65,6 +66,11 @@ const PricingSection = () => {
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Transparent pricing with no hidden costs. Contact us for a custom quote tailored to your project.
           </p>
+        </div>
+        
+        {/* Free Touch Ups Button */}
+        <div className="mb-8">
+          <FreeTouchUpsButton />
         </div>
         
         {/* Pricing Tiers */}
