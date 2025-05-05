@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import NameField from './fields/NameField';
+import EmailField from './fields/EmailField';
+import PhoneField from './fields/PhoneField';
+import ServiceField from './fields/ServiceField';
+import MessageField from './fields/MessageField';
 
 interface FormFieldsProps {
   formData: {
@@ -20,80 +21,30 @@ interface FormFieldsProps {
 const FormFields = ({ formData, handleChange, handleServiceChange }: FormFieldsProps) => {
   return (
     <>
-      <div className="space-y-2">
-        <Label htmlFor="name">Full Name</Label>
-        <Input 
-          id="name" 
-          name="name"
-          placeholder="John Doe" 
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <NameField 
+        value={formData.name} 
+        onChange={handleChange} 
+      />
       
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input 
-          id="email" 
-          name="email"
-          type="email" 
-          placeholder="john@example.com" 
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <EmailField 
+        value={formData.email} 
+        onChange={handleChange} 
+      />
       
-      <div className="space-y-2">
-        <Label htmlFor="phone">Phone Number</Label>
-        <Input 
-          id="phone" 
-          name="phone"
-          placeholder="(555) 123-4567" 
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <PhoneField 
+        value={formData.phone} 
+        onChange={handleChange} 
+      />
       
-      <div className="space-y-2">
-        <Label htmlFor="service">Service Interested In</Label>
-        <Select
-          value={formData.service}
-          onValueChange={handleServiceChange}
-        >
-          <SelectTrigger id="service">
-            <SelectValue placeholder="Select a service" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="interior">Interior Painting</SelectItem>
-            <SelectItem value="exterior">Exterior Painting</SelectItem>
-            <SelectItem value="commercial">Commercial Painting</SelectItem>
-            <SelectItem value="institutional">Institutional Painting</SelectItem>
-            <SelectItem value="prefinishing">Pre-Finishing</SelectItem>
-            <SelectItem value="cabinet">Cabinet Refinishing</SelectItem>
-            <SelectItem value="deck">Deck & Fence Staining</SelectItem>
-            <SelectItem value="wallpaper">Wallpaper Installation</SelectItem>
-            <SelectItem value="epoxy">Epoxy Coatings</SelectItem>
-            <SelectItem value="washing">Power & Soft Washing</SelectItem>
-            <SelectItem value="gonano">GoNano Products</SelectItem>
-            <SelectItem value="other">Other Services</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+      <ServiceField 
+        value={formData.service} 
+        onValueChange={handleServiceChange} 
+      />
       
-      <div className="space-y-2">
-        <Label htmlFor="message">Project Details</Label>
-        <Textarea 
-          id="message" 
-          name="message"
-          placeholder="Tell us about your project..." 
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </div>
+      <MessageField 
+        value={formData.message} 
+        onChange={handleChange} 
+      />
     </>
   );
 };
