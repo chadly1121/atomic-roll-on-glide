@@ -1,8 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { blogPosts } from '../data/blogData';
-import { PenLine } from 'lucide-react';
+import { CalendarClock } from 'lucide-react';
 
 const BlogSection = () => {
   return (
@@ -17,55 +15,18 @@ const BlogSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {blogPosts.slice(0, 3).map((post) => (
-            <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow relative">
-              <Link 
-                to={`/blog/edit/${post.id}`}
-                className="absolute right-2 top-2 z-10 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
-                title="Edit blog"
-              >
-                <PenLine size={16} className="text-atomic-turquoise" />
-              </Link>
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center text-xs text-gray-500 mb-2 space-x-4">
-                  <span>{post.date}</span>
-                  <span className="px-2 py-1 rounded-full bg-atomic-turquoise/10 text-atomic-turquoise">
-                    {post.category}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-atomic-turquoise transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <Link 
-                  to={`/blog/${post.id}`}
-                  className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
-                >
-                  Read More
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+        <div className="flex flex-col items-center justify-center p-12 bg-white/80 rounded-xl shadow-md max-w-3xl mx-auto">
+          <CalendarClock size={64} className="text-atomic-turquoise mb-6" />
+          <h3 className="text-2xl font-bold text-atomic-navy mb-3">Coming Soon!</h3>
+          <p className="text-lg text-gray-600 text-center mb-4">
+            We're working on creating valuable content for our blog. Check back soon for painting tips, trends, and project showcases.
+          </p>
+          <div className="flex items-center justify-center w-full max-w-md">
+            <div className="h-1 bg-atomic-orange/20 w-full rounded-full overflow-hidden">
+              <div className="h-full bg-atomic-turquoise w-3/4 rounded-full"></div>
             </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Link 
-            to="/blog" 
-            className="atomic-button-secondary"
-          >
-            <span className="relative z-10">View All Blog Posts</span>
-          </Link>
+            <span className="ml-3 text-atomic-turquoise font-medium">75%</span>
+          </div>
         </div>
       </div>
     </section>
