@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import { Instagram, Linkedin, MapPin, Phone, Mail, FileImage } from "lucide-react";
+import { Instagram, Linkedin, MapPin, Phone, Mail, FileImage, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
@@ -18,7 +18,7 @@ const ContactSection = () => {
     message: '',
   });
   
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,13 +29,19 @@ const ContactSection = () => {
   };
   
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+    if (e.target.files && e.target.files.length > 0) {
+      const newFiles = Array.from(e.target.files);
+      setFiles(prevFiles => [...prevFiles, ...newFiles]);
+      
       toast({
-        title: "File Uploaded",
-        description: `${e.target.files[0].name} has been attached to your request.`,
+        title: "Files Uploaded",
+        description: `${newFiles.length} file(s) have been attached to your request.`,
       });
     }
+  };
+  
+  const removeFile = (index: number) => {
+    setFiles(prevFiles => prevFiles.filter((_, i) => i !== index));
   };
   
   const handleServiceChange = (value: string) => {
@@ -50,7 +56,7 @@ const ContactSection = () => {
     
     // In a real implementation, you would send the form data to your server
     console.log('Form submitted:', formData);
-    console.log('File attached:', file);
+    console.log('Files attached:', files);
     
     // Show success toast
     toast({
@@ -66,7 +72,7 @@ const ContactSection = () => {
       service: '',
       message: '',
     });
-    setFile(null);
+    setFiles([]);
   };
 
   return (
@@ -152,12 +158,12 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="plans">Upload Your Plans (Optional)</Label>
+                  <Label htmlFor="plans">Upload Your Plans and/or Pictures</Label>
                   <div className="flex items-center gap-2">
                     <label htmlFor="plans" className="flex-1">
                       <div className="border border-gray-300 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-50 transition-colors flex items-center gap-2">
-                        <FileImage className="h-5 w-5 text-atomic-turquoise" />
-                        <span>{file ? file.name : "Choose file..."}</span>
+                        <Upload className="h-5 w-5 text-atomic-turquoise" />
+                        <span>Choose files...</span>
                       </div>
                       <input 
                         type="file" 
@@ -165,20 +171,39 @@ const ContactSection = () => {
                         className="sr-only" 
                         accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
                         onChange={handleFileChange}
+                        multiple
                       />
                     </label>
-                    {file && (
-                      <Button 
-                        type="button" 
-                        variant="ghost" 
-                        size="sm" 
-                        onClick={() => setFile(null)}
-                      >
-                        Clear
-                      </Button>
-                    )}
+                    <Button 
+                      type="button" 
+                      variant="upload"
+                      onClick={() => document.getElementById('plans')?.click()}
+                    >
+                      Upload
+                    </Button>
                   </div>
                   <p className="text-xs text-gray-500">Upload blueprints, plans or photos (PDF, DOC, PNG, JPG)</p>
+                  
+                  {/* Display uploaded files */}
+                  {files.length > 0 && (
+                    <div className="mt-3">
+                      <p className="text-sm font-medium mb-2">Uploaded files:</p>
+                      <ul className="space-y-1 max-h-32 overflow-y-auto border border-gray-200 rounded-md p-2">
+                        {files.map((file, index) => (
+                          <li key={index} className="flex items-center justify-between text-sm p-1 bg-gray-50 rounded">
+                            <span className="truncate max-w-[200px]">{file.name}</span>
+                            <button 
+                              type="button" 
+                              onClick={() => removeFile(index)}
+                              className="text-red-500 hover:text-red-700 ml-2"
+                            >
+                              &times;
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="space-y-2">
