@@ -11,7 +11,6 @@ import TrendsSection from '../components/TrendsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
-import GalleryButton from '../components/GalleryButton';
 import { useToast } from "@/components/ui/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -80,9 +79,8 @@ const Index = () => {
       
       {/* Free Touch Ups Button positioned centrally below navbar */}
       <div className="w-full bg-white/80 backdrop-blur-sm py-2 shadow-sm border-b border-gray-100 sticky top-20 z-40">
-        <div className="container mx-auto px-4 max-w-md flex justify-center gap-4 items-center">
+        <div className="container mx-auto px-4 max-w-md flex justify-center">
           <FreeTouchUpsButton />
-          <GalleryButton />
         </div>
       </div>
       
