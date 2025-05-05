@@ -7,12 +7,13 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const FreeTouchUpsButton = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-
+  
   return (
     <>
       <button
@@ -23,7 +24,7 @@ const FreeTouchUpsButton = () => {
         <div className="relative flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-atomic-orange/10 via-white to-atomic-orange/10 px-6 py-3">
           <div className="flex-1 text-center">
             <span className="text-lg font-bold text-atomic-navy">FREE TOUCH UPS FOR LIFE!</span>
-            <span className="block text-xs text-atomic-navy/80">Click to see conditions</span>
+            <span className="block text-xs text-atomic-navy/80">Painting only. Excludes new construction</span>
           </div>
           <Info className="h-5 w-5 text-atomic-orange flex-shrink-0" />
           <span className="absolute inset-0 scale-0 rounded-full bg-atomic-orange/5 transition-all group-hover:scale-100" />
@@ -31,77 +32,35 @@ const FreeTouchUpsButton = () => {
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-xl text-center text-atomic-navy">Free Touch Ups for Life</DialogTitle>
-            <DialogDescription className="text-center">
-              Our commitment to lasting quality
+            <DialogTitle>Free Touch Ups for Life</DialogTitle>
+            <DialogDescription>
+              Conditions apply to our Free Touch Ups for Life program.
             </DialogDescription>
           </DialogHeader>
-          
-          <div className="mt-4 space-y-4">
-            <div className="bg-atomic-cream rounded-lg p-4">
-              <h4 className="font-bold text-lg text-atomic-navy mb-2">Conditions</h4>
-              <ul className="space-y-2 text-atomic-navy">
-                <li className="flex items-start">
-                  <div className="mr-2 text-atomic-turquoise mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>One visit per year per contract</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="mr-2 text-atomic-turquoise mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Maximum 2 hours of work</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="mr-2 text-atomic-turquoise mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>No questions asked</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="mr-2 text-atomic-turquoise mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>No carry over to next year</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="mr-2 text-atomic-turquoise mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Non-transferable</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-sm text-gray-500">
-                Contact us for more information about our Free Touch Ups for Life program.
-              </p>
-            </div>
-            
-            <div className="flex justify-center">
-              <Button
-                onClick={() => setIsOpen(false)}
-                variant="secondary"
-                className="bg-atomic-turquoise text-white hover:bg-atomic-turquoise/90"
-              >
-                Got it!
-              </Button>
-            </div>
+          <div className="space-y-4">
+            <p className="text-sm">
+              Roll On Painting offers free touch-ups for life on our painting services with the following conditions:
+            </p>
+            <ul className="list-disc pl-5 text-sm space-y-2">
+              <li><span className="font-semibold">Painting Services Only:</span> This offer applies only to our painting services and excludes new construction projects.</li>
+              <li><span className="font-semibold">Original Owner:</span> Valid only for the original property owner who purchased our services.</li>
+              <li><span className="font-semibold">Same Color:</span> Touch-ups must be the same color as originally painted.</li>
+              <li><span className="font-semibold">Limited Area:</span> Each touch-up is limited to a 4 sq. ft. area per room/surface.</li>
+              <li><span className="font-semibold">Normal Wear:</span> Covers normal wear and tear only, not damage from impacts or water.</li>
+              <li><span className="font-semibold">Timeframe:</span> Available within 5 years of the original service date.</li>
+              <li><span className="font-semibold">Scheduling:</span> Subject to our regular scheduling availability.</li>
+            </ul>
+            <p className="text-sm italic">
+              Contact us for full details and to schedule your free touch-up.
+            </p>
           </div>
+          <DialogClose asChild>
+            <Button type="button" className="w-full">
+              Close
+            </Button>
+          </DialogClose>
         </DialogContent>
       </Dialog>
     </>
