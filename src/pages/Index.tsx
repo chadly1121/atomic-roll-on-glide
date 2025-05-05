@@ -76,15 +76,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} />
-      <HeroSection />
       
-      {/* First FreeTouchUpsButton after Hero */}
-      <div className="container mx-auto px-4 py-4">
-        <FreeTouchUpsButton />
+      {/* Free Touch Ups Button positioned centrally below navbar */}
+      <div className="w-full bg-white/80 backdrop-blur-sm py-2 shadow-sm border-b border-gray-100 sticky top-20 z-40">
+        <div className="container mx-auto px-4 max-w-md">
+          <FreeTouchUpsButton />
+        </div>
       </div>
       
+      <HeroSection />
       <AboutSection />
-      
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
       
       {/* Second FreeTouchUpsButton before Testimonials */}

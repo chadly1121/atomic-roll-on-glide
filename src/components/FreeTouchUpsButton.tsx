@@ -17,22 +17,17 @@ const FreeTouchUpsButton = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="group relative w-full md:max-w-md mx-auto overflow-hidden rounded-lg bg-white border-2 border-atomic-navy p-[1px] transition-all hover:scale-[1.01]"
+        className="group relative w-full md:max-w-md mx-auto overflow-hidden rounded-full bg-white border-2 border-atomic-orange p-[1px] transition-all hover:scale-[1.01] animate-pulse-slow shadow-md"
         aria-label="Free Touch Ups for Life - See conditions"
       >
-        <div className="relative flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-white via-atomic-cream to-white px-3 py-2">
+        <div className="relative flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-atomic-orange/10 via-white to-atomic-orange/10 px-6 py-3">
           <div className="flex-1 text-center">
             <span className="text-lg font-bold text-atomic-navy">FREE TOUCH UPS FOR LIFE!</span>
-            <span className="block text-xs text-atomic-navy/70">Click to see conditions</span>
+            <span className="block text-xs text-atomic-navy/80">Click to see conditions</span>
           </div>
-          <Info className="h-5 w-5 text-atomic-navy flex-shrink-0" />
-          <span className="absolute inset-0 scale-0 rounded-lg bg-atomic-cream transition-all group-hover:scale-100" />
+          <Info className="h-5 w-5 text-atomic-orange flex-shrink-0" />
+          <span className="absolute inset-0 scale-0 rounded-full bg-atomic-orange/5 transition-all group-hover:scale-100" />
         </div>
-        {/* Thobe-inspired decorative elements */}
-        <div className="absolute top-0 bottom-0 left-3 w-[1px] bg-atomic-navy/30"></div>
-        <div className="absolute top-0 bottom-0 right-3 w-[1px] bg-atomic-navy/30"></div>
-        <div className="absolute h-[1px] left-0 right-0 top-3 bg-atomic-navy/30"></div>
-        <div className="absolute h-[1px] left-0 right-0 bottom-3 bg-atomic-navy/30"></div>
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

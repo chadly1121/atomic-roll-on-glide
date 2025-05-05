@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -98,8 +99,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' }
         },
         'pulse-slow': {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.8' }
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.9', transform: 'scale(1.01)' }
         },
         'spin-slow': {
           '0%': { transform: 'rotate(0deg)' },
@@ -110,7 +111,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 2s ease-in-out infinite',
         'spin-slow': 'spin-slow 12s linear infinite'
       },
       fontFamily: {
