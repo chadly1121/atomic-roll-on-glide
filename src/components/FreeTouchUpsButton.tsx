@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { InfoCircle } from 'lucide-react';
+import { Info } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -24,7 +24,7 @@ const FreeTouchUpsButton = () => {
             <span className="text-lg font-bold text-atomic-navy">FREE TOUCH UPS FOR LIFE!</span>
             <span className="block text-xs text-atomic-navy/70">Click to see conditions</span>
           </div>
-          <InfoCircle className="h-5 w-5 text-atomic-navy flex-shrink-0" />
+          <Info className="h-5 w-5 text-atomic-navy flex-shrink-0" />
           <span className="absolute inset-0 scale-0 rounded-lg bg-gradient-to-r from-atomic-orange/20 to-atomic-turquoise/20 transition-all group-hover:scale-100" />
         </div>
       </button>
