@@ -47,10 +47,7 @@ const FreeTouchUpsButton = () => {
               <li><span className="font-semibold">Painting Services Only:</span> This offer applies only to our painting services and excludes new construction projects.</li>
               <li><span className="font-semibold">Original Owner:</span> Valid only for the original property owner who purchased our services.</li>
               <li><span className="font-semibold">Same Color:</span> Touch-ups must be the same color as originally painted.</li>
-              <li><span className="font-semibold">Limited Area:</span> Each touch-up is limited to a 4 sq. ft. area per room/surface.</li>
-              <li><span className="font-semibold">Normal Wear:</span> Covers normal wear and tear only, not damage from impacts or water.</li>
-              <li><span className="font-semibold">Timeframe:</span> Available within 5 years of the original service date.</li>
-              <li><span className="font-semibold">Scheduling:</span> Subject to our regular scheduling availability.</li>
+              <li><span className="font-semibold">No Questions Asked:</span> We'll handle your touch-ups without hassle or complicated explanations.</li>
             </ul>
             <p className="text-sm italic">
               Contact us for full details and to schedule your free touch-up.
