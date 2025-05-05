@@ -8,7 +8,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'Gallery', href: '#services' },  // Points to #services instead of #gallery
+  { name: 'Gallery', href: '#gallery' },  // Fixed: Now points to the correct gallery section
   { name: 'GoNano', href: '#gonano' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '#blog' },
