@@ -3,12 +3,61 @@ import React, { useRef } from 'react';
 import ServiceCard from './services/ServiceCard';
 import { services } from './services/ServicesData';
 import GoNanoSection from './services/GoNanoSection';
+import { Helmet } from 'react-helmet-async';
 
 const ServicesSection = () => {
   const goNanoSectionRef = useRef<HTMLDivElement>(null);
 
   return (
     <section id="services" className="py-24 relative overflow-hidden">
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Roll On Painting",
+              "description": "Professional painting services in Muskoka including interior, exterior, commercial, and GoNano permanent coating.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Muskoka",
+                "addressRegion": "Ontario",
+                "addressCountry": "Canada"
+              },
+              "telephone": "+1-705-555-1234",
+              "priceRange": "$$",
+              "image": "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866797/IMG_20190920_121835_fchin4.jpg",
+              "sameAs": ["https://www.facebook.com/rollonpainting", "https://www.instagram.com/rollonpainting"],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
+                  "closes": "17:00"
+                }
+              ],
+              "service": [
+                {
+                  "@type": "Service",
+                  "name": "Interior Painting",
+                  "description": "Transform your indoor spaces with our premium interior painting services"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Exterior Painting",
+                  "description": "Enhance your home's curb appeal with our durable exterior painting services"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Commercial Painting",
+                  "description": "Update your business space with minimal disruption"
+                }
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
+      
       <div className="atomic-starburst w-72 h-72 top-20 left-20"></div>
       <div className="atomic-circle w-96 h-96 -bottom-48 right-0 border-atomic-turquoise/30 animate-spin-slow"></div>
       

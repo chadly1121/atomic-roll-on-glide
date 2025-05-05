@@ -1,10 +1,32 @@
 
 import React from 'react';
 import { CalendarClock } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const BlogSection = () => {
   return (
     <section id="blog" className="py-24 relative overflow-hidden bg-accent/30">
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Blog",
+              "name": "Roll On Painting Blog",
+              "description": "Get inspired with the latest painting trends, tips, and insights from our experienced team.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Roll On Painting",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://rollonpainting.com/logo.png"
+                }
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+      
       <div className="atomic-starburst w-60 h-60 -top-10 left-1/3"></div>
       
       <div className="container mx-auto px-4 relative z-10">

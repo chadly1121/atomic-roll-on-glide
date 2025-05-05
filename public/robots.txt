@@ -1,7 +1,26 @@
+
+# robots.txt for Roll On Painting
+
+User-agent: *
+Allow: /
+
+# Allow all search engines to access all content
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +29,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location - Update this when you have a sitemap
+Sitemap: https://rollonpainting.com/sitemap.xml
