@@ -10,6 +10,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import BlogEditorPage from "./pages/BlogEditorPage";
 import NotFound from "./pages/NotFound";
+import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
@@ -32,12 +33,40 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:id" element={<BlogPostPage />} />
-            <Route path="/blog/new" element={<BlogEditorPage />} />
-            <Route path="/blog/edit/:id" element={<BlogEditorPage />} />
+            <Route path="/blog" element={
+              <>
+                <PageBreadcrumbs items={[{ label: 'Blog', href: '/blog' }]} />
+                <BlogPage />
+              </>
+            } />
+            <Route path="/blog/:id" element={
+              <>
+                <PageBreadcrumbs />
+                <BlogPostPage />
+              </>
+            } />
+            <Route path="/blog/new" element={
+              <>
+                <PageBreadcrumbs items={[
+                  { label: 'Blog', href: '/blog' },
+                  { label: 'New Post' }
+                ]} />
+                <BlogEditorPage />
+              </>
+            } />
+            <Route path="/blog/edit/:id" element={
+              <>
+                <PageBreadcrumbs />
+                <BlogEditorPage />
+              </>
+            } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={
+              <>
+                <PageBreadcrumbs />
+                <NotFound />
+              </>
+            } />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
