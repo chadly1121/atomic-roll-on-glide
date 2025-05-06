@@ -13,11 +13,17 @@ import WelcomeToast from '../components/layout/WelcomeToast';
 import SEOHelmet from '../components/layout/SEOHelmet';
 import LazySectionLoader from '../components/layout/LazySectionLoader';
 
+// Import new conversion components
+import InlineCTA from '../components/conversion/InlineCTA';
+import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
+
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(['home', 'about', 'services']));
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
+    'home', 'about', 'services', 'booking'
+  ]));
 
   // Optimize scroll handler with useCallback
   const handleScroll = useCallback(() => {
@@ -50,7 +56,30 @@ const Index = () => {
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
       <AboutSection />
+      
+      {/* First Inline CTA */}
+      <div className="container mx-auto px-4 my-16">
+        <InlineCTA 
+          title="Transform Your Space Today"
+          description="Ready to refresh your home? Get a free, no-obligation quote for your painting project."
+          primaryCTA={{ text: "Get a Free Quote", href: "#contact" }}
+          secondaryCTA={{ text: "See Our Work", href: "#services" }}
+          variant="accent"
+        />
+      </div>
+      
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
+      
+      {/* Second Inline CTA */}
+      <div className="container mx-auto px-4 my-16">
+        <InlineCTA 
+          title="Professional Color Consultation"
+          description="Not sure which colors will look best in your space? Schedule a free color consultation with our experts."
+          primaryCTA={{ text: "Book a Consultation", href: "#booking" }}
+          variant="light"
+          className="border border-atomic-turquoise/20"
+        />
+      </div>
       
       {/* Lazy loaded sections (below the fold) */}
       <LazySectionLoader visibleSections={visibleSections} />
@@ -66,6 +95,9 @@ const Index = () => {
       
       {/* Welcome toast */}
       <WelcomeToast />
+      
+      {/* Exit Intent Popup */}
+      <ExitIntentPopup />
     </div>
   );
 };

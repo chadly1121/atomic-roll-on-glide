@@ -1,57 +1,83 @@
 
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 
 interface SectionObserverProps {
   setActiveSection: (sectionId: string) => void;
-  setVisibleSections: React.Dispatch<React.SetStateAction<Set<string>>>;
+  setVisibleSections: (prev: React.SetStateAction<Set<string>>) => void;
 }
 
+// This component sets up Intersection Observers to track which sections are in view
 const SectionObserver: React.FC<SectionObserverProps> = ({ setActiveSection, setVisibleSections }) => {
-  // Track sections in view and lazy load components as needed
   useEffect(() => {
-    // Section observer configuration
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -80% 0px',
-      threshold: 0
-    };
+    const sections = [
+      'home', 
+      'about',
+      'services',
+      'testimonials',
+      'gonano', 
+      'pricing',
+      'blog', 
+      'booking',
+      'trends',
+      'contact'
+    ];
 
-    // Handle intersection
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        const sectionId = entry.target.id;
-        
-        if (entry.isIntersecting) {
-          // Set active section for navbar highlighting
-          setActiveSection(sectionId);
+    // Track which section is most visible for active state
+    const observerActive = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3, // Section must be 30% visible
+      }
+    );
+
+    // Track all visible sections for loading
+    const observerVisible = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
           
-          // Mark section as visible for lazy loading
           setVisibleSections(prev => {
-            const updated = new Set(prev);
-            updated.add(sectionId);
-            
-            // Pre-load the next section(s) for smooth transitions
-            if (sectionId === 'about') updated.add('services');
-            if (sectionId === 'services') updated.add('testimonials');
-            if (sectionId === 'testimonials') updated.add('pricing');
-            if (sectionId === 'pricing') updated.add('blog');
-            if (sectionId === 'blog') updated.add('trends');
-            if (sectionId === 'trends') updated.add('contact');
-            
-            return updated;
+            const newSet = new Set(prev);
+            if (entry.isIntersecting) {
+              newSet.add(id);
+            }
+            return newSet;
           });
+        });
+      },
+      {
+        root: null,
+        rootMargin: '200px', // Load sections before they come into view
+        threshold: 0.1,
+      }
+    );
+
+    // Observe all sections
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observerActive.observe(element);
+        observerVisible.observe(element);
+      }
+    });
+
+    // Cleanup
+    return () => {
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observerActive.unobserve(element);
+          observerVisible.unobserve(element);
         }
       });
-    };
-
-    // Create and use observer
-    const sectionObserver = new IntersectionObserver(handleIntersection, observerOptions);
-    document.querySelectorAll('section[id]').forEach(section => {
-      sectionObserver.observe(section);
-    });
-    
-    return () => {
-      sectionObserver.disconnect();
     };
   }, [setActiveSection, setVisibleSections]);
 

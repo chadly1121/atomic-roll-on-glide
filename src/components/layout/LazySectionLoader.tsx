@@ -13,6 +13,7 @@ const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
 const PricingSection = lazy(() => import('../PricingSection'));
 const BlogSection = lazy(() => import('../BlogSection'));
 const TrendsSection = lazy(() => import('../TrendsSection'));
+const BookingSection = lazy(() => import('../conversion/BookingSection'));
 const ContactSection = lazy(() => import('../ContactSection'));
 const Footer = lazy(() => import('../Footer'));
 
@@ -45,6 +46,12 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
       {visibleSections.has('trends') && (
         <Suspense fallback={<SectionLoading />}>
           <TrendsSection />
+        </Suspense>
+      )}
+      
+      {visibleSections.has('booking') && (
+        <Suspense fallback={<SectionLoading />}>
+          <BookingSection />
         </Suspense>
       )}
       
