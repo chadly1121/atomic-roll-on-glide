@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare } from "lucide-react";
+import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
 interface Testimonial {
   id: number;
@@ -121,15 +122,62 @@ const TestimonialsSection = () => {
         </div>
         
         <div className="mt-10 text-center">
-          <a 
-            href="https://g.page/r/CTad7LzFXozZEAE/review" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-atomic-turquoise hover:text-atomic-orange transition-colors"
-          >
-            <MessageSquare className="h-5 w-5" /> 
-            <span className="font-semibold">View All Google Reviews</span>
-          </a>
+          <div className="mb-6">
+            <a 
+              href="https://g.page/r/CTad7LzFXozZEAE/review" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-atomic-turquoise hover:text-atomic-orange transition-colors"
+            >
+              <MessageSquare className="h-5 w-5" /> 
+              <span className="font-semibold">View All Google Reviews</span>
+            </a>
+          </div>
+          
+          {/* Added social media icons below the Google Reviews link */}
+          <div className="mt-8 flex justify-center">
+            <div className="flex space-x-6 items-center">
+              <span className="text-white mr-2">Follow Us:</span>
+              <a 
+                href="https://www.instagram.com/roll_on_painting/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5 text-atomic-turquoise" />
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=100083040946938" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5 text-atomic-turquoise" />
+              </a>
+              <a 
+                href="https://ca.linkedin.com/in/chad-gilchrist-25332b104" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5 text-atomic-turquoise" />
+              </a>
+              <a 
+                href="https://goo.gl/maps/xwGdHUy9RwYXcGLb9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                aria-label="Google Maps"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="h-5 w-5 text-atomic-turquoise">
+                  <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
