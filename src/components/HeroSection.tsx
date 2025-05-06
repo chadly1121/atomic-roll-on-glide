@@ -27,6 +27,59 @@ const galleryImages = [
 ];
 
 const HeroSection = () => {
+  const [loadedImages, setLoadedImages] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  
+  // Preload hero images with priority
+  useEffect(() => {
+    const preloadImages = async () => {
+      // Only preload the first 4 images immediately
+      const highPriorityImages = galleryImages.slice(0, 4);
+      const lowPriorityImages = galleryImages.slice(4);
+      
+      // Load high priority images first
+      await Promise.all(
+        highPriorityImages.map((src, index) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.fetchPriority = 'high';
+            img.src = src;
+            img.onload = () => {
+              setLoadedImages(prev => prev + 1);
+              resolve(undefined);
+            };
+            img.onerror = () => {
+              setLoadedImages(prev => prev + 1);
+              resolve(undefined);
+            };
+          });
+        })
+      );
+      
+      // Then load the rest with lower priority
+      lowPriorityImages.forEach((src) => {
+        const img = new Image();
+        img.fetchPriority = 'low';
+        img.loading = 'lazy';
+        img.src = src;
+      });
+    };
+    
+    preloadImages();
+  }, []);
+  
+  // Handle auto scrolling
+  useEffect(() => {
+    if (!isAutoScrolling) return;
+    
+    const interval = setInterval(() => {
+      setActiveImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [isAutoScrolling]);
+  
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const contactSection = document.querySelector('#contact');
@@ -103,7 +156,9 @@ const HeroSection = () => {
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-atomic-orange/20">
-              <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll autoScrollInterval={3000}>
+              <Carousel className="w-full" opts={{ loop: true, align: "center" }} 
+                onMouseEnter={() => setIsAutoScrolling(false)}
+                onMouseLeave={() => setIsAutoScrolling(true)}>
                 <CarouselContent>
                   {galleryImages.map((image, index) => (
                     <CarouselItem key={index}>
@@ -112,6 +167,11 @@ const HeroSection = () => {
                           alt={`Roll On Painting Project ${index + 1}`} 
                           className="w-full h-[400px] object-cover transition-all duration-300" 
                           src={image}
+                          loading={index < 2 ? "eager" : "lazy"}
+                          fetchpriority={index < 2 ? "high" : "low"}
+                          width="800"
+                          height="400"
+                          decoding="async"
                         />
                       </div>
                     </CarouselItem>

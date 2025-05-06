@@ -1,57 +1,90 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import PricingSection from '../components/PricingSection';
-import BlogSection from '../components/BlogSection';
-import TrendsSection from '../components/TrendsSection';
-import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import { useToast } from "@/components/ui/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
+// Lazy loaded components
+const TestimonialsSection = lazy(() => import('../components/TestimonialsSection'));
+const PricingSection = lazy(() => import('../components/PricingSection'));
+const BlogSection = lazy(() => import('../components/BlogSection'));
+const TrendsSection = lazy(() => import('../components/TrendsSection'));
+const ContactSection = lazy(() => import('../components/ContactSection'));
+const Footer = lazy(() => import('../components/Footer'));
+
+// Loading fallback
+const SectionLoading = () => (
+  <div className="w-full py-24 flex justify-center items-center">
+    <div className="w-16 h-16 border-4 border-atomic-turquoise border-t-atomic-orange rounded-full animate-spin"></div>
+  </div>
+);
+
 const Index = () => {
   // Add a scroll to top button
-  const [showScrollTop, setShowScrollTop] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState('home');
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set(['home', 'about', 'services']));
   const { toast } = useToast();
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
+  // Optimize scroll handler with useCallback
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 500) {
+      setShowScrollTop(true);
+    } else {
+      setShowScrollTop(false);
+    }
+  }, []);
 
-    // Track which section is currently in view
+  // Track sections in view and lazy load components as needed
+  useEffect(() => {
+    // Section observer configuration
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -80% 0px', // Adjust these values as needed
+      rootMargin: '-20% 0px -80% 0px',
       threshold: 0
     };
 
-    const sectionObserver = new IntersectionObserver((entries) => {
+    // Handle intersection
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
+        const sectionId = entry.target.id;
+        
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          // Set active section for navbar highlighting
+          setActiveSection(sectionId);
+          
+          // Mark section as visible for lazy loading
+          setVisibleSections(prev => {
+            const updated = new Set(prev);
+            updated.add(sectionId);
+            
+            // Pre-load the next section(s) for smooth transitions
+            if (sectionId === 'about') updated.add('services');
+            if (sectionId === 'services') updated.add('testimonials');
+            if (sectionId === 'testimonials') updated.add('pricing');
+            if (sectionId === 'pricing') updated.add('blog');
+            if (sectionId === 'blog') updated.add('trends');
+            if (sectionId === 'trends') updated.add('contact');
+            
+            return updated;
+          });
         }
       });
-    }, observerOptions);
+    };
 
-    // Observe all sections
+    // Create and use observer
+    const sectionObserver = new IntersectionObserver(handleIntersection, observerOptions);
     document.querySelectorAll('section[id]').forEach(section => {
       sectionObserver.observe(section);
     });
 
-    // Show welcome toast
-    setTimeout(() => {
+    // Welcome toast - show after short delay
+    const toastTimeout = setTimeout(() => {
       toast({
         title: "Welcome to Roll On Painting",
         description: "Muskoka's premier painting company. Scroll down to explore our services.",
@@ -60,12 +93,15 @@ const Index = () => {
       });
     }, 1500);
 
-    window.addEventListener('scroll', handleScroll);
+    // Scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       sectionObserver.disconnect();
+      clearTimeout(toastTimeout);
     };
-  }, [toast]);
+  }, [toast, handleScroll]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -167,17 +203,45 @@ const Index = () => {
         </div>
       </div>
       
+      {/* Always loaded sections (above the fold) */}
       <HeroSection />
       <AboutSection />
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
       
-      <TestimonialsSection />
-      <PricingSection />
+      {/* Conditionally loaded sections (below the fold) */}
+      {visibleSections.has('testimonials') && (
+        <Suspense fallback={<SectionLoading />}>
+          <TestimonialsSection />
+        </Suspense>
+      )}
       
-      <BlogSection />
-      <TrendsSection />
-      <ContactSection />
-      <Footer />
+      {visibleSections.has('pricing') && (
+        <Suspense fallback={<SectionLoading />}>
+          <PricingSection />
+        </Suspense>
+      )}
+      
+      {visibleSections.has('blog') && (
+        <Suspense fallback={<SectionLoading />}>
+          <BlogSection />
+        </Suspense>
+      )}
+      
+      {visibleSections.has('trends') && (
+        <Suspense fallback={<SectionLoading />}>
+          <TrendsSection />
+        </Suspense>
+      )}
+      
+      {visibleSections.has('contact') && (
+        <Suspense fallback={<SectionLoading />}>
+          <ContactSection />
+        </Suspense>
+      )}
+      
+      <Suspense fallback={<SectionLoading />}>
+        <Footer />
+      </Suspense>
       
       {/* Scroll to Top Button with enhanced animation */}
       <AnimatePresence>

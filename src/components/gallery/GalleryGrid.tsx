@@ -47,6 +47,10 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
               src={image.src} 
               alt={image.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              width="400"
+              height="300"
+              decoding="async"
             />
             <div className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 transition-opacity duration-300 ${
               hoveredIndex === index ? 'opacity-100' : 'opacity-0'

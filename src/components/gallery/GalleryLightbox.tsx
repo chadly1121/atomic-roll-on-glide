@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { GalleryImage } from './types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -22,6 +22,29 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
 
   const currentImage = images.find(img => img.id === selectedImage);
   if (!currentImage) return null;
+  
+  // Find current image index
+  const currentIndex = images.findIndex(img => img.id === selectedImage);
+  
+  // Preload adjacent images for smoother navigation
+  useEffect(() => {
+    if (currentIndex !== -1) {
+      // Determine previous and next image indices
+      const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+      const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+      
+      // Preload the previous and next images
+      if (images[prevIndex]) {
+        const prevImg = new Image();
+        prevImg.src = images[prevIndex].src;
+      }
+      
+      if (images[nextIndex]) {
+        const nextImg = new Image();
+        nextImg.src = images[nextIndex].src;
+      }
+    }
+  }, [currentIndex, images]);
 
   return (
     <AnimatePresence>
@@ -62,6 +85,9 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
             src={currentImage.src} 
             alt={currentImage.title}
             className="w-full h-auto max-h-[90vh] object-contain"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
           
           <div className="absolute inset-x-0 bottom-0 flex justify-between items-center p-4 bg-gradient-to-t from-black/70 to-transparent">
