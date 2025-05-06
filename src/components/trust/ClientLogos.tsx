@@ -8,8 +8,8 @@ const ClientLogos: React.FC = () => {
   const clients = [
     {
       name: "Davicor Construction",
-      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=300&auto=format",
-      website: "https://davicorconstruction.ca/"
+      logo: "https://www.davicor.ca/wp-content/uploads/2023/02/cropped-Davicor-Logo.png",
+      website: "https://www.davicor.ca/"
     },
     {
       name: "R&G Construction",
@@ -63,7 +63,7 @@ const ClientLogos: React.FC = () => {
                   <LazyImage 
                     src={client.logo}
                     alt={`${client.name} logo`}
-                    className="max-h-16 w-auto object-cover"
+                    className="max-h-16 w-auto object-contain"
                     width={120}
                     height={80}
                   />
