@@ -40,25 +40,6 @@ const GallerySection = () => {
     setSelectedImage(filteredImages[newIndex].id);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      navigateImages('prev');
-    } else if (e.key === 'ArrowRight') {
-      navigateImages('next');
-    } else if (e.key === 'Escape') {
-      closeModal();
-    }
-  };
-
-  useEffect(() => {
-    if (selectedImage !== null) {
-      window.addEventListener('keydown', handleKeyDown as any);
-    }
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown as any);
-    };
-  }, [selectedImage, filteredImages]);
-
   return (
     <section id="gallery" className="py-24 relative overflow-hidden bg-gradient-to-br from-white to-accent/30">
       <div className="atomic-starburst w-64 h-64 top-40 right-20"></div>
