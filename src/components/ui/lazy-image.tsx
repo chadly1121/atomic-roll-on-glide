@@ -127,7 +127,7 @@ const LazyImage = ({
           onError={handleError}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
-          fetchpriority={priority ? "high" : "auto"}
+          fetchPriority={priority ? "high" : "auto"}
           className={cn(
             "w-full h-full transition-opacity duration-300",
             !isLoaded || error ? "opacity-0" : "opacity-100",

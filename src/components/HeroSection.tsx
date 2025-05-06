@@ -168,7 +168,7 @@ const HeroSection = () => {
                           className="w-full h-[400px] object-cover transition-all duration-300" 
                           src={image}
                           loading={index < 2 ? "eager" : "lazy"}
-                          fetchpriority={index < 2 ? "high" : "low"}
+                          fetchPriority={index < 2 ? "high" : "low"}
                           width="800"
                           height="400"
                           decoding="async"

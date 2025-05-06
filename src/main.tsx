@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { lazy, Suspense } from 'react';
 import './index.css';
 
+// Add React.StrictMode for better development experience
+import React from 'react';
+
 // App loading component
 const AppLoading = () => (
   <div className="fixed inset-0 flex flex-col items-center justify-center bg-atomic-cream">
@@ -30,9 +33,11 @@ if (rootElement) {
   const root = createRoot(rootElement);
   
   root.render(
-    <Suspense fallback={<AppLoading />}>
-      <App />
-    </Suspense>
+    <React.StrictMode>
+      <Suspense fallback={<AppLoading />}>
+        <App />
+      </Suspense>
+    </React.StrictMode>
   );
   
   // Performance logging
