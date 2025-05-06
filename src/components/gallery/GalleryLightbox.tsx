@@ -1,8 +1,9 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GalleryImage } from './types';
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface GalleryLightboxProps {
   selectedImage: number | null;
@@ -12,6 +13,8 @@ interface GalleryLightboxProps {
 }
 
 const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images, closeModal, navigateImages }) => {
+  const isMobile = useIsMobile();
+  
   // If no image is selected, don't render the lightbox
   if (selectedImage === null) return null;
   
@@ -34,85 +37,91 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 flex justify-center items-center p-4">
-      <div className="relative max-w-5xl max-h-screen">
-        {/* Close Button */}
-        <button 
-          onClick={closeModal} 
-          className="absolute top-4 right-4 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
-          aria-label="Close"
-        >
-          <X className="h-6 w-6" />
-        </button>
+    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex justify-center items-center">
+      {/* Close Button - Make it bigger and more accessible on mobile */}
+      <button 
+        onClick={closeModal} 
+        className={`absolute ${isMobile ? 'top-6 right-6 p-3' : 'top-4 right-4 p-2'} bg-gray-800 bg-opacity-70 text-white rounded-full hover:bg-opacity-90 transition-colors z-50`}
+        aria-label="Close"
+      >
+        <X className={isMobile ? "h-7 w-7" : "h-6 w-6"} />
+      </button>
 
-        {/* Image Navigation Buttons */}
-        <button 
-          onClick={() => navigateImages('prev')} 
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
-          aria-label="Previous"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button 
-          onClick={() => navigateImages('next')} 
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
-          aria-label="Next"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
+      {/* Navigation Buttons - Make them bigger on mobile */}
+      <button 
+        onClick={() => navigateImages('prev')} 
+        className={`absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white rounded-full ${isMobile ? 'p-3' : 'p-2'} hover:bg-opacity-90 transition-colors z-50`}
+        aria-label="Previous"
+      >
+        <ChevronLeft className={isMobile ? "h-7 w-7" : "h-6 w-6"} />
+      </button>
+      <button 
+        onClick={() => navigateImages('next')} 
+        className={`absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white rounded-full ${isMobile ? 'p-3' : 'p-2'} hover:bg-opacity-90 transition-colors z-50`}
+        aria-label="Next"
+      >
+        <ChevronRight className={isMobile ? "h-7 w-7" : "h-6 w-6"} />
+      </button>
 
-        {/* Image Display */}
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={{
-              enter: (direction: number) => {
-                return { x: direction > 0 ? 1000 : -1000, opacity: 0 };
-              },
-              center: { zIndex: 1, x: 0, opacity: 1 },
-              exit: (direction: number) => {
-                return { zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 };
-              },
-            }}
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 20 },
-              opacity: { duration: 0.2 },
-            }}
-            drag="x"
-            dragElastic={dragElastic}
-            onDragStart={() => setIsDragging(true)}
-            onDrag={(event, info) => {
-              setX([info.offset.x, info.offset.x > 0 ? 1 : -1]);
-            }}
-            onDragEnd={(event, info) => {
-              setIsDragging(false);
-              const predictedPower = swipePower(info.offset.x, info.velocity.x);
+      {/* Caption/Counter for mobile */}
+      {isMobile && (
+        <div className="absolute bottom-4 left-0 right-0 text-center text-white bg-black bg-opacity-50 py-2">
+          <p className="text-sm">{currentImage.title || `Image ${currentIndex + 1}`}</p>
+          <p className="text-xs text-gray-300">{currentIndex + 1} / {images.length}</p>
+        </div>
+      )}
 
-              if (predictedPower > swipeConfidenceThreshold) {
-                const direction = info.offset.x > 0 ? 1 : -1;
-                if (direction > 0) {
-                  navigateImages('prev');
-                } else {
-                  navigateImages('next');
-                }
+      {/* Image Display */}
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={currentIndex}
+          custom={direction}
+          variants={{
+            enter: (direction: number) => {
+              return { x: direction > 0 ? 1000 : -1000, opacity: 0 };
+            },
+            center: { zIndex: 1, x: 0, opacity: 1 },
+            exit: (direction: number) => {
+              return { zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 };
+            },
+          }}
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 20 },
+            opacity: { duration: 0.2 },
+          }}
+          drag={isMobile ? "x" : false}
+          dragElastic={dragElastic}
+          onDragStart={() => setIsDragging(true)}
+          onDrag={(event, info) => {
+            setX([info.offset.x, info.offset.x > 0 ? 1 : -1]);
+          }}
+          onDragEnd={(event, info) => {
+            setIsDragging(false);
+            const predictedPower = swipePower(info.offset.x, info.velocity.x);
+
+            if (predictedPower > swipeConfidenceThreshold) {
+              const direction = info.offset.x > 0 ? 1 : -1;
+              if (direction > 0) {
+                navigateImages('prev');
               } else {
-                // Settle back to center
-                setX([0, 0]);
+                navigateImages('next');
               }
-            }}
-            className="absolute top-0 left-0 w-full h-full flex justify-center items-center"
-          >
-            <img
-              src={currentImage.src}
-              alt={currentImage.title || "Gallery image"}
-              className="max-w-full max-h-[85vh] object-contain"
-              loading="eager"
-              decoding="async"
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
+            } else {
+              // Settle back to center
+              setX([0, 0]);
+            }
+          }}
+          className="absolute top-0 left-0 w-full h-full flex justify-center items-center"
+        >
+          <img
+            src={currentImage.src}
+            alt={currentImage.title || "Gallery image"}
+            className="max-w-full max-h-[85vh] object-contain px-4"
+            loading="eager"
+            decoding="async"
+          />
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
