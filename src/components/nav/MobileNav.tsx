@@ -21,12 +21,12 @@ const MobileNav = ({ navLinks, mobileMenuOpen, handleNavLinkClick }: MobileNavPr
       transition={{ duration: 0.3 }}
     >
       {mobileMenuOpen && (
-        <nav className="flex flex-col px-4 py-4">
+        <nav className="flex flex-col px-6 py-6">
           {navLinks.map(link => (
             <motion.a 
               key={link.name} 
               href={link.href} 
-              className="py-4 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors text-atomic-navy text-lg"
+              className="py-5 border-b border-gray-100 last:border-0 font-poppins hover:text-atomic-orange transition-colors text-atomic-navy text-lg"
               onClick={(e) => handleNavLinkClick(e, link.href)}
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -39,10 +39,10 @@ const MobileNav = ({ navLinks, mobileMenuOpen, handleNavLinkClick }: MobileNavPr
               </div>
             </motion.a>
           ))}
-          <motion.div className="py-4 flex flex-col gap-3">
+          <motion.div className="pt-6 flex flex-col gap-4">
             <motion.a 
               href="tel:+6047581680"
-              className="atomic-button flex justify-center items-center gap-2 w-full py-4 text-center group"
+              className="atomic-button flex justify-center items-center gap-2 w-full py-5 text-center group"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -53,7 +53,7 @@ const MobileNav = ({ navLinks, mobileMenuOpen, handleNavLinkClick }: MobileNavPr
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="atomic-button-secondary w-full py-4 text-center group"
+              className="atomic-button-secondary w-full py-5 text-center group"
               onClick={(e) => handleNavLinkClick(e, '#contact')}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
