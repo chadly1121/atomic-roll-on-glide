@@ -1,122 +1,134 @@
-
-import React, { useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { XMarkIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { GalleryImage } from './types';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface GalleryLightboxProps {
-  selectedImage: number | null;
   images: GalleryImage[];
-  closeModal: () => void;
-  navigateImages: (direction: 'prev' | 'next') => void;
+  startIndex: number;
+  onClose: () => void;
 }
 
-const GalleryLightbox: React.FC<GalleryLightboxProps> = ({
-  selectedImage,
-  images,
-  closeModal,
-  navigateImages
-}) => {
-  // If no image is selected, don't render anything
-  if (selectedImage === null) return null;
+const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ images, startIndex, onClose }) => {
+  const [activeIndex, setActiveIndex] = useState(startIndex);
 
-  const currentImage = images.find(img => img.id === selectedImage);
-  if (!currentImage) return null;
-  
-  // Find current image index
-  const currentIndex = images.findIndex(img => img.id === selectedImage);
-  
-  // Preload adjacent images for smoother navigation
-  useEffect(() => {
-    if (currentIndex !== -1) {
-      // Determine previous and next image indices
-      const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-      const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-      
-      // Preload the previous and next images
-      if (images[prevIndex]) {
-        const prevImg = new Image();
-        prevImg.src = images[prevIndex].src;
+  const nextImage = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+
+  const prevImage = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  // Keyboard navigation
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight') {
+        nextImage();
+      } else if (event.key === 'ArrowLeft') {
+        prevImage();
+      } else if (event.key === 'Escape') {
+        onClose();
       }
-      
-      if (images[nextIndex]) {
-        const nextImg = new Image();
-        nextImg.src = images[nextIndex].src;
-      }
-    }
-  }, [currentIndex, images]);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [nextImage, prevImage, onClose]);
+
+  // Gestures
+  const [[x, direction], setX] = useState([0, 0]);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const dragElastic = 0.15;
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
 
   return (
-    <AnimatePresence>
-      <motion.div 
-        className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-        onClick={closeModal}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <motion.div 
-          className="relative max-w-5xl max-h-[90vh] bg-white rounded-xl overflow-hidden shadow-2xl"
-          onClick={(e) => e.stopPropagation()}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.3 }}
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 flex justify-center items-center p-4">
+      <div className="relative max-w-5xl max-h-screen">
+        {/* Close Button */}
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
+          aria-label="Close"
         >
-          <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 z-10 bg-gradient-to-b from-black/70 to-transparent text-white">
-            <h3 className="text-lg font-bold">
-              {currentImage.title}
-            </h3>
-            <motion.button 
-              onClick={closeModal}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-r from-atomic-turquoise to-atomic-orange backdrop-blur-sm text-white hover:bg-white/50 transition-colors"
-              aria-label="Close modal"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </motion.button>
-          </div>
-          
-          <img 
-            src={currentImage.src} 
-            alt={currentImage.title}
-            className="w-full h-auto max-h-[90vh] object-contain"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-          
-          <div className="absolute inset-x-0 bottom-0 flex justify-between items-center p-4 bg-gradient-to-t from-black/70 to-transparent">
-            <motion.button 
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateImages('prev');
-              }}
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </motion.button>
-            <motion.button 
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateImages('next');
-              }}
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-atomic-orange/20 to-atomic-orange backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/50 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </motion.button>
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+          <XMarkIcon className="h-6 w-6" />
+        </button>
+
+        {/* Image Navigation Buttons */}
+        <button 
+          onClick={prevImage} 
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
+          aria-label="Previous"
+        >
+          <ChevronLeftIcon className="h-6 w-6" />
+        </button>
+        <button 
+          onClick={nextImage} 
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-80 transition-colors z-50"
+          aria-label="Next"
+        >
+          <ChevronRightIcon className="h-6 w-6" />
+        </button>
+
+        {/* Image Display */}
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={activeIndex}
+            custom={direction}
+            variants={{
+              enter: (direction: number) => {
+                return { x: direction > 0 ? 1000 : -1000, opacity: 0 };
+              },
+              center: { zIndex: 1, x: 0, opacity: 1 },
+              exit: (direction: number) => {
+                return { zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 };
+              },
+            }}
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 20 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragElastic={dragElastic}
+            onDragStart={() => setIsDragging(true)}
+            onDrag={(_event, { deltaX }) => {
+              setX([deltaX, deltaX > 0 ? 1 : -1]);
+            }}
+            onDragEnd={(event, { offset, velocity }) => {
+              setIsDragging(false);
+              const predictedPower = swipePower(offset.x, velocity.x);
+
+              if (predictedPower > swipeConfidenceThreshold) {
+                const direction = offset.x > 0 ? 1 : -1;
+                if (direction > 0) {
+                  prevImage();
+                } else {
+                  nextImage();
+                }
+              } else {
+                // Settle back to center
+                setX([0, 0]);
+              }
+            }}
+            className="absolute top-0 left-0 w-full h-full flex justify-center items-center"
+          >
+            <img
+              src={images[activeIndex].large}
+              alt={images[activeIndex].alt || "Gallery image"}
+              className="max-w-full max-h-[85vh] object-contain"
+              loading="eager"
+              decoding="async"
+			  fetchPriority="high"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
   );
 };
 

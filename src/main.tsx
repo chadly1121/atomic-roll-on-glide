@@ -1,7 +1,6 @@
-
 import { createRoot } from 'react-dom/client';
 import { lazy, Suspense } from 'react';
-import './index.css';
+import './styles/index.css';
 
 // Add React.StrictMode for better development experience
 import React from 'react';
