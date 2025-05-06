@@ -103,8 +103,16 @@ const DialogDescription = React.forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-// Properly add the Close to the Dialog namespace
-Object.assign(Dialog, { Close: DialogClose })
+// Properly add all components to the Dialog namespace
+Object.assign(Dialog, {
+  Trigger: DialogTrigger,
+  Content: DialogContent,
+  Header: DialogHeader,
+  Footer: DialogFooter,
+  Title: DialogTitle,
+  Description: DialogDescription,
+  Close: DialogClose
+})
 
 export {
   Dialog,
