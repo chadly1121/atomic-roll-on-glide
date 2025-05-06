@@ -5,7 +5,19 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const Dialog = DialogPrimitive.Root
+// Define the type for the Dialog component including its subcomponents
+type DialogComponentType = React.FC<DialogPrimitive.DialogProps> & {
+  Trigger: typeof DialogPrimitive.Trigger;
+  Content: typeof DialogContent;
+  Header: typeof DialogHeader;
+  Footer: typeof DialogFooter;
+  Title: typeof DialogTitle;
+  Description: typeof DialogDescription;
+  Close: typeof DialogPrimitive.Close;
+};
+
+// Create the base Dialog component
+const Dialog = DialogPrimitive.Root as unknown as DialogComponentType;
 
 const DialogTrigger = DialogPrimitive.Trigger
 
@@ -103,16 +115,14 @@ const DialogDescription = React.forwardRef<
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName
 
-// Properly add all components to the Dialog namespace
-Object.assign(Dialog, {
-  Trigger: DialogTrigger,
-  Content: DialogContent,
-  Header: DialogHeader,
-  Footer: DialogFooter,
-  Title: DialogTitle,
-  Description: DialogDescription,
-  Close: DialogClose
-})
+// Assign subcomponents to Dialog
+Dialog.Trigger = DialogTrigger;
+Dialog.Content = DialogContent;
+Dialog.Header = DialogHeader;
+Dialog.Footer = DialogFooter;
+Dialog.Title = DialogTitle;
+Dialog.Description = DialogDescription;
+Dialog.Close = DialogClose;
 
 export {
   Dialog,
