@@ -80,7 +80,35 @@ const SEOHelmet: React.FC = () => {
             "sameAs": [
               "https://www.facebook.com/rollonpainting",
               "https://www.instagram.com/rollonpainting"
+            ],
+            "award": [
+              "Best of Muskoka 2024",
+              "PCA Certified Painters"
+            ],
+            "hasCredential": [
+              "Licensed Professional Painters",
+              "Fully Insured"
             ]
+          }
+        `}
+      </script>
+      
+      {/* Review aggregate for trust signals */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "AggregateRating",
+            "itemReviewed": {
+              "@type": "ProfessionalService",
+              "name": "Roll On Painting",
+              "image": "https://rollonpainting.com/logo.png"
+            },
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "87",
+            "reviewCount": "87"
           }
         `}
       </script>

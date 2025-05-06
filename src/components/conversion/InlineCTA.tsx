@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CallToAction from './CallToAction';
+import { BadgeCheck } from 'lucide-react';
 
 interface InlineCTAProps {
   title: string;
@@ -16,6 +17,7 @@ interface InlineCTAProps {
   };
   variant?: 'light' | 'dark' | 'accent';
   className?: string;
+  showTrustBadges?: boolean;
 }
 
 const InlineCTA = ({
@@ -25,6 +27,7 @@ const InlineCTA = ({
   secondaryCTA,
   variant = 'light',
   className = '',
+  showTrustBadges = false,
 }: InlineCTAProps) => {
   // Variant styles
   const variantStyles = {
@@ -32,6 +35,14 @@ const InlineCTA = ({
     dark: 'bg-atomic-navy text-white',
     accent: 'bg-atomic-turquoise/10 text-atomic-navy',
   };
+
+  // Trust badges to display
+  const trustBadges = [
+    { text: "5-star rated service" },
+    { text: "Licensed & insured" },
+    { text: "Free estimates" },
+    { text: "10-year warranty" }
+  ];
 
   return (
     <motion.div 
@@ -64,6 +75,20 @@ const InlineCTA = ({
             />
           )}
         </div>
+
+        {showTrustBadges && (
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {trustBadges.map((badge, index) => (
+              <div 
+                key={index} 
+                className="flex items-center text-sm font-medium"
+              >
+                <BadgeCheck className="h-4 w-4 mr-1 text-atomic-turquoise" />
+                <span>{badge.text}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -17,6 +17,10 @@ import LazySectionLoader from '../components/layout/LazySectionLoader';
 import InlineCTA from '../components/conversion/InlineCTA';
 import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
 
+// Import trust components
+import TrustBadges from '../components/trust/TrustBadges';
+import ClientLogos from '../components/trust/ClientLogos';
+
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -57,7 +61,10 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       
-      {/* First Inline CTA */}
+      {/* Client Logos - builds trust early */}
+      <ClientLogos />
+      
+      {/* First Inline CTA with Trust Badges */}
       <div className="container mx-auto px-4 my-16">
         <InlineCTA 
           title="Transform Your Space Today"
@@ -65,10 +72,14 @@ const Index = () => {
           primaryCTA={{ text: "Get a Free Quote", href: "#contact" }}
           secondaryCTA={{ text: "See Our Work", href: "#services" }}
           variant="accent"
+          showTrustBadges={true}
         />
       </div>
       
       <ServicesSection /> {/* This now serves as both Services and Gallery */}
+      
+      {/* Trust Badges Section */}
+      <TrustBadges />
       
       {/* Second Inline CTA */}
       <div className="container mx-auto px-4 my-16">
