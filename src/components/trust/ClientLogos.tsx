@@ -2,32 +2,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LazyImage } from "@/components/ui/lazy-image";
+import { Link, ExternalLink } from 'lucide-react';
 
 const ClientLogos: React.FC = () => {
   const clients = [
     {
       name: "Davicor Construction",
-      logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746763692/davicor-construction-logo_wyng0p.png",
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=300&auto=format",
       website: "https://davicorconstruction.ca/"
     },
     {
       name: "R&G Construction",
-      logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746763694/r-and-g-construction-logo_bgpdtx.png",
+      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=300&auto=format",
       website: "https://rgconstruction.ca/"
     },
     {
       name: "Riedmann Property Management",
-      logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746763693/riedmann-property-management-logo_zt8tci.png",
+      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=300&auto=format",
       website: "https://riedmannmanagement.com/"
     },
     {
       name: "Hall Construction",
-      logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746763693/hall-construction-logo_flcftr.png",
+      logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=300&auto=format",
       website: "https://hallconstructioninc.com/"
     },
     {
       name: "Radius Construction",
-      logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746763693/radius-construction-logo_l40xnk.png",
+      logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=300&auto=format",
       website: "https://radiusconstruction.ca/"
     }
   ];
@@ -44,7 +45,7 @@ const ClientLogos: React.FC = () => {
           {clients.map((client, index) => (
             <motion.div
               key={index}
-              className="w-full flex justify-center grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-full flex justify-center hover:shadow-md p-3 rounded-lg transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,16 +56,22 @@ const ClientLogos: React.FC = () => {
                 href={client.website} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full flex justify-center"
+                className="block w-full flex flex-col items-center space-y-2"
                 aria-label={`Visit ${client.name} website`}
               >
-                <LazyImage 
-                  src={client.logo} 
-                  alt={`${client.name} logo`}
-                  className="max-h-16 w-auto object-contain"
-                  width={160}
-                  height={80}
-                />
+                <div className="bg-white p-3 rounded-lg shadow-sm w-full h-24 flex items-center justify-center">
+                  <LazyImage 
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="max-h-16 w-auto object-cover"
+                    width={120}
+                    height={80}
+                  />
+                </div>
+                <div className="flex items-center text-sm font-medium text-atomic-navy">
+                  <span>{client.name}</span>
+                  <ExternalLink className="h-3 w-3 ml-1 text-atomic-turquoise" />
+                </div>
               </a>
             </motion.div>
           ))}
@@ -78,7 +85,7 @@ const ClientLogos: React.FC = () => {
           >
             <a 
               href="#contact" 
-              className="text-atomic-turquoise font-medium hover:text-atomic-navy transition-colors"
+              className="text-atomic-turquoise font-medium hover:text-atomic-navy transition-colors flex items-center"
               onClick={(e) => {
                 e.preventDefault();
                 document.querySelector('#contact')?.scrollIntoView({ 
@@ -87,7 +94,8 @@ const ClientLogos: React.FC = () => {
                 });
               }}
             >
-              Join our growing list of satisfied clients →
+              Join our growing list of satisfied clients
+              <Link className="h-4 w-4 ml-1" />
             </a>
           </motion.div>
         </div>
