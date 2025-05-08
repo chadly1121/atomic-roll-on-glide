@@ -19,6 +19,7 @@ import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
 
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
+import ClientLogos from '../components/trust/ClientLogos';
 
 const Index = () => {
   // Add a scroll to top button
@@ -76,6 +77,9 @@ const Index = () => {
       
       {/* Trust Badges Section */}
       <TrustBadges />
+      
+      {/* Client Logos Section */}
+      <ClientLogos />
       
       {/* Lazy loaded sections (below the fold) */}
       <LazySectionLoader visibleSections={visibleSections} />

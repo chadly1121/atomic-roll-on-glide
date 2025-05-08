@@ -11,7 +11,7 @@ export interface PartnerLogo {
 export const partnerLogos: PartnerLogo[] = [
   {
     name: "Benjamin Moore",
-    logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/benjamin-moore-logo_umiuly.png",
+    logo: "https://www.benjaminmoore.com/sites/default/files/2023-11/BM_Logo_Primary_4C_FullColor.png",
     altText: "Benjamin Moore - Premium Paint Provider",
     url: "https://www.benjaminmoore.com/"
   },
@@ -23,7 +23,7 @@ export const partnerLogos: PartnerLogo[] = [
   },
   {
     name: "Painting Contractors Association",
-    logo: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/pca-logo_u8fzz6.png",
+    logo: "https://pcapainted.org/wp-content/uploads/2020/03/Horizontal_Logo_Full_Color-1-2.png",
     altText: "Painting Contractors Association - Professional Certification",
     url: "https://pcapainted.org/"
   },

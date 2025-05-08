@@ -76,25 +76,31 @@ const TrustBadges: React.FC = () => {
         <div className="mt-16 pt-12 border-t">
           <h3 className="text-2xl font-bold text-center mb-8">Our Partners & Affiliations</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-            {partnerLogos.slice(0, 5).map((partner, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center">
+            {partnerLogos.map((partner, index) => (
               <motion.div
                 key={index}
                 className="grayscale hover:grayscale-0 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
               >
                 <a 
                   href={partner.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label={`Visit ${partner.name} website`}
+                  className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <LazyImage 
                     src={partner.logo} 
                     alt={partner.altText} 
-                    className="max-h-16 w-auto"
+                    className="max-h-16 w-auto mx-auto"
                     width={160}
                     height={80}
+                    priority={index < 4} // Prioritize loading first 4 logos
                   />
                 </a>
               </motion.div>
