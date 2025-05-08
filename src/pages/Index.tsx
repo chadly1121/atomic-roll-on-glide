@@ -50,7 +50,7 @@ const Index = () => {
       
       <Navbar activeSection={activeSection} />
       
-      {/* Free Touch Ups Button positioned centrally below navbar */}
+      {/* Free Touch Ups Button - No color consultation offered */}
       <div className="w-full bg-white/80 backdrop-blur-sm py-2 shadow-sm border-b border-gray-100 sticky top-20 z-40">
         <div className="container mx-auto px-4 max-w-md flex justify-center">
           <FreeTouchUpsButton />
