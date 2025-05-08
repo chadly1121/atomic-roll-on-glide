@@ -1,1 +1,4 @@
+
 project_id = "kqbybkrvatvfiwhbnqna"
+
+[functions.send-quote-notification]

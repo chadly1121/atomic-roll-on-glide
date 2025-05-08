@@ -80,6 +80,30 @@ const ContactForm = () => {
     return uploadedFiles;
   };
   
+  const sendNotificationEmails = async (quoteRequest: any) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('send-quote-notification', {
+        body: {
+          id: quoteRequest.id,
+          name: quoteRequest.name,
+          email: quoteRequest.email,
+          phone: quoteRequest.phone,
+          service: quoteRequest.service,
+          message: quoteRequest.message,
+          hasAttachments: quoteRequest.has_attachments
+        }
+      });
+      
+      if (error) {
+        console.error('Error sending notification emails:', error);
+      }
+      
+      return data;
+    } catch (error) {
+      console.error('Error invoking send-quote-notification function:', error);
+    }
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -119,10 +143,15 @@ const ContactForm = () => {
         await uploadFilesToStorage(quoteId);
       }
       
+      // Send notification emails (to company and confirmation to client)
+      if (data && data[0]) {
+        await sendNotificationEmails(data[0]);
+      }
+      
       // Show success toast
       toast({
         title: "Quote Request Submitted",
-        description: "We'll get back to you within 24 hours!",
+        description: "Thank you! We'll get back to you within 24 hours!",
       });
       
       // Reset form
