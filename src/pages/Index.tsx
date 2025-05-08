@@ -80,16 +80,7 @@ const Index = () => {
       {/* Trust Badges Section */}
       <TrustBadges />
       
-      {/* Second Inline CTA */}
-      <div className="container mx-auto px-4 my-16">
-        <InlineCTA 
-          title="Professional Color Consultation"
-          description="Not sure which colors will look best in your space? Schedule a free color consultation with our experts."
-          primaryCTA={{ text: "Book a Consultation", href: "#booking" }}
-          variant="light"
-          className="border border-atomic-turquoise/20"
-        />
-      </div>
+      {/* Removed Color Consultation CTA */}
       
       {/* Lazy loaded sections (below the fold) */}
       <LazySectionLoader visibleSections={visibleSections} />
