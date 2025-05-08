@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
@@ -41,7 +40,7 @@ serve(async (req) => {
       throw new Error("Jobber API token not found in environment variables");
     }
     
-    console.log("Creating new quote request in Jobber...");
+    console.log("Creating new quote request in Jobber via API...");
     
     // Format the data for Jobber's API
     const jobberRequestData = {
@@ -64,7 +63,7 @@ Quote request ID: ${quoteRequest.id}
       }
     };
     
-    // Create a request in Jobber
+    // Create a request in Jobber (keeping for any programmatic submissions not using the embedded form)
     const jobberResponse = await fetch("https://api.getjobber.com/api/work_requests", {
       method: "POST",
       headers: {
@@ -84,11 +83,7 @@ Quote request ID: ${quoteRequest.id}
     const jobberResult = await jobberResponse.json();
     console.log("Quote request created in Jobber successfully:", jobberResult);
     
-    // Send notification email to client (can still use a simple email service if needed)
-    console.log("Sending confirmation email to client...");
-    
-    // Example: Using a simple email service for the client confirmation
-    // This is optional as Jobber can be configured to send automated emails
+    // Note: Client confirmation is handled directly by Jobber's embedded form
     
     return new Response(
       JSON.stringify({ 
