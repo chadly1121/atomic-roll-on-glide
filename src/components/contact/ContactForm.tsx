@@ -7,15 +7,32 @@ const ContactForm = () => {
     // This will attempt to re-initialize the Jobber form if needed
     const script = document.querySelector('script[clienthub_id="ea87a0d4-d7c5-44c8-b739-29fe788d4d6b"]');
     if (script) {
-      const newScript = document.createElement('script');
-      newScript.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
-      newScript.setAttribute('clienthub_id', "ea87a0d4-d7c5-44c8-b739-29fe788d4d6b");
-      newScript.setAttribute('form_url', "https://clienthub.getjobber.com/client_hubs/ea87a0d4-d7c5-44c8-b739-29fe788d4d6b/public/work_request/embedded_work_request_form");
-      
-      // Remove the old script and add the new one to reinitialize
+      // Remove the existing script to avoid conflicts
       script.parentNode?.removeChild(script);
-      document.body.appendChild(newScript);
     }
+    
+    // Create a fresh script element for Jobber with proper attributes
+    const newScript = document.createElement('script');
+    newScript.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
+    newScript.setAttribute('clienthub_id', "ea87a0d4-d7c5-44c8-b739-29fe788d4d6b");
+    newScript.setAttribute('form_url', "https://clienthub.getjobber.com/client_hubs/ea87a0d4-d7c5-44c8-b739-29fe788d4d6b/public/work_request/embedded_work_request_form");
+    
+    // Add the new script to the body to reinitialize the form completely
+    document.body.appendChild(newScript);
+    
+    // Make sure any existing form container is reset
+    const formContainer = document.querySelector('.jobber-embedded-form-container');
+    if (formContainer) {
+      formContainer.innerHTML = '';
+    }
+    
+    // Cleanup function to remove the script when component unmounts
+    return () => {
+      const cleanupScript = document.querySelector('script[clienthub_id="ea87a0d4-d7c5-44c8-b739-29fe788d4d6b"]');
+      if (cleanupScript) {
+        cleanupScript.parentNode?.removeChild(cleanupScript);
+      }
+    };
   }, []);
   
   return (
