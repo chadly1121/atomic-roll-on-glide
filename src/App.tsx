@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,9 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
-import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
-import BlogEditorPage from "./pages/BlogEditorPage";
 import NotFound from "./pages/NotFound";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
@@ -33,33 +29,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/blog" element={
-              <>
-                <PageBreadcrumbs items={[{ label: 'Blog', href: '/blog' }]} />
-                <BlogPage />
-              </>
-            } />
-            <Route path="/blog/:id" element={
-              <>
-                <PageBreadcrumbs />
-                <BlogPostPage />
-              </>
-            } />
-            <Route path="/blog/new" element={
-              <>
-                <PageBreadcrumbs items={[
-                  { label: 'Blog', href: '/blog' },
-                  { label: 'New Post' }
-                ]} />
-                <BlogEditorPage />
-              </>
-            } />
-            <Route path="/blog/edit/:id" element={
-              <>
-                <PageBreadcrumbs />
-                <BlogEditorPage />
-              </>
-            } />
+            {/* Removed all blog routes */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={
               <>

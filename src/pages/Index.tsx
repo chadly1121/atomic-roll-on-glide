@@ -13,20 +13,19 @@ import WelcomeToast from '../components/layout/WelcomeToast';
 import SEOHelmet from '../components/layout/SEOHelmet';
 import LazySectionLoader from '../components/layout/LazySectionLoader';
 
-// Import new conversion components
+// Import conversion components
 import InlineCTA from '../components/conversion/InlineCTA';
 import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
 
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
-// Removed ClientLogos import
 
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
-    'home', 'about', 'services', 'contact' // Removed 'booking'
+    'home', 'about', 'services', 'contact'
   ]));
 
   // Optimize scroll handler with useCallback
@@ -61,8 +60,6 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       
-      {/* Removed ClientLogos section */}
-      
       {/* First Inline CTA with Trust Badges */}
       <div className="container mx-auto px-4 my-16">
         <InlineCTA 
@@ -75,12 +72,10 @@ const Index = () => {
         />
       </div>
       
-      <ServicesSection /> {/* This now serves as both Services and Gallery */}
+      <ServicesSection /> {/* This now serves as both Services, Gallery, and Pricing */}
       
       {/* Trust Badges Section */}
       <TrustBadges />
-      
-      {/* Removed Color Consultation CTA */}
       
       {/* Lazy loaded sections (below the fold) */}
       <LazySectionLoader visibleSections={visibleSections} />

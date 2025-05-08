@@ -11,9 +11,6 @@ const SectionLoading = () => (
 // Lazy loaded components
 const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
 const PricingSection = lazy(() => import('../PricingSection'));
-const BlogSection = lazy(() => import('../BlogSection'));
-const TrendsSection = lazy(() => import('../TrendsSection'));
-// Removed BookingSection import
 const ContactSection = lazy(() => import('../ContactSection'));
 const Footer = lazy(() => import('../Footer'));
 
@@ -37,19 +34,9 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
         </Suspense>
       )}
       
-      {visibleSections.has('blog') && (
-        <Suspense fallback={<SectionLoading />}>
-          <BlogSection />
-        </Suspense>
-      )}
+      {/* Removed BlogSection */}
       
-      {visibleSections.has('trends') && (
-        <Suspense fallback={<SectionLoading />}>
-          <TrendsSection />
-        </Suspense>
-      )}
-      
-      {/* Removed BookingSection */}
+      {/* Removed TrendsSection */}
       
       {visibleSections.has('contact') && (
         <Suspense fallback={<SectionLoading />}>
