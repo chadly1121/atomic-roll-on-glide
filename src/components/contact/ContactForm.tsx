@@ -96,11 +96,13 @@ const ContactForm = () => {
       
       if (error) {
         console.error('Error sending notification emails:', error);
+        throw error;
       }
       
       return data;
     } catch (error) {
       console.error('Error invoking send-quote-notification function:', error);
+      throw error;
     }
   };
   
