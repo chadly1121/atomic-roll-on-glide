@@ -5,52 +5,51 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const ContactForm = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const scriptInitialized = useRef(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobile();
 
-  // Enhanced Jobber form initialization with optimized loading strategy
+  // Enhanced Jobber form initialization with optimized eager loading strategy
   useEffect(() => {
     if (scriptInitialized.current) return;
     
-    // Immediately start loading the form assets
-    setIsLoading(true);
-    
-    // Create a promise to track CSS loading
-    const loadCss = new Promise<void>((resolve) => {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
-      link.onload = () => resolve();
-      document.head.appendChild(link);
-    });
-
-    // Create a promise to track script loading
-    const loadScript = new Promise<void>((resolve) => {
-      const script = document.createElement('script');
-      script.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
-      script.setAttribute('clienthub_id', "ea87a0d4-d7c5-44c8-b739-29fe788d4d6b");
-      script.setAttribute('form_url', "https://clienthub.getjobber.com/client_hubs/ea87a0d4-d7c5-44c8-b739-29fe788d4d6b/public/work_request/embedded_work_request_form");
-      script.setAttribute('async', 'true');
-      script.setAttribute('defer', 'true');
-      script.onload = () => resolve();
-      document.body.appendChild(script);
-    });
-
-    // Wait for both to load
-    Promise.all([loadCss, loadScript])
-      .then(() => {
+    // Start loading the form assets immediately
+    const loadAssets = async () => {
+      try {
+        // Add CSS link instantly
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
+        document.head.appendChild(link);
+      
+        // Add script with high priority
+        const script = document.createElement('script');
+        script.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
+        script.setAttribute('clienthub_id', "ea87a0d4-d7c5-44c8-b739-29fe788d4d6b");
+        script.setAttribute('form_url', "https://clienthub.getjobber.com/client_hubs/ea87a0d4-d7c5-44c8-b739-29fe788d4d6b/public/work_request/embedded_work_request_form");
+        script.setAttribute('async', 'false'); // Changed to false for faster loading
+        script.setAttribute('defer', 'false'); // Changed to false for faster loading
+        
+        // Use a promise to track script loading
+        await new Promise<void>((resolve) => {
+          script.onload = () => resolve();
+          document.body.appendChild(script);
+        });
+        
+        // Give a small delay for the form to initialize
         setTimeout(() => {
           setIsLoading(false);
           scriptInitialized.current = true;
-        }, 300); // Small timeout to ensure DOM manipulation completes
-      })
-      .catch(error => {
+        }, 100); // Reduced timeout
+      } catch (error) {
         console.error("Error loading Jobber form assets:", error);
         setIsLoading(false);
-      });
+      }
+    };
     
+    loadAssets();
+    
+    // Cleanup function
     return () => {
-      // No need to remove CSS since it might be used elsewhere
       const script = document.querySelector('script[src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"]');
       if (script && script.parentNode) {
         script.parentNode.removeChild(script);
@@ -66,7 +65,7 @@ const ContactForm = () => {
       <div 
         ref={formContainerRef} 
         className="relative min-h-[300px] overflow-hidden"
-        style={{ touchAction: 'pan-y' }} // Improve touch handling
+        style={{ touchAction: 'pan-y', WebkitOverflowScrolling: 'touch' }} // Improve touch handling
       >
         <div 
           id="ea87a0d4-d7c5-44c8-b739-29fe788d4d6b" 
@@ -75,7 +74,7 @@ const ContactForm = () => {
         
         {/* Enhanced loading indicator with better visibility */}
         {isLoading && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/95">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/95 z-10">
             <div className="w-12 h-12 border-4 border-atomic-turquoise border-t-atomic-orange rounded-full animate-spin mb-4"></div>
             <p className="text-sm text-gray-600 font-medium">Loading form...</p>
             <p className="text-xs text-gray-500 mt-1">This will only take a moment</p>

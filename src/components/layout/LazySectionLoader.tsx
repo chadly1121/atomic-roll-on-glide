@@ -26,7 +26,7 @@ const SectionLoading = () => {
 
 // Optimized lazy loaded components with preloaded TrendsSection
 const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
-const PricingSection = lazy(() => import('../PricingSection'));
+const TrendsSection = lazy(() => import('../TrendsSection'));
 const ContactSection = lazy(() => 
   // High priority for contact section with loading optimization
   import('../ContactSection').then(module => {
@@ -40,7 +40,6 @@ const ContactSection = lazy(() =>
     return module;
   })
 );
-const TrendsSection = lazy(() => import('../TrendsSection'));
 const Footer = lazy(() => import('../Footer'));
 
 interface LazySectionLoaderProps {
@@ -67,12 +66,6 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
       {visibleSections.has('testimonials') && (
         <Suspense fallback={<SectionLoading />}>
           <TestimonialsSection />
-        </Suspense>
-      )}
-      
-      {visibleSections.has('pricing') && (
-        <Suspense fallback={<SectionLoading />}>
-          <PricingSection />
         </Suspense>
       )}
       

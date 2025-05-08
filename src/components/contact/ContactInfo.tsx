@@ -7,7 +7,7 @@ const ContactInfo = () => {
   const isMobile = useIsMobile();
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // This ensures the email client opens on mobile devices
+    // This ensures the email client opens properly on all devices
     const mailtoLink = "mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A";
     window.location.href = mailtoLink;
     e.preventDefault(); // Prevent default only after setting location
@@ -27,8 +27,14 @@ const ContactInfo = () => {
               href="mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A"
               className="text-atomic-turquoise hover:underline active:text-atomic-turquoise/80 text-base md:text-lg"
               onClick={handleEmailClick}
+              aria-label="Email info@rollonpainting.com"
             >
               info@rollonpainting.com
+              {isMobile && (
+                <span className="ml-2 text-xs bg-atomic-turquoise/10 text-atomic-turquoise px-2 py-1 rounded-full">
+                  Tap to email
+                </span>
+              )}
             </a>
           </div>
         </div>

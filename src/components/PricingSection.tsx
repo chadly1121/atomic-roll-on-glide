@@ -28,7 +28,7 @@ const pricingTiers: PricingTier[] = [
     id: 2,
     name: "Exterior Painting",
     description: "Enhance your home's curb appeal",
-    price: "From $3.25 / sq ft",
+    price: "From $3.75 / sq ft",
     features: [
       "Weather-resistant paints",
       "Thorough surface preparation",
@@ -42,7 +42,7 @@ const pricingTiers: PricingTier[] = [
     id: 3,
     name: "Commercial Painting",
     description: "Tailored solutions for businesses",
-    price: "Custom Quote",
+    price: "Request a Quote",
     features: [
       "Minimal business disruption",
       "After-hours service available",
@@ -66,8 +66,6 @@ const PricingSection = () => {
             Transparent pricing with no hidden costs. Contact us for a custom quote tailored to your project.
           </p>
         </div>
-        
-        {/* Removed FreeTouchUpsButton from here */}
         
         {/* Pricing Tiers */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
