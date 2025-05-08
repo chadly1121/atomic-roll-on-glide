@@ -11,8 +11,22 @@ const CTAButton = ({ handleNavLinkClick }: CTAButtonProps) => {
     <div className="hidden md:block">
       <motion.a 
         href="#contact" 
-        className="atomic-button group overflow-hidden relative border-2 border-atomic-orange transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-        onClick={(e) => handleNavLinkClick(e, '#contact')}
+        className="atomic-button-secondary group overflow-hidden relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+        onClick={(e) => {
+          e.preventDefault();
+          // Ensure we scroll to the contact section
+          const contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Focus on the Jobber form after scrolling
+            setTimeout(() => {
+              const jobberForm = document.querySelector('.jobber-embedded-form-container');
+              if (jobberForm) {
+                jobberForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }, 800);
+          }
+        }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
