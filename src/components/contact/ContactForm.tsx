@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -80,7 +79,7 @@ const ContactForm = () => {
     return uploadedFiles;
   };
   
-  const sendNotificationEmails = async (quoteRequest: any) => {
+  const sendNotificationToJobber = async (quoteRequest: any) => {
     try {
       const { data, error } = await supabase.functions.invoke('send-quote-notification', {
         body: {
@@ -95,7 +94,7 @@ const ContactForm = () => {
       });
       
       if (error) {
-        console.error('Error sending notification emails:', error);
+        console.error('Error sending to Jobber:', error);
         throw error;
       }
       
@@ -145,15 +144,15 @@ const ContactForm = () => {
         await uploadFilesToStorage(quoteId);
       }
       
-      // Send notification emails (to company and confirmation to client)
+      // Create the request in Jobber
       if (data && data[0]) {
-        await sendNotificationEmails(data[0]);
+        await sendNotificationToJobber(data[0]);
       }
       
       // Show success toast
       toast({
         title: "Quote Request Submitted",
-        description: "Thank you! We'll get back to you within 24 hours!",
+        description: "Thank you! We've sent your request to our team and will get back to you within 24 hours!",
       });
       
       // Reset form
