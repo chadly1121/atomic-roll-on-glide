@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, Suspense } from 'react';
+import React, { useState, useCallback, Suspense, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -42,6 +42,23 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
+  
+  // Preload Jobber form assets for better performance
+  useEffect(() => {
+    // Add preload for Jobber form scripts
+    const preloadJobberScript = document.createElement('link');
+    preloadJobberScript.rel = 'preload';
+    preloadJobberScript.as = 'script';
+    preloadJobberScript.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js';
+    document.head.appendChild(preloadJobberScript);
+    
+    // Preload CSS
+    const preloadJobberCSS = document.createElement('link');
+    preloadJobberCSS.rel = 'preload';
+    preloadJobberCSS.as = 'style';
+    preloadJobberCSS.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
+    document.head.appendChild(preloadJobberCSS);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
