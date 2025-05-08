@@ -2,6 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Award, BadgeCheck, Star } from 'lucide-react';
+import { partnerLogos } from '@/data/partnerLogos';
+import { LazyImage } from '@/components/ui/lazy-image';
 
 interface TrustItemProps {
   icon: React.ReactNode;
@@ -74,61 +76,29 @@ const TrustBadges: React.FC = () => {
         <div className="mt-16 pt-12 border-t">
           <h3 className="text-2xl font-bold text-center mb-8">Our Partners & Affiliations</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
-            <motion.div
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/benjamin-moore-logo_umiuly.png" 
-                alt="Benjamin Moore" 
-                className="max-h-16 w-auto"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://cdn.sansin.com/wp-content/uploads/2018/03/06232406/sansin-logo-en.png" 
-                alt="Sansin Stain" 
-                className="max-h-16 w-auto"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/pca-logo_u8fzz6.png" 
-                alt="Painting Contractors Association" 
-                className="max-h-16 w-auto"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://www.dulux.ca/content/dam/dulux/icons/logos/dulux/logo.svg" 
-                alt="Dulux" 
-                className="max-h-16 w-auto"
-              />
-            </motion.div>
-            
-            <motion.div
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <img 
-                src="https://www.ppg.com/content/dam/ppgcom/global-site/en/images/branding/logos/ppg_logo.svg" 
-                alt="PPG" 
-                className="max-h-16 w-auto"
-              />
-            </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            {partnerLogos.slice(0, 5).map((partner, index) => (
+              <motion.div
+                key={index}
+                className="grayscale hover:grayscale-0 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                <a 
+                  href={partner.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={`Visit ${partner.name} website`}
+                >
+                  <LazyImage 
+                    src={partner.logo} 
+                    alt={partner.altText} 
+                    className="max-h-16 w-auto"
+                    width={160}
+                    height={80}
+                  />
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
