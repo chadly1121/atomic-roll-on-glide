@@ -26,7 +26,7 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
-    'home', 'about', 'services', 'booking'
+    'home', 'about', 'services', 'contact' // Removed 'booking'
   ]));
 
   // Optimize scroll handler with useCallback
