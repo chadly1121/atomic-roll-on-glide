@@ -63,34 +63,58 @@ serve(async (req) => {
       The Roll On Painting Team
     `;
     
-    // UPDATED: Using Google Gmail API to send emails
-    const companyEmailData = {
-      to: "info@rollonpainting.com",
-      from: "noreply@rollonpainting.com",
-      subject: "New Quote Request from " + quoteRequest.name,
-      text: companyEmailContent
-    };
+    console.log("Attempting to send email to company...");
     
-    const clientEmailData = {
-      to: quoteRequest.email,
-      from: "noreply@rollonpainting.com",
-      subject: "Thank You for Your Quote Request - Roll On Painting",
-      text: clientEmailContent
-    };
+    // Using Formspree's free tier to send emails
+    // You'll need to create a free form at formspree.io and replace FORM_ID with your form ID
+    const companyEmailResponse = await fetch("https://formspree.io/f/FORM_ID", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: quoteRequest.name,
+        email: quoteRequest.email,
+        phone: quoteRequest.phone,
+        service: quoteRequest.service,
+        message: companyEmailContent,
+        _subject: "New Quote Request from " + quoteRequest.name,
+        replyTo: quoteRequest.email
+      })
+    });
     
-    console.log("Attempting to send email to company:", companyEmailData);
-    console.log("Attempting to send confirmation email to client:", clientEmailData);
+    if (!companyEmailResponse.ok) {
+      throw new Error(`Failed to send company email: ${await companyEmailResponse.text()}`);
+    }
     
-    // For simplicity in this demo, we'll just log the email data that would be sent
-    // In a production environment, you would use the Google Gmail API client here
+    console.log("Company email sent successfully");
+    console.log("Attempting to send confirmation email to client...");
     
-    // Log success messages
-    console.log("Notification emails processed successfully");
+    // Send confirmation email to client using a separate Formspree form
+    // You'll need a second form for client emails
+    const clientEmailResponse = await fetch("https://formspree.io/f/ANOTHER_FORM_ID", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Roll On Painting",
+        email: quoteRequest.email,
+        message: clientEmailContent,
+        _subject: "Thank You for Your Quote Request - Roll On Painting",
+      })
+    });
+    
+    if (!clientEmailResponse.ok) {
+      throw new Error(`Failed to send client email: ${await clientEmailResponse.text()}`);
+    }
+    
+    console.log("Client confirmation email sent successfully");
     
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: "Notification emails processed successfully" 
+        message: "Notification emails sent successfully" 
       }),
       { 
         headers: { 
