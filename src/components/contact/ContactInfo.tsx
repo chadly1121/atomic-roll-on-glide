@@ -1,11 +1,22 @@
+
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ContactInfo = () => {
+  const isMobile = useIsMobile();
+
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // This ensures the email client opens on mobile devices
+    const mailtoLink = "mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A";
+    window.location.href = mailtoLink;
+    e.preventDefault(); // Prevent default only after setting location
+  };
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-5 md:space-y-6">
       <h3 className="text-2xl font-bold">Contact Information</h3>
-      <div className="space-y-4">
+      <div className="space-y-5 md:space-y-6">
         <div className="flex items-start">
           <div className="mr-4 bg-atomic-turquoise/20 p-3 rounded-full">
             <Mail className="h-6 w-6 text-atomic-turquoise" />
@@ -14,7 +25,8 @@ const ContactInfo = () => {
             <h4 className="font-bold">Email</h4>
             <a 
               href="mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A"
-              className="text-atomic-turquoise hover:underline"
+              className="text-atomic-turquoise hover:underline active:text-atomic-turquoise/80 text-base md:text-lg"
+              onClick={handleEmailClick}
             >
               info@rollonpainting.com
             </a>
@@ -27,7 +39,18 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-bold">Phone</h4>
-            <a href="tel:+17057871401" className="text-atomic-turquoise hover:underline">705-787-1401</a>
+            <a 
+              href="tel:+17057871401" 
+              className="text-atomic-turquoise hover:underline active:text-atomic-turquoise/80 text-base md:text-lg flex items-center"
+              aria-label="Call 705-787-1401"
+            >
+              <span>705-787-1401</span>
+              {isMobile && (
+                <span className="ml-2 text-xs bg-atomic-turquoise/10 text-atomic-turquoise px-2 py-1 rounded-full">
+                  Tap to call
+                </span>
+              )}
+            </a>
           </div>
         </div>
         
@@ -38,15 +61,13 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-bold">Location</h4>
             <p>836 Greer Road, Huntsville, Ontario, Canada</p>
-            <p className="mt-1">Serving Muskoka and surrounding areas</p>
+            <p className="mt-1 text-sm md:text-base text-white/80">Serving Muskoka and surrounding areas</p>
           </div>
         </div>
         
         <div className="flex items-start">
           <div className="mr-4 bg-atomic-turquoise/20 p-3 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-atomic-turquoise" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-            </svg>
+            <Clock className="h-6 w-6 text-atomic-turquoise" />
           </div>
           <div>
             <h4 className="font-bold">Working Hours</h4>
