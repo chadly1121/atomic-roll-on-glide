@@ -13,7 +13,12 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-bold">Email</h4>
-            <a href="mailto:info@rollonpainting.com" className="text-atomic-turquoise hover:underline">info@rollonpainting.com</a>
+            <a 
+              href="mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A" 
+              className="text-atomic-turquoise hover:underline"
+            >
+              info@rollonpainting.com
+            </a>
           </div>
         </div>
         
