@@ -1,6 +1,5 @@
 
-import React from 'react';
-import { Hourglass } from 'lucide-react';
+import React, { memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import {
   Carousel,
@@ -16,6 +15,25 @@ const trendImages = [
   "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240320_114244609_wvn8ru.jpg", 
   "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941073/PXL_20240209_150136935_ai7mgs.jpg",
 ];
+
+// Memoized components for better performance
+const TrendImageItem = memo(({ image, index }: { image: string, index: number }) => (
+  <CarouselItem key={index} className="md:basis-1/2">
+    <div className="p-1">
+      <div className="overflow-hidden rounded-xl">
+        <img 
+          src={image} 
+          alt={`Paint Trend ${index + 1}`}
+          className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+          decoding="async"
+          width="400"
+          height="256"
+        />
+      </div>
+    </div>
+  </CarouselItem>
+));
 
 const TrendsSection = () => {
   return (
@@ -56,17 +74,7 @@ const TrendsSection = () => {
           <Carousel autoScroll={true} autoScrollInterval={4000} className="w-full" opts={{ loop: true, align: "center" }}>
             <CarouselContent>
               {trendImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
-                  <div className="p-1">
-                    <div className="overflow-hidden rounded-xl">
-                      <img 
-                        src={image} 
-                        alt={`Paint Trend ${index + 1}`}
-                        className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </CarouselItem>
+                <TrendImageItem key={index} image={image} index={index} />
               ))}
             </CarouselContent>
             <CarouselPrevious className="left-2 bg-atomic-turquoise hover:bg-atomic-turquoise/80 text-white border-0" />

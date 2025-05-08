@@ -1,32 +1,40 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
+import { throttle } from '@/utils/performance';
 
 interface CTAButtonProps {
   handleNavLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
 
 const CTAButton = ({ handleNavLinkClick }: CTAButtonProps) => {
+  // Throttle the scroll function to prevent multiple executions
+  const handleContactClick = React.useMemo(() => throttle((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Ensure we scroll to the contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Focus on the Jobber form after scrolling
+      setTimeout(() => {
+        const jobberForm = document.querySelector('.jobber-embedded-form-container');
+        if (jobberForm) {
+          jobberForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Trigger Jobber form initialization if needed
+          const event = new CustomEvent('initialize-jobber-form');
+          document.dispatchEvent(event);
+        }
+      }, 800);
+    }
+  }, 300), []);
+
   return (
     <div className="hidden md:block">
       <motion.a 
         href="#contact" 
         className="atomic-button-secondary group overflow-hidden relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-        onClick={(e) => {
-          e.preventDefault();
-          // Ensure we scroll to the contact section
-          const contactSection = document.getElementById('contact');
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Focus on the Jobber form after scrolling
-            setTimeout(() => {
-              const jobberForm = document.querySelector('.jobber-embedded-form-container');
-              if (jobberForm) {
-                jobberForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }
-            }, 800);
-          }
-        }}
+        onClick={handleContactClick}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

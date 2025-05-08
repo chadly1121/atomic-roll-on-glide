@@ -33,10 +33,8 @@ const Carousel = React.forwardRef<
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
-        return
-      }
-
+      if (!api) return;
+      
       setCanScrollPrev(api.canScrollPrev())
       setCanScrollNext(api.canScrollNext())
     }, [])
@@ -62,41 +60,69 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
-    // Auto-scrolling functionality
+    // Optimized auto-scrolling functionality with RAF
     React.useEffect(() => {
       if (!api || !autoScroll) return;
       
-      const intervalId = setInterval(() => {
-        if (api.canScrollNext()) {
-          api.scrollNext();
-        } else {
-          // If we're at the end, loop back to the beginning
-          api.scrollTo(0);
-        }
-      }, autoScrollInterval);
+      let requestId: number | null = null;
+      let lastTime = performance.now();
+      let elapsed = 0;
       
-      return () => clearInterval(intervalId);
+      const scroll = (currentTime: number) => {
+        elapsed += currentTime - lastTime;
+        lastTime = currentTime;
+        
+        if (elapsed >= autoScrollInterval) {
+          elapsed = 0;
+          if (api.canScrollNext()) {
+            api.scrollNext();
+          } else {
+            // If we're at the end, loop back to the beginning
+            api.scrollTo(0);
+          }
+        }
+        
+        requestId = requestAnimationFrame(scroll);
+      };
+      
+      // Start the animation frame loop
+      requestId = requestAnimationFrame(scroll);
+      
+      // Pause auto-scroll when tab is not visible
+      const handleVisibilityChange = () => {
+        if (document.hidden && requestId) {
+          cancelAnimationFrame(requestId);
+          requestId = null;
+        } else if (!document.hidden && !requestId) {
+          lastTime = performance.now();
+          requestId = requestAnimationFrame(scroll);
+        }
+      };
+      
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      
+      // Clean up
+      return () => {
+        if (requestId) cancelAnimationFrame(requestId);
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
+      };
     }, [api, autoScroll, autoScrollInterval]);
 
     React.useEffect(() => {
-      if (!api || !setApi) {
-        return
-      }
-
-      setApi(api)
+      if (!api || !setApi) return;
+      setApi(api);
     }, [api, setApi])
 
     React.useEffect(() => {
-      if (!api) {
-        return
-      }
-
+      if (!api) return;
+      
       onSelect(api)
       api.on("reInit", onSelect)
       api.on("select", onSelect)
 
       return () => {
-        api?.off("select", onSelect)
+        api.off("select", onSelect)
+        api.off("reInit", onSelect)
       }
     }, [api, onSelect])
 

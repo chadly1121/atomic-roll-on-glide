@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import { Atom, FileImage } from 'lucide-react';
 import {
@@ -9,6 +8,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { throttle } from '@/utils/performance';
 
 // Updated gallery images with client's actual project photos
 const galleryImages = [
@@ -29,56 +29,76 @@ const galleryImages = [
 const HeroSection = () => {
   const [loadedImages, setLoadedImages] = useState(0);
   
-  // Preload hero images with priority
+  // Preload hero images with optimized strategy
   useEffect(() => {
-    const preloadImages = async () => {
-      // Only preload the first 4 images immediately
-      const highPriorityImages = galleryImages.slice(0, 4);
-      const lowPriorityImages = galleryImages.slice(4);
-      
-      // Load high priority images first
+    // Only preload the first 2 images immediately with high priority
+    const highPriorityImages = galleryImages.slice(0, 2);
+    
+    const preloadHighPriorityImages = async () => {
       await Promise.all(
-        highPriorityImages.map((src, index) => {
-          return new Promise((resolve) => {
+        highPriorityImages.map(src => {
+          return new Promise<void>(resolve => {
             const img = new Image();
             img.fetchPriority = 'high';
             img.src = src;
             img.onload = () => {
               setLoadedImages(prev => prev + 1);
-              resolve(undefined);
+              resolve();
             };
             img.onerror = () => {
               setLoadedImages(prev => prev + 1);
-              resolve(undefined);
+              resolve();
             };
           });
         })
       );
       
-      // Then load the rest with lower priority
-      lowPriorityImages.forEach((src) => {
-        const img = new Image();
-        img.fetchPriority = 'low';
-        img.loading = 'lazy';
-        img.src = src;
-      });
+      // After high priority images are loaded, use Intersection Observer for the rest
+      const lazyLoadImages = () => {
+        const imageObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const lazyImage = entry.target as HTMLImageElement;
+                if (lazyImage.dataset.src) {
+                  lazyImage.src = lazyImage.dataset.src;
+                  lazyImage.removeAttribute('data-src');
+                  observer.unobserve(lazyImage);
+                }
+              }
+            });
+          },
+          { rootMargin: '200px 0px' }
+        );
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      };
+      
+      // Execute lazy loading after a small delay to prioritize critical content
+      setTimeout(lazyLoadImages, 1000);
     };
     
-    preloadImages();
+    preloadHighPriorityImages();
   }, []);
   
-  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      window.scrollTo({
-        top: contactSection.getBoundingClientRect().top + window.scrollY - 100,
-        behavior: 'smooth'
-      });
-    }
-  };
+  // Throttled scroll handler for better performance
+  const handleScrollToContact = useMemo(() => 
+    throttle((e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        window.scrollTo({
+          top: contactSection.getBoundingClientRect().top + window.scrollY - 100,
+          behavior: 'smooth'
+        });
+      }
+    }, 300),
+  []);
   
-  return <section id="hero" className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
+  return (
+    <section id="hero" className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
       {/* Background elements */}
       <div className="atomic-circle w-64 h-64 -top-20 -left-20 border-atomic-orange"></div>
       <div className="atomic-circle w-96 h-96 -bottom-40 -right-20 border-atomic-turquoise"></div>
@@ -140,7 +160,7 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="atomic-shape relative">
+          <div className="atomic-shape relative will-change-transform">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-atomic-orange/20">
               <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll={true} autoScrollInterval={5000}>
@@ -148,16 +168,29 @@ const HeroSection = () => {
                   {galleryImages.map((image, index) => (
                     <CarouselItem key={index}>
                       <div className="p-1">
-                        <img 
-                          alt={`Roll On Painting Project ${index + 1}`} 
-                          className="w-full h-[400px] object-cover transition-all duration-300" 
-                          src={image}
-                          loading={index < 2 ? "eager" : "lazy"}
-                          fetchPriority={index < 2 ? "high" : "low"}
-                          width="800"
-                          height="400"
-                          decoding="async"
-                        />
+                        {index < 4 ? (
+                          <img 
+                            alt={`Roll On Painting Project ${index + 1}`} 
+                            className="w-full h-[400px] object-cover transition-all duration-300" 
+                            src={image}
+                            loading={index < 2 ? "eager" : "lazy"}
+                            fetchPriority={index < 2 ? "high" : "low"}
+                            width="800"
+                            height="400"
+                            decoding="async"
+                          />
+                        ) : (
+                          <img 
+                            alt={`Roll On Painting Project ${index + 1}`} 
+                            className="w-full h-[400px] object-cover transition-all duration-300" 
+                            data-src={image} 
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+"
+                            loading="lazy"
+                            width="800"
+                            height="400"
+                            decoding="async"
+                          />
+                        )}
                       </div>
                     </CarouselItem>
                   ))}
@@ -169,7 +202,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default HeroSection;
