@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface PricingTier {
@@ -20,7 +19,6 @@ const pricingTiers: PricingTier[] = [
       "Premium quality paints",
       "Wall preparation & repair",
       "Two coats of paint",
-      "Color consultation",
       "Clean up & debris removal"
     ]
   },
