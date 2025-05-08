@@ -67,7 +67,12 @@ const Carousel = React.forwardRef<
       if (!api || !autoScroll) return;
       
       const intervalId = setInterval(() => {
-        api.scrollNext();
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          // If we're at the end, loop back to the beginning
+          api.scrollTo(0);
+        }
       }, autoScrollInterval);
       
       return () => clearInterval(intervalId);

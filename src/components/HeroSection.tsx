@@ -28,8 +28,6 @@ const galleryImages = [
 
 const HeroSection = () => {
   const [loadedImages, setLoadedImages] = useState(0);
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   
   // Preload hero images with priority
   useEffect(() => {
@@ -68,17 +66,6 @@ const HeroSection = () => {
     
     preloadImages();
   }, []);
-  
-  // Handle auto scrolling
-  useEffect(() => {
-    if (!isAutoScrolling) return;
-    
-    const interval = setInterval(() => {
-      setActiveImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, [isAutoScrolling]);
   
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -156,9 +143,7 @@ const HeroSection = () => {
           <div className="atomic-shape relative">
             <div className="absolute inset-0 bg-atomic-pattern opacity-10"></div>
             <div className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-atomic-orange/20">
-              <Carousel className="w-full" opts={{ loop: true, align: "center" }} 
-                onMouseEnter={() => setIsAutoScrolling(false)}
-                onMouseLeave={() => setIsAutoScrolling(true)}>
+              <Carousel className="w-full" opts={{ loop: true, align: "center" }} autoScroll={true} autoScrollInterval={5000}>
                 <CarouselContent>
                   {galleryImages.map((image, index) => (
                     <CarouselItem key={index}>
