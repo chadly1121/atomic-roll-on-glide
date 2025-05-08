@@ -29,23 +29,23 @@ const TrustBadges: React.FC = () => {
   const certifications = [
     {
       icon: <Shield className="h-12 w-12" />,
-      title: "Certified Professional Painters",
-      description: "Our team is certified by the Painting Contractors Association"
-    },
-    {
-      icon: <Award className="h-12 w-12" />,
-      title: "Best of Muskoka 2024",
-      description: "Voted best painting service in the Muskoka region"
+      title: "Uniformed Professional Painters",
+      description: "Member of the Painting Contractors Association"
     },
     {
       icon: <BadgeCheck className="h-12 w-12" />,
-      title: "Licensed & Insured",
-      description: "Fully licensed and insured for your peace of mind"
+      title: "W.S.I.B and 5 Million Liability Insurance",
+      description: "Fully covered for your peace of mind"
     },
     {
       icon: <Star className="h-12 w-12" />,
       title: "5-Star Service",
       description: "Consistently rated 5 stars by our satisfied customers"
+    },
+    {
+      icon: <Shield className="h-12 w-12" />,
+      title: "Free Estimates",
+      description: "Professional estimates with no obligation"
     }
   ];
   
@@ -74,7 +74,7 @@ const TrustBadges: React.FC = () => {
         <div className="mt-16 pt-12 border-t">
           <h3 className="text-2xl font-bold text-center mb-8">Our Partners & Affiliations</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
             <motion.div
               className="grayscale hover:grayscale-0 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
@@ -91,8 +91,8 @@ const TrustBadges: React.FC = () => {
               whileHover={{ scale: 1.05 }}
             >
               <img 
-                src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/sherwin-williams-logo_nbo6tf.png" 
-                alt="Sherwin Williams" 
+                src="https://cdn.sansin.com/wp-content/uploads/2018/03/06232406/sansin-logo-en.png" 
+                alt="Sansin Stain" 
                 className="max-h-16 w-auto"
               />
             </motion.div>
@@ -113,8 +113,19 @@ const TrustBadges: React.FC = () => {
               whileHover={{ scale: 1.05 }}
             >
               <img 
-                src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1746119789/bbb-logo_mxs5mk.png" 
-                alt="Better Business Bureau" 
+                src="https://www.dulux.ca/content/dam/dulux/icons/logos/dulux/logo.svg" 
+                alt="Dulux" 
+                className="max-h-16 w-auto"
+              />
+            </motion.div>
+            
+            <motion.div
+              className="grayscale hover:grayscale-0 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img 
+                src="https://www.ppg.com/content/dam/ppgcom/global-site/en/images/branding/logos/ppg_logo.svg" 
+                alt="PPG" 
                 className="max-h-16 w-auto"
               />
             </motion.div>

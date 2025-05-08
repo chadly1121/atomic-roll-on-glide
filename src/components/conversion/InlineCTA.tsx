@@ -36,12 +36,11 @@ const InlineCTA = ({
     accent: 'bg-atomic-turquoise/10 text-atomic-navy',
   };
 
-  // Trust badges to display
+  // Trust badges to display - removed "10-year warranty"
   const trustBadges = [
     { text: "5-star rated service" },
-    { text: "Licensed & insured" },
-    { text: "Free estimates" },
-    { text: "10-year warranty" }
+    { text: "W.S.I.B covered" },
+    { text: "Free estimates" }
   ];
 
   return (

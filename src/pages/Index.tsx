@@ -19,7 +19,7 @@ import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
 
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
-import ClientLogos from '../components/trust/ClientLogos';
+// Removed ClientLogos import
 
 const Index = () => {
   // Add a scroll to top button
@@ -61,8 +61,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       
-      {/* Client Logos - builds trust early */}
-      <ClientLogos />
+      {/* Removed ClientLogos section */}
       
       {/* First Inline CTA with Trust Badges */}
       <div className="container mx-auto px-4 my-16">
