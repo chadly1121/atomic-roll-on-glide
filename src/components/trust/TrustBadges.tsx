@@ -80,8 +80,8 @@ const TrustBadges: React.FC = () => {
             {partnerLogos.map((partner, index) => (
               <motion.div
                 key={index}
-                className="grayscale hover:grayscale-0 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="transition-all duration-300"
+                whileHover={{ scale: 1.15, y: -5 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
