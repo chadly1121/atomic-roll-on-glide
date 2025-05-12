@@ -41,8 +41,8 @@ export const partnerLogos: PartnerLogo[] = [
   },
   {
     name: "WSIB",
-    logo: "https://www.wsib.ca/sites/default/files/logo/wsib-logo.svg",
-    altText: "WSIB - Workplace Safety and Insurance Board",
+    logo: "/lovable-uploads/f482f886-de31-4662-82d7-b07789ed7b9e.png",
+    altText: "WSIB Ontario - Workplace Safety and Insurance Board",
     url: "https://www.wsib.ca/"
   },
   {
