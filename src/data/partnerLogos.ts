@@ -49,7 +49,7 @@ export const partnerLogos: PartnerLogo[] = [
     name: "Home Network",
     logo: "/lovable-uploads/d829c2c7-e8e8-4ca1-a578-8681b6c1485f.png",
     altText: "As Seen on Home Network",
-    url: "https://www.homenetwork.com/"
+    url: "https://www.homenetwork.ca/"
   },
   {
     name: "HGTV",
