@@ -6,6 +6,7 @@ import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import PricingSection from '../components/PricingSection';
+import AsSeenonTVSection from '../components/AsSeenonTVSection';
 
 // Import our new refactored components
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
@@ -94,6 +95,9 @@ const Index = () => {
       
       {/* Add PricingSection directly to improve loading time */}
       <PricingSection />
+      
+      {/* "As Seen on TV" Section */}
+      <AsSeenonTVSection />
       
       {/* Trust Badges Section */}
       <TrustBadges />
