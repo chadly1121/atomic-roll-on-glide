@@ -15,24 +15,8 @@ interface TVFeature {
 const tvFeatures: TVFeature[] = [
   {
     id: 1,
-    networkName: "CTV Northern Ontario",
-    logo: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=300&auto=format&fit=crop",
-    quote: "Roll On Painting brings modern techniques to Muskoka homes with exceptional results.",
-    date: "June 2023",
-    url: "https://northernontario.ctvnews.ca/"
-  },
-  {
-    id: 2,
-    networkName: "Cottage Life TV",
-    logo: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=300&auto=format&fit=crop",
-    quote: "Benjamin's innovative approach to cottage renovation is transforming Huntsville properties.",
-    date: "August 2023",
-    url: "https://www.cottagelife.com/"
-  },
-  {
-    id: 3,
     networkName: "Scott's Vacation House Rules",
-    logo: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=300&auto=format&fit=crop",
+    logo: "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg",
     quote: "The team at Roll On Painting showcases exceptional craftsmanship in lakeside properties.",
     date: "October 2023",
     url: "https://www.homenetwork.ca/scotts-vacation-house-rules/"
@@ -70,11 +54,11 @@ const AsSeenonTVSection = () => {
             <span>As Seen on TV</span>
           </motion.h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Roll On Painting has been featured on various television networks, showcasing our exceptional painting services across Muskoka and beyond.
+            Roll On Painting has been featured on Scott's Vacation House Rules, showcasing our exceptional painting services across Muskoka and beyond.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex justify-center">
           {tvFeatures.map((feature, index) => (
             <motion.div
               key={feature.id}
@@ -83,9 +67,9 @@ const AsSeenonTVSection = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group max-w-xl"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10"></div>
                 <img 
                   src={feature.logo} 
