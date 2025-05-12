@@ -40,12 +40,6 @@ export const partnerLogos: PartnerLogo[] = [
     url: "https://www.ppg.com/"
   },
   {
-    name: "Sherwin-Williams",
-    logo: "https://www.sherwin-williams.com/content/experience-fragments/sherwin/us/en/site/header/master/_jcr_content/root/container/header_copy/logo.coreimg.svg/1694528589956/sw-logo.svg",
-    altText: "Sherwin-Williams - Premium Paint Solutions",
-    url: "https://www.sherwin-williams.com/"
-  },
-  {
     name: "WSIB",
     logo: "https://www.wsib.ca/sites/default/files/logo/wsib-logo.svg",
     altText: "WSIB - Workplace Safety and Insurance Board",
