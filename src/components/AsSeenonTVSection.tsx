@@ -28,7 +28,7 @@ const tvFeatures: TVFeature[] = [
   },
   {
     id: 3,
-    networkName: "HGTV Canada",
+    networkName: "Home Network",
     logo: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=300&auto=format&fit=crop",
     quote: "The team at Roll On Painting showcases exceptional craftsmanship in lakeside properties.",
     date: "October 2023"
@@ -63,7 +63,7 @@ const AsSeenonTVSection = () => {
             transition={{ duration: 0.5 }}
           >
             <Tv className="h-8 w-8 text-atomic-orange" />
-            <span>As Seen on T.V.</span>
+            <span>As Seen on TV</span>
           </motion.h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Roll On Painting has been featured on various television networks, showcasing our exceptional painting services across Muskoka and beyond.

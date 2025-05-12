@@ -46,9 +46,9 @@ export const partnerLogos: PartnerLogo[] = [
     url: "https://www.wsib.ca/"
   },
   {
-    name: "HGTV",
-    logo: "/lovable-uploads/ddba3df4-6df9-4be7-a310-40bea8f37fb7.png",
-    altText: "As Seen on HGTV",
-    url: "https://www.hgtv.com/"
+    name: "Home Network",
+    logo: "/lovable-uploads/d829c2c7-e8e8-4ca1-a578-8681b6c1485f.png",
+    altText: "As Seen on Home Network",
+    url: "https://www.homenetwork.com/"
   }
 ];
