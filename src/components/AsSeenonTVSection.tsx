@@ -9,6 +9,7 @@ interface TVFeature {
   logo: string;
   quote: string;
   date: string;
+  url?: string;
 }
 
 const tvFeatures: TVFeature[] = [
@@ -17,21 +18,24 @@ const tvFeatures: TVFeature[] = [
     networkName: "CTV Northern Ontario",
     logo: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=300&auto=format&fit=crop",
     quote: "Roll On Painting brings modern techniques to Muskoka homes with exceptional results.",
-    date: "June 2023"
+    date: "June 2023",
+    url: "https://northernontario.ctvnews.ca/"
   },
   {
     id: 2,
     networkName: "Cottage Life TV",
     logo: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?q=80&w=300&auto=format&fit=crop",
     quote: "Benjamin's innovative approach to cottage renovation is transforming Huntsville properties.",
-    date: "August 2023"
+    date: "August 2023",
+    url: "https://www.cottagelife.com/"
   },
   {
     id: 3,
-    networkName: "Home Network",
+    networkName: "Scott's Vacation House Rules",
     logo: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=300&auto=format&fit=crop",
     quote: "The team at Roll On Painting showcases exceptional craftsmanship in lakeside properties.",
-    date: "October 2023"
+    date: "October 2023",
+    url: "https://www.homenetwork.ca/scotts-vacation-house-rules/"
   }
 ];
 
@@ -107,7 +111,14 @@ const AsSeenonTVSection = () => {
                   <div className="h-8 w-8 rounded-full bg-atomic-navy flex items-center justify-center text-white">
                     <Tv className="h-4 w-4" />
                   </div>
-                  <p className="font-medium ml-2">Featured on {feature.networkName}</p>
+                  <a 
+                    href={feature.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-medium ml-2 hover:text-atomic-turquoise transition-colors"
+                  >
+                    Featured on {feature.networkName}
+                  </a>
                 </div>
               </div>
             </motion.div>
