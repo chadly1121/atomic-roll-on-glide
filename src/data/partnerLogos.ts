@@ -50,5 +50,11 @@ export const partnerLogos: PartnerLogo[] = [
     logo: "/lovable-uploads/d829c2c7-e8e8-4ca1-a578-8681b6c1485f.png",
     altText: "As Seen on Home Network",
     url: "https://www.homenetwork.com/"
+  },
+  {
+    name: "HGTV",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/HGTV_2010.svg",
+    altText: "HGTV - Home & Garden Television",
+    url: "https://www.hgtv.com/"
   }
 ];
