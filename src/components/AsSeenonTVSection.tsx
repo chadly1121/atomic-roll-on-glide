@@ -55,7 +55,7 @@ const AsSeenonTVSection = () => {
             <span>As Seen on TV</span>
           </motion.h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Roll On Painting has been featured on Scott's Vacation House Rules, showcasing our exceptional painting services across Muskoka and beyond.
+            Roll On Painting was featured on Scott's Vacation House Rules, showcasing our exceptional painting services across Muskoka and beyond.
           </p>
         </div>
         
@@ -95,16 +95,16 @@ const AsSeenonTVSection = () => {
                   {feature.seasonEpisode}
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="h-8 w-8 rounded-full bg-atomic-navy flex items-center justify-center text-white">
-                    <Tv className="h-4 w-4" />
-                  </div>
                   <a 
                     href={feature.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="font-medium ml-2 hover:text-atomic-turquoise transition-colors"
+                    className="font-medium hover:text-atomic-turquoise transition-colors flex items-center gap-2"
                   >
-                    Featured on {feature.networkName}
+                    <div className="h-8 w-8 rounded-full bg-atomic-navy flex items-center justify-center text-white">
+                      <Tv className="h-4 w-4" />
+                    </div>
+                    <span>Watch on Home Network</span>
                   </a>
                 </div>
               </div>
