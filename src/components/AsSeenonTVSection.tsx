@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Tv } from "lucide-react";
+import { optimizeCloudinaryUrl } from '../utils/imageOptimizer';
 
 interface TVFeature {
   id: number;
@@ -73,7 +74,12 @@ const AsSeenonTVSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10"></div>
                 <img 
                   src={feature.logo} 
-                  alt={feature.networkName} 
+                  alt={feature.networkName}
+                  onError={(e) => {
+                    // Fallback in case the image fails to load
+                    console.log("Image failed to load, setting fallback");
+                    e.currentTarget.src = "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg";
+                  }}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center">

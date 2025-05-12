@@ -27,7 +27,7 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
-    'home', 'about', 'services', 'pricing', 'contact'
+    'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
 
   // Optimize scroll handler with useCallback
@@ -45,8 +45,17 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
   
-  // Preload Jobber form assets for better performance
+  // Preload images for better performance
   useEffect(() => {
+    // Preload TV section images
+    const preloadTVImages = () => {
+      const imageUrl = "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg";
+      const img = new Image();
+      img.src = imageUrl;
+    };
+    
+    preloadTVImages();
+    
     // Add preload for Jobber form scripts
     const preloadJobberScript = document.createElement('link');
     preloadJobberScript.rel = 'preload';
