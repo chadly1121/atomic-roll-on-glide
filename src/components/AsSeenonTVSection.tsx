@@ -8,7 +8,7 @@ interface TVFeature {
   id: number;
   networkName: string;
   logo: string;
-  quote: string;
+  seasonEpisode: string;
   date: string;
   url?: string;
 }
@@ -18,7 +18,7 @@ const tvFeatures: TVFeature[] = [
     id: 1,
     networkName: "Scott's Vacation House Rules",
     logo: "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg",
-    quote: "The team at Roll On Painting showcases exceptional craftsmanship in lakeside properties.",
+    seasonEpisode: "Season 4, Episode 7",
     date: "October 2023",
     url: "https://www.homenetwork.ca/scotts-vacation-house-rules/"
   }
@@ -91,13 +91,10 @@ const AsSeenonTVSection = () => {
               </div>
               
               <div className="p-6">
-                <blockquote className="italic text-gray-700 mb-4 relative">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-atomic-orange/20 absolute -top-2 -left-2 z-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                  <span className="relative z-10">{feature.quote}</span>
-                </blockquote>
-                <div className="flex items-center">
+                <div className="text-lg font-medium text-center mb-4">
+                  {feature.seasonEpisode}
+                </div>
+                <div className="flex items-center justify-center">
                   <div className="h-8 w-8 rounded-full bg-atomic-navy flex items-center justify-center text-white">
                     <Tv className="h-4 w-4" />
                   </div>
