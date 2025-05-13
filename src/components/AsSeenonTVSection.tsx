@@ -18,7 +18,7 @@ const tvFeatures: TVFeature[] = [
     id: 1,
     networkName: "Scott's Vacation House Rules",
     logo: "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg",
-    seasonEpisode: "Season 4, Episode 7",
+    seasonEpisode: "Season 6, Episode 7",
     date: "October 2023",
     url: "https://www.homenetwork.ca/scotts-vacation-house-rules/"
   }
