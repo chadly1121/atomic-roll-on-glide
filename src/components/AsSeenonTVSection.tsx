@@ -55,7 +55,7 @@ const AsSeenonTVSection = () => {
             <span>As Seen on TV</span>
           </motion.h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Roll On Painting was featured on Scott's Vacation House Rules, showcasing our exceptional painting services across Muskoka and beyond.
+            Roll On Painting provided professional painting and wallpapering services for Scott's Vacation House Rules, delivering exceptional results for their Muskoka property transformation.
           </p>
         </div>
         
