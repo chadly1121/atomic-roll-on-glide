@@ -24,66 +24,34 @@ const SectionLoading = () => {
   );
 };
 
-// Optimized lazy loaded components with preloaded TrendsSection
-const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
-const TrendsSection = lazy(() => import('../TrendsSection'));
-const ContactSection = lazy(() => 
-  // High priority for contact section with loading optimization
-  import('../ContactSection').then(module => {
-    // Preload Jobber form assets if this is the contact section
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
-    link.as = 'style';
-    document.head.appendChild(link);
-    
-    return module;
-  })
-);
-const Footer = lazy(() => import('../Footer'));
+// Import sections directly instead of lazy loading to avoid dynamic import issues
+import TestimonialsSection from '../TestimonialsSection';
+import TrendsSection from '../TrendsSection';
+import ContactSection from '../ContactSection';
+import Footer from '../Footer';
 
 interface LazySectionLoaderProps {
   visibleSections: Set<string>;
 }
 
 const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }) => {
-  // Preload critical sections that will likely be viewed
-  useEffect(() => {
-    // Preload contact section after a delay if it's not already visible
-    if (!visibleSections.has('contact')) {
-      const timer = setTimeout(() => {
-        // This will trigger preloading of the contact section
-        import('../ContactSection');
-      }, 5000);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [visibleSections]);
-  
+  // No need for preloading since we're importing directly
   return (
     <>
-      {/* Conditionally loaded sections (below the fold) */}
+      {/* Conditionally rendered sections (below the fold) */}
       {visibleSections.has('testimonials') && (
-        <Suspense fallback={<SectionLoading />}>
-          <TestimonialsSection />
-        </Suspense>
+        <TestimonialsSection />
       )}
       
       {visibleSections.has('trends') && (
-        <Suspense fallback={<SectionLoading />}>
-          <TrendsSection />
-        </Suspense>
+        <TrendsSection />
       )}
       
       {visibleSections.has('contact') && (
-        <Suspense fallback={<SectionLoading />}>
-          <ContactSection />
-        </Suspense>
+        <ContactSection />
       )}
       
-      <Suspense fallback={<SectionLoading />}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </>
   );
 };

@@ -7,14 +7,29 @@ import FeatureBenefits from './contact/FeatureBenefits';
 import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 const ContactSection = () => {
-  // Ensure all form submissions use HTTPS
+  // Ensure all form submissions use HTTPS and handle any loading errors
   React.useEffect(() => {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-      if (form.action && form.action.startsWith('http:')) {
-        form.action = form.action.replace('http:', 'https:');
-      }
-    });
+    try {
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        if (form.action && form.action.startsWith('http:')) {
+          form.action = form.action.replace('http:', 'https:');
+        }
+      });
+      
+      // Ensure Jobber form scripts are loaded
+      const jobberScript = document.createElement('script');
+      jobberScript.src = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js';
+      jobberScript.setAttribute('clienthub_id', 'ea87a0d4-d7c5-44c8-b739-29fe788d4d6b');
+      jobberScript.setAttribute('form_url', 'https://clienthub.getjobber.com/client_hubs/ea87a0d4-d7c5-44c8-b739-29fe788d4d6b/public/work_request/embedded_work_request_form');
+      document.body.appendChild(jobberScript);
+      
+      return () => {
+        document.body.removeChild(jobberScript);
+      };
+    } catch (error) {
+      console.error("Error in ContactSection setup:", error);
+    }
   }, []);
 
   return (

@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -24,15 +23,36 @@ export default defineConfig(({ mode }) => ({
     // Improve build process
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000,
+    target: 'es2015',
+    minify: 'terser', 
+    terserOptions: {
+      compress: {
+        drop_console: false,
+        drop_debugger: true
+      }
+    },
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: [
-            'react', 
-            'react-dom',
-            'react-router-dom'
-          ],
+        manualChunks: (id) => {
+          // Put React runtime in a separate chunk
+          if (id.includes('node_modules/react/') || 
+              id.includes('node_modules/react-dom/') || 
+              id.includes('node_modules/react-router-dom/')) {
+            return 'vendor';
+          }
+          // Keep shadcn components together
+          if (id.includes('@radix-ui/') || id.includes('src/components/ui/')) {
+            return 'ui';
+          }
         },
+        // Ensure proper path for dynamically loaded chunks
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      },
+      // Optimize dependencies
+      treeshake: {
+        moduleSideEffects: true,
       },
     },
   },

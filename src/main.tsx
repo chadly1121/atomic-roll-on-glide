@@ -1,3 +1,4 @@
+
 import { createRoot } from 'react-dom/client';
 import { lazy, Suspense } from 'react';
 import './styles/index.css';
@@ -13,8 +14,8 @@ const AppLoading = () => (
   </div>
 );
 
-// Lazy load the main App component
-const App = lazy(() => import('./App.tsx'));
+// Use normal import instead of lazy load for main App
+import App from './App';
 
 // Get the root element
 const rootElement = document.getElementById('root');
@@ -31,13 +32,32 @@ performance.mark('app-start');
 if (rootElement) {
   const root = createRoot(rootElement);
   
-  root.render(
-    <React.StrictMode>
-      <Suspense fallback={<AppLoading />}>
-        <App />
-      </Suspense>
-    </React.StrictMode>
-  );
+  // Add error handler
+  const renderApp = () => {
+    try {
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    } catch (error) {
+      console.error("Root render error:", error);
+      root.render(
+        <div className="min-h-screen flex flex-col items-center justify-center bg-red-50 p-4">
+          <h1 className="text-2xl font-bold text-red-600 mb-2">Failed to load application</h1>
+          <p className="text-gray-700 mb-4">Please try refreshing the page</p>
+          <button 
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          >
+            Reload Page
+          </button>
+        </div>
+      );
+    }
+  };
+
+  renderApp();
   
   // Performance logging
   window.addEventListener('load', () => {
