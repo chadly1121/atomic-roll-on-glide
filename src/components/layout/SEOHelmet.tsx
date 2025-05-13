@@ -32,6 +32,12 @@ const SEOHelmet: React.FC = () => {
                 "position": 3,
                 "name": "Contact",
                 "item": "https://rollonpainting.com/#contact"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "As Seen on TV",
+                "item": "https://rollonpainting.com/#asseenontv"
               }
             ]
           }
@@ -88,6 +94,13 @@ const SEOHelmet: React.FC = () => {
             "hasCredential": [
               "Licensed Professional Painters",
               "Fully Insured"
+            ],
+            "specialty": [
+              "Interior Painting",
+              "Exterior Painting",
+              "Commercial Painting",
+              "GoNano Permanent Coating",
+              "As Seen on HGTV"
             ]
           }
         `}
@@ -109,6 +122,29 @@ const SEOHelmet: React.FC = () => {
             "worstRating": "1",
             "ratingCount": "87",
             "reviewCount": "87"
+          }
+        `}
+      </script>
+      
+      {/* TV Appearance Schema */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "TVSeries",
+            "name": "Scott's Vacation House Rules",
+            "productionCompany": {
+              "@type": "Organization",
+              "name": "Home Network"
+            },
+            "episode": {
+              "@type": "TVEpisode",
+              "episodeNumber": "7",
+              "seasonNumber": "6",
+              "name": "Muskoka Property Renovation",
+              "description": "Episode featuring Roll On Painting's professional services"
+            },
+            "sameAs": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
           }
         `}
       </script>
