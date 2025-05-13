@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const SEOHelmet: React.FC = () => {
   return (
     <Helmet>
-      <title>Roll On Painting | Muskoka's Premier Painting Service</title>
+      <title>Roll On Painting | rollonpainting.com</title>
       <meta name="description" content="Professional painting services in Muskoka including interior, exterior, commercial, and GoNano permanent coating. Free touch-ups and expert service." />
       
       {/* BreadcrumbList schema for SEO */}
