@@ -41,6 +41,14 @@ const fadeInUpVariants = {
 };
 
 const AsSeenonTVSection = () => {
+  // Function to ensure HTTPS URLs
+  const ensureHttps = (url: string): string => {
+    if (url && url.startsWith('http:')) {
+      return url.replace('http:', 'https:');
+    }
+    return url;
+  };
+
   return (
     <section 
       id="asseenontv" 
@@ -83,11 +91,10 @@ const AsSeenonTVSection = () => {
               <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 z-10"></div>
                 <img 
-                  src={feature.logo} 
+                  src={ensureHttps(feature.logo)} 
                   alt={feature.networkName}
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback in case the image fails to load
                     console.log("Image failed to load, setting fallback");
                     e.currentTarget.src = "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg";
                   }}
@@ -107,7 +114,7 @@ const AsSeenonTVSection = () => {
                 </div>
                 <div className="flex items-center justify-center">
                   <a 
-                    href={feature.url}
+                    href={ensureHttps(feature.url || '')}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-medium hover:text-atomic-turquoise transition-colors flex items-center gap-2"

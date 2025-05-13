@@ -7,6 +7,16 @@ import FeatureBenefits from './contact/FeatureBenefits';
 import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 const ContactSection = () => {
+  // Ensure all form submissions use HTTPS
+  React.useEffect(() => {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      if (form.action && form.action.startsWith('http:')) {
+        form.action = form.action.replace('http:', 'https:');
+      }
+    });
+  }, []);
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
       <div className="atomic-starburst w-80 h-80 top-0 right-0 opacity-20"></div>

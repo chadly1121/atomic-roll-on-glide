@@ -7,12 +7,17 @@ const SEOHelmet: React.FC = () => {
     <Helmet>
       <title>Roll On Painting | rollonpainting.com</title>
       <meta name="description" content="Professional painting services in Muskoka including interior, exterior, commercial, and GoNano permanent coating. Free touch-ups and expert service." />
+      
+      {/* Security headers for SSL compatibility across devices */}
       <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
       
       {/* Force HTTPS for all connections */}
       <link rel="canonical" href="https://rollonpainting.com/" />
+      
+      {/* Add secure connection preference */}
+      <meta name="referrer" content="no-referrer-when-downgrade" />
       
       {/* BreadcrumbList schema for SEO */}
       <script type="application/ld+json">
