@@ -96,7 +96,7 @@ const AsSeenonTVSection = () => {
                 </div>
                 <div className="flex items-center justify-center">
                   <a 
-                    href={feature.url} 
+                    href="https://www.homenetwork.ca/scotts-vacation-house-rules/"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-medium hover:text-atomic-turquoise transition-colors flex items-center gap-2"
