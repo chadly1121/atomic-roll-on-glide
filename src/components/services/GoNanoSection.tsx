@@ -103,14 +103,14 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
             <CardContent className="pt-6">
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold text-atomic-navy">$0.99</span>
-                <span className="text-xl font-medium text-atomic-navy/70 ml-1">/ linear foot</span>
+                <span className="text-xl font-medium text-atomic-navy/70 ml-1">/ sq. foot</span>
                 <span className="text-sm text-gray-500 ml-2">starting from</span>
               </div>
               
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
-                  <span className="text-gray-600">Linear pricing for simple installations</span>
+                  <span className="text-gray-600">Square footage pricing for all surfaces</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
