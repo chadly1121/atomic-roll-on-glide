@@ -1,7 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Switch } from "@/components/ui/switch";
-import { VolumeX, Volume2 } from "lucide-react";
+import { VolumeX, Volume2, DollarSign, Check } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 
 interface GoNanoSectionProps {
   sectionRef: React.RefObject<HTMLDivElement>;
@@ -89,6 +90,59 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
               <span>Non-toxic, environmentally friendly formulations</span>
             </li>
           </ul>
+
+          {/* GoNano Price Card */}
+          <Card className="mt-8 overflow-hidden border-2 border-atomic-turquoise/30 hover:shadow-lg transition-all duration-300">
+            <CardHeader className="bg-gradient-to-r from-atomic-turquoise/20 to-atomic-turquoise/10">
+              <div className="flex items-center gap-2">
+                <DollarSign className="h-6 w-6 text-atomic-turquoise" />
+                <CardTitle>GoNano Pricing</CardTitle>
+              </div>
+              <CardDescription>Simple, affordable protection for your surfaces</CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="flex items-baseline mb-4">
+                <span className="text-3xl font-bold text-atomic-navy">$0.99</span>
+                <span className="text-xl font-medium text-atomic-navy/70 ml-1">/ linear foot</span>
+                <span className="text-sm text-gray-500 ml-2">starting from</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
+                  <span className="text-gray-600">Linear pricing for simple installations</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
+                  <span className="text-gray-600">Custom quotes for complex projects</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
+                  <span className="text-gray-600">Volume discounts available</span>
+                </div>
+                <div className="flex items-center">
+                  <Check className="h-4 w-4 mr-2 text-atomic-turquoise" />
+                  <span className="text-gray-600">Includes professional application</span>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="flex justify-center pb-6">
+              <a 
+                href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+                className="atomic-button-secondary w-full text-center justify-center"
+              >
+                <span className="relative z-10">Get a Free Quote</span>
+              </a>
+            </CardFooter>
+          </Card>
+          
           <a 
             href="https://www.gonano.com/" 
             target="_blank" 
