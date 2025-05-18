@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react"; // Importing useEffect from React instead of react-router-dom
+import { useEffect } from "react"; // Importing useEffect from React
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -30,15 +30,31 @@ const queryClient = new QueryClient({
   },
 });
 
-// WWW Redirect component
+// WWW Redirect component with improved functionality
 const WwwRedirect = () => {
   useEffect(() => {
-    const hostname = window.location.hostname;
-    const isWww = hostname.startsWith('www.');
-    
-    if (isWww) {
-      const nonWwwUrl = window.location.href.replace('www.', '');
-      window.location.replace(nonWwwUrl);
+    // Only run this on the client side
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname;
+      
+      // Check if the hostname starts with www.
+      if (hostname.startsWith('www.')) {
+        // Create the new URL with the same protocol but without www
+        const protocol = window.location.protocol;
+        const path = window.location.pathname;
+        const search = window.location.search;
+        const hash = window.location.hash;
+        const nonWwwHostname = hostname.replace('www.', '');
+        
+        // Construct the full URL
+        const nonWwwUrl = `${protocol}//${nonWwwHostname}${path}${search}${hash}`;
+        
+        // Log the redirect for debugging
+        console.log(`Redirecting from ${window.location.href} to ${nonWwwUrl}`);
+        
+        // Perform the redirect
+        window.location.replace(nonWwwUrl);
+      }
     }
   }, []);
   
