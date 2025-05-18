@@ -4,6 +4,9 @@
 User-agent: *
 Allow: /
 
+# Preferred domain is without www
+# If you see this and you're a human: Please use https://rollonpainting.com (without www)
+
 # Allow all search engines to access all content
 User-agent: Googlebot
 Allow: /
