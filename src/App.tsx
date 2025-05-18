@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useEffect } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -29,6 +29,21 @@ const queryClient = new QueryClient({
   },
 });
 
+// WWW Redirect component
+const WwwRedirect = () => {
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    const isWww = hostname.startsWith('www.');
+    
+    if (isWww) {
+      const nonWwwUrl = window.location.href.replace('www.', '');
+      window.location.replace(nonWwwUrl);
+    }
+  }, []);
+  
+  return null;
+};
+
 const App = () => {
   // Add error boundary for the entire app
   try {
@@ -38,6 +53,7 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
+            <WwwRedirect />
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
