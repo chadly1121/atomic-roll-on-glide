@@ -17,7 +17,6 @@ import LazySectionLoader from '../components/layout/LazySectionLoader';
 
 // Import conversion components
 import InlineCTA from '../components/conversion/InlineCTA';
-import ExitIntentPopup from '../components/conversion/ExitIntentPopup';
 
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
@@ -125,9 +124,6 @@ const Index = () => {
       
       {/* Welcome toast */}
       <WelcomeToast />
-      
-      {/* Exit Intent Popup */}
-      <ExitIntentPopup />
     </div>
   );
 };
