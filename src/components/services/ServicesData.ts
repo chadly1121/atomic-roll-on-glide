@@ -18,11 +18,11 @@ export const services: Service[] = [
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our durable exterior painting services that withstand the elements while looking beautiful.",
     icon: "🏡",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866797/IMG_20190920_121835_fchin4.jpg",
+    image: "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
     galleryImages: [
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941179/PXL_20250129_211848218.MP_ohwfmm.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941176/1000000146_eu326y.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941114/PXL_20240314_180102613_kacq15.jpg"
+      "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
+      "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
+      "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png"
     ]
   },
   {
@@ -30,8 +30,12 @@ export const services: Service[] = [
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "/lovable-uploads/8db1f419-2ee2-49da-b2cd-c17a8edafd7c.png",
+    image: "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
     galleryImages: [
+      "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
+      "/lovable-uploads/f73a02c1-39a6-483e-9f22-4d1984faa38c.png",
+      "/lovable-uploads/87bdcfa0-2592-4703-8cd5-cc9c042006e7.png",
+      "/lovable-uploads/ab647620-f91e-445a-b59d-7cd493143382.png",
       "/lovable-uploads/8db1f419-2ee2-49da-b2cd-c17a8edafd7c.png",
       "/lovable-uploads/1e023552-0b11-4ade-8457-f7740f0317ee.png"
     ]
@@ -52,8 +56,9 @@ export const services: Service[] = [
     title: "Deck & Fence Staining",
     description: "Protect and beautify your outdoor wooden surfaces with our expert staining services for decks, fences, and more.",
     icon: "🌳",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866841/PXL_20220708_134757148_h0pcfr.jpg",
+    image: "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
     galleryImages: [
+      "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866808/IMG_20200813_211052_ndyf6a.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866830/PXL_20211110_142417065_logkoq.jpg"
     ]
@@ -63,8 +68,10 @@ export const services: Service[] = [
     title: "Institutional Painting",
     description: "Our specialized institutional painting services for schools, hospitals, and government buildings meet all regulatory requirements.",
     icon: "🏫",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866778/IMG_3395_ub753y.jpg",
+    image: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
     galleryImages: [
+      "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
+      "/lovable-uploads/6ff94989-f399-4ad6-9f2e-1cee10aa41d2.png",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1036_mcyz4n.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3394_l7ndu1.jpg"
     ]

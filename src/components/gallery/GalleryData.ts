@@ -62,6 +62,66 @@ export const galleryImages: GalleryImage[] = [
     src: "/lovable-uploads/1e023552-0b11-4ade-8457-f7740f0317ee.png",
     category: "commercial",
     title: "Commercial Ceiling Project"
+  },
+  {
+    id: 11,
+    src: "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
+    category: "commercial",
+    title: "Large Commercial Space - In Progress"
+  },
+  {
+    id: 12,
+    src: "/lovable-uploads/f73a02c1-39a6-483e-9f22-4d1984faa38c.png",
+    category: "commercial",
+    title: "Commercial Warehouse Painting"
+  },
+  {
+    id: 13,
+    src: "/lovable-uploads/87bdcfa0-2592-4703-8cd5-cc9c042006e7.png",
+    category: "commercial",
+    title: "Industrial Facility Interior"
+  },
+  {
+    id: 14,
+    src: "/lovable-uploads/ab647620-f91e-445a-b59d-7cd493143382.png",
+    category: "commercial",
+    title: "Large Scale Industrial Project"
+  },
+  {
+    id: 15,
+    src: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
+    category: "institutional",
+    title: "School Hallway Renovation"
+  },
+  {
+    id: 16,
+    src: "/lovable-uploads/6ff94989-f399-4ad6-9f2e-1cee10aa41d2.png",
+    category: "institutional",
+    title: "School Gymnasium Painting"
+  },
+  {
+    id: 17,
+    src: "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
+    category: "exterior",
+    title: "Commercial Building Exterior"
+  },
+  {
+    id: 18,
+    src: "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
+    category: "exterior",
+    title: "Industrial Building Painting"
+  },
+  {
+    id: 19,
+    src: "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png",
+    category: "exterior",
+    title: "Commercial Building Project"
+  },
+  {
+    id: 20,
+    src: "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
+    category: "prefinishing",
+    title: "Wood Staining Project"
   }
 ];
 
@@ -70,6 +130,7 @@ export const galleryCategories = [
   { id: 'interior', name: 'Interior' },
   { id: 'exterior', name: 'Exterior' },
   { id: 'commercial', name: 'Commercial' },
+  { id: 'institutional', name: 'Institutional' },
   { id: 'epoxy', name: 'Epoxy Coatings' },
   { id: 'prefinishing', name: 'Pre-Finishing' }
 ];
