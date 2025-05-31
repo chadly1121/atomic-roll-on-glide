@@ -34,7 +34,12 @@ const galleryImages = [
   "/lovable-uploads/d531dd47-1462-4fdb-85d4-457945cee6cc.png",
   "/lovable-uploads/a0c2eeb2-2cdc-47e8-8b3e-e42327db815a.png",
   "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png",
-  "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png"
+  "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png",
+  "/lovable-uploads/028cbdd4-fe73-4b51-8ee8-8f4bbddbeac5.png",
+  "/lovable-uploads/0c794870-482f-4343-924c-4465eac74869.png",
+  "/lovable-uploads/ac49f6f1-7792-4231-a423-19124368014d.png",
+  "/lovable-uploads/36027933-126d-4cb7-b430-bad5c5cd5737.png",
+  "/lovable-uploads/4ee3ef87-4746-48ba-906c-ce9bb2277b11.png"
 ];
 
 const HeroSection = () => {

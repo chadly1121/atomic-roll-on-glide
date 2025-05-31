@@ -242,6 +242,66 @@ export const galleryImages: GalleryImage[] = [
     src: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
     category: "interior",
     title: "Bedroom Interior Painting"
+  },
+  {
+    id: 41,
+    src: "/lovable-uploads/028cbdd4-fe73-4b51-8ee8-8f4bbddbeac5.png",
+    category: "interior",
+    title: "Interior Renovation with Masking & Prep Work"
+  },
+  {
+    id: 42,
+    src: "/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png",
+    category: "interior",
+    title: "Window Trim & Interior Detail Work"
+  },
+  {
+    id: 43,
+    src: "/lovable-uploads/0c794870-482f-4343-924c-4465eac74869.png",
+    category: "interior",
+    title: "Living Room with Stone Fireplace"
+  },
+  {
+    id: 44,
+    src: "/lovable-uploads/ac49f6f1-7792-4231-a423-19124368014d.png",
+    category: "prefinishing",
+    title: "Custom Door Pre-Finishing"
+  },
+  {
+    id: 45,
+    src: "/lovable-uploads/2622f944-739e-4849-8d36-943b4faba018.png",
+    category: "interior",
+    title: "Interior Trim & Window Painting"
+  },
+  {
+    id: 46,
+    src: "/lovable-uploads/36027933-126d-4cb7-b430-bad5c5cd5737.png",
+    category: "interior",
+    title: "Finished Living Room with Natural Light"
+  },
+  {
+    id: 47,
+    src: "/lovable-uploads/59fceeeb-5237-41de-a165-23b8ce9fea80.png",
+    category: "exterior",
+    title: "Commercial Building Under Construction"
+  },
+  {
+    id: 48,
+    src: "/lovable-uploads/fc7672ec-4bfa-4d64-b84f-2d3a60575dfb.png",
+    category: "commercial",
+    title: "Large Scale Commercial Building"
+  },
+  {
+    id: 49,
+    src: "/lovable-uploads/4ee3ef87-4746-48ba-906c-ce9bb2277b11.png",
+    category: "commercial",
+    title: "Commercial Exterior Yellow & White"
+  },
+  {
+    id: 50,
+    src: "/lovable-uploads/1476fc8f-ad99-472d-9836-ffcc3725f390.png",
+    category: "commercial",
+    title: "Commercial Building Exterior Project"
   }
 ];
 

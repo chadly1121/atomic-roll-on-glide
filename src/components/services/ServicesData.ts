@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -16,7 +15,12 @@ export const services: Service[] = [
       "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png",
       "/lovable-uploads/54c5f452-ea9f-49eb-aa4c-4e0e8a24420f.png",
       "/lovable-uploads/73d1fb20-999b-439d-a462-4777a05e92bd.png",
-      "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png"
+      "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
+      "/lovable-uploads/028cbdd4-fe73-4b51-8ee8-8f4bbddbeac5.png",
+      "/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png",
+      "/lovable-uploads/0c794870-482f-4343-924c-4465eac74869.png",
+      "/lovable-uploads/2622f944-739e-4849-8d36-943b4faba018.png",
+      "/lovable-uploads/36027933-126d-4cb7-b430-bad5c5cd5737.png"
     ]
   },
   {
@@ -54,7 +58,10 @@ export const services: Service[] = [
       "/lovable-uploads/0a087606-e5e6-4b1f-9d3b-568950272900.png",
       "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png",
       "/lovable-uploads/9751a10e-c3e2-4435-95f9-e20dbbe2f130.png",
-      "/lovable-uploads/22029bdc-903e-4b5d-aa1e-d531b978bc47.png"
+      "/lovable-uploads/22029bdc-903e-4b5d-aa1e-d531b978bc47.png",
+      "/lovable-uploads/fc7672ec-4bfa-4d64-b84f-2d3a60575dfb.png",
+      "/lovable-uploads/4ee3ef87-4746-48ba-906c-ce9bb2277b11.png",
+      "/lovable-uploads/1476fc8f-ad99-472d-9836-ffcc3725f390.png"
     ]
   },
   {
@@ -105,7 +112,8 @@ export const services: Service[] = [
       "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
       "/lovable-uploads/22085489-537d-44d5-b570-3dd99a63f2e3.png",
       "/lovable-uploads/323140ca-6825-4ad3-abcd-6dae649a4b02.png",
-      "/lovable-uploads/28a50dd0-0c72-41ce-b0d4-1fb4c4b9a6cc.png"
+      "/lovable-uploads/28a50dd0-0c72-41ce-b0d4-1fb4c4b9a6cc.png",
+      "/lovable-uploads/ac49f6f1-7792-4231-a423-19124368014d.png"
     ]
   },
   {
