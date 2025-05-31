@@ -182,6 +182,66 @@ export const galleryImages: GalleryImage[] = [
     src: "/lovable-uploads/d5aa2105-4f9e-4f55-9f2b-4287dc49355e.png",
     category: "institutional",
     title: "School Gymnasium Interior"
+  },
+  {
+    id: 31,
+    src: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
+    category: "commercial",
+    title: "Commercial Exterior Roof Painting"
+  },
+  {
+    id: 32,
+    src: "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",
+    category: "commercial",
+    title: "Commercial Building Exterior & Roof"
+  },
+  {
+    id: 33,
+    src: "/lovable-uploads/e1c9d1df-a4ed-49a4-b67c-c7ea2108092e.png",
+    category: "commercial",
+    title: "Commercial Building In Progress"
+  },
+  {
+    id: 34,
+    src: "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
+    category: "prefinishing",
+    title: "Wood Shelving Pre-Finishing"
+  },
+  {
+    id: 35,
+    src: "/lovable-uploads/77d87884-b186-4ba6-89ec-aa1da1d26e56.png",
+    category: "commercial",
+    title: "Commercial Interior Wall Painting"
+  },
+  {
+    id: 36,
+    src: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
+    category: "interior",
+    title: "Kitchen & Dining Room Interior"
+  },
+  {
+    id: 37,
+    src: "/lovable-uploads/dfec77e0-b3c9-43db-810b-dc6d55adfabd.png",
+    category: "commercial",
+    title: "Commercial Space Paint Removal"
+  },
+  {
+    id: 38,
+    src: "/lovable-uploads/54c5f452-ea9f-49eb-aa4c-4e0e8a24420f.png",
+    category: "interior",
+    title: "Modern Kitchen Interior Painting"
+  },
+  {
+    id: 39,
+    src: "/lovable-uploads/73d1fb20-999b-439d-a462-4777a05e92bd.png",
+    category: "interior",
+    title: "Interior Staircase & Railing"
+  },
+  {
+    id: 40,
+    src: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
+    category: "interior",
+    title: "Bedroom Interior Painting"
   }
 ];
 

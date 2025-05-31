@@ -7,12 +7,16 @@ export const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with our premium interior painting services, featuring expert color consultation and flawless finishes.",
     icon: "🏠",
-    image: "/lovable-uploads/1855749d-b944-4711-a457-be80657744dc.png",
+    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
     galleryImages: [
+      "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
       "/lovable-uploads/1855749d-b944-4711-a457-be80657744dc.png",
       "/lovable-uploads/5a06b919-e0cd-4254-928f-a8f7d589c4c8.png",
       "/lovable-uploads/d531dd47-1462-4fdb-85d4-457945cee6cc.png",
-      "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png"
+      "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png",
+      "/lovable-uploads/54c5f452-ea9f-49eb-aa4c-4e0e8a24420f.png",
+      "/lovable-uploads/73d1fb20-999b-439d-a462-4777a05e92bd.png",
+      "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png"
     ]
   },
   {
@@ -32,8 +36,13 @@ export const services: Service[] = [
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
+    image: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
     galleryImages: [
+      "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
+      "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",
+      "/lovable-uploads/e1c9d1df-a4ed-49a4-b67c-c7ea2108092e.png",
+      "/lovable-uploads/77d87884-b186-4ba6-89ec-aa1da1d26e56.png",
+      "/lovable-uploads/dfec77e0-b3c9-43db-810b-dc6d55adfabd.png",
       "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
       "/lovable-uploads/f73a02c1-39a6-483e-9f22-4d1984faa38c.png",
       "/lovable-uploads/87bdcfa0-2592-4703-8cd5-cc9c042006e7.png",
@@ -91,8 +100,9 @@ export const services: Service[] = [
     title: "Pre-Finishing",
     description: "Get professional pre-finishing for your new construction materials, ensuring durability and perfect appearance.",
     icon: "🔨",
-    image: "/lovable-uploads/22085489-537d-44d5-b570-3dd99a63f2e3.png",
+    image: "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
     galleryImages: [
+      "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
       "/lovable-uploads/22085489-537d-44d5-b570-3dd99a63f2e3.png",
       "/lovable-uploads/323140ca-6825-4ad3-abcd-6dae649a4b02.png",
       "/lovable-uploads/28a50dd0-0c72-41ce-b0d4-1fb4c4b9a6cc.png"

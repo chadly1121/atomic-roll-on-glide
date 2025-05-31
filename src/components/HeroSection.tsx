@@ -12,6 +12,11 @@ import { throttle } from '@/utils/performance';
 
 // Updated gallery images with locally uploaded photos for faster loading
 const galleryImages = [
+  "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
+  "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",
+  "/lovable-uploads/e1c9d1df-a4ed-49a4-b67c-c7ea2108092e.png",
+  "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
+  "/lovable-uploads/54c5f452-ea9f-49eb-aa4c-4e0e8a24420f.png",
   "/lovable-uploads/22085489-537d-44d5-b570-3dd99a63f2e3.png",
   "/lovable-uploads/323140ca-6825-4ad3-abcd-6dae649a4b02.png", 
   "/lovable-uploads/28a50dd0-0c72-41ce-b0d4-1fb4c4b9a6cc.png",
