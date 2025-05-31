@@ -302,6 +302,60 @@ export const galleryImages: GalleryImage[] = [
     src: "/lovable-uploads/1476fc8f-ad99-472d-9836-ffcc3725f390.png",
     category: "commercial",
     title: "Commercial Building Exterior Project"
+  },
+  {
+    id: 51,
+    src: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
+    category: "exterior",
+    title: "Lakefront Cottage Exterior Painting"
+  },
+  {
+    id: 52,
+    src: "/lovable-uploads/8f3d5fe7-fb52-4fad-a445-da9b0168bc60.png",
+    category: "interior",
+    title: "Luxury Cottage Interior with Stone Fireplace"
+  },
+  {
+    id: 53,
+    src: "/lovable-uploads/9207b661-8753-45bd-b953-77b2b3b8f3c6.png",
+    category: "interior",
+    title: "Lakefront Cottage Interior with Lake View"
+  },
+  {
+    id: 54,
+    src: "/lovable-uploads/fc8610b5-0459-49bc-912e-ccc4d4c8f155.png",
+    category: "interior",
+    title: "Great Room with Exposed Beam Ceiling"
+  },
+  {
+    id: 55,
+    src: "/lovable-uploads/8c765ad9-b10f-4684-8879-1c88fe91d661.png",
+    category: "interior",
+    title: "Interior Staircase with Modern Railing"
+  },
+  {
+    id: 56,
+    src: "/lovable-uploads/551366d5-df1f-4242-8994-d8503acb1540.png",
+    category: "interior",
+    title: "Open Loft Space with Natural Wood Beams"
+  },
+  {
+    id: 57,
+    src: "/lovable-uploads/5bb528e7-e3bf-47ea-a5ee-ca5d818e51d4.png",
+    category: "interior",
+    title: "Cottage Dining Nook with Lake View"
+  },
+  {
+    id: 58,
+    src: "/lovable-uploads/3675fa18-e01a-4d69-a6ad-9420d64b833c.png",
+    category: "interior",
+    title: "Built-in Storage & Custom Millwork"
+  },
+  {
+    id: 59,
+    src: "/lovable-uploads/4ed2b463-8340-40e2-a92e-e42853be0673.png",
+    category: "interior",
+    title: "Luxury Bedroom with Accent Wall"
   }
 ];
 

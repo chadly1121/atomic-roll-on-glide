@@ -20,7 +20,15 @@ export const services: Service[] = [
       "/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png",
       "/lovable-uploads/0c794870-482f-4343-924c-4465eac74869.png",
       "/lovable-uploads/2622f944-739e-4849-8d36-943b4faba018.png",
-      "/lovable-uploads/36027933-126d-4cb7-b430-bad5c5cd5737.png"
+      "/lovable-uploads/36027933-126d-4cb7-b430-bad5c5cd5737.png",
+      "/lovable-uploads/8f3d5fe7-fb52-4fad-a445-da9b0168bc60.png",
+      "/lovable-uploads/9207b661-8753-45bd-b953-77b2b3b8f3c6.png",
+      "/lovable-uploads/fc8610b5-0459-49bc-912e-ccc4d4c8f155.png",
+      "/lovable-uploads/8c765ad9-b10f-4684-8879-1c88fe91d661.png",
+      "/lovable-uploads/551366d5-df1f-4242-8994-d8503acb1540.png",
+      "/lovable-uploads/5bb528e7-e3bf-47ea-a5ee-ca5d818e51d4.png",
+      "/lovable-uploads/3675fa18-e01a-4d69-a6ad-9420d64b833c.png",
+      "/lovable-uploads/4ed2b463-8340-40e2-a92e-e42853be0673.png"
     ]
   },
   {
@@ -32,7 +40,8 @@ export const services: Service[] = [
     galleryImages: [
       "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
       "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
-      "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png"
+      "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png",
+      "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png"
     ]
   },
   {
