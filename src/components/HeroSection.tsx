@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import { Atom, FileImage } from 'lucide-react';
@@ -10,20 +11,18 @@ import {
 } from "@/components/ui/carousel";
 import { throttle } from '@/utils/performance';
 
-// Updated gallery images with client's actual project photos
+// Updated gallery images with locally uploaded photos for faster loading
 const galleryImages = [
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941177/1000000519_vxsvyh.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240320_114244609_wvn8ru.jpg", 
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941073/PXL_20240209_150136935_ai7mgs.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941017/PXL_20221031_143749288_lpjtju.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940981/PXL_20220729_194141640_nznwhm.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940978/PXL_20220511_190838626_erdkwk.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940774/IMG_20181206_082735_azfv0p.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940773/IMG_20181119_132931_nljipa.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6195_temgmp.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1121_sgh9qw.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940692/IMG_1224_b4bqib.jpg",
-  "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940662/PXL_20241017_182116190_gbtvla.jpg"
+  "/lovable-uploads/22085489-537d-44d5-b570-3dd99a63f2e3.png",
+  "/lovable-uploads/323140ca-6825-4ad3-abcd-6dae649a4b02.png", 
+  "/lovable-uploads/28a50dd0-0c72-41ce-b0d4-1fb4c4b9a6cc.png",
+  "/lovable-uploads/7671fcb5-a810-4e9a-84fc-76713831e5ba.png",
+  "/lovable-uploads/41fed3c2-d734-4c98-aa94-862ae8f83f1b.png",
+  "/lovable-uploads/d92e575b-d7e8-477c-a4d6-d34674df328a.png",
+  "/lovable-uploads/1855749d-b944-4711-a457-be80657744dc.png",
+  "/lovable-uploads/8db1f419-2ee2-49da-b2cd-c17a8edafd7c.png",
+  "/lovable-uploads/5a06b919-e0cd-4254-928f-a8f7d589c4c8.png",
+  "/lovable-uploads/1e023552-0b11-4ade-8457-f7740f0317ee.png"
 ];
 
 const HeroSection = () => {
@@ -168,29 +167,16 @@ const HeroSection = () => {
                   {galleryImages.map((image, index) => (
                     <CarouselItem key={index}>
                       <div className="p-1">
-                        {index < 4 ? (
-                          <img 
-                            alt={`Roll On Painting Project ${index + 1}`} 
-                            className="w-full h-[400px] object-cover transition-all duration-300" 
-                            src={image}
-                            loading={index < 2 ? "eager" : "lazy"}
-                            fetchPriority={index < 2 ? "high" : "low"}
-                            width="800"
-                            height="400"
-                            decoding="async"
-                          />
-                        ) : (
-                          <img 
-                            alt={`Roll On Painting Project ${index + 1}`} 
-                            className="w-full h-[400px] object-cover transition-all duration-300" 
-                            data-src={image} 
-                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PC9zdmc+"
-                            loading="lazy"
-                            width="800"
-                            height="400"
-                            decoding="async"
-                          />
-                        )}
+                        <img 
+                          alt={`Roll On Painting Project ${index + 1}`} 
+                          className="w-full h-[400px] object-cover transition-all duration-300" 
+                          src={image}
+                          loading={index < 2 ? "eager" : "lazy"}
+                          fetchPriority={index < 2 ? "high" : "low"}
+                          width="800"
+                          height="400"
+                          decoding="async"
+                        />
                       </div>
                     </CarouselItem>
                   ))}
