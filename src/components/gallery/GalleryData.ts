@@ -122,6 +122,66 @@ export const galleryImages: GalleryImage[] = [
     src: "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
     category: "prefinishing",
     title: "Wood Staining Project"
+  },
+  {
+    id: 21,
+    src: "/lovable-uploads/d531dd47-1462-4fdb-85d4-457945cee6cc.png",
+    category: "interior",
+    title: "Luxury Home Interior Renovation"
+  },
+  {
+    id: 22,
+    src: "/lovable-uploads/a0c2eeb2-2cdc-47e8-8b3e-e42327db815a.png",
+    category: "commercial",
+    title: "Commercial Flooring Project"
+  },
+  {
+    id: 23,
+    src: "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png",
+    category: "interior",
+    title: "Bedroom Ceiling & Trim Work"
+  },
+  {
+    id: 24,
+    src: "/lovable-uploads/e1f24fc4-dc11-479c-826d-a3e680a07901.png",
+    category: "commercial",
+    title: "Commercial Warehouse - Black Ceiling"
+  },
+  {
+    id: 25,
+    src: "/lovable-uploads/0a087606-e5e6-4b1f-9d3b-568950272900.png",
+    category: "commercial",
+    title: "Commercial Space Wall Painting"
+  },
+  {
+    id: 26,
+    src: "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png",
+    category: "commercial",
+    title: "Large Commercial Space - Yellow & White"
+  },
+  {
+    id: 27,
+    src: "/lovable-uploads/9751a10e-c3e2-4435-95f9-e20dbbe2f130.png",
+    category: "commercial",
+    title: "Commercial Interior - Progress Shot"
+  },
+  {
+    id: 28,
+    src: "/lovable-uploads/22029bdc-903e-4b5d-aa1e-d531b978bc47.png",
+    category: "commercial",
+    title: "Industrial Warehouse Painting"
+  },
+  {
+    id: 29,
+    src: "/lovable-uploads/c614cd15-83cf-444e-a225-8269d12d9f5d.png",
+    category: "institutional",
+    title: "School Corridor Renovation"
+  },
+  {
+    id: 30,
+    src: "/lovable-uploads/d5aa2105-4f9e-4f55-9f2b-4287dc49355e.png",
+    category: "institutional",
+    title: "School Gymnasium Interior"
   }
 ];
 

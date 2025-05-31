@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import { Atom, FileImage } from 'lucide-react';
@@ -26,7 +25,11 @@ const galleryImages = [
   "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
   "/lovable-uploads/f73a02c1-39a6-483e-9f22-4d1984faa38c.png",
   "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
-  "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png"
+  "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
+  "/lovable-uploads/d531dd47-1462-4fdb-85d4-457945cee6cc.png",
+  "/lovable-uploads/a0c2eeb2-2cdc-47e8-8b3e-e42327db815a.png",
+  "/lovable-uploads/d3367d55-c96e-44d7-bcd0-27507959a1fa.png",
+  "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png"
 ];
 
 const HeroSection = () => {
