@@ -85,5 +85,23 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/4309401b-0955-4c2f-baf7-a4e8aef5e626.png",
     category: "commercial",
     title: "Modern Commercial Interior Design"
+  },
+  {
+    id: 102,
+    src: "/lovable-uploads/780f6bc7-ce9f-4b77-ac83-a1c4d6424e99.png",
+    category: "commercial",
+    title: "Industrial Floor Preparation and Grinding"
+  },
+  {
+    id: 103,
+    src: "/lovable-uploads/ed5529c8-298a-4649-ab6e-f12ec292a969.png",
+    category: "commercial",
+    title: "Commercial Ceiling Installation"
+  },
+  {
+    id: 104,
+    src: "/lovable-uploads/0228c201-9fd3-48da-b4d5-f4938fdde5e1.png",
+    category: "commercial",
+    title: "Industrial Ceiling and Ductwork Preparation"
   }
 ];

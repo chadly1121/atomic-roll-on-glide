@@ -1,4 +1,3 @@
-
 import { GalleryImage } from '../types';
 
 export const interiorImages: GalleryImage[] = [
@@ -247,5 +246,23 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/ff507014-0082-4e54-a200-4d509b0c037d.png",
     category: "interior",
     title: "Modern Fireplace Feature Wall"
+  },
+  {
+    id: 95,
+    src: "/lovable-uploads/1ffc6656-d3b2-47c8-a3a2-faaaa6c9e5b2.png",
+    category: "interior",
+    title: "Custom Door Staining Project"
+  },
+  {
+    id: 96,
+    src: "/lovable-uploads/f3d4ad8f-0426-4bc9-962e-1ed85bce2636.png",
+    category: "interior",
+    title: "Rustic Living Room with Stone Fireplace"
+  },
+  {
+    id: 97,
+    src: "/lovable-uploads/8804e543-d0bc-464e-b573-0697840429b5.png",
+    category: "interior",
+    title: "Modern Interior with Exposed Wood Beams"
   }
 ];

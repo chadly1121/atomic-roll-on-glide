@@ -73,5 +73,29 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/bd116ecc-c88e-41c9-a68f-001b95ab5a06.png",
     category: "prefinishing",
     title: "Deck Staining with Professional Application"
+  },
+  {
+    id: 98,
+    src: "/lovable-uploads/d0d5f952-fd4c-4f1a-8ae9-3aebdb5b5552.png",
+    category: "prefinishing",
+    title: "Wood Staining Materials Preparation"
+  },
+  {
+    id: 99,
+    src: "/lovable-uploads/5d495ec3-b2cb-436e-b1f9-afe6f8e5032a.png",
+    category: "prefinishing",
+    title: "Industrial Wood Staining Facility"
+  },
+  {
+    id: 100,
+    src: "/lovable-uploads/96ba9f86-1dc7-477a-a8f2-6461a77f8903.png",
+    category: "prefinishing",
+    title: "Wood Materials Warehouse and Storage"
+  },
+  {
+    id: 101,
+    src: "/lovable-uploads/1b232070-3535-4bae-ac21-3e011388fbdd.png",
+    category: "prefinishing",
+    title: "Outdoor Deck Staining and Finishing"
   }
 ];
