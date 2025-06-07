@@ -31,5 +31,17 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
     category: "exterior",
     title: "Lakefront Cottage Exterior Painting"
+  },
+  {
+    id: 72,
+    src: "/lovable-uploads/461669ed-78ae-4205-8161-a3c05dc5143c.png",
+    category: "exterior",
+    title: "Exterior Window Painting Project"
+  },
+  {
+    id: 73,
+    src: "/lovable-uploads/6e3d697a-e317-43d5-8987-a0a979709de5.png",
+    category: "exterior",
+    title: "Garage Door Staining Project"
   }
 ];
