@@ -37,5 +37,23 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/588821d9-3d22-4afe-9dfa-3a9c79c1367d.png",
     category: "epoxy",
     title: "Industrial Epoxy Floor Coating"
+  },
+  {
+    id: 75,
+    src: "/lovable-uploads/f662a0ea-18c6-486b-bece-8def1fe821d9.png",
+    category: "epoxy",
+    title: "Brewery Floor Epoxy Coating"
+  },
+  {
+    id: 76,
+    src: "/lovable-uploads/d2188b4b-8832-49d7-ad84-f34ee23eb684.png",
+    category: "epoxy",
+    title: "Commercial Brewery Epoxy Installation"
+  },
+  {
+    id: 77,
+    src: "/lovable-uploads/5caab5c2-b974-403c-9275-1fb79fa781ad.png",
+    category: "epoxy",
+    title: "Industrial Brewery Floor Coating"
   }
 ];

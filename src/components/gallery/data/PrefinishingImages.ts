@@ -38,7 +38,6 @@ export const prefinishingImages: GalleryImage[] = [
     category: "prefinishing",
     title: "Custom Door Pre-Finishing"
   },
-  // New images added
   {
     id: 57,
     src: "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.png",
@@ -50,5 +49,17 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/4ab7d8ed-5330-485e-bdbf-60697f8fe075.png",
     category: "prefinishing",
     title: "Professional Deck Refinishing"
+  },
+  {
+    id: 78,
+    src: "/lovable-uploads/1d77f859-614d-40f2-81b9-7e7f1eaafb8a.png",
+    category: "prefinishing",
+    title: "Workshop Wood Sanding Project"
+  },
+  {
+    id: 79,
+    src: "/lovable-uploads/72730f66-3425-45e7-85ec-d792d27be704.png",
+    category: "prefinishing",
+    title: "Wood Beam Staining Project"
   }
 ];

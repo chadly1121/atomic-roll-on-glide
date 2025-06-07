@@ -43,5 +43,17 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/6e3d697a-e317-43d5-8987-a0a979709de5.png",
     category: "exterior",
     title: "Garage Door Staining Project"
+  },
+  {
+    id: 83,
+    src: "/lovable-uploads/f6f742c3-d285-4c5c-ab30-a9dac0a253b7.png",
+    category: "exterior",
+    title: "Building Exterior Scaffolding Project"
+  },
+  {
+    id: 84,
+    src: "/lovable-uploads/27dadd1c-1e08-4101-abe3-894002c6e8a0.png",
+    category: "exterior",
+    title: "Residential Exterior Painting with Lift"
   }
 ];

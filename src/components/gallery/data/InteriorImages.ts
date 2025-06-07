@@ -133,5 +133,23 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/1827c98c-e297-47fd-a67f-8ce6107bca28.png",
     category: "interior",
     title: "Brick Fireplace Feature Wall"
+  },
+  {
+    id: 80,
+    src: "/lovable-uploads/3387f973-015a-41fc-8a4d-5bfc04c82db0.png",
+    category: "interior",
+    title: "Custom Mudroom with Shiplap Design"
+  },
+  {
+    id: 81,
+    src: "/lovable-uploads/e997f6fd-0110-4c25-9616-7050870ae44d.png",
+    category: "interior",
+    title: "Modern Cabinet Painting Project"
+  },
+  {
+    id: 82,
+    src: "/lovable-uploads/23ab4d71-0a79-4b1f-a248-fec850ff175b.png",
+    category: "interior",
+    title: "Interior Commercial Paint Application"
   }
 ];
