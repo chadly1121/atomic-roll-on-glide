@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { optimizeCloudinaryUrl, generateSrcSet } from "@/utils/imageOptimizer";
@@ -34,15 +33,17 @@ const LazyImage = ({
   ...props
 }: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(priority);
   const [error, setError] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
-  // Generate optimized image URL
+  // Only optimize Cloudinary URLs, keep local images as-is
   const optimizedSrc = src.includes("cloudinary.com") 
     ? optimizeCloudinaryUrl(src, { quality: optimizeQuality, format: 'auto' })
     : src;
   
-  // Generate srcset for responsive images
+  // Only generate srcset for Cloudinary images
   const srcSet = src.includes("cloudinary.com") 
     ? generateSrcSet(src)
     : undefined;
@@ -52,47 +53,52 @@ const LazyImage = ({
     setIsLoaded(false);
     setError(false);
     
-    // Check if we should use IntersectionObserver or load immediately
+    // If priority is true, load immediately
     if (priority) {
-      setIsLoaded(true);
+      setIsInView(true);
       return;
     }
     
     // Use Intersection Observer for lazy loading
-    if (imageRef.current && !isLoaded && 'IntersectionObserver' in window) {
+    if (containerRef.current && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setIsLoaded(true);
+              setIsInView(true);
               observer.unobserve(entry.target);
             }
           });
         },
-        { rootMargin: "200px 0px" } // Start loading when within 200px of viewport
+        { rootMargin: "100px 0px" }
       );
       
-      observer.observe(imageRef.current);
+      observer.observe(containerRef.current);
       return () => {
-        if (imageRef.current) {
-          observer.unobserve(imageRef.current);
+        if (containerRef.current) {
+          observer.unobserve(containerRef.current);
         }
       };
+    } else {
+      // Fallback if no IntersectionObserver
+      setIsInView(true);
     }
-    
-    // Fallback if no IntersectionObserver or priority is true
-    setIsLoaded(true);
   }, [src, priority]);
 
-  // Handle image load error
+  const handleLoad = () => {
+    setIsLoaded(true);
+    setError(false);
+  };
+
   const handleError = () => {
-    console.error(`Failed to load image: ${src}`);
+    console.info("Image failed to load, setting fallback");
     setError(true);
+    setIsLoaded(false);
   };
 
   return (
     <div 
-      ref={imageRef}
+      ref={containerRef}
       className={cn(
         "relative overflow-hidden",
         className
@@ -104,47 +110,35 @@ const LazyImage = ({
       }}
     >
       {/* Loading placeholder */}
-      {(!isLoaded || error) && (
+      {!isLoaded && !error && (
         <div 
           className={cn(
-            "absolute inset-0", 
+            "absolute inset-0 animate-pulse", 
             placeholderColor,
-            error ? "animate-pulse" : "",
             loadingClassName
           )} 
         />
       )}
       
-      {/* Actual image */}
-      {isLoaded && !error && (
+      {/* Actual image - only render when in view */}
+      {isInView && (
         <img
-          src={optimizedSrc}
-          alt={alt}
-          srcSet={srcSet}
-          sizes={sizes}
+          ref={imageRef}
+          src={error ? fallback : optimizedSrc}
+          alt={error ? `Fallback for ${alt}` : alt}
+          srcSet={!error && srcSet ? srcSet : undefined}
+          sizes={!error ? sizes : undefined}
           width={width}
           height={height}
+          onLoad={handleLoad}
           onError={handleError}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
-          fetchPriority={priority ? "high" : "auto"}
           className={cn(
-            "w-full h-full transition-opacity duration-300",
-            !isLoaded || error ? "opacity-0" : "opacity-100",
-            className
+            "w-full h-full object-cover transition-opacity duration-300",
+            isLoaded ? "opacity-100" : "opacity-0"
           )}
           {...props}
-        />
-      )}
-      
-      {/* Fallback for error */}
-      {error && (
-        <img
-          src={fallback}
-          alt={`Fallback for ${alt}`}
-          width={width}
-          height={height}
-          className={cn("w-full h-full object-cover", className)}
         />
       )}
     </div>
