@@ -25,5 +25,12 @@ export const institutionalImages: GalleryImage[] = [
     src: "/lovable-uploads/d5aa2105-4f9e-4f55-9f2b-4287dc49355e.png",
     category: "institutional",
     title: "School Gymnasium Interior"
+  },
+  // New image added - the first image appears to be an educational/institutional setting
+  {
+    id: 61,
+    src: "/lovable-uploads/5f42b054-48c1-41c6-af3d-2dba8276655b.png",
+    category: "institutional",
+    title: "Educational Facility Presentation Room"
   }
 ];

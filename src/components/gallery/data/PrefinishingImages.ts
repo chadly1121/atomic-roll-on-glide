@@ -37,5 +37,18 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/ac49f6f1-7792-4231-a423-19124368014d.png",
     category: "prefinishing",
     title: "Custom Door Pre-Finishing"
+  },
+  // New images added
+  {
+    id: 57,
+    src: "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.png",
+    category: "prefinishing",
+    title: "Deck Staining and Finishing"
+  },
+  {
+    id: 58,
+    src: "/lovable-uploads/4ab7d8ed-5330-485e-bdbf-60697f8fe075.png",
+    category: "prefinishing",
+    title: "Professional Deck Refinishing"
   }
 ];
