@@ -1,0 +1,35 @@
+
+import { GalleryImage } from '../types';
+
+export const exteriorImages: GalleryImage[] = [
+  {
+    id: 17,
+    src: "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
+    category: "exterior",
+    title: "Commercial Building Exterior"
+  },
+  {
+    id: 18,
+    src: "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
+    category: "exterior",
+    title: "Industrial Building Painting"
+  },
+  {
+    id: 19,
+    src: "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png",
+    category: "exterior",
+    title: "Commercial Building Project"
+  },
+  {
+    id: 47,
+    src: "/lovable-uploads/59fceeeb-5237-41de-a165-23b8ce9fea80.png",
+    category: "exterior",
+    title: "Commercial Building Under Construction"
+  },
+  {
+    id: 51,
+    src: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
+    category: "exterior",
+    title: "Lakefront Cottage Exterior Painting"
+  }
+];
