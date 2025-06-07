@@ -55,5 +55,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/5caab5c2-b974-403c-9275-1fb79fa781ad.png",
     category: "epoxy",
     title: "Industrial Brewery Floor Coating"
+  },
+  {
+    id: 93,
+    src: "/lovable-uploads/0d209ae4-5893-48f5-b808-f6659df33d40.png",
+    category: "epoxy",
+    title: "Professional Garage Epoxy Floor Coating"
+  },
+  {
+    id: 94,
+    src: "/lovable-uploads/d8414a21-a2d8-4b1d-aa6c-912759e69126.png",
+    category: "epoxy",
+    title: "Interior Room with Blue Feature Wall"
   }
 ];

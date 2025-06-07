@@ -61,5 +61,17 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/72730f66-3425-45e7-85ec-d792d27be704.png",
     category: "prefinishing",
     title: "Wood Beam Staining Project"
+  },
+  {
+    id: 91,
+    src: "/lovable-uploads/e61c0fc1-095d-4d15-91e4-f99d24e254d9.png",
+    category: "prefinishing",
+    title: "Exposed Wood Beam Ceiling Staining"
+  },
+  {
+    id: 92,
+    src: "/lovable-uploads/bd116ecc-c88e-41c9-a68f-001b95ab5a06.png",
+    category: "prefinishing",
+    title: "Deck Staining with Professional Application"
   }
 ];

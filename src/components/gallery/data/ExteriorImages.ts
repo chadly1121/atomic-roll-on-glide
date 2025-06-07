@@ -55,5 +55,17 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/27dadd1c-1e08-4101-abe3-894002c6e8a0.png",
     category: "exterior",
     title: "Residential Exterior Painting with Lift"
+  },
+  {
+    id: 89,
+    src: "/lovable-uploads/73d53d87-9109-4ef3-8d2e-5cfdf1132644.png",
+    category: "exterior",
+    title: "Commercial Building Exterior with Lift"
+  },
+  {
+    id: 90,
+    src: "/lovable-uploads/d455e973-829f-49e8-87be-80648d1b4326.png",
+    category: "exterior",
+    title: "Cedar Shingle Restoration Project"
   }
 ];
