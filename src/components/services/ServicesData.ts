@@ -1,3 +1,4 @@
+
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -36,7 +37,7 @@ export const services: Service[] = [
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our durable exterior painting services that withstand the elements while looking beautiful.",
     icon: "🏡",
-    image: "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
+    image: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
     galleryImages: [
       "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
       "/lovable-uploads/c8560baa-059c-446e-aae0-6707f5dd45f6.png",
@@ -78,7 +79,7 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866776/IMG_2914_j5ks9n.jpg",
+    image: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941134/PXL_20240401_133600423_bp15e0.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240324_131802061_pmmm6w.jpg"
@@ -89,7 +90,7 @@ export const services: Service[] = [
     title: "Deck & Fence Staining",
     description: "Protect and beautify your outdoor wooden surfaces with our expert staining services for decks, fences, and more.",
     icon: "🌳",
-    image: "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
+    image: "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.png",
     galleryImages: [
       "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866808/IMG_20200813_211052_ndyf6a.jpg",
@@ -130,7 +131,7 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style to your spaces with our professional wallpaper installation services.",
     icon: "🖼️",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866786/IMG_6169_jx9rlx.jpg",
+    image: "/lovable-uploads/1827c98c-e297-47fd-a67f-8ce6107bca28.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg"
