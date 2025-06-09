@@ -3,43 +3,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Switch } from "@/components/ui/switch";
 import { VolumeX, Volume2, DollarSign, Check } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 interface GoNanoSectionProps {
   sectionRef: React.RefObject<HTMLDivElement>;
 }
 
 const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleToggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !isMuted && videoRef.current) {
-          videoRef.current.muted = false;
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [isMuted, sectionRef]);
-
   return (
     <div className="mt-24 pt-16 border-t border-gray-200">
       <div className="text-center mb-16 animate-fade-in">
@@ -152,33 +122,18 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
             <span className="relative z-10">Learn More About GoNano</span>
           </a>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in relative flex justify-center">
-          <div className="w-3/4 md:w-2/3 lg:w-1/2 aspect-[9/16] rounded-xl overflow-hidden">
-            <video 
-              ref={videoRef}
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-contain bg-black"
-              poster="https://gonano.com/wp-content/uploads/2022/10/beading.jpg"
-            >
-              <source src="https://res.cloudinary.com/dxqfou8jh/video/upload/v1745874209/No_stress_no_mess_Vertical_Format_lgznrn.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="p-6 bg-white w-full">
-            <div className="flex items-center justify-between">
-              <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
-              <div className="flex items-center gap-2">
-                {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-                <Switch
-                  checked={!isMuted}
-                  onCheckedChange={handleToggleMute}
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                />
-              </div>
-            </div>
+        
+        <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
+          <LazyImage
+            src="/lovable-uploads/f497c583-35ec-4732-bd6a-5134bdf82927.png"
+            alt="GoNano - Extend the Life of Your Roof - Professional roof protection services starting at $500"
+            width={600}
+            height={800}
+            className="w-full h-auto object-cover"
+            priority={false}
+          />
+          <div className="p-6 bg-white">
+            <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
             <p className="text-gray-600">
               Contact us today to learn how GoNano products can protect your surfaces and add value to your property.
             </p>
