@@ -1,4 +1,3 @@
-
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -79,7 +78,7 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
+    image: "/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941134/PXL_20240401_133600423_bp15e0.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240324_131802061_pmmm6w.jpg"
@@ -131,7 +130,7 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style to your spaces with our professional wallpaper installation services.",
     icon: "🖼️",
-    image: "/lovable-uploads/1827c98c-e297-47fd-a67f-8ce6107bca28.png",
+    image: "/lovable-uploads/5bb528e7-e3bf-47ea-a5ee-ca5d818e51d4.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg"
