@@ -13,8 +13,8 @@ const Logo = ({ handleLogoClick }: LogoProps) => {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745867167/RollOnPaintingLogo_cplgbj.jpg" 
-        alt="Roll On Painting Muskoka Logo" 
+        src="/lovable-uploads/e3ac56e1-5346-462a-912b-2b1950bc3bac.png" 
+        alt="Roll On Painting Muskoka Logo - Vintage Craftsmanship, Today's Science" 
         className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
       />
     </a>
