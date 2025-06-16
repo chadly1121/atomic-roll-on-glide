@@ -10,6 +10,8 @@ interface GoNanoSectionProps {
 }
 
 const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <div className="mt-24 pt-16 border-t border-gray-200">
       <div className="text-center mb-16 animate-fade-in">
@@ -126,16 +128,39 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
         <div className="space-y-6 animate-fade-in">
           {/* YouTube Video */}
           <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-            <div className="relative pb-[177.78%] h-0"> {/* 9:16 aspect ratio for YouTube Shorts */}
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/MEwdfRxANKM?autoplay=1&mute=1&loop=1&playlist=MEwdfRxANKM"
-                title="GoNano Protection Demonstration"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
+            {!videoError ? (
+              <div className="relative pb-[177.78%] h-0"> {/* 9:16 aspect ratio for YouTube Shorts */}
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/MEwdfRxANKM?autoplay=1&mute=1&loop=1&playlist=MEwdfRxANKM&controls=1&modestbranding=1"
+                  title="GoNano Protection Demonstration"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  onError={() => setVideoError(true)}
+                ></iframe>
+              </div>
+            ) : (
+              <div className="relative pb-[177.78%] h-0 bg-gray-100 flex items-center justify-center">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                  <div className="text-gray-500 text-center">
+                    <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    <p className="text-lg font-semibold mb-2">Video Currently Unavailable</p>
+                    <p className="text-sm">Watch our GoNano demonstration on YouTube</p>
+                    <a 
+                      href="https://youtube.com/shorts/MEwdfRxANKM" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                    >
+                      Watch on YouTube
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="p-6 bg-white">
               <h4 className="font-bold text-lg mb-2">See GoNano in Action</h4>
               <p className="text-gray-600">
