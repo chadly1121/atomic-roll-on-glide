@@ -1,3 +1,4 @@
+
 import { Service } from './ServiceCard';
 
 export const services: Service[] = [
@@ -78,7 +79,7 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png",
+    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941134/PXL_20240401_133600423_bp15e0.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240324_131802061_pmmm6w.jpg"
@@ -130,7 +131,7 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style to your spaces with our professional wallpaper installation services.",
     icon: "🖼️",
-    image: "/lovable-uploads/5bb528e7-e3bf-47ea-a5ee-ca5d818e51d4.png",
+    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg"
@@ -153,7 +154,7 @@ export const services: Service[] = [
     title: "Power & Soft Washing",
     description: "Professional cleaning services to remove dirt, grime, mold, and mildew from your exterior surfaces.",
     icon: "💦",
-    image: "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866858/PXL_20231123_170616012_ynrtrl.jpg",
+    image: "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png",
     galleryImages: [
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941177/1000000519_vxsvyh.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941069/PXL_20231123_170616012_k1wpqo.jpg"
