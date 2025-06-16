@@ -129,7 +129,7 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
             <div className="relative pb-[177.78%] h-0"> {/* 9:16 aspect ratio for YouTube Shorts */}
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/MEwdfRxANKM"
+                src="https://www.youtube.com/embed/MEwdfRxANKM?autoplay=1&mute=1&loop=1&playlist=MEwdfRxANKM"
                 title="GoNano Protection Demonstration"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -140,24 +140,6 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
               <h4 className="font-bold text-lg mb-2">See GoNano in Action</h4>
               <p className="text-gray-600">
                 Watch our demonstration of GoNano's incredible protective properties.
-              </p>
-            </div>
-          </div>
-
-          {/* GoNano Product Image */}
-          <div className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-            <LazyImage
-              src="/lovable-uploads/f497c583-35ec-4732-bd6a-5134bdf82927.png"
-              alt="GoNano - Extend the Life of Your Roof - Professional roof protection services starting at $500"
-              width={600}
-              height={800}
-              className="w-full h-auto object-cover"
-              priority={false}
-            />
-            <div className="p-6 bg-white">
-              <h4 className="font-bold text-lg mb-2">Authorized Dealer & Installer</h4>
-              <p className="text-gray-600">
-                Contact us today to learn how GoNano products can protect your surfaces and add value to your property.
               </p>
             </div>
           </div>
