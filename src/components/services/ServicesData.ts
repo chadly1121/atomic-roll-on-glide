@@ -131,8 +131,9 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style to your spaces with our professional wallpaper installation services.",
     icon: "🖼️",
-    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
+    image: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
     galleryImages: [
+      "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
       "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg"
     ]

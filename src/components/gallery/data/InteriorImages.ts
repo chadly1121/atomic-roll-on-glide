@@ -1,3 +1,4 @@
+
 import { GalleryImage } from '../types';
 
 export const interiorImages: GalleryImage[] = [
@@ -264,5 +265,11 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/8804e543-d0bc-464e-b573-0697840429b5.png",
     category: "interior",
     title: "Modern Interior with Exposed Wood Beams"
+  },
+  {
+    id: 98,
+    src: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
+    category: "interior",
+    title: "Professional Wallpaper Installation"
   }
 ];
