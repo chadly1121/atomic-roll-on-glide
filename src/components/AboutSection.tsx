@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react";
 const AboutSection = () => {
@@ -111,18 +112,18 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img alt="Exterior Painting" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866842/PXL_20220729_143220227_g0vkxt.jpg" />
+                  <img alt="Professional Interior Painting" className="w-full h-full object-cover" src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-40 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img alt="Painting Services" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866781/IMG_5049_rcxzpi.jpg" />
+                  <img alt="Quality Craftsmanship" className="w-full h-full object-cover" src="/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png" />
                 </div>
               </div>
               <div className="space-y-4 pt-10">
                 <div className="rounded-2xl overflow-hidden h-40 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img alt="Interior Painting Process" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866781/IMG_5080_k6y99w.jpg" />
+                  <img alt="Commercial Painting Services" className="w-full h-full object-cover" src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png" />
                 </div>
                 <div className="rounded-2xl overflow-hidden h-56 shadow-lg transform hover:-translate-y-2 transition-transform">
-                  <img alt="Interior Painting" className="w-full h-full object-cover" src="https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866779/IMG_3975_hwsrpd.jpg" />
+                  <img alt="Exterior Home Painting" className="w-full h-full object-cover" src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png" />
                 </div>
               </div>
             </div>
