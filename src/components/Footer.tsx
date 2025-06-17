@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
@@ -19,12 +20,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center mb-6">
-              <div className="h-10 w-10 rounded-full bg-atomic-turquoise flex items-center justify-center overflow-hidden">
-                <span className="text-white font-bold text-lg">R</span>
-              </div>
-              <div className="ml-2">
-                <h3 className="text-lg font-bold">Roll On <span className="text-atomic-turquoise">Painting</span></h3>
-              </div>
+              <img 
+                src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png" 
+                alt="Roll On Painting Logo" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-300 mb-6">
               Professional interior and exterior painting services for residential and commercial properties.
