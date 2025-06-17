@@ -132,7 +132,7 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
               <div className="relative pb-[177.78%] h-0"> {/* 9:16 aspect ratio for YouTube Shorts */}
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/MEwdfRxANKM?autoplay=1&mute=1&loop=1&playlist=MEwdfRxANKM&controls=1&modestbranding=1"
+                  src="https://www.youtube.com/embed/MEwdfRxANKM?autoplay=1&mute=1&loop=1&playlist=MEwdfRxANKM&controls=1&modestbranding=1&rel=0"
                   title="GoNano Protection Demonstration"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
