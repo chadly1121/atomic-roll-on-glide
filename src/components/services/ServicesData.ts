@@ -95,8 +95,6 @@ export const services: Service[] = [
     image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
     galleryImages: [
       "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941134/PXL_20240401_133600423_bp15e0.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941133/PXL_20240324_131802061_pmmm6w.jpg",
       "/lovable-uploads/2cb60864-841a-4261-9072-0e92b3621c4a.png",
       "/lovable-uploads/e997f6fd-0110-4c25-9616-7050870ae44d.png"
     ]
@@ -112,9 +110,7 @@ export const services: Service[] = [
       "/lovable-uploads/edc2e333-aeba-4888-8622-44f4bc074d81.png",
       "/lovable-uploads/4ab7d8ed-5330-485e-bdbf-60697f8fe075.png",
       "/lovable-uploads/bd116ecc-c88e-41c9-a68f-001b95ab5a06.png",
-      "/lovable-uploads/1b232070-3535-4bae-ac21-3e011388fbdd.png",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866808/IMG_20200813_211052_ndyf6a.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866830/PXL_20211110_142417065_logkoq.jpg"
+      "/lovable-uploads/1b232070-3535-4bae-ac21-3e011388fbdd.png"
     ]
   },
   {
@@ -128,9 +124,7 @@ export const services: Service[] = [
       "/lovable-uploads/6ff94989-f399-4ad6-9f2e-1cee10aa41d2.png",
       "/lovable-uploads/c614cd15-83cf-444e-a225-8269d12d9f5d.png",
       "/lovable-uploads/d5aa2105-4f9e-4f55-9f2b-4287dc49355e.png",
-      "/lovable-uploads/5f42b054-48c1-41c6-af3d-2dba8276655b.png",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940691/IMG_1036_mcyz4n.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940714/IMG_3394_l7ndu1.jpg"
+      "/lovable-uploads/5f42b054-48c1-41c6-af3d-2dba8276655b.png"
     ]
   },
   {
@@ -161,9 +155,7 @@ export const services: Service[] = [
     icon: "🖼️",
     image: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
     galleryImages: [
-      "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940769/IMG_6636_gqxdvj.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745940742/IMG_6202_ybgjet.jpg"
+      "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png"
     ]
   },
   {
@@ -193,9 +185,7 @@ export const services: Service[] = [
     icon: "💦",
     image: "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png",
     galleryImages: [
-      "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941177/1000000519_vxsvyh.jpg",
-      "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745941069/PXL_20231123_170616012_k1wpqo.jpg"
+      "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png"
     ]
   }
 ];
