@@ -1,10 +1,13 @@
+
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-// CORS headers to allow cross-origin requests
+// More restrictive CORS headers
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "*", // TODO: Restrict to your domain in production
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Max-Age": "86400",
 };
 
 // Interface for the request body
@@ -18,16 +21,61 @@ interface QuoteRequest {
   hasAttachments: boolean;
 }
 
+// HTML sanitization function to prevent XSS
+function sanitizeHtml(input: string): string {
+  if (!input) return '';
+  
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
+
+// Email validation
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  if (req.method !== 'POST') {
+    return new Response(
+      JSON.stringify({ success: false, error: "Method not allowed" }),
+      { 
+        status: 405,
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        } 
+      }
+    );
+  }
+
   try {
     // Parse the request body
     const quoteRequest: QuoteRequest = await req.json();
     
+    // Input validation
+    if (!quoteRequest.name || !quoteRequest.email || !quoteRequest.phone || !quoteRequest.service) {
+      throw new Error("Missing required fields");
+    }
+
+    if (!isValidEmail(quoteRequest.email)) {
+      throw new Error("Invalid email format");
+    }
+
+    if (quoteRequest.name.length > 100 || quoteRequest.message.length > 5000) {
+      throw new Error("Input too long");
+    }
+
     // Create a Supabase client with the auth context of the function
     const supabaseUrl = Deno.env.get("SUPABASE_URL") as string;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
@@ -42,24 +90,29 @@ serve(async (req) => {
     
     console.log("Creating new quote request in Jobber via API...");
     
+    // Sanitize inputs for Jobber API
+    const sanitizedName = sanitizeHtml(quoteRequest.name);
+    const sanitizedService = sanitizeHtml(quoteRequest.service);
+    const sanitizedMessage = sanitizeHtml(quoteRequest.message || '');
+    
     // Format the data for Jobber's API
     const jobberRequestData = {
       request: {
         client: {
-          name: quoteRequest.name,
-          email: quoteRequest.email,
+          name: sanitizedName,
+          email: quoteRequest.email, // Use original email for API calls
           phone: quoteRequest.phone,
         },
         work_request_description: `
-Service Requested: ${quoteRequest.service}
+Service Requested: ${sanitizedService}
 
-${quoteRequest.message || "No additional details provided."}
+${sanitizedMessage || "No additional details provided."}
 
 ${quoteRequest.hasAttachments ? "This request includes file attachments. Please check the admin dashboard." : ""}
 
 Quote request ID: ${quoteRequest.id}
         `.trim(),
-        title: `Quote Request: ${quoteRequest.service}`,
+        title: `Quote Request: ${sanitizedService}`,
       }
     };
     
@@ -77,7 +130,7 @@ Quote request ID: ${quoteRequest.id}
     if (!jobberResponse.ok) {
       const errorText = await jobberResponse.text();
       console.error("Jobber API error:", errorText);
-      throw new Error(`Failed to create request in Jobber: ${errorText}`);
+      throw new Error(`Failed to create request in Jobber`);
     }
     
     const jobberResult = await jobberResponse.json();
@@ -105,7 +158,7 @@ Quote request ID: ${quoteRequest.id}
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: "Failed to process quote request. Please try again." // Don't expose internal error details
       }),
       { 
         status: 500,
