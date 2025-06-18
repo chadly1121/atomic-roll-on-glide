@@ -27,10 +27,10 @@ const CalendarPage = () => {
               </p>
             </div>
             
-            {/* Embedded Lovable Calendar */}
+            {/* Embedded Job Scribe Calendar */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <iframe
-                src="https://lovable.dev/projects/92d7b6aa-9037-4b7d-bb5c-654e2a9a025a"
+                src="https://job-scribe-calendar.lovable.app"
                 className="w-full h-[800px] border-0"
                 title="Roll On Painting Calendar"
                 loading="lazy"
