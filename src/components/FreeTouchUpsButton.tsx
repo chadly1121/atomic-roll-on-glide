@@ -45,6 +45,7 @@ const FreeTouchUpsButton = () => {
             </p>
             <ul className="list-disc pl-5 text-sm space-y-2">
               <li><span className="font-semibold">Painting Services Only:</span> This offer applies only to our painting services and excludes new construction projects.</li>
+              <li><span className="font-semibold">Original Work Only:</span> Only applies to work performed by Roll On Painting originally.</li>
               <li><span className="font-semibold">Original Owner:</span> Valid only for the original property owner who purchased our services.</li>
               <li><span className="font-semibold">Same Color:</span> Touch-ups must be the same color as originally painted.</li>
               <li><span className="font-semibold">No Questions Asked:</span> We'll handle your touch-ups without hassle or complicated explanations.</li>
