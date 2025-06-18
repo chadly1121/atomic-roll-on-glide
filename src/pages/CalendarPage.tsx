@@ -17,7 +17,7 @@ const CalendarPage = () => {
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold text-atomic-navy mb-4">
                 Project Calendar
@@ -27,14 +27,14 @@ const CalendarPage = () => {
               </p>
             </div>
             
-            {/* Calendar container - you can embed your Lovable calendar here */}
-            <div className="bg-white rounded-lg shadow-lg p-6 min-h-[600px]">
-              <div className="flex items-center justify-center h-full text-gray-500">
-                <div className="text-center">
-                  <p className="text-lg mb-4">Calendar Component Ready</p>
-                  <p className="text-sm">You can embed your Lovable calendar here</p>
-                </div>
-              </div>
+            {/* Embedded Lovable Calendar */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <iframe
+                src="https://lovable.dev/projects/92d7b6aa-9037-4b7d-bb5c-654e2a9a025a"
+                className="w-full h-[800px] border-0"
+                title="Roll On Painting Calendar"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
