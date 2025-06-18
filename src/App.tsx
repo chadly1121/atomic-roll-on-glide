@@ -8,6 +8,7 @@ import { useEffect } from "react"; // Importing useEffect from React
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import CalendarPage from "./pages/CalendarPage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
@@ -74,6 +75,7 @@ const App = () => {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/calendar" element={<CalendarPage />} />
                 {/* Removed all blog routes */}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={
