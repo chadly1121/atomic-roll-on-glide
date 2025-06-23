@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import JobCalendar from '../components/calendar/JobCalendar';
 
 const CalendarPage = () => {
   return (
@@ -17,25 +18,8 @@ const CalendarPage = () => {
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-atomic-navy mb-4">
-                Project Calendar
-              </h1>
-              <p className="text-lg text-gray-600">
-                Schedule and manage painting projects
-              </p>
-            </div>
-            
-            {/* Embedded Job Scribe Calendar */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <iframe
-                src="https://job-scribe-calendar.lovable.app"
-                className="w-full h-[800px] border-0"
-                title="Roll On Painting Calendar"
-                loading="lazy"
-              />
-            </div>
+          <div className="max-w-7xl mx-auto">
+            <JobCalendar />
           </div>
         </div>
       </main>
