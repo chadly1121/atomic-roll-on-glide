@@ -2,7 +2,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import JobCalendar from '../components/calendar/JobCalendar';
 
 const CalendarPage = () => {
@@ -23,8 +22,6 @@ const CalendarPage = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };
