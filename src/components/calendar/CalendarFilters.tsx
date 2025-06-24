@@ -30,10 +30,10 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
 }) => {
   const { employees } = useEmployees();
   const { customers } = useCustomers();
-  const { getAllTags } = useTags();
+  const { tags } = useTags();
 
   // Combine available tags from jobs and managed tags
-  const allAvailableTags = [...new Set([...availableTags, ...getAllTags()])].sort();
+  const allAvailableTags = [...new Set([...availableTags, ...tags])].sort();
 
   const handleFilterChange = (key: keyof CalendarFiltersType, value: string | string[]) => {
     // Convert "all" values back to empty strings for the filter logic
