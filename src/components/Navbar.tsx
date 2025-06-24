@@ -42,17 +42,17 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-      <div className="w-full px-1 py-1 max-w-full overflow-hidden">
-        <div className="flex items-center justify-between w-full max-w-full">
-          <div className="flex-shrink-0">
+    <header className="fixed top-0 left-0 w-screen z-50 bg-white/95 backdrop-blur-sm shadow-md max-w-full overflow-hidden">
+      <div className="w-full px-1 py-0.5 max-w-full">
+        <div className="flex items-center justify-between w-full gap-1">
+          <div className="flex-shrink-0 min-w-0">
             <Logo handleLogoClick={handleLogoClick} />
           </div>
-          <div className="flex items-center gap-1 flex-1 justify-end min-w-0 ml-1 max-w-[calc(100vw-80px)]">
+          <div className="flex items-center gap-1 flex-1 justify-end min-w-0 overflow-hidden">
             <div className="hidden md:block">
               <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
             </div>
-            <div className="md:hidden flex-1 min-w-0 max-w-[calc(100%-50px)] overflow-hidden">
+            <div className="md:hidden flex-1 min-w-0 overflow-hidden mr-1">
               <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
             </div>
             <div className="flex-shrink-0">
