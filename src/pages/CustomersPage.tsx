@@ -6,15 +6,36 @@ import { Plus } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { ManagementDropdown } from '../components/calendar/ManagementDropdown';
 import CustomerForm from '../components/customer/CustomerForm';
+import CustomerList from '../components/customer/CustomerList';
 import { useCustomers } from '@/hooks/useCustomers';
+import { Customer } from '@/types/customer';
 
 const CustomersPage = () => {
   const [isCustomerFormOpen, setIsCustomerFormOpen] = useState(false);
-  const { createCustomer } = useCustomers();
+  const [editingCustomer, setEditingCustomer] = useState<Customer | undefined>();
+  const { createCustomer, updateCustomer } = useCustomers();
 
   const handleCreateCustomer = (customerData: any) => {
     createCustomer(customerData);
     setIsCustomerFormOpen(false);
+  };
+
+  const handleEditCustomer = (customer: Customer) => {
+    setEditingCustomer(customer);
+    setIsCustomerFormOpen(true);
+  };
+
+  const handleUpdateCustomer = (customerData: any) => {
+    if (editingCustomer) {
+      updateCustomer(editingCustomer.id, customerData);
+    }
+    setIsCustomerFormOpen(false);
+    setEditingCustomer(undefined);
+  };
+
+  const handleCloseForm = () => {
+    setIsCustomerFormOpen(false);
+    setEditingCustomer(undefined);
   };
 
   return (
@@ -40,15 +61,16 @@ const CustomersPage = () => {
         </div>
         <div className="p-4">
           <div className="container mx-auto">
-            <p className="text-gray-600">Manage your customers and client information.</p>
+            <CustomerList onEditCustomer={handleEditCustomer} />
           </div>
         </div>
       </div>
 
       <CustomerForm
         isOpen={isCustomerFormOpen}
-        onClose={() => setIsCustomerFormOpen(false)}
-        onSubmit={handleCreateCustomer}
+        onClose={handleCloseForm}
+        onSubmit={editingCustomer ? handleUpdateCustomer : handleCreateCustomer}
+        customer={editingCustomer}
       />
     </div>
   );
