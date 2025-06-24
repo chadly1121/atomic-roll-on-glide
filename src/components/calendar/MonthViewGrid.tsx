@@ -31,23 +31,19 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
   const monthEnd = endOfMonth(selectedDate);
   const monthDays = eachDayOfInterval({ start: monthStart, end: monthEnd });
 
-  const getJobsForDate = (date: Date) => {
-    return selectedDateJobs.filter(job => {
-      if (!job.startDate) return false;
-      return isSameDay(new Date(job.startDate), date);
-    });
-  };
+  // Filter to get only active jobs
+  const activeJobs = selectedDateJobs.filter(job => job.active);
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Scheduled':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'In Progress':
-        return 'bg-yellow-100 text-yellow-800';
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
       case 'Complete':
-        return 'bg-green-100 text-green-800';
+        return 'bg-green-100 text-green-800 border-green-200';
       default:
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
@@ -59,7 +55,7 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              <th className="border p-2 bg-gray-50 text-left font-medium min-w-[200px]">Jobs</th>
+              <th className="border p-2 bg-gray-50 text-left font-medium min-w-[250px]">Active Jobs</th>
               {monthDays.map((day) => (
                 <th 
                   key={day.toISOString()} 
@@ -77,8 +73,8 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
             </tr>
           </thead>
           <tbody>
-            {selectedDateJobs.length > 0 ? (
-              selectedDateJobs.map((job) => {
+            {activeJobs.length > 0 ? (
+              activeJobs.map((job) => {
                 const customer = job.customerId ? getCustomerById(job.customerId) : null;
                 return (
                   <tr key={job.id}>
@@ -87,15 +83,18 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
                         className="cursor-pointer hover:bg-gray-100 p-2 rounded transition-colors"
                         onClick={() => onJobClick(job)}
                       >
-                        <div className="flex items-center gap-2 mb-1">
+                        <div className="flex items-center gap-2 mb-2">
                           {job.color && (
                             <div 
-                              className="w-3 h-3 rounded-full flex-shrink-0" 
+                              className="w-4 h-4 rounded-full flex-shrink-0" 
                               style={{ backgroundColor: job.color }}
                             />
                           )}
                           <div className="font-semibold text-sm">{job.jobName}</div>
-                          <Badge className={`${getStatusColor(job.status)} text-xs`}>
+                          <Badge 
+                            className={`${getStatusColor(job.status)} text-xs ml-auto`}
+                            variant="outline"
+                          >
                             {job.status}
                           </Badge>
                         </div>
@@ -109,13 +108,13 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
                         
                         <div className="flex items-center gap-2 text-xs text-gray-600 mb-1">
                           <MapPin className="h-3 w-3" />
-                          {job.location}
+                          <span className="truncate">{job.location}</span>
                         </div>
                         
                         {job.employees.length > 0 && (
                           <div className="flex items-center gap-2 text-xs text-gray-600">
                             <Users className="h-3 w-3" />
-                            {job.employees.join(', ')}
+                            <span className="truncate">{job.employees.join(', ')}</span>
                           </div>
                         )}
                       </div>
@@ -129,7 +128,7 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
                           onClick={() => onDateClick(day)}
                         >
                           {hasJobOnDay && (
-                            <div className="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-center">
+                            <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center mx-auto">
                               ●
                             </div>
                           )}
@@ -143,7 +142,7 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
               <tr>
                 <td colSpan={monthDays.length + 1} className="border p-8 text-center text-gray-500">
                   <CalendarDays className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                  <p>No projects scheduled for this month</p>
+                  <p>No active projects for this month</p>
                   <Button 
                     variant="outline" 
                     className="mt-2"
