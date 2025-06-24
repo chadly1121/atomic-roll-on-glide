@@ -2,21 +2,29 @@
 import React, { useState, useMemo } from 'react';
 import { addMonths, subMonths, addWeeks, subWeeks, addDays, subDays, isSameDay, format } from 'date-fns';
 import { useJobs } from '@/hooks/useJobs';
+import { useEmployees } from '@/hooks/useEmployees';
 import { Job } from '@/types/job';
+import { CalendarViewType } from '@/types/calendarView';
 import JobForm from '@/components/job-form/JobForm';
 import { CalendarView } from './CalendarViewSelector';
 import CalendarHeader from './CalendarHeader';
 import CalendarControls from './CalendarControls';
 import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
+import ViewTypeSelector from './ViewTypeSelector';
 import MonthViewGrid from './MonthViewGrid';
 import WeekView from './WeekView';
 import DayView from './DayView';
+import EmployeeWeekView from './EmployeeWeekView';
+import EmployeeMonthView from './EmployeeMonthView';
+import EmployeeDayView from './EmployeeDayView';
 import { Card, CardContent } from '@/components/ui/card';
 
 const JobCalendar: React.FC = () => {
   const { jobs, createJob, updateJob } = useJobs();
+  const { employees } = useEmployees();
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [currentView, setCurrentView] = useState<CalendarView>('month');
+  const [viewType, setViewType] = useState<CalendarViewType>('jobs');
   const [isJobFormOpen, setIsJobFormOpen] = useState(false);
   const [editingJob, setEditingJob] = useState<Job | undefined>();
   
@@ -136,11 +144,20 @@ const JobCalendar: React.FC = () => {
     <div className="space-y-6">
       <CalendarHeader onCreateJob={() => handleCreateJobForDate()} />
 
-      <CalendarFilters
-        filters={filters}
-        onFiltersChange={setFilters}
-        availableTags={availableTags}
-      />
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <ViewTypeSelector
+          currentViewType={viewType}
+          onViewTypeChange={setViewType}
+        />
+      </div>
+
+      {viewType === 'jobs' && (
+        <CalendarFilters
+          filters={filters}
+          onFiltersChange={setFilters}
+          availableTags={availableTags}
+        />
+      )}
 
       <CalendarControls
         currentView={currentView}
@@ -150,45 +167,98 @@ const JobCalendar: React.FC = () => {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {currentView === 'month' && (
-          <MonthViewGrid
-            selectedDate={selectedDate}
-            onDateClick={handleDateClick}
-            daysWithJobs={getDaysWithJobs()}
-            selectedDateJobs={selectedDateJobs}
-            onJobClick={handleEditJob}
-            onCreateJobForDate={handleCreateJobForDate}
-          />
+        {viewType === 'jobs' && (
+          <>
+            {currentView === 'month' && (
+              <MonthViewGrid
+                selectedDate={selectedDate}
+                onDateClick={handleDateClick}
+                daysWithJobs={getDaysWithJobs()}
+                selectedDateJobs={selectedDateJobs}
+                onJobClick={handleEditJob}
+                onCreateJobForDate={handleCreateJobForDate}
+              />
+            )}
+
+            {currentView === 'week' && (
+              <div className="lg:col-span-3">
+                <Card>
+                  <CardContent className="pt-6">
+                    <WeekView
+                      selectedDate={selectedDate}
+                      jobs={filteredJobs}
+                      onJobClick={handleEditJob}
+                      onDateClick={handleDateClick}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+
+            {currentView === 'day' && (
+              <div className="lg:col-span-3">
+                <Card>
+                  <CardContent className="pt-6">
+                    <DayView
+                      selectedDate={selectedDate}
+                      jobs={filteredJobs}
+                      onJobClick={handleEditJob}
+                      onCreateJob={() => handleCreateJobForDate(selectedDate)}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </>
         )}
 
-        {currentView === 'week' && (
-          <div className="lg:col-span-3">
-            <Card>
-              <CardContent className="pt-6">
-                <WeekView
-                  selectedDate={selectedDate}
-                  jobs={filteredJobs}
-                  onJobClick={handleEditJob}
-                  onDateClick={handleDateClick}
-                />
-              </CardContent>
-            </Card>
-          </div>
-        )}
+        {viewType === 'employees' && (
+          <>
+            {currentView === 'month' && (
+              <div className="lg:col-span-3">
+                <Card>
+                  <CardContent className="pt-6">
+                    <EmployeeMonthView
+                      selectedDate={selectedDate}
+                      employees={employees}
+                      jobs={filteredJobs}
+                      onDateClick={handleDateClick}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
 
-        {currentView === 'day' && (
-          <div className="lg:col-span-3">
-            <Card>
-              <CardContent className="pt-6">
-                <DayView
-                  selectedDate={selectedDate}
-                  jobs={filteredJobs}
-                  onJobClick={handleEditJob}
-                  onCreateJob={() => handleCreateJobForDate(selectedDate)}
-                />
-              </CardContent>
-            </Card>
-          </div>
+            {currentView === 'week' && (
+              <div className="lg:col-span-3">
+                <Card>
+                  <CardContent className="pt-6">
+                    <EmployeeWeekView
+                      selectedDate={selectedDate}
+                      employees={employees}
+                      jobs={filteredJobs}
+                      onDateClick={handleDateClick}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+
+            {currentView === 'day' && (
+              <div className="lg:col-span-3">
+                <Card>
+                  <CardContent className="pt-6">
+                    <EmployeeDayView
+                      selectedDate={selectedDate}
+                      employees={employees}
+                      jobs={filteredJobs}
+                      onDateClick={handleDateClick}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </>
         )}
       </div>
 
