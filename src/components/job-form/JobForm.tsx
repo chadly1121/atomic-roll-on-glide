@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -24,21 +24,7 @@ interface JobFormProps {
 const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => {
   const form = useForm<JobFormData>({
     resolver: zodResolver(jobSchema),
-    defaultValues: job ? {
-      jobName: job.jobName,
-      employees: job.employees,
-      foreman: job.foreman,
-      location: job.location,
-      startDate: job.startDate,
-      endDate: job.endDate,
-      status: job.status,
-      notes: job.notes || '',
-      files: job.files,
-      links: job.links,
-      customerId: job.customerId,
-      tags: job.tags,
-      active: job.active,
-    } : {
+    defaultValues: {
       jobName: '',
       employees: [],
       foreman: '',
@@ -52,6 +38,43 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
       active: true,
     },
   });
+
+  // Reset form when job prop changes or dialog opens
+  useEffect(() => {
+    if (isOpen) {
+      if (job) {
+        form.reset({
+          jobName: job.jobName || '',
+          employees: job.employees || [],
+          foreman: job.foreman || '',
+          location: job.location || '',
+          startDate: job.startDate,
+          endDate: job.endDate,
+          status: job.status || 'Scheduled',
+          notes: job.notes || '',
+          files: job.files || [],
+          links: job.links || [],
+          customerId: job.customerId || '',
+          tags: job.tags || [],
+          active: job.active !== undefined ? job.active : true,
+        });
+      } else {
+        form.reset({
+          jobName: '',
+          employees: [],
+          foreman: '',
+          location: '',
+          status: 'Scheduled',
+          notes: '',
+          files: [],
+          links: [],
+          customerId: '',
+          tags: [],
+          active: true,
+        });
+      }
+    }
+  }, [job, isOpen, form]);
 
   const handleSubmit = (data: JobFormData) => {
     onSubmit({
@@ -69,7 +92,6 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
       tags: data.tags,
       active: data.active,
     });
-    form.reset();
     onClose();
   };
 
