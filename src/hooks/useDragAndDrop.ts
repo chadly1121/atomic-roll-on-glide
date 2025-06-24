@@ -12,7 +12,8 @@ export const useDragAndDrop = () => {
   const [dragData, setDragData] = useState<DragData | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
-  const startDrag = useCallback((job: Job, sourceDate: Date, dragType: 'move' | 'resize-start' | 'resize-end' = 'move') => {
+  const startDrag = useCallback((job: Job, dragType: 'move' | 'resize-start' | 'resize-end' = 'move') => {
+    const sourceDate = job.startDate ? new Date(job.startDate) : new Date();
     setDragData({ job, sourceDate, dragType });
     setIsDragging(true);
   }, []);
