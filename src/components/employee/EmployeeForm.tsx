@@ -52,10 +52,20 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ isOpen, onClose, employee }
   });
 
   const handleSubmit = (data: EmployeeFormData) => {
+    // Ensure all required fields are present
+    const employeeData: Omit<Employee, 'id' | 'createdAt' | 'updatedAt'> = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      role: data.role,
+      isActive: data.isActive,
+    };
+
     if (employee) {
-      updateEmployee(employee.id, data);
+      updateEmployee(employee.id, employeeData);
     } else {
-      createEmployee(data);
+      createEmployee(employeeData);
     }
     form.reset();
     onClose();
