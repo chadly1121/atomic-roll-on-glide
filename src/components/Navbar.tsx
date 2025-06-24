@@ -43,19 +43,19 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-      <div className="w-full px-2 py-2">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex-shrink-0 w-auto">
+      <div className="w-full px-1 py-1 max-w-full overflow-hidden">
+        <div className="flex items-center justify-between w-full max-w-full">
+          <div className="flex-shrink-0">
             <Logo handleLogoClick={handleLogoClick} />
           </div>
-          <div className="flex items-center gap-1 flex-1 justify-end min-w-0 ml-2">
+          <div className="flex items-center gap-1 flex-1 justify-end min-w-0 ml-1 max-w-[calc(100vw-80px)]">
             <div className="hidden md:block">
               <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
             </div>
-            <div className="md:hidden flex-1 min-w-0 max-w-[50vw]">
+            <div className="md:hidden flex-1 min-w-0 max-w-[calc(100%-50px)] overflow-hidden">
               <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
             </div>
-            <div className="flex-shrink-0 ml-1">
+            <div className="flex-shrink-0">
               <CTAButton handleNavLinkClick={handleNavLinkClick} />
             </div>
           </div>

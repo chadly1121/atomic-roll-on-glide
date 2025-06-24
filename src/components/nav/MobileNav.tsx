@@ -10,12 +10,12 @@ interface MobileNavProps {
 
 const MobileNav = ({ navLinks, handleNavLinkClick }: MobileNavProps) => {
   return (
-    <nav className="md:hidden flex items-center space-x-1 overflow-x-auto scrollbar-hide">
+    <nav className="md:hidden flex items-center gap-0.5 overflow-x-auto scrollbar-hide max-w-full">
       {navLinks.map(link => (
         <motion.a 
           key={link.name} 
           href={link.href} 
-          className="nav-link whitespace-nowrap text-xs font-medium text-atomic-navy hover:text-atomic-orange transition-colors duration-300 relative flex-shrink-0 px-1"
+          className="nav-link whitespace-nowrap text-xs font-medium text-atomic-navy hover:text-atomic-orange transition-colors duration-300 relative flex-shrink-0 px-0.5"
           onClick={(e) => handleNavLinkClick(e, link.href)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
