@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './nav/Logo';
 import DesktopNav from './nav/DesktopNav';
 import MobileNav from './nav/MobileNav';
+import CTAButton from './nav/CTAButton';
 import { motion } from "framer-motion";
 import { navLinks } from './nav/NavLinks';
 
@@ -44,8 +45,11 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Logo handleLogoClick={handleLogoClick} />
-        <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
-        <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+        <div className="flex items-center gap-6">
+          <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+          <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+          <CTAButton handleNavLinkClick={handleNavLinkClick} />
+        </div>
       </div>
     </header>
   );
