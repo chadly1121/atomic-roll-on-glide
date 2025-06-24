@@ -2,11 +2,12 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Briefcase, Users } from 'lucide-react';
-import { CalendarViewType } from '@/types/calendarView';
+
+export type ViewType = 'calendar' | 'employee';
 
 interface ViewTypeSelectorProps {
-  currentViewType: CalendarViewType;
-  onViewTypeChange: (viewType: CalendarViewType) => void;
+  currentViewType: ViewType;
+  onViewTypeChange: (viewType: ViewType) => void;
 }
 
 const ViewTypeSelector: React.FC<ViewTypeSelectorProps> = ({
@@ -14,8 +15,8 @@ const ViewTypeSelector: React.FC<ViewTypeSelectorProps> = ({
   onViewTypeChange,
 }) => {
   const viewTypes = [
-    { id: 'jobs' as const, label: 'Jobs', icon: Briefcase },
-    { id: 'employees' as const, label: 'Employees', icon: Users },
+    { id: 'calendar' as const, label: 'Jobs', icon: Briefcase },
+    { id: 'employee' as const, label: 'Employees', icon: Users },
   ];
 
   return (
