@@ -31,7 +31,9 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
   const { customers } = useCustomers();
 
   const handleFilterChange = (key: keyof CalendarFiltersType, value: string | string[]) => {
-    onFiltersChange({ ...filters, [key]: value });
+    // Convert "all" values back to empty strings for the filter logic
+    const processedValue = value === "all" ? "" : value;
+    onFiltersChange({ ...filters, [key]: processedValue });
   };
 
   const clearFilters = () => {
@@ -74,12 +76,12 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
         </div>
 
         {/* Status Filter */}
-        <Select value={filters.status} onValueChange={(value) => handleFilterChange('status', value)}>
+        <Select value={filters.status || "all"} onValueChange={(value) => handleFilterChange('status', value)}>
           <SelectTrigger>
             <SelectValue placeholder="All Statuses" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Statuses</SelectItem>
+            <SelectItem value="all">All Statuses</SelectItem>
             <SelectItem value="Scheduled">Scheduled</SelectItem>
             <SelectItem value="In Progress">In Progress</SelectItem>
             <SelectItem value="Complete">Complete</SelectItem>
@@ -87,12 +89,12 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
         </Select>
 
         {/* Employee Filter */}
-        <Select value={filters.employee} onValueChange={(value) => handleFilterChange('employee', value)}>
+        <Select value={filters.employee || "all"} onValueChange={(value) => handleFilterChange('employee', value)}>
           <SelectTrigger>
             <SelectValue placeholder="All Employees" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Employees</SelectItem>
+            <SelectItem value="all">All Employees</SelectItem>
             {employees.map((employee) => (
               <SelectItem key={employee.id} value={`${employee.firstName} ${employee.lastName}`}>
                 {employee.firstName} {employee.lastName}
@@ -102,12 +104,12 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
         </Select>
 
         {/* Customer Filter */}
-        <Select value={filters.customer} onValueChange={(value) => handleFilterChange('customer', value)}>
+        <Select value={filters.customer || "all"} onValueChange={(value) => handleFilterChange('customer', value)}>
           <SelectTrigger>
             <SelectValue placeholder="All Customers" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Customers</SelectItem>
+            <SelectItem value="all">All Customers</SelectItem>
             {customers.map((customer) => (
               <SelectItem key={customer.id} value={customer.id}>
                 {customer.firstName} {customer.lastName}
