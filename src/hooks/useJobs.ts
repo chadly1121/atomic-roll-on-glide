@@ -46,17 +46,30 @@ export const useJobs = () => {
   const [jobs, setJobs] = useState<Job[]>(mockJobs);
 
   const createJob = (jobData: Omit<Job, 'id' | 'createdAt' | 'updatedAt'>) => {
+    console.log('useJobs createJob called with:', jobData);
+    
     const newJob: Job = {
       ...jobData,
       id: Date.now().toString(),
+      active: jobData.active !== undefined ? jobData.active : true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-    setJobs(prev => [...prev, newJob]);
+    
+    console.log('Creating new job:', newJob);
+    
+    setJobs(prev => {
+      const updatedJobs = [...prev, newJob];
+      console.log('Updated jobs array:', updatedJobs);
+      return updatedJobs;
+    });
+    
     return newJob;
   };
 
   const updateJob = (id: string, updates: Partial<Job>) => {
+    console.log('useJobs updateJob called with:', id, updates);
+    
     setJobs(prev =>
       prev.map(job =>
         job.id === id

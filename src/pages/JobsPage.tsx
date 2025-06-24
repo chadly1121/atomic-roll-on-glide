@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
@@ -21,15 +20,24 @@ const JobsPage = () => {
   const { jobs, createJob, updateJob } = useJobs();
   const { getCustomerById } = useCustomers();
 
+  console.log('All jobs:', jobs);
+  console.log('Jobs length:', jobs.length);
+
   const filteredJobs = jobs.filter(job => {
     const searchLower = searchTerm.toLowerCase();
-    return job.active && (
+    const isActive = job.active !== false; // Include jobs where active is true or undefined
+    console.log(`Job ${job.jobName}: active=${job.active}, isActive=${isActive}`);
+    
+    return isActive && (
       job.jobName.toLowerCase().includes(searchLower) ||
       job.location.toLowerCase().includes(searchLower) ||
       job.notes?.toLowerCase().includes(searchLower) ||
       job.employees.some(emp => emp.toLowerCase().includes(searchLower))
     );
   });
+
+  console.log('Filtered jobs:', filteredJobs);
+  console.log('Filtered jobs length:', filteredJobs.length);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -55,10 +63,15 @@ const JobsPage = () => {
   };
 
   const handleJobSubmit = (jobData: any) => {
+    console.log('Submitting job data:', jobData);
+    
     if (editingJob) {
+      console.log('Updating existing job:', editingJob.id);
       updateJob(editingJob.id, jobData);
     } else {
-      createJob(jobData);
+      console.log('Creating new job');
+      const newJob = createJob(jobData);
+      console.log('Created job:', newJob);
     }
     setIsJobFormOpen(false);
     setEditingJob(undefined);
