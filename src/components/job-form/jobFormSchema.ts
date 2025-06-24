@@ -15,6 +15,7 @@ export const jobSchema = z.object({
   links: z.array(z.string()).default([]),
   customerId: z.string().optional(),
   tags: z.array(z.string()).default([]),
+  color: z.string().optional(), // Add color field
   active: z.boolean().default(true),
 });
 

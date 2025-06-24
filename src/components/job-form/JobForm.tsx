@@ -35,6 +35,7 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
       links: [],
       customerId: '',
       tags: [],
+      color: '',
       active: true,
     },
   });
@@ -43,6 +44,7 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
   useEffect(() => {
     if (isOpen) {
       if (job) {
+        console.log('Editing job, resetting form with:', job);
         form.reset({
           jobName: job.jobName || '',
           employees: job.employees || [],
@@ -56,9 +58,11 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
           links: job.links || [],
           customerId: job.customerId || '',
           tags: job.tags || [],
+          color: job.color || '',
           active: job.active !== undefined ? job.active : true,
         });
       } else {
+        console.log('Creating new job, resetting form to defaults');
         form.reset({
           jobName: '',
           employees: [],
@@ -70,6 +74,7 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
           links: [],
           customerId: '',
           tags: [],
+          color: '',
           active: true,
         });
       }
@@ -77,21 +82,27 @@ const JobForm: React.FC<JobFormProps> = ({ isOpen, onClose, onSubmit, job }) => 
   }, [job, isOpen, form]);
 
   const handleSubmit = (data: JobFormData) => {
-    onSubmit({
+    console.log('JobForm handleSubmit called with:', data);
+    
+    const jobData = {
       jobName: data.jobName,
       employees: data.employees,
-      foreman: data.foreman,
+      foreman: data.foreman || '',
       location: data.location,
       startDate: data.startDate,
       endDate: data.endDate,
       status: data.status,
-      notes: data.notes,
-      files: data.files,
-      links: data.links,
-      customerId: data.customerId,
-      tags: data.tags,
-      active: data.active,
-    });
+      notes: data.notes || '',
+      files: data.files || [],
+      links: data.links || [],
+      customerId: data.customerId || '',
+      tags: data.tags || [],
+      color: data.color || '',
+      active: data.active !== undefined ? data.active : true,
+    };
+    
+    console.log('Processed job data being submitted:', jobData);
+    onSubmit(jobData);
     onClose();
   };
 
