@@ -6,6 +6,7 @@ export interface Employee {
   email: string;
   phone: string;
   role: string;
+  color?: string; // Add color field
   isActive: boolean;
   createdAt: string;
   updatedAt: string;

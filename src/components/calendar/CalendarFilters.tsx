@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Search, Filter, X } from 'lucide-react';
 import { useEmployees } from '@/hooks/useEmployees';
 import { useCustomers } from '@/hooks/useCustomers';
+import TagsManagement from './TagsManagement';
 
 export interface CalendarFiltersType {
   search: string;
@@ -55,12 +56,15 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
           <Filter className="h-4 w-4" />
           <span className="font-medium">Filters</span>
         </div>
-        {hasActiveFilters && (
-          <Button variant="ghost" size="sm" onClick={clearFilters}>
-            <X className="h-4 w-4 mr-1" />
-            Clear All
-          </Button>
-        )}
+        <div className="flex items-center gap-2">
+          <TagsManagement />
+          {hasActiveFilters && (
+            <Button variant="ghost" size="sm" onClick={clearFilters}>
+              <X className="h-4 w-4 mr-1" />
+              Clear All
+            </Button>
+          )}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -97,7 +101,15 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
             <SelectItem value="all">All Employees</SelectItem>
             {employees.map((employee) => (
               <SelectItem key={employee.id} value={`${employee.firstName} ${employee.lastName}`}>
-                {employee.firstName} {employee.lastName}
+                <div className="flex items-center gap-2">
+                  {employee.color && (
+                    <div 
+                      className="w-3 h-3 rounded-full" 
+                      style={{ backgroundColor: employee.color }}
+                    />
+                  )}
+                  {employee.firstName} {employee.lastName}
+                </div>
               </SelectItem>
             ))}
           </SelectContent>

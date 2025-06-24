@@ -44,7 +44,15 @@ const EmployeeSelectionFields: React.FC<EmployeeSelectionFieldsProps> = ({ contr
                       value={`${employee.firstName} ${employee.lastName}`}
                       disabled={field.value?.includes(`${employee.firstName} ${employee.lastName}`)}
                     >
-                      {employee.firstName} {employee.lastName}
+                      <div className="flex items-center gap-2">
+                        {employee.color && (
+                          <div 
+                            className="w-3 h-3 rounded-full" 
+                            style={{ backgroundColor: employee.color }}
+                          />
+                        )}
+                        {employee.firstName} {employee.lastName}
+                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -53,18 +61,29 @@ const EmployeeSelectionFields: React.FC<EmployeeSelectionFieldsProps> = ({ contr
               {/* Selected employees */}
               {field.value && field.value.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {field.value.map((employeeName) => (
-                    <Badge key={employeeName} variant="secondary" className="flex items-center gap-1">
-                      {employeeName}
-                      <X 
-                        className="h-3 w-3 cursor-pointer" 
-                        onClick={() => {
-                          const newEmployees = field.value?.filter(name => name !== employeeName) || [];
-                          field.onChange(newEmployees);
-                        }}
-                      />
-                    </Badge>
-                  ))}
+                  {field.value.map((employeeName) => {
+                    const employee = employees.find(emp => 
+                      `${emp.firstName} ${emp.lastName}` === employeeName
+                    );
+                    return (
+                      <Badge key={employeeName} variant="secondary" className="flex items-center gap-1">
+                        {employee?.color && (
+                          <div 
+                            className="w-2 h-2 rounded-full" 
+                            style={{ backgroundColor: employee.color }}
+                          />
+                        )}
+                        {employeeName}
+                        <X 
+                          className="h-3 w-3 cursor-pointer" 
+                          onClick={() => {
+                            const newEmployees = field.value?.filter(name => name !== employeeName) || [];
+                            field.onChange(newEmployees);
+                          }}
+                        />
+                      </Badge>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -92,7 +111,15 @@ const EmployeeSelectionFields: React.FC<EmployeeSelectionFieldsProps> = ({ contr
                     key={employee.id} 
                     value={`${employee.firstName} ${employee.lastName}`}
                   >
-                    {employee.firstName} {employee.lastName}
+                    <div className="flex items-center gap-2">
+                      {employee.color && (
+                        <div 
+                          className="w-3 h-3 rounded-full" 
+                          style={{ backgroundColor: employee.color }}
+                        />
+                      )}
+                      {employee.firstName} {employee.lastName}
+                    </div>
                   </SelectItem>
                 ))}
               </SelectContent>

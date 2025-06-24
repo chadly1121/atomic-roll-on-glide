@@ -14,6 +14,7 @@ export interface Job {
   links: string[];
   customerId?: string;
   tags: string[];
+  color?: string; // Add color field
   active: boolean;
   createdAt: string;
   updatedAt: string;
@@ -33,5 +34,6 @@ export interface JobFormData {
   links: string[];
   customerId?: string;
   tags: string[];
+  color?: string; // Add color field
   active: boolean;
 }

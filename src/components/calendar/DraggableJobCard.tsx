@@ -6,6 +6,7 @@ import { Job } from '@/types/job';
 import { useCustomers } from '@/hooks/useCustomers';
 import { MapPin, Users, Clock, GripVertical } from 'lucide-react';
 import { format } from 'date-fns';
+import { getContrastTextColor } from '@/utils/colorUtils';
 
 interface DraggableJobCardProps {
   job: Job;
@@ -49,11 +50,23 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
     large: 'text-base p-4'
   };
 
+  // Use job color if available, otherwise use status color
+  const cardStyle = job.color ? {
+    backgroundColor: job.color,
+    color: getContrastTextColor(job.color),
+    borderLeftColor: job.color
+  } : {};
+
+  const cardClassName = job.color 
+    ? 'border-l-4' 
+    : `border-l-4 ${getStatusColor(job.status)}`;
+
   return (
     <Card 
-      className={`cursor-pointer hover:shadow-md transition-all duration-200 border-l-4 relative group ${getStatusColor(job.status)} ${
+      className={`cursor-pointer hover:shadow-md transition-all duration-200 relative group ${cardClassName} ${
         isDragging ? 'opacity-50 transform rotate-2' : ''
       }`}
+      style={cardStyle}
       onClick={() => onJobClick(job)}
       draggable
       onDragStart={(e) => handleDragStart(e, 'move')}
@@ -89,7 +102,10 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
         <div className="space-y-1">
           <div className="flex items-center justify-between">
             <h4 className="font-semibold truncate pr-6">{job.jobName}</h4>
-            <Badge className={`${getStatusColor(job.status)} text-xs`} variant="outline">
+            <Badge 
+              className={`${job.color ? 'bg-white/20 text-inherit' : getStatusColor(job.status)} text-xs`} 
+              variant="outline"
+            >
               {job.status}
             </Badge>
           </div>
