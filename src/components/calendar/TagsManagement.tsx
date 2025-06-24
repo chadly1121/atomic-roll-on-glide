@@ -5,27 +5,46 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Tags, Plus, X } from 'lucide-react';
-import { useJobs } from '@/hooks/useJobs';
+import { useTags } from '@/hooks/useTags';
+import { useToast } from '@/hooks/use-toast';
 
 const TagsManagement: React.FC = () => {
-  const { jobs } = useJobs();
+  const { tags, addTag, removeTag } = useTags();
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [newTag, setNewTag] = useState('');
 
-  // Get all unique tags from jobs
-  const allTags = Array.from(new Set(jobs.flatMap(job => job.tags))).sort();
-
   const handleAddTag = () => {
     if (newTag.trim()) {
-      // In a real app, you'd want to save this to a tags collection
-      console.log('Adding new tag:', newTag.trim());
-      setNewTag('');
+      const success = addTag(newTag.trim());
+      if (success) {
+        toast({
+          title: "Tag added",
+          description: `"${newTag.trim()}" has been added to your tags.`,
+        });
+        setNewTag('');
+      } else {
+        toast({
+          title: "Tag already exists",
+          description: `"${newTag.trim()}" is already in your tag list.`,
+          variant: "destructive",
+        });
+      }
     }
   };
 
   const handleRemoveTag = (tag: string) => {
-    // In a real app, you'd want to remove this tag from all jobs and delete it
-    console.log('Removing tag:', tag);
+    removeTag(tag);
+    toast({
+      title: "Tag removed",
+      description: `"${tag}" has been removed from your tags.`,
+    });
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleAddTag();
+    }
   };
 
   return (
@@ -46,26 +65,27 @@ const TagsManagement: React.FC = () => {
               placeholder="Enter new tag..."
               value={newTag}
               onChange={(e) => setNewTag(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleAddTag()}
+              onKeyPress={handleKeyPress}
             />
-            <Button onClick={handleAddTag} size="sm">
+            <Button onClick={handleAddTag} size="sm" disabled={!newTag.trim()}>
               <Plus className="h-4 w-4" />
             </Button>
           </div>
           
           <div className="space-y-2">
-            <h4 className="text-sm font-medium">Existing Tags</h4>
-            <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto">
-              {allTags.map((tag) => (
+            <h4 className="text-sm font-medium">Existing Tags ({tags.length})</h4>
+            <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto p-2 border rounded-md bg-gray-50">
+              {tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="flex items-center gap-1">
                   {tag}
                   <X 
-                    className="h-3 w-3 cursor-pointer hover:text-red-500" 
+                    className="h-3 w-3 cursor-pointer hover:text-red-500 transition-colors" 
                     onClick={() => handleRemoveTag(tag)}
+                    title={`Remove "${tag}" tag`}
                   />
                 </Badge>
               ))}
-              {allTags.length === 0 && (
+              {tags.length === 0 && (
                 <p className="text-sm text-gray-500">No tags found. Create some tags to organize your jobs.</p>
               )}
             </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -7,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Search, Filter, X } from 'lucide-react';
 import { useEmployees } from '@/hooks/useEmployees';
 import { useCustomers } from '@/hooks/useCustomers';
+import { useTags } from '@/hooks/useTags';
 import TagsManagement from './TagsManagement';
 
 export interface CalendarFiltersType {
@@ -30,6 +30,10 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
 }) => {
   const { employees } = useEmployees();
   const { customers } = useCustomers();
+  const { getAllTags } = useTags();
+
+  // Combine available tags from jobs and managed tags
+  const allAvailableTags = [...new Set([...availableTags, ...getAllTags()])].sort();
 
   const handleFilterChange = (key: keyof CalendarFiltersType, value: string | string[]) => {
     // Convert "all" values back to empty strings for the filter logic
@@ -133,11 +137,11 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
       </div>
 
       {/* Tags */}
-      {availableTags.length > 0 && (
+      {allAvailableTags.length > 0 && (
         <div className="space-y-2">
           <label className="text-sm font-medium">Tags:</label>
           <div className="flex flex-wrap gap-2">
-            {availableTags.map((tag) => {
+            {allAvailableTags.map((tag) => {
               const isSelected = filters.tags.includes(tag);
               return (
                 <Badge
