@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from './nav/Logo';
 import DesktopNav from './nav/DesktopNav';
 import MobileNav from './nav/MobileNav';
+import MobileMenuButton from './nav/MobileMenuButton';
 import { motion } from "framer-motion";
 import { navLinks } from './nav/NavLinks';
 
@@ -37,23 +38,33 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     setMobileMenuOpen(false);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   // Don't render navbar on calendar page
   if (location.pathname === '/calendar') {
     return null;
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Logo handleLogoClick={handleLogoClick} />
-        <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
-        <MobileNav 
-          navLinks={navLinks} 
-          mobileMenuOpen={mobileMenuOpen} 
-          handleNavLinkClick={handleNavLinkClick} 
-        />
-      </div>
-    </header>
+    <>
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Logo handleLogoClick={handleLogoClick} />
+          <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+          <MobileMenuButton 
+            mobileMenuOpen={mobileMenuOpen} 
+            toggleMobileMenu={toggleMobileMenu} 
+          />
+        </div>
+      </header>
+      <MobileNav 
+        navLinks={navLinks} 
+        mobileMenuOpen={mobileMenuOpen} 
+        handleNavLinkClick={handleNavLinkClick} 
+      />
+    </>
   );
 };
 
