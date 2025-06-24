@@ -18,6 +18,11 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     navigate('/');
   };
 
+  // Don't render navbar on calendar page
+  if (location.pathname === '/calendar') {
+    return null;
+  }
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md py-2">
       <div className="container mx-auto px-4 flex items-center justify-start">
