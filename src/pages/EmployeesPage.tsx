@@ -6,6 +6,7 @@ import { Plus } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { ManagementDropdown } from '../components/calendar/ManagementDropdown';
 import EmployeeForm from '../components/employee/EmployeeForm';
+import EmployeeList from '../components/employee/EmployeeList';
 
 const EmployeesPage = () => {
   const [isEmployeeFormOpen, setIsEmployeeFormOpen] = useState(false);
@@ -33,7 +34,7 @@ const EmployeesPage = () => {
         </div>
         <div className="p-4">
           <div className="container mx-auto">
-            <p className="text-gray-600">Manage your team members and employees.</p>
+            <EmployeeList />
           </div>
         </div>
       </div>
