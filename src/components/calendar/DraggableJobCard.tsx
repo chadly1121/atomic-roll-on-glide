@@ -92,23 +92,19 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
       draggable
       onDragStart={(e) => handleDragStart(e, 'move')}
     >
-      {/* Resize handles for larger sizes */}
-      {size !== 'small' && (
-        <>
-          <div
-            className="absolute left-0 top-0 h-full w-2 cursor-w-resize opacity-0 group-hover:opacity-100 bg-blue-500 rounded-l transition-opacity"
-            draggable
-            onDragStart={(e) => handleDragStart(e, 'resize-start')}
-            title="Drag to resize start date"
-          />
-          <div
-            className="absolute right-0 top-0 h-full w-2 cursor-e-resize opacity-0 group-hover:opacity-100 bg-blue-500 rounded-r transition-opacity"
-            draggable
-            onDragStart={(e) => handleDragStart(e, 'resize-end')}
-            title="Drag to resize end date"
-          />
-        </>
-      )}
+      {/* Resize handles for medium and large sizes */}
+      <div
+        className="absolute left-0 top-0 h-full w-2 cursor-w-resize opacity-0 group-hover:opacity-100 bg-blue-500 rounded-l transition-opacity"
+        draggable
+        onDragStart={(e) => handleDragStart(e, 'resize-start')}
+        title="Drag to resize start date"
+      />
+      <div
+        className="absolute right-0 top-0 h-full w-2 cursor-e-resize opacity-0 group-hover:opacity-100 bg-blue-500 rounded-r transition-opacity"
+        draggable
+        onDragStart={(e) => handleDragStart(e, 'resize-end')}
+        title="Drag to resize end date"
+      />
 
       {/* Drag handle */}
       <div
@@ -119,17 +115,17 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
         <GripVertical className="h-4 w-4 text-gray-400" />
       </div>
 
-      <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2">
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center gap-2 text-sm">
           {job.color && (
             <div 
-              className="w-4 h-4 rounded-full" 
+              className="w-3 h-3 rounded-full flex-shrink-0" 
               style={{ backgroundColor: job.color }}
             />
           )}
-          {job.jobName}
+          <span className="truncate">{job.jobName}</span>
           <Badge 
-            className={`${getStatusColor(job.status)} text-xs ml-auto`} 
+            className={`${getStatusColor(job.status)} text-xs ml-auto flex-shrink-0`} 
             variant="outline"
           >
             {job.status}
@@ -137,31 +133,31 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
         </CardTitle>
       </CardHeader>
 
-      <CardContent>
-        <div className="space-y-2">
+      <CardContent className="pt-0">
+        <div className="space-y-1.5">
           {customer && (
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Users className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Users className="h-3 w-3 flex-shrink-0" />
               <span className="truncate">{customer.firstName} {customer.lastName}</span>
             </div>
           )}
           
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <MapPin className="h-4 w-4" />
+          <div className="flex items-center gap-2 text-xs text-gray-600">
+            <MapPin className="h-3 w-3 flex-shrink-0" />
             <span className="truncate">{job.location}</span>
           </div>
           
           {job.employees && job.employees.length > 0 && (
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Users className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Users className="h-3 w-3 flex-shrink-0" />
               <span className="truncate">{job.employees.join(', ')}</span>
             </div>
           )}
           
           {job.startDate && (
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Clock className="h-4 w-4" />
-              <span>
+            <div className="flex items-center gap-2 text-xs text-gray-600">
+              <Clock className="h-3 w-3 flex-shrink-0" />
+              <span className="truncate">
                 {format(new Date(job.startDate), 'MMM d')}
                 {job.endDate && ` - ${format(new Date(job.endDate), 'MMM d')}`}
               </span>
