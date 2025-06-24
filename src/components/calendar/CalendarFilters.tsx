@@ -8,7 +8,7 @@ import { Search, Filter, X } from 'lucide-react';
 import { useEmployees } from '@/hooks/useEmployees';
 import { useCustomers } from '@/hooks/useCustomers';
 
-export interface CalendarFilters {
+export interface CalendarFiltersType {
   search: string;
   status: string;
   employee: string;
@@ -17,8 +17,8 @@ export interface CalendarFilters {
 }
 
 interface CalendarFiltersProps {
-  filters: CalendarFilters;
-  onFiltersChange: (filters: CalendarFilters) => void;
+  filters: CalendarFiltersType;
+  onFiltersChange: (filters: CalendarFiltersType) => void;
   availableTags: string[];
 }
 
@@ -30,7 +30,7 @@ const CalendarFilters: React.FC<CalendarFiltersProps> = ({
   const { employees } = useEmployees();
   const { customers } = useCustomers();
 
-  const handleFilterChange = (key: keyof CalendarFilters, value: string | string[]) => {
+  const handleFilterChange = (key: keyof CalendarFiltersType, value: string | string[]) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 

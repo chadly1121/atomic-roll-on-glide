@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,7 +12,7 @@ import JobForm from '@/components/job-form/JobForm';
 import CalendarViewSelector, { CalendarView } from './CalendarViewSelector';
 import WeekView from './WeekView';
 import DayView from './DayView';
-import CalendarFilters, { CalendarFilters } from './CalendarFilters';
+import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
 
 const JobCalendar: React.FC = () => {
   const { jobs, createJob, updateJob, deleteJob } = useJobs();
@@ -23,7 +22,7 @@ const JobCalendar: React.FC = () => {
   const [isJobFormOpen, setIsJobFormOpen] = useState(false);
   const [editingJob, setEditingJob] = useState<Job | undefined>();
   
-  const [filters, setFilters] = useState<CalendarFilters>({
+  const [filters, setFilters] = useState<CalendarFiltersType>({
     search: '',
     status: '',
     employee: '',
