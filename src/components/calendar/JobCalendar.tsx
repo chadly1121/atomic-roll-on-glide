@@ -1,33 +1,26 @@
-
 import React, { useState, useMemo } from 'react';
-import { addMonths, subMonths, addWeeks, subWeeks, addDays, subDays, isSameDay, format } from 'date-fns';
-import { useJobs } from '@/hooks/useJobs';
-import { useEmployees } from '@/hooks/useEmployees';
-import { Job } from '@/types/job';
+import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth, isWithinInterval } from 'date-fns';
 import { CalendarViewType } from '@/types/calendarView';
-import JobForm from '@/components/job-form/JobForm';
-import { CalendarView } from './CalendarViewSelector';
 import CalendarHeader from './CalendarHeader';
-import CalendarControls from './CalendarControls';
 import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
 import ViewTypeSelector from './ViewTypeSelector';
+import CalendarViewSelector from './CalendarViewSelector';
 import MonthViewGrid from './MonthViewGrid';
 import WeekView from './WeekView';
 import DayView from './DayView';
-import EmployeeWeekView from './EmployeeWeekView';
 import EmployeeMonthView from './EmployeeMonthView';
+import EmployeeWeekView from './EmployeeWeekView';
 import EmployeeDayView from './EmployeeDayView';
-import { Card, CardContent } from '@/components/ui/card';
+import JobForm from '../job-form/JobForm';
+import { useJobs } from '@/hooks/useJobs';
+import { useTags } from '@/hooks/useTags';
 
 const JobCalendar: React.FC = () => {
-  const { jobs, createJob, updateJob } = useJobs();
-  const { employees } = useEmployees();
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-  const [currentView, setCurrentView] = useState<CalendarView>('month');
-  const [viewType, setViewType] = useState<CalendarViewType>('jobs');
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [viewType, setViewType] = useState<CalendarViewType>('month');
+  const [calendarView, setCalendarView] = useState<'calendar' | 'employee'>('calendar');
   const [isJobFormOpen, setIsJobFormOpen] = useState(false);
-  const [editingJob, setEditingJob] = useState<Job | undefined>();
-  
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [filters, setFilters] = useState<CalendarFiltersType>({
     search: '',
     status: '',
@@ -36,243 +29,159 @@ const JobCalendar: React.FC = () => {
     tags: [],
   });
 
-  // Get all unique tags from jobs
-  const availableTags = useMemo(() => {
-    const allTags = jobs.flatMap(job => job.tags);
-    return [...new Set(allTags)].sort();
-  }, [jobs]);
+  const { jobs } = useJobs();
+  const { getAllTags } = useTags();
 
-  // Filter jobs based on current filters
+  // Get all available tags from jobs and managed tags
+  const availableTags = useMemo(() => {
+    const jobTags = jobs.flatMap(job => job.tags || []);
+    const managedTags = getAllTags();
+    return [...new Set([...jobTags, ...managedTags])].sort();
+  }, [jobs, getAllTags]);
+
   const filteredJobs = useMemo(() => {
-    return jobs.filter(job => {
+    return jobs.filter((job) => {
       // Search filter
       if (filters.search) {
-        const searchLower = filters.search.toLowerCase();
+        const searchTerm = filters.search.toLowerCase();
         const matchesSearch = 
-          job.jobName.toLowerCase().includes(searchLower) ||
-          job.location.toLowerCase().includes(searchLower) ||
-          job.notes?.toLowerCase().includes(searchLower) ||
-          job.employees.some(emp => emp.toLowerCase().includes(searchLower));
+          job.title.toLowerCase().includes(searchTerm) ||
+          job.description?.toLowerCase().includes(searchTerm) ||
+          job.address?.toLowerCase().includes(searchTerm);
         if (!matchesSearch) return false;
       }
 
       // Status filter
-      if (filters.status && job.status !== filters.status) return false;
+      if (filters.status && job.status !== filters.status) {
+        return false;
+      }
 
       // Employee filter
-      if (filters.employee && !job.employees.includes(filters.employee) && job.foreman !== filters.employee) return false;
+      if (filters.employee) {
+        const hasEmployee = job.employees?.some(emp => 
+          emp.toLowerCase().includes(filters.employee.toLowerCase())
+        );
+        if (!hasEmployee) return false;
+      }
 
       // Customer filter
-      if (filters.customer && job.customerId !== filters.customer) return false;
+      if (filters.customer && job.customerId !== filters.customer) {
+        return false;
+      }
 
       // Tags filter
-      if (filters.tags.length > 0 && !filters.tags.some(tag => job.tags.includes(tag))) return false;
+      if (filters.tags.length > 0) {
+        const jobTags = job.tags || [];
+        const hasMatchingTag = filters.tags.some(filterTag => 
+          jobTags.includes(filterTag)
+        );
+        if (!hasMatchingTag) return false;
+      }
 
       return true;
     });
   }, [jobs, filters]);
 
-  const getJobsForDate = (date: Date) => {
-    return filteredJobs.filter(job => {
-      if (!job.startDate) return false;
-      return isSameDay(new Date(job.startDate), date);
+  // Filter jobs by date range based on view
+  const dateRangeFilteredJobs = useMemo(() => {
+    let startDate: Date;
+    let endDate: Date;
+
+    switch (viewType) {
+      case 'month':
+        startDate = startOfMonth(currentDate);
+        endDate = endOfMonth(currentDate);
+        break;
+      case 'week':
+        startDate = startOfWeek(currentDate, { weekStartsOn: 0 });
+        endDate = endOfWeek(currentDate, { weekStartsOn: 0 });
+        break;
+      case 'day':
+        startDate = new Date(currentDate);
+        startDate.setHours(0, 0, 0, 0);
+        endDate = new Date(currentDate);
+        endDate.setHours(23, 59, 59, 999);
+        break;
+      default:
+        return filteredJobs;
+    }
+
+    return filteredJobs.filter((job) => {
+      const jobDate = new Date(job.startDate);
+      return isWithinInterval(jobDate, { start: startDate, end: endDate });
     });
-  };
+  }, [filteredJobs, currentDate, viewType]);
 
-  const selectedDateJobs = getJobsForDate(selectedDate);
-
-  const handleCreateJob = (jobData: Omit<Job, 'id' | 'createdAt' | 'updatedAt'>) => {
-    createJob(jobData);
-  };
-
-  const handleUpdateJob = (jobData: Omit<Job, 'id' | 'createdAt' | 'updatedAt'>) => {
-    if (editingJob) {
-      updateJob(editingJob.id, jobData);
-      setEditingJob(undefined);
-    }
-  };
-
-  const handleEditJob = (job: Job) => {
-    setEditingJob(job);
+  const handleCreateJob = (date?: Date) => {
+    setSelectedDate(date || null);
     setIsJobFormOpen(true);
   };
 
-  const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
-    if (currentView === 'month') {
-      setCurrentView('day');
-    }
-  };
+  const renderCalendarView = () => {
+    const commonProps = {
+      currentDate,
+      onDateChange: setCurrentDate,
+      onCreateJob: handleCreateJob,
+      jobs: dateRangeFilteredJobs,
+    };
 
-  const handleCreateJobForDate = (date?: Date) => {
-    if (date) setSelectedDate(date);
-    setIsJobFormOpen(true);
-  };
-
-  const getDaysWithJobs = () => {
-    return filteredJobs
-      .filter(job => job.startDate)
-      .map(job => new Date(job.startDate!));
-  };
-
-  const navigateDate = (direction: 'prev' | 'next') => {
-    switch (currentView) {
-      case 'month':
-        setSelectedDate(direction === 'next' ? addMonths(selectedDate, 1) : subMonths(selectedDate, 1));
-        break;
-      case 'week':
-        setSelectedDate(direction === 'next' ? addWeeks(selectedDate, 1) : subWeeks(selectedDate, 1));
-        break;
-      case 'day':
-        setSelectedDate(direction === 'next' ? addDays(selectedDate, 1) : subDays(selectedDate, 1));
-        break;
-    }
-  };
-
-  const getViewTitle = () => {
-    switch (currentView) {
-      case 'month':
-        return format(selectedDate, 'MMMM yyyy');
-      case 'week':
-        return `Week of ${format(selectedDate, 'MMM d, yyyy')}`;
-      case 'day':
-        return format(selectedDate, 'EEEE, MMMM d, yyyy');
+    if (calendarView === 'employee') {
+      switch (viewType) {
+        case 'month':
+          return <EmployeeMonthView {...commonProps} />;
+        case 'week':
+          return <EmployeeWeekView {...commonProps} />;
+        case 'day':
+          return <EmployeeDayView {...commonProps} />;
+        default:
+          return <EmployeeMonthView {...commonProps} />;
+      }
+    } else {
+      switch (viewType) {
+        case 'month':
+          return <MonthViewGrid {...commonProps} />;
+        case 'week':
+          return <WeekView {...commonProps} />;
+        case 'day':
+          return <DayView {...commonProps} />;
+        default:
+          return <MonthViewGrid {...commonProps} />;
+      }
     }
   };
 
   return (
     <div className="space-y-6">
-      <CalendarHeader onCreateJob={() => handleCreateJobForDate()} />
-
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <ViewTypeSelector
-          currentViewType={viewType}
-          onViewTypeChange={setViewType}
-        />
-      </div>
-
-      {viewType === 'jobs' && (
-        <CalendarFilters
-          filters={filters}
-          onFiltersChange={setFilters}
-          availableTags={availableTags}
-        />
-      )}
-
-      <CalendarControls
-        currentView={currentView}
-        onViewChange={setCurrentView}
-        viewTitle={getViewTitle()}
-        onNavigate={navigateDate}
+      <CalendarHeader onCreateJob={() => handleCreateJob()} />
+      
+      <CalendarFilters
+        filters={filters}
+        onFiltersChange={setFilters}
+        availableTags={availableTags}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {viewType === 'jobs' && (
-          <>
-            {currentView === 'month' && (
-              <MonthViewGrid
-                selectedDate={selectedDate}
-                onDateClick={handleDateClick}
-                daysWithJobs={getDaysWithJobs()}
-                selectedDateJobs={selectedDateJobs}
-                onJobClick={handleEditJob}
-                onCreateJobForDate={handleCreateJobForDate}
-              />
-            )}
-
-            {currentView === 'week' && (
-              <div className="lg:col-span-3">
-                <Card>
-                  <CardContent className="pt-6">
-                    <WeekView
-                      selectedDate={selectedDate}
-                      jobs={filteredJobs}
-                      onJobClick={handleEditJob}
-                      onDateClick={handleDateClick}
-                      onJobUpdate={updateJob}
-                      onCreateJobForDate={handleCreateJobForDate}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
-            {currentView === 'day' && (
-              <div className="lg:col-span-3">
-                <Card>
-                  <CardContent className="pt-6">
-                    <DayView
-                      selectedDate={selectedDate}
-                      jobs={filteredJobs}
-                      onJobClick={handleEditJob}
-                      onCreateJob={() => handleCreateJobForDate(selectedDate)}
-                      onJobUpdate={updateJob}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-          </>
-        )}
-
-        {viewType === 'employees' && (
-          <>
-            {currentView === 'month' && (
-              <div className="lg:col-span-3">
-                <Card>
-                  <CardContent className="pt-6">
-                    <EmployeeMonthView
-                      selectedDate={selectedDate}
-                      employees={employees}
-                      jobs={filteredJobs}
-                      onDateClick={handleDateClick}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
-            {currentView === 'week' && (
-              <div className="lg:col-span-3">
-                <Card>
-                  <CardContent className="pt-6">
-                    <EmployeeWeekView
-                      selectedDate={selectedDate}
-                      employees={employees}
-                      jobs={filteredJobs}
-                      onDateClick={handleDateClick}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
-            {currentView === 'day' && (
-              <div className="lg:col-span-3">
-                <Card>
-                  <CardContent className="pt-6">
-                    <EmployeeDayView
-                      selectedDate={selectedDate}
-                      employees={employees}
-                      jobs={filteredJobs}
-                      onDateClick={handleDateClick}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-          </>
-        )}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <CalendarViewSelector
+          currentDate={currentDate}
+          viewType={viewType}
+          onDateChange={setCurrentDate}
+          onViewChange={setViewType}
+        />
+        <ViewTypeSelector
+          viewType={calendarView}
+          onViewChange={setCalendarView}
+        />
       </div>
+
+      {renderCalendarView()}
 
       <JobForm
         isOpen={isJobFormOpen}
         onClose={() => {
           setIsJobFormOpen(false);
-          setEditingJob(undefined);
+          setSelectedDate(null);
         }}
-        onSubmit={editingJob ? handleUpdateJob : handleCreateJob}
-        job={editingJob}
+        selectedDate={selectedDate}
       />
     </div>
   );
