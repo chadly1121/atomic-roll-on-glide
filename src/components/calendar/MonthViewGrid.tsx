@@ -1,11 +1,10 @@
 
 import React from 'react';
-import { Calendar } from '@/components/ui/calendar';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, isToday } from 'date-fns';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CalendarDays, Users, MapPin, Clock } from 'lucide-react';
-import { format } from 'date-fns';
 import { Job } from '@/types/job';
 import { useCustomers } from '@/hooks/useCustomers';
 
@@ -27,6 +26,17 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
   onCreateJobForDate,
 }) => {
   const { getCustomerById } = useCustomers();
+  
+  const monthStart = startOfMonth(selectedDate);
+  const monthEnd = endOfMonth(selectedDate);
+  const monthDays = eachDayOfInterval({ start: monthStart, end: monthEnd });
+
+  const getJobsForDate = (date: Date) => {
+    return selectedDateJobs.filter(job => {
+      if (!job.startDate) return false;
+      return isSameDay(new Date(job.startDate), date);
+    });
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -42,107 +52,112 @@ const MonthViewGrid: React.FC<MonthViewGridProps> = ({
   };
 
   return (
-    <>
-      {/* Calendar */}
-      <Card className="lg:col-span-2">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <CalendarDays className="h-5 w-5" />
-            Calendar View
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Calendar
-            mode="single"
-            selected={selectedDate}
-            onSelect={(date) => date && onDateClick(date)}
-            modifiers={{
-              hasJobs: daysWithJobs,
-            }}
-            modifiersStyles={{
-              hasJobs: {
-                backgroundColor: '#f3f4f6',
-                fontWeight: 'bold',
-                color: '#1f2937',
-              },
-            }}
-            className="rounded-md border"
-          />
-        </CardContent>
-      </Card>
-
-      {/* Selected Date Jobs */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">
-            {format(selectedDate, 'MMMM d, yyyy')}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {selectedDateJobs.length > 0 ? (
-            selectedDateJobs.map((job) => {
-              const customer = job.customerId ? getCustomerById(job.customerId) : null;
-              return (
-                <Card 
-                  key={job.id} 
-                  className="cursor-pointer hover:shadow-md transition-shadow"
-                  onClick={() => onJobClick(job)}
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold">Job Schedule - {format(selectedDate, 'MMMM yyyy')}</h3>
+      
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr>
+              <th className="border p-2 bg-gray-50 text-left font-medium min-w-[200px]">Jobs</th>
+              {monthDays.map((day) => (
+                <th 
+                  key={day.toISOString()} 
+                  className={`border p-1 text-xs font-medium cursor-pointer hover:bg-gray-100 ${
+                    isToday(day) ? 'bg-blue-50' : 'bg-gray-50'
+                  }`}
+                  onClick={() => onDateClick(day)}
                 >
-                  <CardContent className="p-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <h4 className="font-semibold">{job.jobName}</h4>
-                        <Badge className={getStatusColor(job.status)}>
-                          {job.status}
-                        </Badge>
+                  <div className="text-center">
+                    <div className="text-gray-500">{format(day, 'EEE')}</div>
+                    <div className={isToday(day) ? 'text-blue-600 font-semibold' : ''}>{format(day, 'd')}</div>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {selectedDateJobs.length > 0 ? (
+              selectedDateJobs.map((job) => {
+                const customer = job.customerId ? getCustomerById(job.customerId) : null;
+                return (
+                  <tr key={job.id}>
+                    <td className="border p-2 font-medium bg-gray-50">
+                      <div 
+                        className="cursor-pointer hover:bg-gray-100 p-2 rounded transition-colors"
+                        onClick={() => onJobClick(job)}
+                      >
+                        <div className="flex items-center gap-2 mb-1">
+                          {job.color && (
+                            <div 
+                              className="w-3 h-3 rounded-full flex-shrink-0" 
+                              style={{ backgroundColor: job.color }}
+                            />
+                          )}
+                          <div className="font-semibold text-sm">{job.jobName}</div>
+                          <Badge className={`${getStatusColor(job.status)} text-xs`}>
+                            {job.status}
+                          </Badge>
+                        </div>
+                        
+                        {customer && (
+                          <div className="flex items-center gap-2 text-xs text-gray-600 mb-1">
+                            <Users className="h-3 w-3" />
+                            {customer.firstName} {customer.lastName}
+                          </div>
+                        )}
+                        
+                        <div className="flex items-center gap-2 text-xs text-gray-600 mb-1">
+                          <MapPin className="h-3 w-3" />
+                          {job.location}
+                        </div>
+                        
+                        {job.employees.length > 0 && (
+                          <div className="flex items-center gap-2 text-xs text-gray-600">
+                            <Users className="h-3 w-3" />
+                            {job.employees.join(', ')}
+                          </div>
+                        )}
                       </div>
-                      
-                      {customer && (
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Users className="h-3 w-3" />
-                          {customer.firstName} {customer.lastName}
-                        </div>
-                      )}
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <MapPin className="h-3 w-3" />
-                        {job.location}
-                      </div>
-                      
-                      {job.employees.length > 0 && (
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Users className="h-3 w-3" />
-                          {job.employees.join(', ')}
-                        </div>
-                      )}
-                      
-                      {job.startDate && job.endDate && (
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Clock className="h-3 w-3" />
-                          {format(new Date(job.startDate), 'MMM d')} - {format(new Date(job.endDate), 'MMM d')}
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })
-          ) : (
-            <div className="text-center py-8 text-gray-500">
-              <CalendarDays className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p>No projects scheduled for this date</p>
-              <Button 
-                variant="outline" 
-                className="mt-2"
-                onClick={() => onCreateJobForDate(selectedDate)}
-              >
-                Schedule a Project
-              </Button>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </>
+                    </td>
+                    {monthDays.map((day) => {
+                      const hasJobOnDay = job.startDate && isSameDay(new Date(job.startDate), day);
+                      return (
+                        <td 
+                          key={day.toISOString()} 
+                          className="border p-1 text-xs cursor-pointer hover:bg-gray-50"
+                          onClick={() => onDateClick(day)}
+                        >
+                          {hasJobOnDay && (
+                            <div className="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-center">
+                              ●
+                            </div>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <td colSpan={monthDays.length + 1} className="border p-8 text-center text-gray-500">
+                  <CalendarDays className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                  <p>No projects scheduled for this month</p>
+                  <Button 
+                    variant="outline" 
+                    className="mt-2"
+                    onClick={() => onCreateJobForDate(selectedDate)}
+                  >
+                    Schedule a Project
+                  </Button>
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
