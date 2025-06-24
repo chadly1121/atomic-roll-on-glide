@@ -21,13 +21,16 @@ const CalendarPage = () => {
         <div className="flex w-full pt-24">
           <CalendarSidebar />
           <SidebarInset>
-            <main className="flex-1 p-4">
-              <div className="mb-4">
-                <SidebarTrigger />
+            <main className="flex-1">
+              <div className="sticky top-0 z-10 bg-background border-b p-4 flex items-center gap-4">
+                <SidebarTrigger className="h-8 w-8" />
+                <h1 className="text-lg font-semibold text-atomic-navy">Management Dashboard</h1>
               </div>
-              <div className="container mx-auto">
-                <div className="max-w-7xl mx-auto">
-                  <JobCalendar />
+              <div className="p-4">
+                <div className="container mx-auto">
+                  <div className="max-w-7xl mx-auto">
+                    <JobCalendar />
+                  </div>
                 </div>
               </div>
             </main>
