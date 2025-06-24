@@ -189,6 +189,8 @@ const JobCalendar: React.FC = () => {
                       jobs={filteredJobs}
                       onJobClick={handleEditJob}
                       onDateClick={handleDateClick}
+                      onJobUpdate={updateJob}
+                      onCreateJobForDate={handleCreateJobForDate}
                     />
                   </CardContent>
                 </Card>
@@ -204,6 +206,7 @@ const JobCalendar: React.FC = () => {
                       jobs={filteredJobs}
                       onJobClick={handleEditJob}
                       onCreateJob={() => handleCreateJobForDate(selectedDate)}
+                      onJobUpdate={updateJob}
                     />
                   </CardContent>
                 </Card>
