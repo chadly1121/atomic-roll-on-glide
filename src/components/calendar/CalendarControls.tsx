@@ -9,6 +9,8 @@ interface CalendarControlsProps {
   onViewChange: (view: CalendarView) => void;
   viewTitle: string;
   onNavigate: (direction: 'prev' | 'next') => void;
+  currentDate: Date;
+  onDateChange: (date: Date) => void;
 }
 
 const CalendarControls: React.FC<CalendarControlsProps> = ({
@@ -16,12 +18,16 @@ const CalendarControls: React.FC<CalendarControlsProps> = ({
   onViewChange,
   viewTitle,
   onNavigate,
+  currentDate,
+  onDateChange,
 }) => {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div className="flex items-center gap-4">
         <CalendarViewSelector
-          currentView={currentView}
+          currentDate={currentDate}
+          viewType={currentView}
+          onDateChange={onDateChange}
           onViewChange={onViewChange}
         />
         

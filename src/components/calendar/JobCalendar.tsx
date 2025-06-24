@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth, isWithinInterval } from 'date-fns';
+import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth, isWithinInterval, isSameDay } from 'date-fns';
 import CalendarHeader from './CalendarHeader';
 import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
 import ViewTypeSelector from './ViewTypeSelector';
@@ -24,7 +24,7 @@ const JobCalendar: React.FC = () => {
   const [viewType, setViewType] = useState<CalendarView>('month');
   const [calendarView, setCalendarView] = useState<ViewType>('calendar');
   const [isJobFormOpen, setIsJobFormOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [filters, setFilters] = useState<CalendarFiltersType>({
     search: '',
     status: '',
@@ -112,13 +112,34 @@ const JobCalendar: React.FC = () => {
     }
 
     return filteredJobs.filter((job) => {
-      const jobDate = new Date(job.startDate!);
+      if (!job.startDate) return false;
+      const jobDate = new Date(job.startDate);
       return isWithinInterval(jobDate, { start: startDate, end: endDate });
     });
   }, [filteredJobs, currentDate, viewType]);
 
+  // Get days with jobs for calendar highlighting
+  const daysWithJobs = useMemo(() => {
+    return jobs
+      .filter(job => job.startDate)
+      .map(job => new Date(job.startDate!))
+      .filter((date, index, self) => 
+        self.findIndex(d => isSameDay(d, date)) === index
+      );
+  }, [jobs]);
+
+  // Get jobs for selected date
+  const selectedDateJobs = useMemo(() => {
+    return jobs.filter(job => {
+      if (!job.startDate) return false;
+      return isSameDay(new Date(job.startDate), selectedDate);
+    });
+  }, [jobs, selectedDate]);
+
   const handleCreateJob = (date?: Date) => {
-    setSelectedDate(date || null);
+    if (date) {
+      setSelectedDate(date);
+    }
     setIsJobFormOpen(true);
   };
 
@@ -128,6 +149,7 @@ const JobCalendar: React.FC = () => {
 
   const handleDateClick = (date: Date) => {
     setCurrentDate(date);
+    setSelectedDate(date);
   };
 
   const handleJobSubmit = (jobData: any) => {
@@ -179,14 +201,12 @@ const JobCalendar: React.FC = () => {
         case 'month':
           return (
             <MonthViewGrid
-              currentDate={currentDate}
-              selectedDate={currentDate}
-              jobs={dateRangeFilteredJobs}
+              selectedDate={selectedDate}
               onDateClick={handleDateClick}
+              daysWithJobs={daysWithJobs}
+              selectedDateJobs={selectedDateJobs}
               onJobClick={handleJobClick}
-              onCreateJob={handleCreateJob}
-              daysWithJobs={[]}
-              selectedDateJobs={[]}
+              onCreateJobForDate={handleCreateJob}
             />
           );
         case 'week':
@@ -213,14 +233,12 @@ const JobCalendar: React.FC = () => {
         default:
           return (
             <MonthViewGrid
-              currentDate={currentDate}
-              selectedDate={currentDate}
-              jobs={dateRangeFilteredJobs}
+              selectedDate={selectedDate}
               onDateClick={handleDateClick}
+              daysWithJobs={daysWithJobs}
+              selectedDateJobs={selectedDateJobs}
               onJobClick={handleJobClick}
-              onCreateJob={handleCreateJob}
-              daysWithJobs={[]}
-              selectedDateJobs={[]}
+              onCreateJobForDate={handleCreateJob}
             />
           );
       }
@@ -256,7 +274,6 @@ const JobCalendar: React.FC = () => {
         isOpen={isJobFormOpen}
         onClose={() => {
           setIsJobFormOpen(false);
-          setSelectedDate(null);
         }}
         onSubmit={handleJobSubmit}
       />
