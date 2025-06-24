@@ -1,20 +1,20 @@
 
 import React, { useState, useMemo } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { format, isSameDay, addMonths, subMonths, addWeeks, subWeeks, addDays, subDays } from 'date-fns';
+import { addMonths, subMonths, addWeeks, subWeeks, addDays, subDays, isSameDay, format } from 'date-fns';
 import { useJobs } from '@/hooks/useJobs';
 import { Job } from '@/types/job';
 import JobForm from '@/components/job-form/JobForm';
 import { CalendarView } from './CalendarViewSelector';
-import WeekView from './WeekView';
-import DayView from './DayView';
-import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
 import CalendarHeader from './CalendarHeader';
 import CalendarControls from './CalendarControls';
+import CalendarFilters, { CalendarFiltersType } from './CalendarFilters';
 import MonthViewGrid from './MonthViewGrid';
+import WeekView from './WeekView';
+import DayView from './DayView';
+import { Card, CardContent } from '@/components/ui/card';
 
 const JobCalendar: React.FC = () => {
-  const { jobs, createJob, updateJob, deleteJob } = useJobs();
+  const { jobs, createJob, updateJob } = useJobs();
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [currentView, setCurrentView] = useState<CalendarView>('month');
   const [isJobFormOpen, setIsJobFormOpen] = useState(false);
