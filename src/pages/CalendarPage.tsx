@@ -18,11 +18,11 @@ const CalendarPage = () => {
       <Navbar activeSection="calendar" />
       
       <SidebarProvider>
-        <div className="flex w-full pt-24">
+        <div className="flex w-full">
           <CalendarSidebar />
-          <SidebarInset>
-            <main className="flex-1">
-              <div className="sticky top-0 z-10 bg-background border-b p-4 flex items-center gap-4">
+          <SidebarInset className="flex-1">
+            <div className="pt-24">
+              <div className="sticky top-24 z-10 bg-background border-b p-4 flex items-center gap-4">
                 <SidebarTrigger className="h-8 w-8" />
                 <h1 className="text-lg font-semibold text-atomic-navy">Management Dashboard</h1>
               </div>
@@ -33,7 +33,7 @@ const CalendarPage = () => {
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
           </SidebarInset>
         </div>
       </SidebarProvider>
