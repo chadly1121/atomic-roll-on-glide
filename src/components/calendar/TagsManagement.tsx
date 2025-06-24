@@ -78,11 +78,13 @@ const TagsManagement: React.FC = () => {
               {tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="flex items-center gap-1">
                   {tag}
-                  <X 
-                    className="h-3 w-3 cursor-pointer hover:text-red-500 transition-colors" 
+                  <span 
+                    className="cursor-pointer hover:text-red-500 transition-colors" 
                     onClick={() => handleRemoveTag(tag)}
                     title={`Remove "${tag}" tag`}
-                  />
+                  >
+                    <X className="h-3 w-3" />
+                  </span>
                 </Badge>
               ))}
               {tags.length === 0 && (
