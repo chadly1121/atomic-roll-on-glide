@@ -42,22 +42,19 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md overflow-hidden">
-      <div className="w-full px-2 py-1">
-        <div className="flex items-center justify-between w-full gap-2">
-          <div className="flex-shrink-0">
-            <Logo handleLogoClick={handleLogoClick} />
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Logo handleLogoClick={handleLogoClick} />
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+            <CTAButton handleNavLinkClick={handleNavLinkClick} />
           </div>
-          <div className="flex items-center gap-2 flex-1 justify-end min-w-0">
-            <div className="hidden md:block">
-              <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
-            </div>
-            <div className="md:hidden flex-1 min-w-0 max-w-[60%]">
-              <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
-            </div>
-            <div className="flex-shrink-0">
-              <CTAButton handleNavLinkClick={handleNavLinkClick} />
-            </div>
+          
+          <div className="md:hidden flex items-center space-x-4">
+            <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+            <CTAButton handleNavLinkClick={handleNavLinkClick} />
           </div>
         </div>
       </div>

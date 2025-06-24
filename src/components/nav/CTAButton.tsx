@@ -11,11 +11,11 @@ const CTAButton = ({ handleNavLinkClick }: CTAButtonProps) => {
     <motion.a
       href="#contact"
       onClick={(e) => handleNavLinkClick(e, '#contact')}
-      className="atomic-button text-[10px] px-1 py-0.5 whitespace-nowrap text-center flex-shrink-0"
+      className="atomic-button text-sm px-4 py-2 whitespace-nowrap"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      Quote
+      Get Quote
     </motion.a>
   );
 };

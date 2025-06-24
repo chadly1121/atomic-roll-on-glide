@@ -18,16 +18,15 @@ const FreeTouchUpsButton = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="group relative w-full max-w-sm mx-auto overflow-hidden rounded-full bg-white border-2 border-atomic-orange p-[1px] transition-all hover:scale-[1.01] animate-pulse-slow shadow-md"
+        className="group relative w-full max-w-lg mx-auto overflow-hidden rounded-full bg-white border-2 border-atomic-orange p-1 transition-all hover:scale-[1.01] animate-pulse-slow shadow-md"
         aria-label="Free Touch Ups for Life - See conditions"
       >
-        <div className="relative flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-atomic-orange/10 via-white to-atomic-orange/10 px-3 py-2">
-          <div className="flex-1 text-center min-w-0">
+        <div className="relative flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-atomic-orange/10 via-white to-atomic-orange/10 px-4 py-2">
+          <div className="text-center flex-1">
             <span className="text-sm font-bold text-atomic-navy block">FREE TOUCH UPS FOR LIFE!</span>
             <span className="block text-xs text-atomic-navy/80">Painting only. Excludes new construction</span>
           </div>
-          <Info className="h-4 w-4 text-atomic-orange flex-shrink-0" />
-          <span className="absolute inset-0 scale-0 rounded-full bg-atomic-orange/5 transition-all group-hover:scale-100" />
+          <Info className="h-5 w-5 text-atomic-orange flex-shrink-0" />
         </div>
       </button>
 
