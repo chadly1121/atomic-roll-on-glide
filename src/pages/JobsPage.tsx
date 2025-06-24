@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import { ManagementDropdown } from '../components/calendar/ManagementDropdown';
+import JobCalendar from '../components/calendar/JobCalendar';
 
 const JobsPage = () => {
   return (
@@ -22,7 +23,7 @@ const JobsPage = () => {
         </div>
         <div className="p-4">
           <div className="container mx-auto">
-            <p className="text-gray-600">Manage your painting jobs and projects.</p>
+            <JobCalendar />
           </div>
         </div>
       </div>
