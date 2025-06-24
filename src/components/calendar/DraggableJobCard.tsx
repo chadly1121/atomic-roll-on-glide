@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Job } from '@/types/job';
 import { useCustomers } from '@/hooks/useCustomers';
@@ -44,34 +44,55 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
     onDragStart(job, dragType);
   };
 
-  const sizeClasses = {
-    small: 'text-xs p-2',
-    medium: 'text-sm p-3',
-    large: 'text-base p-4'
-  };
+  if (size === 'small') {
+    return (
+      <Card 
+        className={`cursor-pointer hover:shadow-md transition-all duration-200 relative group ${
+          isDragging ? 'opacity-50 transform rotate-2' : ''
+        }`}
+        onClick={() => onJobClick(job)}
+        draggable
+        onDragStart={(e) => handleDragStart(e, 'move')}
+      >
+        <div
+          className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-move"
+          draggable
+          onDragStart={(e) => handleDragStart(e, 'move')}
+        >
+          <GripVertical className="h-3 w-3 text-gray-400" />
+        </div>
 
-  // Use job color if available, otherwise use status color
-  const cardStyle = job.color ? {
-    backgroundColor: job.color,
-    color: getContrastTextColor(job.color),
-    borderLeftColor: job.color
-  } : {};
-
-  const cardClassName = job.color 
-    ? 'border-l-4' 
-    : `border-l-4 ${getStatusColor(job.status)}`;
+        <CardContent className="p-2">
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <h4 className="font-medium text-xs truncate pr-4">{job.jobName}</h4>
+              <Badge 
+                className={`${getStatusColor(job.status)} text-xs`} 
+                variant="outline"
+              >
+                {job.status}
+              </Badge>
+            </div>
+            
+            <div className="text-xs text-gray-500 truncate">
+              {job.location}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card 
-      className={`cursor-pointer hover:shadow-md transition-all duration-200 relative group ${cardClassName} ${
+      className={`cursor-pointer hover:shadow-md transition-all duration-200 relative group ${
         isDragging ? 'opacity-50 transform rotate-2' : ''
       }`}
-      style={cardStyle}
       onClick={() => onJobClick(job)}
       draggable
       onDragStart={(e) => handleDragStart(e, 'move')}
     >
-      {/* Resize handles */}
+      {/* Resize handles for larger sizes */}
       {size !== 'small' && (
         <>
           <div
@@ -98,38 +119,52 @@ const DraggableJobCard: React.FC<DraggableJobCardProps> = ({
         <GripVertical className="h-4 w-4 text-gray-400" />
       </div>
 
-      <CardContent className={sizeClasses[size]}>
-        <div className="space-y-1">
-          <div className="flex items-center justify-between">
-            <h4 className="font-semibold truncate pr-6">{job.jobName}</h4>
-            <Badge 
-              className={`${job.color ? 'bg-white/20 text-inherit' : getStatusColor(job.status)} text-xs`} 
-              variant="outline"
-            >
-              {job.status}
-            </Badge>
+      <CardHeader className="pb-3">
+        <CardTitle className="flex items-center gap-2">
+          {job.color && (
+            <div 
+              className="w-4 h-4 rounded-full" 
+              style={{ backgroundColor: job.color }}
+            />
+          )}
+          {job.jobName}
+          <Badge 
+            className={`${getStatusColor(job.status)} text-xs ml-auto`} 
+            variant="outline"
+          >
+            {job.status}
+          </Badge>
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <div className="space-y-2">
+          {customer && (
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Users className="h-4 w-4" />
+              <span className="truncate">{customer.firstName} {customer.lastName}</span>
+            </div>
+          )}
+          
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <MapPin className="h-4 w-4" />
+            <span className="truncate">{job.location}</span>
           </div>
           
-          {size !== 'small' && (
-            <div className="space-y-1 text-xs opacity-80">
-              {customer && (
-                <div className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  <span className="truncate">{customer.firstName} {customer.lastName}</span>
-                </div>
-              )}
-              
-              <div className="flex items-center gap-1">
-                <MapPin className="h-3 w-3" />
-                <span className="truncate">{job.location}</span>
-              </div>
-              
-              {job.startDate && job.endDate && (
-                <div className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  <span>{format(new Date(job.startDate), 'HH:mm')}</span>
-                </div>
-              )}
+          {job.employees && job.employees.length > 0 && (
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Users className="h-4 w-4" />
+              <span className="truncate">{job.employees.join(', ')}</span>
+            </div>
+          )}
+          
+          {job.startDate && (
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Clock className="h-4 w-4" />
+              <span>
+                {format(new Date(job.startDate), 'MMM d')}
+                {job.endDate && ` - ${format(new Date(job.endDate), 'MMM d')}`}
+              </span>
             </div>
           )}
         </div>
