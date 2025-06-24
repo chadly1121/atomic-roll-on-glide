@@ -1,10 +1,10 @@
 
+import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react"; // Importing useEffect from React
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -24,7 +24,6 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       retry: 1,
       staleTime: 5 * 60 * 1000, // 5 minutes
-      // Use meta for onError handler instead of directly passing onError
       meta: {
         onError: (error: Error) => {
           console.error("Query error:", error);
@@ -82,8 +81,6 @@ const App = () => {
                 <Route path="/jobs" element={<JobsPage />} />
                 <Route path="/employees" element={<EmployeesPage />} />
                 <Route path="/customers" element={<CustomersPage />} />
-                {/* Removed all blog routes */}
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={
                   <>
                     <PageBreadcrumbs />

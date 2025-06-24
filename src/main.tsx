@@ -1,10 +1,8 @@
 
 import { createRoot } from 'react-dom/client';
-import { lazy, Suspense } from 'react';
-import './styles/index.css';
-
-// Add React.StrictMode for better development experience
 import React from 'react';
+import './styles/index.css';
+import App from './App';
 
 // App loading component
 const AppLoading = () => (
@@ -13,9 +11,6 @@ const AppLoading = () => (
     <p className="mt-4 text-atomic-navy font-medium">Loading Roll On Painting...</p>
   </div>
 );
-
-// Use normal import instead of lazy load for main App
-import App from './App';
 
 // Get the root element
 const rootElement = document.getElementById('root');
