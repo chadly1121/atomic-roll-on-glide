@@ -47,11 +47,17 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
         <div className="flex items-center justify-between h-16">
           <Logo handleLogoClick={handleLogoClick} />
           
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Centered navigation */}
+          <div className="hidden md:flex items-center justify-center flex-1">
             <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
+          </div>
+          
+          {/* CTA Button on the right */}
+          <div className="hidden md:block">
             <CTAButton handleNavLinkClick={handleNavLinkClick} />
           </div>
           
+          {/* Mobile layout */}
           <div className="md:hidden flex items-center space-x-4">
             <MobileNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
             <CTAButton handleNavLinkClick={handleNavLinkClick} />
