@@ -6,13 +6,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CalendarPage from "./pages/CalendarPage";
 import JobsPage from "./pages/JobsPage";
 import EmployeesPage from "./pages/EmployeesPage";
 import CustomersPage from "./pages/CustomersPage";
+import AuthPage from "./pages/AuthPage";
+import TeamsPage from "./pages/TeamsPage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
@@ -70,26 +74,50 @@ const App = () => {
     return (
       <QueryClientProvider client={queryClient}>
         <HelmetProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <WwwRedirect />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/calendar" element={<CalendarPage />} />
-                <Route path="/jobs" element={<JobsPage />} />
-                <Route path="/employees" element={<EmployeesPage />} />
-                <Route path="/customers" element={<CustomersPage />} />
-                <Route path="*" element={
-                  <>
-                    <PageBreadcrumbs />
-                    <NotFound />
-                  </>
-                } />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
+          <AuthProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <WwwRedirect />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/auth" element={<AuthPage />} />
+                  <Route path="/calendar" element={
+                    <ProtectedRoute>
+                      <CalendarPage />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/jobs" element={
+                    <ProtectedRoute>
+                      <JobsPage />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/employees" element={
+                    <ProtectedRoute>
+                      <EmployeesPage />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/customers" element={
+                    <ProtectedRoute>
+                      <CustomersPage />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/teams" element={
+                    <ProtectedRoute>
+                      <TeamsPage />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="*" element={
+                    <>
+                      <PageBreadcrumbs />
+                      <NotFound />
+                    </>
+                  } />
+                </Routes>
+              </BrowserRouter>
+            </TooltipProvider>
+          </AuthProvider>
         </HelmetProvider>
       </QueryClientProvider>
     );

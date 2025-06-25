@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Calendar, Briefcase, Users, UserCheck, ChevronDown } from 'lucide-react';
+import { Calendar, Briefcase, Users, UserCheck, ChevronDown, Users2 } from 'lucide-react';
 
 const navigationItems = [
   {
@@ -30,6 +30,11 @@ const navigationItems = [
     title: "Customers", 
     url: "/customers",
     icon: Users,
+  },
+  {
+    title: "Teams",
+    url: "/teams",
+    icon: Users2,
   },
 ];
 
