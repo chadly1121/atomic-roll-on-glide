@@ -145,7 +145,12 @@ export const useTeamMembers = (teamId: string) => {
     if (error) {
       console.error('Error fetching team members:', error);
     } else {
-      setMembers(data || []);
+      // Type assertion to ensure role is properly typed
+      const typedMembers = (data || []).map(member => ({
+        ...member,
+        role: member.role as 'owner' | 'admin' | 'member'
+      }));
+      setMembers(typedMembers);
     }
     setLoading(false);
   };
