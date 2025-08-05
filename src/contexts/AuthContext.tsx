@@ -27,10 +27,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
+  console.log('AuthProvider: Initializing...');
+
   useEffect(() => {
+    console.log('AuthProvider: Setting up auth state listener');
+    
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log('AuthProvider: Auth state changed', { event, session });
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
@@ -38,13 +43,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     );
 
     // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    console.log('AuthProvider: Checking for existing session');
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      console.log('AuthProvider: Session check result', { session, error });
+      if (error) {
+        console.error('AuthProvider: Error getting session', error);
+      }
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
+    }).catch(error => {
+      console.error('AuthProvider: Error in getSession promise', error);
+      setLoading(false);
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      console.log('AuthProvider: Cleaning up subscription');
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signIn = async (email: string, password: string) => {
