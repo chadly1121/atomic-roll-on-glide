@@ -115,14 +115,25 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
             </CardFooter>
           </Card>
           
-          <a 
-            href="https://www.gonano.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="mt-6 inline-block atomic-button-secondary hover:shadow-lg transform transition-transform hover:-translate-y-1"
-          >
-            <span className="relative z-10">Learn More About GoNano</span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <a 
+              href="https://www.gonano.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block atomic-button-secondary hover:shadow-lg transform transition-transform hover:-translate-y-1"
+            >
+              <span className="relative z-10">Learn More About GoNano</span>
+            </a>
+            
+            <a 
+              href="http://missedaspot.sky-quote.com/Instant-Estimate" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block atomic-button hover:shadow-lg transform transition-transform hover:-translate-y-1"
+            >
+              <span className="relative z-10">Instant Estimate</span>
+            </a>
+          </div>
         </div>
         
         <div className="space-y-6 animate-fade-in">
