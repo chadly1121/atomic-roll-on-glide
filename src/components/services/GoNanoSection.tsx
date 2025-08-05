@@ -98,7 +98,7 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="flex justify-center pb-6">
+            <CardFooter className="flex flex-col gap-4 pb-6">
               <a 
                 href="#contact" 
                 onClick={(e) => {
@@ -112,28 +112,41 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
               >
                 <span className="relative z-10">Get a Free Quote</span>
               </a>
+              
+              {/* Instant Estimate Section */}
+              <div className="w-full border-t border-atomic-turquoise/20 pt-4">
+                <div className="text-center mb-3">
+                  <p className="text-sm font-semibold text-atomic-turquoise uppercase tracking-wide">
+                    Get Your Price Now
+                  </p>
+                  <p className="text-xs text-gray-600 mt-1">
+                    Instant online estimate tool - No waiting, no phone calls required
+                  </p>
+                </div>
+                <a 
+                  href="http://missedaspot.sky-quote.com/Instant-Estimate" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="atomic-button w-full text-center justify-center bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 hover:from-atomic-turquoise/90 hover:to-atomic-turquoise border-2 border-atomic-turquoise/30 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
+                >
+                  <span className="relative z-10 font-bold">🚀 Instant Estimate Tool</span>
+                </a>
+                <p className="text-xs text-center text-gray-500 mt-2">
+                  Calculate your GoNano coating cost instantly
+                </p>
+              </div>
             </CardFooter>
           </Card>
           
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <a 
-              href="https://www.gonano.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block atomic-button-secondary hover:shadow-lg transform transition-transform hover:-translate-y-1"
-            >
-              <span className="relative z-10">Learn More About GoNano</span>
-            </a>
-            
-            <a 
-              href="http://missedaspot.sky-quote.com/Instant-Estimate" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block atomic-button hover:shadow-lg transform transition-transform hover:-translate-y-1"
-            >
-              <span className="relative z-10">Instant Estimate</span>
-            </a>
-          </div>
+          
+          <a 
+            href="https://www.gonano.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-6 inline-block atomic-button-secondary hover:shadow-lg transform transition-transform hover:-translate-y-1"
+          >
+            <span className="relative z-10">Learn More About GoNano</span>
+          </a>
         </div>
         
         <div className="space-y-6 animate-fade-in">
