@@ -65,7 +65,7 @@ export default {
         },
         atomic: {
           orange: '#EC4899',
-          turquoise: '#22C55E',
+          turquoise: '#7FB089',
           sage: '#98B37F',
           cream: '#FEF9E7',
           navy: '#1A1F2C',
