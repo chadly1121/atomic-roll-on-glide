@@ -86,7 +86,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-atomic-turquoise" />
-                  <a href="mailto:info@rollonpainting.com" className="text-gray-600 hover:text-atomic-orange transition-colors">info@rollonpainting.com</a>
+                  <a href="mailto:leonardo@roll-onpainting.com" className="text-gray-600 hover:text-atomic-orange transition-colors">leonardo@roll-onpainting.com</a>
                 </div>
                 <div className="flex space-x-4 mt-4">
                   <a href="https://www.instagram.com/roll_on_painting/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-atomic-turquoise flex items-center justify-center hover:bg-atomic-turquoise/80 transition-colors">

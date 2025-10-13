@@ -185,10 +185,10 @@ serve(async (req) => {
       userAgent: userAgent?.substring(0, 100) 
     });
     
-    // Send email to business (info@rollonpainting.com)
+    // Send email to business (leonardo@roll-onpainting.com)
     const businessEmailResponse = await resend.emails.send({
       from: "Roll On Painting <noreply@rollonpainting.com>",
-      to: ["info@rollonpainting.com"],
+      to: ["leonardo@roll-onpainting.com"],
       subject: `New Secure Quote Request: ${sanitizedService}`,
       html: `
         <h2>New Secure Quote Request</h2>

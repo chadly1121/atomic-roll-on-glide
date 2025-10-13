@@ -8,7 +8,7 @@ const ContactInfo = () => {
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // This ensures the email client opens properly on all devices
-    const mailtoLink = "mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A";
+    const mailtoLink = "mailto:leonardo@roll-onpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A";
     window.location.href = mailtoLink;
     e.preventDefault(); // Prevent default only after setting location
   };
@@ -24,12 +24,12 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-bold">Email</h4>
             <a 
-              href="mailto:info@rollonpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A"
+              href="mailto:leonardo@roll-onpainting.com?subject=Website%20Inquiry&body=Hello%20Roll%20On%20Painting%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20services.%0A%0AThank%20you%2C%0A"
               className="text-atomic-turquoise hover:underline active:text-atomic-turquoise/80 text-base md:text-lg"
               onClick={handleEmailClick}
-              aria-label="Email info@rollonpainting.com"
+              aria-label="Email leonardo@roll-onpainting.com"
             >
-              info@rollonpainting.com
+              leonardo@roll-onpainting.com
               {isMobile && (
                 <span className="ml-2 text-xs bg-atomic-turquoise/10 text-atomic-turquoise px-2 py-1 rounded-full">
                   Tap to email
