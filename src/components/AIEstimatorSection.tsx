@@ -12,13 +12,14 @@ const AIEstimatorSection = () => {
     // Clear any existing content
     container.innerHTML = '';
     
-    // Create iframe for the widget
+    // Create iframe for the widget with responsive height
     const iframe = document.createElement('iframe');
     iframe.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/';
     iframe.style.width = '100%';
-    iframe.style.height = '600px';
+    iframe.style.minHeight = window.innerWidth < 640 ? '500px' : '600px';
+    iframe.style.height = 'auto';
     iframe.style.border = 'none';
-    iframe.style.borderRadius = '12px';
+    iframe.style.borderRadius = window.innerWidth < 640 ? '8px' : '12px';
     iframe.title = 'AI Painting Cost Estimator';
     iframe.allow = 'clipboard-write';
     
@@ -41,42 +42,42 @@ const AIEstimatorSection = () => {
   return (
     <section 
       id="ai-estimator" 
-      className="py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
       aria-labelledby="ai-estimator-heading"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-atomic-pink rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-atomic-turquoise rounded-full blur-3xl" />
+      {/* Background decoration - hidden on mobile for performance */}
+      <div className="absolute inset-0 opacity-5 hidden sm:block">
+        <div className="absolute top-10 left-10 w-48 sm:w-72 h-48 sm:h-72 bg-atomic-pink rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-atomic-turquoise rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-atomic-pink/20 text-atomic-pink px-4 py-2 rounded-full mb-4">
-            <Sparkles className="w-5 h-5" />
-            <span className="font-semibold text-sm uppercase tracking-wide">AI-Powered Technology</span>
+          <div className="inline-flex items-center gap-2 bg-atomic-pink/20 text-atomic-pink px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="font-semibold text-xs sm:text-sm uppercase tracking-wide">AI-Powered Technology</span>
           </div>
           
           <h2 
             id="ai-estimator-heading"
-            className="text-4xl md:text-5xl font-bold text-atomic-navy mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-atomic-navy mb-3 sm:mb-4 px-2"
           >
             Get Your <span className="text-atomic-pink">Instant Painting Estimate</span>
           </h2>
           
-          <p className="text-lg text-atomic-navy/70 max-w-2xl mx-auto mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-atomic-navy/70 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
             Our AI-powered estimator gives you an accurate quote in seconds. Simply answer a few questions 
             about your project and get a professional estimate instantly – no waiting, no pressure.
           </p>
 
-          {/* Benefits */}
-          <div className="flex flex-wrap justify-center gap-6 mb-10">
+          {/* Benefits - stack on mobile */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 mb-6 sm:mb-10 px-2">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -84,10 +85,10 @@ const AIEstimatorSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm"
+                className="flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg shadow-sm"
               >
-                <benefit.icon className="w-5 h-5 text-atomic-turquoise" />
-                <span className="text-atomic-navy font-medium">{benefit.text}</span>
+                <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-atomic-turquoise flex-shrink-0" />
+                <span className="text-atomic-navy font-medium text-sm sm:text-base">{benefit.text}</span>
               </motion.div>
             ))}
           </div>
@@ -103,7 +104,7 @@ const AIEstimatorSection = () => {
         >
           <div 
             id="ai-estimator-widget" 
-            className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 border border-atomic-pink/20 min-h-[400px]"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[350px] sm:min-h-[400px]"
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
@@ -111,7 +112,7 @@ const AIEstimatorSection = () => {
           </div>
           
           {/* Trust indicator */}
-          <p className="text-center text-sm text-atomic-navy/50 mt-4">
+          <p className="text-center text-xs sm:text-sm text-atomic-navy/50 mt-3 sm:mt-4 px-2">
             Trusted by hundreds of Muskoka homeowners • Powered by advanced AI technology
           </p>
         </motion.div>
