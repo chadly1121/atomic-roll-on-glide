@@ -5,17 +5,29 @@ import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   useEffect(() => {
-    // Load the AI estimator widget script
-    const script = document.createElement('script');
-    script.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
+    // Create a container div that the widget expects
+    const container = document.getElementById('ai-estimator-widget');
+    if (!container) return;
+
+    // Clear any existing content
+    container.innerHTML = '';
+    
+    // Create iframe for the widget
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/';
+    iframe.style.width = '100%';
+    iframe.style.height = '600px';
+    iframe.style.border = 'none';
+    iframe.style.borderRadius = '12px';
+    iframe.title = 'AI Painting Cost Estimator';
+    iframe.allow = 'clipboard-write';
+    
+    container.appendChild(iframe);
 
     return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector(`script[src="${script.src}"]`);
-      if (existingScript) {
-        existingScript.remove();
+      // Cleanup on unmount
+      if (container) {
+        container.innerHTML = '';
       }
     };
   }, []);
@@ -95,17 +107,7 @@ const AIEstimatorSection = () => {
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
-            {/* Widget will be injected here by the script */}
-            <div className="flex items-center justify-center h-full min-h-[300px]">
-              <div className="text-center">
-                <div className="animate-pulse flex flex-col items-center gap-4">
-                  <div className="w-16 h-16 bg-atomic-pink/20 rounded-full flex items-center justify-center">
-                    <Calculator className="w-8 h-8 text-atomic-pink" />
-                  </div>
-                  <p className="text-atomic-navy/60">Loading AI Estimator...</p>
-                </div>
-              </div>
-            </div>
+            {/* Widget iframe will be injected here */}
           </div>
           
           {/* Trust indicator */}
