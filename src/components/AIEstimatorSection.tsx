@@ -95,9 +95,13 @@ const AIEstimatorSection = () => {
           className="max-w-4xl mx-auto"
         >
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[400px] sm:min-h-[500px] relative"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[600px] sm:min-h-[700px] md:min-h-[750px] relative"
             role="application"
             aria-label="AI Painting Cost Estimator"
+            style={{ 
+              overflowAnchor: 'none',
+              scrollMarginTop: '80px'
+            }}
           >
             {/* Loading state */}
             {isLoading && (
@@ -108,8 +112,12 @@ const AIEstimatorSection = () => {
                 </div>
               </div>
             )}
-            {/* Widget container */}
-            <div id="quohta-widget" className="w-full flex justify-center" />
+            {/* Widget container - taller for mobile usability */}
+            <div 
+              id="quohta-widget" 
+              className="w-full flex justify-center min-h-[550px] sm:min-h-[650px]"
+              style={{ overflowAnchor: 'none' }}
+            />
           </div>
           
           {/* Trust indicator */}
