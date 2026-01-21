@@ -6,9 +6,9 @@ import App from './App';
 
 // App loading component
 const AppLoading = () => (
-  <div className="fixed inset-0 flex flex-col items-center justify-center bg-cream">
-    <div className="w-12 h-12 border-2 border-gold border-t-transparent rounded-full animate-spin"></div>
-    <p className="mt-4 text-charcoal font-sans text-sm tracking-wide">Loading...</p>
+  <div className="fixed inset-0 flex flex-col items-center justify-center bg-atomic-cream">
+    <div className="w-16 h-16 border-4 border-atomic-turquoise border-t-atomic-orange rounded-full animate-spin"></div>
+    <p className="mt-4 text-atomic-navy font-medium">Loading Roll On Painting...</p>
   </div>
 );
 
@@ -38,12 +38,12 @@ if (rootElement) {
     } catch (error) {
       console.error("Root render error:", error);
       root.render(
-        <div className="min-h-screen flex flex-col items-center justify-center bg-cream p-4">
-          <h1 className="text-2xl font-serif font-semibold text-charcoal mb-2">Failed to load application</h1>
-          <p className="text-muted-foreground mb-4 font-sans">Please try refreshing the page</p>
+        <div className="min-h-screen flex flex-col items-center justify-center bg-red-50 p-4">
+          <h1 className="text-2xl font-bold text-red-600 mb-2">Failed to load application</h1>
+          <p className="text-gray-700 mb-4">Please try refreshing the page</p>
           <button 
             onClick={() => window.location.reload()}
-            className="btn-gold"
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
           >
             Reload Page
           </button>

@@ -59,9 +59,9 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/98 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Logo handleLogoClick={handleLogoClick} />
           
           {/* Desktop Navigation */}
@@ -74,21 +74,21 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             {user ? (
               <>
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   onClick={() => navigate('/teams')}
-                  className="flex items-center gap-2 text-charcoal hover:text-gold"
+                  className="flex items-center gap-2"
                 >
                   <Users className="h-4 w-4" />
                   Teams
                 </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="flex items-center gap-2 text-charcoal hover:text-gold">
+                    <Button variant="outline" className="flex items-center gap-2">
                       <User className="h-4 w-4" />
                       {user.email}
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="bg-white border-border">
+                  <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={() => navigate('/calendar')}>
                       Calendar
                     </DropdownMenuItem>
@@ -102,7 +102,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
                       Customers
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                    <DropdownMenuItem onClick={handleSignOut} className="text-red-600">
                       <LogOut className="h-4 w-4 mr-2" />
                       Sign Out
                     </DropdownMenuItem>
@@ -112,9 +112,9 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             ) : (
               <>
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   onClick={() => navigate('/auth')}
-                  className="flex items-center gap-2 text-charcoal hover:text-gold font-sans text-sm"
+                  className="flex items-center gap-2"
                 >
                   <User className="h-4 w-4" />
                   Sign In
@@ -126,7 +126,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
           
           {/* Mobile hamburger button */}
           <button
-            className="md:hidden p-2 text-charcoal hover:text-gold transition-colors"
+            className="md:hidden p-2 rounded-md text-atomic-navy hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -143,16 +143,16 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-border"
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
           >
-            <div className="px-6 py-8 space-y-4">
+            <div className="px-4 py-6 space-y-4">
               {navLinks.map(link => (
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="block py-3 text-sm font-sans uppercase tracking-widest text-charcoal hover:text-gold transition-colors border-b border-border/50 last:border-b-0"
+                  className="block py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100 last:border-b-0"
                   onClick={(e) => handleNavLinkClick(e, link.href)}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {link.name}
                 </motion.a>
@@ -161,36 +161,37 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
               {user ? (
                 <>
                   <motion.button
-                    onClick={() => { navigate('/teams'); setIsMobileMenuOpen(false); }}
-                    className="block w-full text-left py-3 text-sm font-sans uppercase tracking-widest text-charcoal hover:text-gold transition-colors border-b border-border/50"
-                    whileTap={{ scale: 0.98 }}
+                    onClick={() => navigate('/teams')}
+                    className="block w-full text-left py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100"
+                    whileTap={{ scale: 0.95 }}
                   >
                     Teams
                   </motion.button>
                   <motion.button
+                    onClick={() => navigate('/calendar')}
+                    className="block w-full text-left py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100"
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Calendar
+                  </motion.button>
+                  <motion.button
                     onClick={handleSignOut}
-                    className="block w-full text-left py-3 text-sm font-sans uppercase tracking-widest text-destructive"
-                    whileTap={{ scale: 0.98 }}
+                    className="block w-full text-left py-3 px-2 text-lg font-medium text-red-600 hover:text-red-700 transition-colors"
+                    whileTap={{ scale: 0.95 }}
                   >
                     Sign Out
                   </motion.button>
                 </>
               ) : (
-                <div className="pt-6 space-y-4">
+                <div className="pt-4 space-y-4">
                   <Button
-                    onClick={() => { navigate('/auth'); setIsMobileMenuOpen(false); }}
+                    onClick={() => navigate('/auth')}
                     variant="outline"
-                    className="w-full border-charcoal text-charcoal hover:bg-charcoal hover:text-white"
+                    className="w-full"
                   >
                     Sign In
                   </Button>
-                  <a 
-                    href="#contact"
-                    onClick={(e) => handleNavLinkClick(e, '#contact')}
-                    className="btn-gold w-full block text-center"
-                  >
-                    Get Quote
-                  </a>
+                  <CTAButton handleNavLinkClick={handleNavLinkClick} />
                 </div>
               )}
             </div>
