@@ -1,37 +1,10 @@
 
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
+import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react';
 
 const AIEstimatorSection = () => {
-  useEffect(() => {
-    // Create a container div that the widget expects
-    const container = document.getElementById('ai-estimator-widget');
-    if (!container) return;
-
-    // Clear any existing content
-    container.innerHTML = '';
-    
-    // Create iframe for the widget with responsive height
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/';
-    iframe.style.width = '100%';
-    iframe.style.minHeight = window.innerWidth < 640 ? '500px' : '600px';
-    iframe.style.height = 'auto';
-    iframe.style.border = 'none';
-    iframe.style.borderRadius = window.innerWidth < 640 ? '8px' : '12px';
-    iframe.title = 'AI Painting Cost Estimator';
-    iframe.allow = 'clipboard-write';
-    
-    container.appendChild(iframe);
-
-    return () => {
-      // Cleanup on unmount
-      if (container) {
-        container.innerHTML = '';
-      }
-    };
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
 
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
@@ -103,12 +76,32 @@ const AIEstimatorSection = () => {
           className="max-w-4xl mx-auto"
         >
           <div 
-            id="ai-estimator-widget" 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[350px] sm:min-h-[400px]"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 relative"
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
-            {/* Widget iframe will be injected here */}
+            {/* Loading state */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl z-10">
+                <div className="flex flex-col items-center gap-3">
+                  <Loader2 className="w-8 h-8 text-atomic-pink animate-spin" />
+                  <p className="text-atomic-navy/70 text-sm">Loading estimator...</p>
+                </div>
+              </div>
+            )}
+            
+            {/* Iframe for the AI estimator */}
+            <iframe
+              src="https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/"
+              className="w-full border-0 rounded-lg sm:rounded-xl"
+              style={{ 
+                minHeight: '500px',
+                height: '600px'
+              }}
+              title="AI Painting Cost Estimator"
+              allow="clipboard-write"
+              onLoad={() => setIsLoading(false)}
+            />
           </div>
           
           {/* Trust indicator */}
