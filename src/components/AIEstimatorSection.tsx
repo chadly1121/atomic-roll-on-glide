@@ -9,7 +9,7 @@ const AIEstimatorSection = () => {
   useEffect(() => {
     // Load the widget script
     const script = document.createElement('script');
-    script.src = 'https://paint-quick-quote.lovable.app/widget.js';
+    script.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
     script.setAttribute('data-token', '1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704');
     script.async = true;
     script.onload = () => setIsLoading(false);
