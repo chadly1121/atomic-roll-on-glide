@@ -9,19 +9,41 @@ const AIEstimatorSection = () => {
   useEffect(() => {
     // Load the widget script
     const script = document.createElement('script');
-    script.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
-    script.setAttribute('data-token', '1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704');
+    const widgetSrc = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
+    const widgetToken = '1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704';
+
+    // If the widget script is already present (e.g., React StrictMode), don't inject twice.
+    const existingScript = document.querySelector(
+      `script[src="${widgetSrc}"][data-token="${widgetToken}"]`
+    );
+    if (existingScript) {
+      setIsLoading(false);
+      return;
+    }
+
+    script.src = widgetSrc;
+    script.setAttribute('data-token', widgetToken);
     script.setAttribute('data-container', 'quohta-widget');
     script.async = true;
     script.onload = () => setIsLoading(false);
     script.onerror = () => setIsLoading(false);
-    document.body.appendChild(script);
+
+    // Insert the script right after the container to match the provider's embed snippet.
+    // Some widgets rely on document.currentScript / sibling lookups.
+    const container = document.getElementById('quohta-widget');
+    if (!container) {
+      setIsLoading(false);
+      return;
+    }
+    container.insertAdjacentElement('afterend', script);
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://paint-quick-quote.lovable.app/widget.js"]');
-      if (existingScript) {
-        existingScript.remove();
+      const injected = document.querySelector(
+        `script[src="${widgetSrc}"][data-token="${widgetToken}"]`
+      );
+      if (injected) {
+        injected.remove();
       }
     };
   }, []);
