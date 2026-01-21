@@ -101,7 +101,7 @@ const AIEstimatorSection = () => {
             </div>
           </div>
           
-          {/* Trust indicator */}
+      {/* Trust indicator - Updated */}
           <p className="text-center text-xs sm:text-sm text-atomic-navy/50 mt-3 sm:mt-4 px-2">
             Trusted by hundreds of Muskoka homeowners • Powered by advanced AI technology
           </p>
