@@ -92,7 +92,7 @@ const AIEstimatorSection = () => {
             )}
             <div className="w-full flex justify-center">
               <iframe
-                src="https://id-preview--d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovable.app/embed/4529f2c503b5d8009d2e8171d7b943345bdad4755542666c140d230f2a7e530f"
+                src="https://id-preview--d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovable.app/embed/1ebce1c7fa63d10c86ce7daa04daa286c4e4f656c37d2ca44bb1d6b80153dba7"
                 title="AI Painting Cost Estimator"
                 loading="lazy"
                 className="w-full max-w-[600px] h-[700px] border-0"
