@@ -1,10 +1,47 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src="https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js"]');
+    if (existingScript) {
+      setIsLoading(false);
+      return;
+    }
+
+    // Create and load the widget script
+    const script = document.createElement('script');
+    script.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
+    script.setAttribute('data-token', '4529f2c503b5d8009d2e8171d7b943345bdad4755542666c140d230f2a7e530f');
+    script.async = true;
+    
+    script.onload = () => {
+      setIsLoading(false);
+    };
+    
+    script.onerror = () => {
+      console.error('Failed to load AI estimator widget');
+      setIsLoading(false);
+    };
+
+    // Append to the widget container
+    const container = document.getElementById('ai-estimator-widget');
+    if (container) {
+      container.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup on unmount
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
 
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
@@ -76,7 +113,8 @@ const AIEstimatorSection = () => {
           className="max-w-4xl mx-auto"
         >
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 relative"
+            id="ai-estimator-widget"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[400px] sm:min-h-[500px] relative"
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
@@ -89,19 +127,7 @@ const AIEstimatorSection = () => {
                 </div>
               </div>
             )}
-            
-            {/* Iframe for the AI estimator */}
-            <iframe
-              src="https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/"
-              className="w-full border-0 rounded-lg sm:rounded-xl"
-              style={{ 
-                minHeight: '500px',
-                height: '600px'
-              }}
-              title="AI Painting Cost Estimator"
-              allow="clipboard-write"
-              onLoad={() => setIsLoading(false)}
-            />
+            {/* Widget will be injected here by the script */}
           </div>
           
           {/* Trust indicator */}
