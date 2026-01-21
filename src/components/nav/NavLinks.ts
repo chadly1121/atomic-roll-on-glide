@@ -6,6 +6,7 @@ export interface NavLink {
 
 // Navigation links used in desktop and mobile navbars
 export const navLinks: NavLink[] = [
+  { name: 'AI Estimate', href: '#ai-estimator' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
   { name: 'Gallery', href: '#services' },  // Gallery content is integrated within the Services section

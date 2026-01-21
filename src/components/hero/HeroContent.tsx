@@ -39,9 +39,15 @@ const HeroContent = () => {
       </div>
       
       <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-        <a href="#contact" className="atomic-button group border-2 border-atomic-orange" onClick={handleScrollToContact}>
+        <a href="#ai-estimator" className="atomic-button group border-2 border-atomic-pink bg-atomic-pink hover:bg-atomic-pink/90" onClick={e => {
+          e.preventDefault();
+          document.querySelector('#ai-estimator')?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }}>
           <span className="relative z-10 flex items-center">
-            Request A Quote
+            Get Instant AI Estimate
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
