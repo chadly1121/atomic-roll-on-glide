@@ -1,47 +1,10 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Check if script already exists
-    const existingScript = document.querySelector('script[src="https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js"]');
-    if (existingScript) {
-      setIsLoading(false);
-      return;
-    }
-
-    // Create and load the widget script
-    const script = document.createElement('script');
-    script.src = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
-    script.setAttribute('data-token', '4529f2c503b5d8009d2e8171d7b943345bdad4755542666c140d230f2a7e530f');
-    script.async = true;
-    
-    script.onload = () => {
-      setIsLoading(false);
-    };
-    
-    script.onerror = () => {
-      console.error('Failed to load AI estimator widget');
-      setIsLoading(false);
-    };
-
-    // Append to the widget container
-    const container = document.getElementById('ai-estimator-widget');
-    if (container) {
-      container.appendChild(script);
-    }
-
-    return () => {
-      // Cleanup on unmount
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
 
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
@@ -127,7 +90,15 @@ const AIEstimatorSection = () => {
                 </div>
               </div>
             )}
-            {/* Widget will be injected here by the script */}
+            <div className="w-full flex justify-center">
+              <iframe
+                src="https://id-preview--d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovable.app/embed/4529f2c503b5d8009d2e8171d7b943345bdad4755542666c140d230f2a7e530f"
+                title="AI Painting Cost Estimator"
+                loading="lazy"
+                className="w-full max-w-[600px] h-[700px] border-0"
+                onLoad={() => setIsLoading(false)}
+              />
+            </div>
           </div>
           
           {/* Trust indicator */}
