@@ -33,18 +33,18 @@ const FloatingEstimateButton = () => {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.3, type: 'spring', stiffness: 300 }}
           onClick={scrollToEstimator}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-atomic-pink text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-atomic-pink/90 transition-all group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-1.5 sm:gap-2 bg-atomic-pink text-white px-3 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-atomic-pink/90 transition-all group"
           aria-label="Get instant AI painting estimate"
         >
           <div className="relative">
-            <Calculator className="w-5 h-5" />
-            <Sparkles className="w-3 h-3 absolute -top-1 -right-1 text-yellow-300 animate-pulse" />
+            <Calculator className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 absolute -top-1 -right-1 text-yellow-300 animate-pulse" />
           </div>
-          <span className="font-semibold">Get AI Estimate</span>
+          <span className="font-semibold text-sm sm:text-base">AI Estimate</span>
           <motion.span
             animate={{ x: [0, 4, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="ml-1"
+            className="ml-0.5 sm:ml-1 hidden xs:inline"
           >
             →
           </motion.span>
