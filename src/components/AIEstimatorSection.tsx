@@ -1,10 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Load the widget script
+    const script = document.createElement('script');
+    script.src = 'https://paint-quick-quote.lovable.app/widget.js';
+    script.setAttribute('data-token', '1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704');
+    script.async = true;
+    script.onload = () => setIsLoading(false);
+    script.onerror = () => setIsLoading(false);
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://paint-quick-quote.lovable.app/widget.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
 
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
@@ -76,7 +95,6 @@ const AIEstimatorSection = () => {
           className="max-w-4xl mx-auto"
         >
           <div 
-            id="ai-estimator-widget"
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[400px] sm:min-h-[500px] relative"
             role="application"
             aria-label="AI Painting Cost Estimator"
@@ -90,18 +108,11 @@ const AIEstimatorSection = () => {
                 </div>
               </div>
             )}
-            <div className="w-full flex justify-center">
-              <iframe
-                src="https://id-preview--d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovable.app/embed/1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704"
-                title="AI Painting Cost Estimator"
-                loading="lazy"
-                className="w-full max-w-[600px] h-[700px] border-0"
-                onLoad={() => setIsLoading(false)}
-              />
-            </div>
+            {/* Widget container */}
+            <div id="quohta-widget" className="w-full flex justify-center" />
           </div>
           
-      {/* Trust indicator - Updated */}
+          {/* Trust indicator */}
           <p className="text-center text-xs sm:text-sm text-atomic-navy/50 mt-3 sm:mt-4 px-2">
             Trusted by hundreds of Muskoka homeowners • Powered by advanced AI technology
           </p>
