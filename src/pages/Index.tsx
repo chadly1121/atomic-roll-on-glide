@@ -7,6 +7,7 @@ import ServicesSection from '../components/ServicesSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import PricingSection from '../components/PricingSection';
 import AsSeenonTVSection from '../components/AsSeenonTVSection';
+import AIEstimatorSection from '../components/AIEstimatorSection';
 
 // Import our new refactored components
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
@@ -85,6 +86,10 @@ const Index = () => {
       
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
+      
+      {/* AI Estimator Section - Prominently placed after hero */}
+      <AIEstimatorSection />
+      
       <AboutSection />
       
       {/* First Inline CTA with Trust Badges */}

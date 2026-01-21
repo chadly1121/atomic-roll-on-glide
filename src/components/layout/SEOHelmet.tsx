@@ -35,21 +35,58 @@ const SEOHelmet: React.FC = () => {
               {
                 "@type": "ListItem",
                 "position": 2,
+                "name": "AI Painting Estimate",
+                "item": "https://rollonpainting.com/#ai-estimator"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
                 "name": "Services",
                 "item": "https://rollonpainting.com/#services"
               },
               {
                 "@type": "ListItem",
-                "position": 3,
+                "position": 4,
                 "name": "Contact",
                 "item": "https://rollonpainting.com/#contact"
               },
               {
                 "@type": "ListItem",
-                "position": 4,
+                "position": 5,
                 "name": "As Seen on TV",
                 "item": "https://rollonpainting.com/#asseenontv"
               }
+            ]
+          }
+        `}
+      </script>
+      
+      {/* AI Estimator WebApplication schema for SEO */}
+      <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Roll On Painting AI Cost Estimator",
+            "description": "Get an instant, AI-powered painting cost estimate for your home or commercial project in Muskoka. No obligation, accurate quotes in seconds.",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "CAD",
+              "description": "Free instant painting estimate"
+            },
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Roll On Painting",
+              "url": "https://rollonpainting.com"
+            },
+            "featureList": [
+              "Instant AI-powered estimates",
+              "Interior and exterior painting costs",
+              "Commercial painting quotes",
+              "No obligation required"
             ]
           }
         `}
