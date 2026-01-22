@@ -13,7 +13,11 @@ const AIEstimatorSection = () => {
 
     // Load the widget script
     const script = document.createElement('script');
-    const widgetSrc = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
+    // IMPORTANT: Use a *published* widget URL (lovable.app). The lovableproject.com domain
+    // is preview/auth-gated and will often return a login page instead of JavaScript.
+    const widgetSrc =
+      import.meta.env.VITE_QUOHTA_WIDGET_SRC ||
+      'https://paint-quick-quote.lovable.app/widget.js';
     const widgetToken = '1254c6c1b0de7c7f05c01611c6676d6f0123902c0f7cd137b397ebfb2d8e7704';
 
     // If the widget script is already present (e.g., React StrictMode), don't inject twice.
@@ -56,7 +60,7 @@ const AIEstimatorSection = () => {
       if (stillEmpty) {
         setIsLoading(false);
         setLoadError(
-          'Estimator loaded, but did not render. This is often caused by ad/script blockers or a blocked widget URL.'
+          'Estimator did not render. If your script URL is on lovableproject.com, it will redirect to a login page; use a published *.lovable.app/widget.js URL. Ad/script blockers can also prevent loading.'
         );
       }
     }, 12000);
