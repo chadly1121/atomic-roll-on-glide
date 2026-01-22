@@ -4,9 +4,7 @@ import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react
 const AboutSection = () => {
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 relative overflow-hidden bg-accent/30">
-      {/* Decorative elements - hidden on mobile for performance */}
-      <div className="hidden sm:block atomic-circle w-80 h-80 top-10 -right-20 border-atomic-orange" aria-hidden="true" />
-      <div className="hidden sm:block atomic-starburst w-60 h-60 bottom-20 left-40" aria-hidden="true" />
+      {/* Decorative elements removed for performance */}
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -112,38 +110,46 @@ const AboutSection = () => {
           <div className="order-1 md:order-2">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="space-y-3 sm:space-y-4">
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-56 shadow-lg transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-56 shadow-lg bg-muted">
                   <img 
                     alt="Professional Interior Painting" 
                     className="w-full h-full object-cover" 
                     src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png"
                     loading="lazy"
+                    width={300}
+                    height={224}
                   />
                 </div>
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-28 sm:h-40 shadow-lg transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-28 sm:h-40 shadow-lg bg-muted">
                   <img 
                     alt="Quality Craftsmanship" 
                     className="w-full h-full object-cover" 
                     src="/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png"
                     loading="lazy"
+                    width={300}
+                    height={160}
                   />
                 </div>
               </div>
               <div className="space-y-3 sm:space-y-4 pt-6 sm:pt-10">
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-28 sm:h-40 shadow-lg transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-28 sm:h-40 shadow-lg bg-muted">
                   <img 
                     alt="Commercial Painting Services" 
                     className="w-full h-full object-cover" 
                     src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png"
                     loading="lazy"
+                    width={300}
+                    height={160}
                   />
                 </div>
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-56 shadow-lg transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-transform">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-56 shadow-lg bg-muted">
                   <img 
                     alt="Exterior Home Painting" 
                     className="w-full h-full object-cover" 
                     src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png"
                     loading="lazy"
+                    width={300}
+                    height={224}
                   />
                 </div>
               </div>

@@ -42,9 +42,7 @@ const ServicesSection = () => {
         </script>
       </Helmet>
       
-      {/* Decorative elements - hidden on mobile */}
-      <div className="hidden sm:block atomic-starburst w-72 h-72 top-20 left-20" aria-hidden="true" />
-      <div className="hidden sm:block atomic-circle w-96 h-96 -bottom-48 right-0 border-atomic-turquoise/30 animate-spin-slow" aria-hidden="true" />
+      {/* Decorative elements - hidden for performance */}
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">

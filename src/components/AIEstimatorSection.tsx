@@ -30,11 +30,7 @@ const AIEstimatorSection = () => {
       className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
       aria-labelledby="ai-estimator-heading"
     >
-      {/* Background decoration - hidden on mobile for performance */}
-      <div className="absolute inset-0 opacity-5 hidden sm:block" aria-hidden="true">
-        <div className="absolute top-10 left-10 w-48 sm:w-72 h-48 sm:h-72 bg-atomic-pink rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-atomic-turquoise rounded-full blur-3xl" />
-      </div>
+      {/* Background decoration removed for performance */}
 
       <div className="container mx-auto px-3 sm:px-4 relative z-10">
         <motion.div
