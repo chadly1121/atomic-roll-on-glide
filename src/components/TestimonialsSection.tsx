@@ -84,8 +84,6 @@ const testimonials: Testimonial[] = [{
 const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
-      <div className="atomic-circle w-80 h-80 -top-40 right-20 border-atomic-orange/30 animate-spin-slow"></div>
-      <div className="atomic-circle w-64 h-64 -bottom-32 left-20 border-atomic-turquoise/40 animate-spin-slow"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -100,12 +98,10 @@ const TestimonialsSection = () => {
             <Card key={testimonial.id} className="bg-white/10 backdrop-blur-sm border-0 h-full">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="shrink-0">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="rounded-full w-12 h-12 object-cover border-2 border-atomic-turquoise"
-                    />
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-atomic-turquoise flex items-center justify-center border-2 border-atomic-turquoise">
+                    <span className="text-white font-bold text-lg">
+                      {testimonial.name.charAt(0)}
+                    </span>
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
