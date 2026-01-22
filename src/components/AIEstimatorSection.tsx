@@ -13,11 +13,10 @@ const AIEstimatorSection = () => {
 
     // Load the widget script
     const script = document.createElement('script');
-    // NOTE: Using preview URL temporarily. For production stability, publish the Quohta
-    // project and use the published URL (e.g., https://paint-quick-quote.lovable.app/widget.js)
+    // Published widget URL - stable for production use
     const widgetSrc =
       import.meta.env.VITE_QUOHTA_WIDGET_SRC ||
-      'https://id-preview--d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovable.app/widget.js?v=9';
+      'https://paint-quick-quote.lovable.app/widget.js?v=9';
     const widgetToken = 'dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26';
 
     // If the widget script is already present (e.g., React StrictMode), don't inject twice.
