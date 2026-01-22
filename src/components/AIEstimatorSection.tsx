@@ -51,6 +51,8 @@ const AIEstimatorSection = () => {
       setLoadError('Estimator container not found on page.');
       return;
     }
+    // Set the token on the container (where the widget expects to find it)
+    container.setAttribute('data-token', widgetToken);
     container.insertAdjacentElement('afterend', script);
 
     // If the script loads but the widget never renders into the container,
