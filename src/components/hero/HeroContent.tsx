@@ -1,22 +1,11 @@
-
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Atom, FileImage } from 'lucide-react';
-import { throttle } from '@/utils/performance';
 
 const HeroContent = () => {
-  // Throttled scroll handler for better performance
-  const handleScrollToContact = useMemo(() => 
-    throttle((e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        window.scrollTo({
-          top: contactSection.getBoundingClientRect().top + window.scrollY - 100,
-          behavior: 'smooth'
-        });
-      }
-    }, 300),
-  []);
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
