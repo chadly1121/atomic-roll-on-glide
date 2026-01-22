@@ -5,8 +5,12 @@ import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react'
 
 const AIEstimatorSection = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
 
   useEffect(() => {
+    let timeoutId: number | undefined;
+
     // Load the widget script
     const script = document.createElement('script');
     const widgetSrc = 'https://d6d72e6c-0da2-43cd-9fd4-8c21ea4feb0f.lovableproject.com/widget.js';
@@ -18,35 +22,52 @@ const AIEstimatorSection = () => {
     );
     if (existingScript) {
       setIsLoading(false);
+      setLoadError(null);
       return;
     }
 
     script.src = widgetSrc;
     script.setAttribute('data-token', widgetToken);
     script.setAttribute('data-container', 'quohta-widget');
-    script.async = true;
-    script.onload = () => setIsLoading(false);
-    script.onerror = () => setIsLoading(false);
+    // Match provider snippet as closely as possible: no async/defer.
+    script.onload = () => {
+      setIsLoading(false);
+      setLoadError(null);
+    };
+    script.onerror = () => {
+      setIsLoading(false);
+      setLoadError('Estimator script failed to load.');
+    };
 
     // Insert the script right after the container to match the provider's embed snippet.
     // Some widgets rely on document.currentScript / sibling lookups.
     const container = document.getElementById('quohta-widget');
     if (!container) {
       setIsLoading(false);
+      setLoadError('Estimator container not found on page.');
       return;
     }
     container.insertAdjacentElement('afterend', script);
 
-    return () => {
-      // Cleanup script on unmount
-      const injected = document.querySelector(
-        `script[src="${widgetSrc}"][data-token="${widgetToken}"]`
-      );
-      if (injected) {
-        injected.remove();
+    // If the script loads but the widget never renders into the container,
+    // show a friendly error so the section isn't blank.
+    timeoutId = window.setTimeout(() => {
+      const stillEmpty = !container.hasChildNodes();
+      if (stillEmpty) {
+        setIsLoading(false);
+        setLoadError(
+          'Estimator loaded, but did not render. This is often caused by ad/script blockers or a blocked widget URL.'
+        );
       }
+    }, 12000);
+
+    return () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+      // NOTE: We intentionally do NOT remove the script on unmount.
+      // React StrictMode can mount/unmount twice in dev, and some widgets don't
+      // re-initialize cleanly if their script is removed.
     };
-  }, []);
+  }, [retryKey]);
 
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
@@ -132,6 +153,27 @@ const AIEstimatorSection = () => {
                 <div className="flex flex-col items-center gap-3">
                   <Loader2 className="w-8 h-8 text-atomic-pink animate-spin" />
                   <p className="text-atomic-navy/70 text-sm">Loading estimator...</p>
+                </div>
+              </div>
+            )}
+
+            {/* Error state */}
+            {!isLoading && loadError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl z-10 p-6">
+                <div className="max-w-md text-center space-y-4">
+                  <p className="text-atomic-navy font-semibold">Estimator unavailable</p>
+                  <p className="text-atomic-navy/70 text-sm leading-relaxed">{loadError}</p>
+                  <button
+                    type="button"
+                    className="atomic-button border-2 border-atomic-pink bg-atomic-pink hover:bg-atomic-pink/90"
+                    onClick={() => {
+                      setIsLoading(true);
+                      setLoadError(null);
+                      setRetryKey((k) => k + 1);
+                    }}
+                  >
+                    Try again
+                  </button>
                 </div>
               </div>
             )}
