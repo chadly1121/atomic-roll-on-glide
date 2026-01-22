@@ -47,28 +47,28 @@ const AIEstimatorSection = () => {
       return;
     }
 
-    // Check if script already exists
-    const existingScript = document.querySelector(`script[src^="${scriptUrl.split('?')[0]}"]`);
+    // Clear container first
+    container.innerHTML = '';
+
+    // Check if script already exists and remove it to allow fresh load
+    const existingScript = document.querySelector(`script[data-container="quohta-widget"]`);
     if (existingScript) {
-      setIsLoading(false);
-      return;
+      existingScript.remove();
     }
 
     try {
-      // Create and inject the script with data attributes
+      // Create and inject the script exactly as the embed snippet specifies
       const script = document.createElement('script');
       script.src = scriptUrl;
       script.setAttribute('data-token', widgetToken);
       script.setAttribute('data-container', 'quohta-widget');
-      script.async = true;
 
       script.onload = () => {
         // Script loaded, widget should initialize
-        // Give it a moment to create the iframe
         setTimeout(() => {
           setIsLoading(false);
           setLoadError(null);
-        }, 1000);
+        }, 500);
       };
 
       script.onerror = () => {
@@ -76,8 +76,8 @@ const AIEstimatorSection = () => {
         setLoadError('Failed to load the estimator script.');
       };
 
-      // Append script to document head
-      document.head.appendChild(script);
+      // Append script to document body (like the embed snippet would)
+      document.body.appendChild(script);
 
       // Timeout fallback - just hide loading, don't show error
       timeoutId = window.setTimeout(() => {
