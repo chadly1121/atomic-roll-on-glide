@@ -1,9 +1,6 @@
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Award, BadgeCheck, Star } from 'lucide-react';
+import { Shield, BadgeCheck, Star } from 'lucide-react';
 import { partnerLogos } from '@/data/partnerLogos';
-import { LazyImage } from '@/components/ui/lazy-image';
 
 interface TrustItemProps {
   icon: React.ReactNode;
@@ -12,40 +9,34 @@ interface TrustItemProps {
 }
 
 const TrustItem: React.FC<TrustItemProps> = ({ icon, title, description }) => (
-  <motion.div 
-    className="flex flex-col items-center text-center p-4"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4 }}
-  >
+  <div className="flex flex-col items-center text-center p-4">
     <div className="mb-3 text-atomic-turquoise">
       {icon}
     </div>
     <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <p className="text-sm text-gray-600">{description}</p>
-  </motion.div>
+    <p className="text-sm text-muted-foreground">{description}</p>
+  </div>
 );
 
 const TrustBadges: React.FC = () => {
   const certifications = [
     {
-      icon: <Shield className="h-12 w-12" />,
+      icon: <Shield className="h-12 w-12" aria-hidden="true" />,
       title: "Uniformed Professional Painters",
       description: "Member of the Painting Contractors Association"
     },
     {
-      icon: <BadgeCheck className="h-12 w-12" />,
+      icon: <BadgeCheck className="h-12 w-12" aria-hidden="true" />,
       title: "W.S.I.B and 5 Million Liability Insurance",
       description: "Fully covered for your peace of mind"
     },
     {
-      icon: <Star className="h-12 w-12" />,
+      icon: <Star className="h-12 w-12" aria-hidden="true" />,
       title: "5-Star Service",
       description: "Consistently rated 5 stars by our satisfied customers"
     },
     {
-      icon: <Shield className="h-12 w-12" />,
+      icon: <Shield className="h-12 w-12" aria-hidden="true" />,
       title: "Free Estimates",
       description: "Professional estimates with no obligation"
     }
@@ -56,7 +47,7 @@ const TrustBadges: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="section-heading">Why Trust Roll On Painting</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             We're proud to be recognized for our commitment to quality and excellence
           </p>
         </div>
@@ -76,34 +67,25 @@ const TrustBadges: React.FC = () => {
         <div className="mt-16 pt-12 border-t">
           <h3 className="text-2xl font-bold text-center mb-8">Our Partners & Affiliations</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center">
             {partnerLogos.map((partner, index) => (
-              <motion.div
+              <a
                 key={index}
-                className="transition-all duration-300"
-                whileHover={{ scale: 1.15, y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${partner.name} website`}
+                className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 w-full flex flex-col items-center"
               >
-                <a 
-                  href={partner.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label={`Visit ${partner.name} website`}
-                  className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <LazyImage 
-                    src={partner.logo} 
-                    alt={partner.altText} 
-                    className="max-h-16 w-auto mx-auto"
-                    width={160}
-                    height={80}
-                    priority={index < 4} // Prioritize loading first 4 logos
-                  />
-                </a>
-              </motion.div>
+                <div className="w-12 h-12 rounded-full bg-atomic-turquoise/10 flex items-center justify-center mb-2">
+                  <span className="text-lg font-bold text-atomic-turquoise">
+                    {partner.name.charAt(0)}
+                  </span>
+                </div>
+                <span className="text-sm font-medium text-foreground text-center line-clamp-1">
+                  {partner.name}
+                </span>
+              </a>
             ))}
           </div>
         </div>

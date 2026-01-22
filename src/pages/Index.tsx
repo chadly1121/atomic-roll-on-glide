@@ -45,32 +45,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
-  
-  // Preload images for better performance
-  useEffect(() => {
-    // Preload TV section images
-    const preloadTVImages = () => {
-      const imageUrl = "https://www.homenetwork.ca/wp-content/uploads/2023/03/scotts-vacation-house-rules-episode-407-1200x675.jpg";
-      const img = new Image();
-      img.src = imageUrl;
-    };
-    
-    preloadTVImages();
-    
-    // Add preload for Jobber form scripts
-    const preloadJobberScript = document.createElement('link');
-    preloadJobberScript.rel = 'preload';
-    preloadJobberScript.as = 'script';
-    preloadJobberScript.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js';
-    document.head.appendChild(preloadJobberScript);
-    
-    // Preload CSS
-    const preloadJobberCSS = document.createElement('link');
-    preloadJobberCSS.rel = 'preload';
-    preloadJobberCSS.as = 'style';
-    preloadJobberCSS.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
-    document.head.appendChild(preloadJobberCSS);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">

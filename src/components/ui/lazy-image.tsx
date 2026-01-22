@@ -91,7 +91,6 @@ const LazyImage = ({
   };
 
   const handleError = () => {
-    console.info("Image failed to load, setting fallback");
     setError(true);
     setIsLoaded(false);
   };
