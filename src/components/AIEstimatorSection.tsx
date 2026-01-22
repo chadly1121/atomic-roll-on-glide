@@ -80,7 +80,7 @@ const AIEstimatorSection = () => {
           >
             {/* Direct iframe embed - simple and reliable */}
             <iframe 
-              src="https://paint-quick-quote.lovable.app/embed/f17f46f634ff3cfddfbbea7e0474d3a9" 
+              src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26" 
               width="100%" 
               height="700" 
               style={{ border: 'none', maxWidth: '600px', display: 'block', margin: '0 auto' }}
