@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
+  const [shouldLoadIframe, setShouldLoadIframe] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const benefits = [
@@ -13,15 +13,34 @@ const AIEstimatorSection = () => {
     { icon: CheckCircle, text: "No obligation quote" },
   ];
 
-  // Prevent infinite spinner if the iframe never fires onLoad (blocked / offline / etc.)
+  // Use Intersection Observer to load iframe only when section is visible
   useEffect(() => {
-    if (isLoaded) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldLoadIframe(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px', threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Prevent infinite spinner if the iframe never fires onLoad
+  useEffect(() => {
+    if (isLoaded || !shouldLoadIframe) return;
     const t = window.setTimeout(() => {
       setShowFallback(true);
       console.info('[AIEstimator] iframe still not loaded after timeout');
     }, 12000);
     return () => window.clearTimeout(t);
-  }, [isLoaded]);
+  }, [isLoaded, shouldLoadIframe]);
 
   return (
     <section 
@@ -30,16 +49,8 @@ const AIEstimatorSection = () => {
       className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
       aria-labelledby="ai-estimator-heading"
     >
-      {/* Background decoration removed for performance */}
-
       <div className="container mx-auto px-3 sm:px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
-        >
+        <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-atomic-pink/20 text-atomic-pink px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             <span className="font-semibold text-xs sm:text-sm uppercase tracking-wide">AI-Powered Technology</span>
@@ -54,66 +65,64 @@ const AIEstimatorSection = () => {
           
           <p className="text-sm sm:text-base md:text-lg text-atomic-navy/70 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
             Our AI-powered estimator gives you an accurate quote in seconds. Simply answer a few questions 
-            about your project and get a professional estimate instantly – no waiting, no pressure.
+            about your project and get a professional estimate instantly.
           </p>
 
-          {/* Benefits - stack on mobile */}
+          {/* Benefits - simplified for performance */}
           <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 mb-6 sm:mb-10 px-2" role="list">
             {benefits.map((benefit, index) => (
-              <motion.li
+              <li
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg shadow-sm"
+                className="flex items-center justify-center gap-2 bg-white/80 px-3 sm:px-4 py-2 rounded-lg shadow-sm"
               >
                 <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-atomic-turquoise flex-shrink-0" aria-hidden="true" />
                 <span className="text-atomic-navy font-medium text-sm sm:text-base">{benefit.text}</span>
-              </motion.li>
+              </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
         {/* Widget Container */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[700px]"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[500px] sm:min-h-[700px]"
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
             <div className="relative">
-              {/* Iframe (always rendered so the browser can show useful errors if blocked) */}
-              <iframe
-                src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26"
-                width="100%"
-                height="700"
-                style={{
-                  border: 'none',
-                  maxWidth: '600px',
-                  display: 'block',
-                  margin: '0 auto',
-                }}
-                title="Get a Free Painting Estimate"
-                loading="lazy"
-                onLoad={() => {
-                  console.info('[AIEstimator] iframe loaded');
-                  setIsLoaded(true);
-                  setShowFallback(false);
-                }}
-                allow="clipboard-write"
-              />
+              {/* Only load iframe when section is visible */}
+              {shouldLoadIframe ? (
+                <iframe
+                  src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26"
+                  width="100%"
+                  height="650"
+                  style={{
+                    border: 'none',
+                    maxWidth: '600px',
+                    display: 'block',
+                    margin: '0 auto',
+                  }}
+                  title="Get a Free Painting Estimate"
+                  loading="lazy"
+                  onLoad={() => {
+                    console.info('[AIEstimator] iframe loaded');
+                    setIsLoaded(true);
+                    setShowFallback(false);
+                  }}
+                  allow="clipboard-write"
+                />
+              ) : (
+                /* Placeholder before iframe loads */
+                <div className="flex flex-col items-center justify-center py-20">
+                  <Calculator className="w-16 h-16 text-atomic-pink/50 mb-4" />
+                  <p className="text-atomic-navy/60 text-center">Loading estimator...</p>
+                </div>
+              )}
 
               {/* Loading overlay */}
-              {!isLoaded && (
+              {shouldLoadIframe && !isLoaded && (
                 <div
-                  className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm"
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-white/80"
                   aria-busy="true"
                   aria-live="polite"
                 >
@@ -143,9 +152,9 @@ const AIEstimatorSection = () => {
           
           {/* Trust indicator */}
           <p className="text-center text-xs sm:text-sm text-atomic-navy/50 mt-3 sm:mt-4 px-2">
-            Trusted by hundreds of Muskoka homeowners • Powered by advanced AI technology
+            Trusted by hundreds of Muskoka homeowners
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

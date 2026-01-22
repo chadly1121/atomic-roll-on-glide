@@ -1,58 +1,89 @@
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
-import React, { Suspense, lazy, useEffect } from 'react';
+// Lazy load heavy components
+const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
+const TrendsSection = lazy(() => import('../TrendsSection'));
+const ContactSection = lazy(() => import('../ContactSection'));
+const Footer = lazy(() => import('../Footer'));
 
-// Loading fallback with reduced animation when reduced motion is preferred
-const SectionLoading = () => {
-  const [reducedMotion, setReducedMotion] = React.useState(false);
-  
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
-    
-    const handleChange = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches);
-    };
-    
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return (
-    <div className="w-full py-24 flex justify-center items-center">
-      <div className={`w-16 h-16 border-4 border-atomic-turquoise border-t-atomic-orange rounded-full ${!reducedMotion ? 'animate-spin' : ''}`}></div>
-    </div>
-  );
-};
-
-// Import sections directly instead of lazy loading to avoid dynamic import issues
-import TestimonialsSection from '../TestimonialsSection';
-import TrendsSection from '../TrendsSection';
-import ContactSection from '../ContactSection';
-import Footer from '../Footer';
+// Minimal loading placeholder
+const SectionPlaceholder = () => (
+  <div className="w-full py-16 flex justify-center">
+    <div className="w-10 h-10 border-3 border-atomic-turquoise border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 interface LazySectionLoaderProps {
   visibleSections: Set<string>;
 }
 
 const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }) => {
-  // No need for preloading since we're importing directly
+  const [sectionsInView, setSectionsInView] = useState<Set<string>>(new Set());
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Use Intersection Observer for true lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('data-section');
+            if (sectionId) {
+              setSectionsInView(prev => new Set([...prev, sectionId]));
+            }
+          }
+        });
+      },
+      { rootMargin: '300px', threshold: 0 }
+    );
+
+    // Observe placeholder elements
+    const placeholders = containerRef.current?.querySelectorAll('[data-section]');
+    placeholders?.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
-      {/* Conditionally rendered sections (below the fold) */}
-      {visibleSections.has('testimonials') && (
-        <TestimonialsSection />
-      )}
-      
-      {visibleSections.has('trends') && (
-        <TrendsSection />
-      )}
-      
-      {visibleSections.has('contact') && (
-        <ContactSection />
-      )}
-      
-      <Footer />
-    </>
+    <div ref={containerRef}>
+      {/* Testimonials */}
+      <div data-section="testimonials">
+        {sectionsInView.has('testimonials') ? (
+          <Suspense fallback={<SectionPlaceholder />}>
+            <TestimonialsSection />
+          </Suspense>
+        ) : (
+          <div className="min-h-[200px]" />
+        )}
+      </div>
+
+      {/* Trends */}
+      <div data-section="trends">
+        {sectionsInView.has('trends') ? (
+          <Suspense fallback={<SectionPlaceholder />}>
+            <TrendsSection />
+          </Suspense>
+        ) : (
+          <div className="min-h-[200px]" />
+        )}
+      </div>
+
+      {/* Contact */}
+      <div data-section="contact">
+        {sectionsInView.has('contact') ? (
+          <Suspense fallback={<SectionPlaceholder />}>
+            <ContactSection />
+          </Suspense>
+        ) : (
+          <div className="min-h-[200px]" />
+        )}
+      </div>
+
+      {/* Footer - always load */}
+      <Suspense fallback={<SectionPlaceholder />}>
+        <Footer />
+      </Suspense>
+    </div>
   );
 };
 
