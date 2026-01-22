@@ -31,7 +31,7 @@ const AIEstimatorSection = () => {
     let timeoutId: number | undefined;
 
     const widgetToken = 'dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26';
-    const baseUrl = 'https://paint-quick-quote.lovable.app';
+    const scriptUrl = 'https://paint-quick-quote.lovable.app/widget.js?v=9';
     
     const container = document.getElementById('quohta-widget');
     if (!container) {
@@ -40,51 +40,49 @@ const AIEstimatorSection = () => {
       return;
     }
 
-    // Check if iframe already exists (e.g., React StrictMode double-mount)
+    // Check if widget already exists (e.g., React StrictMode double-mount)
     if (container.querySelector('iframe')) {
       setIsLoading(false);
       setLoadError(null);
       return;
     }
 
-    // Instead of loading the widget script (which relies on document.currentScript),
-    // we directly create the iframe as the script would do.
-    // This is more reliable for dynamic/SPA injection.
+    // Check if script already exists
+    const existingScript = document.querySelector(`script[src^="${scriptUrl.split('?')[0]}"]`);
+    if (existingScript) {
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      // Style the container for proper centering (matching widget.js)
-      container.style.cssText = 'width: 100%; max-width: 600px; margin: 0 auto; position: relative;';
+      // Create and inject the script with data attributes
+      const script = document.createElement('script');
+      script.src = scriptUrl;
+      script.setAttribute('data-token', widgetToken);
+      script.setAttribute('data-container', 'quohta-widget');
+      script.async = true;
 
-      // Create the iframe directly
-      const iframe = document.createElement('iframe');
-      iframe.src = `${baseUrl}/embed/${widgetToken}`;
-      iframe.width = '100%';
-      iframe.height = '700';
-      iframe.frameBorder = '0';
-      iframe.scrolling = 'no';
-      iframe.style.cssText = 'border: none; display: block; width: 100%; min-height: 600px;';
-      iframe.setAttribute('title', 'Quohta Quote Widget');
-      iframe.setAttribute('allow', 'clipboard-write');
-
-      container.appendChild(iframe);
-
-      // Listen for iframe load
-      iframe.onload = () => {
-        setIsLoading(false);
-        setLoadError(null);
-      };
-
-      iframe.onerror = () => {
-        setIsLoading(false);
-        setLoadError('Failed to load the estimator.');
-      };
-
-      // Timeout fallback if iframe doesn't trigger onload
-      timeoutId = window.setTimeout(() => {
-        if (isLoading) {
+      script.onload = () => {
+        // Script loaded, widget should initialize
+        // Give it a moment to create the iframe
+        setTimeout(() => {
           setIsLoading(false);
-          // Don't show error if iframe is present - it might just be slow
-        }
-      }, 10000);
+          setLoadError(null);
+        }, 1000);
+      };
+
+      script.onerror = () => {
+        setIsLoading(false);
+        setLoadError('Failed to load the estimator script.');
+      };
+
+      // Append script to document head
+      document.head.appendChild(script);
+
+      // Timeout fallback - just hide loading, don't show error
+      timeoutId = window.setTimeout(() => {
+        setIsLoading(false);
+      }, 15000);
 
     } catch (e) {
       setIsLoading(false);
