@@ -1,100 +1,9 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Sparkles, Clock, CheckCircle, Loader2 } from 'lucide-react';
+import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
 const AIEstimatorSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-  const [retryKey, setRetryKey] = useState(0);
-
-  // Prevent Enter key from scrolling the main page when widget is focused
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Check if the active element is inside the widget iframe or section
-      const activeElement = document.activeElement;
-      const widgetSection = document.getElementById('ai-estimator');
-      const isWidgetFocused = widgetSection?.contains(activeElement) || 
-                              activeElement?.tagName === 'IFRAME';
-      
-      if (e.key === 'Enter' && isWidgetFocused) {
-        // Prevent default scroll behavior
-        e.preventDefault();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown, { capture: true });
-    return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
-  }, []);
-
-  useEffect(() => {
-    let timeoutId: number | undefined;
-
-    const widgetToken = 'dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26';
-    const scriptUrl = 'https://paint-quick-quote.lovable.app/widget.js?v=9';
-    
-    const container = document.getElementById('quohta-widget');
-    if (!container) {
-      setIsLoading(false);
-      setLoadError('Estimator container not found on page.');
-      return;
-    }
-
-    // Check if widget already exists (e.g., React StrictMode double-mount)
-    if (container.querySelector('iframe')) {
-      setIsLoading(false);
-      setLoadError(null);
-      return;
-    }
-
-    // Clear container first
-    container.innerHTML = '';
-
-    // Check if script already exists and remove it to allow fresh load
-    const existingScript = document.querySelector(`script[data-container="quohta-widget"]`);
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    try {
-      // Create and inject the script exactly as the embed snippet specifies
-      const script = document.createElement('script');
-      script.src = scriptUrl;
-      script.setAttribute('data-token', widgetToken);
-      script.setAttribute('data-container', 'quohta-widget');
-
-      script.onload = () => {
-        // Script loaded, widget should initialize
-        setTimeout(() => {
-          setIsLoading(false);
-          setLoadError(null);
-        }, 500);
-      };
-
-      script.onerror = () => {
-        setIsLoading(false);
-        setLoadError('Failed to load the estimator script.');
-      };
-
-      // Append script to document body (like the embed snippet would)
-      document.body.appendChild(script);
-
-      // Timeout fallback - just hide loading, don't show error
-      timeoutId = window.setTimeout(() => {
-        setIsLoading(false);
-      }, 15000);
-
-    } catch (e) {
-      setIsLoading(false);
-      setLoadError('Failed to initialize estimator.');
-      console.error('Quohta widget error:', e);
-    }
-
-    return () => {
-      if (timeoutId) window.clearTimeout(timeoutId);
-    };
-  }, [retryKey]);
-
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
     { icon: Calculator, text: "AI-powered accuracy" },
@@ -162,59 +71,20 @@ const AIEstimatorSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto sticky top-20 z-30"
+          className="max-w-4xl mx-auto"
         >
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[600px] sm:min-h-[700px] md:min-h-[750px] relative"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20"
             role="application"
             aria-label="AI Painting Cost Estimator"
-            style={{ 
-              overflowAnchor: 'none',
-              scrollMarginTop: '80px'
-            }}
-            onFocus={() => {
-              // Prevent scroll jumps when widget gains focus
-              document.body.style.scrollBehavior = 'auto';
-            }}
-            onBlur={() => {
-              document.body.style.scrollBehavior = '';
-            }}
           >
-            {/* Loading state */}
-            {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl z-10">
-                <div className="flex flex-col items-center gap-3">
-                  <Loader2 className="w-8 h-8 text-atomic-pink animate-spin" />
-                  <p className="text-atomic-navy/70 text-sm">Loading estimator...</p>
-                </div>
-              </div>
-            )}
-
-            {/* Error state */}
-            {!isLoading && loadError && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white rounded-xl sm:rounded-2xl z-10 p-6">
-                <div className="max-w-md text-center space-y-4">
-                  <p className="text-atomic-navy font-semibold">Estimator unavailable</p>
-                  <p className="text-atomic-navy/70 text-sm leading-relaxed">{loadError}</p>
-                  <button
-                    type="button"
-                    className="atomic-button border-2 border-atomic-pink bg-atomic-pink hover:bg-atomic-pink/90"
-                    onClick={() => {
-                      setIsLoading(true);
-                      setLoadError(null);
-                      setRetryKey((k) => k + 1);
-                    }}
-                  >
-                    Try again
-                  </button>
-                </div>
-              </div>
-            )}
-            {/* Widget container - taller for mobile usability */}
-            <div 
-              id="quohta-widget" 
-              className="w-full flex justify-center min-h-[550px] sm:min-h-[650px]"
-              style={{ overflowAnchor: 'none' }}
+            {/* Direct iframe embed - simple and reliable */}
+            <iframe 
+              src="https://paint-quick-quote.lovable.app/embed/f17f46f634ff3cfddfbbea7e0474d3a9" 
+              width="100%" 
+              height="700" 
+              style={{ border: 'none', maxWidth: '600px', display: 'block', margin: '0 auto' }}
+              title="Get a Free Painting Estimate"
             />
           </div>
           
