@@ -7,15 +7,14 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-// Reduced to 6 high-quality images for better LCP performance
+// Residential-only images for hero carousel
 const galleryImages = [
-  // Best residential images only
-  "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
-  "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
-  "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",
-  "/lovable-uploads/461669ed-78ae-4205-8161-a3c05dc5143c.png",
-  "/lovable-uploads/e1c9d1df-a4ed-49a4-b67c-c7ea2108092e.png",
-  "/lovable-uploads/c3ff2882-fdbf-4fb8-8b69-ae377584ec4d.png",
+  "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png", // Hallway Interior
+  "/lovable-uploads/54c5f452-ea9f-49eb-aa4c-4e0e8a24420f.png", // Modern Bathroom
+  "/lovable-uploads/1855749d-b944-4711-a457-be80657744dc.png", // Living Space
+  "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png", // Lakefront Cottage Exterior
+  "/lovable-uploads/d455e973-829f-49e8-87be-80648d1b4326.png", // Cedar Shingle Home
+  "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.png", // Deck Staining
 ];
 
 const HeroCarousel = () => {
