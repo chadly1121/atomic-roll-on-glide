@@ -4,6 +4,7 @@ import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
 const AIEstimatorSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const benefits = [
@@ -11,6 +12,16 @@ const AIEstimatorSection = () => {
     { icon: Calculator, text: "AI-powered accuracy" },
     { icon: CheckCircle, text: "No obligation quote" },
   ];
+
+  // Prevent infinite spinner if the iframe never fires onLoad (blocked / offline / etc.)
+  useEffect(() => {
+    if (isLoaded) return;
+    const t = window.setTimeout(() => {
+      setShowFallback(true);
+      console.info('[AIEstimator] iframe still not loaded after timeout');
+    }, 12000);
+    return () => window.clearTimeout(t);
+  }, [isLoaded]);
 
   return (
     <section 
@@ -81,30 +92,57 @@ const AIEstimatorSection = () => {
             role="application"
             aria-label="AI Painting Cost Estimator"
           >
-            {/* Loading placeholder */}
-            {!isLoaded && (
-              <div className="flex flex-col items-center justify-center h-[650px]" aria-busy="true" aria-live="polite">
-                <div className="w-12 h-12 border-4 border-atomic-pink border-t-transparent rounded-full animate-spin mb-4" />
-                <p className="text-atomic-navy/60">Loading estimator...</p>
+            <div className="relative">
+              {/* Iframe (always rendered so the browser can show useful errors if blocked) */}
+              <iframe
+                src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26"
+                width="100%"
+                height="700"
+                style={{
+                  border: 'none',
+                  maxWidth: '600px',
+                  display: 'block',
+                  margin: '0 auto',
+                }}
+                title="Get a Free Painting Estimate"
+                loading="lazy"
+                onLoad={() => {
+                  console.info('[AIEstimator] iframe loaded');
+                  setIsLoaded(true);
+                  setShowFallback(false);
+                }}
+                allow="clipboard-write"
+              />
+
+              {/* Loading overlay */}
+              {!isLoaded && (
+                <div
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm"
+                  aria-busy="true"
+                  aria-live="polite"
+                >
+                  <div className="w-12 h-12 border-4 border-atomic-pink border-t-transparent rounded-full animate-spin mb-4" />
+                  <p className="text-atomic-navy/60">Loading estimator...</p>
+                </div>
+              )}
+            </div>
+
+            {/* Fallback link if the iframe never loads */}
+            {showFallback && !isLoaded && (
+              <div className="mt-4 text-center px-2">
+                <p className="text-sm text-atomic-navy/70">
+                  Having trouble loading the estimator?
+                </p>
+                <a
+                  href="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-semibold underline underline-offset-4 text-atomic-pink"
+                >
+                  Open it in a new tab
+                </a>
               </div>
             )}
-            
-            {/* Iframe with native lazy loading */}
-            <iframe 
-              src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26" 
-              width="100%" 
-              height="700" 
-              style={{ 
-                border: 'none', 
-                maxWidth: '600px', 
-                display: isLoaded ? 'block' : 'none', 
-                margin: '0 auto' 
-              }}
-              title="Get a Free Painting Estimate"
-              loading="lazy"
-              onLoad={() => setIsLoaded(true)}
-              allow="clipboard-write"
-            />
           </div>
           
           {/* Trust indicator */}
