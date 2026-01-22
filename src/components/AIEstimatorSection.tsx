@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 
 const AIEstimatorSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -12,25 +11,6 @@ const AIEstimatorSection = () => {
     { icon: Calculator, text: "AI-powered accuracy" },
     { icon: CheckCircle, text: "No obligation quote" },
   ];
-
-  // Lazy load iframe when section is visible
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '200px', threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section 
@@ -102,31 +82,29 @@ const AIEstimatorSection = () => {
             aria-label="AI Painting Cost Estimator"
           >
             {/* Loading placeholder */}
-            {!isLoaded && isVisible && (
+            {!isLoaded && (
               <div className="flex flex-col items-center justify-center h-[650px]" aria-busy="true" aria-live="polite">
                 <div className="w-12 h-12 border-4 border-atomic-pink border-t-transparent rounded-full animate-spin mb-4" />
                 <p className="text-atomic-navy/60">Loading estimator...</p>
               </div>
             )}
             
-            {/* Lazy loaded iframe */}
-            {isVisible && (
-              <iframe 
-                src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26" 
-                width="100%" 
-                height="700" 
-                style={{ 
-                  border: 'none', 
-                  maxWidth: '600px', 
-                  display: isLoaded ? 'block' : 'none', 
-                  margin: '0 auto' 
-                }}
-                title="Get a Free Painting Estimate"
-                loading="lazy"
-                onLoad={() => setIsLoaded(true)}
-                allow="clipboard-write"
-              />
-            )}
+            {/* Iframe with native lazy loading */}
+            <iframe 
+              src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26" 
+              width="100%" 
+              height="700" 
+              style={{ 
+                border: 'none', 
+                maxWidth: '600px', 
+                display: isLoaded ? 'block' : 'none', 
+                margin: '0 auto' 
+              }}
+              title="Get a Free Painting Estimate"
+              loading="lazy"
+              onLoad={() => setIsLoaded(true)}
+              allow="clipboard-write"
+            />
           </div>
           
           {/* Trust indicator */}
