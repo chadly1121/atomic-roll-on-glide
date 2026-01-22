@@ -1,72 +1,71 @@
+/* Component styles - requires @tailwind components from base.css */
 
-@layer components {
-  .atomic-shape {
-    @apply relative;
-  }
-  
-  .atomic-shape::before {
-    content: '';
-    @apply absolute w-44 h-44 rounded-full bg-atomic-orange/20 -z-10 blur-2xl;
-  }
+.atomic-shape {
+  @apply relative;
+}
 
-  .atomic-circle {
-    @apply absolute rounded-full opacity-50;
-  }
+.atomic-shape::before {
+  content: '';
+  @apply absolute w-44 h-44 rounded-full bg-atomic-orange/20 -z-10 blur-2xl;
+}
 
-  .atomic-starburst {
-    @apply absolute -z-10;
-    background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(255,255,255,0) 70%);
-  }
-  
-  .section-heading {
-    @apply text-4xl md:text-5xl font-bold relative mb-12 inline-block;
-  }
-  
-  .section-heading::after {
-    content: '';
-    @apply absolute left-1/4 -bottom-4 h-1 w-1/2 bg-atomic-orange rounded-full;
-  }
+.atomic-circle {
+  @apply absolute rounded-full opacity-50;
+}
 
-  .nav-link {
-    @apply relative font-poppins text-atomic-navy hover:text-atomic-orange transition-colors duration-300;
-  }
-  
-  .nav-link::after {
-    content: '';
-    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-atomic-orange transition-all duration-300;
-  }
-  
-  .nav-link:hover::after {
-    @apply w-full;
-  }
+.atomic-starburst {
+  @apply absolute -z-10;
+  background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(255,255,255,0) 70%);
+}
 
-  .retro-card {
-    @apply bg-white rounded-xl shadow-lg overflow-hidden border-2 border-atomic-orange/10 hover:shadow-xl transition-all;
-    border-radius: 16px 16px 16px 60px;
-  }
+.section-heading {
+  @apply text-4xl md:text-5xl font-bold relative mb-12 inline-block;
+}
 
-  .atomic-button {
-    @apply px-6 py-3 rounded-full font-poppins font-medium text-white transition-all duration-300 inline-block relative overflow-hidden;
-  }
-  
-  .atomic-button::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-atomic-orange to-atomic-orange/80 -z-10;
-  }
-  
-  .atomic-button:hover::before {
-    @apply bg-gradient-to-r from-atomic-orange/90 to-atomic-orange;
-  }
-  
-  .atomic-button-secondary {
-    @apply atomic-button;
-  }
-  
-  .atomic-button-secondary::before {
-    @apply bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80;
-  }
-  
-  .atomic-button-secondary:hover::before {
-    @apply bg-gradient-to-r from-atomic-turquoise/90 to-atomic-turquoise;
-  }
+.section-heading::after {
+  content: '';
+  @apply absolute left-1/4 -bottom-4 h-1 w-1/2 bg-atomic-orange rounded-full;
+}
+
+.nav-link {
+  @apply relative font-poppins text-atomic-navy hover:text-atomic-orange transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-atomic-orange transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.retro-card {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden border-2 border-atomic-orange/10 hover:shadow-xl transition-all;
+  border-radius: 16px 16px 16px 60px;
+}
+
+.atomic-button {
+  @apply px-6 py-3 rounded-full font-poppins font-medium text-white transition-all duration-300 inline-block relative overflow-hidden;
+}
+
+.atomic-button::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-atomic-orange to-atomic-orange/80 -z-10;
+}
+
+.atomic-button:hover::before {
+  @apply bg-gradient-to-r from-atomic-orange/90 to-atomic-orange;
+}
+
+.atomic-button-secondary {
+  @apply atomic-button;
+}
+
+.atomic-button-secondary::before {
+  @apply bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80;
+}
+
+.atomic-button-secondary:hover::before {
+  @apply bg-gradient-to-r from-atomic-turquoise/90 to-atomic-turquoise;
 }
