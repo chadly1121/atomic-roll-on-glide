@@ -11,66 +11,70 @@ const AIEstimatorSection = () => {
   useEffect(() => {
     let timeoutId: number | undefined;
 
-    // Load the widget script
-    const script = document.createElement('script');
-    // Published widget URL - stable for production use
-    const widgetSrc =
-      import.meta.env.VITE_QUOHTA_WIDGET_SRC ||
-      'https://paint-quick-quote.lovable.app/widget.js?v=9';
     const widgetToken = 'dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26';
-
-    // If the widget script is already present (e.g., React StrictMode), don't inject twice.
-    const existingScript = document.querySelector(
-      `script[src="${widgetSrc}"][data-token="${widgetToken}"]`
-    );
-    if (existingScript) {
-      setIsLoading(false);
-      setLoadError(null);
-      return;
-    }
-
-    script.src = widgetSrc;
-    script.setAttribute('data-token', widgetToken);
-    script.setAttribute('data-container', 'quohta-widget');
-    // Match provider snippet as closely as possible: no async/defer.
-    script.onload = () => {
-      setIsLoading(false);
-      setLoadError(null);
-    };
-    script.onerror = () => {
-      setIsLoading(false);
-      setLoadError('Estimator script failed to load.');
-    };
-
-    // Insert the script right after the container to match the provider's embed snippet.
-    // Some widgets rely on document.currentScript / sibling lookups.
+    const baseUrl = 'https://paint-quick-quote.lovable.app';
+    
     const container = document.getElementById('quohta-widget');
     if (!container) {
       setIsLoading(false);
       setLoadError('Estimator container not found on page.');
       return;
     }
-    // Set the token on the container (where the widget expects to find it)
-    container.setAttribute('data-token', widgetToken);
-    container.insertAdjacentElement('afterend', script);
 
-    // If the script loads but the widget never renders into the container,
-    // show a friendly error so the section isn't blank.
-    timeoutId = window.setTimeout(() => {
-      const stillEmpty = !container.hasChildNodes();
-      if (stillEmpty) {
+    // Check if iframe already exists (e.g., React StrictMode double-mount)
+    if (container.querySelector('iframe')) {
+      setIsLoading(false);
+      setLoadError(null);
+      return;
+    }
+
+    // Instead of loading the widget script (which relies on document.currentScript),
+    // we directly create the iframe as the script would do.
+    // This is more reliable for dynamic/SPA injection.
+    try {
+      // Style the container for proper centering (matching widget.js)
+      container.style.cssText = 'width: 100%; max-width: 600px; margin: 0 auto; position: relative;';
+
+      // Create the iframe directly
+      const iframe = document.createElement('iframe');
+      iframe.src = `${baseUrl}/embed/${widgetToken}`;
+      iframe.width = '100%';
+      iframe.height = '700';
+      iframe.frameBorder = '0';
+      iframe.scrolling = 'no';
+      iframe.style.cssText = 'border: none; display: block; width: 100%; min-height: 600px;';
+      iframe.setAttribute('title', 'Quohta Quote Widget');
+      iframe.setAttribute('allow', 'clipboard-write');
+
+      container.appendChild(iframe);
+
+      // Listen for iframe load
+      iframe.onload = () => {
         setIsLoading(false);
-        setLoadError(
-          'Estimator did not render. If your script URL is on lovableproject.com, it will redirect to a login page; use a published *.lovable.app/widget.js URL. Ad/script blockers can also prevent loading.'
-        );
-      }
-    }, 12000);
+        setLoadError(null);
+      };
+
+      iframe.onerror = () => {
+        setIsLoading(false);
+        setLoadError('Failed to load the estimator.');
+      };
+
+      // Timeout fallback if iframe doesn't trigger onload
+      timeoutId = window.setTimeout(() => {
+        if (isLoading) {
+          setIsLoading(false);
+          // Don't show error if iframe is present - it might just be slow
+        }
+      }, 10000);
+
+    } catch (e) {
+      setIsLoading(false);
+      setLoadError('Failed to initialize estimator.');
+      console.error('Quohta widget error:', e);
+    }
 
     return () => {
       if (timeoutId) window.clearTimeout(timeoutId);
-      // NOTE: We intentionally do NOT remove the script on unmount.
-      // React StrictMode can mount/unmount twice in dev, and some widgets don't
-      // re-initialize cleanly if their script is removed.
     };
   }, [retryKey]);
 
