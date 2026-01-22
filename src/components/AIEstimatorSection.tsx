@@ -8,6 +8,25 @@ const AIEstimatorSection = () => {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryKey, setRetryKey] = useState(0);
 
+  // Prevent Enter key from scrolling the main page when widget is focused
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check if the active element is inside the widget iframe or section
+      const activeElement = document.activeElement;
+      const widgetSection = document.getElementById('ai-estimator');
+      const isWidgetFocused = widgetSection?.contains(activeElement) || 
+                              activeElement?.tagName === 'IFRAME';
+      
+      if (e.key === 'Enter' && isWidgetFocused) {
+        // Prevent default scroll behavior
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown, { capture: true });
+    return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
+  }, []);
+
   useEffect(() => {
     let timeoutId: number | undefined;
 
@@ -145,7 +164,7 @@ const AIEstimatorSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto sticky top-20 z-30"
         >
           <div 
             className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[600px] sm:min-h-[700px] md:min-h-[750px] relative"
@@ -154,6 +173,13 @@ const AIEstimatorSection = () => {
             style={{ 
               overflowAnchor: 'none',
               scrollMarginTop: '80px'
+            }}
+            onFocus={() => {
+              // Prevent scroll jumps when widget gains focus
+              document.body.style.scrollBehavior = 'auto';
+            }}
+            onBlur={() => {
+              document.body.style.scrollBehavior = '';
             }}
           >
             {/* Loading state */}
