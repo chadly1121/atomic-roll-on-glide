@@ -23,6 +23,7 @@ import FloatingEstimateButton from '../components/conversion/FloatingEstimateBut
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
 
+// Updated: Jan 2025 - Mobile optimizations
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
