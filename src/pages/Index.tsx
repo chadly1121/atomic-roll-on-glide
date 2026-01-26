@@ -7,7 +7,7 @@ import ServicesSection from '../components/ServicesSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import PricingSection from '../components/PricingSection';
 import AsSeenonTVSection from '../components/AsSeenonTVSection';
-import AIEstimatorSection from '../components/AIEstimatorSection';
+
 
 // Import our new refactored components
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
@@ -18,7 +18,7 @@ import LazySectionLoader from '../components/layout/LazySectionLoader';
 
 // Import conversion components
 import InlineCTA from '../components/conversion/InlineCTA';
-import FloatingEstimateButton from '../components/conversion/FloatingEstimateButton';
+
 
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
@@ -63,8 +63,6 @@ const Index = () => {
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
       
-      {/* AI Estimator Section - Prominently placed after hero */}
-      <AIEstimatorSection />
       
       <AboutSection />
       
@@ -97,8 +95,6 @@ const Index = () => {
       {/* Scroll to Top Button */}
       <ScrollToTopButton showScrollTop={showScrollTop} />
       
-      {/* Floating AI Estimate Button */}
-      <FloatingEstimateButton />
       
       {/* Observer for section visibility */}
       <SectionObserver 
