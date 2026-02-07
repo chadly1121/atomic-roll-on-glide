@@ -102,8 +102,6 @@ const Index = () => {
         setVisibleSections={setVisibleSections}
       />
       
-      {/* Welcome toast */}
-      <WelcomeToast />
     </div>
   );
 };
