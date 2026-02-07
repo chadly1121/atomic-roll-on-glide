@@ -110,17 +110,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
                 </DropdownMenu>
               </>
             ) : (
-              <>
-                <Button
-                  variant="outline"
-                  onClick={() => navigate('/auth')}
-                  className="flex items-center gap-2"
-                >
-                  <User className="h-4 w-4" />
-                  Sign In
-                </Button>
-                <CTAButton handleNavLinkClick={handleNavLinkClick} />
-              </>
+              <CTAButton handleNavLinkClick={handleNavLinkClick} />
             )}
           </div>
           
@@ -183,14 +173,7 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
                   </motion.button>
                 </>
               ) : (
-                <div className="pt-4 space-y-4">
-                  <Button
-                    onClick={() => navigate('/auth')}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    Sign In
-                  </Button>
+                <div className="pt-4">
                   <CTAButton handleNavLinkClick={handleNavLinkClick} />
                 </div>
               )}
