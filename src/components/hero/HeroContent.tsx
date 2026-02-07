@@ -1,11 +1,13 @@
 import React from 'react';
-import { Atom, FileImage } from 'lucide-react';
+import { Atom, FileImage, Phone } from 'lucide-react';
 
 const HeroContent = () => {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const phoneNumber = "705-787-1401";
 
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
@@ -28,14 +30,22 @@ const HeroContent = () => {
       </div>
       
       <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-4">
-        <a href="#contact" className="atomic-button group border-2 border-atomic-orange bg-atomic-orange hover:bg-atomic-orange/90 text-center text-sm sm:text-base py-3 sm:py-4" onClick={handleScrollToContact}>
-          <span className="relative z-10 flex items-center justify-center">
-            Get a Free Quote
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </span>
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="#contact" className="atomic-button group border-2 border-atomic-orange bg-atomic-orange hover:bg-atomic-orange/90 text-center flex-1 text-sm sm:text-base py-3 sm:py-4" onClick={handleScrollToContact}>
+            <span className="relative z-10 flex items-center justify-center">
+              Get a Free Quote
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+          </a>
+          <a href={`tel:${phoneNumber.replace(/-/g, '')}`} className="atomic-button group border-2 border-atomic-turquoise bg-atomic-turquoise hover:bg-atomic-turquoise/90 text-center flex-1 text-sm sm:text-base py-3 sm:py-4">
+            <span className="relative z-10 flex items-center justify-center">
+              <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+              Call {phoneNumber}
+            </span>
+          </a>
+        </div>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <a href="#contact" className="atomic-button-secondary group border-2 border-atomic-turquoise text-center flex-1 text-sm sm:text-base py-3" onClick={handleScrollToContact}>
             <span className="relative z-10 flex items-center justify-center">
