@@ -1,5 +1,6 @@
 import React from 'react';
 import { Atom, FileImage, Phone } from 'lucide-react';
+import ResidentialGalleryPopup from '../gallery/ResidentialGalleryPopup';
 
 const HeroContent = () => {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -53,15 +54,7 @@ const HeroContent = () => {
               Send Us Your Plans
             </span>
           </a>
-          <a href="#services" className="atomic-button-secondary border-2 border-atomic-turquoise text-center flex-1 text-sm sm:text-base py-3" onClick={e => {
-          e.preventDefault();
-          document.querySelector('#services')?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }}>
-            <span className="relative z-10">Our Services</span>
-          </a>
+          <ResidentialGalleryPopup />
         </div>
       </div>
       
