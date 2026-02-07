@@ -69,13 +69,15 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
       </div>
 
       {/* Contact */}
-      <div data-section="contact">
+      <div id="contact" data-section="contact">
         {sectionsInView.has('contact') ? (
           <Suspense fallback={<SectionPlaceholder />}>
             <ContactSection />
           </Suspense>
         ) : (
-          <div className="min-h-[200px]" />
+          <div className="min-h-[400px] flex items-center justify-center">
+            <SectionPlaceholder />
+          </div>
         )}
       </div>
 
