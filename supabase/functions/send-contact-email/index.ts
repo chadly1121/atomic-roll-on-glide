@@ -83,20 +83,23 @@ function isRateLimited(ip: string): boolean {
 
 // Detect potential bot submissions
 function detectBot(userAgent?: string, submissionSpeed?: number): boolean {
-  if (!userAgent) return true;
+  // If no user agent, allow it (some browsers block this)
+  if (!userAgent) return false;
   
   // Check for common bot patterns
   const botPatterns = [
     /bot/i, /crawler/i, /spider/i, /scraper/i,
-    /curl/i, /wget/i, /python/i, /java/i
+    /curl/i, /wget/i, /python-requests/i, /java\//i,
+    /headless/i, /phantom/i, /selenium/i
   ];
   
   if (botPatterns.some(pattern => pattern.test(userAgent))) {
     return true;
   }
   
-  // Check submission speed (if submitted too fast, likely a bot)
-  if (submissionSpeed && submissionSpeed < 3000) { // Less than 3 seconds
+  // Only flag as bot if submitted incredibly fast (less than 500ms)
+  // This catches automated scripts but not fast human typists
+  if (submissionSpeed && submissionSpeed < 500) {
     return true;
   }
   
