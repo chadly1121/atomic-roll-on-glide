@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ServiceAreasPage from "./pages/ServiceAreasPage";
+import ServicePage from "./pages/ServicePage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
@@ -67,6 +68,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/service-areas" element={<ServiceAreasPage />} />
+                <Route path="/:slug" element={<ServicePage />} />
                 <Route path="*" element={
                   <>
                     <PageBreadcrumbs />
