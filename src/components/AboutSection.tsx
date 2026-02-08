@@ -71,7 +71,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-atomic-turquoise flex-shrink-0" aria-hidden="true" />
-                  <a href="mailto:leonardo@roll-onpainting.com" className="text-sm sm:text-base text-gray-600 hover:text-atomic-orange transition-colors py-1 break-all">leonardo@roll-onpainting.com</a>
+                  <a href="mailto:info@roll-onpainting.com" className="text-sm sm:text-base text-gray-600 hover:text-atomic-orange transition-colors py-1 break-all">info@roll-onpainting.com</a>
                 </div>
                 {/* Social links with touch-friendly sizing */}
                 <div className="flex flex-wrap gap-3 mt-4">

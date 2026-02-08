@@ -238,7 +238,7 @@ serve(async (req) => {
     // Send email to business
     const businessEmailResponse = await resend.emails.send({
       from: "Roll On Painting <noreply@rollonpainting.com>",
-      to: ["leonardo@roll-onpainting.com"],
+      to: ["info@roll-onpainting.com"],
       subject: `New Quote Request: ${sanitizedService}${hasAttachments ? ` (${attachments?.length} files)` : ''}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

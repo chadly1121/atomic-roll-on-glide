@@ -27,7 +27,7 @@ export const businessInfo = {
     international: "+1-705-787-1401",
     tel: "+17057871401"
   },
-  email: "leonardo@roll-onpainting.com",
+  email: "info@roll-onpainting.com",
   
   // Physical Address
   address: {
@@ -231,7 +231,7 @@ export const verifiedFAQs = [
   },
   {
     question: "How do I get a quote?",
-    answer: "You can get a quote three ways: use our free AI-powered instant estimator on this website, call us at 705-787-1401, or email leonardo@roll-onpainting.com. We also offer free on-site estimates for larger projects."
+    answer: "You can get a quote three ways: use our free AI-powered instant estimator on this website, call us at 705-787-1401, or email info@roll-onpainting.com. We also offer free on-site estimates for larger projects."
   },
   {
     question: "Do you offer commercial painting services?",
