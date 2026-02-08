@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Shield, Clock } from 'lucide-react';
+import { Shield, Clock, Upload, X, Loader2, FileIcon, ImageIcon } from 'lucide-react';
 import RateLimitWrapper from './RateLimitWrapper';
 
 const formSchema = z.object({
@@ -30,7 +30,7 @@ const formSchema = z.object({
   message: z.string()
     .min(10, 'Please provide more details about your project')
     .max(5000, 'Message is too long'),
-  honeypot: z.string().max(0, 'Bot detected'), // Hidden field for bot detection
+  honeypot: z.string().max(0, 'Bot detected'),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -45,9 +45,20 @@ const services = [
   'Other'
 ];
 
+const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+const MAX_FILES = 10;
+const ALLOWED_TYPES = [
+  'image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/heic',
+  'application/pdf', 
+  'application/msword', 
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+];
+
 const SecurityEnhancedContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
+  const [files, setFiles] = useState<File[]>([]);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
   const { toast } = useToast();
   
   const form = useForm<FormData>({
@@ -62,6 +73,90 @@ const SecurityEnhancedContactForm = () => {
     },
   });
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFiles = Array.from(e.target.files || []);
+    
+    // Validate files
+    const validFiles = selectedFiles.filter(file => {
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        toast({
+          title: "Invalid file type",
+          description: `${file.name} is not a supported file type.`,
+          variant: "destructive",
+        });
+        return false;
+      }
+      if (file.size > MAX_FILE_SIZE) {
+        toast({
+          title: "File too large",
+          description: `${file.name} exceeds 50MB limit.`,
+          variant: "destructive",
+        });
+        return false;
+      }
+      return true;
+    });
+
+    if (files.length + validFiles.length > MAX_FILES) {
+      toast({
+        title: "Too many files",
+        description: `Maximum ${MAX_FILES} files allowed.`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setFiles(prev => [...prev, ...validFiles]);
+    // Reset input
+    e.target.value = '';
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const uploadFiles = async (submissionId: string): Promise<string[]> => {
+    const uploadedUrls: string[] = [];
+    
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${submissionId}/${Date.now()}-${i}.${fileExt}`;
+      
+      const { data, error } = await supabase.storage
+        .from('quote-attachments')
+        .upload(fileName, file, {
+          cacheControl: '3600',
+          upsert: false
+        });
+
+      if (error) {
+        console.error('File upload error:', error);
+        throw new Error(`Failed to upload ${file.name}`);
+      }
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('quote-attachments')
+        .getPublicUrl(data.path);
+      
+      uploadedUrls.push(publicUrl);
+      setUploadProgress(Math.round(((i + 1) / files.length) * 100));
+    }
+
+    return uploadedUrls;
+  };
+
+  const formatFileSize = (bytes: number): string => {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  };
+
+  const isImageFile = (file: File): boolean => {
+    return file.type.startsWith('image/');
+  };
+
   const onSubmit = async (data: FormData, canSubmit: boolean) => {
     if (!canSubmit) {
       toast({
@@ -72,19 +167,25 @@ const SecurityEnhancedContactForm = () => {
       return;
     }
 
-    // Record attempt for rate limiting
     document.dispatchEvent(new CustomEvent('record-form-attempt'));
     
     setIsSubmitting(true);
     setSubmissionCount(prev => prev + 1);
+    setUploadProgress(0);
     
     try {
-      // Additional client-side validation
       if (data.honeypot) {
         throw new Error('Bot submission detected');
       }
 
-      // Enhanced input sanitization
+      const submissionId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      
+      // Upload files first if any
+      let fileUrls: string[] = [];
+      if (files.length > 0) {
+        fileUrls = await uploadFiles(submissionId);
+      }
+
       const sanitizedData = {
         name: data.name.trim(),
         email: data.email.trim().toLowerCase(),
@@ -96,9 +197,11 @@ const SecurityEnhancedContactForm = () => {
       const { error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           ...sanitizedData,
-          submissionId: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+          submissionId,
           userAgent: navigator.userAgent,
           timestamp: new Date().toISOString(),
+          attachments: fileUrls,
+          fileNames: files.map(f => f.name),
         },
       });
 
@@ -106,10 +209,13 @@ const SecurityEnhancedContactForm = () => {
 
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+        description: files.length > 0 
+          ? `We'll get back to you within 24 hours. ${files.length} file(s) uploaded.`
+          : "We'll get back to you within 24 hours.",
       });
       
       form.reset();
+      setFiles([]);
       setSubmissionCount(0);
     } catch (error) {
       console.error('Error sending message:', error);
@@ -120,6 +226,7 @@ const SecurityEnhancedContactForm = () => {
       });
     } finally {
       setIsSubmitting(false);
+      setUploadProgress(0);
     }
   };
 
@@ -267,12 +374,97 @@ const SecurityEnhancedContactForm = () => {
                 )}
               />
 
+              {/* File Upload Section */}
+              <div className="space-y-3">
+                <FormLabel>Upload Photos & Documents (Optional)</FormLabel>
+                <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-atomic-orange transition-colors">
+                  <label htmlFor="file-upload" className="cursor-pointer">
+                    <div className="flex flex-col items-center gap-2 text-center">
+                      <Upload className="h-8 w-8 text-atomic-turquoise" />
+                      <span className="text-sm font-medium">Click to upload or drag and drop</span>
+                      <span className="text-xs text-gray-500">
+                        Images (JPG, PNG, GIF, WEBP) or Documents (PDF, DOC, DOCX)
+                      </span>
+                      <span className="text-xs text-gray-400">
+                        Max 50MB per file • Up to 10 files
+                      </span>
+                    </div>
+                    <input 
+                      type="file" 
+                      id="file-upload" 
+                      className="sr-only" 
+                      accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.gif,.webp,.heic"
+                      onChange={handleFileChange}
+                      multiple
+                      disabled={isSubmitting}
+                    />
+                  </label>
+                </div>
+
+                {/* File List */}
+                {files.length > 0 && (
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium text-atomic-navy">
+                      {files.length} file{files.length > 1 ? 's' : ''} selected
+                    </p>
+                    <ul className="space-y-2 max-h-40 overflow-y-auto">
+                      {files.map((file, index) => (
+                        <li key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                          <div className="flex items-center gap-2 min-w-0">
+                            {isImageFile(file) ? (
+                              <ImageIcon className="h-4 w-4 text-atomic-turquoise flex-shrink-0" />
+                            ) : (
+                              <FileIcon className="h-4 w-4 text-atomic-orange flex-shrink-0" />
+                            )}
+                            <span className="text-sm truncate">{file.name}</span>
+                            <span className="text-xs text-gray-400 flex-shrink-0">
+                              ({formatFileSize(file.size)})
+                            </span>
+                          </div>
+                          <button 
+                            type="button" 
+                            onClick={() => removeFile(index)}
+                            className="text-red-500 hover:text-red-700 p-1 flex-shrink-0"
+                            disabled={isSubmitting}
+                          >
+                            <X className="h-4 w-4" />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Upload Progress */}
+                {isSubmitting && files.length > 0 && uploadProgress > 0 && (
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-sm text-gray-600">
+                      <span>Uploading files...</span>
+                      <span>{uploadProgress}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-atomic-orange h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${uploadProgress}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+
               <Button 
                 type="submit" 
                 className="w-full bg-atomic-orange hover:bg-atomic-orange/90 text-white"
                 disabled={isSubmitting || !canSubmit}
               >
-                {isSubmitting ? 'Sending Securely...' : 'Send Secure Message'}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    {files.length > 0 ? 'Uploading & Sending...' : 'Sending Securely...'}
+                  </>
+                ) : (
+                  'Send Secure Message'
+                )}
               </Button>
               
               <p className="text-xs text-gray-500 text-center">
