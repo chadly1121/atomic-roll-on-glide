@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -17,14 +18,26 @@ export interface Service {
   icon: string;
   image: string;
   galleryImages?: string[];
+  slug?: string; // Link to dedicated service page
 }
 
 interface ServiceCardProps {
   service: Service;
 }
 
+// Map service titles to their dedicated page slugs
+const serviceSlugMap: Record<string, string> = {
+  "Interior Painting": "interior-painting",
+  "Exterior Painting": "exterior-painting",
+  "Commercial Painting": "commercial-painting",
+  "Kitchen Cabinet Refinishing": "cabinet-refinishing",
+  "Deck & Fence Staining": "deck-staining",
+  "Epoxy Coatings": "epoxy-coatings",
+};
+
 const ServiceCard = ({ service }: ServiceCardProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const slug = service.slug || serviceSlugMap[service.title];
   
   return (
     <div className="retro-card group hover-lift transform transition-all duration-500">
@@ -44,27 +57,46 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           <div className="w-12 h-12 rounded-full bg-atomic-turquoise/20 flex items-center justify-center text-2xl mr-3 group-hover:bg-atomic-turquoise/40 transition-colors">
             {service.icon}
           </div>
-          <h3 className="text-xl font-bold group-hover:text-atomic-turquoise transition-colors">{service.title}</h3>
+          {slug ? (
+            <Link 
+              to={`/${slug}`}
+              className="text-xl font-bold group-hover:text-atomic-turquoise transition-colors hover:underline"
+            >
+              {service.title}
+            </Link>
+          ) : (
+            <h3 className="text-xl font-bold group-hover:text-atomic-turquoise transition-colors">{service.title}</h3>
+          )}
         </div>
         <p className="text-gray-600">{service.description}</p>
         
-        <div className="flex justify-between items-center mt-4">
-          <a 
-            href="#contact" 
-            className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors group-hover:translate-x-1 transition-transform duration-300"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }}
-          >
-            Get A Quote
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+        <div className="flex justify-between items-center mt-4 gap-2">
+          {slug ? (
+            <Link 
+              to={`/${slug}`}
+              className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
+            >
+              Learn More
+              <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
+          ) : (
+            <a 
+              href="#contact" 
+              className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
+              Get A Quote
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          )}
           
           {service.galleryImages && service.galleryImages.length > 0 && (
             <Dialog>

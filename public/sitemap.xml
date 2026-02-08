@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://rollonpainting.com/</loc>
-    <lastmod>2025-01-22</lastmod>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -11,46 +12,88 @@
       <image:title>Roll On Painting - Professional Painting Services in Muskoka</image:title>
     </image:image>
   </url>
+
+  <!-- Service Pages (AISO-optimized) -->
   <url>
-    <loc>https://rollonpainting.com/#ai-estimator</loc>
-    <lastmod>2025-01-22</lastmod>
+    <loc>https://rollonpainting.com/interior-painting</loc>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://rollonpainting.com/exterior-painting</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/commercial-painting</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/cabinet-refinishing</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/deck-staining</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/epoxy-coatings</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/gonano-coating</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Service Areas (hidden from nav, crawlable for SEO) -->
+  <url>
+    <loc>https://rollonpainting.com/service-areas</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Homepage Sections -->
+  <url>
     <loc>https://rollonpainting.com/#services</loc>
-    <lastmod>2025-01-22</lastmod>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rollonpainting.com/#about</loc>
-    <lastmod>2025-01-22</lastmod>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rollonpainting.com/#pricing</loc>
-    <lastmod>2025-01-22</lastmod>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rollonpainting.com/#contact</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rollonpainting.com/#asseenontv</loc>
-    <lastmod>2025-01-22</lastmod>
+    <loc>https://rollonpainting.com/#faq</loc>
+    <lastmod>2025-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rollonpainting.com/blog</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://rollonpainting.com/#contact</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

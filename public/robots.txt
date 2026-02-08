@@ -1,5 +1,6 @@
 
 # robots.txt for Roll On Painting
+# https://rollonpainting.com
 
 User-agent: *
 Allow: /
@@ -32,9 +33,30 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Block specific areas if needed
-# Disallow: /admin/
-# Disallow: /private/
+# AI Crawlers - Welcome!
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 # Crawl delay for certain bots
 User-agent: Baiduspider
@@ -42,3 +64,6 @@ Crawl-delay: 5
 
 # Sitemap location
 Sitemap: https://rollonpainting.com/sitemap.xml
+
+# AI Search Optimization guide
+# See /llms.txt for structured business information for AI systems
