@@ -63,14 +63,63 @@ const SEOHelmet: React.FC = () => {
           "longitude": businessInfo.geo.longitude
         },
         "areaServed": [
-          {
-            "@type": "AdministrativeArea",
-            "name": "Muskoka District, Ontario, Canada"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Ontario, Canada"
-          }
+          // Algonquin & North Muskoka
+          { "@type": "Place", "name": "Ahmic Harbour, Ontario, Canada (P0A 1A0)" },
+          { "@type": "Place", "name": "Algonquin Park, Ontario, Canada (P0A 1B0)" },
+          { "@type": "Place", "name": "Burk's Falls, Ontario, Canada (P0A 1C0)" },
+          { "@type": "Place", "name": "Dorset, Ontario, Canada (P0A 1E0)" },
+          { "@type": "Place", "name": "Dunchurch, Ontario, Canada (P0A 1G0)" },
+          { "@type": "Place", "name": "Dwight, Ontario, Canada (P0A 1H0)" },
+          { "@type": "Place", "name": "Emsdale, Ontario, Canada (P0A 1J0)" },
+          { "@type": "Place", "name": "Katrine, Ontario, Canada (P0A 1L0)" },
+          { "@type": "Place", "name": "Kearney, Ontario, Canada (P0A 1M0)" },
+          { "@type": "Place", "name": "Magnetawan, Ontario, Canada (P0A 1P0)" },
+          { "@type": "Place", "name": "Novar, Ontario, Canada (P0A 1R0)" },
+          { "@type": "Place", "name": "South River, Ontario, Canada (P0A 1X0)" },
+          { "@type": "Place", "name": "Sprucedale, Ontario, Canada (P0A 1Y0)" },
+          { "@type": "Place", "name": "Sundridge, Ontario, Canada (P0A 1Z0)" },
+          // Muskoka Core
+          { "@type": "Place", "name": "Baysville, Ontario, Canada (P0B 1A0)" },
+          { "@type": "Place", "name": "Milford Bay, Ontario, Canada (P0B 1E0)" },
+          { "@type": "Place", "name": "Minett, Ontario, Canada (P0B 1G0)" },
+          { "@type": "Place", "name": "Port Carling, Ontario, Canada (P0B 1J0)" },
+          { "@type": "Place", "name": "Port Sandfield, Ontario, Canada (P0B 1K0)" },
+          { "@type": "Place", "name": "Port Sydney, Ontario, Canada (P0B 1L0)" },
+          { "@type": "Place", "name": "Utterson, Ontario, Canada (P0B 1M0)" },
+          { "@type": "Place", "name": "Windermere, Ontario, Canada (P0B 1P0)" },
+          // Lake Muskoka & Georgian Bay
+          { "@type": "Place", "name": "Bala, Ontario, Canada (P0C 1A0)" },
+          { "@type": "Place", "name": "MacTier, Ontario, Canada (P0C 1H0)" },
+          { "@type": "Place", "name": "Rosseau, Ontario, Canada (P0C 1J0)" },
+          { "@type": "Place", "name": "Torrance, Ontario, Canada (P0C 1M0)" },
+          // Parry Sound & Georgian Bay Islands
+          { "@type": "Place", "name": "Britt, Ontario, Canada (P0G 1A0)" },
+          { "@type": "Place", "name": "Byng Inlet, Ontario, Canada (P0G 1B0)" },
+          { "@type": "Place", "name": "McKellar, Ontario, Canada (P0G 1C0)" },
+          { "@type": "Place", "name": "Nobel, Ontario, Canada (P0G 1G0)" },
+          { "@type": "Place", "name": "Pickerel, Ontario, Canada (P0G 1J0)" },
+          { "@type": "Place", "name": "Pointe au Baril, Ontario, Canada (P0G 1K0)" },
+          // Major Muskoka Towns
+          { "@type": "Place", "name": "Huntsville, Ontario, Canada (P1H)" },
+          { "@type": "Place", "name": "Gravenhurst, Ontario, Canada (P1P)" },
+          { "@type": "Place", "name": "Bracebridge, Ontario, Canada (P1L)" },
+          // Parry Sound District
+          { "@type": "Place", "name": "Parry Sound, Ontario, Canada (P2A)" },
+          { "@type": "Place", "name": "Seguin, Ontario, Canada (P2A)" },
+          { "@type": "Place", "name": "McKellar, Ontario, Canada (P2A)" },
+          { "@type": "Place", "name": "The Archipelago, Ontario, Canada (P2A)" },
+          // Simcoe County
+          { "@type": "Place", "name": "Orillia, Ontario, Canada (L3V)" },
+          { "@type": "Place", "name": "Oro-Medonte, Ontario, Canada (L3V)" },
+          { "@type": "Place", "name": "Ramara, Ontario, Canada (L3V)" },
+          { "@type": "Place", "name": "Severn, Ontario, Canada (L3V)" },
+          { "@type": "Place", "name": "Warminster, Ontario, Canada (L3V)" },
+          // Barrie
+          { "@type": "Place", "name": "Barrie, Ontario, Canada (L4M)" },
+          { "@type": "Place", "name": "Barrie, Ontario, Canada (L4N)" },
+          // Georgian Bay South
+          { "@type": "Place", "name": "Midland, Ontario, Canada (L4R)" },
+          { "@type": "Place", "name": "Penetanguishene, Ontario, Canada (L9M)" }
         ],
         "openingHours": [
           "Mo-Fr 07:00-17:00",
