@@ -75,7 +75,7 @@ const TrustBadges: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${partner.name} website`}
-                className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full flex items-center justify-center h-24 grayscale hover:grayscale-0"
+                className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full flex items-center justify-center h-24"
               >
                 <img 
                   src={partner.logo} 
