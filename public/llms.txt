@@ -20,9 +20,9 @@ coordinates: 45.2135, -79.1421
 
 ## Hours of Operation
 
-monday_friday: 8:00 AM - 6:00 PM
-saturday: 9:00 AM - 4:00 PM
-sunday: Closed
+monday_friday: 7:00 AM - 5:00 PM
+saturday: 10:00 AM - 2:00 PM
+sunday: By appointment only
 
 ## Service Area
 
