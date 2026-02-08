@@ -47,9 +47,10 @@ export const businessInfo = {
     longitude: -79.1421
   },
   
-  // Service Area
+  // Service Area (primary display list - full list in src/data/serviceAreas.ts)
   serviceArea: {
     primary: "Muskoka",
+    regions: ["Muskoka", "Parry Sound District", "Simcoe County"],
     cities: [
       "Huntsville",
       "Port Sydney",
@@ -60,9 +61,13 @@ export const businessInfo = {
       "Dorset",
       "Baysville",
       "Dwight",
-      "Rosseau"
+      "Rosseau",
+      "Parry Sound",
+      "Orillia",
+      "Barrie"
     ],
-    description: "Serving Muskoka and surrounding areas in Ontario, Canada"
+    totalLocations: 48, // Full count from serviceAreas.ts
+    description: "Serving Muskoka, Parry Sound, and Simcoe County in Ontario, Canada"
   },
   
   // Operating Hours
