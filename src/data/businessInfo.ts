@@ -72,13 +72,13 @@ export const businessInfo = {
   
   // Operating Hours
   hours: {
-    weekdays: { open: "08:00", close: "18:00" },
-    saturday: { open: "09:00", close: "16:00" },
-    sunday: null, // Closed
+    weekdays: { open: "07:00", close: "17:00" },
+    saturday: { open: "10:00", close: "14:00" },
+    sunday: "By appointment only",
     formatted: [
-      "Monday - Friday: 8:00 AM - 6:00 PM",
-      "Saturday: 9:00 AM - 4:00 PM",
-      "Sunday: Closed"
+      "Monday - Friday: 7:00 AM - 5:00 PM",
+      "Saturday: 10:00 AM - 2:00 PM",
+      "Sunday: By appointment only"
     ]
   },
   

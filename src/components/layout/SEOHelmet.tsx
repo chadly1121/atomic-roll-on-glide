@@ -9,104 +9,118 @@ import { businessInfo, servicesGrouped, verifiedFAQs } from '@/data/businessInfo
  * All data sourced from verified businessInfo.ts
  */
 const SEOHelmet: React.FC = () => {
-  // Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": businessInfo.name,
-    "url": businessInfo.urls.website,
-    "logo": `${businessInfo.urls.website}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png`,
-    "description": businessInfo.description,
-    "foundingDate": businessInfo.foundedYear.toString(),
-    "founder": {
-      "@type": "Person",
-      "name": businessInfo.owner
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": businessInfo.phone.international,
-      "contactType": "customer service",
-      "email": businessInfo.email,
-      "availableLanguage": ["English"]
-    },
-    "sameAs": [
-      businessInfo.urls.instagram,
-      businessInfo.urls.facebook,
-      businessInfo.urls.linkedin,
-      businessInfo.urls.googleBusiness
-    ]
-  };
+  const logoUrl = "https://rollonpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png?v=pink";
+  const siteUrl = "https://www.roll-onpainting.com";
 
-  // LocalBusiness / ProfessionalService Schema
-  const localBusinessSchema = {
+  // Combined @graph schema for cleaner structure
+  const graphSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${businessInfo.urls.website}/#business`,
-    "name": businessInfo.name,
-    "description": businessInfo.description,
-    "url": businessInfo.urls.website,
-    "telephone": businessInfo.phone.international,
-    "email": businessInfo.email,
-    "priceRange": businessInfo.pricing.priceRange,
-    "image": "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866797/IMG_20190920_121835_fchin4.jpg",
-    "logo": `${businessInfo.urls.website}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png`,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": businessInfo.address.street,
-      "addressLocality": businessInfo.address.city,
-      "addressRegion": businessInfo.address.regionCode,
-      "postalCode": businessInfo.address.postalCode,
-      "addressCountry": businessInfo.address.countryCode
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": businessInfo.geo.latitude,
-      "longitude": businessInfo.geo.longitude
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": businessInfo.hours.weekdays.open,
-        "closes": businessInfo.hours.weekdays.close
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        "name": businessInfo.name,
+        "url": `${siteUrl}/`,
+        "logo": logoUrl,
+        "image": logoUrl,
+        "email": businessInfo.email,
+        "telephone": businessInfo.phone.international,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": businessInfo.address.street,
+          "addressLocality": businessInfo.address.city,
+          "addressRegion": businessInfo.address.regionCode,
+          "postalCode": businessInfo.address.postalCode,
+          "addressCountry": businessInfo.address.countryCode
+        },
+        "sameAs": [
+          businessInfo.urls.instagram,
+          businessInfo.urls.facebook,
+          businessInfo.urls.linkedin,
+          businessInfo.urls.googleBusiness
+        ]
       },
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": businessInfo.hours.saturday.open,
-        "closes": businessInfo.hours.saturday.close
+        "@type": "LocalBusiness",
+        "@id": `${siteUrl}/#localbusiness`,
+        "name": businessInfo.name,
+        "url": `${siteUrl}/`,
+        "image": logoUrl,
+        "telephone": businessInfo.phone.international,
+        "email": businessInfo.email,
+        "priceRange": businessInfo.pricing.priceRange,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": businessInfo.address.street,
+          "addressLocality": businessInfo.address.city,
+          "addressRegion": businessInfo.address.regionCode,
+          "postalCode": businessInfo.address.postalCode,
+          "addressCountry": businessInfo.address.countryCode
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": businessInfo.geo.latitude,
+          "longitude": businessInfo.geo.longitude
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Muskoka District, Ontario, Canada"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Ontario, Canada"
+          }
+        ],
+        "openingHours": [
+          "Mo-Fr 07:00-17:00",
+          "Sa 10:00-14:00"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "14:00"
+          }
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Sunday hours",
+            "value": "By appointment only"
+          }
+        ],
+        "hasCredential": [
+          "WSIB Covered",
+          "$5 Million Liability Insurance",
+          "Painting Contractors Association Member"
+        ],
+        "knowsAbout": [
+          "Interior Painting",
+          "Exterior Painting",
+          "Commercial Painting",
+          "Institutional Painting",
+          "Cabinet Refinishing",
+          "Deck & Fence Staining",
+          "Epoxy Coatings",
+          "GoNano Nanotechnology Coatings",
+          "Wallpaper Installation",
+          "Power Washing"
+        ],
+        "sameAs": [
+          businessInfo.urls.instagram,
+          businessInfo.urls.facebook,
+          businessInfo.urls.linkedin,
+          businessInfo.urls.googleBusiness
+        ]
       }
-    ],
-    "areaServed": businessInfo.serviceArea.cities.map(city => ({
-      "@type": "City",
-      "name": city,
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Muskoka District, Ontario, Canada"
-      }
-    })),
-    "hasCredential": [
-      "WSIB Covered",
-      "$5 Million Liability Insurance",
-      "Painting Contractors Association Member"
-    ],
-    "knowsAbout": [
-      "Interior Painting",
-      "Exterior Painting",
-      "Commercial Painting",
-      "Institutional Painting",
-      "Cabinet Refinishing",
-      "Deck & Fence Staining",
-      "Epoxy Coatings",
-      "GoNano Nanotechnology Coatings",
-      "Wallpaper Installation",
-      "Power Washing"
-    ],
-    "sameAs": [
-      businessInfo.urls.instagram,
-      businessInfo.urls.facebook,
-      businessInfo.urls.linkedin,
-      businessInfo.urls.googleBusiness
     ]
   };
 
@@ -251,13 +265,9 @@ const SEOHelmet: React.FC = () => {
       <meta name="geo.position" content={`${businessInfo.geo.latitude};${businessInfo.geo.longitude}`} />
       <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
       
-      {/* Structured Data */}
+      {/* Structured Data - Combined Organization & LocalBusiness */}
       <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
+        {JSON.stringify(graphSchema)}
       </script>
       
       <script type="application/ld+json">
