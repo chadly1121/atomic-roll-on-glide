@@ -63,6 +63,8 @@ const Index = () => {
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
       
+      {/* AI Estimator Section - Top priority */}
+      <AIEstimatorSection />
       
       <AboutSection />
       
@@ -82,9 +84,6 @@ const Index = () => {
       
       {/* Add PricingSection directly to improve loading time */}
       <PricingSection />
-      
-      {/* AI Estimator Section */}
-      <AIEstimatorSection />
       
       {/* "As Seen on TV" Section */}
       <AsSeenonTVSection />
