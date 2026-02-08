@@ -1,193 +1,287 @@
 import React from 'react';
 import { Helmet } from "react-helmet-async";
+import { businessInfo, servicesGrouped, verifiedFAQs } from '@/data/businessInfo';
 
+/**
+ * AISO-Optimized SEO Helmet
+ * 
+ * Contains all structured data (JSON-LD) for AI search engines.
+ * All data sourced from verified businessInfo.ts
+ */
 const SEOHelmet: React.FC = () => {
+  // Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": businessInfo.name,
+    "url": businessInfo.urls.website,
+    "logo": `${businessInfo.urls.website}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png`,
+    "description": businessInfo.description,
+    "foundingDate": businessInfo.foundedYear.toString(),
+    "founder": {
+      "@type": "Person",
+      "name": businessInfo.owner
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": businessInfo.phone.international,
+      "contactType": "customer service",
+      "email": businessInfo.email,
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      businessInfo.urls.instagram,
+      businessInfo.urls.facebook,
+      businessInfo.urls.linkedin,
+      businessInfo.urls.googleBusiness
+    ]
+  };
+
+  // LocalBusiness / ProfessionalService Schema
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${businessInfo.urls.website}/#business`,
+    "name": businessInfo.name,
+    "description": businessInfo.description,
+    "url": businessInfo.urls.website,
+    "telephone": businessInfo.phone.international,
+    "email": businessInfo.email,
+    "priceRange": businessInfo.pricing.priceRange,
+    "image": "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866797/IMG_20190920_121835_fchin4.jpg",
+    "logo": `${businessInfo.urls.website}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": businessInfo.address.street,
+      "addressLocality": businessInfo.address.city,
+      "addressRegion": businessInfo.address.regionCode,
+      "postalCode": businessInfo.address.postalCode,
+      "addressCountry": businessInfo.address.countryCode
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": businessInfo.geo.latitude,
+      "longitude": businessInfo.geo.longitude
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": businessInfo.hours.weekdays.open,
+        "closes": businessInfo.hours.weekdays.close
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": businessInfo.hours.saturday.open,
+        "closes": businessInfo.hours.saturday.close
+      }
+    ],
+    "areaServed": businessInfo.serviceArea.cities.map(city => ({
+      "@type": "City",
+      "name": city,
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Muskoka District, Ontario, Canada"
+      }
+    })),
+    "hasCredential": [
+      "WSIB Covered",
+      "$5 Million Liability Insurance",
+      "Painting Contractors Association Member"
+    ],
+    "knowsAbout": [
+      "Interior Painting",
+      "Exterior Painting",
+      "Commercial Painting",
+      "Institutional Painting",
+      "Cabinet Refinishing",
+      "Deck & Fence Staining",
+      "Epoxy Coatings",
+      "GoNano Nanotechnology Coatings",
+      "Wallpaper Installation",
+      "Power Washing"
+    ],
+    "sameAs": [
+      businessInfo.urls.instagram,
+      businessInfo.urls.facebook,
+      businessInfo.urls.linkedin,
+      businessInfo.urls.googleBusiness
+    ]
+  };
+
+  // Service Schemas
+  const serviceSchemas = [
+    ...servicesGrouped.residential,
+    ...servicesGrouped.commercial,
+    ...servicesGrouped.specialty
+  ].map(service => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.name,
+    "description": service.description,
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": businessInfo.name,
+      "url": businessInfo.urls.website
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": businessInfo.geo.latitude,
+        "longitude": businessInfo.geo.longitude
+      },
+      "geoRadius": "50 km"
+    },
+    "serviceType": "Painting Service"
+  }));
+
+  // AggregateRating Schema
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "itemReviewed": {
+      "@type": "ProfessionalService",
+      "name": businessInfo.name,
+      "url": businessInfo.urls.website
+    },
+    "ratingValue": businessInfo.ratings.average.toString(),
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": businessInfo.ratings.reviewCount.toString(),
+    "reviewCount": businessInfo.ratings.reviewCount.toString()
+  };
+
+  // WebApplication Schema (AI Estimator)
+  const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Roll On Painting AI Cost Estimator",
+    "description": "Get an instant, AI-powered painting cost estimate for your home or commercial project in Muskoka. No obligation, accurate quotes in seconds.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CAD",
+      "description": "Free instant painting estimate"
+    },
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": businessInfo.name,
+      "url": businessInfo.urls.website
+    },
+    "featureList": [
+      "Instant AI-powered estimates",
+      "Interior and exterior painting costs",
+      "Commercial painting quotes",
+      "No obligation required"
+    ]
+  };
+
+  // TV Appearance Schema
+  const tvAppearanceSchema = {
+    "@context": "https://schema.org",
+    "@type": "TVEpisode",
+    "name": `${businessInfo.tvAppearance.show} - Season ${businessInfo.tvAppearance.season}, Episode ${businessInfo.tvAppearance.episode}`,
+    "partOfSeries": {
+      "@type": "TVSeries",
+      "name": businessInfo.tvAppearance.show
+    },
+    "episodeNumber": businessInfo.tvAppearance.episode,
+    "partOfSeason": {
+      "@type": "TVSeason",
+      "seasonNumber": businessInfo.tvAppearance.season
+    },
+    "datePublished": "2023-10",
+    "description": businessInfo.tvAppearance.description,
+    "productionCompany": {
+      "@type": "Organization",
+      "name": businessInfo.tvAppearance.network,
+      "url": businessInfo.tvAppearance.networkUrl
+    },
+    "mentions": {
+      "@type": "ProfessionalService",
+      "name": businessInfo.name
+    }
+  };
+
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": businessInfo.urls.website },
+      { "@type": "ListItem", "position": 2, "name": "AI Painting Estimate", "item": `${businessInfo.urls.website}/#ai-estimator` },
+      { "@type": "ListItem", "position": 3, "name": "Services", "item": `${businessInfo.urls.website}/#services` },
+      { "@type": "ListItem", "position": 4, "name": "Pricing", "item": `${businessInfo.urls.website}/#pricing` },
+      { "@type": "ListItem", "position": 5, "name": "FAQ", "item": `${businessInfo.urls.website}/#faq` },
+      { "@type": "ListItem", "position": 6, "name": "Contact", "item": `${businessInfo.urls.website}/#contact` }
+    ]
+  };
+
   return (
     <Helmet>
-      <title>Roll On Painting | Muskoka's Premier Painting Service</title>
-      <meta name="description" content="Professional painting services in Muskoka including interior, exterior, commercial, and GoNano permanent coating. As seen on HGTV! Free touch-ups and expert service." />
+      <title>{businessInfo.name} | {businessInfo.tagline}</title>
+      <meta name="description" content={`${businessInfo.description} As seen on HGTV! Free touch-ups, WSIB covered, $5M liability insurance. Call ${businessInfo.phone.formatted}.`} />
       
-      {/* Security headers for SSL compatibility across devices */}
+      {/* Security headers */}
       <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
       
-      {/* Force HTTPS for all connections */}
-      <link rel="canonical" href="https://rollonpainting.com/" />
+      {/* Canonical URL */}
+      <link rel="canonical" href={`${businessInfo.urls.website}/`} />
       
-      {/* Add secure connection preference */}
+      {/* Referrer Policy */}
       <meta name="referrer" content="no-referrer-when-downgrade" />
       
-      {/* BreadcrumbList schema for SEO */}
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={`${businessInfo.name} | ${businessInfo.tagline}`} />
+      <meta property="og:description" content={businessInfo.description} />
+      <meta property="og:url" content={businessInfo.urls.website} />
+      <meta property="og:site_name" content={businessInfo.name} />
+      <meta property="og:locale" content="en_CA" />
+      
+      {/* Geo Tags */}
+      <meta name="geo.region" content="CA-ON" />
+      <meta name="geo.placename" content="Port Sydney, Muskoka" />
+      <meta name="geo.position" content={`${businessInfo.geo.latitude};${businessInfo.geo.longitude}`} />
+      <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
+      
+      {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rollonpainting.com/" },
-            { "@type": "ListItem", "position": 2, "name": "AI Painting Estimate", "item": "https://rollonpainting.com/#ai-estimator" },
-            { "@type": "ListItem", "position": 3, "name": "Services", "item": "https://rollonpainting.com/#services" },
-            { "@type": "ListItem", "position": 4, "name": "Pricing", "item": "https://rollonpainting.com/#pricing" },
-            { "@type": "ListItem", "position": 5, "name": "Contact", "item": "https://rollonpainting.com/#contact" }
-          ]
-        })}
+        {JSON.stringify(organizationSchema)}
       </script>
       
-      {/* AI Estimator WebApplication schema for SEO */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Roll On Painting AI Cost Estimator",
-          "description": "Get an instant, AI-powered painting cost estimate for your home or commercial project in Muskoka. No obligation, accurate quotes in seconds.",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "Web",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "CAD",
-            "description": "Free instant painting estimate"
-          },
-          "provider": {
-            "@type": "ProfessionalService",
-            "name": "Roll On Painting",
-            "url": "https://rollonpainting.com"
-          },
-          "featureList": [
-            "Instant AI-powered estimates",
-            "Interior and exterior painting costs",
-            "Commercial painting quotes",
-            "No obligation required"
-          ]
-        })}
+        {JSON.stringify(localBusinessSchema)}
       </script>
       
-      {/* Organization schema for business info */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Roll On Painting",
-          "image": "https://res.cloudinary.com/dxqfou8jh/image/upload/v1745866797/IMG_20190920_121835_fchin4.jpg",
-          "logo": "https://rollonpainting.com/logo.png",
-          "url": "https://rollonpainting.com",
-          "telephone": "+1-705-555-1234",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Muskoka Road",
-            "addressLocality": "Muskoka",
-            "addressRegion": "ON",
-            "postalCode": "P1H 1A1",
-            "addressCountry": "CA"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.0,
-            "longitude": -79.0
-          },
-          "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "17:00"
-          }],
-          "sameAs": [
-            "https://www.facebook.com/rollonpainting",
-            "https://www.instagram.com/rollonpainting"
-          ],
-          "award": ["Best of Muskoka 2024", "PCA Certified Painters"],
-          "hasCredential": ["Licensed Professional Painters", "Fully Insured"],
-          "specialty": [
-            "Interior Painting",
-            "Exterior Painting", 
-            "Commercial Painting",
-            "GoNano Permanent Coating",
-            "As Seen on HGTV"
-          ]
-        })}
+        {JSON.stringify(aggregateRatingSchema)}
       </script>
       
-      {/* Review aggregate for trust signals */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "AggregateRating",
-          "itemReviewed": {
-            "@type": "ProfessionalService",
-            "name": "Roll On Painting",
-            "image": "https://rollonpainting.com/logo.png"
-          },
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "87",
-          "reviewCount": "87"
-        })}
+        {JSON.stringify(webAppSchema)}
       </script>
       
-      {/* FAQ Schema for common questions */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How much does it cost to paint a house in Muskoka?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The cost varies based on size and scope. Use our free AI estimator for an instant, accurate quote. Interior painting typically starts at $3-5 per square foot, while exterior projects depend on the home's size and condition."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you offer free touch-ups?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! Roll On Painting offers complimentary touch-ups on all completed projects. We stand behind our work and want you to be completely satisfied."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is GoNano permanent coating?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "GoNano is an advanced nanotechnology coating that provides superior durability and protection. It's ideal for high-traffic areas and exterior surfaces exposed to harsh Muskoka weather."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are you the painters from HGTV?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! Roll On Painting was featured on HGTV's Scott's Vacation House Rules, Season 6, Episode 7, showcasing our professional painting services in Muskoka."
-              }
-            }
-          ]
-        })}
+        {JSON.stringify(tvAppearanceSchema)}
       </script>
       
-      {/* TV Appearance Schema */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TVSeries",
-          "name": "Scott's Vacation House Rules",
-          "productionCompany": {
-            "@type": "Organization",
-            "name": "Home Network"
-          },
-          "episode": {
-            "@type": "TVEpisode",
-            "episodeNumber": "7",
-            "seasonNumber": "6",
-            "name": "Muskoka Property Renovation",
-            "description": "Episode featuring Roll On Painting's professional services"
-          },
-          "sameAs": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
-        })}
+        {JSON.stringify(breadcrumbSchema)}
       </script>
+      
+      {/* Individual Service Schemas */}
+      {serviceSchemas.slice(0, 5).map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };
