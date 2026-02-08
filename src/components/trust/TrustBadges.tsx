@@ -67,7 +67,7 @@ const TrustBadges: React.FC = () => {
         <div className="mt-16 pt-12 border-t">
           <h3 className="text-2xl font-bold text-center mb-8">Our Partners & Affiliations</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
             {partnerLogos.map((partner, index) => (
               <a
                 key={index}
@@ -75,16 +75,15 @@ const TrustBadges: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${partner.name} website`}
-                className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 w-full flex flex-col items-center"
+                className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full flex items-center justify-center h-24 grayscale hover:grayscale-0"
               >
-                <div className="w-12 h-12 rounded-full bg-atomic-turquoise/10 flex items-center justify-center mb-2">
-                  <span className="text-lg font-bold text-atomic-turquoise">
-                    {partner.name.charAt(0)}
-                  </span>
-                </div>
-                <span className="text-sm font-medium text-foreground text-center line-clamp-1">
-                  {partner.name}
-                </span>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.altText}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-16 max-w-[140px] w-auto h-auto object-contain"
+                />
               </a>
             ))}
           </div>
