@@ -11,7 +11,7 @@
 export const businessInfo = {
   // Core Identity
   name: "Roll On Painting",
-  legalName: "Roll On Painting", // MISSING — recommend adding: registered business name if different
+  legalName: "2458115 Ontario Inc. O/A Roll On Painting",
   tagline: "Muskoka's Premier Painting Service",
   description: "Professional painting contractor serving Muskoka, Ontario since 2014. Specializing in residential, commercial, and institutional painting with over 25 years of industry experience.",
   
@@ -35,7 +35,7 @@ export const businessInfo = {
     city: "Port Sydney",
     region: "Ontario",
     regionCode: "ON",
-    postalCode: "P0B 1L0", // MISSING — recommend confirming postal code
+    postalCode: "P0B 1L0",
     country: "Canada",
     countryCode: "CA",
     full: "836 Greer Road, Port Sydney, Ontario, Canada"
@@ -82,6 +82,7 @@ export const businessInfo = {
     website: "https://rollonpainting.com",
     websiteAlt: "https://www.roll-onpainting.com",
     googleBusiness: "https://g.co/kgs/hH1mnMH",
+    googleReviews: "https://share.google/EBBEk6sDQHY8b4mbW",
     instagram: "https://www.instagram.com/roll_on_painting/",
     facebook: "https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/",
     linkedin: "https://www.linkedin.com/company/roll-onpainting/",
