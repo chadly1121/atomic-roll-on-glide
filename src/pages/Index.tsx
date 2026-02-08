@@ -12,7 +12,6 @@ import AsSeenonTVSection from '../components/AsSeenonTVSection';
 // Import our new refactored components
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
 import SectionObserver from '../components/layout/SectionObserver';
-import WelcomeToast from '../components/layout/WelcomeToast';
 import SEOHelmet from '../components/layout/SEOHelmet';
 import LazySectionLoader from '../components/layout/LazySectionLoader';
 
