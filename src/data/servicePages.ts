@@ -317,7 +317,7 @@ export const servicePages: ServicePageData[] = [
         'All communities across Muskoka and Simcoe County'
       ],
       howQuotesWork: [
-        'Call 705-787-1401 or use our contact form',
+        'Call 705-787-1401 or email info@roll-onpainting.com',
         'Provide floor dimensions and current condition',
         'We visit to assess concrete and discuss options',
         'Receive a detailed quote with color/flake samples'
