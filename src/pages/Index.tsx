@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, Suspense, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
@@ -8,7 +7,8 @@ import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import PricingSection from '../components/PricingSection';
 import AsSeenonTVSection from '../components/AsSeenonTVSection';
 import AIEstimatorSection from '../components/AIEstimatorSection';
-
+import FAQSection from '../components/FAQSection';
+import ServiceAreaBlock from '../components/ServiceAreaBlock';
 
 // Import our new refactored components
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
@@ -19,11 +19,10 @@ import LazySectionLoader from '../components/layout/LazySectionLoader';
 // Import conversion components
 import InlineCTA from '../components/conversion/InlineCTA';
 
-
 // Import trust components
 import TrustBadges from '../components/trust/TrustBadges';
 
-// Updated: Jan 2025 - Mobile optimizations
+// Updated: Feb 2025 - AISO implementation
 const Index = () => {
   // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -90,6 +89,12 @@ const Index = () => {
       
       {/* Trust Badges Section */}
       <TrustBadges />
+      
+      {/* Service Area Block - AISO optimized */}
+      <ServiceAreaBlock />
+      
+      {/* FAQ Section - AISO optimized with FAQPage schema */}
+      <FAQSection />
       
       {/* Lazy loaded sections (below the fold) */}
       <LazySectionLoader visibleSections={visibleSections} />
