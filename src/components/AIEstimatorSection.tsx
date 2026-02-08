@@ -4,7 +4,8 @@ import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 const AIEstimatorSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
-  const [shouldLoadIframe, setShouldLoadIframe] = useState(false);
+  // Always mount the iframe for reliability (it's a top-priority section)
+  const [shouldLoadIframe, setShouldLoadIframe] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const benefits = [
