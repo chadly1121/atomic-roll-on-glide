@@ -173,32 +173,115 @@ const SEOHelmet: React.FC = () => {
     ]
   };
 
-  // Service Schemas
-  const serviceSchemas = [
-    ...servicesGrouped.residential,
-    ...servicesGrouped.commercial,
-    ...servicesGrouped.specialty
-  ].map(service => ({
+  // Consolidated Service Schema Graph (references #localbusiness)
+  const serviceGraphSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": service.name,
-    "description": service.description,
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": businessInfo.name,
-      "url": businessInfo.urls.website
-    },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": businessInfo.geo.latitude,
-        "longitude": businessInfo.geo.longitude
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-residential-painting`,
+        "name": "Residential Painting",
+        "serviceType": "Residential painting",
+        "url": `${siteUrl}/interior-painting`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": [
+          { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
+          { "@type": "Place", "name": "Port Sydney, Ontario, Canada" },
+          { "@type": "Place", "name": "Huntsville, Ontario, Canada" },
+          { "@type": "Place", "name": "Bracebridge, Ontario, Canada" },
+          { "@type": "Place", "name": "Gravenhurst, Ontario, Canada" },
+          { "@type": "Place", "name": "Parry Sound, Ontario, Canada" },
+          { "@type": "Place", "name": "Orillia, Ontario, Canada" },
+          { "@type": "Place", "name": "Barrie, Ontario, Canada" },
+          { "@type": "Place", "name": "Midland, Ontario, Canada" },
+          { "@type": "Place", "name": "Penetanguishene, Ontario, Canada" }
+        ]
       },
-      "geoRadius": "50 km"
-    },
-    "serviceType": "Painting Service"
-  }));
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-commercial-painting`,
+        "name": "Commercial Painting",
+        "serviceType": "Commercial painting",
+        "url": `${siteUrl}/commercial-painting`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": [
+          { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
+          { "@type": "Place", "name": "Parry Sound District, Ontario, Canada" },
+          { "@type": "Place", "name": "Simcoe County, Ontario, Canada" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-interior-painting`,
+        "name": "Interior Painting",
+        "serviceType": "Interior painting",
+        "url": `${siteUrl}/interior-painting`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-exterior-painting`,
+        "name": "Exterior Painting",
+        "serviceType": "Exterior painting",
+        "url": `${siteUrl}/exterior-painting`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-spray-finishing`,
+        "name": "Spray Painting and Spray Finishing",
+        "serviceType": "Spray painting / spray finishing",
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-epoxy`,
+        "name": "Epoxy Coatings",
+        "serviceType": "Epoxy coatings (e.g., floors)",
+        "url": `${siteUrl}/epoxy-coatings`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-wallpaper-removal`,
+        "name": "Wallpaper Removal",
+        "serviceType": "Wallpaper removal",
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-cabinet-refinishing`,
+        "name": "Cabinet Painting and Refinishing",
+        "serviceType": "Cabinet painting and refinishing",
+        "url": `${siteUrl}/cabinet-refinishing`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-deck-staining`,
+        "name": "Deck and Fence Staining",
+        "serviceType": "Deck and fence staining",
+        "url": `${siteUrl}/deck-staining`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-gonano`,
+        "name": "GoNano Permanent Coating",
+        "serviceType": "Nanotechnology protective coating",
+        "url": `${siteUrl}/gonano-coating`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      }
+    ]
+  };
 
   // AggregateRating Schema
   const aggregateRatingSchema = {
@@ -335,12 +418,10 @@ const SEOHelmet: React.FC = () => {
         {JSON.stringify(breadcrumbSchema)}
       </script>
       
-      {/* Individual Service Schemas */}
-      {serviceSchemas.slice(0, 5).map((schema, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
-      ))}
+      {/* Consolidated Service Schema Graph */}
+      <script type="application/ld+json">
+        {JSON.stringify(serviceGraphSchema)}
+      </script>
     </Helmet>
   );
 };
