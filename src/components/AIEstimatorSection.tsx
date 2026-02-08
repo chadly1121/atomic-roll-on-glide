@@ -92,8 +92,8 @@ const AIEstimatorSection = () => {
             <div className="relative">
               {/* Only load iframe when section is visible */}
               {shouldLoadIframe ? (
-                <iframe
-                  src="https://73a2b4dc-d64c-47b9-9d9d-85fc5a59fd27.lovableproject.com/widget/chat?token=3ee7b5f543db22516abedd47dfd3c9f5f95b377695efaac886d523bbcaf7bfe0"
+              <iframe
+                  src="https://easy-painting-quote.lovable.app/widget/chat?token=3ee7b5f543db22516abedd47dfd3c9f5f95b377695efaac886d523bbcaf7bfe0"
                   width="100%"
                   height="720"
                   style={{
