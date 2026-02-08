@@ -93,16 +93,16 @@ const AIEstimatorSection = () => {
               {/* Only load iframe when section is visible */}
               {shouldLoadIframe ? (
                 <iframe
-                  src="https://paint-quick-quote.lovable.app/embed/dd283090a9a7bde311a9b8bb34a8d90d27f15ee58c74e3d045b5fdda5bf07e26"
+                  src="https://73a2b4dc-d64c-47b9-9d9d-85fc5a59fd27.lovableproject.com/widget/chat?token=3ee7b5f543db22516abedd47dfd3c9f5f95b377695efaac886d523bbcaf7bfe0"
                   width="100%"
-                  height="650"
+                  height="720"
                   style={{
                     border: 'none',
-                    maxWidth: '600px',
+                    borderRadius: '12px',
                     display: 'block',
                     margin: '0 auto',
                   }}
-                  title="Get a Free Painting Estimate"
+                  title="Quohta Estimator"
                   loading="lazy"
                   onLoad={() => {
                     console.info('[AIEstimator] iframe loaded');
