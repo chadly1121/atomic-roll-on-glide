@@ -7,6 +7,7 @@ import ServicesSection from '../components/ServicesSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import PricingSection from '../components/PricingSection';
 import AsSeenonTVSection from '../components/AsSeenonTVSection';
+import AIEstimatorSection from '../components/AIEstimatorSection';
 
 
 // Import our new refactored components
@@ -81,6 +82,9 @@ const Index = () => {
       
       {/* Add PricingSection directly to improve loading time */}
       <PricingSection />
+      
+      {/* AI Estimator Section */}
+      <AIEstimatorSection />
       
       {/* "As Seen on TV" Section */}
       <AsSeenonTVSection />
