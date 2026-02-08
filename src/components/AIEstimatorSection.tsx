@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
+// Quohta AI estimator iframe embed – do not delete
 
 const AIEstimatorSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
