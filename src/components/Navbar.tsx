@@ -1,18 +1,8 @@
 
 import React, { useState } from 'react';
-import { cn } from "@/lib/utils";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, LogOut, User, Users } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from "framer-motion";
-import { useAuth } from '@/contexts/AuthContext';
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import Logo from './nav/Logo';
 import DesktopNav from './nav/DesktopNav';
 import CTAButton from './nav/CTAButton';
@@ -24,8 +14,6 @@ interface NavbarProps {
 
 const Navbar = ({ activeSection = '' }: NavbarProps) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { user, signOut } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -48,16 +36,6 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     }
   };
 
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
-  };
-
-  // Don't render navbar on calendar page
-  if (location.pathname === '/calendar') {
-    return null;
-  }
-
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -69,49 +47,9 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             <DesktopNav navLinks={navLinks} handleNavLinkClick={handleNavLinkClick} />
           </div>
           
-          {/* Desktop Auth & CTA Section */}
-          <div className="hidden md:flex items-center space-x-4">
-            {user ? (
-              <>
-                <Button
-                  variant="outline"
-                  onClick={() => navigate('/teams')}
-                  className="flex items-center gap-2"
-                >
-                  <Users className="h-4 w-4" />
-                  Teams
-                </Button>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
-                      {user.email}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => navigate('/calendar')}>
-                      Calendar
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => navigate('/jobs')}>
-                      Jobs
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => navigate('/employees')}>
-                      Employees
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => navigate('/customers')}>
-                      Customers
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut} className="text-red-600">
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sign Out
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </>
-            ) : (
-              <CTAButton handleNavLinkClick={handleNavLinkClick} />
-            )}
+          {/* Desktop CTA Section */}
+          <div className="hidden md:flex items-center">
+            <CTAButton handleNavLinkClick={handleNavLinkClick} />
           </div>
           
           {/* Mobile hamburger button */}
@@ -148,35 +86,9 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
                 </motion.a>
               ))}
               
-              {user ? (
-                <>
-                  <motion.button
-                    onClick={() => navigate('/teams')}
-                    className="block w-full text-left py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100"
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Teams
-                  </motion.button>
-                  <motion.button
-                    onClick={() => navigate('/calendar')}
-                    className="block w-full text-left py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100"
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Calendar
-                  </motion.button>
-                  <motion.button
-                    onClick={handleSignOut}
-                    className="block w-full text-left py-3 px-2 text-lg font-medium text-red-600 hover:text-red-700 transition-colors"
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Sign Out
-                  </motion.button>
-                </>
-              ) : (
-                <div className="pt-4">
-                  <CTAButton handleNavLinkClick={handleNavLinkClick} />
-                </div>
-              )}
+              <div className="pt-4">
+                <CTAButton handleNavLinkClick={handleNavLinkClick} />
+              </div>
             </div>
           </motion.div>
         )}
