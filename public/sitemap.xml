@@ -56,7 +56,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://rollonpainting.com/spray-finishing</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rollonpainting.com/wallpaper-removal</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Service Areas (hidden from nav, crawlable for SEO) -->
   <url>
     <loc>https://rollonpainting.com/service-areas</loc>

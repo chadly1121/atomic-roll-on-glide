@@ -1,25 +1,27 @@
 import React from 'react';
 import { Helmet } from "react-helmet-async";
-import { businessInfo, servicesGrouped, verifiedFAQs } from '@/data/businessInfo';
+import { businessInfo, verifiedFAQs } from '@/data/businessInfo';
 
 /**
  * AISO-Optimized SEO Helmet
  * 
- * Contains all structured data (JSON-LD) for AI search engines.
+ * Consolidated JSON-LD structured data for AI search engines.
  * All data sourced from verified businessInfo.ts
  */
 const SEOHelmet: React.FC = () => {
   const logoUrl = "https://rollonpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png?v=pink";
   const siteUrl = "https://www.roll-onpainting.com";
 
-  // Combined @graph schema for cleaner structure
-  const graphSchema = {
+  // Single consolidated @graph with Organization, LocalBusiness (including aggregateRating), and all Services
+  const consolidatedSchema = {
     "@context": "https://schema.org",
     "@graph": [
+      // Organization
       {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
         "name": businessInfo.name,
+        "legalName": businessInfo.legalName,
         "url": `${siteUrl}/`,
         "logo": logoUrl,
         "image": logoUrl,
@@ -40,6 +42,7 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.googleBusiness
         ]
       },
+      // LocalBusiness with aggregateRating embedded
       {
         "@type": "LocalBusiness",
         "@id": `${siteUrl}/#localbusiness`,
@@ -61,6 +64,13 @@ const SEOHelmet: React.FC = () => {
           "@type": "GeoCoordinates",
           "latitude": businessInfo.geo.latitude,
           "longitude": businessInfo.geo.longitude
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "15",
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "areaServed": [
           // Algonquin & North Muskoka
@@ -106,7 +116,6 @@ const SEOHelmet: React.FC = () => {
           // Parry Sound District
           { "@type": "Place", "name": "Parry Sound, Ontario, Canada (P2A)" },
           { "@type": "Place", "name": "Seguin, Ontario, Canada (P2A)" },
-          { "@type": "Place", "name": "McKellar, Ontario, Canada (P2A)" },
           { "@type": "Place", "name": "The Archipelago, Ontario, Canada (P2A)" },
           // Simcoe County
           { "@type": "Place", "name": "Orillia, Ontario, Canada (L3V)" },
@@ -116,7 +125,6 @@ const SEOHelmet: React.FC = () => {
           { "@type": "Place", "name": "Warminster, Ontario, Canada (L3V)" },
           // Barrie
           { "@type": "Place", "name": "Barrie, Ontario, Canada (L4M)" },
-          { "@type": "Place", "name": "Barrie, Ontario, Canada (L4N)" },
           // Georgian Bay South
           { "@type": "Place", "name": "Midland, Ontario, Canada (L4R)" },
           { "@type": "Place", "name": "Penetanguishene, Ontario, Canada (L9M)" }
@@ -161,6 +169,8 @@ const SEOHelmet: React.FC = () => {
           "Epoxy Coatings",
           "GoNano Nanotechnology Coatings",
           "Wallpaper Installation",
+          "Wallpaper Removal",
+          "Spray Painting and Spray Finishing",
           "Power Washing"
         ],
         "sameAs": [
@@ -169,40 +179,14 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.linkedin,
           businessInfo.urls.googleBusiness
         ]
-      }
-    ]
-  };
-
-  // Consolidated Service Schema Graph (references #localbusiness)
-  const serviceGraphSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
+      },
+      // === SERVICE ENTITIES ===
+      // Residential Painting — no URL (no dedicated page exists)
       {
         "@type": "Service",
         "@id": `${siteUrl}/#service-residential-painting`,
         "name": "Residential Painting",
         "serviceType": "Residential painting",
-        "url": `${siteUrl}/interior-painting`,
-        "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "areaServed": [
-          { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
-          { "@type": "Place", "name": "Port Sydney, Ontario, Canada" },
-          { "@type": "Place", "name": "Huntsville, Ontario, Canada" },
-          { "@type": "Place", "name": "Bracebridge, Ontario, Canada" },
-          { "@type": "Place", "name": "Gravenhurst, Ontario, Canada" },
-          { "@type": "Place", "name": "Parry Sound, Ontario, Canada" },
-          { "@type": "Place", "name": "Orillia, Ontario, Canada" },
-          { "@type": "Place", "name": "Barrie, Ontario, Canada" },
-          { "@type": "Place", "name": "Midland, Ontario, Canada" },
-          { "@type": "Place", "name": "Penetanguishene, Ontario, Canada" }
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-commercial-painting`,
-        "name": "Commercial Painting",
-        "serviceType": "Commercial painting",
-        "url": `${siteUrl}/commercial-painting`,
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": [
           { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
@@ -230,28 +214,16 @@ const SEOHelmet: React.FC = () => {
       },
       {
         "@type": "Service",
-        "@id": `${siteUrl}/#service-spray-finishing`,
-        "name": "Spray Painting and Spray Finishing",
-        "serviceType": "Spray painting / spray finishing",
+        "@id": `${siteUrl}/#service-commercial-painting`,
+        "name": "Commercial Painting",
+        "serviceType": "Commercial painting",
+        "url": `${siteUrl}/commercial-painting`,
         "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-epoxy`,
-        "name": "Epoxy Coatings",
-        "serviceType": "Epoxy coatings (e.g., floors)",
-        "url": `${siteUrl}/epoxy-coatings`,
-        "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
-      },
-      {
-        "@type": "Service",
-        "@id": `${siteUrl}/#service-wallpaper-removal`,
-        "name": "Wallpaper Removal",
-        "serviceType": "Wallpaper removal",
-        "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+        "areaServed": [
+          { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
+          { "@type": "Place", "name": "Parry Sound District, Ontario, Canada" },
+          { "@type": "Place", "name": "Simcoe County, Ontario, Canada" }
+        ]
       },
       {
         "@type": "Service",
@@ -273,6 +245,33 @@ const SEOHelmet: React.FC = () => {
       },
       {
         "@type": "Service",
+        "@id": `${siteUrl}/#service-spray-finishing`,
+        "name": "Spray Painting and Spray Finishing",
+        "serviceType": "Spray painting / spray finishing",
+        "url": `${siteUrl}/spray-finishing`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-wallpaper-removal`,
+        "name": "Wallpaper Removal",
+        "serviceType": "Wallpaper removal",
+        "url": `${siteUrl}/wallpaper-removal`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-epoxy`,
+        "name": "Epoxy Coatings",
+        "serviceType": "Epoxy coatings (e.g., floors)",
+        "url": `${siteUrl}/epoxy-coatings`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
         "@id": `${siteUrl}/#service-gonano`,
         "name": "GoNano Permanent Coating",
         "serviceType": "Nanotechnology protective coating",
@@ -281,22 +280,6 @@ const SEOHelmet: React.FC = () => {
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       }
     ]
-  };
-
-  // AggregateRating Schema
-  const aggregateRatingSchema = {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    "itemReviewed": {
-      "@type": "ProfessionalService",
-      "name": businessInfo.name,
-      "url": businessInfo.urls.website
-    },
-    "ratingValue": businessInfo.ratings.average.toString(),
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": businessInfo.ratings.reviewCount.toString(),
-    "reviewCount": businessInfo.ratings.reviewCount.toString()
   };
 
   // WebApplication Schema (AI Estimator)
@@ -316,7 +299,7 @@ const SEOHelmet: React.FC = () => {
     "provider": {
       "@type": "ProfessionalService",
       "name": businessInfo.name,
-      "url": businessInfo.urls.website
+      "url": `${siteUrl}/`
     },
     "featureList": [
       "Instant AI-powered estimates",
@@ -358,12 +341,12 @@ const SEOHelmet: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": businessInfo.urls.website },
-      { "@type": "ListItem", "position": 2, "name": "AI Painting Estimate", "item": `${businessInfo.urls.website}/#ai-estimator` },
-      { "@type": "ListItem", "position": 3, "name": "Services", "item": `${businessInfo.urls.website}/#services` },
-      { "@type": "ListItem", "position": 4, "name": "Pricing", "item": `${businessInfo.urls.website}/#pricing` },
-      { "@type": "ListItem", "position": 5, "name": "FAQ", "item": `${businessInfo.urls.website}/#faq` },
-      { "@type": "ListItem", "position": 6, "name": "Contact", "item": `${businessInfo.urls.website}/#contact` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` },
+      { "@type": "ListItem", "position": 2, "name": "AI Painting Estimate", "item": `${siteUrl}/#ai-estimator` },
+      { "@type": "ListItem", "position": 3, "name": "Services", "item": `${siteUrl}/#services` },
+      { "@type": "ListItem", "position": 4, "name": "Pricing", "item": `${siteUrl}/#pricing` },
+      { "@type": "ListItem", "position": 5, "name": "FAQ", "item": `${siteUrl}/#faq` },
+      { "@type": "ListItem", "position": 6, "name": "Contact", "item": `${siteUrl}/#contact` }
     ]
   };
 
@@ -378,7 +361,7 @@ const SEOHelmet: React.FC = () => {
       <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
       
       {/* Canonical URL */}
-      <link rel="canonical" href={`${businessInfo.urls.website}/`} />
+      <link rel="canonical" href={`${siteUrl}/`} />
       
       {/* Referrer Policy */}
       <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -387,7 +370,7 @@ const SEOHelmet: React.FC = () => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={`${businessInfo.name} | ${businessInfo.tagline}`} />
       <meta property="og:description" content={businessInfo.description} />
-      <meta property="og:url" content={businessInfo.urls.website} />
+      <meta property="og:url" content={`${siteUrl}/`} />
       <meta property="og:site_name" content={businessInfo.name} />
       <meta property="og:locale" content="en_CA" />
       
@@ -397,13 +380,9 @@ const SEOHelmet: React.FC = () => {
       <meta name="geo.position" content={`${businessInfo.geo.latitude};${businessInfo.geo.longitude}`} />
       <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
       
-      {/* Structured Data - Combined Organization & LocalBusiness */}
+      {/* Consolidated Structured Data — single @graph */}
       <script type="application/ld+json">
-        {JSON.stringify(graphSchema)}
-      </script>
-      
-      <script type="application/ld+json">
-        {JSON.stringify(aggregateRatingSchema)}
+        {JSON.stringify(consolidatedSchema)}
       </script>
       
       <script type="application/ld+json">
@@ -416,11 +395,6 @@ const SEOHelmet: React.FC = () => {
       
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchema)}
-      </script>
-      
-      {/* Consolidated Service Schema Graph */}
-      <script type="application/ld+json">
-        {JSON.stringify(serviceGraphSchema)}
       </script>
     </Helmet>
   );
