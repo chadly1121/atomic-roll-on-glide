@@ -132,9 +132,9 @@ export const businessInfo = {
   
   // Ratings
   ratings: {
-    average: 4.9,
+    average: 4.7,
     scale: 5,
-    reviewCount: 87 // MISSING — recommend verifying current count from Google
+    reviewCount: 15
   }
 } as const;
 
