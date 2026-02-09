@@ -30,6 +30,7 @@ const ServiceField = ({ value, onValueChange }: ServiceFieldProps) => {
           <SelectItem value="wallpaper">Wallpaper Installation</SelectItem>
           <SelectItem value="epoxy">Epoxy Coatings</SelectItem>
           <SelectItem value="washing">Power & Soft Washing</SelectItem>
+          <SelectItem value="stucco">Stucco Removal</SelectItem>
           <SelectItem value="gonano">GoNano Products</SelectItem>
           <SelectItem value="other">Other Services</SelectItem>
         </SelectContent>
