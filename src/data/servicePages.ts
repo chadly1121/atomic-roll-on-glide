@@ -376,6 +376,114 @@ export const servicePages: ServicePageData[] = [
       'Environmentally friendly nanotechnology',
       'Ideal for Muskoka\'s harsh weather conditions'
     ]
+  },
+  {
+    slug: 'spray-finishing',
+    name: 'Spray Finishing',
+    headline: 'Professional Spray Painting & Spray Finishing in Muskoka',
+    description: 'Roll On Painting offers professional spray painting and spray finishing services for residential and commercial projects. Spray application delivers a smooth, factory-quality finish on doors, trim, cabinets, fences, and large surfaces.',
+    metaDescription: 'Spray painting and spray finishing services in Muskoka. Factory-quality finishes for cabinets, trim, doors, and fences. Roll On Painting. Call 705-787-1401.',
+    category: 'specialty',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Surface preparation and masking',
+        'Airless or HVLP spray application',
+        'Even, drip-free coverage on all surfaces',
+        'Multiple coats for durability',
+        'Trim, doors, railings, and large surfaces',
+        'Full cleanup and overspray protection'
+      ],
+      whoItsFor: [
+        'Homeowners wanting a smooth, brushstroke-free finish',
+        'New construction requiring fast, uniform coverage',
+        'Commercial properties needing efficient application',
+        'Fence and deck projects requiring speed and consistency'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or email info@roll-onpainting.com',
+        'Describe surfaces and scope of work',
+        'We visit to assess and recommend the best approach',
+        'Receive a detailed written quote'
+      ]
+    },
+    benefits: [
+      'Factory-smooth finish without brush marks',
+      'Faster application on large surfaces',
+      'Ideal for trim, doors, cabinets, and fences',
+      'WSIB covered with $5 million liability insurance',
+      'Over 25 years of professional experience'
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between spray finishing and brush/roller painting?',
+        answer: 'Spray finishing uses airless or HVLP equipment to atomize paint, producing a smoother, more uniform finish without brush strokes. It is faster for large or detailed surfaces like trim, cabinets, and fences.'
+      },
+      {
+        question: 'Is spray painting suitable for interior walls?',
+        answer: 'Yes, spray painting can be used on interior walls for a smooth finish, especially in new construction or empty rooms. We mask and protect all areas not being painted.'
+      }
+    ]
+  },
+  {
+    slug: 'wallpaper-removal',
+    name: 'Wallpaper Removal',
+    headline: 'Professional Wallpaper Removal in Muskoka',
+    description: 'Roll On Painting provides professional wallpaper removal and wall restoration services. We safely strip old wallpaper, repair underlying surfaces, and prepare walls for fresh paint or new wallpaper.',
+    metaDescription: 'Wallpaper removal services in Muskoka. Safe stripping, wall repair, and surface prep for painting. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
+    category: 'residential',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Careful removal of all wallpaper layers',
+        'Adhesive residue cleaning',
+        'Wall surface repair (skim coating if needed)',
+        'Sanding and smoothing',
+        'Primer application for new finish',
+        'Ready for painting or new wallpaper installation'
+      ],
+      whoItsFor: [
+        'Homeowners updating dated wallpaper',
+        'Cottage owners refreshing interiors',
+        'Property sellers improving appeal',
+        'Anyone wanting to switch from wallpaper to paint'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos via our contact form',
+        'Describe the wallpaper type and room size',
+        'We visit to assess adhesion and wall condition',
+        'Receive a detailed quote including wall restoration'
+      ]
+    },
+    benefits: [
+      'Safe removal without wall damage',
+      'Complete adhesive residue cleanup',
+      'Wall restoration and skim coating available',
+      'Can combine with interior painting for a full refresh',
+      'WSIB covered with $5 million liability insurance'
+    ],
+    faqs: [
+      {
+        question: 'Can you remove wallpaper without damaging the walls?',
+        answer: 'Yes. We use professional techniques including steamers and safe chemical solutions to soften adhesive and lift wallpaper cleanly. Minor wall repairs and skim coating are included when needed.'
+      },
+      {
+        question: 'How long does wallpaper removal take?',
+        answer: 'A typical room takes 1-2 days depending on the number of layers and adhesive type. Older wallpaper with multiple layers takes longer.'
+      }
+    ]
   }
 ];
 
