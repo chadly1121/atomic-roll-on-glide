@@ -171,6 +171,7 @@ const SEOHelmet: React.FC = () => {
           "Wallpaper Installation",
           "Wallpaper Removal",
           "Spray Painting and Spray Finishing",
+          "Stucco Removal",
           "Power Washing"
         ],
         "sameAs": [
@@ -276,6 +277,15 @@ const SEOHelmet: React.FC = () => {
         "name": "GoNano Permanent Coating",
         "serviceType": "Nanotechnology protective coating",
         "url": `${siteUrl}/gonano-coating`,
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/#service-stucco-removal`,
+        "name": "Stucco Removal",
+        "serviceType": "Stucco removal",
+        "url": `${siteUrl}/stucco-removal`,
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       }

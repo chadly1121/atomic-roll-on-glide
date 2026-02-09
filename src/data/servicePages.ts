@@ -484,6 +484,60 @@ export const servicePages: ServicePageData[] = [
         answer: 'A typical room takes 1-2 days depending on the number of layers and adhesive type. Older wallpaper with multiple layers takes longer.'
       }
     ]
+  },
+  {
+    slug: 'stucco-removal',
+    name: 'Stucco Removal',
+    headline: 'Professional Stucco Removal in Muskoka',
+    description: 'Roll On Painting provides professional stucco removal services for homes and commercial buildings. We safely strip old, damaged, or unwanted stucco and prepare the underlying surface for a new finish.',
+    metaDescription: 'Stucco removal services in Muskoka. Safe stripping of old or damaged stucco, surface repair, and preparation. Roll On Painting. Call 705-787-1401.',
+    category: 'residential',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Assessment of existing stucco condition',
+        'Safe mechanical removal of stucco layers',
+        'Disposal of removed material',
+        'Inspection and repair of underlying substrate',
+        'Surface preparation for new finish (paint, siding, or new stucco)',
+        'Full site cleanup'
+      ],
+      whoItsFor: [
+        'Homeowners with cracked or water-damaged stucco',
+        'Property owners switching from stucco to another finish',
+        'Renovation projects requiring stucco strip-down',
+        'Commercial buildings needing facade updates'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or email info@roll-onpainting.com',
+        'Describe the area and condition of the stucco',
+        'We visit to assess scope and substrate condition',
+        'Receive a detailed written quote'
+      ]
+    },
+    benefits: [
+      'Safe removal without structural damage',
+      'Proper disposal of all debris',
+      'Substrate inspection and repair included',
+      'Can combine with repainting or new siding',
+      'WSIB covered with $5 million liability insurance'
+    ],
+    faqs: [
+      {
+        question: 'Why would I need stucco removed?',
+        answer: 'Common reasons include water damage behind the stucco, persistent cracking, mold issues, or wanting to change to a different exterior finish such as siding or stone.'
+      },
+      {
+        question: 'How long does stucco removal take?',
+        answer: 'It depends on the area and number of layers. A typical residential exterior takes 2-5 days including cleanup and surface preparation.'
+      }
+    ]
   }
 ];
 
