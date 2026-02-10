@@ -192,8 +192,8 @@ export const services: Service[] = [
     id: 11,
     title: "Stucco Removal",
     description: "Professional stucco removal services to strip old or damaged stucco and prepare surfaces for new finishes.",
-    icon: "🧱",
-    image: "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png",
+    icon: "🪹",
+    image: "/lovable-uploads/stucco-removal-ceiling.jpg",
     galleryImages: []
   }
 ];
