@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ServiceAreasPage from "./pages/ServiceAreasPage";
 import ServicePage from "./pages/ServicePage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
@@ -67,6 +69,8 @@ const App = () => {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
                 <Route path="/service-areas" element={<ServiceAreasPage />} />
                 <Route path="/:slug" element={<ServicePage />} />
                 <Route path="*" element={

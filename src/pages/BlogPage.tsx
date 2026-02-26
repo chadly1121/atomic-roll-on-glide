@@ -1,131 +1,158 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { blogPosts } from '../data/blogData';
+import { useBlogFeed, BlogFeedItem } from '@/hooks/useBlogFeed';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
-import { PenLine, Plus } from 'lucide-react';
+import { FileText, RefreshCw } from 'lucide-react';
+
+const ITEMS_PER_PAGE = 12;
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: 'long', day: 'numeric', year: 'numeric',
+  });
+}
+
+function truncate(text: string, len = 160) {
+  if (!text) return '';
+  return text.length > len ? text.slice(0, len).trimEnd() + '…' : text;
+}
+
+const BlogCardSkeleton = () => (
+  <div className="rounded-xl overflow-hidden bg-card shadow-sm">
+    <Skeleton className="h-48 w-full" />
+    <div className="p-5 space-y-3">
+      <Skeleton className="h-4 w-24" />
+      <Skeleton className="h-6 w-full" />
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-2/3" />
+    </div>
+  </div>
+);
+
+const BlogCard = ({ item }: { item: BlogFeedItem }) => {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <Link
+      to={`/blog/${item.slug}`}
+      className="group rounded-xl overflow-hidden bg-card shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 block"
+    >
+      {item.image && !imgError && (
+        <div className="h-48 overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onError={() => setImgError(true)}
+            loading="lazy"
+          />
+        </div>
+      )}
+      <div className="p-5">
+        <div className="flex items-center text-xs text-muted-foreground mb-2 gap-3">
+          <span>{formatDate(item.date_published)}</span>
+          <span>·</span>
+          <span>{item.readingTime} min read</span>
+        </div>
+        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-snug">
+          {item.title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {truncate(item.summary)}
+        </p>
+      </div>
+    </Link>
+  );
+};
 
 const BlogPage = () => {
-  // Group blog posts by category
-  const categories = [...new Set(blogPosts.map(post => post.category))];
-  
+  const { items, loading, error, retry } = useBlogFeed();
+  const [visible, setVisible] = useState(ITEMS_PER_PAGE);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Blog | Roll On Painting</title>
+        <meta name="description" content="Read our latest articles about painting tips, trends, and project showcases from Roll On Painting." />
+        <link rel="canonical" href="https://rollonpainting.com/blog" />
+      </Helmet>
+
       <Navbar activeSection="blog" />
-      
+
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex justify-between items-center mb-16">
-              <div>
-                <h1 className="section-heading mb-2">Our Blog</h1>
-                <p className="max-w-2xl text-lg text-gray-600">
-                  Get inspired with the latest painting trends, tips, and insights from our experienced team.
-                </p>
-              </div>
-              <Link to="/blog/new">
-                <Button className="flex items-center gap-2">
-                  <Plus size={16} />
-                  New Blog
-                </Button>
-              </Link>
-            </div>
-            
+          <div className="max-w-5xl mx-auto">
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">Latest Articles</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.slice(0, 2).map(post => (
-                  <div key={post.id} className="rounded-xl overflow-hidden bg-white shadow-md group hover:shadow-xl transition-shadow relative">
-                    <Link 
-                      to={`/blog/edit/${post.id}`}
-                      className="absolute right-2 top-2 z-10 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
-                      title="Edit blog"
-                    >
-                      <PenLine size={16} className="text-atomic-turquoise" />
-                    </Link>
-                    <div className="h-60 overflow-hidden">
-                      <img 
-                        src={post.image} 
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center text-xs text-gray-500 mb-2 space-x-4">
-                        <span>{post.date}</span>
-                        <span className="px-2 py-1 rounded-full bg-atomic-turquoise/10 text-atomic-turquoise">
-                          {post.category}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold mb-2 group-hover:text-atomic-turquoise transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                      <Link 
-                        to={`/blog/${post.id}`}
-                        className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
-                      >
-                        Read More
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
+              <h1 className="section-heading mb-2">Our Blog</h1>
+              <p className="max-w-2xl text-lg text-muted-foreground">
+                Read our latest articles about painting tips, trends, and project showcases.
+              </p>
+            </div>
+
+            {/* Loading */}
+            {loading && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <BlogCardSkeleton key={i} />
                 ))}
               </div>
-            </div>
-            
-            {categories.map(category => (
-              <div key={category} className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">{category}</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {blogPosts
-                    .filter(post => post.category === category)
-                    .map(post => (
-                      <div key={post.id} className="rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
-                        <Link 
-                          to={`/blog/edit/${post.id}`}
-                          className="absolute right-1 top-1 z-10 bg-white/80 p-1.5 rounded-full hover:bg-white transition-colors"
-                          title="Edit blog"
-                        >
-                          <PenLine size={14} className="text-atomic-turquoise" />
-                        </Link>
-                        <div className="h-40 overflow-hidden">
-                          <img 
-                            src={post.image} 
-                            alt={post.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                          />
-                        </div>
-                        <div className="p-4">
-                          <div className="flex items-center text-xs text-gray-500 mb-2">
-                            <span>{post.date}</span>
-                          </div>
-                          <h3 className="text-lg font-bold mb-1 hover:text-atomic-turquoise transition-colors">
-                            <Link to={`/blog/${post.id}`}>{post.title}</Link>
-                          </h3>
-                          <Link 
-                            to={`/blog/${post.id}`}
-                            className="text-sm inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors mt-2"
-                          >
-                            Read Article
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                        </div>
-                      </div>
-                    ))}
-                </div>
+            )}
+
+            {/* Error */}
+            {error && !loading && (
+              <div className="flex flex-col items-center justify-center py-20 text-center">
+                <RefreshCw size={48} className="text-muted-foreground mb-4" />
+                <h2 className="text-xl font-bold mb-2">Couldn't load articles</h2>
+                <p className="text-muted-foreground mb-6">Please try again.</p>
+                <Button onClick={retry} className="flex items-center gap-2">
+                  <RefreshCw size={16} />
+                  Retry
+                </Button>
               </div>
-            ))}
+            )}
+
+            {/* Empty */}
+            {!loading && !error && items.length === 0 && (
+              <div className="flex flex-col items-center justify-center py-20 text-center">
+                <FileText size={64} className="text-muted-foreground mb-6" />
+                <h2 className="text-2xl font-bold mb-2">Articles are on the way!</h2>
+                <p className="text-muted-foreground">Check back soon.</p>
+              </div>
+            )}
+
+            {/* Articles */}
+            {!loading && !error && items.length > 0 && (
+              <>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {items.slice(0, visible).map((item) => (
+                    <BlogCard key={item.id} item={item} />
+                  ))}
+                </div>
+                {visible < items.length && (
+                  <div className="flex justify-center mt-10">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      onClick={() => setVisible((v) => v + ITEMS_PER_PAGE)}
+                    >
+                      Load More
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
