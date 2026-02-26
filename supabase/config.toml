@@ -2,3 +2,6 @@
 project_id = "kqbybkrvatvfiwhbnqna"
 
 [functions.send-quote-notification]
+
+[functions.blog-sitemap]
+verify_jwt = false

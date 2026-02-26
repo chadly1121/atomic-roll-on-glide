@@ -1,178 +1,169 @@
-
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { blogPosts } from '../data/blogData';
-import { useToast } from '@/hooks/use-toast';
-import { Button } from '@/components/ui/button';
-import { PenLine } from 'lucide-react';
+import { useBlogFeed } from '@/hooks/useBlogFeed';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Badge } from '@/components/ui/badge';
+import { ArrowLeft, FileQuestion } from 'lucide-react';
+import { businessInfo } from '@/data/businessInfo';
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: 'long', day: 'numeric', year: 'numeric',
+  });
+}
 
 const BlogPostPage = () => {
-  const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState(blogPosts.find(post => post.id === Number(id)));
-  const { toast } = useToast();
-  const navigate = useNavigate();
-  
+  const { slug } = useParams<{ slug: string }>();
+  const { items, loading, getBySlug } = useBlogFeed();
+  const post = getBySlug(slug || '');
+  const [imgError, setImgError] = useState(false);
+
   useEffect(() => {
-    if (!post) {
-      toast({
-        title: "Blog Post Not Found",
-        description: "Sorry, we couldn't find the blog post you're looking for.",
-        variant: "destructive",
-      });
-    } else {
-      // Scroll to top when post loads
-      window.scrollTo(0, 0);
-    }
-  }, [post, toast]);
+    window.scrollTo(0, 0);
+  }, [slug]);
 
-  const handleBackToBlog = () => {
-    navigate('/blog');
-  };
+  // Reset img error when slug changes
+  useEffect(() => {
+    setImgError(false);
+  }, [slug]);
 
-  const handleBackToHome = () => {
-    navigate('/');
-  };
+  // Make all content links open in new tabs & hide broken images
+  useEffect(() => {
+    if (!post) return;
+    const container = document.querySelector('.blog-prose');
+    if (!container) return;
+    container.querySelectorAll('a').forEach((a) => {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+    container.querySelectorAll('img').forEach((img) => {
+      img.onerror = () => { img.style.display = 'none'; };
+    });
+  }, [post, slug]);
 
-  const handleEdit = () => {
-    navigate(`/blog/edit/${id}`);
-  };
+  const siteUrl = businessInfo.urls.website;
+  const metaDesc = post?._seo?.meta_description || post?.summary || '';
+  const metaKeywords = post?._seo?.meta_keywords?.join(', ') || '';
+  const canonicalUrl = `${siteUrl}/blog/${slug}`;
+
+  const jsonLd = post ? {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    image: post.image,
+    datePublished: post.date_published,
+    dateModified: post.date_modified,
+    author: post.authors?.map(a => ({ '@type': 'Person', name: a.name })) || [],
+    description: metaDesc,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  } : null;
 
   return (
     <div className="min-h-screen bg-background">
+      {post && (
+        <Helmet>
+          <title>{post.title} | Roll On Painting</title>
+          <meta name="description" content={metaDesc} />
+          {metaKeywords && <meta name="keywords" content={metaKeywords} />}
+          <link rel="canonical" href={canonicalUrl} />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={metaDesc} />
+          <meta property="og:image" content={post.image} />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={metaDesc} />
+          <meta name="twitter:image" content={post.image} />
+          <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        </Helmet>
+      )}
+
       <Navbar activeSection="blog" />
-      
+
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
-          {post ? (
-            <div className="max-w-3xl mx-auto">
-              <div className="flex justify-between items-center mb-6">
-                <div className="flex space-x-4">
-                  <button 
-                    onClick={handleBackToBlog}
-                    className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
-                    </svg>
-                    Back to Blog
-                  </button>
+          {/* Loading */}
+          {loading && (
+            <div className="max-w-3xl mx-auto space-y-6">
+              <Skeleton className="h-8 w-48" />
+              <Skeleton className="h-64 w-full rounded-xl" />
+              <Skeleton className="h-10 w-3/4" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
+          )}
 
-                  <button 
-                    onClick={handleBackToHome}
-                    className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                    </svg>
-                    Back to Home
-                  </button>
-                </div>
-                
-                <Button onClick={handleEdit} className="flex items-center gap-2">
-                  <PenLine size={16} />
-                  Edit Post
-                </Button>
-              </div>
-              
-              <div className="prose prose-lg max-w-none">
-                <div className="mb-4 flex items-center text-sm text-gray-500 space-x-4">
-                  <span>{post.date}</span>
-                  <span className="px-2 py-1 rounded-full bg-atomic-turquoise/10 text-atomic-turquoise">
-                    {post.category}
-                  </span>
-                </div>
-                
-                <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
-                
-                <div className="rounded-xl overflow-hidden mb-8">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-auto object-cover"
+          {/* Not found */}
+          {!loading && !post && (
+            <div className="max-w-3xl mx-auto text-center py-20">
+              <FileQuestion size={64} className="mx-auto text-muted-foreground mb-6" />
+              <h1 className="text-3xl font-bold mb-3">Article not found</h1>
+              <p className="text-muted-foreground mb-8">
+                The article you're looking for doesn't exist or may have been removed.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+              >
+                <ArrowLeft size={16} />
+                Back to all articles
+              </Link>
+            </div>
+          )}
+
+          {/* Article */}
+          {!loading && post && (
+            <article className="max-w-3xl mx-auto">
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium mb-8"
+              >
+                <ArrowLeft size={16} />
+                Back to all articles
+              </Link>
+
+              {/* Hero image */}
+              {post.image && !imgError && (
+                <div className="rounded-xl overflow-hidden mb-8 max-h-[400px]">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                    style={{ maxHeight: '400px' }}
+                    onError={() => setImgError(true)}
                   />
                 </div>
-                
-                <p className="text-lg mb-4">
-                  {post.excerpt}
-                </p>
-                
-                {/* Full blog post content - This would normally come from a CMS */}
-                <div className="mt-8">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna. Nulla facilisi. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna.
-                  </p>
-                  <p className="mt-4">
-                    Nulla facilisi. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna. 
-                  </p>
-                  <h2 className="text-2xl font-bold mt-8 mb-4">Key Considerations</h2>
-                  <p>
-                    Nulla facilisi. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur interdum, nisl nisi consectetur purus, eget porttitor nisl nisl sit amet magna.
-                  </p>
-                  <ul className="list-disc pl-6 mt-4">
-                    <li className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                    <li className="mb-2">Nullam euismod, nisi vel consectetur interdum</li>
-                    <li className="mb-2">Nisl nisi consectetur purus, eget porttitor nisl</li>
-                    <li>Nulla facilisi</li>
-                  </ul>
-                </div>
+              )}
+
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
+
+              {/* Meta row */}
+              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-8">
+                {post.authors?.length > 0 && (
+                  <span>{post.authors.map(a => a.name).join(', ')}</span>
+                )}
+                <span>{formatDate(post.date_published)}</span>
+                <span>{post.readingTime} min read</span>
+                {post.tags?.map(tag => (
+                  <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                ))}
               </div>
-              
-              <div className="mt-12 border-t border-gray-200 pt-8">
-                <h3 className="text-xl font-bold mb-6">Related Posts</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {blogPosts
-                    .filter(relatedPost => relatedPost.id !== post.id)
-                    .slice(0, 2)
-                    .map(relatedPost => (
-                      <div 
-                        key={relatedPost.id} 
-                        onClick={() => {
-                          navigate(`/blog/${relatedPost.id}`);
-                          window.scrollTo(0, 0);
-                        }} 
-                        className="group flex items-start space-x-4 cursor-pointer"
-                      >
-                        <div className="w-24 h-24 flex-shrink-0 rounded-md overflow-hidden">
-                          <img 
-                            src={relatedPost.image} 
-                            alt={relatedPost.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div>
-                          <h4 className="font-bold group-hover:text-atomic-turquoise transition-colors">{relatedPost.title}</h4>
-                          <p className="text-sm text-gray-500 mt-1">{relatedPost.date}</p>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <h2 className="text-2xl font-bold">Blog Post Not Found</h2>
-              <p className="mt-4">The post you're looking for doesn't exist or has been removed.</p>
-              <div className="flex justify-center space-x-4 mt-8">
-                <button 
-                  onClick={handleBackToBlog}
-                  className="inline-block atomic-button-secondary"
-                >
-                  <span className="relative z-10">Return to Blog</span>
-                </button>
-                <button 
-                  onClick={handleBackToHome}
-                  className="inline-block atomic-button"
-                >
-                  <span className="relative z-10">Return to Home</span>
-                </button>
-              </div>
-            </div>
+
+              {/* Content */}
+              <div
+                className="blog-prose"
+                dangerouslySetInnerHTML={{ __html: post.content_html }}
+              />
+            </article>
           )}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
