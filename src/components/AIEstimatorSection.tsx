@@ -87,7 +87,7 @@ const AIEstimatorSection = () => {
         {/* Widget Container */}
         <div className="max-w-4xl mx-auto">
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[500px] sm:min-h-[700px]"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[500px] sm:min-h-[700px] sticky top-20 z-30"
             style={{ overscrollBehavior: 'contain', touchAction: 'pan-x pan-y' }}
             role="application"
             aria-label="AI Painting Cost Estimator"
