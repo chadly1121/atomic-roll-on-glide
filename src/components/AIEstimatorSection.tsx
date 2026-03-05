@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Calculator, Sparkles, Clock, CheckCircle } from 'lucide-react';
 // Quohta AI estimator iframe embed – do not delete
 
 const AIEstimatorSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
-  // Always mount the iframe for reliability (it's a top-priority section)
   const [shouldLoadIframe, setShouldLoadIframe] = useState(true);
+  const [iframeHasFocus, setIframeHasFocus] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-
+  const iframeContainerRef = useRef<HTMLDivElement>(null);
   const benefits = [
     { icon: Clock, text: "Get instant estimates in seconds" },
     { icon: Calculator, text: "AI-powered accuracy" },
@@ -33,6 +33,45 @@ const AIEstimatorSection = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Lock page scroll when iframe has focus (user is interacting with the chat)
+  useEffect(() => {
+    const onFocusIn = () => {
+      // Check if the active element is the iframe
+      const active = document.activeElement;
+      if (active && active.tagName === 'IFRAME' && iframeContainerRef.current?.contains(active)) {
+        setIframeHasFocus(true);
+        document.body.style.overflow = 'hidden';
+      }
+    };
+    const onFocusOut = () => {
+      setIframeHasFocus(false);
+      document.body.style.overflow = '';
+    };
+
+    // Polling approach: browsers don't reliably fire focus events for iframes
+    const interval = setInterval(() => {
+      const active = document.activeElement;
+      const iframeFocused = active?.tagName === 'IFRAME' && iframeContainerRef.current?.contains(active);
+      if (iframeFocused && !iframeHasFocus) {
+        setIframeHasFocus(true);
+        document.body.style.overflow = 'hidden';
+      } else if (!iframeFocused && iframeHasFocus) {
+        setIframeHasFocus(false);
+        document.body.style.overflow = '';
+      }
+    }, 300);
+
+    window.addEventListener('focus', onFocusIn, true);
+    window.addEventListener('blur', onFocusOut, true);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', onFocusIn, true);
+      window.removeEventListener('blur', onFocusOut, true);
+      document.body.style.overflow = '';
+    };
+  }, [iframeHasFocus]);
 
   // Prevent infinite spinner if the iframe never fires onLoad
   useEffect(() => {
@@ -87,7 +126,8 @@ const AIEstimatorSection = () => {
         {/* Widget Container */}
         <div className="max-w-4xl mx-auto">
           <div 
-            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[500px] sm:min-h-[700px] sticky top-20 z-30"
+            ref={iframeContainerRef}
+            className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-3 sm:p-6 md:p-8 border border-atomic-pink/20 min-h-[500px] sm:min-h-[700px]"
             style={{ overscrollBehavior: 'contain', touchAction: 'pan-x pan-y' }}
             role="application"
             aria-label="AI Painting Cost Estimator"
