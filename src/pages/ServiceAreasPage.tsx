@@ -62,8 +62,22 @@ const ServiceAreasPage: React.FC = () => {
           name="description" 
           content={`Roll On Painting serves ${allServiceAreaNames.length}+ communities across Muskoka, Parry Sound, and Simcoe County. Professional painting services in Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia, Barrie and surrounding areas.`}
         />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${businessInfo.urls.website}/service-areas`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <link rel="canonical" href="https://www.roll-onpainting.com/service-areas" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Service Areas | Roll On Painting Muskoka" />
+        <meta property="og:description" content={`Professional painting services in ${allServiceAreaNames.length}+ communities across Muskoka, Parry Sound, and Simcoe County.`} />
+        <meta property="og:url" content="https://www.roll-onpainting.com/service-areas" />
+        <meta property="og:site_name" content={businessInfo.name} />
+        <meta property="og:locale" content="en_CA" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Service Areas | Roll On Painting" />
+        <meta name="twitter:description" content={`Serving ${allServiceAreaNames.length}+ communities in Muskoka, Parry Sound, and Simcoe County.`} />
+        
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
