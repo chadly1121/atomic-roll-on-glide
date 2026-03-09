@@ -61,6 +61,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "power-washing",
         title: "Power Washer for a Day",
         price: "$750",
+        stripePriceId: "price_1T9DcpI3v1u61BwN0U2Hbssu",
         duration: "7 hours",
         includes: [
           "Professional operator for a full day",
