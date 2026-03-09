@@ -1,6 +1,7 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -102,6 +103,52 @@ function isImageUrl(url: string): boolean {
   return imageExtensions.some(ext => lowerUrl.includes(ext));
 }
 
+/**
+ * Generate signed URLs for attachments stored in the private bucket.
+ * Uses the service role key to create short-lived signed URLs (7 days).
+ */
+async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  
+  const supabase = createClient(supabaseUrl, serviceRoleKey);
+  
+  const signedUrls: string[] = [];
+  
+  for (const path of storagePaths) {
+    // Extract the storage path from the full public URL
+    const bucketPath = extractStoragePath(path);
+    if (!bucketPath) {
+      console.warn("Could not extract storage path from:", path);
+      signedUrls.push(path); // fallback
+      continue;
+    }
+    
+    const { data, error } = await supabase.storage
+      .from('quote-attachments')
+      .createSignedUrl(bucketPath, 60 * 60 * 24 * 7); // 7 days
+    
+    if (error) {
+      console.error("Error creating signed URL:", error);
+      signedUrls.push(path); // fallback
+    } else {
+      signedUrls.push(data.signedUrl);
+    }
+  }
+  
+  return signedUrls;
+}
+
+/**
+ * Extract the storage path from a full Supabase storage URL.
+ * Input: https://xxx.supabase.co/storage/v1/object/public/quote-attachments/submissionId/file.jpg
+ * Output: submissionId/file.jpg
+ */
+function extractStoragePath(url: string): string | null {
+  const match = url.match(/quote-attachments\/(.+)$/);
+  return match ? match[1] : null;
+}
+
 function generateAttachmentsHtml(attachments: string[], fileNames: string[]): string {
   if (!attachments || attachments.length === 0) {
     return '';
@@ -138,6 +185,7 @@ function generateAttachmentsHtml(attachments: string[], fileNames: string[]): st
   return `
     <div style="margin-top: 24px; padding-top: 24px; border-top: 2px solid #e5e7eb;">
       <h3 style="margin-bottom: 16px; color: #1f2937; font-size: 18px;">📎 Attached Files (${attachments.length})</h3>
+      <p style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">Links expire in 7 days.</p>
       ${attachmentItems}
     </div>
   `;
@@ -225,8 +273,14 @@ serve(async (req) => {
     const sanitizedService = sanitizeHtml(service);
     const sanitizedMessage = sanitizeHtml(message);
     
-    const attachmentsHtml = generateAttachmentsHtml(attachments || [], fileNames || []);
+    // Generate signed URLs for attachments (bucket is now private)
     const hasAttachments = attachments && attachments.length > 0;
+    let signedAttachmentUrls: string[] = [];
+    if (hasAttachments) {
+      signedAttachmentUrls = await generateSignedUrls(attachments!);
+    }
+    
+    const attachmentsHtml = generateAttachmentsHtml(signedAttachmentUrls, fileNames || []);
     
     console.log("Processing secure contact form submission:", { 
       submissionId, 
