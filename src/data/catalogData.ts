@@ -159,6 +159,8 @@ export const catalogCategories: CatalogCategory[] = [
         category: "gonano",
         title: "NuRoof Revive™",
         price: "From $1.49/sq ft",
+        stripePriceId: "price_1T9DdJI3v1u61BwNBiwpElzQ",
+        isPerSqFt: true,
         coverage: "Roofs 7–15 years old",
         includes: [
           "Comprehensive roof inspection",
