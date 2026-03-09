@@ -26,12 +26,12 @@ const AIEstimatorSection = () => {
       {/* CTA Section */}
       <section
         id="ai-estimator"
-        className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
+        className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-orange/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
         aria-labelledby="ai-estimator-heading"
       >
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-atomic-pink/20 text-atomic-pink px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
+            <div className="inline-flex items-center gap-2 bg-atomic-orange/20 text-atomic-orange px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
               <span className="font-semibold text-xs sm:text-sm uppercase tracking-wide">AI-Powered Technology</span>
             </div>
@@ -40,7 +40,7 @@ const AIEstimatorSection = () => {
               id="ai-estimator-heading"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-atomic-navy mb-3 sm:mb-4 px-2"
             >
-              Get Your <span className="text-atomic-pink">Instant Painting Estimate</span>
+              Get Your <span className="text-atomic-orange">Instant Painting Estimate</span>
             </h2>
 
             <p className="text-sm sm:text-base md:text-lg text-atomic-navy/70 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
@@ -64,7 +64,7 @@ const AIEstimatorSection = () => {
             {/* CTA Button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="inline-flex items-center gap-2 bg-atomic-pink text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:bg-atomic-pink/90 transition-all group"
+              className="inline-flex items-center gap-2 bg-atomic-orange text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:bg-atomic-orange/90 transition-all group"
             >
               <Calculator className="w-5 h-5" />
               Get Your Free Estimate Now
@@ -80,14 +80,14 @@ const AIEstimatorSection = () => {
 
       {/* Fullscreen Modal with Estimator */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-pink/20" aria-describedby={undefined}>
+        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-orange/20" aria-describedby={undefined}>
           <VisuallyHidden.Root>
             <DialogTitle>AI Painting Estimator</DialogTitle>
           </VisuallyHidden.Root>
           {/* Header */}
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-gradient-to-r from-atomic-pink/5 to-atomic-turquoise/5">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-gradient-to-r from-atomic-orange/5 to-atomic-turquoise/5">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-atomic-pink" />
+              <Sparkles className="w-4 h-4 text-atomic-orange" />
               <span className="font-semibold text-atomic-navy text-sm sm:text-base">AI Painting Estimator</span>
             </div>
           </div>
@@ -105,7 +105,7 @@ const AIEstimatorSection = () => {
             />
             {!isLoaded && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-background">
-                <div className="w-12 h-12 border-4 border-atomic-pink border-t-transparent rounded-full animate-spin mb-4" />
+                <div className="w-12 h-12 border-4 border-atomic-orange border-t-transparent rounded-full animate-spin mb-4" />
                 <p className="text-muted-foreground">Loading estimator...</p>
               </div>
             )}
