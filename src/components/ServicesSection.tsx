@@ -67,10 +67,11 @@ const ServicesSection = () => {
             className="atomic-button button-pulse inline-block text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] active:scale-95 transition-transform"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-              });
+              if (window.location.pathname === '/') {
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              } else {
+                window.location.href = '/#contact';
+              }
             }}
           >
             <span className="relative z-10">Request Custom Service</span>

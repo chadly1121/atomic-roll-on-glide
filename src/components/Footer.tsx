@@ -1,17 +1,25 @@
 
 import React from 'react';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { businessInfo } from '@/data/businessInfo';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    const element = document.querySelector(sectionId);
-    if (element) {
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 100,
-        behavior: 'smooth'
-      });
+    if (location.pathname === '/') {
+      const element = document.querySelector(sectionId);
+      if (element) {
+        window.scrollTo({
+          top: element.getBoundingClientRect().top + window.scrollY - 100,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      navigate('/' + sectionId);
     }
   };
 
@@ -47,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="#about" 
+                  href="/#about" 
                   onClick={(e) => scrollToSection(e, '#about')}
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
@@ -56,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#services" 
+                  href="/#services" 
                   onClick={(e) => scrollToSection(e, '#services')}
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
@@ -65,7 +73,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#gallery" 
+                  href="/#gallery" 
                   onClick={(e) => scrollToSection(e, '#gallery')}
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
@@ -74,7 +82,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#gonano" 
+                  href="/#gonano" 
                   onClick={(e) => scrollToSection(e, '#gonano')}
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
@@ -83,7 +91,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="#pricing" 
+                  href="/#pricing" 
                   onClick={(e) => scrollToSection(e, '#pricing')}
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
@@ -98,27 +106,27 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
                   Interior Painting
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
                   Exterior Painting
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
                   Commercial Painting
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
                   Cabinet Refinishing
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
                   Deck & Fence Staining
                 </a>
               </li>
@@ -159,7 +167,7 @@ const Footer = () => {
 
             <div className="mt-6">
               <a 
-                href="#contact" 
+                href="/#contact" 
                 onClick={(e) => scrollToSection(e, '#contact')}
                 className="bg-atomic-turquoise text-white px-6 py-2 rounded-full inline-block hover:bg-atomic-turquoise/80 transition-all hover:-translate-y-1 hover:shadow-md duration-300"
               >

@@ -85,10 +85,11 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
               className="inline-flex items-center text-atomic-turquoise hover:text-atomic-orange font-medium transition-colors"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector('#contact')?.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                });
+                if (window.location.pathname === '/') {
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  window.location.href = '/#contact';
+                }
               }}
             >
               Get A Quote
