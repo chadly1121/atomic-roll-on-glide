@@ -40,7 +40,7 @@ const AIEstimatorSection = () => {
               id="ai-estimator-heading"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-atomic-navy mb-3 sm:mb-4 px-2"
             >
-              Get Your <span className="text-atomic-pink">Instant Painting Estimate</span>
+              Get Your <span className="text-atomic-orange">Instant Painting Estimate</span>
             </h2>
 
             <p className="text-sm sm:text-base md:text-lg text-atomic-navy/70 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
