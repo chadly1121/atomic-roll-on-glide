@@ -99,7 +99,11 @@ const FAQSection: React.FC = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                if (window.location.pathname === '/') {
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact';
+                }
               }}
               className="inline-flex items-center justify-center gap-2 border-2 border-atomic-turquoise text-atomic-turquoise px-6 py-3 rounded-full font-medium hover:bg-atomic-turquoise/10 transition-colors"
             >

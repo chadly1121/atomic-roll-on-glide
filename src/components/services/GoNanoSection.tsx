@@ -103,10 +103,11 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
                 href="#contact" 
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#contact')?.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
+                  if (window.location.pathname === '/') {
+                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                    window.location.href = '/#contact';
+                  }
                 }}
                 className="atomic-button-secondary w-full text-center justify-center"
               >

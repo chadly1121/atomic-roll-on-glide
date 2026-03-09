@@ -181,7 +181,11 @@ const PricingCalculator = () => {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#contact')?.scrollIntoView({behavior: 'smooth'});
+                  if (window.location.pathname === '/') {
+                    document.querySelector('#contact')?.scrollIntoView({behavior: 'smooth'});
+                  } else {
+                    window.location.href = '/#contact';
+                  }
                 }}
                 className="text-atomic-orange hover:underline"
               >

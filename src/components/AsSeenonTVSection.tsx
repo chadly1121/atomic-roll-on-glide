@@ -92,7 +92,11 @@ const AsSeenonTVSection = () => {
             href="#contact" 
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              if (window.location.pathname === '/') {
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.href = '/#contact';
+              }
             }}
             className="atomic-button-secondary inline-flex items-center text-center py-3 px-6 rounded-full group"
           >

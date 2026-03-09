@@ -65,10 +65,11 @@ const ClientLogos: React.FC = () => {
             className="text-atomic-turquoise font-medium hover:text-atomic-navy transition-colors inline-flex items-center"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-              });
+              if (window.location.pathname === '/') {
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              } else {
+                window.location.href = '/#contact';
+              }
             }}
           >
             Join our growing list of satisfied clients

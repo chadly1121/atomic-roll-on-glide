@@ -1,11 +1,19 @@
 import React from 'react';
 import { Atom, FileImage, Phone } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ResidentialGalleryPopup from '../gallery/ResidentialGalleryPopup';
 
 const HeroContent = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/') {
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#contact');
+    }
   };
 
   const phoneNumber = "705-787-1401";

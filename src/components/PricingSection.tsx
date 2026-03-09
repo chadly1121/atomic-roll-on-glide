@@ -106,7 +106,11 @@ const PricingSection = () => {
                 href="#contact" 
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  if (window.location.pathname === '/') {
+                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#contact';
+                  }
                 }}
                 className={`w-full py-3 text-center rounded-full font-medium block transition-colors min-h-[48px] flex items-center justify-center active:scale-95 text-sm sm:text-base ${
                   tier.isPopular 
