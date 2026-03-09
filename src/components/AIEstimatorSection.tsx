@@ -26,7 +26,7 @@ const AIEstimatorSection = () => {
       {/* CTA Section */}
       <section
         id="ai-estimator"
-        className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-pink/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
+        className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-atomic-orange/10 via-white to-atomic-turquoise/10 relative overflow-hidden"
         aria-labelledby="ai-estimator-heading"
       >
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
