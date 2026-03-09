@@ -29,8 +29,6 @@ interface ContactRequest {
   fileNames?: string[];
 }
 
-const rateLimitMap = new Map<string, { attempts: number; resetTime: number }>();
-
 function sanitizeHtml(input: string): string {
   if (!input) return '';
   
@@ -60,20 +58,45 @@ function isValidName(name: string): boolean {
   return nameRegex.test(name);
 }
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const userLimit = rateLimitMap.get(ip);
+/**
+ * Database-backed rate limiting — shared across all edge function instances.
+ * Records each attempt and checks the count within the last 15 minutes.
+ */
+async function isRateLimited(ip: string): Promise<boolean> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const supabase = createClient(supabaseUrl, serviceRoleKey);
   
-  if (!userLimit || now > userLimit.resetTime) {
-    rateLimitMap.set(ip, { attempts: 1, resetTime: now + (15 * 60 * 1000) });
-    return false;
+  const windowStart = new Date(Date.now() - 15 * 60 * 1000).toISOString();
+  
+  // Count recent attempts
+  const { count, error: countError } = await supabase
+    .from('edge_function_rate_limits')
+    .select('*', { count: 'exact', head: true })
+    .eq('ip_address', ip)
+    .eq('function_name', 'send-contact-email')
+    .gte('attempted_at', windowStart);
+  
+  if (countError) {
+    console.error("Rate limit check error:", countError);
+    return false; // fail open to avoid blocking legitimate users
   }
   
-  if (userLimit.attempts >= 5) {
+  if ((count ?? 0) >= 5) {
     return true;
   }
   
-  userLimit.attempts++;
+  // Record this attempt
+  await supabase.from('edge_function_rate_limits').insert({
+    ip_address: ip,
+    function_name: 'send-contact-email',
+  });
+  
+  // Periodically clean up old entries (1 in 10 chance)
+  if (Math.random() < 0.1) {
+    await supabase.rpc('cleanup_rate_limits');
+  }
+  
   return false;
 }
 
@@ -116,12 +139,16 @@ async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
   const signedUrls: string[] = [];
   
   for (const path of storagePaths) {
-    // Extract the storage path from the full public URL
+    // Validate URL belongs to our Supabase storage — reject external URLs
+    if (!isValidStorageUrl(path, supabaseUrl)) {
+      console.warn("Rejected non-Supabase attachment URL:", path);
+      continue; // skip instead of falling back to raw URL
+    }
+    
     const bucketPath = extractStoragePath(path);
     if (!bucketPath) {
       console.warn("Could not extract storage path from:", path);
-      signedUrls.push(path); // fallback
-      continue;
+      continue; // skip instead of falling back to raw URL
     }
     
     const { data, error } = await supabase.storage
@@ -129,14 +156,30 @@ async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
       .createSignedUrl(bucketPath, 60 * 60 * 24 * 7); // 7 days
     
     if (error) {
-      console.error("Error creating signed URL:", error);
-      signedUrls.push(path); // fallback
+      console.error("Error creating signed URL for path:", bucketPath, error);
+      continue; // skip instead of falling back to raw URL
     } else {
       signedUrls.push(data.signedUrl);
     }
   }
   
   return signedUrls;
+}
+
+/**
+ * Validate that a URL belongs to our Supabase storage project.
+ * Rejects any external/attacker-controlled URLs.
+ */
+function isValidStorageUrl(url: string, supabaseUrl: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const supabaseParsed = new URL(supabaseUrl);
+    return parsed.hostname === supabaseParsed.hostname &&
+           parsed.pathname.includes('/storage/v1/object/') &&
+           parsed.pathname.includes('quote-attachments/');
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -214,7 +257,7 @@ serve(async (req) => {
                     req.headers.get('x-real-ip') || 
                     'unknown';
     
-    if (isRateLimited(clientIP)) {
+    if (await isRateLimited(clientIP)) {
       return new Response(
         JSON.stringify({ success: false, error: "Rate limit exceeded. Please wait before submitting again." }),
         { 

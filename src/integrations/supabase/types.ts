@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      edge_function_rate_limits: {
+        Row: {
+          attempted_at: string
+          function_name: string
+          id: string
+          ip_address: string
+        }
+        Insert: {
+          attempted_at?: string
+          function_name: string
+          id?: string
+          ip_address: string
+        }
+        Update: {
+          attempted_at?: string
+          function_name?: string
+          id?: string
+          ip_address?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -153,6 +174,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_rate_limits: { Args: never; Returns: undefined }
       is_team_member: {
         Args: { _team_id: string; _user_id: string }
         Returns: boolean
