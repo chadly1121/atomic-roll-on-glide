@@ -1,10 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Calculator, Sparkles, Clock, CheckCircle, ArrowRight, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calculator, Sparkles, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 // Quohta AI estimator iframe embed – do not delete
 
 const AIEstimatorSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Listen for custom event from FloatingEstimateButton
+  useEffect(() => {
+    const handler = () => setIsOpen(true);
+    window.addEventListener('open-ai-estimator', handler);
+    return () => window.removeEventListener('open-ai-estimator', handler);
+  }, []);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const benefits = [
