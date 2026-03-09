@@ -257,7 +257,7 @@ serve(async (req) => {
                     req.headers.get('x-real-ip') || 
                     'unknown';
     
-    if (isRateLimited(clientIP)) {
+    if (await isRateLimited(clientIP)) {
       return new Response(
         JSON.stringify({ success: false, error: "Rate limit exceeded. Please wait before submitting again." }),
         { 
