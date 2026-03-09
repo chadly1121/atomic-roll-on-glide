@@ -79,6 +79,7 @@ const App = () => {
                 <Route path="/gonano" element={<GoNanoPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/:slug" element={<ServicePage />} />
                 <Route path="*" element={
                   <>
