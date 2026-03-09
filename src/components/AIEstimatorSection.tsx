@@ -85,9 +85,9 @@ const AIEstimatorSection = () => {
             <DialogTitle>AI Painting Estimator</DialogTitle>
           </VisuallyHidden.Root>
           {/* Header */}
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-gradient-to-r from-atomic-pink/5 to-atomic-turquoise/5">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-gradient-to-r from-atomic-orange/5 to-atomic-turquoise/5">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-atomic-pink" />
+              <Sparkles className="w-4 h-4 text-atomic-orange" />
               <span className="font-semibold text-atomic-navy text-sm sm:text-base">AI Painting Estimator</span>
             </div>
           </div>
