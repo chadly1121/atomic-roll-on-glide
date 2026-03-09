@@ -8,8 +8,8 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'GoNano', href: '#gonano' },
+  { name: 'GoNano', href: '/gonano' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Contact', href: '/contact' }
 ];
