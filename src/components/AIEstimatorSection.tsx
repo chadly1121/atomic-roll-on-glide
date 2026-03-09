@@ -105,7 +105,7 @@ const AIEstimatorSection = () => {
             />
             {!isLoaded && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-background">
-                <div className="w-12 h-12 border-4 border-atomic-pink border-t-transparent rounded-full animate-spin mb-4" />
+                <div className="w-12 h-12 border-4 border-atomic-orange border-t-transparent rounded-full animate-spin mb-4" />
                 <p className="text-muted-foreground">Loading estimator...</p>
               </div>
             )}
