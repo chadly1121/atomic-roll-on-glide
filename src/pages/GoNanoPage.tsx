@@ -1,26 +1,63 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Check, DollarSign, Shield, Droplets, Sun, Leaf, SprayCan } from 'lucide-react';
+import { ArrowLeft, Check, DollarSign, Shield, Droplets, Sun, Wind, Snowflake, Home, Timer, Leaf } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { businessInfo } from '@/data/businessInfo';
 
-const applications = [
-  { title: 'Glass & Windows', description: 'Repel water, reduce spots, and make cleaning effortless.' },
-  { title: 'Wood & Decking', description: 'Protect against moisture, UV damage, and weathering.' },
-  { title: 'Stone & Concrete', description: 'Prevent staining, algae growth, and water penetration.' },
-  { title: 'Metal Surfaces', description: 'Guard against corrosion, oxidation, and environmental damage.' },
-  { title: 'Fabric & Upholstery', description: 'Waterproof outdoor furniture and textiles.' },
-  { title: 'Tile & Grout', description: 'Keep bathrooms and kitchens cleaner with stain-resistant coating.' },
+const roofProducts = [
+  {
+    name: 'NuRoof Fortify™',
+    tagline: 'Extreme Weather Protection',
+    roofAge: '0–7 years old',
+    lifeAdded: '10–15 years',
+    tier: 'Best',
+    description: 'Nano-enhanced treatment for newer asphalt roofs. Acts as a preventive fortifying shield — improving impact resistance, boosting wind durability, retaining granules, and slowing aging before damage starts.',
+    color: 'border-purple-500/30 bg-purple-50/50',
+    badge: 'bg-purple-100 text-purple-700',
+  },
+  {
+    name: 'NuRoof Revive™',
+    tagline: 'Refurbish. Fortify. Protect.',
+    roofAge: '7–15 years old',
+    lifeAdded: '5–10 years',
+    tier: 'Better',
+    description: 'Professional-grade treatment that restores aging asphalt shingles. Penetrates deep to rebuild flexibility, reinforce structure, and create a hydrophobic barrier against water, algae, and surface erosion.',
+    color: 'border-orange-500/30 bg-orange-50/50',
+    badge: 'bg-orange-100 text-orange-700',
+  },
+  {
+    name: 'Bio-Boost™',
+    tagline: 'Cost-Effective Roof Protection',
+    roofAge: '10+ years old',
+    lifeAdded: '3–5 years',
+    tier: 'Good',
+    description: 'Formulated with nanotechnology and renewable bio-oils. Penetrates the shingle surface to improve flexibility, reduce dryness, and enhance resistance to moisture — a sustainable option for aging roofs.',
+    color: 'border-green-500/30 bg-green-50/50',
+    badge: 'bg-green-100 text-green-700',
+  },
 ];
 
-const benefits = [
-  { icon: Droplets, title: 'Hydrophobic Protection', description: 'Water beads and rolls off, preventing moisture damage and staining.' },
-  { icon: Shield, title: 'Anti-Microbial', description: 'Prevents mold, mildew, and algae growth on treated surfaces.' },
-  { icon: Sun, title: 'UV Resistance', description: 'Protects surfaces from sun damage and color fading.' },
-  { icon: Leaf, title: 'Eco-Friendly', description: 'Non-toxic, environmentally friendly formulations safe for your family.' },
+const weatherProtection = [
+  { icon: Sun, title: 'Extreme Heat', description: 'Reflects UV rays, limits heat absorption, slows aging, and prevents discoloration.' },
+  { icon: Shield, title: 'Hail Impact', description: 'Transforms Class 1 shingles into Class 3 or 4, meeting North American impact resistance standards.' },
+  { icon: Wind, title: 'High Winds', description: 'Strengthens shingle structure and enhances flexibility, reducing risk of tear-offs.' },
+  { icon: Snowflake, title: 'Water & Ice', description: 'Improves drainage with enhanced hydrophobic properties, protecting from water and ice damage.' },
+];
+
+const surfaceProducts = [
+  {
+    title: 'Concrete Sealer',
+    description: 'Penetrating nanotechnology sealer that works from the inside out. Prevents cracking, creates a waterproof barrier, and protects against freeze-thaw cycles. One application provides permanent protection.',
+    features: ['Prevents water seepage and cracking', 'Protects against freeze-thaw damage', 'Single application — permanent results', 'No dust or odor during application'],
+  },
+  {
+    title: 'Wood Sealer',
+    description: 'Advanced nano-based wood sealer that penetrates deep into the wood for long-lasting durability. Creates a completely waterproof barrier ideal for decks, fences, and exterior wood surfaces.',
+    features: ['Deep-penetrating waterproof barrier', 'Protects against rot and moisture damage', 'Clean, mess-free single-day application', 'Extends lifespan of decks and fences'],
+  },
 ];
 
 const GoNanoPage = () => {
@@ -31,33 +68,27 @@ const GoNanoPage = () => {
   const goNanoSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "GoNano Permanent Coating",
+    "name": "GoNano Nanotechnology Coatings",
     "provider": {
       "@type": "LocalBusiness",
       "name": businessInfo.name,
       "telephone": businessInfo.phone.primary,
     },
-    "description": "Advanced nanotechnology surface coating providing hydrophobic protection, anti-microbial properties, and UV resistance for residential and commercial surfaces in Muskoka.",
+    "description": "Authorized GoNano dealer and installer in Muskoka. Nanotechnology roof sealers, concrete sealers, and wood sealers that permanently extend surface lifespan by up to 15 years.",
     "areaServed": { "@type": "Place", "name": "Muskoka, Ontario" },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "CAD",
       "price": "0.99",
       "unitText": "per square foot",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "0.99",
-        "priceCurrency": "CAD",
-        "unitText": "SQF"
-      }
     }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GoNano Nanotechnology Coatings | Roll On Painting Muskoka</title>
-        <meta name="description" content="Authorized GoNano dealer and installer in Muskoka. Advanced nanotechnology surface protection starting at $0.99/sq ft. Hydrophobic, anti-microbial, UV-resistant coatings." />
+        <title>GoNano Nanotechnology Coatings | Roof, Concrete & Wood Sealers | Roll On Painting</title>
+        <meta name="description" content="Authorized GoNano dealer in Muskoka. Nanotechnology roof sealers extend shingle life up to 15 years. Concrete and wood sealers with permanent waterproof protection. Starting at $0.99/sq ft." />
         <link rel="canonical" href="https://rollonpainting.com/gonano" />
         <script type="application/ld+json">{JSON.stringify(goNanoSchema)}</script>
       </Helmet>
@@ -66,68 +97,154 @@ const GoNanoPage = () => {
 
       <main className="pt-24 pb-16">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-atomic-turquoise/10 via-background to-atomic-turquoise/5 py-16 sm:py-24">
+        <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-16 sm:py-24">
           <div className="container mx-auto px-4">
-            <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors">
+            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Link>
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 bg-atomic-turquoise/20 text-atomic-turquoise px-4 py-2 rounded-full mb-4">
-                <SprayCan className="w-4 h-4" />
+                <Shield className="w-4 h-4" />
                 <span className="font-semibold text-sm uppercase tracking-wide">Authorized Dealer & Installer</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-atomic-navy mb-4">
-                GoNano <span className="text-atomic-turquoise">Nanotechnology Coatings</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                GoNano <span className="text-atomic-turquoise">Nanotechnology</span> Coatings
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Revolutionary surface protection using cutting-edge nanotechnology. Environmentally friendly solutions that provide powerful, long-lasting defense against water, stains, UV damage, and more.
+              <p className="text-lg text-gray-300 max-w-2xl mb-6">
+                Millions of nanoparticles permanently transform the molecular structure of surfaces — enhancing resistance and extending lifespan by up to 15 years. As seen on Dragon's Den.
               </p>
+              <div className="flex flex-wrap gap-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-atomic-turquoise">50K+</span>
+                  <span className="text-gray-400">Satisfied Clients</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-atomic-turquoise">14</span>
+                  <span className="text-gray-400">Years Experience</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-bold text-atomic-turquoise">15yr</span>
+                  <span className="text-gray-400">Warranty Available</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Benefits Grid */}
+        {/* Key Benefits Bar */}
+        <section className="bg-atomic-turquoise/10 py-6 border-b border-atomic-turquoise/20">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-sm font-medium text-atomic-navy">
+              <div className="flex items-center gap-2">
+                <Timer className="w-4 h-4 text-atomic-turquoise" />
+                <span>Application completed in one day</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Leaf className="w-4 h-4 text-atomic-turquoise" />
+                <span>No dust or odor</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-atomic-turquoise" />
+                <span>Only one treatment needed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-atomic-turquoise" />
+                <span>Permanent protection</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Roofing Products */}
         <section className="py-16 sm:py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-atomic-navy text-center mb-12">Why Choose GoNano?</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map((benefit, i) => (
-                <div key={i} className="text-center p-6 rounded-xl bg-card shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-14 h-14 mx-auto mb-4 bg-atomic-turquoise/15 rounded-full flex items-center justify-center">
-                    <benefit.icon className="w-7 h-7 text-atomic-turquoise" />
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-atomic-navy mb-3">
+                <Home className="inline w-7 h-7 mr-2 text-atomic-turquoise" />
+                Roofing Nanosealers
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                GoNano's primary innovation — nanotechnology treatments that extend asphalt shingle roof life by up to 15 years. A solution for every roof age, backed by extensive testing and warranty.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {roofProducts.map((product, i) => (
+                <Card key={i} className={`overflow-hidden border-2 ${product.color} hover:shadow-lg transition-shadow`}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className={`text-xs font-bold px-2 py-1 rounded-full ${product.badge}`}>{product.tier}</span>
+                    </div>
+                    <CardTitle className="text-lg">{product.name}</CardTitle>
+                    <CardDescription className="font-medium">{product.tagline}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="mb-4 space-y-1">
+                      <p className="text-sm"><span className="font-semibold text-atomic-navy">Roof age:</span> {product.roofAge}</p>
+                      <p className="text-sm"><span className="font-semibold text-atomic-turquoise">Life added:</span> <span className="font-bold">{product.lifeAdded}</span></p>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{product.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Weather Protection */}
+        <section className="py-16 sm:py-20 bg-accent/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-atomic-navy text-center mb-4">Extreme Weather? Bring It On.</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+              GoNano-treated surfaces withstand the harshest conditions Muskoka weather can deliver.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {weatherProtection.map((item, i) => (
+                <div key={i} className="text-center p-6 rounded-xl bg-card shadow-sm">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-atomic-turquoise/15 rounded-full flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-atomic-turquoise" />
                   </div>
-                  <h3 className="font-bold text-atomic-navy mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                  <h3 className="font-bold text-atomic-navy mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Applications */}
-        <section className="py-16 sm:py-20 bg-accent/30">
+        {/* Concrete & Wood */}
+        <section className="py-16 sm:py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-atomic-navy text-center mb-4">Surface Applications</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-atomic-navy text-center mb-4">Concrete & Wood Nanosealers</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              GoNano coatings can be applied to virtually any surface, providing invisible protection that lasts.
+              Less maintenance, more value. Protect your exterior surfaces from the elements and extend their lifespan with a single permanent treatment.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {applications.map((app, i) => (
-                <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-lg shadow-sm">
-                  <Check className="w-5 h-5 text-atomic-turquoise mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-atomic-navy">{app.title}</h3>
-                    <p className="text-sm text-muted-foreground">{app.description}</p>
-                  </div>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {surfaceProducts.map((product, i) => (
+                <Card key={i} className="overflow-hidden border border-border hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle>{product.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">{product.description}</p>
+                    <ul className="space-y-2">
+                      {product.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm">
+                          <Check className="w-4 h-4 text-atomic-turquoise mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
         {/* Pricing + Video */}
-        <section className="py-16 sm:py-20">
+        <section className="py-16 sm:py-20 bg-accent/30">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
               {/* Pricing Card */}
@@ -137,7 +254,7 @@ const GoNanoPage = () => {
                     <DollarSign className="h-6 w-6 text-atomic-turquoise" />
                     <CardTitle>GoNano Pricing</CardTitle>
                   </div>
-                  <CardDescription>Simple, affordable protection for your surfaces</CardDescription>
+                  <CardDescription>Professional application included</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="flex items-baseline mb-6">
@@ -146,7 +263,7 @@ const GoNanoPage = () => {
                     <span className="text-sm text-muted-foreground ml-2">starting from</span>
                   </div>
                   <div className="space-y-3">
-                    {['Square footage pricing for all surfaces', 'Custom quotes for complex projects', 'Volume discounts available', 'Includes professional application'].map((item, i) => (
+                    {['Roofing, concrete, and wood surfaces', 'Custom quotes for complex projects', 'Volume discounts available', 'Includes professional application', 'Up to 15-year warranty available'].map((item, i) => (
                       <div key={i} className="flex items-center">
                         <Check className="h-4 w-4 mr-2 text-atomic-turquoise flex-shrink-0" />
                         <span className="text-muted-foreground">{item}</span>
@@ -196,7 +313,7 @@ const GoNanoPage = () => {
                 </div>
                 <div className="p-6 bg-card">
                   <h4 className="font-bold text-lg mb-2">See GoNano in Action</h4>
-                  <p className="text-muted-foreground">Watch our demonstration of GoNano's incredible protective properties.</p>
+                  <p className="text-muted-foreground">Watch our demonstration of GoNano's protective nanotechnology.</p>
                 </div>
               </div>
             </div>
@@ -206,9 +323,9 @@ const GoNanoPage = () => {
         {/* CTA */}
         <section className="py-16 bg-atomic-navy text-white text-center">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Protect Your Surfaces?</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Protect Your Roof and Surfaces?</h2>
             <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              Contact us for a free consultation and quote on GoNano nanotechnology coatings for your property.
+              As an authorized GoNano dealer and installer in Muskoka, we provide professional application with full warranty coverage. Contact us for a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
