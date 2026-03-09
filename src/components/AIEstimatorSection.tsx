@@ -31,7 +31,7 @@ const AIEstimatorSection = () => {
       >
         <div className="container mx-auto px-3 sm:px-4 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-atomic-pink/20 text-atomic-pink px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
+            <div className="inline-flex items-center gap-2 bg-atomic-orange/20 text-atomic-orange px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
               <span className="font-semibold text-xs sm:text-sm uppercase tracking-wide">AI-Powered Technology</span>
             </div>
