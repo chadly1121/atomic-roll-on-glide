@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calculator, Sparkles, Clock, CheckCircle, ArrowRight } from 'lucide-react';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
 // Quohta AI estimator iframe embed – do not delete
 
 const AIEstimatorSection = () => {
