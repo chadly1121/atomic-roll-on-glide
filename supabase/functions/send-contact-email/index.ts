@@ -29,8 +29,6 @@ interface ContactRequest {
   fileNames?: string[];
 }
 
-const rateLimitMap = new Map<string, { attempts: number; resetTime: number }>();
-
 function sanitizeHtml(input: string): string {
   if (!input) return '';
   
@@ -60,20 +58,45 @@ function isValidName(name: string): boolean {
   return nameRegex.test(name);
 }
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const userLimit = rateLimitMap.get(ip);
+/**
+ * Database-backed rate limiting — shared across all edge function instances.
+ * Records each attempt and checks the count within the last 15 minutes.
+ */
+async function isRateLimited(ip: string): Promise<boolean> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const supabase = createClient(supabaseUrl, serviceRoleKey);
   
-  if (!userLimit || now > userLimit.resetTime) {
-    rateLimitMap.set(ip, { attempts: 1, resetTime: now + (15 * 60 * 1000) });
-    return false;
+  const windowStart = new Date(Date.now() - 15 * 60 * 1000).toISOString();
+  
+  // Count recent attempts
+  const { count, error: countError } = await supabase
+    .from('edge_function_rate_limits')
+    .select('*', { count: 'exact', head: true })
+    .eq('ip_address', ip)
+    .eq('function_name', 'send-contact-email')
+    .gte('attempted_at', windowStart);
+  
+  if (countError) {
+    console.error("Rate limit check error:", countError);
+    return false; // fail open to avoid blocking legitimate users
   }
   
-  if (userLimit.attempts >= 5) {
+  if ((count ?? 0) >= 5) {
     return true;
   }
   
-  userLimit.attempts++;
+  // Record this attempt
+  await supabase.from('edge_function_rate_limits').insert({
+    ip_address: ip,
+    function_name: 'send-contact-email',
+  });
+  
+  // Periodically clean up old entries (1 in 10 chance)
+  if (Math.random() < 0.1) {
+    await supabase.rpc('cleanup_rate_limits');
+  }
+  
   return false;
 }
 
