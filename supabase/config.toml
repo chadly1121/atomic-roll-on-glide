@@ -1,7 +1,11 @@
 
+
 project_id = "kqbybkrvatvfiwhbnqna"
 
 [functions.send-quote-notification]
 
 [functions.blog-sitemap]
+verify_jwt = false
+
+[functions.create-checkout]
 verify_jwt = false

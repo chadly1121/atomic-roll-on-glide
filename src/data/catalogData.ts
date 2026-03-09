@@ -3,12 +3,14 @@ export interface CatalogItem {
   category: string;
   title: string;
   price: string;
+  stripePriceId: string;
   duration?: string;
   coverage?: string;
   includes: string[];
   excludes?: string[];
   note?: string;
   popular?: boolean;
+  isPerSqFt?: boolean;
 }
 
 export interface CatalogCategory {
