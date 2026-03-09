@@ -80,7 +80,7 @@ const AIEstimatorSection = () => {
 
       {/* Fullscreen Modal with Estimator */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-pink/20" aria-describedby={undefined}>
+        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-orange/20" aria-describedby={undefined}>
           <VisuallyHidden.Root>
             <DialogTitle>AI Painting Estimator</DialogTitle>
           </VisuallyHidden.Root>
