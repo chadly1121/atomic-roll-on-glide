@@ -11,6 +11,8 @@ import ServiceAreasPage from "./pages/ServiceAreasPage";
 import ServicePage from "./pages/ServicePage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import GoNanoPage from "./pages/GoNanoPage";
+import ContactPage from "./pages/ContactPage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
