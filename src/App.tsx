@@ -14,6 +14,7 @@ import BlogPostPage from "./pages/BlogPostPage";
 import GoNanoPage from "./pages/GoNanoPage";
 import ContactPage from "./pages/ContactPage";
 import CatalogPage from "./pages/CatalogPage";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
@@ -78,6 +79,7 @@ const App = () => {
                 <Route path="/gonano" element={<GoNanoPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/:slug" element={<ServicePage />} />
                 <Route path="*" element={
                   <>

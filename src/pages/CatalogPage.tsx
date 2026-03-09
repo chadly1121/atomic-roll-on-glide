@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { catalogCategories, CatalogItem } from '../data/catalogData';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
-const CatalogCard = ({ item }: { item: CatalogItem }) => (
+const CatalogCard = ({
+  item,
+  onBook,
+}: {
+  item: CatalogItem;
+  onBook: (item: CatalogItem) => void;
+}) => (
   <div
     className={`relative rounded-2xl border p-6 sm:p-8 shadow-md transition-all hover:shadow-xl hover:-translate-y-1 bg-card ${
       item.popular
@@ -85,16 +102,66 @@ const CatalogCard = ({ item }: { item: CatalogItem }) => (
       </p>
     )}
 
-    <a
-      href="/#contact"
+    <button
+      onClick={() => onBook(item)}
       className="mt-5 w-full py-3 text-center rounded-full font-semibold block transition-colors min-h-[48px] flex items-center justify-center active:scale-95 text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90"
     >
-      Book Now
-    </a>
+      {item.isPerSqFt ? 'Get a Quote' : 'Book Now'}
+    </button>
   </div>
 );
 
 const CatalogPage = () => {
+  const [selectedItem, setSelectedItem] = useState<CatalogItem | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+
+  const handleBook = (item: CatalogItem) => {
+    if (item.isPerSqFt) {
+      // For per-sq-ft items, redirect to contact form
+      window.location.href = `/#contact`;
+      return;
+    }
+    setSelectedItem(item);
+    setIsDialogOpen(true);
+  };
+
+  const handleCheckout = async () => {
+    if (!selectedItem) return;
+    if (!form.name || !form.email || !form.phone) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          priceId: selectedItem.stripePriceId,
+          serviceName: selectedItem.title,
+          customerName: form.name,
+          customerEmail: form.email,
+          customerPhone: form.phone,
+        },
+      });
+
+      if (error) throw error;
+      if (data?.url) {
+        window.open(data.url, '_blank');
+      }
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      toast.error('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -148,7 +215,7 @@ const CatalogPage = () => {
               }`}
             >
               {cat.items.map((item) => (
-                <CatalogCard key={item.id} item={item} />
+                <CatalogCard key={item.id} item={item} onBook={handleBook} />
               ))}
             </div>
           </section>
@@ -175,6 +242,70 @@ const CatalogPage = () => {
       </section>
 
       <Footer />
+
+      {/* Checkout Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Book {selectedItem?.title}</DialogTitle>
+            <DialogDescription>
+              Enter your details and you'll be redirected to secure checkout.
+              We'll contact you within 24 hours to schedule.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 mt-2">
+            <div>
+              <Label htmlFor="checkout-name">Full Name</Label>
+              <Input
+                id="checkout-name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                placeholder="John Smith"
+              />
+            </div>
+            <div>
+              <Label htmlFor="checkout-email">Email</Label>
+              <Input
+                id="checkout-email"
+                type="email"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                placeholder="john@example.com"
+              />
+            </div>
+            <div>
+              <Label htmlFor="checkout-phone">Phone</Label>
+              <Input
+                id="checkout-phone"
+                type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                placeholder="(416) 555-1234"
+              />
+            </div>
+            <div className="flex items-baseline gap-2 bg-muted/50 p-3 rounded-lg">
+              <span className="text-2xl font-bold text-primary">
+                {selectedItem?.price}
+              </span>
+              {selectedItem?.duration && (
+                <span className="text-sm text-muted-foreground">
+                  / {selectedItem.duration}
+                </span>
+              )}
+            </div>
+            <button
+              onClick={handleCheckout}
+              disabled={isLoading}
+              className="w-full py-3 rounded-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors min-h-[48px] active:scale-95 disabled:opacity-50"
+            >
+              {isLoading ? 'Processing...' : 'Proceed to Payment'}
+            </button>
+            <p className="text-xs text-muted-foreground text-center">
+              Secure checkout powered by Stripe
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

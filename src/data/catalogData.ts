@@ -3,12 +3,14 @@ export interface CatalogItem {
   category: string;
   title: string;
   price: string;
+  stripePriceId: string;
   duration?: string;
   coverage?: string;
   includes: string[];
   excludes?: string[];
   note?: string;
   popular?: boolean;
+  isPerSqFt?: boolean;
 }
 
 export interface CatalogCategory {
@@ -31,6 +33,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "painting",
         title: "Painter for a Day",
         price: "$750",
+        stripePriceId: "price_1T9Dc7I3v1u61BwNHyScE8Rc",
         duration: "7 hours",
         includes: [
           "Professional painter for a full day",
@@ -58,6 +61,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "power-washing",
         title: "Power Washer for a Day",
         price: "$750",
+        stripePriceId: "price_1T9DcpI3v1u61BwN0U2Hbssu",
         duration: "7 hours",
         includes: [
           "Professional operator for a full day",
@@ -80,6 +84,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "roof-wash",
         title: "Small Roof Wash",
         price: "$1,500",
+        stripePriceId: "price_1T9Dd8I3v1u61BwNoHrirIrp",
         coverage: "Up to 1,200 sq ft",
         includes: [
           "Light moss & algae removal",
@@ -94,6 +99,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "roof-wash",
         title: "Medium Roof Wash",
         price: "$2,200",
+        stripePriceId: "price_1T9Dd9I3v1u61BwNPma25QWJ",
         coverage: "1,200 – 2,000 sq ft",
         includes: [
           "Moderate moss & algae removal",
@@ -110,6 +116,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "roof-wash",
         title: "Large Roof Wash",
         price: "$3,000",
+        stripePriceId: "price_1T9DdAI3v1u61BwNLWdXawiF",
         coverage: "2,000 – 4,000 sq ft",
         includes: [
           "Heavy moss & algae removal",
@@ -134,6 +141,8 @@ export const catalogCategories: CatalogCategory[] = [
         category: "gonano",
         title: "NuRoof Fortify™",
         price: "From $0.99/sq ft",
+        stripePriceId: "price_1T9DdHI3v1u61BwNGV3qMe9U",
+        isPerSqFt: true,
         coverage: "Roofs 0–7 years old",
         includes: [
           "Full roof inspection & assessment",
@@ -150,6 +159,8 @@ export const catalogCategories: CatalogCategory[] = [
         category: "gonano",
         title: "NuRoof Revive™",
         price: "From $1.49/sq ft",
+        stripePriceId: "price_1T9DdJI3v1u61BwNBiwpElzQ",
+        isPerSqFt: true,
         coverage: "Roofs 7–15 years old",
         includes: [
           "Comprehensive roof inspection",
@@ -168,6 +179,8 @@ export const catalogCategories: CatalogCategory[] = [
         category: "gonano",
         title: "Bio-Boost™",
         price: "From $1.99/sq ft",
+        stripePriceId: "price_1T9DdLI3v1u61BwN2UnMBS5E",
+        isPerSqFt: true,
         coverage: "Roofs 10+ years old",
         includes: [
           "Full condition assessment & report",
