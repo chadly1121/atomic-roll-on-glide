@@ -116,12 +116,16 @@ async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
   const signedUrls: string[] = [];
   
   for (const path of storagePaths) {
-    // Extract the storage path from the full public URL
+    // Validate URL belongs to our Supabase storage — reject external URLs
+    if (!isValidStorageUrl(path, supabaseUrl)) {
+      console.warn("Rejected non-Supabase attachment URL:", path);
+      continue; // skip instead of falling back to raw URL
+    }
+    
     const bucketPath = extractStoragePath(path);
     if (!bucketPath) {
       console.warn("Could not extract storage path from:", path);
-      signedUrls.push(path); // fallback
-      continue;
+      continue; // skip instead of falling back to raw URL
     }
     
     const { data, error } = await supabase.storage
@@ -129,14 +133,30 @@ async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
       .createSignedUrl(bucketPath, 60 * 60 * 24 * 7); // 7 days
     
     if (error) {
-      console.error("Error creating signed URL:", error);
-      signedUrls.push(path); // fallback
+      console.error("Error creating signed URL for path:", bucketPath, error);
+      continue; // skip instead of falling back to raw URL
     } else {
       signedUrls.push(data.signedUrl);
     }
   }
   
   return signedUrls;
+}
+
+/**
+ * Validate that a URL belongs to our Supabase storage project.
+ * Rejects any external/attacker-controlled URLs.
+ */
+function isValidStorageUrl(url: string, supabaseUrl: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const supabaseParsed = new URL(supabaseUrl);
+    return parsed.hostname === supabaseParsed.hostname &&
+           parsed.pathname.includes('/storage/v1/object/') &&
+           parsed.pathname.includes('quote-attachments/');
+  } catch {
+    return false;
+  }
 }
 
 /**
