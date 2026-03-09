@@ -7,6 +7,7 @@ import { useBlogFeed, BlogFeedItem } from '@/hooks/useBlogFeed';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { FileText, RefreshCw } from 'lucide-react';
+import { businessInfo } from '@/data/businessInfo';
 
 const ITEMS_PER_PAGE = 12;
 
@@ -77,12 +78,44 @@ const BlogPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const siteUrl = "https://www.roll-onpainting.com";
+  const ogImage = "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg";
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${siteUrl}/blog/#blog`,
+    "name": "Roll On Painting Blog",
+    "description": "Painting tips, trends, color advice, and project showcases from Roll On Painting in Muskoka.",
+    "url": `${siteUrl}/blog`,
+    "publisher": { "@id": `${siteUrl}/#organization` },
+    "inLanguage": "en-CA"
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Blog | Roll On Painting</title>
-        <meta name="description" content="Read our latest articles about painting tips, trends, and project showcases from Roll On Painting." />
-        <link rel="canonical" href="https://rollonpainting.com/blog" />
+        <title>Painting Tips & Blog | Roll On Painting Muskoka</title>
+        <meta name="description" content="Painting tips, color trends, and project showcases from Roll On Painting in Muskoka. Expert advice for homeowners and cottage owners." />
+        <link rel="canonical" href={`${siteUrl}/blog`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Painting Tips & Blog | Roll On Painting" />
+        <meta property="og:description" content="Expert painting tips, color trends, and project showcases from Muskoka's premier painting service." />
+        <meta property="og:url" content={`${siteUrl}/blog`} />
+        <meta property="og:site_name" content={businessInfo.name} />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:image" content={ogImage} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Painting Tips & Blog | Roll On Painting" />
+        <meta name="twitter:description" content="Expert painting advice from Muskoka's premier painting service." />
+        <meta name="twitter:image" content={ogImage} />
+        
+        <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
       </Helmet>
 
       <Navbar activeSection="blog" />
@@ -97,29 +130,21 @@ const BlogPage = () => {
               </p>
             </div>
 
-            {/* Loading */}
             {loading && (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <BlogCardSkeleton key={i} />
-                ))}
+                {Array.from({ length: 6 }).map((_, i) => (<BlogCardSkeleton key={i} />))}
               </div>
             )}
 
-            {/* Error */}
             {error && !loading && (
               <div className="flex flex-col items-center justify-center py-20 text-center">
                 <RefreshCw size={48} className="text-muted-foreground mb-4" />
                 <h2 className="text-xl font-bold mb-2">Couldn't load articles</h2>
                 <p className="text-muted-foreground mb-6">Please try again.</p>
-                <Button onClick={retry} className="flex items-center gap-2">
-                  <RefreshCw size={16} />
-                  Retry
-                </Button>
+                <Button onClick={retry} className="flex items-center gap-2"><RefreshCw size={16} />Retry</Button>
               </div>
             )}
 
-            {/* Empty */}
             {!loading && !error && items.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-center">
                 <FileText size={64} className="text-muted-foreground mb-6" />
@@ -128,23 +153,14 @@ const BlogPage = () => {
               </div>
             )}
 
-            {/* Articles */}
             {!loading && !error && items.length > 0 && (
               <>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {items.slice(0, visible).map((item) => (
-                    <BlogCard key={item.id} item={item} />
-                  ))}
+                  {items.slice(0, visible).map((item) => (<BlogCard key={item.id} item={item} />))}
                 </div>
                 {visible < items.length && (
                   <div className="flex justify-center mt-10">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      onClick={() => setVisible((v) => v + ITEMS_PER_PAGE)}
-                    >
-                      Load More
-                    </Button>
+                    <Button variant="outline" size="lg" onClick={() => setVisible((v) => v + ITEMS_PER_PAGE)}>Load More</Button>
                   </div>
                 )}
               </>
