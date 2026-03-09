@@ -81,7 +81,10 @@ const AIEstimatorSection = () => {
 
       {/* Fullscreen Modal with Estimator */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-pink/20">
+        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden border-atomic-pink/20" aria-describedby={undefined}>
+          <VisuallyHidden.Root>
+            <DialogTitle>AI Painting Estimator</DialogTitle>
+          </VisuallyHidden.Root>
           {/* Header */}
           <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-gradient-to-r from-atomic-pink/5 to-atomic-turquoise/5">
             <div className="flex items-center gap-2">
