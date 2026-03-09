@@ -22,14 +22,20 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
     setIsMobileMenuOpen(false);
   };
 
+  const location = useLocation();
+
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     
     if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname === '/') {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate('/' + href);
       }
     } else {
       navigate(href);
