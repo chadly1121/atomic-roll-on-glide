@@ -97,8 +97,21 @@ const GoNanoPage = () => {
 
       <main className="pt-24 pb-16">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-16 sm:py-24">
+        <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-16 sm:py-24 relative">
           <div className="container mx-auto px-4">
+            {/* As Seen On Dragon's Den badge */}
+            <div className="absolute top-6 right-6 sm:top-10 sm:right-10 z-10">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-center shadow-lg hover:bg-white/15 transition-colors">
+                <p className="text-[10px] uppercase tracking-widest text-gray-300 mb-1.5 font-semibold">As Seen On</p>
+                <img
+                  src="/partner-logos/dragons-den.png"
+                  alt="As Seen on Dragon's Den"
+                  className="h-12 sm:h-14 w-auto mx-auto"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
             <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
