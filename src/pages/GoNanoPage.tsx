@@ -168,12 +168,10 @@ const GoNanoPage = () => {
         {/* Hero */}
         <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-16 sm:py-24 relative">
           <div className="container mx-auto px-4">
-            {/* As Seen On Dragon's Den badge */}
-            <div className="absolute top-6 right-6 sm:top-10 sm:right-10 z-10">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 text-center shadow-lg hover:bg-white/15 transition-colors">
-                <p className="text-[10px] uppercase tracking-widest text-gray-300 mb-1.5 font-semibold">As Seen On</p>
-                <img src="/partner-logos/dragons-den.png" alt="As Seen on Dragon's Den" className="h-12 sm:h-14 w-auto mx-auto" loading="eager" />
-              </div>
+            {/* Dragon's Den Feature Image */}
+            <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 max-w-[140px] sm:max-w-[180px]">
+              <img src="/lovable-uploads/dragons-den-cbc.png" alt="GoNano featured on CBC Dragon's Den — Heard about us on Dragon's Den? Find out if your roof qualifies for a free inspection." className="w-full h-auto rounded-lg shadow-xl" loading="eager" />
+              <p className="text-[9px] sm:text-[10px] text-center text-gray-300 mt-1.5 font-semibold tracking-wide leading-tight">As Seen on Dragon's Den on CBC</p>
             </div>
 
             <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
