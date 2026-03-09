@@ -17,16 +17,7 @@ const FloatingEstimateButton = () => {
   }, []);
 
   const openEstimator = () => {
-    // Scroll to the section and click the CTA button to open the modal
-    const section = document.querySelector('#ai-estimator');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Find and click the estimator CTA button after scrolling
-      setTimeout(() => {
-        const btn = section.querySelector('button');
-        btn?.click();
-      }, 500);
-    }
+    window.dispatchEvent(new CustomEvent('open-ai-estimator'));
   };
 
   return (
