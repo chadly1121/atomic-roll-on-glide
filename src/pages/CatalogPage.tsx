@@ -119,22 +119,23 @@ const CatalogPage = () => {
     name: '',
     email: '',
     phone: '',
+    sqft: '',
   });
 
   const handleBook = (item: CatalogItem) => {
-    if (item.isPerSqFt) {
-      // For per-sq-ft items, redirect to contact form
-      window.location.href = `/#contact`;
-      return;
-    }
     setSelectedItem(item);
     setIsDialogOpen(true);
+    setForm({ name: '', email: '', phone: '', sqft: '' });
   };
 
   const handleCheckout = async () => {
     if (!selectedItem) return;
     if (!form.name || !form.email || !form.phone) {
       toast.error('Please fill in all fields');
+      return;
+    }
+    if (selectedItem.isPerSqFt && (!form.sqft || parseInt(form.sqft) < 100)) {
+      toast.error('Please enter a valid roof size (minimum 100 sq ft)');
       return;
     }
 
