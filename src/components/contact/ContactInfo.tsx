@@ -62,7 +62,7 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-bold">Location</h4>
             <p>836 Greer Road, Port Sydney, Ontario P0B 1L0, Canada</p>
-            <p className="mt-1 text-sm md:text-base text-white/80">Serving Muskoka and surrounding areas</p>
+            <p className="mt-1 text-sm md:text-base opacity-70">Serving Muskoka and surrounding areas</p>
           </div>
         </div>
         
