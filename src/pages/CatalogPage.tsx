@@ -106,7 +106,7 @@ const CatalogCard = ({
       onClick={() => onBook(item)}
       className="mt-5 w-full py-3 text-center rounded-full font-semibold block transition-colors min-h-[48px] flex items-center justify-center active:scale-95 text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90"
     >
-      {item.isPerSqFt ? 'Get a Quote' : 'Book Now'}
+      {item.isPerSqFt ? 'Book Now' : 'Book Now'}
     </button>
   </div>
 );
