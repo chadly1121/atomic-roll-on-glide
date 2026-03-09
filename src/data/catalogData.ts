@@ -33,6 +33,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "painting",
         title: "Painter for a Day",
         price: "$750",
+        stripePriceId: "price_1T9Dc7I3v1u61BwNHyScE8Rc",
         duration: "7 hours",
         includes: [
           "Professional painter for a full day",
