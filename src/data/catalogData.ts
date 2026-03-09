@@ -84,6 +84,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "roof-wash",
         title: "Small Roof Wash",
         price: "$1,500",
+        stripePriceId: "price_1T9Dd8I3v1u61BwNoHrirIrp",
         coverage: "Up to 1,200 sq ft",
         includes: [
           "Light moss & algae removal",
