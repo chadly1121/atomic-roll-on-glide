@@ -29,7 +29,7 @@ const FloatingEstimateButton = () => {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.3, type: 'spring', stiffness: 300 }}
           onClick={openEstimator}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-1.5 sm:gap-2 bg-atomic-pink text-white px-3 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-atomic-pink/90 transition-all group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-1.5 sm:gap-2 bg-atomic-orange text-white px-3 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-atomic-orange/90 transition-all group"
           aria-label="Get instant AI painting estimate"
         >
           <div className="relative">
