@@ -176,14 +176,53 @@ const CatalogPage = () => {
     }
   };
 
-  return (
+    const siteUrl = 'https://www.roll-onpainting.com';
+    const catalogSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Service Catalog & Pricing | Roll On Painting",
+      "description": "Browse fixed-price painting, power washing, roof washing, and GoNano nanotechnology packages. Transparent pricing with instant online booking.",
+      "url": `${siteUrl}/catalog`,
+      "isPartOf": { "@type": "WebSite", "url": siteUrl },
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": businessInfo.name,
+        "telephone": businessInfo.phone.primary,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": businessInfo.address.street,
+          "addressLocality": businessInfo.address.city,
+          "addressRegion": businessInfo.address.region,
+          "postalCode": businessInfo.address.postalCode,
+          "addressCountry": businessInfo.address.countryCode
+        }
+      }
+    };
+
+    return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Service Catalog & Pricing | Roll On Painting</title>
+        <title>Service Catalog & Pricing | Roll On Painting Muskoka</title>
         <meta
           name="description"
-          content="Browse our fixed-price service catalog — painter for a day, power washing, roof washing, and GoNano roof protection. Transparent pricing, no surprises."
+          content="Browse our fixed-price service catalog — painter for a day, power washing, roof washing, and GoNano roof protection. Transparent pricing with instant online booking."
         />
+        <link rel="canonical" href={`${siteUrl}/catalog`} />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Service Catalog & Pricing | Roll On Painting" />
+        <meta property="og:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
+        <meta property="og:url" content={`${siteUrl}/catalog`} />
+        <meta property="og:site_name" content={businessInfo.name} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Service Catalog & Pricing | Roll On Painting" />
+        <meta name="twitter:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
+        
+        <script type="application/ld+json">{JSON.stringify(catalogSchema)}</script>
       </Helmet>
 
       <Navbar activeSection="" />
