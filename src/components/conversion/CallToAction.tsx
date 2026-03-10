@@ -34,6 +34,8 @@ const CallToAction = ({
     // Check if internal link or external
     if (href.startsWith('http')) {
       window.open(href, '_blank');
+    } else if (href.startsWith('tel:') || href.startsWith('mailto:')) {
+      window.location.href = href;
     } else if (href.startsWith('#')) {
       // If on homepage, scroll to section
       if (location.pathname === '/') {
