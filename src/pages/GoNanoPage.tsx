@@ -348,22 +348,7 @@ const GoNanoPage = () => {
                   </div>
                 </CardFooter>
               </Card>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <div className="relative pb-[56.25%] sm:pb-[100%] lg:pb-[177.78%] h-0 bg-gray-900">
-                  <a href="https://youtube.com/shorts/MEwdfRxANKM" target="_blank" rel="noopener noreferrer"
-                    className="absolute inset-0 flex flex-col items-center justify-center text-white hover:bg-gray-800 transition-colors">
-                    <svg className="w-16 h-16 sm:w-20 sm:h-20 mb-4 text-red-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                    </svg>
-                    <span className="text-base sm:text-lg font-semibold">Watch GoNano Demo</span>
-                    <span className="text-sm text-gray-300 mt-1">Click to play on YouTube</span>
-                  </a>
-                </div>
-                <div className="p-4 sm:p-6 bg-card">
-                  <h4 className="font-bold text-base sm:text-lg mb-2">See GoNano in Action</h4>
-                  <p className="text-sm text-muted-foreground">Watch our demonstration of GoNano's protective nanotechnology.</p>
-                </div>
-              </div>
+              <GoNanoVideo />
             </div>
           </div>
         </section>
