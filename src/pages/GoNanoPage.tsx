@@ -30,7 +30,7 @@ const roofProducts = [
     badge: 'bg-orange-100 text-orange-700',
   },
   {
-    name: 'Bio-Boost™',
+    name: 'GoNano Bio-Boost™',
     tagline: 'Cost-Effective Roof Protection',
     roofAge: '10+ years old',
     lifeAdded: '3–5 years',
