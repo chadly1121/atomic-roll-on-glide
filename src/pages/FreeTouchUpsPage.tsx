@@ -33,23 +33,27 @@ const FreeTouchUpsPage = () => {
   const conditions = [
     {
       title: "Painting Services Only",
-      description: "Applies to all interior and exterior painting services. Excludes new construction projects."
+      description: "This offer applies only to our painting services and excludes new construction projects."
     },
     {
       title: "Original Work Only",
-      description: "Touch-ups apply to surfaces originally painted by Roll On Painting."
+      description: "Only applies to work performed by Roll On Painting originally."
     },
     {
       title: "Original Property Owner",
-      description: "Valid for the property owner who originally purchased our painting services."
+      description: "Valid only for the original property owner who purchased our services."
     },
     {
       title: "Same Colour",
-      description: "Touch-ups are performed using the same colour as originally applied. We keep your colour records on file."
+      description: "Touch-ups must be the same colour as originally painted. We keep your colour records on file."
+    },
+    {
+      title: "2-Hour Visit, Once Per Year",
+      description: "Each touch-up visit is up to 2 hours and is available once per calendar year."
     },
     {
       title: "No Questions Asked",
-      description: "Whether it's a scuff, scratch, or wear — we'll handle it without hassle or complicated explanations."
+      description: "We'll handle your touch-ups without hassle or complicated explanations."
     }
   ];
 
