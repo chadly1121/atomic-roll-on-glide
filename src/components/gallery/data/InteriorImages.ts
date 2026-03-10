@@ -94,9 +94,9 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 36,
-    src: "/lovable-uploads/2cb60864-841a-4261-9072-0e92b3621c4a.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-2.jpg",
     category: "interior",
-    title: "Modern Cabinet Design"
+    title: "Cabinet Spray Finishing"
   },
   {
     id: 49,
