@@ -106,7 +106,7 @@ const CatalogCard = ({
       onClick={() => onBook(item)}
       className="mt-5 w-full py-3 text-center rounded-full font-semibold block transition-colors min-h-[48px] flex items-center justify-center active:scale-95 text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90"
     >
-      {item.isPerSqFt ? 'Get a Quote' : 'Book Now'}
+      {item.isPerSqFt ? 'Book Now' : 'Book Now'}
     </button>
   </div>
 );
@@ -119,22 +119,23 @@ const CatalogPage = () => {
     name: '',
     email: '',
     phone: '',
+    sqft: '',
   });
 
   const handleBook = (item: CatalogItem) => {
-    if (item.isPerSqFt) {
-      // For per-sq-ft items, redirect to contact form
-      window.location.href = `/#contact`;
-      return;
-    }
     setSelectedItem(item);
     setIsDialogOpen(true);
+    setForm({ name: '', email: '', phone: '', sqft: '' });
   };
 
   const handleCheckout = async () => {
     if (!selectedItem) return;
     if (!form.name || !form.email || !form.phone) {
       toast.error('Please fill in all fields');
+      return;
+    }
+    if (selectedItem.isPerSqFt && (!form.sqft || parseInt(form.sqft) < 100)) {
+      toast.error('Please enter a valid roof size (minimum 100 sq ft)');
       return;
     }
 
@@ -147,6 +148,7 @@ const CatalogPage = () => {
           customerName: form.name,
           customerEmail: form.email,
           customerPhone: form.phone,
+          quantity: selectedItem.isPerSqFt ? parseInt(form.sqft) : 1,
         },
       });
 
@@ -283,15 +285,41 @@ const CatalogPage = () => {
                 placeholder="(416) 555-1234"
               />
             </div>
+            {selectedItem?.isPerSqFt && (
+              <>
+                <div>
+                  <Label htmlFor="checkout-sqft">Estimated Roof Size (sq ft)</Label>
+                  <Input
+                    id="checkout-sqft"
+                    type="number"
+                    min="100"
+                    value={form.sqft}
+                    onChange={(e) => setForm({ ...form, sqft: e.target.value })}
+                    placeholder="e.g. 1500"
+                  />
+                </div>
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                  <p className="text-xs text-amber-800">
+                    <strong>📏 Transparency guarantee:</strong> We will verify your roof size with a precise measurement before any work begins. If the actual size differs from your estimate, we'll adjust the price accordingly — you only pay for what's accurate.
+                  </p>
+                </div>
+              </>
+            )}
             <div className="flex items-baseline gap-2 bg-muted/50 p-3 rounded-lg">
               <span className="text-2xl font-bold text-primary">
-                {selectedItem?.price}
+                {selectedItem?.isPerSqFt && form.sqft
+                  ? `$${(parseFloat(selectedItem.price.replace(/[^0-9.]/g, '')) * parseInt(form.sqft)).toLocaleString('en-CA', { minimumFractionDigits: 2 })}`
+                  : selectedItem?.price}
               </span>
-              {selectedItem?.duration && (
+              {selectedItem?.isPerSqFt && form.sqft ? (
+                <span className="text-sm text-muted-foreground">
+                  estimated · {form.sqft} sq ft × {selectedItem.price.replace('From ', '')}
+                </span>
+              ) : selectedItem?.duration ? (
                 <span className="text-sm text-muted-foreground">
                   / {selectedItem.duration}
                 </span>
-              )}
+              ) : null}
             </div>
             <button
               onClick={handleCheckout}
