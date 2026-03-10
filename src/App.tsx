@@ -15,6 +15,7 @@ import GoNanoPage from "./pages/GoNanoPage";
 import ContactPage from "./pages/ContactPage";
 import CatalogPage from "./pages/CatalogPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import FreeTouchUpsPage from "./pages/FreeTouchUpsPage";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
