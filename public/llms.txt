@@ -55,9 +55,9 @@ cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake o
 Roll On Painting is an authorized GoNano dealer and installer. GoNano uses nanotechnology to permanently transform the molecular structure of surfaces. As seen on CBC's Dragon's Den.
 
 ### Roofing Nanosealers
-- NuRoof Fortify™: For roofs 0-7 years old. Adds 10-15 years of life. Best tier.
-- NuRoof Revive™: For roofs 7-15 years old. Adds 5-10 years of life. Better tier.
-- Bio-Boost™: For roofs 10+ years old. Adds 3-5 years of life. Eco-friendly.
+- GoNano NuRoof Fortify™: For roofs 0-7 years old. Adds 10-15 years of life. Best tier.
+- GoNano NuRoof Revive™: For roofs 7-15 years old. Adds 5-10 years of life. Better tier.
+- GoNano Bio-Boost™: For roofs 10+ years old. Adds 3-5 years of life. Eco-friendly.
 
 ### Surface Sealers
 - Concrete Sealer: Penetrating nano sealer with permanent waterproof protection.
