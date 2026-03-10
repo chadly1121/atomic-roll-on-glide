@@ -204,6 +204,17 @@ const FreeTouchUpsPage = () => {
                 </div>
               ))}
             </div>
+
+            {/* Disclaimer */}
+            <div className="mt-10 p-5 rounded-xl bg-muted/50 border border-border">
+              <div className="flex gap-3">
+                <AlertTriangle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p className="font-semibold text-foreground">Disclaimer</p>
+                  <p>Roll On Painting offers free touch-ups for life on our painting services with the following conditions: This offer applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Each touch-up visit is up to 2 hours in duration and is available once per calendar year. Contact us for full details and to schedule your free touch-up.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
