@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Heart, Shield, Phone, Star, Paintbrush, RefreshCw } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Heart, Shield, Phone, Star, Paintbrush, RefreshCw, Clock, Calendar, AlertTriangle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
