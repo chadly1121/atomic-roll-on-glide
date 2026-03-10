@@ -10,7 +10,7 @@ import GoNanoVideo from '@/components/services/GoNanoVideo';
 
 const roofProducts = [
   {
-    name: 'NuRoof Fortify™',
+    name: 'GoNano NuRoof Fortify™',
     tagline: 'Extreme Weather Protection',
     roofAge: '0–7 years old',
     lifeAdded: '10–15 years',
