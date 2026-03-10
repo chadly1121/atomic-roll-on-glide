@@ -58,7 +58,7 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 27,
-    src: "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-1.jpg",
     category: "interior",
     title: "Kitchen Cabinet Refinishing"
   },
