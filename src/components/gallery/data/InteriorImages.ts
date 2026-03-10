@@ -178,9 +178,9 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 81,
-    src: "/lovable-uploads/e997f6fd-0110-4c25-9616-7050870ae44d.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-3.jpg",
     category: "interior",
-    title: "Modern Cabinet Painting Project"
+    title: "Cabinet Refinishing Before & After"
   },
   {
     id: 95,
