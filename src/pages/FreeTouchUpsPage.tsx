@@ -113,9 +113,23 @@ const FreeTouchUpsPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Free Touch Ups <span className="text-secondary">for Life</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Every painting project we complete comes with complimentary touch-ups — for as long as you own your property. No fine print. No expiry date.
             </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <Clock className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">2-Hour Visit</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <Calendar className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">Once Per Year</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <CheckCircle className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">No Questions Asked</span>
+              </div>
+            </div>
           </div>
         </section>
 
