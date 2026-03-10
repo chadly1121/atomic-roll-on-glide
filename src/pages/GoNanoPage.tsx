@@ -65,7 +65,7 @@ const goNanoFAQs = [
   { question: "What is GoNano nanotechnology coating?", answer: "GoNano uses millions of nanoparticles to permanently transform the molecular structure of surfaces like asphalt roofs, concrete, and wood. It creates a hydrophobic, weather-resistant barrier that extends surface lifespan by up to 15 years." },
   { question: "How long does GoNano last?", answer: "GoNano provides permanent protection with a single application. Depending on the product tier, roof sealers add 3 to 15 years of life. Concrete and wood sealers provide permanent waterproof protection." },
   { question: "How much does GoNano cost?", answer: "GoNano applications start at $0.99 per square foot, including professional application. Volume discounts are available. Contact Roll On Painting at 705-787-1401 for a free quote." },
-  { question: "Is GoNano safe and environmentally friendly?", answer: "Yes. GoNano products are non-toxic, produce no dust or odor during application, and Bio-Boost™ is formulated with renewable bio-oils for a sustainable option." },
+  { question: "Is GoNano safe and environmentally friendly?", answer: "Yes. GoNano products are non-toxic, produce no dust or odor during application, and GoNano Bio-Boost™ is formulated with renewable bio-oils for a sustainable option." },
   { question: "Was GoNano featured on Dragon's Den?", answer: "Yes. GoNano was featured on CBC's Dragon's Den, showcasing its innovative nanotechnology for surface protection." },
 ];
 

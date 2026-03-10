@@ -177,7 +177,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-bio-boost",
         category: "gonano",
-        title: "Bio-Boost™",
+        title: "GoNano Bio-Boost™",
         price: "From $0.99/sq ft",
         stripePriceId: "price_1T9DdLI3v1u61BwN2UnMBS5E",
         isPerSqFt: true,
