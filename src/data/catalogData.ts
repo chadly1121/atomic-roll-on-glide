@@ -139,7 +139,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-nuroof-fortify",
         category: "gonano",
-        title: "NuRoof Fortify™",
+        title: "GoNano NuRoof Fortify™",
         price: "From $1.99/sq ft",
         stripePriceId: "price_1T9DdHI3v1u61BwNGV3qMe9U",
         isPerSqFt: true,
