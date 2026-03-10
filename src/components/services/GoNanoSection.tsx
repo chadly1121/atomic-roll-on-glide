@@ -12,7 +12,6 @@ interface GoNanoSectionProps {
 }
 
 const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
-  const [videoError, setVideoError] = useState(false);
 
   return (
     <div className="mt-24 pt-16 border-t border-gray-200">
