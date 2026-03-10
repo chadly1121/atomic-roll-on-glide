@@ -40,6 +40,21 @@ const Index = () => {
     }
   }, []);
 
+  // Handle hash-based scrolling when navigating from another page
+  useEffect(() => {
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      // Delay to ensure sections are rendered
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   // Setup event listeners for scroll
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
