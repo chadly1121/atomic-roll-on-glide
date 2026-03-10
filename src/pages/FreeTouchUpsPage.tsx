@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Heart, Shield, Phone, Star, Paintbrush, RefreshCw } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Heart, Shield, Phone, Star, Paintbrush, RefreshCw, Clock, Calendar, AlertTriangle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
@@ -33,23 +33,27 @@ const FreeTouchUpsPage = () => {
   const conditions = [
     {
       title: "Painting Services Only",
-      description: "Applies to all interior and exterior painting services. Excludes new construction projects."
+      description: "This offer applies only to our painting services and excludes new construction projects."
     },
     {
       title: "Original Work Only",
-      description: "Touch-ups apply to surfaces originally painted by Roll On Painting."
+      description: "Only applies to work performed by Roll On Painting originally."
     },
     {
       title: "Original Property Owner",
-      description: "Valid for the property owner who originally purchased our painting services."
+      description: "Valid only for the original property owner who purchased our services."
     },
     {
       title: "Same Colour",
-      description: "Touch-ups are performed using the same colour as originally applied. We keep your colour records on file."
+      description: "Touch-ups must be the same colour as originally painted. We keep your colour records on file."
+    },
+    {
+      title: "2-Hour Visit, Once Per Year",
+      description: "Each touch-up visit is up to 2 hours and is available once per calendar year."
     },
     {
       title: "No Questions Asked",
-      description: "Whether it's a scuff, scratch, or wear — we'll handle it without hassle or complicated explanations."
+      description: "We'll handle your touch-ups without hassle or complicated explanations."
     }
   ];
 
@@ -109,9 +113,23 @@ const FreeTouchUpsPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Free Touch Ups <span className="text-secondary">for Life</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Every painting project we complete comes with complimentary touch-ups — for as long as you own your property. No fine print. No expiry date.
             </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <Clock className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">2-Hour Visit</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <Calendar className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">Once Per Year</span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
+                <CheckCircle className="h-4 w-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">No Questions Asked</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -185,6 +203,17 @@ const FreeTouchUpsPage = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Disclaimer */}
+            <div className="mt-10 p-5 rounded-xl bg-muted/50 border border-border">
+              <div className="flex gap-3">
+                <AlertTriangle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p className="font-semibold text-foreground">Disclaimer</p>
+                  <p>Roll On Painting offers free touch-ups for life on our painting services with the following conditions: This offer applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Each touch-up visit is up to 2 hours in duration and is available once per calendar year. Contact us for full details and to schedule your free touch-up.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
