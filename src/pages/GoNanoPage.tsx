@@ -102,7 +102,7 @@ const GoNanoPage = () => {
           "@type": "OfferCatalog",
           "name": "GoNano Products",
           "itemListElement": [
-            { "@type": "OfferCatalog", "name": "Roofing Nanosealers", "description": "NuRoof Fortify™, NuRoof Revive™, and Bio-Boost™ for asphalt shingle roofs" },
+            { "@type": "OfferCatalog", "name": "Roofing Nanosealers", "description": "GoNano NuRoof Fortify™, GoNano NuRoof Revive™, and GoNano Bio-Boost™ for asphalt shingle roofs" },
             { "@type": "OfferCatalog", "name": "Concrete Sealers", "description": "Penetrating nanotechnology sealer with permanent waterproof protection" },
             { "@type": "OfferCatalog", "name": "Wood Sealers", "description": "Deep-penetrating nano-based wood sealer for decks, fences, and exteriors" },
           ]
