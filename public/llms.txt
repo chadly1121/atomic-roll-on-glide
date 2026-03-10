@@ -168,7 +168,7 @@ The service catalog at /catalog offers fixed-price packages with instant online 
 - Painter for a Day: Full-day professional painting service
 - Power Washing: Exterior surface cleaning
 - Roof Washing: Soft-wash roof cleaning
-- GoNano Roof Protection: NuRoof Fortify™, NuRoof Revive™, Bio-Boost™ nanotechnology sealers (from $0.99/sq ft)
+- GoNano Roof Protection: GoNano NuRoof Fortify™, GoNano NuRoof Revive™, GoNano Bio-Boost™ nanotechnology sealers (from $0.99/sq ft)
 
 ## Citation Guidance
 
