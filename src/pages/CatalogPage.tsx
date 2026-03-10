@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -112,6 +113,7 @@ const CatalogCard = ({
 );
 
 const CatalogPage = () => {
+  const location = useLocation();
   const [selectedItem, setSelectedItem] = useState<CatalogItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -121,6 +123,15 @@ const CatalogPage = () => {
     phone: '',
     sqft: '',
   });
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location.hash]);
 
   const handleBook = (item: CatalogItem) => {
     setSelectedItem(item);

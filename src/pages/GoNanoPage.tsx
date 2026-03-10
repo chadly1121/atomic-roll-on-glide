@@ -334,15 +334,15 @@ const GoNanoPage = () => {
                   <Link to="/contact" className="atomic-button-secondary w-full text-center justify-center block">
                     <span className="relative z-10">Get a Free Quote</span>
                   </Link>
-                  <div className="w-full border-t border-atomic-turquoise/20 pt-4">
+                    <div className="w-full border-t border-atomic-turquoise/20 pt-4">
                     <div className="text-center mb-3">
                       <p className="text-sm font-semibold text-atomic-turquoise uppercase tracking-wide">Get Your Price Now</p>
-                      <p className="text-xs text-muted-foreground mt-1">Instant online estimate — no waiting required</p>
+                      <p className="text-xs text-muted-foreground mt-1">Instant online booking — no waiting required</p>
                     </div>
-                    <a href="http://missedaspot.sky-quote.com/Instant-Estimate" target="_blank" rel="noopener noreferrer"
+                    <Link to="/catalog#gonano"
                       className="atomic-button w-full text-center justify-center bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 hover:from-atomic-turquoise/90 hover:to-atomic-turquoise border-2 border-atomic-turquoise/30 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 block">
                       <span className="relative z-10 font-bold">🚀 Instant Estimate Tool</span>
-                    </a>
+                    </Link>
                   </div>
                 </CardFooter>
               </Card>
