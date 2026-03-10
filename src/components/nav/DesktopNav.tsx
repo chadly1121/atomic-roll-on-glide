@@ -10,7 +10,7 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ navLinks, handleNavLinkClick }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex items-center space-x-6">
+    <nav className="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6">
       {navLinks.map(link => (
         <motion.a 
           key={link.name} 
