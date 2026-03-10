@@ -20,7 +20,7 @@ const roofProducts = [
     badge: 'bg-purple-100 text-purple-700',
   },
   {
-    name: 'NuRoof Revive™',
+    name: 'GoNano NuRoof Revive™',
     tagline: 'Refurbish. Fortify. Protect.',
     roofAge: '7–15 years old',
     lifeAdded: '5–10 years',
