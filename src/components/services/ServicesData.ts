@@ -92,11 +92,11 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "Give your kitchen a fresh look without the full renovation cost. Our cabinet refinishing services provide stunning results.",
     icon: "🪑",
-    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
+    image: "/lovable-uploads/cabinet-refinish-stock-1.jpg",
     galleryImages: [
-      "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
-      "/lovable-uploads/2cb60864-841a-4261-9072-0e92b3621c4a.png",
-      "/lovable-uploads/e997f6fd-0110-4c25-9616-7050870ae44d.png"
+      "/lovable-uploads/cabinet-refinish-stock-1.jpg",
+      "/lovable-uploads/cabinet-refinish-stock-2.jpg",
+      "/lovable-uploads/cabinet-refinish-stock-3.jpg"
     ]
   },
   {

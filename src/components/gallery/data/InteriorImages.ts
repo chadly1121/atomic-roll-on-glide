@@ -58,7 +58,7 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 27,
-    src: "/lovable-uploads/f2f5fa2a-ca62-4c8c-9bc8-2b867c3894c3.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-1.jpg",
     category: "interior",
     title: "Kitchen Cabinet Refinishing"
   },
@@ -94,9 +94,9 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 36,
-    src: "/lovable-uploads/2cb60864-841a-4261-9072-0e92b3621c4a.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-2.jpg",
     category: "interior",
-    title: "Modern Cabinet Design"
+    title: "Cabinet Spray Finishing"
   },
   {
     id: 49,
@@ -178,9 +178,9 @@ export const interiorImages: GalleryImage[] = [
   },
   {
     id: 81,
-    src: "/lovable-uploads/e997f6fd-0110-4c25-9616-7050870ae44d.png",
+    src: "/lovable-uploads/cabinet-refinish-stock-3.jpg",
     category: "interior",
-    title: "Modern Cabinet Painting Project"
+    title: "Cabinet Refinishing Before & After"
   },
   {
     id: 95,
