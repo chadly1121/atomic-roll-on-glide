@@ -285,12 +285,12 @@ const CatalogPage = () => {
             These are our most popular packages, but every project is unique.
             Reach out for a free, no-obligation custom quote.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors min-h-[48px] active:scale-95"
           >
             Get a Free Quote
-          </a>
+          </Link>
         </div>
       </section>
 
