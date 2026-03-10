@@ -82,8 +82,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/#gonano" 
-                  onClick={(e) => scrollToSection(e, '#gonano')}
+                  href="/gonano" 
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
                   GoNano
