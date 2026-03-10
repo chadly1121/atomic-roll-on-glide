@@ -157,7 +157,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-nuroof-revive",
         category: "gonano",
-        title: "NuRoof Revive™",
+        title: "GoNano NuRoof Revive™",
         price: "From $1.49/sq ft",
         stripePriceId: "price_1T9DdJI3v1u61BwNBiwpElzQ",
         isPerSqFt: true,
