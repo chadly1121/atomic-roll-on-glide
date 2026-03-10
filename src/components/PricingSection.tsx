@@ -123,6 +123,19 @@ const PricingSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Catalog CTA */}
+        <div className="text-center">
+          <p className="text-muted-foreground mb-4 text-sm sm:text-base">
+            Looking for fixed-price packages? Browse our full service catalog with instant online booking.
+          </p>
+          <a
+            href="/catalog"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 rounded-full font-semibold bg-atomic-orange text-white hover:bg-atomic-orange/90 transition-colors min-h-[48px] active:scale-95 text-sm sm:text-base"
+          >
+            View Service Catalog →
+          </a>
+        </div>
       </div>
     </section>
   );
