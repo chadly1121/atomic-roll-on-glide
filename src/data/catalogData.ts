@@ -139,7 +139,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-nuroof-fortify",
         category: "gonano",
-        title: "NuRoof Fortify™",
+        title: "GoNano NuRoof Fortify™",
         price: "From $1.99/sq ft",
         stripePriceId: "price_1T9DdHI3v1u61BwNGV3qMe9U",
         isPerSqFt: true,
@@ -157,7 +157,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-nuroof-revive",
         category: "gonano",
-        title: "NuRoof Revive™",
+        title: "GoNano NuRoof Revive™",
         price: "From $1.49/sq ft",
         stripePriceId: "price_1T9DdJI3v1u61BwNBiwpElzQ",
         isPerSqFt: true,
@@ -177,7 +177,7 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "gonano-bio-boost",
         category: "gonano",
-        title: "Bio-Boost™",
+        title: "GoNano Bio-Boost™",
         price: "From $0.99/sq ft",
         stripePriceId: "price_1T9DdLI3v1u61BwN2UnMBS5E",
         isPerSqFt: true,

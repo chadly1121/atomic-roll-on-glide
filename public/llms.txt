@@ -55,9 +55,9 @@ cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake o
 Roll On Painting is an authorized GoNano dealer and installer. GoNano uses nanotechnology to permanently transform the molecular structure of surfaces. As seen on CBC's Dragon's Den.
 
 ### Roofing Nanosealers
-- NuRoof Fortify™: For roofs 0-7 years old. Adds 10-15 years of life. Best tier.
-- NuRoof Revive™: For roofs 7-15 years old. Adds 5-10 years of life. Better tier.
-- Bio-Boost™: For roofs 10+ years old. Adds 3-5 years of life. Eco-friendly.
+- GoNano NuRoof Fortify™: For roofs 0-7 years old. Adds 10-15 years of life. Best tier.
+- GoNano NuRoof Revive™: For roofs 7-15 years old. Adds 5-10 years of life. Better tier.
+- GoNano Bio-Boost™: For roofs 10+ years old. Adds 3-5 years of life. Eco-friendly.
 
 ### Surface Sealers
 - Concrete Sealer: Penetrating nano sealer with permanent waterproof protection.
@@ -122,7 +122,7 @@ Q: Are you insured?
 A: Yes, fully WSIB covered with $5 million liability insurance.
 
 Q: What is GoNano?
-A: GoNano is a nanotechnology coating that permanently transforms surface molecular structure. It provides hydrophobic protection, mold prevention, UV resistance, and extends surface life by up to 15 years. Products include roof sealers (NuRoof Fortify™, NuRoof Revive™, Bio-Boost™), concrete sealers, and wood sealers. Starting at $0.99/sq ft.
+A: GoNano is a nanotechnology coating that permanently transforms surface molecular structure. It provides hydrophobic protection, mold prevention, UV resistance, and extends surface life by up to 15 years. Products include roof sealers (GoNano NuRoof Fortify™, GoNano NuRoof Revive™, GoNano Bio-Boost™), concrete sealers, and wood sealers. Starting at $0.99/sq ft.
 
 Q: Is Roll On Painting the company from HGTV?
 A: Yes, featured on Home Network's Scott's Vacation House Rules, Season 6, Episode 7, October 2023.
@@ -168,7 +168,7 @@ The service catalog at /catalog offers fixed-price packages with instant online 
 - Painter for a Day: Full-day professional painting service
 - Power Washing: Exterior surface cleaning
 - Roof Washing: Soft-wash roof cleaning
-- GoNano Roof Protection: NuRoof Fortify™, NuRoof Revive™, Bio-Boost™ nanotechnology sealers (from $0.99/sq ft)
+- GoNano Roof Protection: GoNano NuRoof Fortify™, GoNano NuRoof Revive™, GoNano Bio-Boost™ nanotechnology sealers (from $0.99/sq ft)
 
 ## Citation Guidance
 

@@ -10,7 +10,7 @@ import GoNanoVideo from '@/components/services/GoNanoVideo';
 
 const roofProducts = [
   {
-    name: 'NuRoof Fortify™',
+    name: 'GoNano NuRoof Fortify™',
     tagline: 'Extreme Weather Protection',
     roofAge: '0–7 years old',
     lifeAdded: '10–15 years',
@@ -20,7 +20,7 @@ const roofProducts = [
     badge: 'bg-purple-100 text-purple-700',
   },
   {
-    name: 'NuRoof Revive™',
+    name: 'GoNano NuRoof Revive™',
     tagline: 'Refurbish. Fortify. Protect.',
     roofAge: '7–15 years old',
     lifeAdded: '5–10 years',
@@ -30,7 +30,7 @@ const roofProducts = [
     badge: 'bg-orange-100 text-orange-700',
   },
   {
-    name: 'Bio-Boost™',
+    name: 'GoNano Bio-Boost™',
     tagline: 'Cost-Effective Roof Protection',
     roofAge: '10+ years old',
     lifeAdded: '3–5 years',
@@ -65,7 +65,7 @@ const goNanoFAQs = [
   { question: "What is GoNano nanotechnology coating?", answer: "GoNano uses millions of nanoparticles to permanently transform the molecular structure of surfaces like asphalt roofs, concrete, and wood. It creates a hydrophobic, weather-resistant barrier that extends surface lifespan by up to 15 years." },
   { question: "How long does GoNano last?", answer: "GoNano provides permanent protection with a single application. Depending on the product tier, roof sealers add 3 to 15 years of life. Concrete and wood sealers provide permanent waterproof protection." },
   { question: "How much does GoNano cost?", answer: "GoNano applications start at $0.99 per square foot, including professional application. Volume discounts are available. Contact Roll On Painting at 705-787-1401 for a free quote." },
-  { question: "Is GoNano safe and environmentally friendly?", answer: "Yes. GoNano products are non-toxic, produce no dust or odor during application, and Bio-Boost™ is formulated with renewable bio-oils for a sustainable option." },
+  { question: "Is GoNano safe and environmentally friendly?", answer: "Yes. GoNano products are non-toxic, produce no dust or odor during application, and GoNano Bio-Boost™ is formulated with renewable bio-oils for a sustainable option." },
   { question: "Was GoNano featured on Dragon's Den?", answer: "Yes. GoNano was featured on CBC's Dragon's Den, showcasing its innovative nanotechnology for surface protection." },
 ];
 
@@ -94,15 +94,15 @@ const GoNanoPage = () => {
         "description": "Authorized GoNano dealer and installer in Muskoka. Nanotechnology roof sealers, concrete sealers, and wood sealers that permanently extend surface lifespan by up to 15 years. As seen on Dragon's Den.",
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
         "offers": [
-          { "@type": "Offer", "name": "NuRoof Fortify™", "description": "Best tier — extends roof life 10-15 years for roofs 0-7 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
-          { "@type": "Offer", "name": "NuRoof Revive™", "description": "Better tier — extends roof life 5-10 years for roofs 7-15 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
-          { "@type": "Offer", "name": "Bio-Boost™", "description": "Good tier — extends roof life 3-5 years for roofs 10+ years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano NuRoof Fortify™", "description": "Best tier — extends roof life 10-15 years for roofs 0-7 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano NuRoof Revive™", "description": "Better tier — extends roof life 5-10 years for roofs 7-15 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano Bio-Boost™", "description": "Good tier — extends roof life 3-5 years for roofs 10+ years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "GoNano Products",
           "itemListElement": [
-            { "@type": "OfferCatalog", "name": "Roofing Nanosealers", "description": "NuRoof Fortify™, NuRoof Revive™, and Bio-Boost™ for asphalt shingle roofs" },
+            { "@type": "OfferCatalog", "name": "Roofing Nanosealers", "description": "GoNano NuRoof Fortify™, GoNano NuRoof Revive™, and GoNano Bio-Boost™ for asphalt shingle roofs" },
             { "@type": "OfferCatalog", "name": "Concrete Sealers", "description": "Penetrating nanotechnology sealer with permanent waterproof protection" },
             { "@type": "OfferCatalog", "name": "Wood Sealers", "description": "Deep-penetrating nano-based wood sealer for decks, fences, and exteriors" },
           ]
