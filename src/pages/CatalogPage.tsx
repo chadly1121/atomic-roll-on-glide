@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { catalogCategories, CatalogItem } from '../data/catalogData';
+import { businessInfo } from '@/data/businessInfo';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import {
