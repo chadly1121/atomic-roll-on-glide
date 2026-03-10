@@ -166,12 +166,14 @@ const GoNanoPage = () => {
 
       <main className="pt-24 pb-16">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-16 sm:py-24 relative">
+        <section className="bg-gradient-to-br from-atomic-navy via-atomic-navy to-atomic-turquoise/20 text-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
-            {/* Dragon's Den Feature Image */}
-            <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 max-w-[140px] sm:max-w-[180px]">
-              <img src="/lovable-uploads/dragons-den-cbc.png" alt="GoNano featured on CBC Dragon's Den — Heard about us on Dragon's Den? Find out if your roof qualifies for a free inspection." className="w-full h-auto rounded-lg shadow-xl" loading="eager" />
-              <p className="text-[9px] sm:text-[10px] text-center text-gray-300 mt-1.5 font-semibold tracking-wide leading-tight">As Seen on Dragon's Den on CBC</p>
+            {/* Dragon's Den Feature Image — flows on mobile, absolute on md+ */}
+            <div className="flex justify-center mb-6 md:mb-0 md:absolute md:top-8 md:right-8 md:z-10 md:max-w-[180px]">
+              <div className="max-w-[120px] sm:max-w-[140px] md:max-w-[180px]">
+                <img src="/lovable-uploads/dragons-den-cbc.png" alt="GoNano featured on CBC Dragon's Den — Heard about us on Dragon's Den? Find out if your roof qualifies for a free inspection." className="w-full h-auto rounded-lg shadow-xl" loading="eager" />
+                <p className="text-[9px] sm:text-[10px] text-center text-gray-300 mt-1.5 font-semibold tracking-wide leading-tight">As Seen on Dragon's Den on CBC</p>
+              </div>
             </div>
 
             <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
@@ -186,20 +188,20 @@ const GoNanoPage = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 GoNano <span className="text-atomic-turquoise">Nanotechnology</span> Coatings
               </h1>
-              <p className="text-lg text-gray-300 max-w-2xl mb-6">
+              <p className="text-base sm:text-lg text-gray-300 max-w-2xl mb-6">
                 Millions of nanoparticles permanently transform the molecular structure of surfaces — enhancing resistance and extending lifespan by up to 15 years. As seen on Dragon's Den.
               </p>
-              <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex flex-wrap gap-4 sm:gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-atomic-turquoise">50K+</span>
+                  <span className="text-xl sm:text-2xl font-bold text-atomic-turquoise">50K+</span>
                   <span className="text-gray-400">Satisfied Clients</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-atomic-turquoise">14</span>
+                  <span className="text-xl sm:text-2xl font-bold text-atomic-turquoise">14</span>
                   <span className="text-gray-400">Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-atomic-turquoise">15yr</span>
+                  <span className="text-xl sm:text-2xl font-bold text-atomic-turquoise">15yr</span>
                   <span className="text-gray-400">Warranty Available</span>
                 </div>
               </div>
