@@ -10,12 +10,12 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ navLinks, handleNavLinkClick }: DesktopNavProps) => {
   return (
-    <nav className="hidden md:flex items-center space-x-6">
+    <nav className="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6">
       {navLinks.map(link => (
         <motion.a 
           key={link.name} 
           href={link.href} 
-          className="nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full text-atomic-navy hover:text-atomic-orange"
+          className="nav-link after:transition-all after:duration-300 after:ease-in-out after:hover:w-full text-atomic-navy hover:text-atomic-orange text-sm lg:text-base"
           onClick={(e) => handleNavLinkClick(e, link.href)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
