@@ -105,6 +105,13 @@ export default {
         'spin-slow': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
+        },
+        'heartbeat': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '14%': { transform: 'scale(1.06)' },
+          '28%': { transform: 'scale(1)' },
+          '42%': { transform: 'scale(1.06)' },
+          '56%': { transform: 'scale(1)' }
         }
       },
       animation: {
@@ -112,7 +119,8 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse-slow 2s ease-in-out infinite',
-        'spin-slow': 'spin-slow 12s linear infinite'
+        'spin-slow': 'spin-slow 12s linear infinite',
+        'heartbeat': 'heartbeat 1.5s ease-in-out infinite'
       },
       fontFamily: {
         'nunito': ['Nunito', 'sans-serif'],
