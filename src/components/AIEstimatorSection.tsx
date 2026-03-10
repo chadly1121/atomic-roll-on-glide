@@ -64,7 +64,7 @@ const AIEstimatorSection = () => {
             {/* CTA Button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="inline-flex items-center gap-2 bg-atomic-orange text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:bg-atomic-orange/90 transition-all group animate-[heartbeat_1.5s_ease-in-out_infinite]"
+              className="inline-flex items-center gap-2 bg-atomic-orange text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:bg-atomic-orange/90 transition-all group animate-heartbeat"
             >
               <Sparkles className="w-5 h-5" />
               Instant AI Estimate
