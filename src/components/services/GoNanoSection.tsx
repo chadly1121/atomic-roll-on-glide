@@ -5,6 +5,7 @@ import { Switch } from "@/components/ui/switch";
 import { VolumeX, Volume2, DollarSign, Check } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { LazyImage } from "@/components/ui/lazy-image";
+import GoNanoVideo from "./GoNanoVideo";
 
 interface GoNanoSectionProps {
   sectionRef: React.RefObject<HTMLDivElement>;
