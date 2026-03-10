@@ -82,8 +82,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/#gonano" 
-                  onClick={(e) => scrollToSection(e, '#gonano')}
+                  href="/gonano" 
                   className="text-gray-300 hover:text-atomic-turquoise transition-colors"
                 >
                   GoNano
@@ -167,8 +166,7 @@ const Footer = () => {
 
             <div className="mt-6">
               <a 
-                href="/#contact" 
-                onClick={(e) => scrollToSection(e, '#contact')}
+                href="/contact" 
                 className="bg-atomic-turquoise text-white px-6 py-2 rounded-full inline-block hover:bg-atomic-turquoise/80 transition-all hover:-translate-y-1 hover:shadow-md duration-300"
               >
                 Request a Quote

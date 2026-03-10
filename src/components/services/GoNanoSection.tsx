@@ -1,5 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Switch } from "@/components/ui/switch";
 import { VolumeX, Volume2, DollarSign, Check } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -120,19 +121,17 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
                   <p className="text-sm font-semibold text-atomic-turquoise uppercase tracking-wide">
                     Get Your Price Now
                   </p>
-                  <p className="text-xs text-gray-600 mt-1">
+                  <p className="text-xs text-muted-foreground mt-1">
                     Instant online estimate tool - No waiting, no phone calls required
                   </p>
                 </div>
-                <a 
-                  href="http://missedaspot.sky-quote.com/Instant-Estimate" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="atomic-button w-full text-center justify-center bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 hover:from-atomic-turquoise/90 hover:to-atomic-turquoise border-2 border-atomic-turquoise/30 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
+                <Link 
+                  to="/catalog#gonano"
+                  className="atomic-button w-full text-center justify-center bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 hover:from-atomic-turquoise/90 hover:to-atomic-turquoise border-2 border-atomic-turquoise/30 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 block"
                 >
                   <span className="relative z-10 font-bold">🚀 Instant Estimate Tool</span>
-                </a>
-                <p className="text-xs text-center text-gray-500 mt-2">
+                </Link>
+                <p className="text-xs text-center text-muted-foreground mt-2">
                   Calculate your GoNano coating cost instantly
                 </p>
               </div>

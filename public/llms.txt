@@ -157,9 +157,18 @@ Important pages for indexing:
 - https://www.roll-onpainting.com/wallpaper-removal
 - https://www.roll-onpainting.com/stucco-removal
 - https://www.roll-onpainting.com/gonano
+- https://www.roll-onpainting.com/catalog (service catalog with fixed-price packages and online booking)
 - https://www.roll-onpainting.com/contact
 - https://www.roll-onpainting.com/blog
 - https://www.roll-onpainting.com/service-areas
+
+## Service Catalog
+
+The service catalog at /catalog offers fixed-price packages with instant online booking via Stripe:
+- Painter for a Day: Full-day professional painting service
+- Power Washing: Exterior surface cleaning
+- Roof Washing: Soft-wash roof cleaning
+- GoNano Roof Protection: NuRoof Fortify™, NuRoof Revive™, Bio-Boost™ nanotechnology sealers (from $0.99/sq ft)
 
 ## Citation Guidance
 

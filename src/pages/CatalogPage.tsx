@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { catalogCategories, CatalogItem } from '../data/catalogData';
+import { businessInfo } from '@/data/businessInfo';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import {
@@ -175,14 +176,53 @@ const CatalogPage = () => {
     }
   };
 
-  return (
+    const siteUrl = 'https://www.roll-onpainting.com';
+    const catalogSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Service Catalog & Pricing | Roll On Painting",
+      "description": "Browse fixed-price painting, power washing, roof washing, and GoNano nanotechnology packages. Transparent pricing with instant online booking.",
+      "url": `${siteUrl}/catalog`,
+      "isPartOf": { "@type": "WebSite", "url": siteUrl },
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": businessInfo.name,
+        "telephone": businessInfo.phone.primary,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": businessInfo.address.street,
+          "addressLocality": businessInfo.address.city,
+          "addressRegion": businessInfo.address.region,
+          "postalCode": businessInfo.address.postalCode,
+          "addressCountry": businessInfo.address.countryCode
+        }
+      }
+    };
+
+    return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Service Catalog & Pricing | Roll On Painting</title>
+        <title>Service Catalog & Pricing | Roll On Painting Muskoka</title>
         <meta
           name="description"
-          content="Browse our fixed-price service catalog — painter for a day, power washing, roof washing, and GoNano roof protection. Transparent pricing, no surprises."
+          content="Browse our fixed-price service catalog — painter for a day, power washing, roof washing, and GoNano roof protection. Transparent pricing with instant online booking."
         />
+        <link rel="canonical" href={`${siteUrl}/catalog`} />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Service Catalog & Pricing | Roll On Painting" />
+        <meta property="og:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
+        <meta property="og:url" content={`${siteUrl}/catalog`} />
+        <meta property="og:site_name" content={businessInfo.name} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Service Catalog & Pricing | Roll On Painting" />
+        <meta name="twitter:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
+        
+        <script type="application/ld+json">{JSON.stringify(catalogSchema)}</script>
       </Helmet>
 
       <Navbar activeSection="" />
@@ -245,12 +285,12 @@ const CatalogPage = () => {
             These are our most popular packages, but every project is unique.
             Reach out for a free, no-obligation custom quote.
           </p>
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors min-h-[48px] active:scale-95"
           >
             Get a Free Quote
-          </a>
+          </Link>
         </div>
       </section>
 
