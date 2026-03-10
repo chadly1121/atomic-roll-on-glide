@@ -5,7 +5,7 @@ import { ArrowLeft, CheckCircle, Heart, Shield, Phone, Star, Paintbrush, Refresh
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
-import { CallToAction } from '@/components/conversion/CallToAction';
+import CallToAction from '@/components/conversion/CallToAction';
 
 const FreeTouchUpsPage = () => {
   useEffect(() => {
