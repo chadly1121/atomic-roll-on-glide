@@ -94,9 +94,9 @@ const GoNanoPage = () => {
         "description": "Authorized GoNano dealer and installer in Muskoka. Nanotechnology roof sealers, concrete sealers, and wood sealers that permanently extend surface lifespan by up to 15 years. As seen on Dragon's Den.",
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
         "offers": [
-          { "@type": "Offer", "name": "NuRoof Fortify™", "description": "Best tier — extends roof life 10-15 years for roofs 0-7 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
-          { "@type": "Offer", "name": "NuRoof Revive™", "description": "Better tier — extends roof life 5-10 years for roofs 7-15 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
-          { "@type": "Offer", "name": "Bio-Boost™", "description": "Good tier — extends roof life 3-5 years for roofs 10+ years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano NuRoof Fortify™", "description": "Best tier — extends roof life 10-15 years for roofs 0-7 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano NuRoof Revive™", "description": "Better tier — extends roof life 5-10 years for roofs 7-15 years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
+          { "@type": "Offer", "name": "GoNano Bio-Boost™", "description": "Good tier — extends roof life 3-5 years for roofs 10+ years old", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
