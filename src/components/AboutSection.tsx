@@ -15,18 +15,6 @@ const AboutSection = () => {
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-600 px-2">
             We're not just painters - we're craftsmen dedicated to transforming your spaces with precision and care.
           </p>
-
-          <button
-            type="button"
-            onClick={() => {
-              const widget = (window as Window & { __wh?: { toggle?: () => void } }).__wh;
-              widget?.toggle?.();
-            }}
-            className="mt-4 inline-flex items-center rounded-full bg-atomic-turquoise px-5 py-2.5 text-sm font-semibold text-white hover:bg-atomic-turquoise/90 transition-colors"
-            aria-label="Open Quohta widget"
-          >
-            Open Quohta Quote Widget
-          </button>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
