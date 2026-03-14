@@ -1,77 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 const AboutSection = () => {
-  // Load Quohta widget script and auto-open once so it's visible
-  useEffect(() => {
-    const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    const autoOpenKey = 'quohta_widget_auto_opened';
-
-    if (!document.getElementById('quohta-widget-override-style')) {
-      const style = document.createElement('style');
-      style.id = 'quohta-widget-override-style';
-      style.textContent = `
-        #wh-fab {
-          width: auto !important;
-          min-width: 168px !important;
-          height: 48px !important;
-          border-radius: 999px !important;
-          padding: 0 16px !important;
-          right: 20px !important;
-          bottom: 20px !important;
-          font-size: 0 !important;
-        }
-        #wh-fab::before {
-          content: "Open Quohta Quote";
-          font-size: 14px;
-          font-weight: 700;
-          color: #fff;
-          white-space: nowrap;
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    const tryOpenWidget = () => {
-      const widget = (window as Window & { __wh?: { toggle?: () => void } }).__wh;
-      if (widget?.toggle && !sessionStorage.getItem(autoOpenKey)) {
-        widget.toggle();
-        sessionStorage.setItem(autoOpenKey, '1');
-        return true;
-      }
-      return false;
-    };
-
-    const existingScript = document.querySelector(`script[src="${widgetSrc}"]`);
-
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = widgetSrc;
-      script.async = true;
-      script.onload = () => {
-        let attempts = 0;
-        const interval = window.setInterval(() => {
-          attempts += 1;
-          if (tryOpenWidget() || attempts > 10) {
-            window.clearInterval(interval);
-          }
-        }, 300);
-      };
-      document.body.appendChild(script);
-      return;
-    }
-
-    let attempts = 0;
-    const interval = window.setInterval(() => {
-      attempts += 1;
-      if (tryOpenWidget() || attempts > 10) {
-        window.clearInterval(interval);
-      }
-    }, 300);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 relative overflow-hidden bg-accent/30">
       {/* Decorative elements removed for performance */}
