@@ -85,7 +85,7 @@ const Index = () => {
       </div>
       
       {/* Quohta Widget Container */}
-      <div id="quohta-widget-container" className="container mx-auto px-4 my-4" ref={quohtaRef} />
+      <div id="quohta-widget-container" className="flex justify-center my-4" ref={quohtaRef} />
       
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
