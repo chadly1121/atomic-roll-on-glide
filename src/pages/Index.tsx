@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Suspense, useEffect } from 'react';
+import React, { useState, useCallback, Suspense, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -23,12 +23,23 @@ import TrustBadges from '../components/trust/TrustBadges';
 
 // Updated: Feb 2025 - AISO implementation
 const Index = () => {
-  // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
+  const quohtaRef = useRef<HTMLDivElement>(null);
+
+  // Load Quohta widget script
+  useEffect(() => {
+    const widgetSrc = 'https://3000-ii7cl8y6ocil2x4hhp31y-3580a79c.us2.manus.computer/api/widget.js?id=1';
+    if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
+      const script = document.createElement('script');
+      script.src = widgetSrc;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   // Optimize scroll handler with useCallback
   const handleScroll = useCallback(() => {
@@ -67,11 +78,14 @@ const Index = () => {
       <Navbar activeSection={activeSection} />
       
       {/* Free Touch Ups Button - Responsive sticky bar */}
-      <div className="w-full bg-white/80 backdrop-blur-sm py-1.5 sm:py-2 shadow-sm border-b border-gray-100 sticky top-14 sm:top-16 z-40">
+      <div className="w-full bg-background/80 backdrop-blur-sm py-1.5 sm:py-2 shadow-sm border-b border-border sticky top-14 sm:top-16 z-40">
         <div className="container mx-auto px-2 sm:px-4 max-w-sm sm:max-w-md flex justify-center">
           <FreeTouchUpsButton />
         </div>
       </div>
+      
+      {/* Quohta Widget Container */}
+      <div id="quohta-widget-container" className="container mx-auto px-4 my-4" ref={quohtaRef} />
       
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
