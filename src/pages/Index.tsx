@@ -54,6 +54,20 @@ const Index = () => {
     }
   }, []);
 
+  // Ensure Quohta widget script is loaded in SPA preview sessions
+  useEffect(() => {
+    const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
+    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${widgetSrc}"]`);
+
+    if (existingScript) return;
+
+    const script = document.createElement('script');
+    script.src = widgetSrc;
+    script.async = true;
+    script.setAttribute('data-contractor-id', '1');
+    document.body.appendChild(script);
+  }, []);
+
   // Setup event listeners for scroll
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
