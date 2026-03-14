@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 const AboutSection = () => {
+  // Load Quohta widget script
+  useEffect(() => {
+    const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
+    if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
+      const script = document.createElement('script');
+      script.src = widgetSrc;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 relative overflow-hidden bg-accent/30">
       {/* Decorative elements removed for performance */}
