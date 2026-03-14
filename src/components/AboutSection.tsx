@@ -2,15 +2,49 @@ import React, { useEffect } from 'react';
 import { Instagram, Linkedin, MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 const AboutSection = () => {
-  // Load Quohta widget script
+  // Load Quohta widget script and auto-open once so it's visible
   useEffect(() => {
     const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
+    const autoOpenKey = 'quohta_widget_auto_opened';
+
+    const tryOpenWidget = () => {
+      const widget = (window as Window & { __wh?: { toggle?: () => void } }).__wh;
+      if (widget?.toggle && !sessionStorage.getItem(autoOpenKey)) {
+        widget.toggle();
+        sessionStorage.setItem(autoOpenKey, '1');
+        return true;
+      }
+      return false;
+    };
+
+    const existingScript = document.querySelector(`script[src="${widgetSrc}"]`);
+
+    if (!existingScript) {
       const script = document.createElement('script');
       script.src = widgetSrc;
       script.async = true;
+      script.onload = () => {
+        let attempts = 0;
+        const interval = window.setInterval(() => {
+          attempts += 1;
+          if (tryOpenWidget() || attempts > 10) {
+            window.clearInterval(interval);
+          }
+        }, 300);
+      };
       document.body.appendChild(script);
+      return;
     }
+
+    let attempts = 0;
+    const interval = window.setInterval(() => {
+      attempts += 1;
+      if (tryOpenWidget() || attempts > 10) {
+        window.clearInterval(interval);
+      }
+    }, 300);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   return (
