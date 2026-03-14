@@ -23,12 +23,23 @@ import TrustBadges from '../components/trust/TrustBadges';
 
 // Updated: Feb 2025 - AISO implementation
 const Index = () => {
-  // Add a scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
+  const quohtaRef = useRef<HTMLDivElement>(null);
+
+  // Load Quohta widget script
+  useEffect(() => {
+    const widgetSrc = 'https://3000-ii7cl8y6ocil2x4hhp31y-3580a79c.us2.manus.computer/api/widget.js?id=1';
+    if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
+      const script = document.createElement('script');
+      script.src = widgetSrc;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   // Optimize scroll handler with useCallback
   const handleScroll = useCallback(() => {
