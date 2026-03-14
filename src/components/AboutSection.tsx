@@ -7,6 +7,31 @@ const AboutSection = () => {
     const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
     const autoOpenKey = 'quohta_widget_auto_opened';
 
+    if (!document.getElementById('quohta-widget-override-style')) {
+      const style = document.createElement('style');
+      style.id = 'quohta-widget-override-style';
+      style.textContent = `
+        #wh-fab {
+          width: auto !important;
+          min-width: 168px !important;
+          height: 48px !important;
+          border-radius: 999px !important;
+          padding: 0 16px !important;
+          right: 20px !important;
+          bottom: 20px !important;
+          font-size: 0 !important;
+        }
+        #wh-fab::before {
+          content: "Open Quohta Quote";
+          font-size: 14px;
+          font-weight: 700;
+          color: #fff;
+          white-space: nowrap;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     const tryOpenWidget = () => {
       const widget = (window as Window & { __wh?: { toggle?: () => void } }).__wh;
       if (widget?.toggle && !sessionStorage.getItem(autoOpenKey)) {
