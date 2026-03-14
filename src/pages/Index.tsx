@@ -76,9 +76,6 @@ const Index = () => {
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
       
-      {/* AI Estimator Section - Top priority */}
-      <AIEstimatorSection />
-      
       <AboutSection />
       
       {/* First Inline CTA with Trust Badges */}
