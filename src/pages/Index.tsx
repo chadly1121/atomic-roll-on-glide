@@ -32,7 +32,7 @@ const Index = () => {
 
   // Load Quohta widget script
   useEffect(() => {
-    const widgetSrc = 'https://3000-ii7cl8y6ocil2x4hhp31y-3580a79c.us2.manus.computer/api/widget.js?id=1';
+    const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
     if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
       const script = document.createElement('script');
       script.src = widgetSrc;
