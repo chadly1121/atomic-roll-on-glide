@@ -74,9 +74,10 @@ export const catalogCategories: CatalogCategory[] = [
       {
         id: "softwash-exterior",
         category: "power-washing",
-        title: "Soft Wash — Exterior Walls, Soffits, Gutters, Downspouts, Windows & Doors",
+        title: "Soft Wash Bungalow Exterior — Walls, Soffits, Gutters, Downspouts, Windows & Doors",
         price: "$750",
         stripePriceId: "NEEDS_STRIPE_PRICE_ID",
+        coverage: "Up to 1,800 sq ft",
         includes: [
           "Full exterior soft wash",
           "Walls, soffits, gutters & downspouts",
@@ -86,7 +87,7 @@ export const catalogCategories: CatalogCategory[] = [
           "All labour included",
           "Tidy up & debris removal",
         ],
-        note: "Price is plus applicable taxes. A gentle, low-pressure wash safe for all exterior surfaces.",
+        note: "Price is plus applicable taxes. A gentle, low-pressure wash safe for all exterior surfaces. Bungalow homes up to 1,800 sq ft.",
       },
     ],
   },
