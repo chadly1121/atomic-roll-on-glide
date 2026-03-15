@@ -36,10 +36,30 @@ serve(async (req) => {
       customerId = customers.data[0].id;
     }
 
+    // Find or create the 13% HST tax rate
+    let hstTaxRateId: string | undefined;
+    const existingTaxRates = await stripe.taxRates.list({ limit: 100, active: true });
+    const hstRate = existingTaxRates.data.find(
+      (tr) => tr.percentage === 13 && tr.display_name === "HST" && tr.inclusive === false
+    );
+    if (hstRate) {
+      hstTaxRateId = hstRate.id;
+    } else {
+      const newRate = await stripe.taxRates.create({
+        display_name: "HST",
+        description: "Harmonized Sales Tax (Ontario)",
+        percentage: 13,
+        inclusive: false,
+        jurisdiction: "CA",
+        country: "CA",
+      });
+      hstTaxRateId = newRate.id;
+    }
+
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : customerEmail,
-      line_items: [{ price: priceId, quantity: quantity || 1 }],
+      line_items: [{ price: priceId, quantity: quantity || 1, tax_rates: [hstTaxRateId] }],
       mode: "payment",
       metadata: {
         customerName,
