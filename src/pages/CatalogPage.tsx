@@ -243,6 +243,22 @@ const CatalogPage = () => {
         </div>
       </section>
 
+      {/* Owner's note */}
+      <section className="container mx-auto px-4 pb-8">
+        <div className="max-w-3xl mx-auto bg-muted/50 border border-border rounded-2xl p-6 sm:p-8">
+          <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+            <strong className="text-foreground">A note on our pricing:</strong> We believe in full transparency. Yes, our competitors can see these prices — and yes, they might undercut us. But here's what you get with Roll On Painting: 25 years of experience, a team that takes pride in every detail, and a process that's simple from start to finish — easy to book, easy to pay, no runaround. Plus, every job comes with our{' '}
+            <Link to="/free-touch-ups" className="text-primary underline underline-offset-2 hover:text-primary/80 font-medium">
+              Free Touch Ups for Life
+            </Link>{' '}
+            program. We hope you'll give us the chance to earn your business.
+          </p>
+          <p className="mt-4 text-foreground font-semibold text-sm sm:text-base">
+            — Chad Gilchrist, Owner
+          </p>
+        </div>
+      </section>
+
       {/* Category sections */}
       <div className="container mx-auto px-4 pb-20 space-y-16 sm:space-y-24">
         {catalogCategories.map((cat) => (
