@@ -14,7 +14,7 @@ serve(async (req) => {
   }
 
   try {
-    const { priceId, serviceName, customerName, customerEmail, customerPhone, quantity } =
+    const { priceId, serviceName, customerName, customerEmail, customerPhone, jobsiteAddress, quantity } =
       await req.json();
 
     if (!priceId || !serviceName || !customerName || !customerEmail || !customerPhone) {
