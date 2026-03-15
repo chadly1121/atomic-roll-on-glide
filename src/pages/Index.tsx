@@ -30,15 +30,18 @@ const Index = () => {
   ]));
   const quohtaRef = useRef<HTMLDivElement>(null);
 
-  // Load Quohta widget script
+  // Load Quohta widget script directly in its container (below free touch-ups banner)
   useEffect(() => {
     const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    if (!document.querySelector(`script[src="${widgetSrc}"]`)) {
-      const script = document.createElement('script');
-      script.src = widgetSrc;
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const container = quohtaRef.current;
+
+    if (!container) return;
+    if (container.querySelector(`script[src="${widgetSrc}"]`)) return;
+
+    const script = document.createElement('script');
+    script.src = widgetSrc;
+    script.async = true;
+    container.appendChild(script);
   }, []);
 
   // Optimize scroll handler with useCallback
