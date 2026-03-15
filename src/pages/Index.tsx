@@ -28,7 +28,7 @@ const Index = () => {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
-  const quohtaRef = useRef<HTMLDivElement>(null);
+  
 
   // Load Quohta widget script directly in its container (below free touch-ups banner)
   useEffect(() => {
