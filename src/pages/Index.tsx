@@ -30,7 +30,7 @@ const Index = () => {
   ]));
   
 
-  // Load widget script
+  // Load widget script and expose inline trigger button
   useEffect(() => {
     const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
     if (document.querySelector(`script[src="${widgetSrc}"]`)) return;
@@ -38,7 +38,20 @@ const Index = () => {
     const script = document.createElement('script');
     script.src = widgetSrc;
     script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.onerror = () => console.error('Order widget failed to load');
     document.body.appendChild(script);
+  }, []);
+
+  const openOrderWidget = useCallback(() => {
+    const widgetApi = (window as Window & { __wh?: { toggle: () => void } }).__wh;
+
+    if (widgetApi?.toggle) {
+      widgetApi.toggle();
+      return;
+    }
+
+    window.open('https://contractorapp-tfvsmcyb.manus.space', '_blank', 'noopener,noreferrer');
   }, []);
 
   // Optimize scroll handler with useCallback
