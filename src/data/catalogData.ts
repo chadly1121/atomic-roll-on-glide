@@ -23,6 +23,27 @@ export interface CatalogCategory {
 
 export const catalogCategories: CatalogCategory[] = [
   {
+    id: "test",
+    title: "🧪 Test",
+    icon: "🧪",
+    description: "Use this to test the checkout flow with a real credit card.",
+    items: [
+      {
+        id: "test-purchase",
+        category: "test",
+        title: "Test Purchase",
+        price: "$1.00",
+        stripePriceId: "price_1TBGpCI3v1u61BwNP2d1PJfb",
+        includes: [
+          "Verifies Stripe checkout flow",
+          "Confirms email notifications",
+          "Tests payment processing",
+        ],
+        note: "This is a real $1 charge for testing purposes.",
+      },
+    ],
+  },
+  {
     id: "painting",
     title: "Painting Services",
     icon: "🎨",
