@@ -98,6 +98,19 @@ const Index = () => {
       </div>
       
       
+      {/* Order Now button under nav + touch-ups banner */}
+      <div className="w-full bg-background py-3">
+        <div className="container mx-auto px-4 flex justify-center">
+          <button
+            type="button"
+            onClick={openOrderWidget}
+            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-poppins font-semibold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
       
