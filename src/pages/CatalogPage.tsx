@@ -123,6 +123,7 @@ const CatalogPage = () => {
     name: '',
     email: '',
     phone: '',
+    address: '',
     sqft: '',
   });
 
