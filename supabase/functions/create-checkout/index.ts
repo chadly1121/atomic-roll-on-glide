@@ -84,7 +84,7 @@ serve(async (req) => {
             Thank You for Your Booking!
           </h2>
           <p>Hi ${customerName},</p>
-          <p>We've received your payment for <strong>${serviceName}</strong>. A member of our team will be in touch shortly to schedule your appointment.</p>
+          <p>We've received your payment for <strong>${serviceName}</strong> at <strong>${jobsiteAddress || "your location"}</strong>. A member of our team will be in touch shortly to schedule your appointment.</p>
           <div style="background-color: #f9fafb; padding: 16px; border-radius: 8px; margin: 24px 0;">
             <h3 style="color: #1f2937; margin-top: 0;">What happens next?</h3>
             <ol style="color: #374151; line-height: 1.8;">
