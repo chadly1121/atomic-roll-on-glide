@@ -339,6 +339,15 @@ const CatalogPage = () => {
                 placeholder="(416) 555-1234"
               />
             </div>
+            <div>
+              <Label htmlFor="checkout-address">Jobsite Address</Label>
+              <Input
+                id="checkout-address"
+                value={form.address}
+                onChange={(e) => setForm({ ...form, address: e.target.value })}
+                placeholder="123 Main St, Bracebridge, ON"
+              />
+            </div>
             {selectedItem?.isPerSqFt && (
               <>
                 <div>
