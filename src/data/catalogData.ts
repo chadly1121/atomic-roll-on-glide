@@ -48,6 +48,42 @@ export const catalogCategories: CatalogCategory[] = [
         note: "Paint is not included so you can choose the exact brand, finish, and colour you want. We're happy to advise on the best options for your project.",
         popular: true,
       },
+      {
+        id: "paint-front-door",
+        category: "painting",
+        title: "Paint Front Door, Frame & Sidelights",
+        price: "$375",
+        stripePriceId: "price_1TBHXDI3v1u61BwNZW5xu0UW",
+        includes: [
+          "Front door, frame & sidelights",
+          "Surface prep & sanding",
+          "Spot priming",
+          "Caulking",
+          "Clean up",
+        ],
+        excludes: [
+          "Paint & primer (due to wide variety of products and price points)",
+        ],
+        note: "Paint is not included so you can choose the exact brand, finish, and colour you want. We're happy to advise on the best options for your project.",
+      },
+      {
+        id: "paint-garage-door",
+        category: "painting",
+        title: "Paint Garage Door",
+        price: "$475",
+        stripePriceId: "price_1TBHXDI3v1u61BwNmvCbeLJD",
+        includes: [
+          "Single garage door",
+          "Surface prep & sanding",
+          "Spot priming",
+          "Caulking",
+          "Clean up",
+        ],
+        excludes: [
+          "Paint & primer (due to wide variety of products and price points)",
+        ],
+        note: "Paint is not included so you can choose the exact brand, finish, and colour you want. We're happy to advise on the best options for your project. Price is per door.",
+      },
     ],
   },
   {
