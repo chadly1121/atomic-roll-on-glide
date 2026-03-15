@@ -76,7 +76,7 @@ export const catalogCategories: CatalogCategory[] = [
         category: "power-washing",
         title: "Soft Wash Bungalow Exterior — Walls, Soffits, Gutters, Downspouts, Windows & Doors",
         price: "$750",
-        stripePriceId: "NEEDS_STRIPE_PRICE_ID",
+        stripePriceId: "price_1TBGoKI3v1u61BwNwLo1463j",
         coverage: "Up to 1,800 sq ft",
         includes: [
           "Full exterior soft wash",
