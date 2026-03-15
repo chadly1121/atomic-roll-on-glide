@@ -99,7 +99,7 @@ const Index = () => {
       
       
       {/* Order Now button under nav + touch-ups banner */}
-      <div className="w-full bg-background py-3">
+      <div className="w-full bg-background py-5 mt-2">
         <div className="container mx-auto px-4 flex justify-center">
           <button
             type="button"
