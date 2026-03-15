@@ -11,21 +11,15 @@
 /* Import legacy app styles */
 @import './app-legacy.css';
 
-/* Quohta widget position override: place button under nav + top banner */
+/* Hide third-party floating FAB; use inline top trigger button instead */
 #wh-fab {
-  top: calc(env(safe-area-inset-top, 0px) + 7.5rem) !important;
-  left: 50% !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: translateX(-50%) !important;
+  display: none !important;
 }
 
-#wh-fab:hover {
-  transform: translateX(-50%) scale(1.08) !important;
+#wh-ov {
+  z-index: 99998 !important;
 }
 
-@media (max-width: 640px) {
-  #wh-fab {
-    top: calc(env(safe-area-inset-top, 0px) + 6.75rem) !important;
-  }
+#wh-pn {
+  z-index: 100000 !important;
 }
