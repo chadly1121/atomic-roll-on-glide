@@ -126,6 +126,10 @@ serve(async (req) => {
               <td style="padding: 8px 0; font-weight: bold;">Phone:</td>
               <td style="padding: 8px 0;"><a href="tel:${customerPhone}">${customerPhone}</a></td>
             </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Jobsite:</td>
+              <td style="padding: 8px 0;">${jobsiteAddress || "Not provided"}</td>
+            </tr>
           </table>
           <div style="margin-top: 24px; padding: 16px; background-color: #fef3c7; border-radius: 8px;">
             <p style="margin: 0; font-weight: bold; color: #92400e;">⚡ Action Required</p>
