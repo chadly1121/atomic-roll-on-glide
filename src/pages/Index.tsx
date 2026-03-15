@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Suspense, useEffect, useRef } from 'react';
+import React, { useState, useCallback, Suspense, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -28,20 +28,17 @@ const Index = () => {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
-  const quohtaRef = useRef<HTMLDivElement>(null);
+  
 
-  // Load Quohta widget script directly in its container (below free touch-ups banner)
+  // Load widget script
   useEffect(() => {
     const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    const container = quohtaRef.current;
-
-    if (!container) return;
-    if (container.querySelector(`script[src="${widgetSrc}"]`)) return;
+    if (document.querySelector(`script[src="${widgetSrc}"]`)) return;
 
     const script = document.createElement('script');
     script.src = widgetSrc;
     script.async = true;
-    container.appendChild(script);
+    document.body.appendChild(script);
   }, []);
 
   // Optimize scroll handler with useCallback
@@ -87,8 +84,6 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Quohta Widget Container */}
-      <div id="quohta-widget-container" className="flex justify-center my-4" ref={quohtaRef} />
       
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
