@@ -144,7 +144,7 @@ const CatalogPage = () => {
 
   const handleCheckout = async () => {
     if (!selectedItem) return;
-    if (!form.name || !form.email || !form.phone) {
+    if (!form.name || !form.email || !form.phone || !form.address) {
       toast.error('Please fill in all fields');
       return;
     }
