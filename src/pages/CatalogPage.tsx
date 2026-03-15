@@ -162,6 +162,7 @@ const CatalogPage = () => {
           customerName: form.name,
           customerEmail: form.email,
           customerPhone: form.phone,
+          jobsiteAddress: form.address,
           quantity: selectedItem.isPerSqFt ? parseInt(form.sqft) : 1,
         },
       });
