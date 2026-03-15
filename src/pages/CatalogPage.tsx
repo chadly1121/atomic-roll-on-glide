@@ -45,6 +45,7 @@ const CatalogCard = ({
       <span className="text-3xl sm:text-4xl font-extrabold text-primary">
         {item.price}
       </span>
+      <span className="text-sm text-muted-foreground font-medium">+ HST</span>
       {item.duration && (
         <span className="text-sm text-muted-foreground font-medium">
           / {item.duration}
