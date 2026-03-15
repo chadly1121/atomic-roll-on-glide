@@ -87,7 +87,7 @@ export const catalogCategories: CatalogCategory[] = [
           "All labour included",
           "Tidy up & debris removal",
         ],
-        note: "Price is plus applicable taxes. A gentle, low-pressure wash safe for all exterior surfaces. Bungalow homes up to 1,800 sq ft.",
+        note: "A gentle, low-pressure wash safe for all exterior surfaces. Bungalow homes up to 1,800 sq ft.",
       },
     ],
   },
