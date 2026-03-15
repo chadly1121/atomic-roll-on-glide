@@ -14,7 +14,7 @@ serve(async (req) => {
   }
 
   try {
-    const { priceId, serviceName, customerName, customerEmail, customerPhone, quantity } =
+    const { priceId, serviceName, customerName, customerEmail, customerPhone, jobsiteAddress, quantity } =
       await req.json();
 
     if (!priceId || !serviceName || !customerName || !customerEmail || !customerPhone) {
@@ -64,6 +64,7 @@ serve(async (req) => {
       metadata: {
         customerName,
         customerPhone,
+        jobsiteAddress: jobsiteAddress || "",
         serviceName,
       },
       success_url: `${req.headers.get("origin")}/payment-success?service=${encodeURIComponent(serviceName)}`,
@@ -83,7 +84,7 @@ serve(async (req) => {
             Thank You for Your Booking!
           </h2>
           <p>Hi ${customerName},</p>
-          <p>We've received your payment for <strong>${serviceName}</strong>. A member of our team will be in touch shortly to schedule your appointment.</p>
+          <p>We've received your payment for <strong>${serviceName}</strong> at <strong>${jobsiteAddress || "your location"}</strong>. A member of our team will be in touch shortly to schedule your appointment.</p>
           <div style="background-color: #f9fafb; padding: 16px; border-radius: 8px; margin: 24px 0;">
             <h3 style="color: #1f2937; margin-top: 0;">What happens next?</h3>
             <ol style="color: #374151; line-height: 1.8;">
@@ -124,6 +125,10 @@ serve(async (req) => {
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Phone:</td>
               <td style="padding: 8px 0;"><a href="tel:${customerPhone}">${customerPhone}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Jobsite:</td>
+              <td style="padding: 8px 0;">${jobsiteAddress || "Not provided"}</td>
             </tr>
           </table>
           <div style="margin-top: 24px; padding: 16px; background-color: #fef3c7; border-radius: 8px;">

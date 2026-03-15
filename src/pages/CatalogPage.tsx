@@ -123,6 +123,7 @@ const CatalogPage = () => {
     name: '',
     email: '',
     phone: '',
+    address: '',
     sqft: '',
   });
 
@@ -138,12 +139,12 @@ const CatalogPage = () => {
   const handleBook = (item: CatalogItem) => {
     setSelectedItem(item);
     setIsDialogOpen(true);
-    setForm({ name: '', email: '', phone: '', sqft: '' });
+    setForm({ name: '', email: '', phone: '', address: '', sqft: '' });
   };
 
   const handleCheckout = async () => {
     if (!selectedItem) return;
-    if (!form.name || !form.email || !form.phone) {
+    if (!form.name || !form.email || !form.phone || !form.address) {
       toast.error('Please fill in all fields');
       return;
     }
@@ -161,6 +162,7 @@ const CatalogPage = () => {
           customerName: form.name,
           customerEmail: form.email,
           customerPhone: form.phone,
+          jobsiteAddress: form.address,
           quantity: selectedItem.isPerSqFt ? parseInt(form.sqft) : 1,
         },
       });
@@ -335,6 +337,15 @@ const CatalogPage = () => {
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 placeholder="(416) 555-1234"
+              />
+            </div>
+            <div>
+              <Label htmlFor="checkout-address">Jobsite Address</Label>
+              <Input
+                id="checkout-address"
+                value={form.address}
+                onChange={(e) => setForm({ ...form, address: e.target.value })}
+                placeholder="123 Main St, Bracebridge, ON"
               />
             </div>
             {selectedItem?.isPerSqFt && (
