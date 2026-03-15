@@ -30,29 +30,6 @@ const Index = () => {
   ]));
   
 
-  // Load widget script and expose inline trigger button
-  useEffect(() => {
-    const widgetSrc = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    if (document.querySelector(`script[src="${widgetSrc}"]`)) return;
-
-    const script = document.createElement('script');
-    script.src = widgetSrc;
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    script.onerror = () => console.error('Order widget failed to load');
-    document.body.appendChild(script);
-  }, []);
-
-  const openOrderWidget = useCallback(() => {
-    const widgetApi = (window as Window & { __wh?: { toggle: () => void } }).__wh;
-
-    if (widgetApi?.toggle) {
-      widgetApi.toggle();
-      return;
-    }
-
-    window.open('https://contractorapp-tfvsmcyb.manus.space', '_blank', 'noopener,noreferrer');
-  }, []);
 
   // Optimize scroll handler with useCallback
   const handleScroll = useCallback(() => {
@@ -98,18 +75,6 @@ const Index = () => {
       </div>
       
       
-      {/* Order Now button under nav + touch-ups banner */}
-      <div className="w-full bg-background py-5 mt-2">
-        <div className="container mx-auto px-4 flex justify-center">
-          <button
-            type="button"
-            onClick={openOrderWidget}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-poppins font-semibold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
-          >
-            Order Now
-          </button>
-        </div>
-      </div>
 
       {/* Always loaded sections (above the fold) */}
       <HeroSection />

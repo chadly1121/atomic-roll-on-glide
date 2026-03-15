@@ -11,15 +11,3 @@
 /* Import legacy app styles */
 @import './app-legacy.css';
 
-/* Hide third-party floating FAB; use inline top trigger button instead */
-#wh-fab {
-  display: none !important;
-}
-
-#wh-ov {
-  z-index: 99998 !important;
-}
-
-#wh-pn {
-  z-index: 100000 !important;
-}
