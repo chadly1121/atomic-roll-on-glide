@@ -71,6 +71,23 @@ export const catalogCategories: CatalogCategory[] = [
           "Labour",
         ],
       },
+      {
+        id: "softwash-exterior",
+        category: "power-washing",
+        title: "Soft Wash — Exterior Walls, Soffits, Gutters, Downspouts, Windows & Doors",
+        price: "$750",
+        stripePriceId: "NEEDS_STRIPE_PRICE_ID",
+        includes: [
+          "Full exterior soft wash",
+          "Walls, soffits, gutters & downspouts",
+          "Windows & doors",
+          "Commercial-grade equipment",
+          "Cleaning solutions & chemicals",
+          "All labour included",
+          "Tidy up & debris removal",
+        ],
+        note: "Price is plus applicable taxes. A gentle, low-pressure wash safe for all exterior surfaces.",
+      },
     ],
   },
   {
