@@ -23,6 +23,53 @@ export interface CatalogCategory {
 
 export const catalogCategories: CatalogCategory[] = [
   {
+    id: "gutters",
+    title: "Gutter Services",
+    icon: "🏠",
+    description: "Keep your gutters clear and looking their best — debris removal, cleaning, and shine-up.",
+    items: [
+      {
+        id: "gutter-bungalow",
+        category: "gutters",
+        title: "Gutter Debris Removal — Bungalow",
+        price: "$175",
+        stripePriceId: "price_1TBHNVI3v1u61BwNPhQvLSIX",
+        includes: [
+          "Full gutter debris removal",
+          "Downspout check & flush",
+          "Tidy up & debris disposal",
+        ],
+        note: "For any bungalow home.",
+      },
+      {
+        id: "gutter-2storey",
+        category: "gutters",
+        title: "Gutter Debris Removal — 2 Storey",
+        price: "$275",
+        stripePriceId: "price_1TBHNWI3v1u61BwNZDu22Q3X",
+        includes: [
+          "Full gutter debris removal",
+          "Downspout check & flush",
+          "Tidy up & debris disposal",
+        ],
+        note: "For any 2-storey home.",
+      },
+      {
+        id: "gutter-shine-addon",
+        category: "gutters",
+        title: "Gutter & Downspout Shine-Up — Add-On",
+        price: "$200",
+        stripePriceId: "price_1TBHNYI3v1u61BwNYmecBp2p",
+        includes: [
+          "Exterior gutter cleaning & shine",
+          "Downspout exterior wash",
+          "Streak & stain removal",
+        ],
+        note: "Add-on to any gutter debris removal service above.",
+      },
+    ],
+  },
+  {
     id: "painting",
     title: "Painting Services",
     icon: "🎨",
