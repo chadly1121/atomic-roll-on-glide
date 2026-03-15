@@ -64,6 +64,7 @@ serve(async (req) => {
       metadata: {
         customerName,
         customerPhone,
+        jobsiteAddress: jobsiteAddress || "",
         serviceName,
       },
       success_url: `${req.headers.get("origin")}/payment-success?service=${encodeURIComponent(serviceName)}`,
