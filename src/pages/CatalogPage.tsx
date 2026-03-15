@@ -139,7 +139,7 @@ const CatalogPage = () => {
   const handleBook = (item: CatalogItem) => {
     setSelectedItem(item);
     setIsDialogOpen(true);
-    setForm({ name: '', email: '', phone: '', sqft: '' });
+    setForm({ name: '', email: '', phone: '', address: '', sqft: '' });
   };
 
   const handleCheckout = async () => {
