@@ -10,3 +10,22 @@
 
 /* Import legacy app styles */
 @import './app-legacy.css';
+
+/* Quohta widget position override: place button under nav + top banner */
+#wh-fab {
+  top: calc(env(safe-area-inset-top, 0px) + 7.5rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+#wh-fab:hover {
+  transform: translateX(-50%) scale(1.08) !important;
+}
+
+@media (max-width: 640px) {
+  #wh-fab {
+    top: calc(env(safe-area-inset-top, 0px) + 6.75rem) !important;
+  }
+}
