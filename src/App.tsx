@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,30 +37,6 @@ const queryClient = new QueryClient({
   },
 });
 
-// WWW Redirect component with improved functionality
-const WwwRedirect = () => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hostname = window.location.hostname;
-      
-      if (hostname.startsWith('www.')) {
-        const protocol = window.location.protocol;
-        const path = window.location.pathname;
-        const search = window.location.search;
-        const hash = window.location.hash;
-        const nonWwwHostname = hostname.replace('www.', '');
-        
-        const nonWwwUrl = `${protocol}//${nonWwwHostname}${path}${search}${hash}`;
-        
-        console.log(`Redirecting from ${window.location.href} to ${nonWwwUrl}`);
-        
-        window.location.replace(nonWwwUrl);
-      }
-    }
-  }, []);
-  
-  return null;
-};
 
 const App = () => {
   try {
@@ -70,7 +46,7 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <WwwRedirect />
+            
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
