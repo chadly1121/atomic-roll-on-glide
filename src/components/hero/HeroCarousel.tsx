@@ -33,7 +33,7 @@ const HeroCarousel = () => {
                     }`}
                     src={image}
                     loading={index === 0 ? "eager" : "lazy"}
-                    fetchPriority={index === 0 ? "high" : "low"}
+                    {...{ fetchpriority: index === 0 ? "high" : "low" }}
                     width={600}
                     height={350}
                     decoding={index === 0 ? "sync" : "async"}
