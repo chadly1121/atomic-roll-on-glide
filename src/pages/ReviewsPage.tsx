@@ -29,7 +29,7 @@ const ReviewsPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Customer Reviews | Roll On Painting | {businessInfo.ratings.average}/5 on Google</title>
+        <title>{`Customer Reviews | Roll On Painting | ${businessInfo.ratings.average}/5 on Google`}</title>
         <meta name="description" content={`Read verified customer reviews of Roll On Painting. Rated ${businessInfo.ratings.average}/5 on Google. Muskoka homeowners trust us for interior, exterior, and specialty painting.`} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${siteUrl}/reviews`} />
