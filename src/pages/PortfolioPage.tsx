@@ -43,12 +43,13 @@ const PortfolioPage: React.FC = () => {
         <Navbar activeSection="portfolio" />
         
         <main className="pt-16">
-          <section className="bg-gradient-to-b from-atomic-navy to-atomic-navy/90 text-white py-16 md:py-20">
+          <section className="pt-10 pb-6 md:pt-14 md:pb-8">
             <div className="container mx-auto px-4 text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Our Portfolio</h1>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">Our Portfolio</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Browse our completed projects across Muskoka. From cozy cottage interiors to large commercial buildings, see the quality Roll On Painting delivers.
               </p>
+              <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
             </div>
           </section>
 
