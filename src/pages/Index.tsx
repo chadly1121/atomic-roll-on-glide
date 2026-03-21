@@ -127,9 +127,8 @@ const Index = () => {
       
       <ServicesSection /> {/* This now serves as both Services, Gallery, and Pricing */}
       
-      {/* Add PricingSection directly to improve loading time */}
-      <PricingSection />
       
+
       {/* "As Seen on TV" Section */}
       <AsSeenonTVSection />
       
