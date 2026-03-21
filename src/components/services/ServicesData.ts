@@ -7,7 +7,7 @@ export const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with our premium interior painting services, featuring expert color consultation and flawless finishes.",
     icon: "🏠",
-    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
+    image: "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.webp",
     galleryImages: [
       "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png",
       "/lovable-uploads/1855749d-b944-4711-a457-be80657744dc.png",
@@ -37,7 +37,7 @@ export const services: Service[] = [
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our durable exterior painting services that withstand the elements while looking beautiful.",
     icon: "🏡",
-    image: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
+    image: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp",
     galleryImages: [
       "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
       "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
@@ -57,7 +57,7 @@ export const services: Service[] = [
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
+    image: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.webp",
     galleryImages: [
       "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
       "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",

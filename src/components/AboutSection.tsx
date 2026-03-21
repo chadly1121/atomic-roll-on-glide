@@ -114,7 +114,7 @@ const AboutSection = () => {
                   <img 
                     alt="Professional Interior Painting" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png"
+                    src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.webp"
                     loading="lazy"
                     width={300}
                     height={224}
@@ -124,7 +124,7 @@ const AboutSection = () => {
                   <img 
                     alt="Quality Craftsmanship" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.png"
+                    src="/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.webp"
                     loading="lazy"
                     width={300}
                     height={160}
@@ -136,7 +136,7 @@ const AboutSection = () => {
                   <img 
                     alt="Commercial Painting Services" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png"
+                    src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.webp"
                     loading="lazy"
                     width={300}
                     height={160}
@@ -146,7 +146,7 @@ const AboutSection = () => {
                   <img 
                     alt="Exterior Home Painting" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png"
+                    src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp"
                     loading="lazy"
                     width={300}
                     height={224}

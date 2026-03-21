@@ -31,7 +31,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6">
               <img 
-                src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png" 
+                src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp" 
                 alt="Roll On Painting Logo" 
                 className="h-12 w-auto object-contain"
               />
