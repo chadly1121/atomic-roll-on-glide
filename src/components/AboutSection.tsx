@@ -146,7 +146,7 @@ const AboutSection = () => {
                   <img 
                     alt="Exterior Home Painting" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png"
+                    src="/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp"
                     loading="lazy"
                     width={300}
                     height={224}
