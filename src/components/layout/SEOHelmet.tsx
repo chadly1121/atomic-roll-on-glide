@@ -340,14 +340,10 @@ const SEOHelmet: React.FC = () => {
   // TV Appearance Schema
   const tvAppearanceSchema = {
     "@context": "https://schema.org",
-    "@type": "TVEpisode",
-    "name": `${businessInfo.tvAppearance.show} - Season ${businessInfo.tvAppearance.season}, Episode ${businessInfo.tvAppearance.episode}`,
-    "partOfSeries": { "@type": "TVSeries", "name": businessInfo.tvAppearance.show },
-    "episodeNumber": businessInfo.tvAppearance.episode,
-    "partOfSeason": { "@type": "TVSeason", "seasonNumber": businessInfo.tvAppearance.season },
-    "datePublished": "2023-10",
+    "@type": "TVSeries",
+    "name": businessInfo.tvAppearance.show,
     "description": businessInfo.tvAppearance.description,
-    "productionCompany": { "@type": "Organization", "name": businessInfo.tvAppearance.network, "url": businessInfo.tvAppearance.networkUrl },
+    "productionCompany": { "@type": "Organization", "name": businessInfo.tvAppearance.network },
     "mentions": { "@type": "ProfessionalService", "name": businessInfo.name }
   };
 

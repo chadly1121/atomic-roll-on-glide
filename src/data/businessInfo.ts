@@ -224,7 +224,7 @@ export const verifiedFAQs = [
   },
   {
     question: "Is Roll On Painting the company from HGTV?",
-    answer: "Yes. Roll On Painting was featured on Home Network's Scott's Vacation House Rules, Season 6, Episode 7, providing professional painting and wallpapering services for a Muskoka property renovation."
+    answer: "Yes! Roll On Painting has been featured 4 times on HGTV's Scott's Vacation House Rules, providing professional painting and wallpapering services for Muskoka property renovations."
   },
   {
     question: "How do I get a quote?",
