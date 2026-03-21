@@ -16,6 +16,10 @@ import ContactPage from "./pages/ContactPage";
 import CatalogPage from "./pages/CatalogPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import FreeTouchUpsPage from "./pages/FreeTouchUpsPage";
+import AboutPage from "./pages/AboutPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import ReviewsPage from "./pages/ReviewsPage";
+import FAQPage from "./pages/FAQPage";
 
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
@@ -57,6 +61,10 @@ const App = () => {
                 <Route path="/gonano" element={<GoNanoPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/reviews" element={<ReviewsPage />} />
+                <Route path="/faq" element={<FAQPage />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
                 

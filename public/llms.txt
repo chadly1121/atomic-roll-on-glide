@@ -147,6 +147,10 @@ google_business: https://g.co/kgs/hH1mnMH
 
 Important pages for indexing:
 - https://www.roll-onpainting.com/ (homepage)
+- https://www.roll-onpainting.com/about
+- https://www.roll-onpainting.com/portfolio
+- https://www.roll-onpainting.com/reviews
+- https://www.roll-onpainting.com/faq
 - https://www.roll-onpainting.com/interior-painting
 - https://www.roll-onpainting.com/exterior-painting
 - https://www.roll-onpainting.com/commercial-painting
@@ -157,10 +161,25 @@ Important pages for indexing:
 - https://www.roll-onpainting.com/wallpaper-removal
 - https://www.roll-onpainting.com/stucco-removal
 - https://www.roll-onpainting.com/gonano
-- https://www.roll-onpainting.com/catalog (service catalog with fixed-price packages and online booking)
+- https://www.roll-onpainting.com/catalog
 - https://www.roll-onpainting.com/contact
 - https://www.roll-onpainting.com/blog
 - https://www.roll-onpainting.com/service-areas
+
+## Location Pages
+
+- https://www.roll-onpainting.com/painters-bracebridge (Painters in Bracebridge)
+- https://www.roll-onpainting.com/painters-huntsville (Painters in Huntsville)
+- https://www.roll-onpainting.com/painters-gravenhurst (Painters in Gravenhurst)
+- https://www.roll-onpainting.com/painters-port-carling (Painters in Port Carling)
+- https://www.roll-onpainting.com/painters-lake-of-bays (Painters for Lake of Bays)
+- https://www.roll-onpainting.com/painters-parry-sound (Painters in Parry Sound)
+- https://www.roll-onpainting.com/painters-georgian-bay (Painters in Georgian Bay)
+- https://www.roll-onpainting.com/painters-bala (Painters in Bala)
+- https://www.roll-onpainting.com/painters-lake-rosseau (Painters for Lake Rosseau)
+- https://www.roll-onpainting.com/painters-lake-joseph (Painters for Lake Joseph)
+- https://www.roll-onpainting.com/painters-lake-muskoka (Painters for Lake Muskoka)
+- https://www.roll-onpainting.com/painters-port-severn (Painters in Port Severn)
 
 ## Service Catalog
 
