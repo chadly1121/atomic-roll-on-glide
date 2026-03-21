@@ -42,11 +42,16 @@ const Index = () => {
       (window as any).__WidgetHelperLoaded = false;
     };
     cleanup();
-    const script = document.createElement('script');
-    script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-    script.setAttribute('data-mode', 'catalog');
-    script.setAttribute('data-target', '#contractor-widget-home');
-    document.head.appendChild(script);
+
+    const target = document.getElementById('contractor-widget-home');
+    if (target) {
+      const script = document.createElement('script');
+      script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
+      script.setAttribute('data-mode', 'catalog');
+      script.setAttribute('data-target', '#contractor-widget-home');
+      // Insert into the target container so document.currentScript is adjacent
+      target.appendChild(script);
+    }
     return cleanup;
   }, []);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
