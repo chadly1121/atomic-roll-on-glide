@@ -77,8 +77,30 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Contractor Widget */}
-      <div id="contractor-widget-home" className="container mx-auto px-4 pt-16 sm:pt-20 pb-8" />
+      {/* Contractor Widget - loaded via iframe for reliable script execution */}
+      <div className="container mx-auto px-4 pt-16 sm:pt-20 pb-8">
+        <iframe
+          src="about:blank"
+          ref={(el) => {
+            if (el && !el.getAttribute('data-loaded')) {
+              el.setAttribute('data-loaded', 'true');
+              const doc = el.contentDocument;
+              if (doc) {
+                doc.open();
+                doc.write(`<!DOCTYPE html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}</style>
+</head><body>
+<script src="https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1" data-mode="catalog"><\/script>
+</body></html>`);
+                doc.close();
+              }
+            }
+          }}
+          style={{ width: '100%', minHeight: '600px', border: 'none' }}
+          title="Service Catalog Widget"
+        />
+      </div>
 
 
 
