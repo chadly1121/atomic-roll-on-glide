@@ -97,8 +97,11 @@ const Index = () => {
           <FreeTouchUpsButton />
         </div>
       </div>
-      
-      
+
+      {/* Contractor Widget */}
+      <div id="contractor-widget-home" className="container mx-auto px-4 py-8" />
+
+
 
       {/* Always loaded sections (above the fold) */}
       <HeroSection />
