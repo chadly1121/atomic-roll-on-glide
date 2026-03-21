@@ -16,6 +16,10 @@ import ContactPage from "./pages/ContactPage";
 import CatalogPage from "./pages/CatalogPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import FreeTouchUpsPage from "./pages/FreeTouchUpsPage";
+import AboutPage from "./pages/AboutPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import ReviewsPage from "./pages/ReviewsPage";
+import FAQPage from "./pages/FAQPage";
 
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
