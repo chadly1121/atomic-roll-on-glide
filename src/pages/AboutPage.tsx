@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
         "name": "Chad Gilchrist",
         "jobTitle": "Owner",
         "worksFor": { "@id": `${siteUrl}/#localbusiness` },
-        "description": "Owner of Roll On Painting with over 25 years of painting industry experience. Featured on HGTV's Scott's Vacation House Rules."
+        "description": "Owner of Roll On Painting with over 25 years of painting industry experience. Featured 4 times on HGTV's Scott's Vacation House Rules."
       }
     ]
   };
@@ -74,7 +74,7 @@ const AboutPage: React.FC = () => {
                     Chad Gilchrist purchased Roll On Painting in 2014, bringing over 25 years of painting industry experience to Muskoka. What started as a small local operation has grown into one of the most trusted painting companies in Ontario's cottage country.
                   </p>
                   <p className="text-muted-foreground mb-4">
-                    Chad's commitment to quality earned Roll On Painting a feature on HGTV's <strong>Scott's Vacation House Rules</strong> (Season 6, Episode 7), where the team provided professional painting and wallpapering services for a Muskoka property renovation.
+                    Chad's commitment to quality earned Roll On Painting <strong>4 appearances on HGTV's Scott's Vacation House Rules</strong>, providing professional painting and wallpapering services for Muskoka property renovations.
                   </p>
                   <p className="text-muted-foreground">
                     As an active member of the Painting Contractors Association, Chad stays at the forefront of techniques, materials, and industry standards. His philosophy is simple: do it right, stand behind your work, and treat every property like your own.
@@ -100,7 +100,7 @@ const AboutPage: React.FC = () => {
                   { icon: Clock, label: "25+ Years", desc: "Industry experience" },
                   { icon: Shield, label: "$5M Insured", desc: "Full liability + WSIB" },
                   { icon: Star, label: `${businessInfo.ratings.average}/5 Stars`, desc: "Google Reviews" },
-                  { icon: Award, label: "HGTV Featured", desc: "Scott's Vacation House Rules" },
+                  { icon: Award, label: "HGTV Featured", desc: "4x on Scott's Vacation House Rules" },
                 ].map((item, idx) => (
                   <div key={idx} className="bg-background p-6 rounded-lg shadow-sm text-center">
                     <item.icon className="w-8 h-8 text-atomic-turquoise mx-auto mb-3" />
