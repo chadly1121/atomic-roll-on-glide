@@ -20,6 +20,7 @@ import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import FAQPage from "./pages/FAQPage";
+import CareersPage from "./pages/CareersPage";
 
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
