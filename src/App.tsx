@@ -61,6 +61,10 @@ const App = () => {
                 <Route path="/gonano" element={<GoNanoPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/reviews" element={<ReviewsPage />} />
+                <Route path="/faq" element={<FAQPage />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
                 
