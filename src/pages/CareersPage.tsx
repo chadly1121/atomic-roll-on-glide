@@ -243,12 +243,23 @@ const CareersPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={`mailto:${businessInfo.email}?subject=Career%20Application%20-%20Roll%20On%20Painting&body=Hi%20Chad%2C%0A%0AI'm%20interested%20in%20joining%20the%20Roll%20On%20Painting%20team.%0A%0APosition%20I'm%20applying%20for%3A%20%0AYears%20of%20experience%3A%20%0AWhy%20I%20belong%20on%20this%20team%3A%20%0A%0APlease%20find%20my%20resume%20attached.`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = (e.currentTarget as HTMLAnchorElement).href;
+                  }}
                   className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Apply Now
                 </a>
-                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                <a 
+                  href={`tel:${businessInfo.phone.tel}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = (e.currentTarget as HTMLAnchorElement).href;
+                  }}
+                  className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors"
+                >
                   <Phone className="w-4 h-4" />
                   Call {businessInfo.phone.formatted}
                 </a>
