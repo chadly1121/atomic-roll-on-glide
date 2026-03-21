@@ -16,7 +16,7 @@ import ContactPage from "./pages/ContactPage";
 import CatalogPage from "./pages/CatalogPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import FreeTouchUpsPage from "./pages/FreeTouchUpsPage";
-import WidgetPage from "./pages/WidgetPage";
+
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
@@ -59,7 +59,7 @@ const App = () => {
                 <Route path="/catalog" element={<CatalogPage />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
-                <Route path="/widget" element={<WidgetPage />} />
+                
                 <Route path="/:slug" element={<ServicePage />} />
                 <Route path="*" element={
                   <>

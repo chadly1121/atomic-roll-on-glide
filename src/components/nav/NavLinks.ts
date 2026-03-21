@@ -11,7 +11,7 @@ export const navLinks: NavLink[] = [
   { name: 'GoNano', href: '/gonano' },
   
   { name: 'Catalog', href: '/catalog' },
-  { name: 'Widget', href: '/widget' },
+  
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' }
 ];
