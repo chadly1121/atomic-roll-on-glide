@@ -101,21 +101,22 @@ const ContactPage = () => {
       <Navbar activeSection="contact" />
 
       <main className="pt-24 pb-16">
-        {/* Hero */}
-        <section className="bg-atomic-navy text-white py-16 sm:py-20">
+        {/* Header */}
+        <section className="pt-10 pb-6 sm:pt-14 sm:pb-8">
           <div className="container mx-auto px-4">
-            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
+            <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-atomic-navy mb-6 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Link>
             <div className="text-center max-w-2xl mx-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-atomic-navy mb-3">
                 Get In <span className="text-atomic-turquoise">Touch</span>
               </h1>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-muted-foreground">
                 Ready to transform your space? Reach out for a free quote or to discuss your project.
                 We'd love to hear from you.
               </p>
+              <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
             </div>
           </div>
         </section>
