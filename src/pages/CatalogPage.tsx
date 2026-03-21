@@ -261,10 +261,8 @@ const CatalogPage = () => {
         </div>
       </section>
 
-      {/* Contractor Widget */}
-      <section className="container mx-auto px-4 py-12">
-        <div id="contractor-widget-target" />
-      </section>
+
+
 
       {/* Category sections */}
       <div className="container mx-auto px-4 pb-20 space-y-16 sm:space-y-24">
