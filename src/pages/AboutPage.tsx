@@ -59,7 +59,7 @@ const AboutPage: React.FC = () => {
           <section className="pt-10 pb-6 md:pt-14 md:pb-8">
             <div className="container mx-auto px-4 text-center">
               <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">About Roll On Painting</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Muskoka's trusted painting company since 2014. Over 25 years of industry expertise.</p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Muskoka's trusted painting company with over 25 years of industry expertise.</p>
               <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
             </div>
           </section>
