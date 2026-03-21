@@ -27,33 +27,7 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Load contractor widget
-  useEffect(() => {
-    const cleanup = () => {
-      document.getElementById('wh-fab')?.remove();
-      document.getElementById('wh-ov')?.remove();
-      document.getElementById('wh-pn')?.remove();
-      document.getElementById('wh-cat-cart')?.remove();
-      document.getElementById('wh-catalog')?.remove();
-      document.getElementById('wh-css')?.remove();
-      document.getElementById('wh-cat-css')?.remove();
-      const oldScript = document.querySelector('script[src*="contractorapp"]');
-      if (oldScript) oldScript.remove();
-      (window as any).__WidgetHelperLoaded = false;
-    };
-    cleanup();
-
-    const target = document.getElementById('contractor-widget-home');
-    if (target) {
-      const script = document.createElement('script');
-      script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
-      script.setAttribute('data-mode', 'catalog');
-      script.setAttribute('data-target', '#contractor-widget-home');
-      // Insert into the target container so document.currentScript is adjacent
-      target.appendChild(script);
-    }
-    return cleanup;
-  }, []);
+  // No widget loading needed - using iframe approach instead
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
@@ -103,8 +77,30 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Contractor Widget */}
-      <div id="contractor-widget-home" className="container mx-auto px-4 pt-16 sm:pt-20 pb-8" />
+      {/* Contractor Widget - loaded via iframe for reliable script execution */}
+      <div className="container mx-auto px-4 pt-16 sm:pt-20 pb-8">
+        <iframe
+          src="about:blank"
+          ref={(el) => {
+            if (el && !el.getAttribute('data-loaded')) {
+              el.setAttribute('data-loaded', 'true');
+              const doc = el.contentDocument;
+              if (doc) {
+                doc.open();
+                doc.write(`<!DOCTYPE html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}</style>
+</head><body>
+<script src="https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1" data-mode="catalog"><\/script>
+</body></html>`);
+                doc.close();
+              }
+            }
+          }}
+          style={{ width: '100%', minHeight: '600px', border: 'none' }}
+          title="Service Catalog Widget"
+        />
+      </div>
 
 
 
