@@ -20,6 +20,7 @@ import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import FAQPage from "./pages/FAQPage";
+import CareersPage from "./pages/CareersPage";
 
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
@@ -65,6 +66,7 @@ const App = () => {
                 <Route path="/portfolio" element={<PortfolioPage />} />
                 <Route path="/reviews" element={<ReviewsPage />} />
                 <Route path="/faq" element={<FAQPage />} />
+                <Route path="/careers" element={<CareersPage />} />
                 <Route path="/payment-success" element={<PaymentSuccess />} />
                 <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
                 
