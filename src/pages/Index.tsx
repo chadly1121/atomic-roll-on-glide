@@ -26,6 +26,29 @@ import TrustBadges from '../components/trust/TrustBadges';
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
+  // Load contractor widget
+  useEffect(() => {
+    const cleanup = () => {
+      document.getElementById('wh-fab')?.remove();
+      document.getElementById('wh-ov')?.remove();
+      document.getElementById('wh-pn')?.remove();
+      document.getElementById('wh-cat-cart')?.remove();
+      document.getElementById('wh-catalog')?.remove();
+      document.getElementById('wh-css')?.remove();
+      document.getElementById('wh-cat-css')?.remove();
+      const oldScript = document.querySelector('script[src*="contractorapp"]');
+      if (oldScript) oldScript.remove();
+      (window as any).__WidgetHelperLoaded = false;
+    };
+    cleanup();
+    const script = document.createElement('script');
+    script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
+    script.setAttribute('data-mode', 'catalog');
+    script.setAttribute('data-target', '#contractor-widget-home');
+    document.head.appendChild(script);
+    return cleanup;
+  }, []);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
