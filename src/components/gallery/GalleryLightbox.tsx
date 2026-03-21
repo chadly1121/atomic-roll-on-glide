@@ -15,21 +15,27 @@ interface GalleryLightboxProps {
 const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images, closeModal, navigateImages }) => {
   const isMobile = useIsMobile();
   
-  // If no image is selected, don't render the lightbox
-  if (selectedImage === null) return null;
-  
-  // Find the current image object
-  const currentImage = images.find(img => img.id === selectedImage);
-  if (!currentImage) return null;
-  
-  // Get current index for navigation
-  const currentIndex = images.findIndex(img => img.id === selectedImage);
-  
-  // Gestures with enhanced mobile support
+  // All hooks must be called before any early returns
   const [[x, direction], setX] = useState([0, 0]);
   const [isDragging, setIsDragging] = useState(false);
 
-  // Make dragging more responsive on mobile
+  // Add body scroll lock when lightbox is open
+  useEffect(() => {
+    if (selectedImage === null) return;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedImage]);
+
+  // Early returns AFTER all hooks
+  if (selectedImage === null) return null;
+  
+  const currentImage = images.find(img => img.id === selectedImage);
+  if (!currentImage) return null;
+  
+  const currentIndex = images.findIndex(img => img.id === selectedImage);
+
   const dragElastic = isMobile ? 0.2 : 0.15;
   const swipeConfidenceThreshold = isMobile ? 5000 : 10000;
   
@@ -37,54 +43,40 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
     return Math.abs(offset) * velocity;
   };
 
-  // Add body scroll lock when lightbox is open
-  useEffect(() => {
-    // Disable body scroll
-    document.body.style.overflow = 'hidden';
-    
-    // Enable scroll on cleanup
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
   const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     setIsDragging(false);
     const predictedPower = swipePower(info.offset.x, info.velocity.x);
 
     if (predictedPower > swipeConfidenceThreshold) {
-      const direction = info.offset.x > 0 ? 1 : -1;
-      if (direction > 0) {
+      const dir = info.offset.x > 0 ? 1 : -1;
+      if (dir > 0) {
         navigateImages('prev');
       } else {
         navigateImages('next');
       }
     } else {
-      // Settle back to center
       setX([0, 0]);
     }
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center">
-      {/* Close Button - Larger and more touchable on mobile */}
       <button 
         onClick={closeModal} 
         className={`absolute ${isMobile ? 'top-4 right-4 p-4' : 'top-4 right-4 p-2'} bg-gray-800 bg-opacity-80 text-white rounded-full hover:bg-opacity-100 transition-colors z-50`}
         aria-label="Close"
         style={{ touchAction: 'manipulation' }}
       >
-        <X className={isMobile ? "h-6 w-6" : "h-6 w-6"} />
+        <X className="h-6 w-6" />
       </button>
 
-      {/* Navigation Buttons - Bigger touch targets for mobile */}
       <button 
         onClick={() => navigateImages('prev')} 
         className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
         aria-label="Previous"
         style={{ touchAction: 'manipulation' }}
       >
-        <ChevronLeft className={isMobile ? "h-6 w-6" : "h-6 w-6"} />
+        <ChevronLeft className="h-6 w-6" />
       </button>
       <button 
         onClick={() => navigateImages('next')} 
@@ -92,28 +84,22 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
         aria-label="Next"
         style={{ touchAction: 'manipulation' }}
       >
-        <ChevronRight className={isMobile ? "h-6 w-6" : "h-6 w-6"} />
+        <ChevronRight className="h-6 w-6" />
       </button>
 
-      {/* Caption/Counter - Enhanced visibility on mobile */}
       <div className={`absolute bottom-4 left-0 right-0 text-center text-white bg-black bg-opacity-70 py-3 px-4 ${isMobile ? 'text-base' : 'text-sm'}`}>
         <p className={`font-medium ${isMobile ? 'text-base' : 'text-sm'}`}>{currentImage.title || `Image ${currentIndex + 1}`}</p>
         <p className={`${isMobile ? 'text-sm' : 'text-xs'} text-gray-300 mt-1`}>{currentIndex + 1} / {images.length}</p>
       </div>
 
-      {/* Image Display with optimized mobile interactions */}
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
           custom={direction}
           variants={{
-            enter: (direction: number) => {
-              return { x: direction > 0 ? 1000 : -1000, opacity: 0 };
-            },
+            enter: (direction: number) => ({ x: direction > 0 ? 1000 : -1000, opacity: 0 }),
             center: { zIndex: 1, x: 0, opacity: 1 },
-            exit: (direction: number) => {
-              return { zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 };
-            },
+            exit: (direction: number) => ({ zIndex: 0, x: direction < 0 ? 1000 : -1000, opacity: 0 }),
           }}
           transition={{
             x: { type: "spring", stiffness: 300, damping: isMobile ? 30 : 20 },
@@ -126,7 +112,7 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
           onDrag={(_, info) => setX([info.offset.x, info.offset.x > 0 ? 1 : -1])}
           onDragEnd={handleDragEnd}
           className="absolute top-0 left-0 w-full h-full flex justify-center items-center"
-          style={{ touchAction: 'none' }} // Prevent default touch behavior while swiping
+          style={{ touchAction: 'none' }}
         >
           <img
             src={currentImage.src}
@@ -138,7 +124,6 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
         </motion.div>
       </AnimatePresence>
 
-      {/* Mobile swipe instructions - only shown briefly */}
       {isMobile && (
         <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 opacity-40 pointer-events-none">
           <div className="flex justify-between px-8">
