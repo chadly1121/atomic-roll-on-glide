@@ -37,7 +37,7 @@ export const services: Service[] = [
     title: "Exterior Painting",
     description: "Enhance your home's curb appeal with our durable exterior painting services that withstand the elements while looking beautiful.",
     icon: "🏡",
-    image: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
+    image: "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp",
     galleryImages: [
       "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png",
       "/lovable-uploads/025a31b7-5076-4ece-80fa-d0c7fc2c4915.png",
