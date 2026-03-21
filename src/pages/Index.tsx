@@ -27,7 +27,6 @@ const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // No widget loading needed - using iframe approach instead
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
     'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
