@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
@@ -136,6 +136,33 @@ const CatalogPage = () => {
     }
   }, [location.hash]);
 
+  // Load contractor widget
+  useEffect(() => {
+    // Clean up any previous widget elements
+    const cleanup = () => {
+      document.getElementById('wh-fab')?.remove();
+      document.getElementById('wh-ov')?.remove();
+      document.getElementById('wh-pn')?.remove();
+      document.getElementById('wh-cat-cart')?.remove();
+      document.getElementById('wh-css')?.remove();
+      document.getElementById('wh-cat-css')?.remove();
+      (window as any).__WidgetHelperLoaded = false;
+    };
+
+    cleanup();
+
+    const container = document.getElementById('contractor-widget-target');
+    if (!container) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
+    script.setAttribute('data-mode', 'catalog');
+    script.setAttribute('data-target', '#contractor-widget-target');
+    container.appendChild(script);
+
+    return cleanup;
+  }, []);
+
   const handleBook = (item: CatalogItem) => {
     setSelectedItem(item);
     setIsDialogOpen(true);
@@ -257,6 +284,11 @@ const CatalogPage = () => {
             — Chad Gilchrist, Owner
           </p>
         </div>
+      </section>
+
+      {/* Contractor Widget */}
+      <section className="container mx-auto px-4 py-12">
+        <div id="contractor-widget-target" />
       </section>
 
       {/* Category sections */}
