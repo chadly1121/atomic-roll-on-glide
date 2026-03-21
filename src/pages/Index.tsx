@@ -99,7 +99,7 @@ const Index = () => {
       </div>
 
       {/* Contractor Widget */}
-      <div id="contractor-widget-home" className="container mx-auto px-4 py-8" />
+      <div id="contractor-widget-home" className="container mx-auto px-4 pt-16 sm:pt-20 pb-8" />
 
 
 
