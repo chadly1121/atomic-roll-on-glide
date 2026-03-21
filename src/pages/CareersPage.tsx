@@ -156,7 +156,7 @@ const CareersPage: React.FC = () => {
                 {[
                   { icon: Star, title: "Competitive Pay", desc: "Top-tier compensation based on skill and experience. We pay for talent, not warm bodies." },
                   { icon: Shield, title: "Full Coverage", desc: "WSIB covered with $5 million liability insurance. You work safe, always." },
-                  { icon: Award, title: "HGTV Credibility", desc: "Tell people you work for the company featured on Scott's Vacation House Rules." },
+                  { icon: Award, title: "HGTV Credibility", desc: "Tell people you work for the company featured 4 times on Scott's Vacation House Rules." },
                   { icon: CheckCircle, title: "Steady Work", desc: "Year-round projects across Muskoka. No seasonal layoffs for our core team." },
                   { icon: Star, title: "Skills Development", desc: "Learn advanced techniques: GoNano coatings, epoxy, spray finishing, and more." },
                   { icon: Shield, title: "Respect & Autonomy", desc: "We trust our people. No micromanagement — just clear expectations and support." },
