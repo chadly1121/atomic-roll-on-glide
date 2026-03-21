@@ -48,8 +48,7 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Home Network",
     logo: "/partner-logos/home-network.png",
-    altText: "As Seen on Home Network",
-    url: "https://www.homenetwork.ca/scotts-vacation-house-rules/"
+    altText: "As Seen on Home Network"
   },
   {
     name: "HGTV",
