@@ -114,7 +114,7 @@ const AboutSection = () => {
                   <img 
                     alt="Professional Interior Painting" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png"
+                    src="/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.webp"
                     loading="lazy"
                     width={300}
                     height={224}
