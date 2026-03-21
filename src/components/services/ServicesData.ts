@@ -57,7 +57,7 @@ export const services: Service[] = [
     title: "Commercial Painting",
     description: "Update your business space with minimal disruption. Our commercial painting services are efficient, professional, and timely.",
     icon: "🏢",
-    image: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
+    image: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.webp",
     galleryImages: [
       "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
       "/lovable-uploads/ac6439b9-eade-4bf2-a528-888ee7a232be.png",

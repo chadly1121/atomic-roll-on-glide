@@ -9,9 +9,9 @@ import {
 
 // Reduced to 3 images for faster mobile loading
 const galleryImages = [
-  "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.png", // Hallway Interior
-  "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.png", // Lakefront Cottage Exterior
-  "/lovable-uploads/d455e973-829f-49e8-87be-80648d1b4326.png", // Cedar Shingle Home
+  "/lovable-uploads/44c0f726-e327-4bd3-84f8-39856de74304.webp", // Hallway Interior
+  "/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp", // Lakefront Cottage Exterior
+  "/lovable-uploads/d455e973-829f-49e8-87be-80648d1b4326.webp", // Cedar Shingle Home
 ];
 
 const HeroCarousel = () => {

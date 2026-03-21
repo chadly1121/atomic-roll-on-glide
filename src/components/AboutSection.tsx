@@ -136,7 +136,7 @@ const AboutSection = () => {
                   <img 
                     alt="Commercial Painting Services" 
                     className="w-full h-full object-cover" 
-                    src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png"
+                    src="/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.webp"
                     loading="lazy"
                     width={300}
                     height={160}
