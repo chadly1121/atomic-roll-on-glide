@@ -144,21 +144,22 @@ const CatalogPage = () => {
       document.getElementById('wh-ov')?.remove();
       document.getElementById('wh-pn')?.remove();
       document.getElementById('wh-cat-cart')?.remove();
+      document.getElementById('wh-catalog')?.remove();
       document.getElementById('wh-css')?.remove();
       document.getElementById('wh-cat-css')?.remove();
+      const oldScript = document.querySelector('script[src*="contractorapp"]');
+      if (oldScript) oldScript.remove();
       (window as any).__WidgetHelperLoaded = false;
     };
 
     cleanup();
 
-    const container = document.getElementById('contractor-widget-target');
-    if (!container) return;
-
+    // Create script and append to document head so it initializes properly
     const script = document.createElement('script');
     script.src = 'https://contractorapp-tfvsmcyb.manus.space/api/widget.js?id=1';
     script.setAttribute('data-mode', 'catalog');
     script.setAttribute('data-target', '#contractor-widget-target');
-    container.appendChild(script);
+    document.head.appendChild(script);
 
     return cleanup;
   }, []);
