@@ -163,7 +163,7 @@ const CatalogPage = () => {
     return cleanup;
   }, []);
 
-
+  const handleBook = (item: CatalogItem) => {
     setSelectedItem(item);
     setIsDialogOpen(true);
     setForm({ name: '', email: '', phone: '', address: '', sqft: '' });
