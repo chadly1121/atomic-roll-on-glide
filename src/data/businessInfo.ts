@@ -102,15 +102,12 @@ export const businessInfo = {
     description: "WSIB covered with $5 million liability insurance. Member of the Painting Contractors Association."
   },
   
-  // TV Appearance
+  // TV Appearances
   tvAppearance: {
     show: "Scott's Vacation House Rules",
-    network: "Home Network",
-    networkUrl: "https://www.homenetwork.ca/scotts-vacation-house-rules/",
-    season: 6,
-    episode: 7,
-    date: "October 2023",
-    description: "Roll On Painting provided professional painting and wallpapering services for Scott's Vacation House Rules."
+    network: "HGTV Canada",
+    appearances: 4,
+    description: "Roll On Painting has been featured 4 times on Scott's Vacation House Rules, providing professional painting and wallpapering services for Muskoka property renovations."
   },
   
   // Paint Partners
