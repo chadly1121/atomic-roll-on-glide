@@ -9,16 +9,29 @@ interface GalleryGridProps {
   isImagesLoaded: boolean;
 }
 
-const GalleryGrid: React.FC<GalleryGridProps> = ({ 
-  images, 
+const GalleryGrid: React.FC<GalleryGridProps> = ({
+  images,
   onImageClick,
   isImagesLoaded
 }) => {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
-...
+
+  // Loading placeholder
+  if (!isImagesLoaded) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[...Array(6)].map((_, index) => (
+          <div key={index} className="rounded-xl overflow-hidden shadow-md bg-gray-200 h-64 animate-pulse"></div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {images.map((image, index) => (
-        <motion.div 
-          key={image.src} 
+        <motion.div
+          key={image.src}
           className="rounded-xl overflow-hidden shadow-md cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl group"
           onClick={() => onImageClick(image.src)}
           onMouseEnter={() => setHoveredIndex(index)}
@@ -30,8 +43,8 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
           whileHover={{ y: -8 }}
         >
           <div className="relative h-64">
-            <img 
-              src={image.src} 
+            <img
+              src={image.src}
               alt={image.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"

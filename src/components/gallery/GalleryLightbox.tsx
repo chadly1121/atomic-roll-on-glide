@@ -13,7 +13,22 @@ interface GalleryLightboxProps {
 }
 
 const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images, closeModal, navigateImages }) => {
-...
+  const isMobile = useIsMobile();
+
+  // All hooks must be called before any early returns
+  const [[x, direction], setX] = useState([0, 0]);
+  const [isDragging, setIsDragging] = useState(false);
+
+  // Add body scroll lock when lightbox is open
+  useEffect(() => {
+    if (selectedImage === null) return;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedImage]);
+
+  // Early returns AFTER all hooks
   if (selectedImage === null) return null;
 
   const currentImage = images.find(img => img.src === selectedImage);
@@ -23,7 +38,7 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
 
   const dragElastic = isMobile ? 0.2 : 0.15;
   const swipeConfidenceThreshold = isMobile ? 5000 : 10000;
-  
+
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
@@ -46,8 +61,8 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center">
-      <button 
-        onClick={closeModal} 
+      <button
+        onClick={closeModal}
         className={`absolute ${isMobile ? 'top-4 right-4 p-4' : 'top-4 right-4 p-2'} bg-gray-800 bg-opacity-80 text-white rounded-full hover:bg-opacity-100 transition-colors z-50`}
         aria-label="Close"
         style={{ touchAction: 'manipulation' }}
@@ -55,16 +70,16 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
         <X className="h-6 w-6" />
       </button>
 
-      <button 
-        onClick={() => navigateImages('prev')} 
+      <button
+        onClick={() => navigateImages('prev')}
         className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
         aria-label="Previous"
         style={{ touchAction: 'manipulation' }}
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
-      <button 
-        onClick={() => navigateImages('next')} 
+      <button
+        onClick={() => navigateImages('next')}
         className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
         aria-label="Next"
         style={{ touchAction: 'manipulation' }}
