@@ -96,8 +96,8 @@ description: Roll On Painting provided professional painting and wallpapering se
 
 ## Pricing Guidelines
 
-interior_painting: From $2.50 per square foot
-exterior_painting: From $3.75 per square foot
+interior_painting: From $4.50 per square foot
+exterior_painting: From $5.75 per square foot
 epoxy_coatings: From $0.99 per square foot
 gonano_coating: From $0.99 per square foot
 commercial: Custom quotes based on scope
