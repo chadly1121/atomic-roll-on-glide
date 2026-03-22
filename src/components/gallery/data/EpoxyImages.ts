@@ -43,5 +43,23 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/73d1fb20-999b-439d-a462-4777a05e92bd.png",
     category: "epoxy",
     title: "Applying Grey Epoxy Base Coat"
+  },
+  {
+    id: 125,
+    src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg",
+    category: "epoxy",
+    title: "Canvas Brewery Huntsville — Red Epoxy Floor Finish"
+  },
+  {
+    id: 126,
+    src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-2.jpg",
+    category: "epoxy",
+    title: "Canvas Brewery Huntsville — Epoxy Application in Progress"
+  },
+  {
+    id: 127,
+    src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-3.jpg",
+    category: "epoxy",
+    title: "Canvas Brewery Huntsville — Commercial Epoxy Coating"
   }
 ];
