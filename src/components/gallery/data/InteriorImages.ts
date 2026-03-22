@@ -120,7 +120,7 @@ export const interiorImages: GalleryImage[] = [
     id: 53,
     src: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
     category: "interior",
-    title: "Custom Kitchen Design"
+    title: "Bedroom & Closet Repaint — Lakefront Home"
   },
   {
     id: 54,
