@@ -61,5 +61,35 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/6ff94989-f399-4ad6-9f2e-1cee10aa41d2.png",
     category: "cabinet-painting",
     title: "Spraying White Paint on Cabinet Doors"
+  },
+  {
+    id: 89,
+    src: "/lovable-uploads/cabinet-onsite-spray-white.jpg",
+    category: "cabinet-painting",
+    title: "On-Site Cabinet Spraying — White Finish"
+  },
+  {
+    id: 90,
+    src: "/lovable-uploads/cabinet-dark-stain-drying-rack.jpg",
+    category: "cabinet-painting",
+    title: "Dark Stained Cabinet Doors on Drying Rack"
+  },
+  {
+    id: 91,
+    src: "/lovable-uploads/cabinet-sanding-shop.jpg",
+    category: "cabinet-painting",
+    title: "Sanding & Prepping Cabinet Doors in Shop"
+  },
+  {
+    id: 92,
+    src: "/lovable-uploads/cabinet-door-sanding-closeup.jpg",
+    category: "cabinet-painting",
+    title: "Detail Sanding White Cabinet Door"
+  },
+  {
+    id: 93,
+    src: "/lovable-uploads/cabinet-grey-kitchen-complete.jpg",
+    category: "cabinet-painting",
+    title: "Grey Kitchen Cabinet Refinish — Completed"
   }
 ];
