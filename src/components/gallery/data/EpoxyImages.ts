@@ -109,5 +109,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-flake-floor-muskoka-3.jpg",
     category: "epoxy",
     title: "Epoxy Flake Floor — Commercial Space Bracebridge"
+  },
+  {
+    id: 161,
+    src: "/lovable-uploads/commercial-epoxy-canvas-brewery.jpg",
+    category: "epoxy",
+    title: "Commercial Epoxy Floor — Canvas Brewery, Huntsville"
+  },
+  {
+    id: 162,
+    src: "/lovable-uploads/commercial-epoxy-barge-coating.jpg",
+    category: "epoxy",
+    title: "Marine Barge Epoxy Coating — Muskoka"
   }
 ];
