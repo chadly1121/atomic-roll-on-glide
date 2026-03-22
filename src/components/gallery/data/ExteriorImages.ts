@@ -169,5 +169,17 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/5d495ec3-b2cb-436e-b1f9-afe6f8e5032a.png",
     category: "exterior",
     title: "Light Blue House Painting in Progress"
+  },
+  {
+    id: 136,
+    src: "/lovable-uploads/exterior-softwash-before-muskoka-1.jpg",
+    category: "exterior",
+    title: "Exterior Soft Wash — Before — Muskoka"
+  },
+  {
+    id: 137,
+    src: "/lovable-uploads/exterior-softwash-after-muskoka-1.jpg",
+    category: "exterior",
+    title: "Exterior Soft Wash — After — Muskoka"
   }
 ];
