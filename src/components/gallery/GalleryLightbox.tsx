@@ -6,35 +6,20 @@ import { GalleryImage } from './types';
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface GalleryLightboxProps {
-  selectedImage: number | null;
+  selectedImage: string | null;
   images: GalleryImage[];
   closeModal: () => void;
   navigateImages: (direction: 'prev' | 'next') => void;
 }
 
 const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images, closeModal, navigateImages }) => {
-  const isMobile = useIsMobile();
-  
-  // All hooks must be called before any early returns
-  const [[x, direction], setX] = useState([0, 0]);
-  const [isDragging, setIsDragging] = useState(false);
-
-  // Add body scroll lock when lightbox is open
-  useEffect(() => {
-    if (selectedImage === null) return;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [selectedImage]);
-
-  // Early returns AFTER all hooks
+...
   if (selectedImage === null) return null;
-  
-  const currentImage = images.find(img => img.id === selectedImage);
+
+  const currentImage = images.find(img => img.src === selectedImage);
   if (!currentImage) return null;
-  
-  const currentIndex = images.findIndex(img => img.id === selectedImage);
+
+  const currentIndex = images.findIndex(img => img.src === selectedImage);
 
   const dragElastic = isMobile ? 0.2 : 0.15;
   const swipeConfidenceThreshold = isMobile ? 5000 : 10000;

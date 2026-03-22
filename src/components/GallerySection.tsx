@@ -10,36 +10,28 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { isImagesLoaded } = useImagePreloader(galleryImages);
   const isMobile = useIsMobile();
-
-  const filteredImages = activeCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeCategory);
-
-  const handleImageClick = (id: number) => {
-    setSelectedImage(id);
+...
+  const handleImageClick = (src: string) => {
+    setSelectedImage(src);
   };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
+...
   const navigateImages = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return;
-    
-    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage);
+
+    const currentIndex = filteredImages.findIndex(img => img.src === selectedImage);
     if (currentIndex === -1) return;
-    
+
     let newIndex;
     if (direction === 'prev') {
       newIndex = currentIndex === 0 ? filteredImages.length - 1 : currentIndex - 1;
     } else {
       newIndex = currentIndex === filteredImages.length - 1 ? 0 : currentIndex + 1;
     }
-    
-    setSelectedImage(filteredImages[newIndex].id);
+
+    setSelectedImage(filteredImages[newIndex].src);
   };
 
   // Enable keyboard navigation for desktop

@@ -5,7 +5,7 @@ import { GalleryImage } from './types';
 
 interface GalleryGridProps {
   images: GalleryImage[];
-  onImageClick: (id: number) => void;
+  onImageClick: (src: string) => void;
   isImagesLoaded: boolean;
 }
 
@@ -15,25 +15,12 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
   isImagesLoaded
 }) => {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
-
-  // Loading placeholder
-  if (!isImagesLoaded) {
-    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[...Array(6)].map((_, index) => (
-          <div key={index} className="rounded-xl overflow-hidden shadow-md bg-gray-200 h-64 animate-pulse"></div>
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+...
       {images.map((image, index) => (
         <motion.div 
-          key={image.id} 
+          key={image.src} 
           className="rounded-xl overflow-hidden shadow-md cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl group"
-          onClick={() => onImageClick(image.id)}
+          onClick={() => onImageClick(image.src)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
           initial={{ opacity: 0, y: 20 }}
