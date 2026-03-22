@@ -85,5 +85,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-marine-hull-coating-1.jpg",
     category: "epoxy",
     title: "Marine Epoxy Hull Coating Project — Muskoka"
+  },
+  {
+    id: 132,
+    src: "/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor Coating — Muskoka"
+  },
+  {
+    id: 133,
+    src: "/lovable-uploads/epoxy-flake-floor-stairs-muskoka-1.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor Stairs — Huntsville"
   }
 ];
