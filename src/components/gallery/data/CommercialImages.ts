@@ -43,5 +43,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-spray-canvas-brewing.jpg",
     category: "commercial",
     title: "Commercial Interior Spray — Canvas Brewing, Huntsville"
+  },
+  {
+    id: 165,
+    src: "/lovable-uploads/commercial-exterior-muskoka-living-showroom.jpg",
+    category: "commercial",
+    title: "Commercial Exterior Repaint — Muskoka Living Showroom, Port Carling"
   }
 ];
