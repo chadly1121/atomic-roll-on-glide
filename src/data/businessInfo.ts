@@ -204,7 +204,7 @@ export const servicesGrouped = {
 export const verifiedFAQs = [
   {
     question: "How much does it cost to paint a house in Muskoka?",
-    answer: "Interior painting typically starts at $2.50 per square foot, while exterior painting starts at $3.75 per square foot. The final cost depends on the size of your home, surface condition, and paint selection. Use our free AI estimator for an instant, personalized quote."
+    answer: "A standard home with standard finishes typically costs around $4.50 per square foot. New builds or homes with specialty finishes — such as pine ceilings, stained beams, ash walls, oak trim and doors, or wallpaper — can range up to $15.00 per square foot. The final price depends on size, surface condition, and finish selections. Contact us for a free estimate."
   },
   {
     question: "Do you offer free touch-ups?",
