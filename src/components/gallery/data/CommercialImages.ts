@@ -157,5 +157,35 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-powerwash-paint.jpg",
     category: "commercial",
     title: "Commercial Interior Power Wash and Paint Prep — Industrial Bay"
+  },
+  {
+    id: 184,
+    src: "/lovable-uploads/commercial-interior-safety-board.jpg",
+    category: "commercial",
+    title: "Commercial Interior Safety Board Feature Wall"
+  },
+  {
+    id: 185,
+    src: "/lovable-uploads/commercial-interior-office-renovation-panorama.jpg",
+    category: "commercial",
+    title: "Commercial Office Interior Repaint — Renovation Panorama"
+  },
+  {
+    id: 186,
+    src: "/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-1.jpg",
+    category: "commercial",
+    title: "Commercial Ceiling Spray Prep — Silver Deck with Masked Black Beams"
+  },
+  {
+    id: 187,
+    src: "/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-2.jpg",
+    category: "commercial",
+    title: "Commercial Ceiling Spray In Progress — Silver Deck and Black Beams"
+  },
+  {
+    id: 188,
+    src: "/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.jpg",
+    category: "commercial",
+    title: "Commercial Ceiling Spray Complete — Silver Ceiling with Black Beams"
   }
 ];
