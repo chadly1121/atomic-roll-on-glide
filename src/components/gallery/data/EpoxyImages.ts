@@ -3,69 +3,45 @@ import { GalleryImage } from '../types';
 
 export const epoxyImages: GalleryImage[] = [
   {
-    id: 4,
-    src: "/lovable-uploads/7671fcb5-a810-4e9a-84fc-76713831e5ba.png",
+    id: 68,
+    src: "/lovable-uploads/78f72a33-8111-485a-8fb4-4f4a5a604a84.png",
     category: "epoxy",
-    title: "Garage Floor Epoxy Coating"
+    title: "Garage Floor with Grey Flake Coating"
   },
   {
-    id: 5,
-    src: "/lovable-uploads/41fed3c2-d734-4c98-aa94-862ae8f83f1b.png",
+    id: 69,
+    src: "/lovable-uploads/a5f7d294-6bc5-4150-b17f-dfbc3320b5a4.png",
     category: "epoxy",
-    title: "Professional Epoxy Flooring"
+    title: "Finished Garage Epoxy with Grey Flake"
   },
   {
-    id: 6,
-    src: "/lovable-uploads/d92e575b-d7e8-477c-a4d6-d34674df328a.png",
+    id: 70,
+    src: "/lovable-uploads/bd116ecc-c88e-41c9-a68f-001b95ab5a06.png",
     category: "epoxy",
-    title: "Commercial Garage Flooring"
+    title: "Grey Flake Epoxy Floor Coating"
   },
   {
-    id: 59,
-    src: "/lovable-uploads/5187080d-ed8c-4f7b-91f0-fc055c4a564c.png",
+    id: 71,
+    src: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
     category: "epoxy",
-    title: "Industrial Epoxy Floor Coating"
+    title: "Colorful Flake Epoxy on Black Base"
   },
   {
-    id: 60,
-    src: "/lovable-uploads/f77d1075-40af-41c3-8d3b-9165ccb5d0ac.png",
+    id: 72,
+    src: "/lovable-uploads/f6f742c3-d285-4c5c-ab30-a9dac0a253b7.png",
     category: "epoxy",
-    title: "Garage Epoxy Floor with Flake Finish"
+    title: "Grey Flake Epoxy Garage Floor"
+  },
+  {
+    id: 73,
+    src: "/lovable-uploads/5bb528e7-e3bf-47ea-a5ee-ca5d818e51d4.png",
+    category: "epoxy",
+    title: "Applying Multi-Colour Flake Coating"
   },
   {
     id: 74,
-    src: "/lovable-uploads/588821d9-3d22-4afe-9dfa-3a9c79c1367d.png",
+    src: "/lovable-uploads/73d1fb20-999b-439d-a462-4777a05e92bd.png",
     category: "epoxy",
-    title: "Industrial Epoxy Floor Coating"
-  },
-  {
-    id: 75,
-    src: "/lovable-uploads/f662a0ea-18c6-486b-bece-8def1fe821d9.png",
-    category: "epoxy",
-    title: "Brewery Floor Epoxy Coating"
-  },
-  {
-    id: 76,
-    src: "/lovable-uploads/d2188b4b-8832-49d7-ad84-f34ee23eb684.png",
-    category: "epoxy",
-    title: "Commercial Brewery Epoxy Installation"
-  },
-  {
-    id: 77,
-    src: "/lovable-uploads/5caab5c2-b974-403c-9275-1fb79fa781ad.png",
-    category: "epoxy",
-    title: "Industrial Brewery Floor Coating"
-  },
-  {
-    id: 93,
-    src: "/lovable-uploads/0d209ae4-5893-48f5-b808-f6659df33d40.png",
-    category: "epoxy",
-    title: "Professional Garage Epoxy Floor Coating"
-  },
-  {
-    id: 94,
-    src: "/lovable-uploads/d8414a21-a2d8-4b1d-aa6c-912759e69126.png",
-    category: "epoxy",
-    title: "Interior Room with Blue Feature Wall"
+    title: "Applying Grey Epoxy Base Coat"
   }
 ];
