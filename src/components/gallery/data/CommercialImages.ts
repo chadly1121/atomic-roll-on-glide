@@ -73,5 +73,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-exterior-opp-gas-pumps-3.jpg",
     category: "commercial",
     title: "OPP Gas Pump Canopy — Spraying Steel Structure, Bracebridge"
+  },
+  {
+    id: 170,
+    src: "/lovable-uploads/commercial-exterior-waterproofing.jpg",
+    category: "commercial",
+    title: "Commercial Waterproofing — Storage Facility Exterior, Muskoka"
   }
 ];
