@@ -97,5 +97,35 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-condos-kitchen-finish.jpg",
     category: "commercial",
     title: "Condo Kitchen Interior Finish — Commercial Project"
+  },
+  {
+    id: 174,
+    src: "/lovable-uploads/commercial-interior-new-build-2.jpg",
+    category: "commercial",
+    title: "New Build Interior — Lakeview Great Room Windows"
+  },
+  {
+    id: 175,
+    src: "/lovable-uploads/commercial-interior-new-build-3.jpg",
+    category: "commercial",
+    title: "New Build Interior — Stained Beams and Trim Detailing"
+  },
+  {
+    id: 176,
+    src: "/lovable-uploads/commercial-interior-new-build-4.jpg",
+    category: "commercial",
+    title: "New Build Interior — Masking and Paint Prep in Progress"
+  },
+  {
+    id: 177,
+    src: "/lovable-uploads/commercial-interior-new-build-5.jpg",
+    category: "commercial",
+    title: "New Build Interior — Custom Closet Finish"
+  },
+  {
+    id: 178,
+    src: "/lovable-uploads/commercial-interior-real-estate-office-2.jpg",
+    category: "commercial",
+    title: "Commercial Interior Accent Wall Design — Real Estate Office"
   }
 ];
