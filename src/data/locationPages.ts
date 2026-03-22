@@ -32,7 +32,7 @@ export const locationPages: LocationPageData[] = [
     localContent: "Bracebridge is the commercial hub of Muskoka, home to Bracebridge Falls and a vibrant downtown core. From heritage homes on Manitoba Street to waterfront cottages along the Muskoka River, our team understands the unique painting needs of Bracebridge properties. We work with local suppliers and understand the weather conditions that affect paint longevity in the Muskoka region.",
     nearbyAreas: ["Gravenhurst", "Huntsville", "Port Sydney", "Baysville", "Utterson", "Milford Bay"],
     faqs: [
-      { question: "How much does it cost to paint a house in Bracebridge?", answer: "Interior painting in Bracebridge typically starts at $2.50 per square foot, while exterior painting starts at $3.75 per square foot. Final pricing depends on property size, surface condition, and paint selection. Contact us for a free on-site estimate." },
+      { question: "How much does it cost to paint a house in Bracebridge?", answer: "Interior painting in Bracebridge typically starts at $4.50 per square foot, while exterior painting starts at $5.75 per square foot. Final pricing depends on property size, surface condition, and paint selection. Contact us for a free on-site estimate." },
       { question: "Do you paint cottages near Bracebridge?", answer: "Yes. We paint cottages throughout the Bracebridge area including properties on Lake Muskoka, the Muskoka River corridor, and surrounding lakes. We understand the unique requirements of cottage painting including seasonal access and weather-resistant finishes." },
       { question: "Are you insured to work in Bracebridge?", answer: "Yes. Roll On Painting carries $5 million in liability insurance and is fully WSIB covered. We are a legitimate, registered Ontario business (2458115 Ontario Inc.)." }
     ]
@@ -49,7 +49,7 @@ export const locationPages: LocationPageData[] = [
     localContent: "Huntsville is the gateway to Algonquin Park and one of Muskoka's most beautiful towns. From the historic Main Street buildings to luxury homes on Peninsula Lake and Lake Vernon, we've painted properties across every neighbourhood. Our proximity to Huntsville means fast response times and deep knowledge of local building styles and weather patterns.",
     nearbyAreas: ["Port Sydney", "Dwight", "Dorset", "Lake of Bays", "Baysville", "Novar"],
     faqs: [
-      { question: "How much does house painting cost in Huntsville?", answer: "Interior painting in Huntsville starts at $2.50 per square foot, and exterior painting starts at $3.75 per square foot. We provide free on-site estimates for accurate project pricing." },
+      { question: "How much does house painting cost in Huntsville?", answer: "Interior painting in Huntsville starts at $4.50 per square foot, and exterior painting starts at $5.75 per square foot. We provide free on-site estimates for accurate project pricing." },
       { question: "Do you serve the Lake of Bays area from Huntsville?", answer: "Yes. We serve all communities around Lake of Bays including Dwight, Dorset, Baysville, and surrounding areas. Many of our projects are lakefront cottages and seasonal properties." },
       { question: "Can you paint in winter in Huntsville?", answer: "Yes, we perform interior painting year-round. For exterior projects, we plan around Muskoka's weather patterns to ensure optimal paint adhesion and durability." }
     ]
@@ -66,7 +66,7 @@ export const locationPages: LocationPageData[] = [
     localContent: "Gravenhurst sits at the southern entrance to Muskoka, known for its steamship heritage and beautiful waterfront. Properties here range from Victorian-era homes downtown to modern lakefront builds. We understand the specific paint requirements for Gravenhurst's diverse architecture, including the importance of weather-resistant finishes for properties exposed to Lake Muskoka's conditions.",
     nearbyAreas: ["Bracebridge", "Muskoka Lakes", "Port Carling", "Bala", "Severn", "Orillia"],
     faqs: [
-      { question: "How much does it cost to paint a cottage in Gravenhurst?", answer: "Cottage painting costs depend on size and condition. Interior painting starts at $2.50/sq ft and exterior at $3.75/sq ft. Contact us for a free estimate specific to your Gravenhurst property." },
+      { question: "How much does it cost to paint a cottage in Gravenhurst?", answer: "Cottage painting costs depend on size and condition. Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Gravenhurst property." },
       { question: "Do you paint commercial buildings in Gravenhurst?", answer: "Yes. We provide commercial and institutional painting throughout Gravenhurst including retail spaces, offices, and municipal buildings. We offer after-hours service to minimize business disruption." },
       { question: "What areas near Gravenhurst do you serve?", answer: "From Gravenhurst we serve Bracebridge, Muskoka Lakes, Port Carling, Bala, Severn Bridge, and south to Orillia." }
     ]
@@ -152,7 +152,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Port Carling", "Gravenhurst", "MacTier", "Torrance", "Rosseau", "Windermere"],
     faqs: [
       { question: "Do you paint cottages in the Bala area?", answer: "Yes. We paint many cottages in and around Bala, including properties on the Moon River, Lake Muskoka, and surrounding lakes. We offer flexible scheduling around cottage season." },
-      { question: "How much does painting cost in Bala?", answer: "Interior painting starts at $2.50/sq ft and exterior at $3.75/sq ft. Contact us for a free estimate specific to your Bala property." },
+      { question: "How much does painting cost in Bala?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Bala property." },
       { question: "What services do you offer in Bala?", answer: "We offer full painting services in Bala including interior and exterior painting, deck and dock staining, cabinet refinishing, GoNano permanent coating, and power/soft washing." }
     ]
   },
@@ -220,7 +220,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Severn", "Orillia", "Midland", "Penetanguishene", "Gravenhurst", "Bala"],
     faqs: [
       { question: "Do you serve the Port Severn and Big Chute area?", answer: "Yes. We serve Port Severn, Big Chute, Severn Falls, and surrounding communities along the Trent-Severn Waterway and Georgian Bay." },
-      { question: "How much does painting cost in Port Severn?", answer: "Interior painting starts at $2.50/sq ft and exterior at $3.75/sq ft. Contact us for a free estimate specific to your Port Severn property." },
+      { question: "How much does painting cost in Port Severn?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Port Severn property." },
       { question: "Can you paint seasonal properties in Port Severn?", answer: "Yes. We frequently paint seasonal cottages in the Port Severn area and can coordinate scheduling around your cottage season." }
     ]
   }

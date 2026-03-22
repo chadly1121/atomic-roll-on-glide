@@ -38,7 +38,7 @@ export const servicePages: ServicePageData[] = [
     description: 'Transform your indoor spaces with premium interior painting services from Roll On Painting. Expert color consultation, meticulous preparation, and flawless finishes for homes and cottages throughout Muskoka.',
     metaDescription: 'Professional interior painting services in Muskoka. Roll On Painting offers expert color consultation, wall preparation, and premium finishes. Free quotes. Call 705-787-1401.',
     category: 'residential',
-    priceFrom: { amount: 2.50, unit: 'sq ft' },
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
     aiAnswerBlock: {
       whatIncludes: [
         'Free color consultation with expert recommendations',
@@ -99,7 +99,7 @@ export const servicePages: ServicePageData[] = [
     description: 'Protect and beautify your home with durable exterior painting built to withstand harsh Muskoka winters and humid summers. Roll On Painting uses weather-resistant products and proven techniques for lasting results.',
     metaDescription: 'Exterior painting services in Muskoka. Weather-resistant finishes, thorough prep work, and 5-year warranty. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
     category: 'residential',
-    priceFrom: { amount: 3.75, unit: 'sq ft' },
+    priceFrom: { amount: 5.75, unit: 'sq ft' },
     aiAnswerBlock: {
       whatIncludes: [
         'Power washing and surface cleaning',

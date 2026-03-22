@@ -121,8 +121,8 @@ export const businessInfo = {
   
   // Pricing (verified from site)
   pricing: {
-    interior: { from: 2.50, unit: "sq ft" },
-    exterior: { from: 3.75, unit: "sq ft" },
+    interior: { from: 4.50, unit: "sq ft" },
+    exterior: { from: 5.75, unit: "sq ft" },
     gonano: { from: 0.99, unit: "sq ft" },
     priceRange: "$$"
   },

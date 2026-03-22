@@ -24,19 +24,19 @@ const PricingCalculator = () => {
     // Base rates per square foot
     switch (projectType) {
       case 'interior':
-        baseRate = 2.5;
+        baseRate = 4.5;
         break;
       case 'exterior':
-        baseRate = 3.25;
+        baseRate = 5.75;
         break;
       case 'commercial':
-        baseRate = 3.75;
+        baseRate = 5.75;
         break;
       case 'cabinet':
         baseRate = 35; // per linear foot instead
         break;
       default:
-        baseRate = 2.5;
+        baseRate = 4.5;
     }
     
     // Adjustments based on wall condition
