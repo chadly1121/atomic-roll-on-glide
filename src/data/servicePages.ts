@@ -538,6 +538,124 @@ export const servicePages: ServicePageData[] = [
         answer: 'It depends on the area and number of layers. A typical residential exterior takes 2-5 days including cleanup and surface preparation.'
       }
     ]
+  },
+  {
+    slug: 'wallpaper-installation',
+    name: 'Wallpaper Installation',
+    headline: 'Professional Wallpaper Installation in Muskoka',
+    description: 'Add character and elegance to any room with professional wallpaper installation from Roll On Painting. Precision cuts, seamless pattern matching, and flawless finishes for homes and cottages throughout Muskoka.',
+    metaDescription: 'Professional wallpaper installation services in Muskoka. Seamless pattern matching, precision hanging, and expert finishing. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
+    category: 'residential',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Wall surface preparation and priming',
+        'Precise measurement and material planning',
+        'Expert pattern matching and alignment',
+        'Seamless seam finishing',
+        'Trim and edge detailing around outlets, windows, and doors',
+        'Full cleanup and inspection'
+      ],
+      whoItsFor: [
+        'Homeowners adding a feature or accent wall',
+        'Cottage owners creating a signature look',
+        'Interior designers and decorators',
+        'Commercial spaces wanting a premium finish',
+        'Anyone looking to add texture and pattern to their walls'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos via our contact form',
+        'Describe the room dimensions and wallpaper type',
+        'We visit to assess wall condition and confirm measurements',
+        'Receive a detailed quote including material recommendations'
+      ]
+    },
+    benefits: [
+      'Expert pattern matching for seamless results',
+      'Experience with all wallpaper types — vinyl, grasscloth, peel-and-stick, and more',
+      'Proper wall preparation for long-lasting adhesion',
+      'Can combine with interior painting for a complete refresh',
+      'WSIB covered with $5 million liability insurance'
+    ],
+    faqs: [
+      {
+        question: 'Do you supply the wallpaper or do I need to buy it?',
+        answer: 'You can supply your own wallpaper, or we can help you source it. We work with all brands and types and can recommend suppliers based on your design goals.'
+      },
+      {
+        question: 'How long does wallpaper installation take?',
+        answer: 'A single accent wall typically takes half a day. A full room takes 1-2 days depending on pattern complexity and wall preparation needed.'
+      },
+      {
+        question: 'Can you install wallpaper over existing wallpaper?',
+        answer: 'We generally recommend removing old wallpaper first for the best adhesion and finish. We offer wallpaper removal as a companion service.'
+      }
+    ]
+  },
+  {
+    slug: 'power-washing',
+    name: 'Power & Soft Washing',
+    headline: 'Power Washing & Soft Washing in Muskoka',
+    description: 'Remove years of dirt, grime, mold, and mildew from your home or business exterior with Roll On Painting\'s professional power washing and soft washing services. Safe, effective cleaning for every surface.',
+    metaDescription: 'Power washing and soft washing services in Muskoka. Safe exterior cleaning for siding, decks, driveways, and roofs. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
+    category: 'residential',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Assessment of surfaces and appropriate cleaning method',
+        'High-pressure power washing for concrete, driveways, and walkways',
+        'Low-pressure soft washing for siding, soffits, and delicate surfaces',
+        'Mold, mildew, and algae treatment',
+        'Gutter exterior cleaning',
+        'Full property cleanup'
+      ],
+      whoItsFor: [
+        'Homeowners refreshing curb appeal',
+        'Cottage owners preparing for the season',
+        'Property managers maintaining rental properties',
+        'Commercial properties needing exterior cleaning',
+        'Anyone with mold, mildew, or algae buildup'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Use our free AI estimator for a ballpark price',
+        'Call 705-787-1401 to schedule a free assessment',
+        'We identify the best cleaning method for each surface',
+        'Receive a detailed quote — often same-day'
+      ]
+    },
+    benefits: [
+      'Safe soft wash method protects siding and paint',
+      'Removes mold, mildew, algae, and oxidation',
+      'Dramatically improves curb appeal',
+      'Can combine with exterior painting for a full refresh',
+      'WSIB covered with $5 million liability insurance'
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between power washing and soft washing?',
+        answer: 'Power washing uses high pressure for hard surfaces like concrete and brick. Soft washing uses low pressure with specialized cleaning solutions for delicate surfaces like vinyl siding, stucco, and roofs — safely removing organic growth without damage.'
+      },
+      {
+        question: 'Will power washing damage my siding or paint?',
+        answer: 'We use the appropriate method for each surface. Soft washing is used on painted surfaces and siding to clean effectively without causing damage. Our team has over 25 years of experience knowing which method to use where.'
+      },
+      {
+        question: 'How often should I have my home exterior washed?',
+        answer: 'In Muskoka, we recommend exterior washing every 1-2 years. Properties near water or in shaded areas may benefit from annual cleaning due to increased mold and mildew growth.'
+      }
+    ]
   }
 ];
 
