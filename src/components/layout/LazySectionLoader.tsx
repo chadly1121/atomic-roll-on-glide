@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 
-// Lazy load heavy components
 const TestimonialsSection = lazy(() => import('../TestimonialsSection'));
-const TrendsSection = lazy(() => import('../TrendsSection'));
 const ContactSection = lazy(() => import('../ContactSection'));
 const Footer = lazy(() => import('../Footer'));
 
-// Minimal loading placeholder
 const SectionPlaceholder = () => (
   <div className="w-full py-16 flex justify-center">
-    <div className="w-10 h-10 border-3 border-atomic-turquoise border-t-transparent rounded-full animate-spin" />
+    <div className="w-10 h-10 border-3 border-atomic-orange border-t-transparent rounded-full animate-spin" />
   </div>
 );
 
@@ -21,7 +18,6 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
   const [sectionsInView, setSectionsInView] = useState<Set<string>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Use Intersection Observer for true lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,7 +33,6 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
       { rootMargin: '300px', threshold: 0 }
     );
 
-    // Observe placeholder elements
     const placeholders = containerRef.current?.querySelectorAll('[data-section]');
     placeholders?.forEach(el => observer.observe(el));
 
@@ -57,17 +52,6 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
         )}
       </div>
 
-      {/* Trends */}
-      <div data-section="trends">
-        {sectionsInView.has('trends') ? (
-          <Suspense fallback={<SectionPlaceholder />}>
-            <TrendsSection />
-          </Suspense>
-        ) : (
-          <div className="min-h-[200px]" />
-        )}
-      </div>
-
       {/* Contact */}
       <div id="contact" data-section="contact">
         {sectionsInView.has('contact') ? (
@@ -81,7 +65,7 @@ const LazySectionLoader: React.FC<LazySectionLoaderProps> = ({ visibleSections }
         )}
       </div>
 
-      {/* Footer - always load */}
+      {/* Footer */}
       <Suspense fallback={<SectionPlaceholder />}>
         <Footer />
       </Suspense>
