@@ -525,7 +525,7 @@ export const servicePages: ServicePageData[] = [
       'Safe removal without structural damage',
       'Proper disposal of all debris',
       'Substrate inspection and repair included',
-      'Can combine with repainting or new siding',
+      'Can combine with interior painting',
       'WSIB covered with $5 million liability insurance'
     ],
     faqs: [
