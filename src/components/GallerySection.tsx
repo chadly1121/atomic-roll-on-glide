@@ -10,16 +10,16 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { isImagesLoaded } = useImagePreloader(galleryImages);
   const isMobile = useIsMobile();
 
-  const filteredImages = activeCategory === 'all' 
-    ? galleryImages 
+  const filteredImages = activeCategory === 'all'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
-  const handleImageClick = (id: number) => {
-    setSelectedImage(id);
+  const handleImageClick = (src: string) => {
+    setSelectedImage(src);
   };
 
   const closeModal = () => {
@@ -28,18 +28,15 @@ const GallerySection = () => {
 
   const navigateImages = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return;
-    
-    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage);
+
+    const currentIndex = filteredImages.findIndex(img => img.src === selectedImage);
     if (currentIndex === -1) return;
-    
-    let newIndex;
-    if (direction === 'prev') {
-      newIndex = currentIndex === 0 ? filteredImages.length - 1 : currentIndex - 1;
-    } else {
-      newIndex = currentIndex === filteredImages.length - 1 ? 0 : currentIndex + 1;
-    }
-    
-    setSelectedImage(filteredImages[newIndex].id);
+
+    const newIndex = direction === 'prev'
+      ? (currentIndex === 0 ? filteredImages.length - 1 : currentIndex - 1)
+      : (currentIndex === filteredImages.length - 1 ? 0 : currentIndex + 1);
+
+    setSelectedImage(filteredImages[newIndex].src);
   };
 
   // Enable keyboard navigation for desktop
@@ -54,19 +51,19 @@ const GallerySection = () => {
           closeModal();
         }
       };
-      
+
       window.addEventListener('keydown', handleKeyDown);
       return () => window.removeEventListener('keydown', handleKeyDown);
     }
-  }, [selectedImage, isMobile]);
+  }, [selectedImage, isMobile, filteredImages]);
 
   return (
     <section id="gallery" className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-white to-accent/30">
       <div className="atomic-starburst w-48 md:w-64 h-48 md:h-64 top-20 md:top-40 right-10 md:right-20"></div>
       <div className="atomic-circle w-56 md:w-72 h-56 md:h-72 -bottom-20 md:-bottom-32 left-10 md:left-20 border-atomic-orange/30 animate-spin-slow"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,19 +75,19 @@ const GallerySection = () => {
             Browse through our gallery of completed projects and get inspired for your next transformation.
           </p>
         </motion.div>
-        
-        <GalleryFilters 
-          categories={galleryCategories} 
-          activeCategory={activeCategory} 
-          setActiveCategory={setActiveCategory} 
+
+        <GalleryFilters
+          categories={galleryCategories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
         />
-        
-        <GalleryGrid 
-          images={filteredImages} 
-          onImageClick={handleImageClick} 
+
+        <GalleryGrid
+          images={filteredImages}
+          onImageClick={handleImageClick}
           isImagesLoaded={isImagesLoaded}
         />
-        
+
         {/* Mobile-specific CTA that shows after browsing gallery */}
         {isMobile && (
           <div className="mt-8 px-4">
@@ -116,8 +113,8 @@ const GallerySection = () => {
             </motion.div>
           </div>
         )}
-        
-        <GalleryLightbox 
+
+        <GalleryLightbox
           selectedImage={selectedImage}
           images={filteredImages}
           closeModal={closeModal}

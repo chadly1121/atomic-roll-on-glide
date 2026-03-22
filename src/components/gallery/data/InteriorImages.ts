@@ -5,8 +5,8 @@ export const interiorImages: GalleryImage[] = [
   {
     id: 7,
     src: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
-    category: "interior",
-    title: "Modern Kitchen Renovation"
+    category: "commercial",
+    title: "Boom Lift Exterior Repaint — Commercial Site"
   },
   {
     id: 8,
@@ -120,7 +120,7 @@ export const interiorImages: GalleryImage[] = [
     id: 53,
     src: "/lovable-uploads/91ed8fbf-dfc2-49bf-89a7-3646cb736f01.png",
     category: "interior",
-    title: "Custom Kitchen Design"
+    title: "Bedroom & Closet Repaint — Lakefront Home"
   },
   {
     id: 54,
@@ -174,7 +174,7 @@ export const interiorImages: GalleryImage[] = [
     id: 70,
     src: "/lovable-uploads/4ed2b463-8340-40e2-a92e-e42853be0673.png",
     category: "interior",
-    title: "Residential Kitchen Painting"
+    title: "Bedroom Accent Wall & Trim Repaint"
   },
   {
     id: 81,

@@ -5,12 +5,12 @@ import { GalleryImage } from './types';
 
 interface GalleryGridProps {
   images: GalleryImage[];
-  onImageClick: (id: number) => void;
+  onImageClick: (src: string) => void;
   isImagesLoaded: boolean;
 }
 
-const GalleryGrid: React.FC<GalleryGridProps> = ({ 
-  images, 
+const GalleryGrid: React.FC<GalleryGridProps> = ({
+  images,
   onImageClick,
   isImagesLoaded
 }) => {
@@ -30,10 +30,10 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {images.map((image, index) => (
-        <motion.div 
-          key={image.id} 
+        <motion.div
+          key={image.src}
           className="rounded-xl overflow-hidden shadow-md cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl group"
-          onClick={() => onImageClick(image.id)}
+          onClick={() => onImageClick(image.src)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
           initial={{ opacity: 0, y: 20 }}
@@ -43,8 +43,8 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
           whileHover={{ y: -8 }}
         >
           <div className="relative h-64">
-            <img 
-              src={image.src} 
+            <img
+              src={image.src}
               alt={image.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
