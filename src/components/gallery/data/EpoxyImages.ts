@@ -67,5 +67,23 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-4.jpg",
     category: "epoxy",
     title: "Canvas Brewery Huntsville Muskoka — Red Epoxy Floor Detail"
+  },
+  {
+    id: 129,
+    src: "/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg",
+    category: "epoxy",
+    title: "Residential Garage Epoxy Floor — Muskoka"
+  },
+  {
+    id: 130,
+    src: "/lovable-uploads/epoxy-garage-floor-grey-finish-2.jpg",
+    category: "epoxy",
+    title: "Grey Epoxy Garage Finish — Huntsville"
+  },
+  {
+    id: 131,
+    src: "/lovable-uploads/epoxy-marine-hull-coating-1.jpg",
+    category: "epoxy",
+    title: "Marine Epoxy Hull Coating Project — Muskoka"
   }
 ];
