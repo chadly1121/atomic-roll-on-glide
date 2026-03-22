@@ -313,5 +313,23 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
     category: "interior",
     title: "Dark Wallpaper Powder Room Finish — Muskoka"
+  },
+  {
+    id: 138,
+    src: "/lovable-uploads/interior-bathroom-muskoka-1.jpg",
+    category: "interior",
+    title: "Modern Bathroom with Painted Vanity — Muskoka Cottage"
+  },
+  {
+    id: 139,
+    src: "/lovable-uploads/interior-kitchen-beams-muskoka-1.jpg",
+    category: "interior",
+    title: "Kitchen with Stained Beams & Painted Cabinets — Muskoka"
+  },
+  {
+    id: 140,
+    src: "/lovable-uploads/interior-brick-wall-beams-muskoka-1.jpg",
+    category: "interior",
+    title: "Painted Brick Wall & Stained Beams — Muskoka"
   }
 ];
