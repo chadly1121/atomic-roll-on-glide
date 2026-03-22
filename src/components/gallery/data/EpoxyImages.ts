@@ -133,5 +133,11 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-epoxy-canvas-brewery-4.jpg",
     category: "epoxy",
     title: "Epoxy Between Fermentation Tanks — Canvas Brewery, Huntsville"
+  },
+  {
+    id: 191,
+    src: "/lovable-uploads/epoxy-warehouse-floor-grey-finish.jpg",
+    category: "epoxy",
+    title: "Warehouse Epoxy Floor Coating — Grey High-Build Finish"
   }
 ];
