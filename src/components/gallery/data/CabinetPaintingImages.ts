@@ -91,5 +91,29 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-grey-kitchen-complete.jpg",
     category: "cabinet-painting",
     title: "Grey Kitchen Cabinet Refinish — Completed"
+  },
+  {
+    id: 94,
+    src: "/lovable-uploads/cabinet-white-kitchen-black-backsplash.jpg",
+    category: "cabinet-painting",
+    title: "White Kitchen Cabinets with Black Backsplash"
+  },
+  {
+    id: 95,
+    src: "/lovable-uploads/cabinet-white-builtin-shelving.jpg",
+    category: "cabinet-painting",
+    title: "White Built-In Shelving & Cabinetry"
+  },
+  {
+    id: 96,
+    src: "/lovable-uploads/cabinet-black-spray-interior.jpg",
+    category: "cabinet-painting",
+    title: "Black Cabinet Spray — Interior Detail"
+  },
+  {
+    id: 97,
+    src: "/lovable-uploads/cabinet-black-masking-spray.jpg",
+    category: "cabinet-painting",
+    title: "Masking & Spraying Kitchen Cabinets Black"
   }
 ];
