@@ -1,8 +1,6 @@
 import React, { useState, useCallback, Suspense, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ServicesSection from '../components/ServicesSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
 import AsSeenonTVSection from '../components/AsSeenonTVSection';
 import FAQSection from '../components/FAQSection';
@@ -12,12 +10,13 @@ import SectionObserver from '../components/layout/SectionObserver';
 import SEOHelmet from '../components/layout/SEOHelmet';
 import LazySectionLoader from '../components/layout/LazySectionLoader';
 import TrustBadges from '../components/trust/TrustBadges';
+import ServicesSection from '../components/ServicesSection';
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set([
-    'home', 'about', 'services', 'pricing', 'contact', 'asseenontv'
+    'home', 'services', 'pricing', 'contact', 'asseenontv'
   ]));
 
   const handleScroll = useCallback(() => {
@@ -52,7 +51,6 @@ const Index = () => {
       </div>
 
       <HeroSection />
-      <AboutSection />
       <ServicesSection />
       <AsSeenonTVSection />
       <TrustBadges />
