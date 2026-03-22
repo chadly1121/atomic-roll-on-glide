@@ -49,5 +49,29 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-exterior-muskoka-living-showroom.jpg",
     category: "commercial",
     title: "Commercial Exterior Repaint — Muskoka Living Showroom, Port Carling"
+  },
+  {
+    id: 166,
+    src: "/lovable-uploads/commercial-exterior-muskoka-living-finished.jpg",
+    category: "commercial",
+    title: "Finished Exterior — Muskoka Living Showroom, Port Carling"
+  },
+  {
+    id: 167,
+    src: "/lovable-uploads/commercial-exterior-opp-gas-pumps-1.jpg",
+    category: "commercial",
+    title: "OPP Gas Pump Canopy — Containment & Prep, Bracebridge"
+  },
+  {
+    id: 168,
+    src: "/lovable-uploads/commercial-exterior-opp-gas-pumps-2.jpg",
+    category: "commercial",
+    title: "OPP Gas Pump Canopy — Spray from Scissor Lift, Bracebridge"
+  },
+  {
+    id: 169,
+    src: "/lovable-uploads/commercial-exterior-opp-gas-pumps-3.jpg",
+    category: "commercial",
+    title: "OPP Gas Pump Canopy — Spraying Steel Structure, Bracebridge"
   }
 ];
