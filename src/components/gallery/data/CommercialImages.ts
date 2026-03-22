@@ -79,5 +79,23 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-exterior-waterproofing.jpg",
     category: "commercial",
     title: "Commercial Waterproofing — Storage Facility Exterior, Muskoka"
+  },
+  {
+    id: 171,
+    src: "/lovable-uploads/commercial-interior-new-build-stain-paint.jpg",
+    category: "commercial",
+    title: "Commercial Interior New Build — Stain and Paint Finishes"
+  },
+  {
+    id: 172,
+    src: "/lovable-uploads/commercial-interior-real-estate-office-design.jpg",
+    category: "commercial",
+    title: "Commercial Interior Feature Wall — Real Estate Office"
+  },
+  {
+    id: 173,
+    src: "/lovable-uploads/commercial-interior-condos-kitchen-finish.jpg",
+    category: "commercial",
+    title: "Condo Kitchen Interior Finish — Commercial Project"
   }
 ];
