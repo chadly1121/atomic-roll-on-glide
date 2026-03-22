@@ -193,5 +193,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.jpg",
     category: "commercial",
     title: "Muskoka Brewing Interior Spray Paint — Steel Truss Ceiling"
+  },
+  {
+    id: 190,
+    src: "/lovable-uploads/commercial-interior-sign-detail.jpg",
+    category: "commercial",
+    title: "Commercial Interior Detail — Precision Cut-In Around Signage"
   }
 ];
