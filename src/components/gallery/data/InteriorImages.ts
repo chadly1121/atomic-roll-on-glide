@@ -313,11 +313,5 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
     category: "interior",
     title: "Dark Wallpaper Powder Room Finish — Muskoka"
-  },
-  {
-    id: 124,
-    src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
-    category: "interior",
-    title: "Interior Wallpaper Detail — Muskoka Residential"
   }
 ];
