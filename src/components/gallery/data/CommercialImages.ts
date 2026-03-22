@@ -127,5 +127,35 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-real-estate-office-2.jpg",
     category: "commercial",
     title: "Commercial Interior Accent Wall Design — Real Estate Office"
+  },
+  {
+    id: 179,
+    src: "/lovable-uploads/commercial-interior-new-build-prep-room.jpg",
+    category: "commercial",
+    title: "Commercial Interior New Build — Room Prep and Prime Coat"
+  },
+  {
+    id: 180,
+    src: "/lovable-uploads/commercial-interior-new-build-lakeview-room.jpg",
+    category: "commercial",
+    title: "Commercial Interior New Build — Lakeview Feature Windows"
+  },
+  {
+    id: 181,
+    src: "/lovable-uploads/commercial-interior-office-panorama.jpg",
+    category: "commercial",
+    title: "Commercial Office Interior Repaint — Panorama View"
+  },
+  {
+    id: 182,
+    src: "/lovable-uploads/commercial-interior-office-wide.jpg",
+    category: "commercial",
+    title: "Commercial Office Interior Repaint — Main Work Area"
+  },
+  {
+    id: 183,
+    src: "/lovable-uploads/commercial-interior-powerwash-paint.jpg",
+    category: "commercial",
+    title: "Commercial Interior Power Wash and Paint Prep — Industrial Bay"
   }
 ];
