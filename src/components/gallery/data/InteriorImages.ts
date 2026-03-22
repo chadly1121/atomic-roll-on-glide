@@ -193,5 +193,35 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
     category: "interior",
     title: "Professional Wallpaper Installation"
+  },
+  {
+    id: 99,
+    src: "/lovable-uploads/interior-staining-walls-muskoka.jpg",
+    category: "interior",
+    title: "Staining Ash Wall Panels — Muskoka Cottage"
+  },
+  {
+    id: 100,
+    src: "/lovable-uploads/interior-modern-cottage-living.jpg",
+    category: "interior",
+    title: "Modern Cottage Great Room — Port Carling"
+  },
+  {
+    id: 101,
+    src: "/lovable-uploads/interior-timber-frame-greatroom.jpg",
+    category: "interior",
+    title: "Timber Frame & Stained Beams — Bracebridge"
+  },
+  {
+    id: 102,
+    src: "/lovable-uploads/interior-shiplap-sunroom.jpg",
+    category: "interior",
+    title: "Painted Shiplap & Trim — Gravenhurst"
+  },
+  {
+    id: 103,
+    src: "/lovable-uploads/interior-lakefront-cottage-beams.jpg",
+    category: "interior",
+    title: "Lakefront Cottage — Painted Shiplap & Beams"
   }
 ];
