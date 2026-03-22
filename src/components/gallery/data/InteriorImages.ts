@@ -5,8 +5,8 @@ export const interiorImages: GalleryImage[] = [
   {
     id: 7,
     src: "/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.png",
-    category: "interior",
-    title: "Modern Kitchen Renovation"
+    category: "commercial",
+    title: "Boom Lift Exterior Repaint — Commercial Site"
   },
   {
     id: 8,
