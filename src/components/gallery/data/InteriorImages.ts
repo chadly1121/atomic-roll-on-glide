@@ -331,5 +331,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-brick-wall-beams-muskoka-1.jpg",
     category: "interior",
     title: "Painted Brick Wall & Stained Beams — Muskoka"
+  },
+  {
+    id: 141,
+    src: "/lovable-uploads/interior-cedar-fireplace-muskoka-1.jpg",
+    category: "interior",
+    title: "Cedar Walls & Stone Fireplace — Muskoka Cottage"
+  },
+  {
+    id: 142,
+    src: "/lovable-uploads/interior-vaulted-beams-muskoka-1.jpg",
+    category: "interior",
+    title: "Vaulted Ceiling with Stained Timber Trusses — Muskoka"
+  },
+  {
+    id: 143,
+    src: "/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.jpg",
+    category: "interior",
+    title: "Vaulted Ceiling & Beam Staining In Progress — Muskoka"
+  },
+  {
+    id: 144,
+    src: "/lovable-uploads/interior-shiplap-prep-muskoka-1.jpg",
+    category: "interior",
+    title: "Shiplap Wall Prep & Painting — Muskoka"
   }
 ];
