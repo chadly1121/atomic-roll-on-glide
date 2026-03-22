@@ -37,5 +37,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/72730f66-3425-45e7-85ec-d792d27be704.png",
     category: "commercial",
     title: "Warehouse Prep — Taping Metal Columns"
+  },
+  {
+    id: 160,
+    src: "/lovable-uploads/commercial-interior-spray-canvas-brewing.jpg",
+    category: "commercial",
+    title: "Commercial Interior Spray — Canvas Brewing, Huntsville"
   }
 ];
