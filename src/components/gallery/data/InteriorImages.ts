@@ -253,5 +253,41 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-shiplap-ceiling-spray.jpg",
     category: "interior",
     title: "Spraying Shiplap Ceiling — New Build, Port Carling"
+  },
+  {
+    id: 109,
+    src: "/lovable-uploads/interior-loft-shiplap-bracebridge.jpg",
+    category: "interior",
+    title: "Loft Interior — Painted Shiplap & Trim, Bracebridge"
+  },
+  {
+    id: 110,
+    src: "/lovable-uploads/interior-shiplap-dining-muskoka.jpg",
+    category: "interior",
+    title: "Dining Nook — Painted Shiplap, Muskoka"
+  },
+  {
+    id: 111,
+    src: "/lovable-uploads/interior-paint-prep-gravenhurst.jpg",
+    category: "interior",
+    title: "Interior Paint Prep & Trim Work — Gravenhurst"
+  },
+  {
+    id: 112,
+    src: "/lovable-uploads/interior-stained-wood-walls-port-carling.jpg",
+    category: "interior",
+    title: "Stained Wood Walls & Trim — Port Carling"
+  },
+  {
+    id: 113,
+    src: "/lovable-uploads/interior-stained-wood-poolroom-muskoka.jpg",
+    category: "interior",
+    title: "Indoor Pool Room — Stained Walls & Beams, Muskoka"
+  },
+  {
+    id: 114,
+    src: "/lovable-uploads/interior-fireplace-stained-beams-gravenhurst.jpg",
+    category: "interior",
+    title: "Stone Fireplace with Stained Beams — Gravenhurst"
   }
 ];
