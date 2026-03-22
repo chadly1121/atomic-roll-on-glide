@@ -99,7 +99,7 @@ export const servicePages: ServicePageData[] = [
     description: 'Protect and beautify your home with durable exterior painting built to withstand harsh Muskoka winters and humid summers. Roll On Painting uses weather-resistant products and proven techniques for lasting results.',
     metaDescription: 'Exterior painting services in Muskoka. Weather-resistant finishes, thorough prep work, and 5-year warranty. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
     category: 'residential',
-    priceFrom: { amount: 3.75, unit: 'sq ft' },
+    priceFrom: { amount: 5.75, unit: 'sq ft' },
     aiAnswerBlock: {
       whatIncludes: [
         'Power washing and surface cleaning',

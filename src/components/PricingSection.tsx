@@ -26,7 +26,7 @@ const pricingTiers: PricingTier[] = [
     id: 2,
     name: "Exterior Painting",
     description: "Enhance your home's curb appeal",
-    price: "From $3.75 / sq ft",
+    price: "From $5.75 / sq ft",
     features: [
       "Weather-resistant paints",
       "Thorough surface preparation",
