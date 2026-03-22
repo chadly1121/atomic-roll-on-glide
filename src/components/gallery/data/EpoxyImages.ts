@@ -61,5 +61,11 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-3.jpg",
     category: "epoxy",
     title: "Canvas Brewery Huntsville — Commercial Epoxy Coating"
+  },
+  {
+    id: 128,
+    src: "/lovable-uploads/epoxy-canvas-brewery-huntsville-4.jpg",
+    category: "epoxy",
+    title: "Canvas Brewery Huntsville Muskoka — Red Epoxy Floor Detail"
   }
 ];
