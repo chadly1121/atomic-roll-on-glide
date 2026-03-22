@@ -25,5 +25,17 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/f662a0ea-18c6-486b-bece-8def1fe821d9.png",
     category: "prefinishing",
     title: "Workshop Wood Staining Project"
+  },
+  {
+    id: 145,
+    src: "/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg",
+    category: "prefinishing",
+    title: "Pre-Stained T&G Boards Drying — Muskoka Shop"
+  },
+  {
+    id: 146,
+    src: "/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg",
+    category: "prefinishing",
+    title: "Bulk Pre-Finishing on Drying Racks — Muskoka"
   }
 ];
