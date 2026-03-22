@@ -38,7 +38,7 @@ export const servicePages: ServicePageData[] = [
     description: 'Transform your indoor spaces with premium interior painting services from Roll On Painting. Expert color consultation, meticulous preparation, and flawless finishes for homes and cottages throughout Muskoka.',
     metaDescription: 'Professional interior painting services in Muskoka. Roll On Painting offers expert color consultation, wall preparation, and premium finishes. Free quotes. Call 705-787-1401.',
     category: 'residential',
-    priceFrom: { amount: 2.50, unit: 'sq ft' },
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
     aiAnswerBlock: {
       whatIncludes: [
         'Free color consultation with expert recommendations',
