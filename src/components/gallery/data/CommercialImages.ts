@@ -187,5 +187,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.jpg",
     category: "commercial",
     title: "Commercial Ceiling Spray Complete — Silver Ceiling with Black Beams"
+  },
+  {
+    id: 189,
+    src: "/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.jpg",
+    category: "commercial",
+    title: "Muskoka Brewing Interior Spray Paint — Steel Truss Ceiling"
   }
 ];
