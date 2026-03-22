@@ -223,5 +223,35 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-lakefront-cottage-beams.jpg",
     category: "interior",
     title: "Lakefront Cottage — Painted Shiplap & Beams"
+  },
+  {
+    id: 104,
+    src: "/lovable-uploads/interior-shiplap-fireplace-beams.jpg",
+    category: "interior",
+    title: "Painted Shiplap & Stained Beams — Port Carling Cottage"
+  },
+  {
+    id: 105,
+    src: "/lovable-uploads/interior-stained-stairs-shiplap.jpg",
+    category: "interior",
+    title: "Stained Stair Treads & Painted Shiplap — Muskoka"
+  },
+  {
+    id: 106,
+    src: "/lovable-uploads/interior-loft-shiplap-beams.jpg",
+    category: "interior",
+    title: "Open Loft — Painted Shiplap & Stained Beams, Bracebridge"
+  },
+  {
+    id: 107,
+    src: "/lovable-uploads/interior-timber-frame-stained-beams.jpg",
+    category: "interior",
+    title: "Timber Frame Stained Beams & Trim — Gravenhurst"
+  },
+  {
+    id: 108,
+    src: "/lovable-uploads/interior-shiplap-ceiling-spray.jpg",
+    category: "interior",
+    title: "Spraying Shiplap Ceiling — New Build, Port Carling"
   }
 ];
