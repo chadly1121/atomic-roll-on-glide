@@ -1,0 +1,35 @@
+
+import { GalleryImage } from '../types';
+
+export const wallpaperImages: GalleryImage[] = [
+  {
+    id: 115,
+    src: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
+    category: "wallpaper",
+    title: "Wallpaper Installation Feature Wall — Muskoka"
+  },
+  {
+    id: 116,
+    src: "/lovable-uploads/wallpaper-feature-wall-collage.jpg",
+    category: "wallpaper",
+    title: "Feature Wallpaper Accent Wall — Port Carling"
+  },
+  {
+    id: 117,
+    src: "/lovable-uploads/wallpaper-silver-texture-wall.jpg",
+    category: "wallpaper",
+    title: "Silver Textured Wallpaper Finish — Bracebridge"
+  },
+  {
+    id: 118,
+    src: "/lovable-uploads/wallpaper-dark-croc-accent.jpg",
+    category: "wallpaper",
+    title: "Luxury Dark Wallpaper Accent — Gravenhurst"
+  },
+  {
+    id: 119,
+    src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
+    category: "wallpaper",
+    title: "Powder Room Wallpaper Installation — Muskoka"
+  }
+];

@@ -6,6 +6,7 @@ export const galleryCategories: GalleryCategory[] = [
   { id: 'interior', name: 'Interior' },
   { id: 'exterior', name: 'Exterior' },
   { id: 'cabinet-painting', name: 'Cabinet Painting' },
+  { id: 'wallpaper', name: 'Wallpaper' },
   { id: 'commercial', name: 'Commercial' },
   { id: 'epoxy', name: 'Epoxy Coatings' },
   { id: 'prefinishing', name: 'Pre-Finishing' },

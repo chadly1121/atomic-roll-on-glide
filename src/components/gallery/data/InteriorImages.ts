@@ -289,5 +289,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-fireplace-stained-beams-gravenhurst.jpg",
     category: "interior",
     title: "Stone Fireplace with Stained Beams — Gravenhurst"
+  },
+  {
+    id: 120,
+    src: "/lovable-uploads/wallpaper-feature-wall-collage.jpg",
+    category: "interior",
+    title: "Interior Wallpaper Feature Wall — Port Carling"
+  },
+  {
+    id: 121,
+    src: "/lovable-uploads/wallpaper-silver-texture-wall.jpg",
+    category: "interior",
+    title: "Textured Wallpaper Accent Wall — Bracebridge"
+  },
+  {
+    id: 122,
+    src: "/lovable-uploads/wallpaper-dark-croc-accent.jpg",
+    category: "interior",
+    title: "Luxury Wallpaper Accent Wall — Gravenhurst"
+  },
+  {
+    id: 123,
+    src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
+    category: "interior",
+    title: "Dark Wallpaper Powder Room Finish — Muskoka"
   }
 ];
