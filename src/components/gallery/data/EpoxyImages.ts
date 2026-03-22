@@ -121,5 +121,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-epoxy-barge-coating.jpg",
     category: "epoxy",
     title: "Marine Barge Epoxy Coating — Muskoka"
+  },
+  {
+    id: 163,
+    src: "/lovable-uploads/commercial-epoxy-canvas-brewery-2.jpg",
+    category: "epoxy",
+    title: "Commercial Epoxy Floor — Canvas Brewery Brewhouse, Huntsville"
+  },
+  {
+    id: 164,
+    src: "/lovable-uploads/commercial-epoxy-canvas-brewery-4.jpg",
+    category: "epoxy",
+    title: "Epoxy Between Fermentation Tanks — Canvas Brewery, Huntsville"
   }
 ];
