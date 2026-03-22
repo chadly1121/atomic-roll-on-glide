@@ -97,5 +97,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-flake-floor-stairs-muskoka-1.jpg",
     category: "epoxy",
     title: "Epoxy Flake Floor Stairs — Huntsville"
+  },
+  {
+    id: 134,
+    src: "/lovable-uploads/epoxy-flake-floor-muskoka-2.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor — Garage Finish Muskoka"
+  },
+  {
+    id: 135,
+    src: "/lovable-uploads/epoxy-flake-floor-muskoka-3.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor — Commercial Space Bracebridge"
   }
 ];
