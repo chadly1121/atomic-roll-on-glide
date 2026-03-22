@@ -174,7 +174,7 @@ export const interiorImages: GalleryImage[] = [
     id: 70,
     src: "/lovable-uploads/4ed2b463-8340-40e2-a92e-e42853be0673.png",
     category: "interior",
-    title: "Residential Kitchen Painting"
+    title: "Bedroom Accent Wall & Trim Repaint"
   },
   {
     id: 81,
