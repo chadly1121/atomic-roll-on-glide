@@ -180,6 +180,14 @@ const CatalogPage = () => {
 
       if (error) throw error;
       if (data?.url) {
+        // Fire Google Ads conversion event for catalog booking
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-481474558/catalog_booking',
+            value: selectedItem.isPerSqFt ? parseInt(form.sqft) * 0.99 : parseFloat(selectedItem.price.replace(/[^0-9.]/g, '')) || 0,
+            currency: 'CAD',
+          });
+        }
         window.open(data.url, '_blank');
       }
     } catch (err: any) {
