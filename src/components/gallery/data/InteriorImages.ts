@@ -613,5 +613,35 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-stain-tg-ceiling-beams-lakefront.jpg",
     category: "interior",
     title: "Stained T&G Ceiling & Beams — Lakefront Cottage"
+  },
+  {
+    id: 313,
+    src: "/lovable-uploads/interior-staining-railings-modern.jpg",
+    category: "interior",
+    title: "Stained Stair Railings & Posts — Modern Interior"
+  },
+  {
+    id: 314,
+    src: "/lovable-uploads/interior-stained-french-door.jpg",
+    category: "interior",
+    title: "Stained Glass-Pane Interior Door"
+  },
+  {
+    id: 315,
+    src: "/lovable-uploads/interior-shiplap-black-windows.jpg",
+    category: "interior",
+    title: "T&G Shiplap Interior with Black Windows"
+  },
+  {
+    id: 316,
+    src: "/lovable-uploads/interior-theater-room-finish.jpg",
+    category: "interior",
+    title: "Custom Theater Room Finishing — Interior"
+  },
+  {
+    id: 317,
+    src: "/lovable-uploads/interior-stained-tg-ceiling-beams.jpg",
+    category: "interior",
+    title: "Stained T&G Ceiling & Beams — Great Room"
   }
 ];
