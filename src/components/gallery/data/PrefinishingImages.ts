@@ -61,5 +61,23 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/prefinishing-stained-boards-racks.jpg",
     category: "prefinishing",
     title: "Pre-Finishing Production — Drying Rack Inventory"
+  },
+  {
+    id: 225,
+    src: "/lovable-uploads/prefinishing-white-trim-boards.jpg",
+    category: "prefinishing",
+    title: "Pre-Finishing White Trim Boards — On-Site Layout"
+  },
+  {
+    id: 226,
+    src: "/lovable-uploads/prefinishing-douglas-fir-boards.jpg",
+    category: "prefinishing",
+    title: "Pre-Finishing Douglas Fir Boards — Natural Stain"
+  },
+  {
+    id: 227,
+    src: "/lovable-uploads/prefinishing-video-thumbnail.jpg",
+    category: "prefinishing",
+    title: "Pre-Finishing Process — Video Thumbnail"
   }
 ];
