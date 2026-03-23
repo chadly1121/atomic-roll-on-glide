@@ -330,6 +330,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Extended coverage warranty",
         ],
         note: "Heavy-duty rejuvenation for aging roofs — avoid a full replacement and add years of life.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
     ],
   },

@@ -105,6 +105,15 @@ const CatalogCard = ({
       </p>
     )}
 
+    {item.disclaimer && (
+      <div className="flex items-start gap-2 bg-muted/50 rounded-lg p-3 mt-3 border border-border">
+        <span className="text-amber-500 flex-shrink-0 mt-0.5">⚠️</span>
+        <p className="text-xs text-muted-foreground">
+          {item.disclaimer}
+        </p>
+      </div>
+    )}
+
     <button
       onClick={() => onBook(item)}
       className="mt-5 w-full py-3 text-center rounded-full font-semibold block transition-colors min-h-[48px] flex items-center justify-center active:scale-95 text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90"
