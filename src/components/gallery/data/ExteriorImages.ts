@@ -265,5 +265,29 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-deck-stain-muskoka.jpg",
     category: "exterior",
     title: "Deck Staining — Residential, Muskoka"
+  },
+  {
+    id: 237,
+    src: "/lovable-uploads/exterior-deck-staining-action.jpg",
+    category: "exterior",
+    title: "Deck Staining In Progress — Muskoka Cottage"
+  },
+  {
+    id: 238,
+    src: "/lovable-uploads/exterior-deck-staining-hardwood.jpg",
+    category: "exterior",
+    title: "Hardwood Deck Staining — Finished Result"
+  },
+  {
+    id: 239,
+    src: "/lovable-uploads/exterior-deck-underside-staining.jpg",
+    category: "exterior",
+    title: "Deck Underside Staining — Muskoka"
+  },
+  {
+    id: 240,
+    src: "/lovable-uploads/exterior-deck-underside-team.jpg",
+    category: "exterior",
+    title: "Team Staining Deck Structure — Muskoka"
   }
 ];
