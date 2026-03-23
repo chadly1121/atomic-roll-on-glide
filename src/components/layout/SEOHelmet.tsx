@@ -284,6 +284,14 @@ const SEOHelmet: React.FC = () => {
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
+      {
+        "@type": "Service", "@id": `${siteUrl}/#service-power-washing`,
+        "name": "Power & Soft Washing", "serviceType": "Power washing and soft washing",
+        "url": `${siteUrl}/power-washing`,
+        "description": "Professional power washing and soft washing services in Muskoka. Safe exterior cleaning for siding, roofs, decks, and driveways.",
+        "provider": { "@id": `${siteUrl}/#localbusiness` },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+      },
       // FAQPage
       {
         "@type": "FAQPage",
