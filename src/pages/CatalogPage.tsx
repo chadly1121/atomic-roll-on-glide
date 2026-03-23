@@ -199,26 +199,58 @@ const CatalogPage = () => {
   };
 
     const siteUrl = 'https://www.roll-onpainting.com';
+
+    // Build OfferCatalog with individual service offers for rich snippets
+    const allOffers = catalogCategories.flatMap(cat =>
+      cat.items.map(item => ({
+        "@type": "Offer",
+        "name": item.title,
+        "price": item.price.replace(/[^0-9.]/g, ''),
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "LocalBusiness", "@id": `${siteUrl}/#localbusiness` },
+        ...(item.duration && { "description": `Duration: ${item.duration}` }),
+      }))
+    );
+
     const catalogSchema = {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Service Catalog & Pricing | Roll On Painting",
-      "description": "Browse fixed-price painting, power washing, roof washing, and GoNano nanotechnology packages. Transparent pricing with instant online booking.",
-      "url": `${siteUrl}/catalog`,
-      "isPartOf": { "@type": "WebSite", "url": siteUrl },
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": businessInfo.name,
-        "telephone": businessInfo.phone.primary,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": businessInfo.address.street,
-          "addressLocality": businessInfo.address.city,
-          "addressRegion": businessInfo.address.region,
-          "postalCode": businessInfo.address.postalCode,
-          "addressCountry": businessInfo.address.countryCode
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${siteUrl}/catalog/#webpage`,
+          "name": "Service Catalog & Pricing | Roll On Painting",
+          "description": "Browse fixed-price painting, power washing, roof washing, and GoNano nanotechnology packages. Transparent pricing with instant online booking.",
+          "url": `${siteUrl}/catalog`,
+          "isPartOf": { "@id": `${siteUrl}/#website` },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` },
+              { "@type": "ListItem", "position": 2, "name": "Service Catalog", "item": `${siteUrl}/catalog` }
+            ]
+          }
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Roll On Painting Service Catalog",
+          "description": "Fixed-price painting, washing, and nanotechnology coating packages with instant online booking.",
+          "url": `${siteUrl}/catalog`,
+          "numberOfItems": allOffers.length,
+          "itemListElement": catalogCategories.map(cat => ({
+            "@type": "OfferCatalog",
+            "name": cat.title,
+            "description": cat.description,
+            "itemListElement": cat.items.map(item => ({
+              "@type": "Offer",
+              "name": item.title,
+              "price": item.price.replace(/[^0-9.]/g, ''),
+              "priceCurrency": "CAD",
+              "availability": "https://schema.org/InStock",
+            }))
+          }))
         }
-      }
+      ]
     };
 
     return (
