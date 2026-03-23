@@ -728,8 +728,6 @@ export const servicePages: ServicePageData[] = [
     galleryImages: [
       '/lovable-uploads/exterior-softwash-before.jpg',
       '/lovable-uploads/exterior-softwash-after.jpg',
-      '/lovable-uploads/exterior-softwash-before-muskoka-1.jpg',
-      '/lovable-uploads/exterior-softwash-after-muskoka-1.jpg',
       '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
       '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
     ],
