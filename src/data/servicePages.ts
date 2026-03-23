@@ -165,6 +165,16 @@ export const servicePages: ServicePageData[] = [
         question: 'Do you paint log homes and cabins?',
         answer: 'Yes, we specialize in log homes using appropriate stains and finishes. We also partner with Sansin for premium wood treatments.'
       }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-residential-lakeside-paint.jpg',
+      '/lovable-uploads/exterior-black-brick-home-finished-2.jpg',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg',
+      '/lovable-uploads/exterior-spray-window-masking.jpg',
+      '/lovable-uploads/exterior-repairs-ladder-siding.jpg',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
+      '/lovable-uploads/exterior-dark-garage-finished.jpg',
+      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg'
     ]
   },
   {
