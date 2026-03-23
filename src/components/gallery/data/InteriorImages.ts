@@ -541,5 +541,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-spray-trim-shiplap-wide.jpg",
     category: "interior",
     title: "Sprayed Shiplap & Trim — Wide Room View"
+  },
+  {
+    id: 301,
+    src: "/lovable-uploads/interior-stain-paint-mudroom.jpg",
+    category: "interior",
+    title: "Mudroom — Painted Trim & Stained Countertop"
+  },
+  {
+    id: 302,
+    src: "/lovable-uploads/interior-stain-paint-kitchen-beams.jpg",
+    category: "interior",
+    title: "Kitchen — Stained Beams & Painted Cabinets"
+  },
+  {
+    id: 303,
+    src: "/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg",
+    category: "interior",
+    title: "Stone Fireplace & Stained Timber Trusses — Cottage"
+  },
+  {
+    id: 304,
+    src: "/lovable-uploads/interior-stain-beams-sansin.jpg",
+    category: "interior",
+    title: "Sansin Stained Beams & Painted Ceiling — In Progress"
   }
 ];
