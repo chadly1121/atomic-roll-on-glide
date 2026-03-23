@@ -387,7 +387,6 @@ export const servicePages: ServicePageData[] = [
     ],
     galleryImages: [
       '/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg',
-      '/lovable-uploads/epoxy-flake-floor-residential-garage.jpg',
       '/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg',
       '/lovable-uploads/epoxy-prep-grinder-closeup.jpg',
       '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg',
