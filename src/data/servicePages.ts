@@ -331,6 +331,14 @@ export const servicePages: ServicePageData[] = [
       'Water repellent finish',
       'Extends the life of your deck by years',
       'Available in transparent, semi-transparent, and solid colors'
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-deck-stain-muskoka.jpg',
+      '/lovable-uploads/exterior-deck-staining-action.jpg',
+      '/lovable-uploads/exterior-deck-staining-before-after.jpg',
+      '/lovable-uploads/exterior-deck-staining-hardwood.jpg',
+      '/lovable-uploads/exterior-deck-underside-staining.jpg',
+      '/lovable-uploads/exterior-wood-garage-door-staining.jpg'
     ]
   },
   {
