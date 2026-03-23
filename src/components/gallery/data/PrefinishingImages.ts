@@ -3,30 +3,6 @@ import { GalleryImage } from '../types';
 
 export const prefinishingImages: GalleryImage[] = [
   {
-    id: 75,
-    src: "/lovable-uploads/59fceeeb-5237-41de-a165-23b8ce9fea80.png",
-    category: "prefinishing",
-    title: "Workshop Stairway Components"
-  },
-  {
-    id: 76,
-    src: "/lovable-uploads/780f6bc7-ce9f-4b77-ac83-a1c4d6424e99.png",
-    category: "prefinishing",
-    title: "Industrial Floor Grinding & Prep"
-  },
-  {
-    id: 77,
-    src: "/lovable-uploads/e1c9d1df-a4ed-49a4-b67c-c7ea2108092e.png",
-    category: "prefinishing",
-    title: "Shop Wood Finishing Setup"
-  },
-  {
-    id: 78,
-    src: "/lovable-uploads/f662a0ea-18c6-486b-bece-8def1fe821d9.png",
-    category: "prefinishing",
-    title: "Workshop Wood Staining Project"
-  },
-  {
     id: 145,
     src: "/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg",
     category: "prefinishing",

@@ -3,12 +3,6 @@ import { GalleryImage } from '../types';
 
 export const wallpaperImages: GalleryImage[] = [
   {
-    id: 115,
-    src: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
-    category: "wallpaper",
-    title: "Wallpaper Installation Feature Wall — Muskoka"
-  },
-  {
     id: 116,
     src: "/lovable-uploads/wallpaper-feature-wall-collage.jpg",
     category: "wallpaper",
