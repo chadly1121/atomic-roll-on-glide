@@ -151,5 +151,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-barge-boat-coating-detail.jpg",
     category: "epoxy",
     title: "Marine Barge Epoxy Coating — Hull Side Detail"
+  },
+  {
+    id: 194,
+    src: "/lovable-uploads/epoxy-flake-floor-residential-garage.jpg",
+    category: "epoxy",
+    title: "Residential Garage Epoxy Flake Floor — Full Surface Finish"
+  },
+  {
+    id: 195,
+    src: "/lovable-uploads/epoxy-flake-floor-residential-garage-2.jpg",
+    category: "epoxy",
+    title: "Residential Garage Epoxy Flake Floor — Light Grey Blend"
   }
 ];
