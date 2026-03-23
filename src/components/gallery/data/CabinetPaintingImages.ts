@@ -115,5 +115,17 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-black-masking-spray.jpg",
     category: "cabinet-painting",
     title: "Masking & Spraying Kitchen Cabinets Black"
+  },
+  {
+    id: 205,
+    src: "/lovable-uploads/cabinet-painting-masking-prep.jpg",
+    category: "cabinet-painting",
+    title: "Kitchen Cabinet Painting — Masking & Prep"
+  },
+  {
+    id: 206,
+    src: "/lovable-uploads/cabinet-painting-spray-finish.jpg",
+    category: "cabinet-painting",
+    title: "Kitchen Cabinets — Black Spray Finish Detail"
   }
 ];
