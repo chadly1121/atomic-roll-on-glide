@@ -493,5 +493,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-primer-ceiling-beams.jpg",
     category: "interior",
     title: "Primer on Interior Ceiling Beams — In Progress"
+  },
+  {
+    id: 293,
+    src: "/lovable-uploads/interior-spray-doors-new-build.jpg",
+    category: "interior",
+    title: "Spray Painted Interior Doors — New Build"
+  },
+  {
+    id: 294,
+    src: "/lovable-uploads/interior-spray-painting-vaulted.jpg",
+    category: "interior",
+    title: "Interior Spray Painting — Vaulted Ceiling & Walls"
+  },
+  {
+    id: 295,
+    src: "/lovable-uploads/interior-spray-painting-ceiling-prep.jpg",
+    category: "interior",
+    title: "Interior Spray Painting — Ceiling & Masking Prep"
+  },
+  {
+    id: 296,
+    src: "/lovable-uploads/interior-spray-trim-shiplap-after.jpg",
+    category: "interior",
+    title: "Sprayed Trim & Shiplap — Finished Detail"
   }
 ];
