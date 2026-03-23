@@ -43,5 +43,17 @@ export const wallpaperImages: GalleryImage[] = [
     src: "/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg",
     category: "wallpaper",
     title: "Wallpaper Feature Wall Installation — Process Collage"
+  },
+  {
+    id: 122,
+    src: "/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg",
+    category: "wallpaper",
+    title: "Crocodile Texture Wallpaper — Powder Room Wide View"
+  },
+  {
+    id: 123,
+    src: "/lovable-uploads/wallpaper-silver-accent-wall-install.jpg",
+    category: "wallpaper",
+    title: "Silver Accent Wallpaper — Feature Wall Installation"
   }
 ];
