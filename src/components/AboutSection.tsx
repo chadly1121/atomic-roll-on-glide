@@ -68,9 +68,9 @@ const AboutSection = () => {
                 </div>
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden h-28 sm:h-40 shadow-lg bg-muted">
                   <img 
-                    alt="Quality Craftsmanship" 
-                    className="w-full h-full object-cover" 
-                    src="/lovable-uploads/8eb8d5ba-169c-496d-be2a-d7f9cf241058.webp"
+                    alt="Chad and daughter on the job site — Roll On Painting family business" 
+                    className="w-full h-full object-cover object-top" 
+                    src="/lovable-uploads/about-team-selfie.jpg"
                     loading="lazy"
                     width={300}
                     height={160}
