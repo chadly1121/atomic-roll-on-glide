@@ -384,6 +384,16 @@ export const servicePages: ServicePageData[] = [
       'Easy to clean and maintain',
       'Available in many colors and finishes',
       'Transforms dull concrete into an attractive surface'
+    ],
+    galleryImages: [
+      '/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg',
+      '/lovable-uploads/epoxy-flake-floor-residential-garage.jpg',
+      '/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg',
+      '/lovable-uploads/epoxy-prep-grinder-closeup.jpg',
+      '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg',
+      '/lovable-uploads/epoxy-flake-floor-steps.jpg',
+      '/lovable-uploads/epoxy-warehouse-floor-grey-finish.jpg',
+      '/lovable-uploads/epoxy-residential-prep-room.jpg'
     ]
   },
   {
