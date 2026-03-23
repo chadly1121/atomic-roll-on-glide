@@ -71,16 +71,16 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
       </button>
 
       <button
-        onClick={() => navigateImages('prev')}
-        className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
+        onClick={(e) => { e.stopPropagation(); navigateImages('prev'); }}
+        className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-[60]`}
         aria-label="Previous"
         style={{ touchAction: 'manipulation' }}
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       <button
-        onClick={() => navigateImages('next')}
-        className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
+        onClick={(e) => { e.stopPropagation(); navigateImages('next'); }}
+        className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-[60]`}
         aria-label="Next"
         style={{ touchAction: 'manipulation' }}
       >
