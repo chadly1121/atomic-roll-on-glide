@@ -9,6 +9,7 @@ export interface CatalogItem {
   includes: string[];
   excludes?: string[];
   note?: string;
+  disclaimer?: string;
   popular?: boolean;
   isPerSqFt?: boolean;
 }
