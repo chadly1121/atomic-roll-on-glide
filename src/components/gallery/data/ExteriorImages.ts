@@ -199,5 +199,29 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-softwash-cedar-shingles.jpg",
     category: "exterior",
     title: "Cedar Shingle Soft Wash — Before & After"
+  },
+  {
+    id: 217,
+    src: "/lovable-uploads/exterior-softwash-roof-steam-team.jpg",
+    category: "exterior",
+    title: "Soft Wash Roof Cleaning — Team at Work"
+  },
+  {
+    id: 218,
+    src: "/lovable-uploads/exterior-softwash-roof-steam-close.jpg",
+    category: "exterior",
+    title: "Soft Wash Roof Cleaning — Close-Up Action"
+  },
+  {
+    id: 219,
+    src: "/lovable-uploads/exterior-softwash-roof-lift-angle.jpg",
+    category: "exterior",
+    title: "Soft Wash Roof Cleaning — Elevated Access View"
+  },
+  {
+    id: 220,
+    src: "/lovable-uploads/exterior-softwash-video-action.jpg",
+    category: "exterior",
+    title: "Soft Wash Roof Cleaning — Video Thumbnail"
   }
 ];
