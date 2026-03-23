@@ -79,5 +79,11 @@ export const prefinishingImages: GalleryImage[] = [
     src: "/lovable-uploads/prefinishing-video-thumbnail.jpg",
     category: "prefinishing",
     title: "Pre-Finishing Process — Video Thumbnail"
+  },
+  {
+    id: 228,
+    src: "/lovable-uploads/prefinishing-rutherford-go-station-ceilings.jpg",
+    category: "prefinishing",
+    title: "Rutherford GO Station Ceilings — Pre-Finishing Video Thumbnail"
   }
 ];
