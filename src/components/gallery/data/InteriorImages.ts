@@ -361,5 +361,11 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-stained-beams-white-ceiling.jpg",
     category: "interior",
     title: "Stained Wood Beams with White Ceiling — New Build"
+  },
+  {
+    id: 229,
+    src: "/lovable-uploads/interior-cottage-stain-ceiling-shiplap.jpg",
+    category: "interior",
+    title: "Cottage Interior — Stained Ceiling & Shiplap Walls, Muskoka"
   }
 ];

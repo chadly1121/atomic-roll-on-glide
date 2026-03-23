@@ -223,5 +223,23 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-softwash-video-action.jpg",
     category: "exterior",
     title: "Soft Wash Roof Cleaning — Video Thumbnail"
+  },
+  {
+    id: 230,
+    src: "/lovable-uploads/exterior-residential-lakeside-paint.jpg",
+    category: "exterior",
+    title: "Residential Exterior Paint — Lakeside Home, Muskoka"
+  },
+  {
+    id: 231,
+    src: "/lovable-uploads/exterior-boathouse-window-trim-painting.jpg",
+    category: "exterior",
+    title: "Boathouse Window Trim Painting — Port Carling"
+  },
+  {
+    id: 232,
+    src: "/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg",
+    category: "exterior",
+    title: "Boathouse Exterior Prep & Scaffolding — Muskoka Waterfront"
   }
 ];
