@@ -31,5 +31,17 @@ export const wallpaperImages: GalleryImage[] = [
     src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
     category: "wallpaper",
     title: "Powder Room Wallpaper Installation — Muskoka"
+  },
+  {
+    id: 120,
+    src: "/lovable-uploads/wallpaper-dark-textured-bathroom.jpg",
+    category: "wallpaper",
+    title: "Dark Textured Wallpaper — Modern Bathroom Vanity"
+  },
+  {
+    id: 121,
+    src: "/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg",
+    category: "wallpaper",
+    title: "Wallpaper Feature Wall Installation — Process Collage"
   }
 ];
