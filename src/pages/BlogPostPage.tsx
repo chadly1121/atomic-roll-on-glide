@@ -22,6 +22,7 @@ const BlogPostPage = () => {
   const { items, loading, getBySlug } = useBlogFeed();
   const post = getBySlug(slug || '');
   const [imgError, setImgError] = useState(false);
+  const siteUrl = businessInfo.urls.website;
 
   useEffect(() => {
     window.scrollTo(0, 0);
