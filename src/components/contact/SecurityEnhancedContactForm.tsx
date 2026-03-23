@@ -207,6 +207,15 @@ const SecurityEnhancedContactForm = () => {
 
       if (error) throw error;
 
+      // Fire Google Ads conversion event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-481474558/contact_form_submit',
+          value: 1.0,
+          currency: 'CAD',
+        });
+      }
+
       toast({
         title: "Message sent successfully!",
         description: files.length > 0 
