@@ -365,8 +365,11 @@ const SEOHelmet: React.FC = () => {
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
       
-      {/* Canonical URL */}
+      {/* Canonical & hreflang */}
       <link rel="canonical" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="en-CA" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}/`} />
+      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/`} />
       
       {/* Robots directives */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
