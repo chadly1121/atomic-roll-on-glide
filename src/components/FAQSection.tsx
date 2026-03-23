@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import {
   Accordion,
   AccordionContent,
@@ -16,31 +15,12 @@ import { verifiedFAQs, businessInfo } from '@/data/businessInfo';
  * All answers are factual and sourced from verified site data.
  */
 const FAQSection: React.FC = () => {
-  // Generate FAQPage schema from verified FAQs
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": verifiedFAQs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <section 
       id="faq" 
       className="py-16 md:py-24 bg-white"
       aria-labelledby="faq-heading"
     >
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
 
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
