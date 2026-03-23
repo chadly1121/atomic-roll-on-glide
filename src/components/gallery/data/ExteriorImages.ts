@@ -313,5 +313,35 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-repairs-ladder-siding.jpg",
     category: "exterior",
     title: "Exterior Siding Repairs — Ladder Work, Muskoka"
+  },
+  {
+    id: 245,
+    src: "/lovable-uploads/exterior-repairs-wood-replacement.jpg",
+    category: "exterior",
+    title: "Exterior Wood Repairs — Replacement Board Detail"
+  },
+  {
+    id: 246,
+    src: "/lovable-uploads/exterior-spray-masked-doors.jpg",
+    category: "exterior",
+    title: "Exterior Spray Prep — Masked Doors & Trim"
+  },
+  {
+    id: 247,
+    src: "/lovable-uploads/exterior-spray-window-masking.jpg",
+    category: "exterior",
+    title: "Window Masking for Exterior Spray Finish"
+  },
+  {
+    id: 248,
+    src: "/lovable-uploads/exterior-wood-garage-door-staining.jpg",
+    category: "exterior",
+    title: "Wood Garage Door Staining — Exterior Finish"
+  },
+  {
+    id: 249,
+    src: "/lovable-uploads/exterior-deck-staining-before-after.jpg",
+    category: "exterior",
+    title: "Deck Staining Before & After — Hardwood Boards"
   }
 ];
