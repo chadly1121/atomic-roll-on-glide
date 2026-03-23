@@ -275,6 +275,19 @@ export const servicePages: ServicePageData[] = [
       'Durable finish that resists chips and scratches',
       'Wide range of colors and finishes available',
       'Minimal disruption to your kitchen use'
+    ],
+    galleryImages: [
+      '/lovable-uploads/cabinet-grey-kitchen-finished.jpg',
+      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.jpg',
+      '/lovable-uploads/cabinet-spray-finish-action.jpg',
+      '/lovable-uploads/cabinet-door-sanding-closeup.jpg',
+      '/lovable-uploads/cabinet-painting-masking-prep.jpg',
+      '/lovable-uploads/cabinet-dark-doors-drying-rack.jpg',
+      '/lovable-uploads/cabinet-white-builtin-shelving.jpg',
+      '/lovable-uploads/cabinet-onsite-spray-white.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/cabinet-repaint-video.mp4'
     ]
   },
   {
