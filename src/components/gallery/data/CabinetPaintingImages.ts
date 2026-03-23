@@ -151,5 +151,23 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-door-sanding-closeup.jpg",
     category: "cabinet-painting",
     title: "Cabinet Door Sanding — Close-Up Detail"
+  },
+  {
+    id: 211,
+    src: "/lovable-uploads/cabinet-white-island-spray.jpg",
+    category: "cabinet-painting",
+    title: "Kitchen Island Cabinet — White Spray Finish"
+  },
+  {
+    id: 212,
+    src: "/lovable-uploads/cabinet-dark-doors-drying-rack.jpg",
+    category: "cabinet-painting",
+    title: "Dark Stained Cabinet Doors — Drying Rack"
+  },
+  {
+    id: 213,
+    src: "/lovable-uploads/cabinet-grey-kitchen-finished.jpg",
+    category: "cabinet-painting",
+    title: "Grey Kitchen Cabinets — Completed Refinish"
   }
 ];
