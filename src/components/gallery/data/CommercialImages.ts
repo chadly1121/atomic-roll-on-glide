@@ -229,5 +229,17 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-training-implementing-changes.jpg",
     category: "commercial",
     title: "Training Session — Implementing Changes Presentation"
+  },
+  {
+    id: 196,
+    src: "/lovable-uploads/commercial-training-pca-certificate.jpg",
+    category: "commercial",
+    title: "PCA Trade Best Practice Series — Certification"
+  },
+  {
+    id: 197,
+    src: "/lovable-uploads/commercial-training-breakthrough-academy.jpg",
+    category: "commercial",
+    title: "Breakthrough Academy — Business Training Conference"
   }
 ];
