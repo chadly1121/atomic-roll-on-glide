@@ -181,5 +181,23 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-softwash-after-muskoka-1.jpg",
     category: "exterior",
     title: "Exterior Soft Wash — After — Muskoka"
+  },
+  {
+    id: 214,
+    src: "/lovable-uploads/exterior-softwash-before.jpg",
+    category: "exterior",
+    title: "Soft Wash Siding — Before"
+  },
+  {
+    id: 215,
+    src: "/lovable-uploads/exterior-softwash-after.jpg",
+    category: "exterior",
+    title: "Soft Wash Siding — After"
+  },
+  {
+    id: 216,
+    src: "/lovable-uploads/exterior-softwash-cedar-shingles.jpg",
+    category: "exterior",
+    title: "Cedar Shingle Soft Wash — Before & After"
   }
 ];
