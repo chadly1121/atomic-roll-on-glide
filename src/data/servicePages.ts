@@ -733,6 +733,17 @@ export const servicePages: ServicePageData[] = [
       'Can combine with exterior painting for a full refresh',
       'WSIB covered with $5 million liability insurance'
     ],
+    galleryImages: [
+      '/lovable-uploads/exterior-softwash-before.jpg',
+      '/lovable-uploads/exterior-softwash-after.jpg',
+      '/lovable-uploads/exterior-softwash-before-muskoka-1.jpg',
+      '/lovable-uploads/exterior-softwash-after-muskoka-1.jpg',
+      '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
+      '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/exterior-softwash-hot-water-stain-removal.mp4'
+    ],
     faqs: [
       {
         question: 'What is the difference between power washing and soft washing?',
