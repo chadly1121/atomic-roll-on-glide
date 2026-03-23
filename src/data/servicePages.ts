@@ -550,6 +550,12 @@ export const servicePages: ServicePageData[] = [
       'Can combine with interior painting for a full refresh',
       'WSIB covered with $5 million liability insurance'
     ],
+    galleryImages: [
+      '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
+      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
+      '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
+      '/lovable-uploads/wallpaper-silver-texture-wall.jpg'
+    ],
     faqs: [
       {
         question: 'Can you remove wallpaper without damaging the walls?',
