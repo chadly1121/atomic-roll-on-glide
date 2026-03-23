@@ -308,6 +308,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Colour restoration enhancement",
         ],
         note: "The sweet spot — restore and protect your mid-life roof before expensive damage sets in.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
         popular: true,
       },
       {
