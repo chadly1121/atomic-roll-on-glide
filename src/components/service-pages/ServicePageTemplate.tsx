@@ -5,6 +5,7 @@ import { ArrowLeft, Phone, Mail, CheckCircle } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 import { ServicePageData } from '@/data/servicePages';
 import AIAnswerBlock from './AIAnswerBlock';
+import ServiceGallery from './ServiceGallery';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
