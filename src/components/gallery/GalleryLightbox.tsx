@@ -63,11 +63,11 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
     <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center">
       <button
         onClick={closeModal}
-        className={`absolute ${isMobile ? 'top-4 right-4 p-4' : 'top-4 right-4 p-2'} bg-gray-800 bg-opacity-80 text-white rounded-full hover:bg-opacity-100 transition-colors z-50`}
+        className={`absolute ${isMobile ? 'top-5 right-5 p-3' : 'top-4 right-4 p-2'} bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition-colors z-50`}
         aria-label="Close"
         style={{ touchAction: 'manipulation' }}
       >
-        <X className="h-6 w-6" />
+        <X className={isMobile ? 'h-7 w-7' : 'h-6 w-6'} strokeWidth={2.5} />
       </button>
 
       <button
