@@ -9,6 +9,7 @@ export interface CatalogItem {
   includes: string[];
   excludes?: string[];
   note?: string;
+  disclaimer?: string;
   popular?: boolean;
   isPerSqFt?: boolean;
 }
@@ -224,6 +225,7 @@ export const catalogCategories: CatalogCategory[] = [
           "All labour included",
           "Gutter flush & debris cleanup",
         ],
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
       {
         id: "roof-medium",
@@ -241,6 +243,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Before & after photo documentation",
         ],
         popular: true,
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
       {
         id: "roof-large",
@@ -258,6 +261,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Before & after photo documentation",
           "Post-wash inspection report",
         ],
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
     ],
   },
@@ -284,6 +288,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Prevents moss & algae growth",
         ],
         note: "Ideal for newer roofs — locks in protection early and extends lifespan by 15+ years.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
       {
         id: "gonano-nuroof-revive",
@@ -303,6 +308,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Colour restoration enhancement",
         ],
         note: "The sweet spot — restore and protect your mid-life roof before expensive damage sets in.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
         popular: true,
       },
       {
@@ -324,6 +330,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Extended coverage warranty",
         ],
         note: "Heavy-duty rejuvenation for aging roofs — avoid a full replacement and add years of life.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
     ],
   },
