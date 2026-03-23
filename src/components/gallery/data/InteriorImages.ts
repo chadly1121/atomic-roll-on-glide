@@ -517,5 +517,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-spray-trim-shiplap-after.jpg",
     category: "interior",
     title: "Sprayed Trim & Shiplap — Finished Detail"
+  },
+  {
+    id: 297,
+    src: "/lovable-uploads/interior-spray-trim-shiplap-before.jpg",
+    category: "interior",
+    title: "Trim & Shiplap — Before Spray (Raw Wood)"
+  },
+  {
+    id: 298,
+    src: "/lovable-uploads/interior-spray-trim-shiplap-during.jpg",
+    category: "interior",
+    title: "Trim & Shiplap — During Spray Application"
+  },
+  {
+    id: 299,
+    src: "/lovable-uploads/interior-spray-trim-shiplap-vaulted.jpg",
+    category: "interior",
+    title: "Sprayed Shiplap & Trim — Vaulted Ceiling"
+  },
+  {
+    id: 300,
+    src: "/lovable-uploads/interior-spray-trim-shiplap-wide.jpg",
+    category: "interior",
+    title: "Sprayed Shiplap & Trim — Wide Room View"
   }
 ];
