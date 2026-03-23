@@ -225,6 +225,7 @@ export const catalogCategories: CatalogCategory[] = [
           "All labour included",
           "Gutter flush & debris cleanup",
         ],
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
       {
         id: "roof-medium",
