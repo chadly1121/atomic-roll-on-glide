@@ -205,5 +205,29 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-training-team-session.jpg",
     category: "commercial",
     title: "Team Training Session — Commercial Paint Operations"
+  },
+  {
+    id: 192,
+    src: "/lovable-uploads/commercial-training-prework-documentation.jpg",
+    category: "commercial",
+    title: "Training Session — Pre-Work Documentation Best Practices"
+  },
+  {
+    id: 193,
+    src: "/lovable-uploads/commercial-training-client-communication.jpg",
+    category: "commercial",
+    title: "Training Session — Client Communication Quick Wins"
+  },
+  {
+    id: 194,
+    src: "/lovable-uploads/commercial-training-sansin-stain-session.jpg",
+    category: "commercial",
+    title: "Sansin Stain Training — Product Workshop Setup"
+  },
+  {
+    id: 195,
+    src: "/lovable-uploads/commercial-training-implementing-changes.jpg",
+    category: "commercial",
+    title: "Training Session — Implementing Changes Presentation"
   }
 ];
