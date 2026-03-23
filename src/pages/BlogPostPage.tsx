@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, FileQuestion } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 import BlogServiceLinks from '@/components/blog/BlogServiceLinks';
+import RelatedPosts from '@/components/blog/RelatedPosts';
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', {
