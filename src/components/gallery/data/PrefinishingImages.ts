@@ -27,18 +27,6 @@ export const prefinishingImages: GalleryImage[] = [
     title: "Pre-Finish Restoration — Stained Glass Door"
   },
   {
-    id: 223,
-    src: "/lovable-uploads/prefinishing-stained-boards-stack-close.jpg",
-    category: "prefinishing",
-    title: "Pre-Finishing Boards — Stain Batch Close-Up"
-  },
-  {
-    id: 224,
-    src: "/lovable-uploads/prefinishing-stained-boards-racks.jpg",
-    category: "prefinishing",
-    title: "Pre-Finishing Production — Drying Rack Inventory"
-  },
-  {
     id: 225,
     src: "/lovable-uploads/prefinishing-white-trim-boards.jpg",
     category: "prefinishing",

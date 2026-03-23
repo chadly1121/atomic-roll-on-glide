@@ -87,24 +87,6 @@ export const commercialImages: GalleryImage[] = [
     title: "New Build Interior — Custom Closet Finish"
   },
   {
-    id: 178,
-    src: "/lovable-uploads/commercial-interior-real-estate-office-2.jpg",
-    category: "commercial",
-    title: "Commercial Interior Accent Wall Design — Real Estate Office"
-  },
-  {
-    id: 179,
-    src: "/lovable-uploads/commercial-interior-new-build-prep-room.jpg",
-    category: "commercial",
-    title: "Commercial Interior New Build — Room Prep and Prime Coat"
-  },
-  {
-    id: 180,
-    src: "/lovable-uploads/commercial-interior-new-build-lakeview-room.jpg",
-    category: "commercial",
-    title: "Commercial Interior New Build — Lakeview Feature Windows"
-  },
-  {
     id: 181,
     src: "/lovable-uploads/commercial-interior-office-panorama.jpg",
     category: "commercial",
@@ -127,12 +109,6 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-safety-board.jpg",
     category: "commercial",
     title: "Commercial Interior Safety Board Feature Wall"
-  },
-  {
-    id: 185,
-    src: "/lovable-uploads/commercial-interior-office-renovation-panorama.jpg",
-    category: "commercial",
-    title: "Commercial Office Interior Repaint — Renovation Panorama"
   },
   {
     id: 186,

@@ -15,18 +15,6 @@ export const exteriorImages: GalleryImage[] = [
     title: "Exterior Soft Wash — After — Muskoka"
   },
   {
-    id: 214,
-    src: "/lovable-uploads/exterior-softwash-before.jpg",
-    category: "exterior",
-    title: "Soft Wash Siding — Before"
-  },
-  {
-    id: 215,
-    src: "/lovable-uploads/exterior-softwash-after.jpg",
-    category: "exterior",
-    title: "Soft Wash Siding — After"
-  },
-  {
     id: 216,
     src: "/lovable-uploads/exterior-softwash-cedar-shingles.jpg",
     category: "exterior",
@@ -63,22 +51,10 @@ export const exteriorImages: GalleryImage[] = [
     title: "Residential Exterior Paint — Lakeside Home, Muskoka"
   },
   {
-    id: 231,
-    src: "/lovable-uploads/exterior-boathouse-window-trim-painting.jpg",
-    category: "exterior",
-    title: "Boathouse Window Trim Painting — Port Carling"
-  },
-  {
     id: 232,
     src: "/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg",
     category: "exterior",
     title: "Boathouse Exterior Prep & Scaffolding — Muskoka Waterfront"
-  },
-  {
-    id: 233,
-    src: "/lovable-uploads/exterior-boathouse-interior-stain.jpg",
-    category: "exterior",
-    title: "Boathouse Interior Staining — Muskoka Waterfront"
   },
   {
     id: 234,
@@ -171,12 +147,6 @@ export const exteriorImages: GalleryImage[] = [
     title: "Wood Garage Door Staining — Exterior Finish"
   },
   {
-    id: 249,
-    src: "/lovable-uploads/exterior-deck-staining-before-after.jpg",
-    category: "exterior",
-    title: "Deck Staining Before & After — Hardwood Boards"
-  },
-  {
     id: 250,
     src: "/lovable-uploads/exterior-black-brick-home-front.jpg",
     category: "exterior",
@@ -193,24 +163,6 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-black-brick-spray-progress.jpg",
     category: "exterior",
     title: "Black Brick Exterior Spray — In Progress"
-  },
-  {
-    id: 270,
-    src: "/lovable-uploads/exterior-black-brick-home-finished-2.jpg",
-    category: "exterior",
-    title: "Black Brick Exterior Home — Finished Front View"
-  },
-  {
-    id: 271,
-    src: "/lovable-uploads/exterior-dark-garage-side-view.jpg",
-    category: "exterior",
-    title: "Dark Garage & Outbuilding Exterior — Side Perspective"
-  },
-  {
-    id: 272,
-    src: "/lovable-uploads/exterior-black-brick-spray-transition.jpg",
-    category: "exterior",
-    title: "Black Brick Exterior Transformation — Spray Progress"
   },
   {
     id: 273,

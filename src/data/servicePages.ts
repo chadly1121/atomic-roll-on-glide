@@ -493,9 +493,6 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/cabinet-spray-finish-action.jpg',
       '/lovable-uploads/exterior-spray-masked-doors.jpg'
     ],
-    galleryVideos: [
-      '/lovable-uploads/interior-white-shellac-spray-2.mp4'
-    ],
     faqs: [
       {
         question: 'What is the difference between spray finishing and brush/roller painting?',
@@ -740,9 +737,6 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-softwash-after-muskoka-1.jpg',
       '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
       '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
-    ],
-    galleryVideos: [
-      '/lovable-uploads/exterior-softwash-hot-water-stain-removal.mp4'
     ],
     faqs: [
       {
