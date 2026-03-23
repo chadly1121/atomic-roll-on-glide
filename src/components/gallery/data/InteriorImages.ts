@@ -355,5 +355,11 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-shiplap-prep-muskoka-1.jpg",
     category: "interior",
     title: "Shiplap Wall Prep & Painting — Muskoka"
+  },
+  {
+    id: 200,
+    src: "/lovable-uploads/interior-stained-beams-white-ceiling.jpg",
+    category: "interior",
+    title: "Stained Wood Beams with White Ceiling — New Build"
   }
 ];
