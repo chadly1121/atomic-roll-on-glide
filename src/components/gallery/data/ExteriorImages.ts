@@ -343,5 +343,23 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-deck-staining-before-after.jpg",
     category: "exterior",
     title: "Deck Staining Before & After — Hardwood Boards"
+  },
+  {
+    id: 250,
+    src: "/lovable-uploads/exterior-black-brick-home-front.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Finish — Residential Front Elevation"
+  },
+  {
+    id: 251,
+    src: "/lovable-uploads/exterior-dark-garage-finished.jpg",
+    category: "exterior",
+    title: "Dark Garage Exterior — Finished Muskoka Project"
+  },
+  {
+    id: 252,
+    src: "/lovable-uploads/exterior-black-brick-spray-progress.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Spray — In Progress"
   }
 ];

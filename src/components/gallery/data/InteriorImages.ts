@@ -367,5 +367,11 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-cottage-stain-ceiling-shiplap.jpg",
     category: "interior",
     title: "Cottage Interior — Stained Ceiling & Shiplap Walls, Muskoka"
+  },
+  {
+    id: 253,
+    src: "/lovable-uploads/interior-cottage-stained-beams-fireplace.jpg",
+    category: "interior",
+    title: "Cottage Interior — Stained Beams & Stone Fireplace"
   }
 ];
