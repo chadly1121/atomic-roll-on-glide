@@ -664,10 +664,7 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
       '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
       '/lovable-uploads/wallpaper-silver-texture-wall.jpg',
-      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg',
-      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
-      '/lovable-uploads/wallpaper-silver-accent-wall-install.jpg',
-      '/lovable-uploads/wallpaper-dark-textured-bathroom.jpg'
+      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg'
     ],
     faqs: [
       {
