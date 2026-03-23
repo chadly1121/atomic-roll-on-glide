@@ -94,6 +94,16 @@ export const servicePages: ServicePageData[] = [
         question: 'What paint brands do you use?',
         answer: 'We use premium paints from Benjamin Moore, Dulux, and PPG. We recommend specific products based on the room\'s use and your preferences.'
       }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-modern-cottage-living.jpg',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.jpg',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg',
+      '/lovable-uploads/interior-shiplap-fireplace-beams.jpg',
+      '/lovable-uploads/interior-kitchen-masking-prep.jpg',
+      '/lovable-uploads/interior-loft-space-finished.jpg',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg',
+      '/lovable-uploads/interior-primer-ceiling-beams.jpg'
     ]
   },
   {
