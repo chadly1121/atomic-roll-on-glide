@@ -148,6 +148,14 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
 
           <AIAnswerBlock {...service.aiAnswerBlock} />
 
+          {(service.galleryImages?.length || service.galleryVideos?.length) && (
+            <ServiceGallery
+              images={service.galleryImages || []}
+              videos={service.galleryVideos || []}
+              serviceName={service.name}
+            />
+          )}
+
           {service.benefits && (
             <section className="py-12" aria-labelledby="benefits-heading">
               <div className="container mx-auto px-4">
