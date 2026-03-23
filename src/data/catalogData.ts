@@ -261,6 +261,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Before & after photo documentation",
           "Post-wash inspection report",
         ],
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
     ],
   },
