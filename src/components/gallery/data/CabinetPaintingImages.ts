@@ -133,5 +133,23 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-spray-finish-action.jpg",
     category: "cabinet-painting",
     title: "Kitchen Cabinets — Spray Painting in Action"
+  },
+  {
+    id: 208,
+    src: "/lovable-uploads/cabinet-white-builtin-spray.jpg",
+    category: "cabinet-painting",
+    title: "White Built-In Cabinets — Spray Finish"
+  },
+  {
+    id: 209,
+    src: "/lovable-uploads/cabinet-shop-sanding-doors.jpg",
+    category: "cabinet-painting",
+    title: "Cabinet Doors — Shop Sanding & Prep"
+  },
+  {
+    id: 210,
+    src: "/lovable-uploads/cabinet-door-sanding-closeup.jpg",
+    category: "cabinet-painting",
+    title: "Cabinet Door Sanding — Close-Up Detail"
   }
 ];
