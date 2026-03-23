@@ -548,7 +548,6 @@ export const servicePages: ServicePageData[] = [
     ],
     galleryImages: [
       '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
-      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
       '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
       '/lovable-uploads/wallpaper-silver-texture-wall.jpg'
     ],
