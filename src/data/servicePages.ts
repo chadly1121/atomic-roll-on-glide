@@ -387,7 +387,6 @@ export const servicePages: ServicePageData[] = [
     ],
     galleryImages: [
       '/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg',
-      '/lovable-uploads/epoxy-flake-floor-residential-garage.jpg',
       '/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg',
       '/lovable-uploads/epoxy-prep-grinder-closeup.jpg',
       '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg',
@@ -549,7 +548,6 @@ export const servicePages: ServicePageData[] = [
     ],
     galleryImages: [
       '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
-      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
       '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
       '/lovable-uploads/wallpaper-silver-texture-wall.jpg'
     ],
@@ -666,10 +664,7 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
       '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
       '/lovable-uploads/wallpaper-silver-texture-wall.jpg',
-      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg',
-      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
-      '/lovable-uploads/wallpaper-silver-accent-wall-install.jpg',
-      '/lovable-uploads/wallpaper-dark-textured-bathroom.jpg'
+      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg'
     ],
     faqs: [
       {
@@ -733,8 +728,6 @@ export const servicePages: ServicePageData[] = [
     galleryImages: [
       '/lovable-uploads/exterior-softwash-before.jpg',
       '/lovable-uploads/exterior-softwash-after.jpg',
-      '/lovable-uploads/exterior-softwash-before-muskoka-1.jpg',
-      '/lovable-uploads/exterior-softwash-after-muskoka-1.jpg',
       '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
       '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
     ],
