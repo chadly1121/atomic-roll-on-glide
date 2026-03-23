@@ -397,5 +397,35 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-boathouse-white-walls-prep.jpg",
     category: "interior",
     title: "Boathouse Interior Wall Prep & Finish Work"
+  },
+  {
+    id: 277,
+    src: "/lovable-uploads/interior-brick-wash-fireplace.jpg",
+    category: "interior",
+    title: "White Brick Wash Fireplace — Interior Feature Wall"
+  },
+  {
+    id: 278,
+    src: "/lovable-uploads/interior-clear-coat-cedar-fireplace.jpg",
+    category: "interior",
+    title: "Clear Coating on Cedar Walls — Fireplace Room"
+  },
+  {
+    id: 279,
+    src: "/lovable-uploads/interior-clear-coat-pine-ceiling-fireplace.jpg",
+    category: "interior",
+    title: "Clear Coating on Pine Ceiling — Stone Fireplace Interior"
+  },
+  {
+    id: 280,
+    src: "/lovable-uploads/interior-clear-pine-vaulted-ceiling.jpg",
+    category: "interior",
+    title: "Clear Pine Vaulted Ceiling — Interior Finish in Progress"
+  },
+  {
+    id: 281,
+    src: "/lovable-uploads/interior-modern-bathroom-lakeview-2.jpg",
+    category: "interior",
+    title: "Modern Cottage Bathroom — Lakeview Interior"
   }
 ];
