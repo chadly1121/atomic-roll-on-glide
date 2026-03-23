@@ -565,5 +565,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-stain-beams-sansin.jpg",
     category: "interior",
     title: "Sansin Stained Beams & Painted Ceiling — In Progress"
+  },
+  {
+    id: 305,
+    src: "/lovable-uploads/interior-stain-beams-paint-home.jpg",
+    category: "interior",
+    title: "Stained Beams & Painted Walls — Great Room with Fireplace"
+  },
+  {
+    id: 306,
+    src: "/lovable-uploads/interior-stain-ceiling-skylight.jpg",
+    category: "interior",
+    title: "Stained Wood Ceiling — Skylight Feature"
+  },
+  {
+    id: 307,
+    src: "/lovable-uploads/interior-stain-floor-sansin.jpg",
+    category: "interior",
+    title: "Sansin Floor Staining — Hardwood Finish"
+  },
+  {
+    id: 308,
+    src: "/lovable-uploads/interior-stain-stairs-floors.jpg",
+    category: "interior",
+    title: "Stained Stairs & Hardwood Floors — Cottage Interior"
   }
 ];
