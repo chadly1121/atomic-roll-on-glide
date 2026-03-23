@@ -493,9 +493,6 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/cabinet-spray-finish-action.jpg',
       '/lovable-uploads/exterior-spray-masked-doors.jpg'
     ],
-    galleryVideos: [
-      '/lovable-uploads/interior-white-shellac-spray-2.mp4'
-    ],
     faqs: [
       {
         question: 'What is the difference between spray finishing and brush/roller painting?',
