@@ -127,5 +127,11 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-painting-spray-finish.jpg",
     category: "cabinet-painting",
     title: "Kitchen Cabinets — Black Spray Finish Detail"
+  },
+  {
+    id: 207,
+    src: "/lovable-uploads/cabinet-spray-finish-action.jpg",
+    category: "cabinet-painting",
+    title: "Kitchen Cabinets — Spray Painting in Action"
   }
 ];
