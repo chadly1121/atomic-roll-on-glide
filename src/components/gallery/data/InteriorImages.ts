@@ -643,5 +643,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-stained-tg-ceiling-beams.jpg",
     category: "interior",
     title: "Stained T&G Ceiling & Beams — Great Room"
+  },
+  {
+    id: 318,
+    src: "/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg",
+    category: "interior",
+    title: "Great Room with Dark Stained Beams — Lakeview"
+  },
+  {
+    id: 319,
+    src: "/lovable-uploads/interior-lakeview-window-feature.jpg",
+    category: "interior",
+    title: "Lakeview Window Wall — Interior Finish"
+  },
+  {
+    id: 320,
+    src: "/lovable-uploads/interior-rustic-barn-doors-fireplace.jpg",
+    category: "interior",
+    title: "Rustic Barn Doors & Stone Fireplace — Interior"
+  },
+  {
+    id: 321,
+    src: "/lovable-uploads/interior-timber-great-room-wide.jpg",
+    category: "interior",
+    title: "Timber Great Room — Wide Interior View"
   }
 ];
