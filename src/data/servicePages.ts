@@ -485,6 +485,17 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Over 25 years of professional experience'
     ],
+    galleryImages: [
+      '/lovable-uploads/interior-spray-painting-vaulted.jpg',
+      '/lovable-uploads/interior-spray-doors-new-build.jpg',
+      '/lovable-uploads/interior-spray-trim-shiplap-after.jpg',
+      '/lovable-uploads/interior-spray-trim-shiplap-during.jpg',
+      '/lovable-uploads/cabinet-spray-finish-action.jpg',
+      '/lovable-uploads/exterior-spray-masked-doors.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/interior-white-shellac-spray-2.mp4'
+    ],
     faqs: [
       {
         question: 'What is the difference between spray finishing and brush/roller painting?',
