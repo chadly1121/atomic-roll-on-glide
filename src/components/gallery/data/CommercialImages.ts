@@ -199,5 +199,11 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-sign-detail.jpg",
     category: "commercial",
     title: "Commercial Interior Detail — Precision Cut-In Around Signage"
+  },
+  {
+    id: 191,
+    src: "/lovable-uploads/commercial-training-team-session.jpg",
+    category: "commercial",
+    title: "Team Training Session — Commercial Paint Operations"
   }
 ];
