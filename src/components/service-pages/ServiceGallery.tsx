@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ServiceGalleryProps {
   images: string[];
@@ -9,6 +10,7 @@ interface ServiceGalleryProps {
 
 const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], serviceName }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const isMobile = useIsMobile();
 
   const allMedia = [...images, ...videos];
   if (allMedia.length === 0) return null;
@@ -73,25 +75,28 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], se
           onClick={closeLightbox}
         >
           <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white/80 hover:text-white z-50"
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            className={`absolute ${isMobile ? 'top-5 right-5 p-3' : 'top-4 right-4 p-2'} bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition-colors z-50`}
             aria-label="Close"
+            style={{ touchAction: 'manipulation' }}
           >
-            <X className="w-8 h-8" />
+            <X className={isMobile ? 'h-7 w-7' : 'h-6 w-6'} strokeWidth={2.5} />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); navigate('prev'); }}
-            className="absolute left-2 md:left-4 text-white/80 hover:text-white z-50"
+            className={`absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
             aria-label="Previous"
+            style={{ touchAction: 'manipulation' }}
           >
-            <ChevronLeft className="w-8 h-8" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); navigate('next'); }}
-            className="absolute right-2 md:right-4 text-white/80 hover:text-white z-50"
+            className={`absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
             aria-label="Next"
+            style={{ touchAction: 'manipulation' }}
           >
-            <ChevronRight className="w-8 h-8" />
+            <ChevronRight className="h-6 w-6" />
           </button>
           <div className="max-w-4xl max-h-[85vh] w-full" onClick={(e) => e.stopPropagation()}>
             {isVideo(allMedia[lightboxIndex]) ? (

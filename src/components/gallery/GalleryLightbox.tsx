@@ -60,10 +60,10 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center" onClick={closeModal}>
       <button
-        onClick={closeModal}
-        className={`absolute ${isMobile ? 'top-5 right-5 p-3' : 'top-4 right-4 p-2'} bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition-colors z-50`}
+        onClick={(e) => { e.stopPropagation(); closeModal(); }}
+        className={`absolute ${isMobile ? 'top-5 right-5 p-3' : 'top-4 right-4 p-2'} bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition-colors z-[60]`}
         aria-label="Close"
         style={{ touchAction: 'manipulation' }}
       >
@@ -71,16 +71,16 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
       </button>
 
       <button
-        onClick={() => navigateImages('prev')}
-        className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
+        onClick={(e) => { e.stopPropagation(); navigateImages('prev'); }}
+        className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-[60]`}
         aria-label="Previous"
         style={{ touchAction: 'manipulation' }}
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       <button
-        onClick={() => navigateImages('next')}
-        className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-50`}
+        onClick={(e) => { e.stopPropagation(); navigateImages('next'); }}
+        className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-80 text-white rounded-full ${isMobile ? 'p-4' : 'p-2'} hover:bg-opacity-100 transition-colors z-[60]`}
         aria-label="Next"
         style={{ touchAction: 'manipulation' }}
       >
