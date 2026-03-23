@@ -10,5 +10,6 @@ export const galleryCategories: GalleryCategory[] = [
   { id: 'commercial', name: 'Commercial' },
   { id: 'epoxy', name: 'Epoxy Coatings' },
   { id: 'prefinishing', name: 'Pre-Finishing' },
-  { id: 'institutional', name: 'Institutional' }
+  { id: 'institutional', name: 'Institutional' },
+  { id: 'training', name: 'Training' }
 ];

@@ -199,47 +199,5 @@ export const commercialImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-interior-sign-detail.jpg",
     category: "commercial",
     title: "Commercial Interior Detail — Precision Cut-In Around Signage"
-  },
-  {
-    id: 191,
-    src: "/lovable-uploads/commercial-training-team-session.jpg",
-    category: "commercial",
-    title: "Team Training Session — Commercial Paint Operations"
-  },
-  {
-    id: 192,
-    src: "/lovable-uploads/commercial-training-prework-documentation.jpg",
-    category: "commercial",
-    title: "Training Session — Pre-Work Documentation Best Practices"
-  },
-  {
-    id: 193,
-    src: "/lovable-uploads/commercial-training-client-communication.jpg",
-    category: "commercial",
-    title: "Training Session — Client Communication Quick Wins"
-  },
-  {
-    id: 194,
-    src: "/lovable-uploads/commercial-training-sansin-stain-session.jpg",
-    category: "commercial",
-    title: "Sansin Stain Training — Product Workshop Setup"
-  },
-  {
-    id: 195,
-    src: "/lovable-uploads/commercial-training-implementing-changes.jpg",
-    category: "commercial",
-    title: "Training Session — Implementing Changes Presentation"
-  },
-  {
-    id: 196,
-    src: "/lovable-uploads/commercial-training-pca-certificate.jpg",
-    category: "commercial",
-    title: "PCA Trade Best Practice Series — Certification"
-  },
-  {
-    id: 197,
-    src: "/lovable-uploads/commercial-training-breakthrough-academy.jpg",
-    category: "commercial",
-    title: "Breakthrough Academy — Business Training Conference"
   }
 ];
