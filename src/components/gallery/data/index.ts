@@ -8,6 +8,7 @@ import { epoxyImages } from './EpoxyImages';
 import { prefinishingImages } from './PrefinishingImages';
 import { cabinetPaintingImages } from './CabinetPaintingImages';
 import { wallpaperImages } from './WallpaperImages';
+import { trainingImages } from './TrainingImages';
 
 export const galleryImages: GalleryImage[] = [
   ...interiorImages,
@@ -17,7 +18,8 @@ export const galleryImages: GalleryImage[] = [
   ...epoxyImages,
   ...prefinishingImages,
   ...cabinetPaintingImages,
-  ...wallpaperImages
+  ...wallpaperImages,
+  ...trainingImages
 ];
 
 export * from './InteriorImages';
@@ -28,3 +30,4 @@ export * from './EpoxyImages';
 export * from './PrefinishingImages';
 export * from './CabinetPaintingImages';
 export * from './WallpaperImages';
+export * from './TrainingImages';
