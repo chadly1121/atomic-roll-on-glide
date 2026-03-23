@@ -738,9 +738,6 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
       '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
     ],
-    galleryVideos: [
-      '/lovable-uploads/exterior-softwash-hot-water-stain-removal.mp4'
-    ],
     faqs: [
       {
         question: 'What is the difference between power washing and soft washing?',
