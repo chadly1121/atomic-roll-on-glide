@@ -230,11 +230,16 @@ const CatalogPage = () => {
         <meta property="og:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
         <meta property="og:url" content={`${siteUrl}/catalog`} />
         <meta property="og:site_name" content={businessInfo.name} />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:image" content="https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         
         {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Service Catalog & Pricing | Roll On Painting" />
         <meta name="twitter:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg" />
         
         <script type="application/ld+json">{JSON.stringify(catalogSchema)}</script>
       </Helmet>

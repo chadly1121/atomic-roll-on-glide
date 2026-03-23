@@ -12,6 +12,8 @@ const PaymentSuccess = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Payment Successful | Roll On Painting</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="description" content="Your payment was successful. Roll On Painting will confirm your booking within 24 hours." />
       </Helmet>
 
       <Navbar activeSection="" />
