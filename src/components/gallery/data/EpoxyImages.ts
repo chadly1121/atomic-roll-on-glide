@@ -163,5 +163,29 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-flake-floor-residential-garage-2.jpg",
     category: "epoxy",
     title: "Residential Garage Epoxy Flake Floor — Light Grey Blend"
+  },
+  {
+    id: 196,
+    src: "/lovable-uploads/epoxy-flake-floor-interior-finish.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor — Interior Full Floor Finish"
+  },
+  {
+    id: 197,
+    src: "/lovable-uploads/epoxy-interior-residential-garage-floor.jpg",
+    category: "epoxy",
+    title: "Residential Garage Epoxy Floor — Interior Finish"
+  },
+  {
+    id: 198,
+    src: "/lovable-uploads/epoxy-prep-grinder-closeup.jpg",
+    category: "epoxy",
+    title: "Epoxy Floor Prep — Concrete Grinder Close-Up"
+  },
+  {
+    id: 199,
+    src: "/lovable-uploads/epoxy-residential-prep-room.jpg",
+    category: "epoxy",
+    title: "Residential Epoxy Prep — Full Room Surface Grinding"
   }
 ];
