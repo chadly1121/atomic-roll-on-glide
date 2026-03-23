@@ -427,5 +427,47 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-modern-bathroom-lakeview-2.jpg",
     category: "interior",
     title: "Modern Cottage Bathroom — Lakeview Interior"
+  },
+  {
+    id: 282,
+    src: "/lovable-uploads/interior-brick-wash-fireplace-feature.jpg",
+    category: "interior",
+    title: "White Brick Wash Fireplace — Residential Interior"
+  },
+  {
+    id: 283,
+    src: "/lovable-uploads/interior-clear-coat-cedar-room.jpg",
+    category: "interior",
+    title: "Clear Coating on Cedar Walls & Ceiling"
+  },
+  {
+    id: 284,
+    src: "/lovable-uploads/interior-clear-coat-pine-ceiling.jpg",
+    category: "interior",
+    title: "Clear Coating on Pine Ceiling — Cottage Interior"
+  },
+  {
+    id: 285,
+    src: "/lovable-uploads/interior-horse-stable-conversion-lounge.jpg",
+    category: "interior",
+    title: "Horse Stable Conversion — Rustic Lounge Interior"
+  },
+  {
+    id: 286,
+    src: "/lovable-uploads/interior-horse-stable-conversion-kitchen.jpg",
+    category: "interior",
+    title: "Horse Stable Conversion — Custom Kitchen Finish"
+  },
+  {
+    id: 287,
+    src: "/lovable-uploads/interior-loft-space-finished.jpg",
+    category: "interior",
+    title: "Finished Loft Space — Residential Interior"
+  },
+  {
+    id: 288,
+    src: "/lovable-uploads/interior-floor-sanding-detail.jpg",
+    category: "interior",
+    title: "Interior Floor Sanding — Prep Detail"
   }
 ];
