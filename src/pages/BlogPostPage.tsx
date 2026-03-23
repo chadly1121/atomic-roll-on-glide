@@ -8,6 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, FileQuestion } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
+import BlogServiceLinks from '@/components/blog/BlogServiceLinks';
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -159,6 +160,9 @@ const BlogPostPage = () => {
                 className="blog-prose"
                 dangerouslySetInnerHTML={{ __html: post.content_html }}
               />
+
+              {/* Contextual internal links to service pages */}
+              <BlogServiceLinks contentHtml={post.content_html} tags={post.tags} />
             </article>
           )}
         </div>
