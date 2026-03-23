@@ -469,5 +469,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-floor-sanding-detail.jpg",
     category: "interior",
     title: "Interior Floor Sanding — Prep Detail"
+  },
+  {
+    id: 289,
+    src: "/lovable-uploads/interior-loft-space-finished-angle.jpg",
+    category: "interior",
+    title: "Finished Loft Space — Bright Open Layout"
+  },
+  {
+    id: 290,
+    src: "/lovable-uploads/interior-loft-space-dining-nook.jpg",
+    category: "interior",
+    title: "Loft Dining Nook — Finished Interior"
+  },
+  {
+    id: 291,
+    src: "/lovable-uploads/interior-kitchen-masking-prep.jpg",
+    category: "interior",
+    title: "Kitchen Masking & Protection — Prep Stage"
+  },
+  {
+    id: 292,
+    src: "/lovable-uploads/interior-primer-ceiling-beams.jpg",
+    category: "interior",
+    title: "Primer on Interior Ceiling Beams — In Progress"
   }
 ];
