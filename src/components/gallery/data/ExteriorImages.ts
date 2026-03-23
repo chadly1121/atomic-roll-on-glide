@@ -289,5 +289,29 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-deck-underside-team.jpg",
     category: "exterior",
     title: "Team Staining Deck Structure — Muskoka"
+  },
+  {
+    id: 241,
+    src: "/lovable-uploads/exterior-deck-staining-hardwood-action.jpg",
+    category: "exterior",
+    title: "Hardwood Deck Staining — Before & After In Progress"
+  },
+  {
+    id: 242,
+    src: "/lovable-uploads/exterior-garage-siding-dark.jpg",
+    category: "exterior",
+    title: "Dark Garage Siding & Doors — Muskoka"
+  },
+  {
+    id: 243,
+    src: "/lovable-uploads/exterior-masking-black-brick-spray.jpg",
+    category: "exterior",
+    title: "Masking & Black Brick Spray Painting — Residential"
+  },
+  {
+    id: 244,
+    src: "/lovable-uploads/exterior-repairs-ladder-siding.jpg",
+    category: "exterior",
+    title: "Exterior Siding Repairs — Ladder Work, Muskoka"
   }
 ];
