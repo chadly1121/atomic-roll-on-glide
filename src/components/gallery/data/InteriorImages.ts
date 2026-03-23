@@ -589,5 +589,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-stain-stairs-floors.jpg",
     category: "interior",
     title: "Stained Stairs & Hardwood Floors — Cottage Interior"
+  },
+  {
+    id: 309,
+    src: "/lovable-uploads/interior-stain-stairs-sansin-railing.jpg",
+    category: "interior",
+    title: "Sansin Stained Staircase & Railing — Cottage"
+  },
+  {
+    id: 310,
+    src: "/lovable-uploads/interior-stain-stairs-painted-risers.jpg",
+    category: "interior",
+    title: "Stained Treads & Painted Risers — New Build"
+  },
+  {
+    id: 311,
+    src: "/lovable-uploads/interior-stain-stairs-dark-treads.jpg",
+    category: "interior",
+    title: "Dark Stained Stair Treads — In Progress"
+  },
+  {
+    id: 312,
+    src: "/lovable-uploads/interior-stain-tg-ceiling-beams-lakefront.jpg",
+    category: "interior",
+    title: "Stained T&G Ceiling & Beams — Lakefront Cottage"
   }
 ];
