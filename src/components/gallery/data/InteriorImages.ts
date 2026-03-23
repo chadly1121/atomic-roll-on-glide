@@ -373,5 +373,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-cottage-stained-beams-fireplace.jpg",
     category: "interior",
     title: "Cottage Interior — Stained Beams & Stone Fireplace"
+  },
+  {
+    id: 273,
+    src: "/lovable-uploads/interior-accent-wall-stained-mantel.jpg",
+    category: "interior",
+    title: "Interior Accent Wall & Stained Mantel Feature"
+  },
+  {
+    id: 274,
+    src: "/lovable-uploads/interior-ash-walls-whitewash.jpg",
+    category: "interior",
+    title: "Whitewashed Ash Walls — Custom Interior Finish"
+  },
+  {
+    id: 275,
+    src: "/lovable-uploads/interior-bathroom-lakeview-vanity.jpg",
+    category: "interior",
+    title: "Lakeview Bathroom Renovation — Painted Vanity"
+  },
+  {
+    id: 276,
+    src: "/lovable-uploads/interior-boathouse-white-walls-prep.jpg",
+    category: "interior",
+    title: "Boathouse Interior Wall Prep & Finish Work"
   }
 ];

@@ -361,5 +361,23 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-black-brick-spray-progress.jpg",
     category: "exterior",
     title: "Black Brick Exterior Spray — In Progress"
+  },
+  {
+    id: 270,
+    src: "/lovable-uploads/exterior-black-brick-home-finished-2.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Home — Finished Front View"
+  },
+  {
+    id: 271,
+    src: "/lovable-uploads/exterior-dark-garage-side-view.jpg",
+    category: "exterior",
+    title: "Dark Garage & Outbuilding Exterior — Side Perspective"
+  },
+  {
+    id: 272,
+    src: "/lovable-uploads/exterior-black-brick-spray-transition.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Transformation — Spray Progress"
   }
 ];
