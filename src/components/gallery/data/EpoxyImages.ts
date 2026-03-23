@@ -139,5 +139,17 @@ export const epoxyImages: GalleryImage[] = [
     src: "/lovable-uploads/epoxy-warehouse-floor-grey-finish.jpg",
     category: "epoxy",
     title: "Warehouse Epoxy Floor Coating — Grey High-Build Finish"
+  },
+  {
+    id: 192,
+    src: "/lovable-uploads/epoxy-flake-floor-steps.jpg",
+    category: "epoxy",
+    title: "Epoxy Flake Floor Steps — Residential Entry"
+  },
+  {
+    id: 193,
+    src: "/lovable-uploads/epoxy-barge-boat-coating-detail.jpg",
+    category: "epoxy",
+    title: "Marine Barge Epoxy Coating — Hull Side Detail"
   }
 ];
