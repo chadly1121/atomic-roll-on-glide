@@ -193,6 +193,9 @@ const BlogPostPage = () => {
 
               {/* Contextual internal links to service pages */}
               <BlogServiceLinks contentHtml={post.content_html} tags={post.tags} />
+
+              {/* Related posts to reduce bounce rate */}
+              <RelatedPosts currentSlug={post.slug} currentTags={post.tags || []} allPosts={items} />
             </article>
           )}
         </div>
