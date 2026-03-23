@@ -288,6 +288,7 @@ export const catalogCategories: CatalogCategory[] = [
           "Prevents moss & algae growth",
         ],
         note: "Ideal for newer roofs — locks in protection early and extends lifespan by 15+ years.",
+        disclaimer: "Due to varying levels of moss and buildup, we may need to do a quick on-site inspection or request photos before confirming the final price.",
       },
       {
         id: "gonano-nuroof-revive",
