@@ -667,5 +667,23 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-timber-great-room-wide.jpg",
     category: "interior",
     title: "Timber Great Room — Wide Interior View"
+  },
+  {
+    id: 322,
+    src: "/lovable-uploads/interior-lakeview-open-stair-feature.jpg",
+    category: "interior",
+    title: "Lakeview Interior with Open Staircase & Timber Ceiling"
+  },
+  {
+    id: 323,
+    src: "/lovable-uploads/interior-cottage-living-red-seating.jpg",
+    category: "interior",
+    title: "Cottage Living Room — Stained Floors & Window Wall"
+  },
+  {
+    id: 324,
+    src: "/lovable-uploads/interior-custom-stained-double-door-set.jpg",
+    category: "interior",
+    title: "Custom Stained Double Doors — Interior Entry"
   }
 ];

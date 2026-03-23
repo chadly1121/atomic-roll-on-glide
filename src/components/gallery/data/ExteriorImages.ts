@@ -379,5 +379,23 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-black-brick-spray-transition.jpg",
     category: "exterior",
     title: "Black Brick Exterior Transformation — Spray Progress"
+  },
+  {
+    id: 273,
+    src: "/lovable-uploads/exterior-brick-spray-black-front-entry.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Spray — Front Entry in Progress"
+  },
+  {
+    id: 274,
+    src: "/lovable-uploads/exterior-brick-spray-black-front-entry-2.jpg",
+    category: "exterior",
+    title: "Black Brick Exterior Spray — Front Elevation"
+  },
+  {
+    id: 275,
+    src: "/lovable-uploads/exterior-siding-paint-grey-trim.jpg",
+    category: "exterior",
+    title: "Exterior Siding Paint Prep — Grey Siding with White Trim"
   }
 ];
