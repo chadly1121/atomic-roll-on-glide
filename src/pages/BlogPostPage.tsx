@@ -47,21 +47,38 @@ const BlogPostPage = () => {
     });
   }, [post, slug]);
 
-  const siteUrl = businessInfo.urls.website;
   const metaDesc = post?._seo?.meta_description || post?.summary || '';
   const metaKeywords = post?._seo?.meta_keywords?.join(', ') || '';
   const canonicalUrl = `${siteUrl}/blog/${slug}`;
 
   const jsonLd = post ? {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    image: post.image,
-    datePublished: post.date_published,
-    dateModified: post.date_modified,
-    author: post.authors?.map(a => ({ '@type': 'Person', name: a.name })) || [],
-    description: metaDesc,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: post.title,
+        image: post.image,
+        datePublished: post.date_published,
+        dateModified: post.date_modified,
+        author: post.authors?.map(a => ({ '@type': 'Person', name: a.name })) || [],
+        description: metaDesc,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+        publisher: {
+          '@type': 'Organization',
+          name: businessInfo.name,
+          logo: { '@type': 'ImageObject', url: `${siteUrl}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png` }
+        },
+        inLanguage: 'en-CA',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl },
+        ]
+      }
+    ]
   } : null;
 
   return (
@@ -72,11 +89,22 @@ const BlogPostPage = () => {
           <meta name="description" content={metaDesc} />
           {metaKeywords && <meta name="keywords" content={metaKeywords} />}
           <link rel="canonical" href={canonicalUrl} />
+          <link rel="alternate" hrefLang="en-CA" href={canonicalUrl} />
           <meta property="og:title" content={post.title} />
           <meta property="og:description" content={metaDesc} />
           <meta property="og:image" content={post.image} />
           <meta property="og:type" content="article" />
           <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:site_name" content={businessInfo.name} />
+          <meta property="og:locale" content="en_CA" />
+          <meta property="article:published_time" content={post.date_published} />
+          <meta property="article:modified_time" content={post.date_modified} />
+          {post.authors?.map((a, i) => (
+            <meta key={i} property="article:author" content={a.name} />
+          ))}
+          {post.tags?.map((tag, i) => (
+            <meta key={i} property="article:tag" content={tag} />
+          ))}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={post.title} />
           <meta name="twitter:description" content={metaDesc} />
