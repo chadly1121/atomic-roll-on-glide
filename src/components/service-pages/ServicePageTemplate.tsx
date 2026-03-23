@@ -5,6 +5,7 @@ import { ArrowLeft, Phone, Mail, CheckCircle } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 import { ServicePageData } from '@/data/servicePages';
 import AIAnswerBlock from './AIAnswerBlock';
+import ServiceGallery from './ServiceGallery';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
@@ -146,6 +147,14 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           </section>
 
           <AIAnswerBlock {...service.aiAnswerBlock} />
+
+          {(service.galleryImages?.length || service.galleryVideos?.length) && (
+            <ServiceGallery
+              images={service.galleryImages || []}
+              videos={service.galleryVideos || []}
+              serviceName={service.name}
+            />
+          )}
 
           {service.benefits && (
             <section className="py-12" aria-labelledby="benefits-heading">

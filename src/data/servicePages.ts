@@ -28,6 +28,10 @@ export interface ServicePageData {
   // Additional content sections
   benefits?: string[];
   faqs?: { question: string; answer: string }[];
+  
+  // Gallery media
+  galleryImages?: string[];
+  galleryVideos?: string[];
 }
 
 export const servicePages: ServicePageData[] = [
@@ -90,6 +94,16 @@ export const servicePages: ServicePageData[] = [
         question: 'What paint brands do you use?',
         answer: 'We use premium paints from Benjamin Moore, Dulux, and PPG. We recommend specific products based on the room\'s use and your preferences.'
       }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-modern-cottage-living.jpg',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.jpg',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg',
+      '/lovable-uploads/interior-shiplap-fireplace-beams.jpg',
+      '/lovable-uploads/interior-kitchen-masking-prep.jpg',
+      '/lovable-uploads/interior-loft-space-finished.jpg',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg',
+      '/lovable-uploads/interior-primer-ceiling-beams.jpg'
     ]
   },
   {
@@ -151,6 +165,16 @@ export const servicePages: ServicePageData[] = [
         question: 'Do you paint log homes and cabins?',
         answer: 'Yes, we specialize in log homes using appropriate stains and finishes. We also partner with Sansin for premium wood treatments.'
       }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-residential-lakeside-paint.jpg',
+      '/lovable-uploads/exterior-black-brick-home-finished-2.jpg',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg',
+      '/lovable-uploads/exterior-spray-window-masking.jpg',
+      '/lovable-uploads/exterior-repairs-ladder-siding.jpg',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
+      '/lovable-uploads/exterior-dark-garage-finished.jpg',
+      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg'
     ]
   },
   {
@@ -197,6 +221,16 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Experienced with retail, office, and industrial spaces',
       'References from Muskoka businesses available'
+    ],
+    galleryImages: [
+      '/lovable-uploads/commercial-interior-spray-canvas-brewing.jpg',
+      '/lovable-uploads/commercial-exterior-muskoka-living-finished.jpg',
+      '/lovable-uploads/commercial-interior-office-wide.jpg',
+      '/lovable-uploads/commercial-interior-real-estate-office-design.jpg',
+      '/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.jpg',
+      '/lovable-uploads/commercial-exterior-opp-gas-pumps-2.jpg',
+      '/lovable-uploads/commercial-interior-new-build-stain-paint.jpg',
+      '/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.jpg'
     ]
   },
   {
@@ -241,6 +275,19 @@ export const servicePages: ServicePageData[] = [
       'Durable finish that resists chips and scratches',
       'Wide range of colors and finishes available',
       'Minimal disruption to your kitchen use'
+    ],
+    galleryImages: [
+      '/lovable-uploads/cabinet-grey-kitchen-finished.jpg',
+      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.jpg',
+      '/lovable-uploads/cabinet-spray-finish-action.jpg',
+      '/lovable-uploads/cabinet-door-sanding-closeup.jpg',
+      '/lovable-uploads/cabinet-painting-masking-prep.jpg',
+      '/lovable-uploads/cabinet-dark-doors-drying-rack.jpg',
+      '/lovable-uploads/cabinet-white-builtin-shelving.jpg',
+      '/lovable-uploads/cabinet-onsite-spray-white.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/cabinet-repaint-video.mp4'
     ]
   },
   {
@@ -284,6 +331,14 @@ export const servicePages: ServicePageData[] = [
       'Water repellent finish',
       'Extends the life of your deck by years',
       'Available in transparent, semi-transparent, and solid colors'
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-deck-stain-muskoka.jpg',
+      '/lovable-uploads/exterior-deck-staining-action.jpg',
+      '/lovable-uploads/exterior-deck-staining-before-after.jpg',
+      '/lovable-uploads/exterior-deck-staining-hardwood.jpg',
+      '/lovable-uploads/exterior-deck-underside-staining.jpg',
+      '/lovable-uploads/exterior-wood-garage-door-staining.jpg'
     ]
   },
   {
@@ -329,6 +384,16 @@ export const servicePages: ServicePageData[] = [
       'Easy to clean and maintain',
       'Available in many colors and finishes',
       'Transforms dull concrete into an attractive surface'
+    ],
+    galleryImages: [
+      '/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg',
+      '/lovable-uploads/epoxy-flake-floor-residential-garage.jpg',
+      '/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg',
+      '/lovable-uploads/epoxy-prep-grinder-closeup.jpg',
+      '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg',
+      '/lovable-uploads/epoxy-flake-floor-steps.jpg',
+      '/lovable-uploads/epoxy-warehouse-floor-grey-finish.jpg',
+      '/lovable-uploads/epoxy-residential-prep-room.jpg'
     ]
   },
   {
@@ -420,6 +485,17 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Over 25 years of professional experience'
     ],
+    galleryImages: [
+      '/lovable-uploads/interior-spray-painting-vaulted.jpg',
+      '/lovable-uploads/interior-spray-doors-new-build.jpg',
+      '/lovable-uploads/interior-spray-trim-shiplap-after.jpg',
+      '/lovable-uploads/interior-spray-trim-shiplap-during.jpg',
+      '/lovable-uploads/cabinet-spray-finish-action.jpg',
+      '/lovable-uploads/exterior-spray-masked-doors.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/interior-white-shellac-spray-2.mp4'
+    ],
     faqs: [
       {
         question: 'What is the difference between spray finishing and brush/roller painting?',
@@ -473,6 +549,12 @@ export const servicePages: ServicePageData[] = [
       'Wall restoration and skim coating available',
       'Can combine with interior painting for a full refresh',
       'WSIB covered with $5 million liability insurance'
+    ],
+    galleryImages: [
+      '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
+      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
+      '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
+      '/lovable-uploads/wallpaper-silver-texture-wall.jpg'
     ],
     faqs: [
       {
@@ -583,6 +665,15 @@ export const servicePages: ServicePageData[] = [
       'Can combine with interior painting for a complete refresh',
       'WSIB covered with $5 million liability insurance'
     ],
+    galleryImages: [
+      '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
+      '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
+      '/lovable-uploads/wallpaper-silver-texture-wall.jpg',
+      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg',
+      '/lovable-uploads/wallpaper-feature-wall-installation-collage.jpg',
+      '/lovable-uploads/wallpaper-silver-accent-wall-install.jpg',
+      '/lovable-uploads/wallpaper-dark-textured-bathroom.jpg'
+    ],
     faqs: [
       {
         question: 'Do you supply the wallpaper or do I need to buy it?',
@@ -641,6 +732,17 @@ export const servicePages: ServicePageData[] = [
       'Dramatically improves curb appeal',
       'Can combine with exterior painting for a full refresh',
       'WSIB covered with $5 million liability insurance'
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-softwash-before.jpg',
+      '/lovable-uploads/exterior-softwash-after.jpg',
+      '/lovable-uploads/exterior-softwash-before-muskoka-1.jpg',
+      '/lovable-uploads/exterior-softwash-after-muskoka-1.jpg',
+      '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
+      '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/exterior-softwash-hot-water-stain-removal.mp4'
     ],
     faqs: [
       {
