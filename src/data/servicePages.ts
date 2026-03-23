@@ -221,6 +221,16 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Experienced with retail, office, and industrial spaces',
       'References from Muskoka businesses available'
+    ],
+    galleryImages: [
+      '/lovable-uploads/commercial-interior-spray-canvas-brewing.jpg',
+      '/lovable-uploads/commercial-exterior-muskoka-living-finished.jpg',
+      '/lovable-uploads/commercial-interior-office-wide.jpg',
+      '/lovable-uploads/commercial-interior-real-estate-office-design.jpg',
+      '/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.jpg',
+      '/lovable-uploads/commercial-exterior-opp-gas-pumps-2.jpg',
+      '/lovable-uploads/commercial-interior-new-build-stain-paint.jpg',
+      '/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.jpg'
     ]
   },
   {
