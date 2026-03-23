@@ -241,5 +241,29 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg",
     category: "exterior",
     title: "Boathouse Exterior Prep & Scaffolding — Muskoka Waterfront"
+  },
+  {
+    id: 233,
+    src: "/lovable-uploads/exterior-boathouse-interior-stain.jpg",
+    category: "exterior",
+    title: "Boathouse Interior Staining — Muskoka Waterfront"
+  },
+  {
+    id: 234,
+    src: "/lovable-uploads/exterior-boathouse-dockside-painting.jpg",
+    category: "exterior",
+    title: "Dockside Boathouse Painting — Muskoka"
+  },
+  {
+    id: 235,
+    src: "/lovable-uploads/exterior-boathouse-ceiling-rolling.jpg",
+    category: "exterior",
+    title: "Boathouse Ceiling Rolling — Muskoka Lakefront"
+  },
+  {
+    id: 236,
+    src: "/lovable-uploads/exterior-deck-stain-muskoka.jpg",
+    category: "exterior",
+    title: "Deck Staining — Residential, Muskoka"
   }
 ];
