@@ -28,6 +28,10 @@ export interface ServicePageData {
   // Additional content sections
   benefits?: string[];
   faqs?: { question: string; answer: string }[];
+  
+  // Gallery media
+  galleryImages?: string[];
+  galleryVideos?: string[];
 }
 
 export const servicePages: ServicePageData[] = [
