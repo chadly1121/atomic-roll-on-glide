@@ -1,1 +1,6 @@
+# Force non-www to www
+https://roll-onpainting.com/*  https://www.roll-onpainting.com/:splat  301!
+http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
+
+# SPA fallback
 /*    /index.html   200
