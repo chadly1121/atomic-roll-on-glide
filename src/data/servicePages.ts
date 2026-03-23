@@ -490,7 +490,12 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/interior-spray-trim-shiplap-after.jpg',
       '/lovable-uploads/interior-spray-trim-shiplap-during.jpg',
       '/lovable-uploads/cabinet-spray-finish-action.jpg',
-      '/lovable-uploads/exterior-spray-masked-doors.jpg'
+      '/lovable-uploads/exterior-spray-masked-doors.jpg',
+      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg',
+      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg',
+      '/lovable-uploads/prefinishing-pine-doors.jpg',
+      '/lovable-uploads/prefinishing-white-trim-boards.jpg',
+      '/lovable-uploads/prefinishing-douglas-fir-boards.jpg'
     ],
     faqs: [
       {
