@@ -93,12 +93,6 @@ export const interiorImages: GalleryImage[] = [
     title: "Indoor Pool Room — Stained Walls & Beams, Muskoka"
   },
   {
-    id: 114,
-    src: "/lovable-uploads/interior-fireplace-stained-beams-gravenhurst.jpg",
-    category: "interior",
-    title: "Stone Fireplace with Stained Beams — Gravenhurst"
-  },
-  {
     id: 120,
     src: "/lovable-uploads/wallpaper-feature-wall-collage.jpg",
     category: "interior",
@@ -171,52 +165,16 @@ export const interiorImages: GalleryImage[] = [
     title: "Stained Wood Beams with White Ceiling — New Build"
   },
   {
-    id: 229,
-    src: "/lovable-uploads/interior-cottage-stain-ceiling-shiplap.jpg",
-    category: "interior",
-    title: "Cottage Interior — Stained Ceiling & Shiplap Walls, Muskoka"
-  },
-  {
-    id: 253,
-    src: "/lovable-uploads/interior-cottage-stained-beams-fireplace.jpg",
-    category: "interior",
-    title: "Cottage Interior — Stained Beams & Stone Fireplace"
-  },
-  {
     id: 273,
     src: "/lovable-uploads/interior-accent-wall-stained-mantel.jpg",
     category: "interior",
     title: "Interior Accent Wall & Stained Mantel Feature"
   },
   {
-    id: 274,
-    src: "/lovable-uploads/interior-ash-walls-whitewash.jpg",
-    category: "interior",
-    title: "Whitewashed Ash Walls — Custom Interior Finish"
-  },
-  {
-    id: 275,
-    src: "/lovable-uploads/interior-bathroom-lakeview-vanity.jpg",
-    category: "interior",
-    title: "Lakeview Bathroom Renovation — Painted Vanity"
-  },
-  {
-    id: 276,
-    src: "/lovable-uploads/interior-boathouse-white-walls-prep.jpg",
-    category: "interior",
-    title: "Boathouse Interior Wall Prep & Finish Work"
-  },
-  {
     id: 277,
     src: "/lovable-uploads/interior-brick-wash-fireplace.jpg",
     category: "interior",
     title: "White Brick Wash Fireplace — Interior Feature Wall"
-  },
-  {
-    id: 278,
-    src: "/lovable-uploads/interior-clear-coat-cedar-fireplace.jpg",
-    category: "interior",
-    title: "Clear Coating on Cedar Walls — Fireplace Room"
   },
   {
     id: 279,
@@ -231,30 +189,6 @@ export const interiorImages: GalleryImage[] = [
     title: "Clear Pine Vaulted Ceiling — Interior Finish in Progress"
   },
   {
-    id: 281,
-    src: "/lovable-uploads/interior-modern-bathroom-lakeview-2.jpg",
-    category: "interior",
-    title: "Modern Cottage Bathroom — Lakeview Interior"
-  },
-  {
-    id: 282,
-    src: "/lovable-uploads/interior-brick-wash-fireplace-feature.jpg",
-    category: "interior",
-    title: "White Brick Wash Fireplace — Residential Interior"
-  },
-  {
-    id: 283,
-    src: "/lovable-uploads/interior-clear-coat-cedar-room.jpg",
-    category: "interior",
-    title: "Clear Coating on Cedar Walls & Ceiling"
-  },
-  {
-    id: 284,
-    src: "/lovable-uploads/interior-clear-coat-pine-ceiling.jpg",
-    category: "interior",
-    title: "Clear Coating on Pine Ceiling — Cottage Interior"
-  },
-  {
     id: 285,
     src: "/lovable-uploads/interior-horse-stable-conversion-lounge.jpg",
     category: "interior",
@@ -267,28 +201,10 @@ export const interiorImages: GalleryImage[] = [
     title: "Horse Stable Conversion — Custom Kitchen Finish"
   },
   {
-    id: 287,
-    src: "/lovable-uploads/interior-loft-space-finished.jpg",
-    category: "interior",
-    title: "Finished Loft Space — Residential Interior"
-  },
-  {
     id: 288,
     src: "/lovable-uploads/interior-floor-sanding-detail.jpg",
     category: "interior",
     title: "Interior Floor Sanding — Prep Detail"
-  },
-  {
-    id: 289,
-    src: "/lovable-uploads/interior-loft-space-finished-angle.jpg",
-    category: "interior",
-    title: "Finished Loft Space — Bright Open Layout"
-  },
-  {
-    id: 290,
-    src: "/lovable-uploads/interior-loft-space-dining-nook.jpg",
-    category: "interior",
-    title: "Loft Dining Nook — Finished Interior"
   },
   {
     id: 291,
@@ -307,12 +223,6 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-spray-doors-new-build.jpg",
     category: "interior",
     title: "Spray Painted Interior Doors — New Build"
-  },
-  {
-    id: 294,
-    src: "/lovable-uploads/interior-spray-painting-vaulted.jpg",
-    category: "interior",
-    title: "Interior Spray Painting — Vaulted Ceiling & Walls"
   },
   {
     id: 295,
@@ -357,28 +267,10 @@ export const interiorImages: GalleryImage[] = [
     title: "Mudroom — Painted Trim & Stained Countertop"
   },
   {
-    id: 302,
-    src: "/lovable-uploads/interior-stain-paint-kitchen-beams.jpg",
-    category: "interior",
-    title: "Kitchen — Stained Beams & Painted Cabinets"
-  },
-  {
-    id: 303,
-    src: "/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg",
-    category: "interior",
-    title: "Stone Fireplace & Stained Timber Trusses — Cottage"
-  },
-  {
     id: 304,
     src: "/lovable-uploads/interior-stain-beams-sansin.jpg",
     category: "interior",
     title: "Sansin Stained Beams & Painted Ceiling — In Progress"
-  },
-  {
-    id: 305,
-    src: "/lovable-uploads/interior-stain-beams-paint-home.jpg",
-    category: "interior",
-    title: "Stained Beams & Painted Walls — Great Room with Fireplace"
   },
   {
     id: 306,
@@ -405,12 +297,6 @@ export const interiorImages: GalleryImage[] = [
     title: "Sansin Stained Staircase & Railing — Cottage"
   },
   {
-    id: 310,
-    src: "/lovable-uploads/interior-stain-stairs-painted-risers.jpg",
-    category: "interior",
-    title: "Stained Treads & Painted Risers — New Build"
-  },
-  {
     id: 311,
     src: "/lovable-uploads/interior-stain-stairs-dark-treads.jpg",
     category: "interior",
@@ -435,22 +321,10 @@ export const interiorImages: GalleryImage[] = [
     title: "Stained Glass-Pane Interior Door"
   },
   {
-    id: 315,
-    src: "/lovable-uploads/interior-shiplap-black-windows.jpg",
-    category: "interior",
-    title: "T&G Shiplap Interior with Black Windows"
-  },
-  {
     id: 316,
     src: "/lovable-uploads/interior-theater-room-finish.jpg",
     category: "interior",
     title: "Custom Theater Room Finishing — Interior"
-  },
-  {
-    id: 317,
-    src: "/lovable-uploads/interior-stained-tg-ceiling-beams.jpg",
-    category: "interior",
-    title: "Stained T&G Ceiling & Beams — Great Room"
   },
   {
     id: 318,
@@ -459,22 +333,10 @@ export const interiorImages: GalleryImage[] = [
     title: "Great Room with Dark Stained Beams — Lakeview"
   },
   {
-    id: 319,
-    src: "/lovable-uploads/interior-lakeview-window-feature.jpg",
-    category: "interior",
-    title: "Lakeview Window Wall — Interior Finish"
-  },
-  {
     id: 320,
     src: "/lovable-uploads/interior-rustic-barn-doors-fireplace.jpg",
     category: "interior",
     title: "Rustic Barn Doors & Stone Fireplace — Interior"
-  },
-  {
-    id: 321,
-    src: "/lovable-uploads/interior-timber-great-room-wide.jpg",
-    category: "interior",
-    title: "Timber Great Room — Wide Interior View"
   },
   {
     id: 322,
