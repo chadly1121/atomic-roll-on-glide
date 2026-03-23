@@ -42,12 +42,21 @@ const CareersPage: React.FC = () => {
       <Helmet>
         <title>{"Careers | Join Muskoka's Elite Painting Team | Roll On Painting"}</title>
         <meta name="description" content="Think you have what it takes? Roll On Painting only hires the best. We're looking for elite craftspeople who share our obsession with perfection. Apply now." />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={`${siteUrl}/careers`} />
         <meta property="og:title" content="Careers | Roll On Painting — We Don't Hire Just Anyone" />
         <meta property="og:description" content="We're not for everyone. Roll On Painting hires only the most dedicated, skilled painters in Muskoka. Think you qualify?" />
         <meta property="og:url" content={`${siteUrl}/careers`} />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={businessInfo.name} />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:image" content="https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Careers | Roll On Painting Muskoka" />
+        <meta name="twitter:description" content="Join Muskoka's premier painting team. We hire only the best — elite craftspeople with obsessive attention to detail." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 

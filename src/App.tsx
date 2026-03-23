@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,25 +7,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import ServiceAreasPage from "./pages/ServiceAreasPage";
-import ServicePage from "./pages/ServicePage";
-import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
-import GoNanoPage from "./pages/GoNanoPage";
-import ContactPage from "./pages/ContactPage";
-import CatalogPage from "./pages/CatalogPage";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import FreeTouchUpsPage from "./pages/FreeTouchUpsPage";
-import AboutPage from "./pages/AboutPage";
-import PortfolioPage from "./pages/PortfolioPage";
-import ReviewsPage from "./pages/ReviewsPage";
-import FAQPage from "./pages/FAQPage";
-import CareersPage from "./pages/CareersPage";
-
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
+
+// Lazy-load secondary pages for faster initial load
+const ServiceAreasPage = lazy(() => import("./pages/ServiceAreasPage"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
+const GoNanoPage = lazy(() => import("./pages/GoNanoPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage"));
+const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const FreeTouchUpsPage = lazy(() => import("./pages/FreeTouchUpsPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
+const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const CareersPage = lazy(() => import("./pages/CareersPage"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -43,6 +44,12 @@ const queryClient = new QueryClient({
   },
 });
 
+// Minimal loading fallback
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="w-10 h-10 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const App = () => {
   try {
@@ -54,30 +61,32 @@ const App = () => {
             <Sonner />
             
             <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:slug" element={<BlogPostPage />} />
-                <Route path="/service-areas" element={<ServiceAreasPage />} />
-                <Route path="/gonano" element={<GoNanoPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/catalog" element={<CatalogPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/portfolio" element={<PortfolioPage />} />
-                <Route path="/reviews" element={<ReviewsPage />} />
-                <Route path="/faq" element={<FAQPage />} />
-                <Route path="/careers" element={<CareersPage />} />
-                <Route path="/payment-success" element={<PaymentSuccess />} />
-                <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
-                
-                <Route path="/:slug" element={<ServicePage />} />
-                <Route path="*" element={
-                  <>
-                    <PageBreadcrumbs />
-                    <NotFound />
-                  </>
-                } />
-              </Routes>
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPostPage />} />
+                  <Route path="/service-areas" element={<ServiceAreasPage />} />
+                  <Route path="/gonano" element={<GoNanoPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/catalog" element={<CatalogPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/portfolio" element={<PortfolioPage />} />
+                  <Route path="/reviews" element={<ReviewsPage />} />
+                  <Route path="/faq" element={<FAQPage />} />
+                  <Route path="/careers" element={<CareersPage />} />
+                  <Route path="/payment-success" element={<PaymentSuccess />} />
+                  <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
+                  
+                  <Route path="/:slug" element={<ServicePage />} />
+                  <Route path="*" element={
+                    <>
+                      <PageBreadcrumbs />
+                      <NotFound />
+                    </>
+                  } />
+                </Routes>
+              </Suspense>
             </BrowserRouter>
           </TooltipProvider>
         </HelmetProvider>
