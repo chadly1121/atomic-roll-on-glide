@@ -160,6 +160,9 @@ const BlogPostPage = () => {
                 className="blog-prose"
                 dangerouslySetInnerHTML={{ __html: post.content_html }}
               />
+
+              {/* Contextual internal links to service pages */}
+              <BlogServiceLinks contentHtml={post.content_html} tags={post.tags} />
             </article>
           )}
         </div>
