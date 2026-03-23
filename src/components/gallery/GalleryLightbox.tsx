@@ -60,7 +60,7 @@ const GalleryLightbox: React.FC<GalleryLightboxProps> = ({ selectedImage, images
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex justify-center items-center" onClick={closeModal}>
       <button
         onClick={closeModal}
         className={`absolute ${isMobile ? 'top-5 right-5 p-3' : 'top-4 right-4 p-2'} bg-white text-black rounded-full shadow-lg hover:bg-gray-200 transition-colors z-50`}
