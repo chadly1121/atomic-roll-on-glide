@@ -217,7 +217,7 @@ const SEOHelmet: React.FC = () => {
         "url": `${siteUrl}/exterior-painting`,
         "description": "Weather-resistant exterior painting built to withstand harsh Muskoka winters. 5-year warranty included.",
         "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "3.75", "priceCurrency": "CAD", "unitText": "per square foot" } },
+        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "5.75", "priceCurrency": "CAD", "unitText": "per square foot" } },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
       {
