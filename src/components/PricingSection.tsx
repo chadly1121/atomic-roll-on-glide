@@ -14,7 +14,7 @@ const pricingTiers: PricingTier[] = [
     id: 1,
     name: "Interior Painting",
     description: "Perfect for refreshing your indoor spaces",
-    price: "From $4.50 / sq ft",
+    price: "Request a Quote",
     features: [
       "Premium quality paints",
       "Wall preparation & repair",
