@@ -60,6 +60,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'Detailed trim, baseboard, and door work that most painters rush through',
       'We respect your space — furniture moved, floors protected, full cleanup included'
     ],
+    process: [
+      { step: 'Free Consultation', description: 'We visit your Muskoka home, discuss your vision, measure rooms, and recommend colors and finishes.' },
+      { step: 'Detailed Quote', description: 'Receive a written, itemized quote within 24-48 hours — no hidden fees, no surprises.' },
+      { step: 'Surface Preparation', description: 'We patch holes, sand rough spots, caulk gaps, prime bare surfaces, and protect your floors and furniture.' },
+      { step: 'Professional Painting', description: 'Two coats of premium paint applied with spray, brush, or roller — whichever delivers the best finish for your surfaces.' },
+      { step: 'Final Walkthrough', description: 'We walk through every room with you to ensure every detail meets your standards before we leave.' },
+      { step: 'Free Touch Ups for Life', description: 'After your project is complete, we come back anytime to touch up scuffs or marks — for life.' }
+    ],
     faqs: [
       {
         question: 'How much does interior painting cost in Muskoka?',
@@ -149,6 +157,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'Free Touch Ups for Life on every completed project',
       'We partner with Sansin for premium wood treatments and natural finishes',
       'Clean, professional crews who respect your property and landscaping'
+    ],
+    process: [
+      { step: 'Property Inspection', description: 'We inspect your siding, trim, and surfaces to assess condition and recommend the right approach for Muskoka weather.' },
+      { step: 'Power Washing', description: 'We power wash all surfaces to remove dirt, mildew, and loose paint before any prep work begins.' },
+      { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts.' },
+      { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint rated for Canadian climates, applied by experienced crews.' },
+      { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail is finished with clean, precise lines.' },
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and Free Touch Ups for Life on every completed exterior project.' }
     ],
     faqs: [
       {
@@ -240,6 +256,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'We use professional airless and HVLP equipment — not consumer-grade sprayers',
       'Meticulous masking protects every surface not being painted'
     ],
+    process: [
+      { step: 'Scope Assessment', description: 'We visit your property to evaluate surfaces and recommend spray vs. brush/roll for the best results.' },
+      { step: 'Masking & Protection', description: 'Every surface not being painted is carefully masked and protected — no overspray, guaranteed.' },
+      { step: 'Surface Preparation', description: 'Cleaning, sanding, patching, and priming to ensure perfect adhesion and a flawless base.' },
+      { step: 'Spray Application', description: 'Professional airless or HVLP spray equipment delivers smooth, factory-quality coverage without brush marks.' },
+      { step: 'Inspection & Touch-Up', description: 'We inspect every surface for consistency and touch up any areas that need attention.' },
+      { step: 'Cleanup & Warranty', description: 'Full cleanup, tape removal, and Free Touch Ups for Life on your completed project.' }
+    ],
     faqs: [
       {
         question: 'What is the difference between spray painting and brush/roller painting?',
@@ -328,6 +352,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'Free Touch Ups for Life on every completed project',
       'Minimal disruption to your daily routine — we work clean and fast',
       'Premium primers and paints designed specifically for kitchen cabinets'
+    ],
+    process: [
+      { step: 'Photo Consultation', description: 'Send us photos of your cabinets and we provide a preliminary estimate within 24 hours.' },
+      { step: 'In-Home Visit', description: 'We measure your kitchen, assess cabinet material and condition, and discuss color options with samples.' },
+      { step: 'Door Removal', description: 'We carefully remove all doors, drawers, and hardware — labeling everything for perfect reinstallation.' },
+      { step: 'Prep & Prime', description: 'Thorough cleaning, degreasing, sanding, and bonding primer application for maximum adhesion.' },
+      { step: 'Spray Finishing', description: 'Multiple coats of durable cabinet paint via professional spray equipment for a factory-smooth finish.' },
+      { step: 'Reinstall & Warranty', description: 'Doors and hardware reinstalled with precision. Free Touch Ups for Life included.' }
     ],
     faqs: [
       {

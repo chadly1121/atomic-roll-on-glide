@@ -29,12 +29,13 @@ const HeroContent = () => {
       
       <div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
-          Transform Your Space With
-          <span className="text-atomic-orange block">Roll On Painting</span>
+          Muskoka's Trusted
+          <span className="text-atomic-orange block">Painting Company</span>
         </h1>
         <p className="mt-4 sm:mt-6 text-base sm:text-lg text-atomic-navy/70">
-          Roll On Painting delivers exceptional quality and craftsmanship for residential and commercial projects. 
-          Experience the perfect blend of time-honored techniques and modern innovation.
+          Professional interior, exterior & spray painting for homes and cottages across 
+          Port Sydney, Huntsville, Bracebridge & Gravenhurst. 25+ years of high-end results. 
+          Featured on HGTV. $5M insured. Free Touch Ups for Life.
         </p>
       </div>
       
