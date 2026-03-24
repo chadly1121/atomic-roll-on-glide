@@ -189,6 +189,9 @@ const Footer = () => {
               <p className="text-gray-500 text-xs mt-1">
                 WSIB Covered · $5M Liability Insurance · Painting Contractors Association Member
               </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Serving Muskoka, Port Sydney, Huntsville, Bracebridge, Gravenhurst & surrounding areas
+              </p>
             </div>
             <div className="flex space-x-6">
               <a 
