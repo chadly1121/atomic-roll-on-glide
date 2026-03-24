@@ -256,6 +256,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'We use professional airless and HVLP equipment — not consumer-grade sprayers',
       'Meticulous masking protects every surface not being painted'
     ],
+    process: [
+      { step: 'Scope Assessment', description: 'We visit your property to evaluate surfaces and recommend spray vs. brush/roll for the best results.' },
+      { step: 'Masking & Protection', description: 'Every surface not being painted is carefully masked and protected — no overspray, guaranteed.' },
+      { step: 'Surface Preparation', description: 'Cleaning, sanding, patching, and priming to ensure perfect adhesion and a flawless base.' },
+      { step: 'Spray Application', description: 'Professional airless or HVLP spray equipment delivers smooth, factory-quality coverage without brush marks.' },
+      { step: 'Inspection & Touch-Up', description: 'We inspect every surface for consistency and touch up any areas that need attention.' },
+      { step: 'Cleanup & Warranty', description: 'Full cleanup, tape removal, and Free Touch Ups for Life on your completed project.' }
+    ],
     faqs: [
       {
         question: 'What is the difference between spray painting and brush/roller painting?',
