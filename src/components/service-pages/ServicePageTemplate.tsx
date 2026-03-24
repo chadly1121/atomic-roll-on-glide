@@ -35,17 +35,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         "provider": { "@type": "ProfessionalService", "@id": `${siteUrl}/#localbusiness`, "name": businessInfo.name },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
         "serviceType": service.name,
-        ...(service.priceFrom && {
-          "offers": {
-            "@type": "Offer",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": service.priceFrom.amount,
-              "priceCurrency": "CAD",
-              "unitText": service.priceFrom.unit
-            }
-          }
-        })
       },
       // WebPage with Speakable + Breadcrumb
       {
@@ -131,11 +120,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
               </span>
               <h1 id="service-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{service.headline}</h1>
               <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">{service.description}</p>
-              {service.priceFrom && (
-                <p className="text-atomic-turquoise font-medium">
-                  Starting from ${service.priceFrom.amount.toFixed(2)} per {service.priceFrom.unit}
-                </p>
-              )}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
                   Get a Free Quote
