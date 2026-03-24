@@ -71,7 +71,7 @@ const HeroContent = () => {
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-atomic-orange text-white flex items-center justify-center font-bold text-sm sm:text-base">5</div>
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-atomic-turquoise text-white flex items-center justify-center font-bold text-sm sm:text-base">★</div>
         </div>
-        <p className="text-xs sm:text-sm text-atomic-navy"><span className="font-bold">5/5</span> from Google reviews</p>
+        <p className="text-xs sm:text-sm text-atomic-navy"><span className="font-bold">4.7/5</span> from 15 Google reviews</p>
       </div>
     </div>
   );
