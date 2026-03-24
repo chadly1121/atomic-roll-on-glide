@@ -106,7 +106,7 @@ const TestimonialsSection = () => {
                   <div>
                     <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
                     <div className="flex items-center gap-1">
-                      <span className="text-xs text-yellow-400 font-medium">5/5 on Google reviews</span>
+                      <span className="text-xs text-yellow-400 font-medium">5-star Google review</span>
                       <span className="text-xs text-gray-300 ml-1">• {testimonial.location} • {testimonial.date}</span>
                     </div>
                   </div>
