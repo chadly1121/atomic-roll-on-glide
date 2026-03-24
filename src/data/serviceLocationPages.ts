@@ -60,6 +60,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'Detailed trim, baseboard, and door work that most painters rush through',
       'We respect your space — furniture moved, floors protected, full cleanup included'
     ],
+    process: [
+      { step: 'Free Consultation', description: 'We visit your Muskoka home, discuss your vision, measure rooms, and recommend colors and finishes.' },
+      { step: 'Detailed Quote', description: 'Receive a written, itemized quote within 24-48 hours — no hidden fees, no surprises.' },
+      { step: 'Surface Preparation', description: 'We patch holes, sand rough spots, caulk gaps, prime bare surfaces, and protect your floors and furniture.' },
+      { step: 'Professional Painting', description: 'Two coats of premium paint applied with spray, brush, or roller — whichever delivers the best finish for your surfaces.' },
+      { step: 'Final Walkthrough', description: 'We walk through every room with you to ensure every detail meets your standards before we leave.' },
+      { step: 'Free Touch Ups for Life', description: 'After your project is complete, we come back anytime to touch up scuffs or marks — for life.' }
+    ],
     faqs: [
       {
         question: 'How much does interior painting cost in Muskoka?',
