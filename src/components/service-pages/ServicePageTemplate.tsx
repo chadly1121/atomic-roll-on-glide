@@ -35,17 +35,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         "provider": { "@type": "ProfessionalService", "@id": `${siteUrl}/#localbusiness`, "name": businessInfo.name },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
         "serviceType": service.name,
-        ...(service.priceFrom && {
-          "offers": {
-            "@type": "Offer",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": service.priceFrom.amount,
-              "priceCurrency": "CAD",
-              "unitText": service.priceFrom.unit
-            }
-          }
-        })
       },
       // WebPage with Speakable + Breadcrumb
       {
