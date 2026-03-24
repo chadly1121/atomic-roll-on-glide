@@ -208,7 +208,7 @@ const SEOHelmet: React.FC = () => {
         "url": `${siteUrl}/interior-painting`,
         "description": "Professional interior painting services in Muskoka. Expert color consultation, wall preparation, and premium finishes from Benjamin Moore, Dulux, and PPG.",
         "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2.50", "priceCurrency": "CAD", "unitText": "per square foot" } },
+        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4.50", "priceCurrency": "CAD", "unitText": "per square foot" } },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
       {
