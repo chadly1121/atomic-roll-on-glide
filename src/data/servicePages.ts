@@ -27,6 +27,7 @@ export interface ServicePageData {
   
   // Additional content sections
   benefits?: string[];
+  process?: { step: string; description: string }[];
   faqs?: { question: string; answer: string }[];
   
   // Gallery media
