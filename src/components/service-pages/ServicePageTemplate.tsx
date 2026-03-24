@@ -157,10 +157,27 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
             />
           )}
 
+          {/* Mid-page CTA with urgency */}
+          <section className="py-10 bg-atomic-orange/5 border-y border-atomic-orange/10">
+            <div className="container mx-auto px-4 text-center">
+              <p className="text-lg font-semibold text-atomic-navy mb-2">
+                🔥 Summer booking fills fast in Muskoka — secure your spot now
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-orange text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-orange/90 transition-colors">
+                  Get a Fast Quote <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 text-atomic-navy font-medium hover:text-atomic-orange transition-colors">
+                  <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
+                </a>
+              </div>
+            </div>
+          </section>
+
           {service.benefits && (
             <section className="py-12" aria-labelledby="benefits-heading">
               <div className="container mx-auto px-4">
-                <h2 id="benefits-heading" className="text-2xl font-bold text-atomic-navy text-center mb-8">Why Choose Roll On Painting</h2>
+                <h2 id="benefits-heading" className="text-2xl font-bold text-atomic-navy text-center mb-8">Why Choose Roll On Painting for {service.name}</h2>
                 <div className="max-w-3xl mx-auto">
                   <ul className="grid sm:grid-cols-2 gap-4">
                     {service.benefits.map((benefit, idx) => (
@@ -175,10 +192,33 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
             </section>
           )}
 
+          {/* Process section */}
+          {service.process && (
+            <section className="py-12 bg-white" aria-labelledby="process-heading">
+              <div className="container mx-auto px-4">
+                <h2 id="process-heading" className="text-2xl font-bold text-atomic-navy text-center mb-3">Our {service.name} Process</h2>
+                <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">Here's exactly what happens when you hire Roll On Painting — no guesswork, no surprises.</p>
+                <div className="max-w-3xl mx-auto space-y-4">
+                  {service.process.map((item, idx) => (
+                    <div key={idx} className="flex gap-4 items-start bg-gray-50 p-5 rounded-lg">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-atomic-navy text-white flex items-center justify-center font-bold text-sm">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-atomic-navy mb-1">{item.step}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           {service.faqs && (
             <section className="py-12 bg-gray-50" aria-labelledby="service-faq-heading">
               <div className="container mx-auto px-4">
-                <h2 id="service-faq-heading" className="text-2xl font-bold text-atomic-navy text-center mb-8">Frequently Asked Questions</h2>
+                <h2 id="service-faq-heading" className="text-2xl font-bold text-atomic-navy text-center mb-8">Frequently Asked Questions About {service.name}</h2>
                 <div className="max-w-3xl mx-auto space-y-4">
                   {service.faqs.map((faq, idx) => (
                     <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
