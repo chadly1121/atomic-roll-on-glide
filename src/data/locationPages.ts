@@ -224,6 +224,24 @@ export const locationPages: LocationPageData[] = [
       { question: "Can you paint seasonal properties in Port Severn?", answer: "Yes. We frequently paint seasonal cottages in the Port Severn area and can coordinate scheduling around your cottage season." }
     ]
   }
+  ,{
+    slug: "painters-port-sydney",
+    name: "Port Sydney",
+    region: "Muskoka",
+    postalCode: "P0B 1L0",
+    headline: "Professional Painters in Port Sydney, Muskoka",
+    metaTitle: "Painters in Port Sydney | Roll On Painting | Interior & Exterior",
+    metaDescription: "Professional painters in Port Sydney, Muskoka. Interior, exterior, spray finishes, and cabinet painting. 25+ years experience. Free quotes. Call 705-787-1401.",
+    intro: "Roll On Painting is Port Sydney's trusted painting company. Based right here in the heart of Muskoka, we provide professional interior and exterior painting services for homes, cottages, and commercial properties throughout Port Sydney and surrounding areas. With over 25 years of experience and four appearances on HGTV's Scott's Vacation House Rules, we deliver high-end results with clean, respectful service.",
+    localContent: "Port Sydney sits at the gateway to Muskoka's cottage country, nestled between Mary Lake and the winding roads that lead to Huntsville and Lake of Bays. The community's mix of year-round homes, seasonal cottages, and waterfront properties requires painters who understand the unique challenges of Muskoka's climate — from harsh winters to humid summers. Roll On Painting has been serving Port Sydney homeowners for over two decades, painting everything from lakefront cottages to modern custom builds. We know the local building styles, the weather patterns, and the quality standards that Port Sydney residents expect.",
+    nearbyAreas: ["Huntsville", "Utterson", "Bracebridge", "Lake of Bays", "Baysville", "Dwight"],
+    faqs: [
+      { question: "Do you serve Port Sydney for painting?", answer: "Yes. Roll On Painting is based in Muskoka and serves Port Sydney and all surrounding communities including Huntsville, Utterson, Bracebridge, and Lake of Bays." },
+      { question: "How much does painting cost in Port Sydney?", answer: "Interior painting in Port Sydney starts at $4.50/sq ft and exterior at $5.75/sq ft. High-end finishes can range up to $15/sq ft. Contact us for a free estimate specific to your property." },
+      { question: "Can you paint my cottage in Port Sydney?", answer: "Absolutely. We specialize in cottage painting throughout Muskoka. We can work around your seasonal schedule and coordinate access to your Port Sydney property." },
+      { question: "What painting services do you offer in Port Sydney?", answer: "We offer interior painting, exterior painting, spray finishing, cabinet refinishing, deck staining, wallpaper installation and removal, power washing, and GoNano nanotechnology coatings in Port Sydney." }
+    ]
+  }
 ];
 
 // Quick lookup by slug
