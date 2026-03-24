@@ -263,7 +263,6 @@ const SEOHelmet: React.FC = () => {
         "name": "Epoxy Coatings", "serviceType": "Epoxy coatings (e.g., floors)",
         "url": `${siteUrl}/epoxy-coatings`,
         "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
       {
@@ -272,7 +271,6 @@ const SEOHelmet: React.FC = () => {
         "url": `${siteUrl}/gonano`,
         "description": "Authorized GoNano dealer. Nanotechnology roof sealers, concrete sealers, and wood sealers extending surface lifespan by up to 15 years. As seen on Dragon's Den.",
         "provider": { "@id": `${siteUrl}/#localbusiness` },
-        "offers": { "@type": "Offer", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0.99", "priceCurrency": "CAD", "unitText": "per square foot" } },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
       {
