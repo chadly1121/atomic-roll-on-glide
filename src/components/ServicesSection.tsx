@@ -66,23 +66,41 @@ const ServicesSection = () => {
 
         {/* Secondary services — compact row */}
         {secondaryServices.length > 0 && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
             {secondaryServices.map((service) => {
               const Icon = service.icon;
               return (
                 <Link
                   key={service.id}
                   to="/contact"
-                  className="group flex items-center gap-4 p-4 rounded-lg border border-border bg-card hover:border-atomic-orange/30 transition-all"
+                  className="group relative rounded-xl overflow-hidden border border-border bg-card hover:border-atomic-orange/40 shadow-sm hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-atomic-orange/10 flex items-center justify-center flex-shrink-0 group-hover:bg-atomic-orange/20 transition-colors">
-                    <Icon className="w-5 h-5 text-atomic-orange" />
+                  <div className="h-44 sm:h-48 overflow-hidden bg-muted relative">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={192}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute bottom-3 left-3">
+                      <div className="w-9 h-9 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-atomic-orange" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-foreground group-hover:text-atomic-orange transition-colors text-sm">
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-atomic-orange transition-colors mb-1.5">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-muted-foreground truncate">{service.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">{service.description}</p>
+                    <span className="inline-flex items-center text-sm font-medium text-atomic-orange">
+                      Get a Quote
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
                 </Link>
               );
