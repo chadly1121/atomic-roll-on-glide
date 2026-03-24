@@ -751,6 +751,180 @@ export const servicePages: ServicePageData[] = [
         answer: 'In Muskoka, we recommend exterior washing every 1-2 years. Properties near water or in shaded areas may benefit from annual cleaning due to increased mold and mildew growth.'
       }
     ]
+  },
+  {
+    slug: 'institutional-painting',
+    name: 'Institutional Painting',
+    headline: 'Institutional Painting Services in Muskoka & Central Ontario',
+    description: 'Roll On Painting delivers professional institutional painting for schools, hospitals, government buildings, and public facilities. We understand the unique demands of institutional environments — strict timelines, regulatory compliance, low-VOC coatings, and minimal disruption to daily operations.',
+    metaDescription: 'Institutional painting in Muskoka. Schools, hospitals, government buildings. WSIB covered, $5M insured, low-VOC paints. Roll On Painting. 705-787-1401.',
+    category: 'commercial',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Full surface preparation including patching, sanding, and priming',
+        'Low-VOC and zero-VOC paint options for occupied spaces',
+        'Anti-microbial and washable coatings for high-traffic areas',
+        'Colour-coded wayfinding and accent wall systems',
+        'Floor and ceiling painting including gymnasium lines',
+        'Complete cleanup with zero disruption to operations'
+      ],
+      whoItsFor: [
+        'School boards and educational facilities',
+        'Hospitals, clinics, and long-term care homes',
+        'Municipal and government buildings',
+        'Community centres and recreation facilities',
+        'Religious institutions and public assembly spaces'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'All communities across Muskoka, Parry Sound, and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or email info@roll-onpainting.com',
+        'Provide building details, scope, and scheduling requirements',
+        'We conduct an on-site assessment during or after hours',
+        'Receive a detailed written quote with phased scheduling options'
+      ]
+    },
+    benefits: [
+      'WSIB covered with $5 million liability insurance',
+      'After-hours and weekend scheduling to avoid disruption',
+      'Low-VOC and zero-VOC options safe for students and patients',
+      'Experience with schools, hospitals, and government facilities',
+      'Strict adherence to institutional safety and access protocols',
+      'Over 25 years of professional painting experience',
+      'Phased painting plans for occupied buildings',
+      'Clean, uniformed crews with full background checks available'
+    ],
+    process: [
+      { step: 'Initial Consultation', description: 'We meet with facility managers to understand scope, timelines, regulatory requirements, and any special considerations for occupied spaces.' },
+      { step: 'On-Site Assessment', description: 'Our team inspects all surfaces, identifies repairs needed, and documents the work area including any hazardous materials like lead paint.' },
+      { step: 'Detailed Proposal', description: 'You receive a comprehensive quote with phased scheduling options designed to minimize disruption to students, patients, or staff.' },
+      { step: 'Surface Preparation', description: 'We repair, patch, sand, and prime all surfaces. Containment and protection measures are set up to keep adjacent areas clean and safe.' },
+      { step: 'Professional Application', description: 'Using low-VOC coatings and professional spray/roller techniques, we deliver uniform, durable finishes designed for high-traffic institutional use.' },
+      { step: 'Final Inspection & Handoff', description: 'We conduct a thorough walkthrough with your team, address any touch-ups, and leave the space clean and ready for use.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/institutional-school-painting.jpg',
+      '/lovable-uploads/institutional-school-interior.jpg',
+      '/lovable-uploads/institutional-stage-floor-before.jpg',
+      '/lovable-uploads/institutional-stage-floor-after.jpg'
+    ],
+    faqs: [
+      {
+        question: 'Can you paint schools while they are in session?',
+        answer: 'Yes. We regularly paint schools during evenings, weekends, and holidays. We create phased plans that allow sections of the building to remain in use while others are being painted. All products used are low-VOC and safe for occupied environments.'
+      },
+      {
+        question: 'Do you carry the insurance required for institutional work?',
+        answer: 'Absolutely. Roll On Painting carries $5 million in commercial general liability insurance and is fully WSIB covered. We can provide certificates of insurance to meet any facility requirements.'
+      },
+      {
+        question: 'What types of paint do you use in hospitals and care facilities?',
+        answer: 'We use zero-VOC and anti-microbial coatings specifically designed for healthcare environments. These products are durable, washable, and meet infection control standards.'
+      },
+      {
+        question: 'How do you handle painting in occupied government buildings?',
+        answer: 'We develop a phased schedule in coordination with facility managers. Work is typically done after business hours or on weekends, with full containment to prevent dust and odour from reaching occupied areas.'
+      },
+      {
+        question: 'Do you paint gymnasium floors and stage areas?',
+        answer: 'Yes. We paint gym floors with regulation line markings and durable floor coatings. We also paint stages, auditoriums, and multipurpose rooms with specialty finishes designed for heavy use.'
+      }
+    ]
+  },
+  {
+    slug: 'prefinishing',
+    name: 'Pre-Finishing Services',
+    headline: 'Professional Pre-Finishing Services in Muskoka',
+    description: 'Roll On Painting provides expert pre-finishing and pre-staining for new construction materials — tongue-and-groove boards, trim, doors, siding, and millwork. Materials arrive on-site ready to install with a perfect factory-quality finish, saving builders time and delivering superior results.',
+    metaDescription: 'Pre-finishing services in Muskoka. Pre-stain and pre-paint trim, T&G boards, doors, and millwork. Shop-quality finishes. Roll On Painting. 705-787-1401.',
+    category: 'specialty',
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Pre-staining and pre-painting of tongue-and-groove boards',
+        'Trim, baseboard, and crown moulding finishing',
+        'Door and window casing pre-finishing',
+        'Siding and exterior cladding pre-coating',
+        'Custom colour matching and stain selection',
+        'Controlled shop environment for consistent results'
+      ],
+      whoItsFor: [
+        'Custom home builders and general contractors',
+        'Cottage builders working in Muskoka and cottage country',
+        'Renovation contractors needing pre-finished materials',
+        'Homeowners building new or renovating existing properties',
+        'Millwork shops requiring professional finishing'
+      ],
+      whereAvailable: [
+        'Huntsville, Bracebridge, Gravenhurst',
+        'Port Sydney, Dorset, Baysville, Dwight',
+        'Muskoka Lakes, Lake of Bays, Rosseau',
+        'Parry Sound, Orillia, Barrie',
+        'Delivery and pickup available across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or email info@roll-onpainting.com',
+        'Provide material type, quantity, and finish specifications',
+        'We quote based on board feet or linear feet',
+        'Materials can be dropped off or picked up from our shop'
+      ]
+    },
+    benefits: [
+      'Controlled shop environment ensures consistent, dust-free finishes',
+      'Faster on-site installation — materials arrive ready to install',
+      'Eliminates mess, fumes, and drying time on the job site',
+      'Professional spray application for smooth, even coverage',
+      'Custom colour matching to any stain or paint specification',
+      'Over 25 years of finishing experience',
+      'Bulk capacity — we can handle large-volume orders',
+      'WSIB covered with $5 million liability insurance'
+    ],
+    process: [
+      { step: 'Material Intake', description: 'Materials are delivered to our shop or picked up from your supplier. We inspect each piece for defects and confirm finish specifications.' },
+      { step: 'Surface Preparation', description: 'All materials are sanded smooth, cleaned, and inspected. Any defects are filled and repaired before finishing begins.' },
+      { step: 'Finish Application', description: 'Using professional spray equipment in our controlled shop environment, we apply stain, paint, or clear coat for a uniform, factory-quality finish.' },
+      { step: 'Drying & Curing', description: 'Materials are placed on custom drying racks in our climate-controlled shop to ensure proper curing without dust contamination.' },
+      { step: 'Quality Inspection', description: 'Every piece is inspected for consistency, coverage, and finish quality. Additional coats are applied if needed.' },
+      { step: 'Packaging & Delivery', description: 'Finished materials are carefully stacked and protected for transport. We coordinate delivery timing with your installation schedule.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg',
+      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg',
+      '/lovable-uploads/prefinishing-pine-doors.jpg',
+      '/lovable-uploads/prefinishing-stained-glass-restoration.jpg',
+      '/lovable-uploads/prefinishing-white-trim-boards.jpg',
+      '/lovable-uploads/prefinishing-douglas-fir-boards.jpg',
+      '/lovable-uploads/prefinishing-rutherford-go-station-ceilings.jpg'
+    ],
+    galleryVideos: [
+      '/lovable-uploads/prefinishing-video-thumbnail.jpg'
+    ],
+    faqs: [
+      {
+        question: 'What materials can you pre-finish?',
+        answer: 'We pre-finish tongue-and-groove boards (pine, cedar, Douglas fir), trim and baseboards, interior and exterior doors, window casings, crown moulding, siding, and custom millwork. If it can be stained or painted, we can finish it.'
+      },
+      {
+        question: 'How does pre-finishing save time on a build?',
+        answer: 'Pre-finished materials arrive ready to install — no on-site sanding, priming, painting, or drying time. This can save days or weeks on a project, especially for large cottage builds with extensive trim and T&G work.'
+      },
+      {
+        question: 'Can you match a specific stain colour?',
+        answer: 'Yes. We can match any stain colour from major manufacturers including Minwax, Sikkens, and Sansin. We create test samples on your actual material for approval before starting the full batch.'
+      },
+      {
+        question: 'What is the turnaround time for pre-finishing?',
+        answer: 'Typical turnaround is 5-10 business days depending on volume and finish type. Rush orders can be accommodated. We coordinate timing with your construction schedule to ensure materials arrive when needed.'
+      },
+      {
+        question: 'Do you offer pickup and delivery?',
+        answer: 'Yes. Materials can be dropped off at our shop in Port Sydney or we can arrange pickup from your supplier. Finished materials can be delivered directly to your job site anywhere in Muskoka.'
+      }
+    ]
   }
 ];
 

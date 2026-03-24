@@ -58,6 +58,7 @@ export const services: Service[] = [
     description: "Specialized painting for schools, hospitals, and government buildings. All regulatory requirements met.",
     icon: School,
     image: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
+    slug: "institutional-painting",
   },
   {
     id: 7,
@@ -65,6 +66,7 @@ export const services: Service[] = [
     description: "Professional pre-finishing for new construction materials. Perfect appearance and enhanced durability from day one.",
     icon: Hammer,
     image: "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
+    slug: "prefinishing",
   },
   {
     id: 8,
