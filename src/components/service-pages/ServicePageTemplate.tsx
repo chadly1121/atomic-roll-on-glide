@@ -191,6 +191,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
             </section>
           )}
 
+          <ServicePageInternalLinks currentSlug={service.slug} />
+
           <section className="py-16 bg-atomic-navy text-white">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
