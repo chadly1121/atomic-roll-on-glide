@@ -353,6 +353,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'Minimal disruption to your daily routine — we work clean and fast',
       'Premium primers and paints designed specifically for kitchen cabinets'
     ],
+    process: [
+      { step: 'Photo Consultation', description: 'Send us photos of your cabinets and we provide a preliminary estimate within 24 hours.' },
+      { step: 'In-Home Visit', description: 'We measure your kitchen, assess cabinet material and condition, and discuss color options with samples.' },
+      { step: 'Door Removal', description: 'We carefully remove all doors, drawers, and hardware — labeling everything for perfect reinstallation.' },
+      { step: 'Prep & Prime', description: 'Thorough cleaning, degreasing, sanding, and bonding primer application for maximum adhesion.' },
+      { step: 'Spray Finishing', description: 'Multiple coats of durable cabinet paint via professional spray equipment for a factory-smooth finish.' },
+      { step: 'Reinstall & Warranty', description: 'Doors and hardware reinstalled with precision. Free Touch Ups for Life included.' }
+    ],
     faqs: [
       {
         question: 'How much does cabinet painting cost in Muskoka?',
