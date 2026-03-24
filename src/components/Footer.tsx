@@ -105,29 +105,34 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
-                  Interior Painting
-                </a>
+                <Link to="/interior-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                  Interior Painting Muskoka
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
-                  Exterior Painting
-                </a>
+                <Link to="/exterior-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                  Exterior Painting Muskoka
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
-                  Commercial Painting
-                </a>
+                <Link to="/spray-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                  Spray Painting Muskoka
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <Link to="/cabinet-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                  Cabinet Painting Muskoka
+                </Link>
+              </li>
+              <li>
+                <Link to="/cabinet-refinishing" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
                   Cabinet Refinishing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-atomic-turquoise transition-colors" onClick={(e) => scrollToSection(e, '#services')}>
+                <Link to="/deck-staining" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
                   Deck & Fence Staining
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
