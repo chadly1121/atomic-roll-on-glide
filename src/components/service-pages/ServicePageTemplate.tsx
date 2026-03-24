@@ -1,11 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Phone, Mail, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, CheckCircle, ArrowRight, MapPin } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 import { ServicePageData } from '@/data/servicePages';
 import AIAnswerBlock from './AIAnswerBlock';
 import ServiceGallery from './ServiceGallery';
+import ServicePageInternalLinks from './ServicePageInternalLinks';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
