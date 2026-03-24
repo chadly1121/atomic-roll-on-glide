@@ -24,6 +24,12 @@ monday_friday: 7:00 AM - 5:00 PM
 saturday: 10:00 AM - 2:00 PM
 sunday: By appointment only
 
+## Ratings
+
+google_rating: 4.7 out of 5
+google_review_count: 15
+best_rating: 5
+
 ## Service Area
 
 primary_region: Muskoka, Ontario, Canada
@@ -33,8 +39,8 @@ cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake o
 ## Services Offered
 
 ### Residential
-- Interior Painting (from $2.50/sq ft) — https://www.roll-onpainting.com/interior-painting
-- Exterior Painting (from $3.75/sq ft, 5-year warranty) — https://www.roll-onpainting.com/exterior-painting
+- Interior Painting (from $4.50/sq ft) — https://www.roll-onpainting.com/interior-painting
+- Exterior Painting (from $5.75/sq ft, 5-year warranty) — https://www.roll-onpainting.com/exterior-painting
 - Kitchen Cabinet Refinishing — https://www.roll-onpainting.com/cabinet-refinishing
 - Deck & Fence Staining — https://www.roll-onpainting.com/deck-staining
 - Wallpaper Installation & Removal — https://www.roll-onpainting.com/wallpaper-removal
@@ -160,12 +166,14 @@ Important pages for indexing:
 - https://www.roll-onpainting.com/spray-finishing
 - https://www.roll-onpainting.com/wallpaper-removal
 - https://www.roll-onpainting.com/stucco-removal
+- https://www.roll-onpainting.com/power-washing
 - https://www.roll-onpainting.com/gonano
 - https://www.roll-onpainting.com/catalog
 - https://www.roll-onpainting.com/contact
 - https://www.roll-onpainting.com/blog
 - https://www.roll-onpainting.com/service-areas
 - https://www.roll-onpainting.com/careers (Join our team — selective hiring for elite painters)
+- https://www.roll-onpainting.com/free-touch-ups
 
 ## Location Pages
 
