@@ -158,6 +158,14 @@ export const serviceLocationPages: ServicePageData[] = [
       'We partner with Sansin for premium wood treatments and natural finishes',
       'Clean, professional crews who respect your property and landscaping'
     ],
+    process: [
+      { step: 'Property Inspection', description: 'We inspect your siding, trim, and surfaces to assess condition and recommend the right approach for Muskoka weather.' },
+      { step: 'Power Washing', description: 'We power wash all surfaces to remove dirt, mildew, and loose paint before any prep work begins.' },
+      { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts.' },
+      { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint rated for Canadian climates, applied by experienced crews.' },
+      { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail is finished with clean, precise lines.' },
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and Free Touch Ups for Life on every completed exterior project.' }
+    ],
     faqs: [
       {
         question: 'How much does exterior painting cost in Muskoka?',
