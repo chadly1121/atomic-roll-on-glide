@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Instagram, Linkedin, Facebook } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { businessInfo } from '@/data/businessInfo';
 
 const Footer = () => {
