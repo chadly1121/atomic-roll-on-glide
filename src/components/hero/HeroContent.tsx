@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Atom, FileImage, Phone } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import ResidentialGalleryPopup from '../gallery/ResidentialGalleryPopup';
+
+const ResidentialGalleryPopup = lazy(() => import('../gallery/ResidentialGalleryPopup'));
 
 const HeroContent = () => {
   const navigate = useNavigate();
@@ -63,7 +64,9 @@ const HeroContent = () => {
               Send Us Your Plans
             </span>
           </a>
-          <ResidentialGalleryPopup />
+          <Suspense fallback={<button className="atomic-button-secondary group border-2 border-atomic-turquoise text-center flex-1 text-sm sm:text-base py-3 opacity-50">View Gallery</button>}>
+            <ResidentialGalleryPopup />
+          </Suspense>
         </div>
       </div>
       

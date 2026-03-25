@@ -9,7 +9,7 @@ const FreeTouchUpsButton = () => {
   return (
     <button
       onClick={() => navigate('/free-touch-ups')}
-      className="group relative w-full mx-auto overflow-hidden rounded-full bg-white border-2 border-atomic-orange p-1 transition-all hover:scale-[1.01] animate-pulse-slow shadow-md"
+      className="group relative w-full mx-auto overflow-hidden rounded-full bg-white border-2 border-atomic-orange p-1 transition-all hover:scale-[1.01] shadow-md"
       aria-label="Free Touch Ups for Life - Learn more"
     >
       <div className="relative flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-atomic-orange/10 via-white to-atomic-orange/10 px-3 py-2">

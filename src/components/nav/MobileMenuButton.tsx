@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { motion } from "framer-motion";
 
 interface MobileMenuButtonProps {
   mobileMenuOpen: boolean;
@@ -9,11 +8,10 @@ interface MobileMenuButtonProps {
 
 const MobileMenuButton = ({ mobileMenuOpen, toggleMobileMenu }: MobileMenuButtonProps) => {
   return (
-    <motion.button 
+    <button 
       onClick={toggleMobileMenu} 
-      className="md:hidden text-atomic-navy focus:outline-none transform transition-transform hover:scale-110 p-3"
+      className="md:hidden text-atomic-navy focus:outline-none transform transition-transform hover:scale-110 active:scale-95 p-3"
       aria-label="Toggle menu"
-      whileTap={{ scale: 0.95 }}
     >
       <div className="w-12 h-12 flex items-center justify-center bg-white/80 rounded-full shadow-sm">
         <svg 
@@ -31,7 +29,7 @@ const MobileMenuButton = ({ mobileMenuOpen, toggleMobileMenu }: MobileMenuButton
           )}
         </svg>
       </div>
-    </motion.button>
+    </button>
   );
 };
 

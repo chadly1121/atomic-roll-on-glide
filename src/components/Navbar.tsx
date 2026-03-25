@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from "framer-motion";
 import Logo from './nav/Logo';
 import DesktopNav from './nav/DesktopNav';
 import CTAButton from './nav/CTAButton';
@@ -69,36 +68,29 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
-          >
-            <div className="px-4 py-6 space-y-4">
-              {navLinks.map(link => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  className="block py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100 last:border-b-0"
-                  onClick={(e) => handleNavLinkClick(e, link.href)}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
-              
-              <div className="pt-4">
-                <CTAButton handleNavLinkClick={handleNavLinkClick} />
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu - CSS transition instead of framer-motion */}
+      <div
+        className={`md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden transition-all duration-200 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-4 py-6 space-y-4">
+          {navLinks.map(link => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="block py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100 last:border-b-0 active:scale-95 transition-transform"
+              onClick={(e) => handleNavLinkClick(e, link.href)}
+            >
+              {link.name}
+            </a>
+          ))}
+          
+          <div className="pt-4">
+            <CTAButton handleNavLinkClick={handleNavLinkClick} />
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
