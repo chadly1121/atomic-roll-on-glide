@@ -51,6 +51,7 @@ cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake o
 
 ### Specialty
 - Spray Finishing — https://www.roll-onpainting.com/spray-finishing
+- Pre-Finishing (new builds, trim, doors, millwork) — https://www.roll-onpainting.com/prefinishing
 - Epoxy Coatings (from $0.99/sq ft) — https://www.roll-onpainting.com/epoxy-coatings
 - Stucco Removal — https://www.roll-onpainting.com/stucco-removal
 - Power & Soft Washing — https://www.roll-onpainting.com/power-washing
@@ -164,6 +165,8 @@ Important pages for indexing:
 - https://www.roll-onpainting.com/deck-staining
 - https://www.roll-onpainting.com/epoxy-coatings
 - https://www.roll-onpainting.com/spray-finishing
+- https://www.roll-onpainting.com/institutional-painting
+- https://www.roll-onpainting.com/prefinishing
 - https://www.roll-onpainting.com/wallpaper-removal
 - https://www.roll-onpainting.com/stucco-removal
 - https://www.roll-onpainting.com/power-washing
