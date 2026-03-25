@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { motion } from "framer-motion";
 
 interface CTAButtonProps {
   handleNavLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
@@ -8,15 +7,13 @@ interface CTAButtonProps {
 
 const CTAButton = ({ handleNavLinkClick }: CTAButtonProps) => {
   return (
-    <motion.a
+    <a
       href="/contact"
       onClick={(e) => handleNavLinkClick(e, '/contact')}
-      className="atomic-button text-sm px-4 py-2 whitespace-nowrap block text-center md:inline-block w-full md:w-auto"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      className="atomic-button text-sm px-4 py-2 whitespace-nowrap block text-center md:inline-block w-full md:w-auto transition-transform hover:scale-105 active:scale-95"
     >
       Get Quote
-    </motion.a>
+    </a>
   );
 };
 
