@@ -1,16 +1,24 @@
-import React, { useState, useCallback, Suspense, useEffect } from 'react';
+import React, { useState, useCallback, lazy, Suspense, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
-import AsSeenonTVSection from '../components/AsSeenonTVSection';
-import FAQSection from '../components/FAQSection';
-import ServiceAreaBlock from '../components/ServiceAreaBlock';
 import ScrollToTopButton from '../components/layout/ScrollToTopButton';
 import SectionObserver from '../components/layout/SectionObserver';
 import SEOHelmet from '../components/layout/SEOHelmet';
-import LazySectionLoader from '../components/layout/LazySectionLoader';
-import TrustBadges from '../components/trust/TrustBadges';
-import ServicesSection from '../components/ServicesSection';
+
+// Lazy-load everything below the fold to cut TBT and improve LCP/FCP
+const ServicesSection = lazy(() => import('../components/ServicesSection'));
+const AsSeenonTVSection = lazy(() => import('../components/AsSeenonTVSection'));
+const TrustBadges = lazy(() => import('../components/trust/TrustBadges'));
+const ServiceAreaBlock = lazy(() => import('../components/ServiceAreaBlock'));
+const FAQSection = lazy(() => import('../components/FAQSection'));
+const LazySectionLoader = lazy(() => import('../components/layout/LazySectionLoader'));
+
+const SectionPlaceholder = () => (
+  <div className="w-full py-16 flex justify-center">
+    <div className="w-10 h-10 border-3 border-atomic-orange border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -51,13 +59,27 @@ const Index = () => {
       </div>
 
       <HeroSection />
-      <ServicesSection />
-      <AsSeenonTVSection />
-      <TrustBadges />
-      <ServiceAreaBlock />
-      <FAQSection />
       
-      <LazySectionLoader visibleSections={visibleSections} />
+      {/* Below-fold sections - lazy loaded */}
+      <Suspense fallback={<SectionPlaceholder />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
+        <AsSeenonTVSection />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
+        <TrustBadges />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
+        <ServiceAreaBlock />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
+        <FAQSection />
+      </Suspense>
+      
+      <Suspense fallback={<SectionPlaceholder />}>
+        <LazySectionLoader visibleSections={visibleSections} />
+      </Suspense>
       <ScrollToTopButton showScrollTop={showScrollTop} />
       <SectionObserver 
         setActiveSection={setActiveSection}

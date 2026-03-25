@@ -44,6 +44,10 @@ export default defineConfig(({ mode }) => ({
           if (id.includes('@radix-ui/') || id.includes('src/components/ui/')) {
             return 'ui';
           }
+          // Defer framer-motion to its own chunk (heavy, not needed for FCP)
+          if (id.includes('framer-motion')) {
+            return 'motion';
+          }
         },
         // Ensure proper path for dynamically loaded chunks
         chunkFileNames: 'assets/[name]-[hash].js',
