@@ -47,7 +47,7 @@ cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake o
 
 ### Commercial
 - Commercial Painting — https://www.roll-onpainting.com/commercial-painting
-- Institutional Painting (schools, hospitals, government buildings)
+- Institutional Painting (schools, hospitals, government buildings) — https://www.roll-onpainting.com/institutional-painting
 
 ### Specialty
 - Spray Finishing — https://www.roll-onpainting.com/spray-finishing
