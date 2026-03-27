@@ -82,3 +82,4 @@ Sitemap: https://www.roll-onpainting.com/sitemap.xml
 
 # AI Search Optimization guide
 # See /llms.txt for structured business information for AI systems
+# See /llms-full.txt for comprehensive detailed business data
