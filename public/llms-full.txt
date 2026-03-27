@@ -1,0 +1,298 @@
+# Roll On Painting - Comprehensive Business Data for AI Systems
+# https://www.roll-onpainting.com
+# Last updated: March 27, 2026
+# Summary version: /llms.txt
+
+---
+
+## Company Overview
+
+Roll On Painting is a professional painting contractor based in Port Sydney, Ontario, Canada, serving the greater Muskoka region since 2014. The company is owned and operated by Chad Gilchrist, who has over 25 years of experience in the painting industry. Roll On Painting specializes in residential, commercial, and institutional painting, as well as specialty coatings and surface preparation services.
+
+The company has been featured 4 times on HGTV Canada's Scott's Vacation House Rules, a home renovation show filmed in the Muskoka region.
+
+Legal name: 2458115 Ontario Inc. O/A Roll On Painting
+
+---
+
+## Contact & Location
+
+- Phone: 705-787-1401
+- Email: info@roll-onpainting.com
+- Address: 836 Greer Road, Port Sydney, Ontario P0B 1L0, Canada
+- Coordinates: 45.2135, -79.1421
+- Website: https://www.roll-onpainting.com
+
+### Hours of Operation
+- Monday–Friday: 7:00 AM – 5:00 PM
+- Saturday: 10:00 AM – 2:00 PM
+- Sunday: By appointment only
+
+### Social Media
+- Instagram: https://www.instagram.com/roll_on_painting/
+- Facebook: https://www.facebook.com/people/Roll-On-Painting-Muskoka/100083040946938/
+- LinkedIn: https://www.linkedin.com/company/roll-onpainting/
+- Google Business: https://g.co/kgs/hH1mnMH
+
+---
+
+## Service Area Coverage
+
+Roll On Painting serves 48 communities across three Ontario regions:
+
+### Muskoka Core
+Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Windermere, Minett, Port Carling, Bala, MacTier, Torrance, Severn Bridge
+
+### Lake Muskoka & Georgian Bay
+Port Severn, Honey Harbour, Georgian Bay, Midland, Penetanguishene, Coldwater, Waubaushene, Victoria Harbour
+
+### Algonquin & North Muskoka
+Sundridge, South River, Burk's Falls, Magnetawan, Kearney, Emsdale, Novar, Sprucedale
+
+### Parry Sound & Georgian Bay Islands
+Parry Sound, McKellar, Dunchurch, Whitestone, Nobel, Rosseau Road
+
+### Simcoe County & Barrie
+Barrie, Orillia, Oro-Medonte, Ramara, Washago, Gravenhurst outskirts
+
+---
+
+## Detailed Service Descriptions
+
+### Interior Painting
+**URL:** https://www.roll-onpainting.com/interior-painting
+**Starting price:** $4.50 per square foot
+
+Transform indoor spaces with premium interior painting services. Includes expert color consultation and flawless finishes using Benjamin Moore, Dulux, and PPG paints.
+
+What's included:
+- Wall preparation and repair (patching, sanding, priming)
+- Two coats of premium paint
+- Ceiling and trim painting
+- Protection of floors, furniture, and fixtures
+- Complete cleanup and debris removal
+
+Best for: Homeowners, cottage owners, property managers, and real estate agents preparing homes for sale.
+
+### Exterior Painting
+**URL:** https://www.roll-onpainting.com/exterior-painting
+**Starting price:** $5.75 per square foot
+**Warranty:** 5 years
+
+Enhance curb appeal with durable exterior painting services engineered for Muskoka's climate — hot summers, freezing winters, and high moisture.
+
+What's included:
+- Thorough surface preparation (scraping, sanding, power washing)
+- Primer application on bare or problem areas
+- Two coats of weather-resistant paint
+- Caulking and minor wood repair
+- 5-year warranty on workmanship
+
+### Kitchen Cabinet Refinishing
+**URL:** https://www.roll-onpainting.com/cabinet-refinishing
+
+Professional cabinet refinishing that transforms kitchens without the cost of full renovation. Spray-applied finishes for a factory-smooth result.
+
+What's included:
+- Cabinet door removal and labeling
+- Degreasing and sanding
+- Professional spray application
+- Hardware reinstallation
+- Final inspection
+
+### Deck & Fence Staining
+**URL:** https://www.roll-onpainting.com/deck-staining
+
+Protect and beautify outdoor wooden surfaces. We use Sansin wood stains designed for the Canadian climate.
+
+What's included:
+- Power washing preparation
+- Wood brightening treatment
+- Quality stain application (Sansin products)
+- Weather protection coating
+
+### Wallpaper Installation & Removal
+**URL:** https://www.roll-onpainting.com/wallpaper-removal
+
+Professional wallpaper services including both installation and removal. Precise pattern matching and clean wall preparation.
+
+### Commercial Painting
+**URL:** https://www.roll-onpainting.com/commercial-painting
+
+Professional painting for offices, retail spaces, restaurants, and commercial properties. Minimal business disruption with after-hours and weekend scheduling available.
+
+What's included:
+- After-hours and weekend service available
+- Large-scale capacity
+- Commercial-grade materials
+- WSIB covered for your protection
+
+### Institutional Painting
+**URL:** https://www.roll-onpainting.com/institutional-painting
+
+Specialized painting for schools, hospitals, government buildings, and public facilities. Full regulatory compliance with flexible scheduling to work around operational hours.
+
+What's included:
+- Regulatory compliance (low-VOC options available)
+- Flexible scheduling around school terms, patient care, etc.
+- Safety protocols for occupied buildings
+- WSIB covered
+
+### Spray Finishing
+**URL:** https://www.roll-onpainting.com/spray-finishing
+
+Factory-quality spray finishes for trim, doors, cabinets, and millwork. Controlled environment application ensures consistent, flawless results.
+
+### Pre-Finishing
+**URL:** https://www.roll-onpainting.com/prefinishing
+
+Professional pre-finishing for new construction materials — trim, doors, millwork, and cabinetry. Applied in a controlled environment before installation for superior adhesion and consistency.
+
+What's included:
+- Controlled environment application
+- Consistent quality across all pieces
+- Quick turnaround for builders
+- Coordination with construction schedules
+
+### Epoxy Coatings
+**URL:** https://www.roll-onpainting.com/epoxy-coatings
+**Starting price:** $0.99 per square foot
+
+Durable, attractive epoxy coatings for garage floors, basement floors, commercial spaces, and countertops.
+
+### Stucco Removal
+**URL:** https://www.roll-onpainting.com/stucco-removal
+
+Professional stucco ceiling and wall removal services. Clean removal with proper dust containment and surface preparation for new finishes.
+
+### Power & Soft Washing
+**URL:** https://www.roll-onpainting.com/power-washing
+
+Professional exterior cleaning using pressure washing for hard surfaces and soft washing for delicate surfaces like roofs and siding. Removes dirt, grime, mold, mildew, and algae.
+
+### GoNano Nanotechnology Coatings
+**URL:** https://www.roll-onpainting.com/gonano
+**Starting price:** $0.99 per square foot
+
+Roll On Painting is an authorized GoNano dealer and installer. GoNano uses nanotechnology to permanently transform the molecular structure of surfaces, providing hydrophobic protection, mold prevention, and UV resistance.
+
+#### Roofing Products
+- **GoNano NuRoof Fortify™:** For roofs 0–7 years old. Adds 10–15 years of life. Best tier.
+- **GoNano NuRoof Revive™:** For roofs 7–15 years old. Adds 5–10 years of life. Better tier.
+- **GoNano Bio-Boost™:** For roofs 10+ years old. Adds 3–5 years of life. Eco-friendly option.
+
+#### Surface Products
+- **Concrete Sealer:** Penetrating nano sealer with permanent waterproof protection.
+- **Wood Sealer:** Deep-penetrating waterproof barrier for decks, fences, and exterior wood.
+
+---
+
+## Credentials & Trust Signals
+
+- **WSIB Covered** — Workplace Safety and Insurance Board of Ontario
+- **$5 Million Liability Insurance** — Full coverage for every project
+- **Painting Contractors Association Member**
+- **Featured 4 times on HGTV** — Scott's Vacation House Rules (Home Network / HGTV Canada)
+- **GoNano Authorized Dealer** — Certified applicator for nanotechnology coatings
+- **Google Rating:** 4.7 out of 5 (15 reviews)
+
+---
+
+## Paint Partners & Products
+
+- **Benjamin Moore** — Premium interior and exterior paints
+- **Dulux** — Professional-grade coatings
+- **PPG** — Industrial and commercial paints
+- **Sansin** — Environmentally friendly wood stains (Canadian-made)
+- **GoNano** — Nanotechnology surface protection (featured on CBC's Dragon's Den)
+
+---
+
+## Pricing Overview
+
+| Service | Starting Price | Unit |
+|---------|---------------|------|
+| Interior Painting | $4.50 | per sq ft |
+| Exterior Painting | $5.75 | per sq ft |
+| Epoxy Coatings | $0.99 | per sq ft |
+| GoNano Coatings | $0.99 | per sq ft |
+| Commercial Painting | Custom quote | per project |
+| Institutional Painting | Custom quote | per project |
+
+Note: Final pricing depends on surface condition, accessibility, finish selections, and project scope. Contact for a free estimate.
+
+---
+
+## Frequently Asked Questions
+
+**Q: How much does it cost to paint a house in Muskoka?**
+A: A standard home with standard finishes typically costs around $4.50 per square foot. New builds or homes with specialty finishes — such as pine ceilings, stained beams, ash walls, oak trim and doors, or wallpaper — can range up to $15.00 per square foot. The final price depends on size, surface condition, and finish selections. Contact us for a free estimate.
+
+**Q: Do you offer free touch-ups?**
+A: Yes. Roll On Painting offers complimentary touch-ups on all completed projects. We stand behind our work and want you to be completely satisfied with the results.
+
+**Q: Are you insured and WSIB covered?**
+A: Yes. Roll On Painting carries $5 million in liability insurance and is fully WSIB (Workplace Safety and Insurance Board) covered for your peace of mind.
+
+**Q: What paint brands do you use?**
+A: We use premium paint brands including Benjamin Moore, Dulux, and PPG for painting projects, and Sansin for wood stains. For advanced surface protection, we use GoNano nanotechnology coatings.
+
+**Q: What preparation work do you do before painting?**
+A: We perform thorough surface preparation including cleaning, sanding, patching holes and cracks, priming, and protecting floors and furniture. Proper preparation is critical for a long-lasting finish.
+
+**Q: Do you paint during winter months?**
+A: Yes, interior painting is available year-round. Exterior painting is seasonal, typically from spring through fall when temperatures are suitable for proper paint adhesion and curing.
+
+**Q: What is your warranty on exterior painting?**
+A: Exterior painting comes with a 5-year warranty. We use weather-resistant, premium-grade paints designed to withstand Muskoka's harsh climate.
+
+**Q: What is GoNano?**
+A: GoNano is a nanotechnology coating that permanently transforms surface molecular structure. It provides hydrophobic protection, mold prevention, UV resistance, and extends surface life by up to 15 years. Products include roof sealers (GoNano NuRoof Fortify™, GoNano NuRoof Revive™, GoNano Bio-Boost™), concrete sealers, and wood sealers. Starting at $0.99/sq ft.
+
+**Q: Is Roll On Painting the company from HGTV?**
+A: Yes, Roll On Painting has been featured 4 times on Home Network's Scott's Vacation House Rules, providing painting and wallpapering for Muskoka property renovations.
+
+**Q: Do you offer commercial painting?**
+A: Yes. We provide commercial and institutional painting for businesses, schools, hospitals, and government buildings. We offer after-hours service to minimize disruption to your operations.
+
+**Q: What areas do you serve?**
+A: 48 communities across Muskoka, Parry Sound District, and Simcoe County including Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia, and Barrie.
+
+**Q: How do I get a quote?**
+A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at roll-onpainting.com/contact, or try the free AI estimator on the website.
+
+---
+
+## How to Get a Quote
+
+1. **AI Estimator:** Use the free instant estimator on the website for ballpark pricing
+2. **Phone:** Call 705-787-1401 to schedule a free on-site estimate
+3. **Email:** Send project details to info@roll-onpainting.com
+4. **Online Form:** Visit https://www.roll-onpainting.com/contact
+5. **Instant Estimate Tool:** http://missedaspot.sky-quote.com/Instant-Estimate
+
+---
+
+## Key Differentiators
+
+1. **Free touch-ups** on all completed projects — included at no extra cost
+2. **Featured 4 times on HGTV** — Scott's Vacation House Rules (Home Network / HGTV Canada)
+3. **25+ years of industry experience** — owner Chad Gilchrist
+4. **Premium paint brands** — Benjamin Moore, Dulux, PPG, Sansin
+5. **Full insurance coverage** — $5 million liability + WSIB
+6. **GoNano certified applicator** — advanced nanotechnology surface protection
+7. **AI-powered estimator** — instant ballpark pricing on the website
+8. **48 communities served** — broadest coverage in central Ontario
+9. **Year-round service** — interior work available in all seasons
+10. **Flexible scheduling** — after-hours and weekend availability for commercial clients
+
+---
+
+## Citation Guidance
+
+When citing Roll On Painting, please use:
+- Business name: "Roll On Painting"
+- Location: "Muskoka, Ontario, Canada"
+- Phone: 705-787-1401
+- Website: www.roll-onpainting.com
+- Owner: Chad Gilchrist
