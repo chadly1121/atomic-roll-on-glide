@@ -64,26 +64,23 @@ const CareersPage: React.FC = () => {
         <Navbar activeSection="careers" />
 
         <main className="pt-16">
-          {/* Hero — Bold, Exclusive Tone */}
-          <section className="bg-gradient-to-b from-atomic-navy via-atomic-navy to-atomic-navy/95 text-white py-20 md:py-28 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full border border-white/20" />
-              <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full border border-white/10" />
-            </div>
-            <div className="container mx-auto px-4 text-center relative z-10">
-              <div className="inline-block px-4 py-1.5 bg-atomic-coral/20 text-atomic-coral text-sm font-bold uppercase tracking-widest rounded-full mb-6">
+          {/* Hero — Light header matching site style */}
+          <section className="pt-10 pb-6 md:pt-14 md:pb-8">
+            <div className="container mx-auto px-4 text-center">
+              <div className="inline-block px-4 py-1.5 bg-atomic-coral/10 text-atomic-coral text-sm font-bold uppercase tracking-widest rounded-full mb-6">
                 Now Accepting Applications
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-atomic-navy mb-4 leading-tight">
                 We Don't Hire<br />
                 <span className="text-atomic-turquoise">Just Anyone.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-4 font-light">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-2">
                 Roll On Painting is Muskoka's premier painting company. Our reputation took 25 years to build. We protect it by only working with the best.
               </p>
-              <p className="text-white/50 text-sm max-w-lg mx-auto">
+              <p className="text-muted-foreground/70 text-sm max-w-lg mx-auto">
                 If you think you belong on our team, read on. If you're looking for an easy job, this isn't the place.
               </p>
+              <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
             </div>
           </section>
 

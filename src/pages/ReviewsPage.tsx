@@ -44,17 +44,18 @@ const ReviewsPage: React.FC = () => {
         <Navbar activeSection="reviews" />
         
         <main className="pt-16">
-          <section className="bg-gradient-to-b from-atomic-navy to-atomic-navy/90 text-white py-16 md:py-20">
+          <section className="pt-10 pb-6 md:pt-14 md:pb-8">
             <div className="container mx-auto px-4 text-center">
               <div className="flex items-center justify-center gap-1 mb-4">
                 {[1,2,3,4,5].map(i => (
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Customer Reviews</h1>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">Customer Reviews</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Rated {businessInfo.ratings.average}/5 on Google. Read what Muskoka homeowners and businesses say about working with Roll On Painting.
               </p>
+              <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
             </div>
           </section>
 
@@ -77,10 +78,10 @@ const ReviewsPage: React.FC = () => {
             </div>
           </section>
 
-          <section className="py-16 bg-atomic-navy text-white">
+          <section className="py-16 bg-muted/50">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Experience the Difference?</h2>
-              <p className="text-white/80 mb-8 max-w-xl mx-auto">Join our list of happy customers. Get a free quote today.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-atomic-navy mb-4">Ready to Experience the Difference?</h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Join our list of happy customers. Get a free quote today.</p>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
                 Get a Free Quote
               </Link>
