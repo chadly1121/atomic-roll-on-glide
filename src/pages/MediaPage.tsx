@@ -375,25 +375,25 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-20 bg-primary text-primary-foreground">
+        <section className="py-16 md:py-20 bg-muted/50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-atomic-navy mb-4">
               Work with Muskoka's Most Recognized Painters
             </h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Get the same quality you see on TV and in print. Contact us for a free estimate today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-background text-foreground font-semibold px-8 py-3 rounded-lg hover:bg-background/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white font-semibold px-8 py-3 rounded-lg hover:bg-atomic-turquoise/90 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 Get a Free Quote
               </Link>
               <a
                 href={`tel:${businessInfo.phone.tel}`}
-                className="inline-flex items-center justify-center gap-2 bg-primary-foreground/10 border border-primary-foreground/30 font-semibold px-8 py-3 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-atomic-navy/20 text-atomic-navy font-semibold px-8 py-3 rounded-lg hover:bg-atomic-navy/5 transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 {businessInfo.phone.primary}
