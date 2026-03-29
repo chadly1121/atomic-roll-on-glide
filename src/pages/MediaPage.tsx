@@ -165,7 +165,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* HGTV Section */}
-        <section className="py-16 md:py-24 bg-background">
+        <section id="hgtv-section" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
@@ -236,7 +236,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* Dockside Magazine Section */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section id="dockside-section" className="py-16 md:py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
