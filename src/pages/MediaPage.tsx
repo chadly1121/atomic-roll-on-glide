@@ -255,11 +255,18 @@ const MediaPage: React.FC = () => {
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-start gap-4 bg-card border border-border rounded-lg p-5 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                      className="group flex items-start gap-4 bg-card border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all duration-300"
                     >
-                      <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <BookOpen className="w-5 h-5 text-primary" />
-                      </div>
+                      {article.thumbnail && (
+                        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
+                          <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                        </div>
+                      )}
+                      {!article.thumbnail && (
+                        <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <BookOpen className="w-5 h-5 text-primary" />
+                        </div>
+                      )}
                       <div className="flex-1 min-w-0">
                         <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                           {article.title}
@@ -285,7 +292,7 @@ const MediaPage: React.FC = () => {
                           ))}
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
                     </a>
                   ))}
                 </div>
@@ -307,11 +314,18 @@ const MediaPage: React.FC = () => {
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-start gap-4 bg-card border border-border rounded-lg p-5 hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                      className="group flex items-start gap-4 bg-card border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all duration-300"
                     >
-                      <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                        <BookOpen className="w-5 h-5 text-accent-foreground" />
-                      </div>
+                      {article.thumbnail && (
+                        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
+                          <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                        </div>
+                      )}
+                      {!article.thumbnail && (
+                        <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                          <BookOpen className="w-5 h-5 text-accent-foreground" />
+                        </div>
+                      )}
                       <div className="flex-1 min-w-0">
                         <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                           {article.title}
@@ -325,7 +339,7 @@ const MediaPage: React.FC = () => {
                           )}
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
                     </a>
                   ))}
                 </div>
