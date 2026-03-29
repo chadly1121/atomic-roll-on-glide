@@ -67,7 +67,7 @@ const MediaPage: React.FC = () => {
         "actor": { "@type": "Person", "name": "Scott McGillivray" },
         "url": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
       },
-      ...hgtvAppearances.map((ep, idx) => ({
+      ...hgtvAppearances.map((ep) => ({
         "@type": "TVEpisode",
         "partOfSeries": { "@type": "TVSeries", "name": "Scott's Vacation House Rules" },
         "name": ep.episode,
@@ -112,6 +112,8 @@ const MediaPage: React.FC = () => {
         <meta property="og:url" content={`${siteUrl}/media`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="In The Media — Roll On Painting | 5× HGTV" />
@@ -124,7 +126,7 @@ const MediaPage: React.FC = () => {
       <Navbar activeSection="" />
 
       <main className="pt-16">
-        {/* Hero — Light header matching site style */}
+        {/* Hero */}
         <section className="pt-10 pb-6 md:pt-14 md:pb-8">
           <div className="container mx-auto px-4 text-center">
             <div className="inline-block px-3 py-1 bg-atomic-turquoise/10 text-atomic-turquoise text-xs font-semibold tracking-wider uppercase rounded-full mb-4">
@@ -136,28 +138,28 @@ const MediaPage: React.FC = () => {
               <strong className="text-atomic-navy">5 times on HGTV / Home Network</strong> and{' '}
               <strong className="text-atomic-navy">15 times in Dockside Magazine</strong>.
             </p>
-            <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
+            <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" aria-hidden="true" />
           </div>
         </section>
 
         {/* Stats Bar */}
-        <section className="bg-muted/50 py-8">
+        <section aria-label="Media statistics" className="bg-muted/50 py-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">5×</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy" aria-label="5 times featured on HGTV and Home Network">5×</div>
                 <div className="text-sm text-muted-foreground">HGTV / Home Network</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">15×</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy" aria-label="15 Dockside Magazine features">15×</div>
                 <div className="text-sm text-muted-foreground">Dockside Features</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">25+</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy" aria-label="Over 25 years experience">25+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">{businessInfo.ratings.average}★</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy" aria-label={`${businessInfo.ratings.average} out of 5 star Google rating`}>{businessInfo.ratings.average}★</div>
                 <div className="text-sm text-muted-foreground">Google Rating</div>
               </div>
             </div>
@@ -165,14 +167,14 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* HGTV Section */}
-        <section id="hgtv-section" className="py-16 md:py-24 bg-background">
+        <section id="hgtv-section" aria-labelledby="hgtv-heading" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
-                <Tv className="w-6 h-6 text-primary" />
+                <Tv className="w-6 h-6 text-primary" aria-hidden="true" />
                 <span className="text-sm font-semibold text-primary uppercase tracking-wider">Television</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 id="hgtv-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 As Seen on HGTV
               </h2>
               <p className="text-muted-foreground text-lg mb-10 max-w-2xl">
@@ -181,12 +183,16 @@ const MediaPage: React.FC = () => {
                 delivering flawless finishes on Muskoka cottage transformations.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-6" role="list" aria-label="HGTV episode appearances">
                 {hgtvAppearances.map((appearance, idx) => (
-                  <button
+                  <article
                     key={idx}
+                    role="listitem"
+                    className="group relative bg-card border border-border rounded-xl p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
                     onClick={() => { setSelectedEpisode(appearance); setPopupOpen(true); }}
-                    className="group relative bg-card border border-border rounded-xl p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 w-full text-left cursor-pointer"
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedEpisode(appearance); setPopupOpen(true); } }}
+                    tabIndex={0}
+                    aria-label={`View ${appearance.episode} — ${appearance.season}. Services: ${appearance.services.join(', ')}`}
                   >
                     <div className="flex flex-col md:flex-row md:items-start gap-4">
                       {/* Thumbnail */}
@@ -194,13 +200,15 @@ const MediaPage: React.FC = () => {
                         <div className="flex-shrink-0 w-full md:w-40 h-28 md:h-28 rounded-lg overflow-hidden relative">
                           <img
                             src={appearance.images[0].src}
-                            alt={`${appearance.episode} — After`}
+                            alt={`${appearance.episode} renovation by Roll On Painting`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
+                            loading={idx === 0 ? "eager" : "lazy"}
                             decoding="async"
+                            width="160"
+                            height="112"
                           />
-                          <div className="absolute bottom-1.5 right-1.5 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded flex items-center gap-1">
-                            <Camera className="w-3 h-3" />
+                          <div className="absolute bottom-1.5 right-1.5 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded flex items-center gap-1" aria-label={`${appearance.images.length} photos`}>
+                            <Camera className="w-3 h-3" aria-hidden="true" />
                             {appearance.images.length}
                           </div>
                         </div>
@@ -215,20 +223,20 @@ const MediaPage: React.FC = () => {
                           </h3>
                         </div>
                         <p className="text-muted-foreground mb-3 line-clamp-2">{appearance.description}</p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-2" aria-label="Services provided">
                           {appearance.services.map(service => (
                             <span
                               key={service}
-                              className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-md"
+                              className="text-xs bg-muted text-muted-foreground px-2.5 py-1 rounded-md"
                             >
                               {service}
                             </span>
                           ))}
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" aria-hidden="true" />
                     </div>
-                  </button>
+                  </article>
                 ))}
               </div>
             </div>
@@ -236,14 +244,14 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* Dockside Magazine Section */}
-        <section id="dockside-section" className="py-16 md:py-24 bg-muted/30">
+        <section id="dockside-section" aria-labelledby="dockside-heading" className="py-16 md:py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
-                <BookOpen className="w-6 h-6 text-primary" />
+                <BookOpen className="w-6 h-6 text-primary" aria-hidden="true" />
                 <span className="text-sm font-semibold text-primary uppercase tracking-wider">Print Media</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 id="dockside-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Featured in Dockside Magazine
               </h2>
               <p className="text-muted-foreground text-lg mb-4 max-w-2xl">
@@ -258,32 +266,41 @@ const MediaPage: React.FC = () => {
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm mb-10 transition-colors"
               >
                 View all features on Dockside Publishing
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
 
               {/* Roll On Painting articles */}
               <div className="mb-12">
                 <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                  <span className="w-1 h-6 bg-primary rounded-full" />
+                  <span className="w-1 h-6 bg-primary rounded-full" aria-hidden="true" />
                   Roll On Painting Features
                 </h3>
-                <div className="grid gap-4">
+                <div className="grid gap-4" role="list" aria-label="Roll On Painting magazine articles">
                   {rollOnArticles.map((article, idx) => (
                     <a
                       key={idx}
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      role="listitem"
+                      aria-label={`Read "${article.title}" — ${article.issue || 'Dockside Magazine'}`}
                       className="group flex items-start gap-4 bg-card border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all duration-300"
                     >
-                      {article.thumbnail && (
+                      {article.thumbnail ? (
                         <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
-                          <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                          <img
+                            src={article.thumbnail}
+                            alt=""
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            decoding="async"
+                            width="80"
+                            height="80"
+                          />
                         </div>
-                      )}
-                      {!article.thumbnail && (
+                      ) : (
                         <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <BookOpen className="w-5 h-5 text-primary" />
+                          <BookOpen className="w-5 h-5 text-primary" aria-hidden="true" />
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
@@ -300,18 +317,16 @@ const MediaPage: React.FC = () => {
                         </div>
                         <div className="flex flex-wrap gap-1.5 mt-2">
                           {article.serviceSlugs.map(slug => (
-                            <Link
+                            <span
                               key={slug}
-                              to={`/${slug}`}
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-xs bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary px-2 py-0.5 rounded transition-colors"
+                              className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded"
                             >
                               {serviceSlugToName[slug] || slug}
-                            </Link>
+                            </span>
                           ))}
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
@@ -320,29 +335,38 @@ const MediaPage: React.FC = () => {
               {/* Muskoka Softwash articles */}
               <div>
                 <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
-                  <span className="w-1 h-6 bg-accent rounded-full" />
+                  <span className="w-1 h-6 bg-accent rounded-full" aria-hidden="true" />
                   Muskoka Softwash Features
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6">
                   Muskoka Softwash is a division of Roll On Painting, specializing in exterior soft washing and surface cleaning.
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-4" role="list" aria-label="Muskoka Softwash magazine articles">
                   {softwashArticles.map((article, idx) => (
                     <a
                       key={idx}
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      role="listitem"
+                      aria-label={`Read "${article.title}" — ${article.issue || 'Dockside Magazine'}`}
                       className="group flex items-start gap-4 bg-card border border-border rounded-lg p-4 hover:border-primary/30 hover:shadow-md transition-all duration-300"
                     >
-                      {article.thumbnail && (
+                      {article.thumbnail ? (
                         <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
-                          <img src={article.thumbnail} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                          <img
+                            src={article.thumbnail}
+                            alt=""
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            decoding="async"
+                            width="80"
+                            height="80"
+                          />
                         </div>
-                      )}
-                      {!article.thumbnail && (
+                      ) : (
                         <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                          <BookOpen className="w-5 h-5 text-accent-foreground" />
+                          <BookOpen className="w-5 h-5 text-accent-foreground" aria-hidden="true" />
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
@@ -358,7 +382,7 @@ const MediaPage: React.FC = () => {
                           )}
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
@@ -368,30 +392,30 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* Trust Signals */}
-        <section id="trust-signals" className="py-16 bg-background">
+        <section id="trust-signals" aria-labelledby="trust-heading" className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
+              <h2 id="trust-heading" className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
                 Why Muskoka Trusts Roll On Painting
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center p-4">
-                  <Shield className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <Shield className="w-10 h-10 text-primary mx-auto mb-3" aria-hidden="true" />
                   <div className="font-semibold text-foreground text-sm">$5M Insured</div>
                   <div className="text-xs text-muted-foreground">Full liability coverage</div>
                 </div>
                 <div className="text-center p-4">
-                  <Award className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <Award className="w-10 h-10 text-primary mx-auto mb-3" aria-hidden="true" />
                   <div className="font-semibold text-foreground text-sm">WSIB Covered</div>
                   <div className="text-xs text-muted-foreground">Worker protection</div>
                 </div>
                 <div className="text-center p-4">
-                  <Star className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <Star className="w-10 h-10 text-primary mx-auto mb-3" aria-hidden="true" />
                   <div className="font-semibold text-foreground text-sm">25+ Years</div>
                   <div className="text-xs text-muted-foreground">Industry experience</div>
                 </div>
                 <div className="text-center p-4">
-                  <Tv className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <Tv className="w-10 h-10 text-primary mx-auto mb-3" aria-hidden="true" />
                   <div className="font-semibold text-foreground text-sm">20 Media Features</div>
                   <div className="text-xs text-muted-foreground">TV + print recognition</div>
                 </div>
@@ -401,7 +425,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-20 bg-muted/50">
+        <section aria-label="Get a free quote" className="py-16 md:py-20 bg-muted/50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-atomic-navy mb-4">
               Work with Muskoka's Most Recognized Painters
@@ -412,16 +436,16 @@ const MediaPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white font-semibold px-8 py-3 rounded-lg hover:bg-atomic-turquoise/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white font-semibold px-8 py-3 rounded-lg hover:bg-atomic-turquoise/90 transition-colors min-h-[48px]"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
                 Get a Free Quote
               </Link>
               <a
                 href={`tel:${businessInfo.phone.tel}`}
-                className="inline-flex items-center justify-center gap-2 border border-atomic-navy/20 text-atomic-navy font-semibold px-8 py-3 rounded-lg hover:bg-atomic-navy/5 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-atomic-navy/20 text-atomic-navy font-semibold px-8 py-3 rounded-lg hover:bg-atomic-navy/5 transition-colors min-h-[48px]"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 {businessInfo.phone.primary}
               </a>
             </div>
