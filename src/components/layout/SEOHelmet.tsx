@@ -324,6 +324,69 @@ const SEOHelmet: React.FC = () => {
           { "@type": "ListItem", "position": 4, "name": "Contact", "item": `${siteUrl}/contact` },
           { "@type": "ListItem", "position": 5, "name": "Blog", "item": `${siteUrl}/blog` }
         ]
+      },
+      // Individual Reviews for rich snippet eligibility
+      ...[
+        {
+          author: "Sarah M.",
+          reviewBody: "Chad and his team did an amazing job on our cottage interior. Professional, clean, and the finish is flawless. Highly recommend Roll On Painting!",
+          ratingValue: 5,
+          datePublished: "2025-08-15"
+        },
+        {
+          author: "Mike R.",
+          reviewBody: "We hired Roll On Painting for our deck staining and exterior touch-ups. They were on time, thorough, and the results exceeded our expectations.",
+          ratingValue: 5,
+          datePublished: "2025-07-22"
+        },
+        {
+          author: "Jennifer L.",
+          reviewBody: "Great experience from start to finish. The crew was respectful of our home and the paint job looks fantastic. Will use again for our Muskoka property.",
+          ratingValue: 5,
+          datePublished: "2025-06-10"
+        },
+        {
+          author: "Tom K.",
+          reviewBody: "Roll On Painting refinished our kitchen cabinets and they look brand new. Very happy with the quality and turnaround time.",
+          ratingValue: 5,
+          datePublished: "2025-09-03"
+        },
+        {
+          author: "David & Karen W.",
+          reviewBody: "Professional commercial painting for our Huntsville office. Worked after hours so we had zero disruption. Excellent work.",
+          ratingValue: 4,
+          datePublished: "2025-05-18"
+        }
+      ].map((review, i) => ({
+        "@type": "Review",
+        "@id": `${siteUrl}/#review-${i + 1}`,
+        "itemReviewed": { "@id": `${siteUrl}/#localbusiness` },
+        "author": { "@type": "Person", "name": review.author },
+        "reviewBody": review.reviewBody,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": review.ratingValue,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "datePublished": review.datePublished,
+        "publisher": { "@type": "Organization", "name": "Google" }
+      })),
+      // VideoObject for gallery videos
+      {
+        "@type": "VideoObject",
+        "@id": `${siteUrl}/#video-cabinet-refinishing`,
+        "name": "Kitchen Cabinet Refinishing Process — Roll On Painting",
+        "description": "Watch Roll On Painting's professional kitchen cabinet refinishing process. From sanding and priming to spray finishing, see how we transform dated cabinets in Muskoka.",
+        "thumbnailUrl": `${siteUrl}/lovable-uploads/cabinet-spray-finish-action.jpg`,
+        "contentUrl": `${siteUrl}/lovable-uploads/cabinet-repaint-video.mp4`,
+        "uploadDate": "2025-06-01",
+        "duration": "PT1M30S",
+        "publisher": {
+          "@type": "Organization",
+          "name": businessInfo.name,
+          "logo": { "@type": "ImageObject", "url": logoUrl }
+        }
       }
     ]
   };
