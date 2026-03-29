@@ -74,6 +74,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
       <Helmet>
         <title>{service.name} | Roll On Painting | Muskoka</title>
         <meta name="description" content={service.metaDescription} />
+        <meta name="keywords" content={`${service.name.toLowerCase()}, ${service.name.toLowerCase()} Muskoka, ${service.name.toLowerCase()} Huntsville, ${service.name.toLowerCase()} Bracebridge, painters Muskoka, painting contractor Ontario, Roll On Painting`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={serviceUrl} />
         

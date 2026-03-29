@@ -85,6 +85,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
       <Helmet>
         <title>{location.metaTitle}</title>
         <meta name="description" content={location.metaDescription} />
+        <meta name="keywords" content={`painters ${location.name}, painting ${location.name}, interior painting ${location.name}, exterior painting ${location.name}, house painters ${location.region}, painting contractor ${location.name}, Roll On Painting`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={pageUrl} />
         
