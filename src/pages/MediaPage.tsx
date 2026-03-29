@@ -126,55 +126,42 @@ const MediaPage: React.FC = () => {
 
       <Navbar activeSection="" />
 
-      <main className="pt-20">
-        {/* Hero */}
-        <section className="relative bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90 text-background overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-20 w-96 h-96 bg-accent rounded-full blur-3xl" />
-          </div>
-          <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
-            <Link to="/" className="inline-flex items-center gap-2 text-background/70 hover:text-background transition-colors mb-8 text-sm">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
-            <div className="max-w-4xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold tracking-wider uppercase">
-                  Press & Media
-                </div>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                In The Media
-              </h1>
-              <p className="text-lg md:text-xl text-background/80 max-w-2xl leading-relaxed">
-                Roll On Painting is Muskoka's most featured painting contractor — recognized{' '}
-                <strong className="text-primary">4 times on HGTV</strong> and{' '}
-                <strong className="text-primary">15 times in Dockside Magazine</strong>.
-              </p>
+      <main className="pt-16">
+        {/* Hero — Light header matching site style */}
+        <section className="pt-10 pb-6 md:pt-14 md:pb-8">
+          <div className="container mx-auto px-4 text-center">
+            <div className="inline-block px-3 py-1 bg-atomic-turquoise/10 text-atomic-turquoise text-xs font-semibold tracking-wider uppercase rounded-full mb-4">
+              Press & Media
             </div>
+            <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">In The Media</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Roll On Painting is Muskoka's most featured painting contractor — recognized{' '}
+              <strong className="text-atomic-navy">4 times on HGTV</strong> and{' '}
+              <strong className="text-atomic-navy">15 times in Dockside Magazine</strong>.
+            </p>
+            <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
           </div>
         </section>
 
         {/* Stats Bar */}
-        <section className="bg-primary text-primary-foreground py-6">
+        <section className="bg-muted/50 py-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold">4×</div>
-                <div className="text-sm opacity-90">HGTV Appearances</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">4×</div>
+                <div className="text-sm text-muted-foreground">HGTV Appearances</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">15×</div>
-                <div className="text-sm opacity-90">Dockside Features</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">15×</div>
+                <div className="text-sm text-muted-foreground">Dockside Features</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">25+</div>
-                <div className="text-sm opacity-90">Years Experience</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">25+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">{businessInfo.ratings.average}★</div>
-                <div className="text-sm opacity-90">Google Rating</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">{businessInfo.ratings.average}★</div>
+                <div className="text-sm text-muted-foreground">Google Rating</div>
               </div>
             </div>
           </div>
