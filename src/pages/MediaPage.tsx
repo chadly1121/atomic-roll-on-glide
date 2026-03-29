@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight } from 'lucide-react';
+import { ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight } from 'lucide-react';
 import { docksideArticles, DOCKSIDE_TAG_URL } from '@/data/docksideArticles';
 import { businessInfo } from '@/data/businessInfo';
 import Navbar from '@/components/Navbar';
