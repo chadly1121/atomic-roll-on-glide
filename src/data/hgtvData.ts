@@ -22,7 +22,7 @@ export const hgtvAppearances: HgtvAppearance[] = [
     episode: "Whimsical Woodlands",
     description:
       "Scott McGillivray and Debra Salmoni transformed a dated 20-year-old lakeside Muskoka cottage with a whimsical, colorful design. Roll On Painting handled all painting and wallpaper — including deep blue walls, orange accents, a refreshed U-shaped kitchen, spa-like bathroom, and new exterior siding for enhanced curb appeal.",
-    services: ["Interior Painting", "Exterior Painting", "Wallpaper Installation"],
+    services: ["Interior Painting", "Interior Staining", "Wallpaper — Walls & Ceilings"],
     articleUrl: "https://www.raediusconstruction.com/whimsicalwoodlands",
     images: [
       { src: wix("afd504_22ccad63ddd24e6981ff98c679ab4c00~mv2.jpg"), label: "Exterior After" },
@@ -38,7 +38,7 @@ export const hgtvAppearances: HgtvAppearance[] = [
     episode: "Bayside Bungalow",
     description:
       "Scott McGillivray and Debra Salmoni transformed a crowded, outdated lakefront cottage into a modern, vibrant rental. Roll On Painting delivered the bold orange exterior siding, modern interior finishes, and all painting to create a bright, spacious feel — designed to stand out in the competitive Muskoka vacation rental market.",
-    services: ["Exterior Painting", "Interior Painting"],
+    services: ["Interior Painting", "Pine Sealing", "Tannin Sealing", "Shellac Primer", "T&G Pine Sealer & Paint"],
     articleUrl: "https://www.raediusconstruction.com/baysidebungalow",
     images: [
       { src: wix("467223_2509909b41fb4c76be56394d5861b919~mv2.jpg"), label: "Porch After" },
@@ -54,7 +54,7 @@ export const hgtvAppearances: HgtvAppearance[] = [
     episode: "Lakeside Landing",
     description:
       "Scott McGillivray and Debra Salmoni transformed a foundational-stage cottage on the Moon River in Bala into a stunning family rental. Roll On Painting provided all painting and finishes — including a dramatic fireplace feature wall with acoustic panels, bright interiors with large windows, and a cool bunk room for kids.",
-    services: ["Interior Painting", "Exterior Painting"],
+    services: ["Interior Painting", "Exterior Painting", "Interior Staining", "Exterior Staining"],
     articleUrl: "https://www.raediusconstruction.com/lakesidelanding",
     images: [
       { src: wix("afd504_961f512f7a644e18a8492209d94e9504~mv2.jpg"), label: "Back Walkway After" },
@@ -70,7 +70,7 @@ export const hgtvAppearances: HgtvAppearance[] = [
     episode: "Heritage Hideaway",
     description:
       "Scott McGillivray and Debra Salmoni transformed a dated cottage on Skeleton Lake into a modern 4-season rental with refined rustic styling. Roll On Painting delivered all painting and finishes — including a lodge-inspired interior with a new stone fireplace surround, bright open-concept living spaces, a modernized kitchen, and refreshed exterior with new decking for enhanced lakeside curb appeal.",
-    services: ["Interior Painting", "Exterior Painting"],
+    services: ["Interior Painting", "Exterior Painting", "Metal Roof Painting", "Exterior Cleaning"],
     articleUrl: "https://www.raediusconstruction.com/heritagehideaway",
     images: [
       { src: wix("afd504_5e82ee4c41304c1399a443ec9c2fae48~mv2.jpg"), label: "Muskoka Room After" },
@@ -86,7 +86,7 @@ export const hgtvAppearances: HgtvAppearance[] = [
     episode: "European Villa",
     description:
       "Scott McGillivray and Debra Salmoni transformed an inherited 1970s cottage on a Muskoka waterfront into a European-inspired villa commanding $1,000/night. Roll On Painting delivered all painting and finishes — including bright white exterior siding with black trim, refined white interior walls that showcase original refinished ceiling beams, and a warm European aesthetic throughout the open-concept living spaces.",
-    services: ["Interior Painting", "Exterior Painting"],
+    services: ["Interior Painting", "Interior Staining", "Brick Painting", "Brick Wash Painting", "Exterior Painting", "Exterior Staining"],
     articleUrl: "https://www.raediusconstruction.com/europeanvilla",
     images: [
       { src: wix("467223_268e80030efc4ef5ae905c150f3d6a41~mv2.jpg"), label: "Front After" },
