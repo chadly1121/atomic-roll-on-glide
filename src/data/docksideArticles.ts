@@ -14,6 +14,8 @@ export interface DocksideArticle {
   serviceSlugs: string[];
   /** Year/season of publication */
   issue?: string;
+  /** OG image / thumbnail from the article */
+  thumbnail?: string;
 }
 
 export const docksideArticles: DocksideArticle[] = [
@@ -24,7 +26,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Clean, coat, and protect your exterior for years to come",
     brand: "Roll-On Painting & Muskoka Softwash",
     serviceSlugs: ['exterior-painting', 'power-washing'],
-    issue: "Autumn/Winter 2025"
+    issue: "Autumn/Winter 2025",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2025/11/Roll-On-Painting_Dockside-Autumn-Winter-2025-05.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/muskoka-soft-wash-4/",
@@ -32,7 +35,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Get your exterior clean and keep it that way",
     brand: "Muskoka Softwash",
     serviceSlugs: ['power-washing'],
-    issue: "Summer 2025"
+    issue: "Summer 2025",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2025/07/Muskoka-Soft-Wash-S2-2025-2.jpg"
   },
   // 2024
   {
@@ -41,7 +45,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Repaint your cottage with a team of painters from across the globe",
     brand: "Roll-On Painting",
     serviceSlugs: ['exterior-painting', 'interior-painting'],
-    issue: "Summer 2024"
+    issue: "Summer 2024",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2025/08/Roll-On-Painting_Dockside-M2-2025-1.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting-8/",
@@ -49,7 +54,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Paint with a trailblazer of the trade",
     brand: "Roll-On Painting",
     serviceSlugs: ['interior-painting', 'exterior-painting', 'commercial-painting'],
-    issue: "Spring 2024"
+    issue: "Spring 2024",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2025/06/RollOnPainting_M1-2025-2.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting-7/",
@@ -57,7 +63,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Embrace pattern and texture with the help of expert installers",
     brand: "Roll-On Painting",
     serviceSlugs: ['wallpaper-installation'],
-    issue: "Winter 2024"
+    issue: "Winter 2024",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2024/08/RollOn-Painting-Dockside-Muskoka-Summer-2024-01.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/muskoka-soft-wash-3/",
@@ -65,7 +72,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Black, green? Time to clean",
     brand: "Muskoka Softwash",
     serviceSlugs: ['power-washing', 'exterior-painting'],
-    issue: "2024"
+    issue: "2024",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2025/06/MSK-soft-wash-M1-2025-1.jpg"
   },
   // 2023
   {
@@ -74,7 +82,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Paint and stain will help boost your cottage's longevity",
     brand: "Roll-On Painting",
     serviceSlugs: ['exterior-painting', 'deck-staining'],
-    issue: "Summer 2023"
+    issue: "Summer 2023",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2024/06/Roll-On-Painting_Dockside-Magazine-Muskoka-Spring-2024_01.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting-5/",
@@ -82,7 +91,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Winter is the ideal time to refresh your cottage",
     brand: "Roll-On Painting",
     serviceSlugs: ['interior-painting'],
-    issue: "Autumn/Winter 2023"
+    issue: "Autumn/Winter 2023",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2023/11/Roll-On-Painting_Dockside-Magazine-Autumn-Winter-2023_02.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting-4/",
@@ -90,7 +100,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Schedule work to keep your cottage looking fresh",
     brand: "Roll-On Painting",
     serviceSlugs: ['exterior-painting', 'interior-painting'],
-    issue: "Summer 2023"
+    issue: "Summer 2023",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2023/08/Roll-On-Painting_Dockside-Magazine-Muskoka-Summer-2023_01.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting-3/",
@@ -98,7 +109,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Give your kitchen a fresh coat of durability",
     brand: "Roll-On Painting",
     serviceSlugs: ['cabinet-refinishing'],
-    issue: "Spring 2023"
+    issue: "Spring 2023",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2023/06/Roll-On-Painting_Dockside-Magazine-Muskoka-Spring-2023_01.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/please-wash-me/",
@@ -106,7 +118,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Tackle mould and mildew with a strong yet gentle solution",
     brand: "Muskoka Softwash",
     serviceSlugs: ['power-washing'],
-    issue: "Summer 2023"
+    issue: "Summer 2023",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2023/08/Please-Wash-Me_Dockside-Magazine-Muskoka-Summer-2023_04.jpg"
   },
   // 2022
   {
@@ -115,7 +128,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Winter and spring are perfect for interior improvements",
     brand: "Roll-On Painting",
     serviceSlugs: ['interior-painting', 'cabinet-refinishing'],
-    issue: "Winter 2022"
+    issue: "Winter 2022",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2022/12/Roll-On-Painting_Dockside-Winter-2022-02.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/muskoka-soft-wash-2/",
@@ -123,7 +137,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Keep your exterior free of mould and mildew",
     brand: "Muskoka Softwash",
     serviceSlugs: ['power-washing'],
-    issue: "2022"
+    issue: "2022",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2024/07/Muskoka-Soft-Wash_Dockside-Magazine-Simcoe-Summer-2024_01.jpg"
   },
   {
     url: "https://www.docksidepublishing.com/roll-on-painting/",
@@ -131,7 +146,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Max out your cottage enjoyment with off-season painting projects",
     brand: "Roll-On Painting",
     serviceSlugs: ['interior-painting'],
-    issue: "Summer 2022"
+    issue: "Summer 2022",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2022/08/Roll-On-Painting_Dockside-M2-2022_01.jpg"
   },
   // 2024 — Muskoka Softwash cedar roof feature
   {
@@ -140,7 +156,8 @@ export const docksideArticles: DocksideArticle[] = [
     headline: "Bring your shakes back to life with the right wash and protective coatings",
     brand: "Muskoka Softwash",
     serviceSlugs: ['power-washing', 'exterior-painting'],
-    issue: "Autumn/Winter 2024"
+    issue: "Autumn/Winter 2024",
+    thumbnail: "https://www.docksidepublishing.com/wp-content/uploads/2024/12/Roll-On-Painting-MSK-Software_Dockside-Autumn-Winter-2024-01.jpg"
   },
 ];
 
