@@ -355,5 +355,29 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-custom-stained-double-door-set.jpg",
     category: "interior",
     title: "Custom Stained Double Doors — Interior Entry"
+  },
+  {
+    id: 335,
+    src: "/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg",
+    category: "interior",
+    title: "Cottage Interior — Shiplap & Hardwood, Lake Rosseau"
+  },
+  {
+    id: 336,
+    src: "/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg",
+    category: "interior",
+    title: "Great Room with Vaulted Ceiling & Beams — Muskoka Cottage"
+  },
+  {
+    id: 337,
+    src: "/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg",
+    category: "interior",
+    title: "Dark Blue Accent Wall — Interior Design, Muskoka"
+  },
+  {
+    id: 338,
+    src: "/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg",
+    category: "interior",
+    title: "Interior Painting Crew — Lakefront View, Lake Muskoka"
   }
 ];

@@ -104,7 +104,11 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/interior-kitchen-masking-prep.jpg',
       '/lovable-uploads/interior-loft-space-finished.jpg',
       '/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg',
-      '/lovable-uploads/interior-primer-ceiling-beams.jpg'
+      '/lovable-uploads/interior-primer-ceiling-beams.jpg',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg',
+      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg',
+      '/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg'
     ]
   },
   {
@@ -175,7 +179,9 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-repairs-ladder-siding.jpg',
       '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
       '/lovable-uploads/exterior-dark-garage-finished.jpg',
-      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg'
+      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png'
     ]
   },
   {
@@ -285,7 +291,8 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/cabinet-painting-masking-prep.jpg',
       '/lovable-uploads/cabinet-dark-doors-drying-rack.jpg',
       '/lovable-uploads/cabinet-white-builtin-shelving.jpg',
-      '/lovable-uploads/cabinet-onsite-spray-white.jpg'
+      '/lovable-uploads/cabinet-onsite-spray-white.jpg',
+      '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.jpg'
     ],
     galleryVideos: [
       '/lovable-uploads/cabinet-repaint-video.mp4'
@@ -735,7 +742,10 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-softwash-before.jpg',
       '/lovable-uploads/exterior-softwash-after.jpg',
       '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
-      '/lovable-uploads/exterior-softwash-cedar-shingles.jpg'
+      '/lovable-uploads/exterior-softwash-cedar-shingles.jpg',
+      '/lovable-uploads/exterior-soft-washing-stone-muskoka.jpg',
+      '/lovable-uploads/exterior-walkway-pressure-washing-muskoka.jpg',
+      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg'
     ],
     faqs: [
       {
