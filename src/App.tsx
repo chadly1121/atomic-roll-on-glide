@@ -27,6 +27,7 @@ const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const CareersPage = lazy(() => import("./pages/CareersPage"));
+const MediaPage = lazy(() => import("./pages/MediaPage"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -77,6 +78,7 @@ const App = () => {
                   <Route path="/careers" element={<CareersPage />} />
                   <Route path="/payment-success" element={<PaymentSuccess />} />
                   <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
+                  <Route path="/media" element={<MediaPage />} />
                   
                   <Route path="/:slug" element={<ServicePage />} />
                   <Route path="*" element={
