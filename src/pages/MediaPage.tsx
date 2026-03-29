@@ -1,48 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight } from 'lucide-react';
+import { ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight, Camera } from 'lucide-react';
 import { docksideArticles, DOCKSIDE_TAG_URL } from '@/data/docksideArticles';
+import { hgtvAppearances } from '@/data/hgtvData';
+import type { HgtvAppearance } from '@/data/hgtvData';
 import { businessInfo } from '@/data/businessInfo';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import HgtvEpisodePopup from '@/components/media/HgtvEpisodePopup';
 
 const siteUrl = 'https://www.roll-onpainting.com';
 const ogImage = 'https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg';
-
-// HGTV appearances data
-const hgtvAppearances = [
-  {
-    season: "Season 6, Episode 3",
-    episode: "Whimsical Woodlands",
-    description: "Scott McGillivray and Debra Salmoni transformed a dated 20-year-old lakeside Muskoka cottage with a whimsical, colorful design. Roll On Painting handled all painting and wallpaper — including deep blue walls, orange accents, a refreshed U-shaped kitchen, spa-like bathroom, and new exterior siding for enhanced curb appeal.",
-    services: ["Interior Painting", "Exterior Painting", "Wallpaper Installation"],
-  },
-  {
-    season: "Season 4, Episode 5",
-    episode: "Bayside Bungalow",
-    description: "Scott McGillivray and Debra Salmoni transformed a crowded, outdated lakefront cottage into a modern, vibrant rental. Roll On Painting delivered the bold orange exterior siding, modern interior finishes, and all painting to create a bright, spacious feel — designed to stand out in the competitive Muskoka vacation rental market.",
-    services: ["Exterior Painting", "Interior Painting"],
-  },
-  {
-    season: "Season 5, Episode 8",
-    episode: "Lakeside Landing",
-    description: "Scott McGillivray and Debra Salmoni transformed a foundational-stage cottage on the Moon River in Bala into a stunning family rental. Roll On Painting provided all painting and finishes — including a dramatic fireplace feature wall with acoustic panels, bright interiors with large windows, and a cool bunk room for kids.",
-    services: ["Interior Painting", "Exterior Painting"],
-  },
-  {
-    season: "Season 4",
-    episode: "Heritage Hideaway",
-    description: "Scott McGillivray and Debra Salmoni transformed a dated cottage on Skeleton Lake into a modern 4-season rental with refined rustic styling. Roll On Painting delivered all painting and finishes — including a lodge-inspired interior with a new stone fireplace surround, bright open-concept living spaces, a modernized kitchen, and refreshed exterior with new decking for enhanced lakeside curb appeal.",
-    services: ["Interior Painting", "Exterior Painting"],
-  },
-  {
-    season: "Season 4",
-    episode: "European Villa",
-    description: "Scott McGillivray and Debra Salmoni transformed an inherited 1970s cottage on a Muskoka waterfront into a European-inspired villa commanding $1,000/night. Roll On Painting delivered all painting and finishes — including bright white exterior siding with black trim, refined white interior walls that showcase original refinished ceiling beams, and a warm European aesthetic throughout the open-concept living spaces.",
-    services: ["Interior Painting", "Exterior Painting"],
-  },
-];
 
 // Group Dockside articles by brand
 const rollOnArticles = docksideArticles.filter(a => a.brand === 'Roll-On Painting' || a.brand === 'Roll-On Painting & Muskoka Softwash');
@@ -60,6 +29,9 @@ const serviceSlugToName: Record<string, string> = {
 };
 
 const MediaPage: React.FC = () => {
+  const [selectedEpisode, setSelectedEpisode] = useState<HgtvAppearance | null>(null);
+  const [popupOpen, setPopupOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -192,14 +164,28 @@ const MediaPage: React.FC = () => {
 
               <div className="space-y-6">
                 {hgtvAppearances.map((appearance, idx) => (
-                  <div
+                  <button
                     key={idx}
-                    className="group relative bg-card border border-border rounded-xl p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                    onClick={() => { setSelectedEpisode(appearance); setPopupOpen(true); }}
+                    className="group relative bg-card border border-border rounded-xl p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 w-full text-left cursor-pointer"
                   >
                     <div className="flex flex-col md:flex-row md:items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <span className="text-primary font-bold text-sm">{idx + 1}</span>
-                      </div>
+                      {/* Thumbnail */}
+                      {appearance.images.length > 0 && (
+                        <div className="flex-shrink-0 w-full md:w-40 h-28 md:h-28 rounded-lg overflow-hidden relative">
+                          <img
+                            src={appearance.images[0].src}
+                            alt={`${appearance.episode} — After`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div className="absolute bottom-1.5 right-1.5 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded flex items-center gap-1">
+                            <Camera className="w-3 h-3" />
+                            {appearance.images.length}
+                          </div>
+                        </div>
+                      )}
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-2">
                           <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">
@@ -209,7 +195,7 @@ const MediaPage: React.FC = () => {
                             {appearance.episode}
                           </h3>
                         </div>
-                        <p className="text-muted-foreground mb-3">{appearance.description}</p>
+                        <p className="text-muted-foreground mb-3 line-clamp-2">{appearance.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {appearance.services.map(service => (
                             <span
@@ -221,8 +207,9 @@ const MediaPage: React.FC = () => {
                           ))}
                         </div>
                       </div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary flex-shrink-0 mt-1 transition-colors hidden md:block" />
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -408,6 +395,12 @@ const MediaPage: React.FC = () => {
           </div>
         </section>
       </main>
+
+      <HgtvEpisodePopup
+        appearance={selectedEpisode}
+        open={popupOpen}
+        onOpenChange={setPopupOpen}
+      />
 
       <Footer />
     </>
