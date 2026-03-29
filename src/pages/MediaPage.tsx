@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight } from 'lucide-react';
+import { ExternalLink, Tv, BookOpen, Phone, Mail, Shield, Award, Star, ChevronRight } from 'lucide-react';
 import { docksideArticles, DOCKSIDE_TAG_URL } from '@/data/docksideArticles';
 import { businessInfo } from '@/data/businessInfo';
 import Navbar from '@/components/Navbar';
@@ -126,55 +126,42 @@ const MediaPage: React.FC = () => {
 
       <Navbar activeSection="" />
 
-      <main className="pt-20">
-        {/* Hero */}
-        <section className="relative bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90 text-background overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-20 w-96 h-96 bg-accent rounded-full blur-3xl" />
-          </div>
-          <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
-            <Link to="/" className="inline-flex items-center gap-2 text-background/70 hover:text-background transition-colors mb-8 text-sm">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
-            <div className="max-w-4xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold tracking-wider uppercase">
-                  Press & Media
-                </div>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                In The Media
-              </h1>
-              <p className="text-lg md:text-xl text-background/80 max-w-2xl leading-relaxed">
-                Roll On Painting is Muskoka's most featured painting contractor — recognized{' '}
-                <strong className="text-primary">4 times on HGTV</strong> and{' '}
-                <strong className="text-primary">15 times in Dockside Magazine</strong>.
-              </p>
+      <main className="pt-16">
+        {/* Hero — Light header matching site style */}
+        <section className="pt-10 pb-6 md:pt-14 md:pb-8">
+          <div className="container mx-auto px-4 text-center">
+            <div className="inline-block px-3 py-1 bg-atomic-turquoise/10 text-atomic-turquoise text-xs font-semibold tracking-wider uppercase rounded-full mb-4">
+              Press & Media
             </div>
+            <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">In The Media</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Roll On Painting is Muskoka's most featured painting contractor — recognized{' '}
+              <strong className="text-atomic-navy">4 times on HGTV</strong> and{' '}
+              <strong className="text-atomic-navy">15 times in Dockside Magazine</strong>.
+            </p>
+            <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
           </div>
         </section>
 
         {/* Stats Bar */}
-        <section className="bg-primary text-primary-foreground py-6">
+        <section className="bg-muted/50 py-8">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold">4×</div>
-                <div className="text-sm opacity-90">HGTV Appearances</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">4×</div>
+                <div className="text-sm text-muted-foreground">HGTV Appearances</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">15×</div>
-                <div className="text-sm opacity-90">Dockside Features</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">15×</div>
+                <div className="text-sm text-muted-foreground">Dockside Features</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">25+</div>
-                <div className="text-sm opacity-90">Years Experience</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">25+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold">{businessInfo.ratings.average}★</div>
-                <div className="text-sm opacity-90">Google Rating</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">{businessInfo.ratings.average}★</div>
+                <div className="text-sm text-muted-foreground">Google Rating</div>
               </div>
             </div>
           </div>
@@ -388,25 +375,25 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-20 bg-primary text-primary-foreground">
+        <section className="py-16 md:py-20 bg-muted/50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-atomic-navy mb-4">
               Work with Muskoka's Most Recognized Painters
             </h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Get the same quality you see on TV and in print. Contact us for a free estimate today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-background text-foreground font-semibold px-8 py-3 rounded-lg hover:bg-background/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white font-semibold px-8 py-3 rounded-lg hover:bg-atomic-turquoise/90 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 Get a Free Quote
               </Link>
               <a
                 href={`tel:${businessInfo.phone.tel}`}
-                className="inline-flex items-center justify-center gap-2 bg-primary-foreground/10 border border-primary-foreground/30 font-semibold px-8 py-3 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-atomic-navy/20 text-atomic-navy font-semibold px-8 py-3 rounded-lg hover:bg-atomic-navy/5 transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 {businessInfo.phone.primary}
