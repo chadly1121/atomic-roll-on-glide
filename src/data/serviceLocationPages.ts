@@ -105,7 +105,9 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/interior-primer-ceiling-beams.jpg',
       '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg',
       '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg',
-      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg'
+      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg',
+      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.jpg',
+      '/lovable-uploads/interior-painting-crew-lakefront-dockside.jpg'
     ]
   },
   {
@@ -205,7 +207,10 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/exterior-dark-garage-finished.jpg',
       '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
       '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
-      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png'
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg',
+      '/lovable-uploads/exterior-painting-crew-port-sydney.jpg',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg'
     ]
   },
   {
