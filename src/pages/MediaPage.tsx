@@ -43,29 +43,48 @@ const MediaPage: React.FC = () => {
         "@type": "WebPage",
         "@id": `${siteUrl}/media#webpage`,
         "url": `${siteUrl}/media`,
-        "name": "In The Media — Roll On Painting | HGTV & Dockside Magazine",
-        "description": "Roll On Painting has been featured 5 times on Scott's Vacation House Rules (HGTV/Home Network) and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor.",
-        "isPartOf": { "@id": `${siteUrl}#website` },
+        "name": "In The Media — Roll On Painting | HGTV & Dockside Magazine Features",
+        "description": "Roll On Painting has been featured 5 times on Scott's Vacation House Rules (Home Network / HGTV Canada) and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor with 20 media features.",
+        "isPartOf": { "@id": `${siteUrl}/#website` },
+        "about": { "@id": `${siteUrl}/#localbusiness` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
             { "@type": "ListItem", "position": 2, "name": "In The Media", "item": `${siteUrl}/media` }
           ]
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["#hgtv-section", "#dockside-section", "#trust-signals"]
         }
       },
       {
         "@type": "TVSeries",
         "name": "Scott's Vacation House Rules",
-"description": "Roll On Painting has appeared 5 times on this home renovation show filmed in the Muskoka region.",
+        "description": "Roll On Painting has appeared 5 times on this Muskoka home renovation show, providing professional painting, staining, and wallpapering services.",
         "productionCompany": { "@type": "Organization", "name": "Home Network (formerly HGTV Canada)" },
         "actor": { "@type": "Person", "name": "Scott McGillivray" },
-        "url": "https://www.hgtv.ca/shows/scotts-vacation-house-rules/"
+        "url": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
       },
+      ...hgtvAppearances.map((ep, idx) => ({
+        "@type": "TVEpisode",
+        "partOfSeries": { "@type": "TVSeries", "name": "Scott's Vacation House Rules" },
+        "name": ep.episode,
+        "seasonNumber": ep.season.match(/Season (\d+)/)?.[1],
+        "description": ep.description,
+        "url": ep.articleUrl || `${siteUrl}/media`,
+        "mentions": {
+          "@type": "LocalBusiness",
+          "name": "Roll On Painting",
+          "url": siteUrl
+        }
+      })),
       ...docksideArticles.map(article => ({
         "@type": "Article",
         "headline": article.title,
         "url": article.url,
+        "image": article.thumbnail,
         "publisher": {
           "@type": "Organization",
           "name": "Dockside Magazine",
@@ -83,20 +102,20 @@ const MediaPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>In The Media — Roll On Painting | HGTV & Dockside Magazine Features</title>
-        <meta name="description" content="Roll On Painting featured 5 times on Scott's Vacation House Rules (HGTV/Home Network) and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor." />
-        <meta name="keywords" content="Roll On Painting HGTV, Roll On Painting Dockside Magazine, Muskoka painter TV, Scott's Vacation House Rules painting, Muskoka Softwash media, painters Muskoka featured" />
+        <title>In The Media — Roll On Painting | 5× HGTV & 15× Dockside Magazine</title>
+        <meta name="description" content="Roll On Painting featured 5 times on Scott's Vacation House Rules (Home Network / HGTV Canada) and 15 times in Dockside Magazine. 20 media features make us Muskoka's most recognized painting contractor. See episodes, photos, and articles." />
+        <meta name="keywords" content="Roll On Painting HGTV, Scott's Vacation House Rules painter, Muskoka painter TV, HGTV painting contractor, Dockside Magazine Roll On Painting, Muskoka Softwash media, painters Muskoka featured, cottage painting HGTV, Whimsical Woodlands painter, Bayside Bungalow painter, Lakeside Landing painter, Heritage Hideaway painter, European Villa painter, Home Network painting, Scott McGillivray painter Muskoka" />
         <link rel="canonical" href={`${siteUrl}/media`} />
 
-        <meta property="og:title" content="In The Media — Roll On Painting | HGTV & Dockside Magazine" />
-        <meta property="og:description" content="Featured 5 times on HGTV/Home Network and 15 times in Dockside Magazine. Meet Muskoka's most recognized painting team." />
+        <meta property="og:title" content="In The Media — Roll On Painting | 5× HGTV & 15× Dockside Magazine" />
+        <meta property="og:description" content="Featured 5 times on Scott's Vacation House Rules and 15 times in Dockside Magazine. Muskoka's most recognized painting team — see our TV episodes and press features." />
         <meta property="og:url" content={`${siteUrl}/media`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="In The Media — Roll On Painting" />
-        <meta name="twitter:description" content="Featured 4x on HGTV and 15x in Dockside Magazine." />
+        <meta name="twitter:title" content="In The Media — Roll On Painting | 5× HGTV" />
+        <meta name="twitter:description" content="Featured 5× on Scott's Vacation House Rules and 15× in Dockside Magazine. Muskoka's most recognized painters." />
         <meta name="twitter:image" content={ogImage} />
 
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
@@ -146,7 +165,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* HGTV Section */}
-        <section className="py-16 md:py-24 bg-background">
+        <section id="hgtv-section" className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
@@ -217,7 +236,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* Dockside Magazine Section */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section id="dockside-section" className="py-16 md:py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-3">
@@ -349,7 +368,7 @@ const MediaPage: React.FC = () => {
         </section>
 
         {/* Trust Signals */}
-        <section className="py-16 bg-background">
+        <section id="trust-signals" className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">

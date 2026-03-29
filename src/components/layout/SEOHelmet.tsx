@@ -192,7 +192,7 @@ const SEOHelmet: React.FC = () => {
           "https://www.docksidepublishing.com/?s=roll+on+painting"
         ]
       },
-      // Dockside Magazine mention schema
+      // Dockside Magazine & Media authority schema
       {
         "@type": "Article",
         "@id": `${siteUrl}/#dockside-press`,
@@ -201,6 +201,17 @@ const SEOHelmet: React.FC = () => {
         "publisher": { "@type": "Organization", "name": "Dockside Magazine", "url": "https://www.docksidepublishing.com" },
         "about": { "@id": `${siteUrl}/#localbusiness` },
         "url": "https://www.docksidepublishing.com/?s=roll+on+painting"
+      },
+      // HGTV / Home Network media authority schema
+      {
+        "@type": "TVSeries",
+        "@id": `${siteUrl}/#hgtv-appearances`,
+        "name": "Scott's Vacation House Rules",
+        "description": "Roll On Painting has been featured 5 times on Scott's Vacation House Rules (Home Network / HGTV Canada), providing painting, staining, and wallpapering for Muskoka cottage renovations. Episodes: Whimsical Woodlands (S6E3), Bayside Bungalow (S4E5), Lakeside Landing (S5E8), Heritage Hideaway (S4 Finale), European Villa (S3E13).",
+        "productionCompany": { "@type": "Organization", "name": "Home Network (formerly HGTV Canada)" },
+        "actor": { "@type": "Person", "name": "Scott McGillivray" },
+        "url": "https://www.homenetwork.ca/scotts-vacation-house-rules/",
+        "mentions": { "@id": `${siteUrl}/#localbusiness` }
       },
       // === SERVICE ENTITIES ===
       {
@@ -415,14 +426,15 @@ const SEOHelmet: React.FC = () => {
     "featureList": ["Instant AI-powered estimates", "Interior and exterior painting costs", "Commercial painting quotes", "No obligation required"]
   };
 
-  // TV Appearance Schema
+  // TV Appearance Schema (kept for homepage reference)
   const tvAppearanceSchema = {
     "@context": "https://schema.org",
     "@type": "TVSeries",
     "name": businessInfo.tvAppearance.show,
     "description": businessInfo.tvAppearance.description,
     "productionCompany": { "@type": "Organization", "name": businessInfo.tvAppearance.network },
-    "mentions": { "@type": "ProfessionalService", "name": businessInfo.name }
+    "mentions": { "@type": "ProfessionalService", "name": businessInfo.name },
+    "url": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
   };
 
   return (
