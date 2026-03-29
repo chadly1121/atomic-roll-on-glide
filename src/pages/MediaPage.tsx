@@ -19,10 +19,10 @@ const hgtvAppearances = [
     services: ["Interior Painting", "Exterior Painting", "Wallpaper Installation"],
   },
   {
-    season: "Season 5",
-    episode: "Episode TBC",
-    description: "Full interior and exterior painting for a rustic Muskoka family cottage transformation.",
-    services: ["Interior Painting", "Exterior Painting"],
+    season: "Season 4, Episode 5",
+    episode: "Bayside Bungalow",
+    description: "Scott McGillivray and Debra Salmoni transformed a crowded, outdated lakefront cottage into a modern, vibrant rental. Roll On Painting delivered the bold orange exterior siding, modern interior finishes, and all painting to create a bright, spacious feel — designed to stand out in the competitive Muskoka vacation rental market.",
+    services: ["Exterior Painting", "Interior Painting"],
   },
   {
     season: "Season 4",
