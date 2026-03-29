@@ -113,7 +113,7 @@ export const businessInfo = {
   // Magazine Features
   magazineFeatures: {
     publication: "Dockside Magazine",
-    totalFeatures: 14,
+    totalFeatures: 15,
     tagUrl: "https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/",
     description: "Roll On Painting and Muskoka Softwash have been featured 15 times in Dockside Magazine, Muskoka's premier cottage and lifestyle publication."
   },
