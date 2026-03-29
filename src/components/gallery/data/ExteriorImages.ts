@@ -211,5 +211,53 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg",
     category: "exterior",
     title: "Commercial Pressure & Soft Wash Equipment — Muskoka"
+  },
+  {
+    id: 340,
+    src: "/lovable-uploads/exterior-cedar-roof-soft-wash-muskoka.jpg",
+    category: "exterior",
+    title: "Cedar Roof Soft Wash — Aerial View, Muskoka"
+  },
+  {
+    id: 341,
+    src: "/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg",
+    category: "exterior",
+    title: "Boathouse Painting — Lake Muskoka Waterfront"
+  },
+  {
+    id: 342,
+    src: "/lovable-uploads/exterior-soft-wash-cottage-protection-muskoka.jpg",
+    category: "exterior",
+    title: "Soft Wash with Landscaping Protection — Muskoka Cottage"
+  },
+  {
+    id: 343,
+    src: "/lovable-uploads/exterior-painting-crew-port-sydney.jpg",
+    category: "exterior",
+    title: "Exterior Painting Crew — Full Team, Port Sydney"
+  },
+  {
+    id: 344,
+    src: "/lovable-uploads/exterior-mossy-cedar-shakes-before.jpg",
+    category: "exterior",
+    title: "Mossy Cedar Shakes — Before Soft Wash Treatment"
+  },
+  {
+    id: 345,
+    src: "/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg",
+    category: "exterior",
+    title: "Exterior Painting — Lakeside Cottage, Board & Batten"
+  },
+  {
+    id: 346,
+    src: "/lovable-uploads/exterior-pressure-washing-cedar-roof-steam.jpg",
+    category: "exterior",
+    title: "Cedar Roof Pressure Washing — Steam Action, Lakefront"
+  },
+  {
+    id: 347,
+    src: "/lovable-uploads/exterior-soft-wash-cottage-porch-muskoka.jpg",
+    category: "exterior",
+    title: "Soft Wash — Cottage Porch & Siding, Muskoka"
   }
 ];

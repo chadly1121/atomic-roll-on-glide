@@ -379,5 +379,17 @@ export const interiorImages: GalleryImage[] = [
     src: "/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg",
     category: "interior",
     title: "Interior Painting Crew — Lakefront View, Lake Muskoka"
+  },
+  {
+    id: 348,
+    src: "/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.jpg",
+    category: "interior",
+    title: "Living Room — Painted Built-Ins & Fireplace Surround, Muskoka"
+  },
+  {
+    id: 349,
+    src: "/lovable-uploads/interior-painting-crew-lakefront-dockside.jpg",
+    category: "interior",
+    title: "Interior Painting Crew — Lakefront New Build, Muskoka"
   }
 ];

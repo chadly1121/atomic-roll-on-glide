@@ -108,7 +108,9 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg',
       '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg',
       '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg',
-      '/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg'
+      '/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg',
+      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.jpg',
+      '/lovable-uploads/interior-painting-crew-lakefront-dockside.jpg'
     ]
   },
   {
@@ -181,7 +183,10 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-dark-garage-finished.jpg',
       '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
       '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
-      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png'
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg',
+      '/lovable-uploads/exterior-painting-crew-port-sydney.jpg',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg'
     ]
   },
   {
@@ -745,7 +750,12 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/exterior-softwash-cedar-shingles.jpg',
       '/lovable-uploads/exterior-soft-washing-stone-muskoka.jpg',
       '/lovable-uploads/exterior-walkway-pressure-washing-muskoka.jpg',
-      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg'
+      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg',
+      '/lovable-uploads/exterior-cedar-roof-soft-wash-muskoka.jpg',
+      '/lovable-uploads/exterior-soft-wash-cottage-protection-muskoka.jpg',
+      '/lovable-uploads/exterior-mossy-cedar-shakes-before.jpg',
+      '/lovable-uploads/exterior-pressure-washing-cedar-roof-steam.jpg',
+      '/lovable-uploads/exterior-soft-wash-cottage-porch-muskoka.jpg'
     ],
     faqs: [
       {
