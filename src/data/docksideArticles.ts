@@ -133,6 +133,15 @@ export const docksideArticles: DocksideArticle[] = [
     serviceSlugs: ['interior-painting'],
     issue: "Summer 2022"
   },
+  // 2024 — Muskoka Softwash cedar roof feature
+  {
+    url: "https://www.docksidepublishing.com/muskoka-softwash/",
+    title: "Bring Your Shakes Back to Life with the Right Wash and Protective Coatings",
+    headline: "Bring your shakes back to life with the right wash and protective coatings",
+    brand: "Muskoka Softwash",
+    serviceSlugs: ['power-washing', 'exterior-painting'],
+    issue: "Autumn/Winter 2024"
+  },
 ];
 
 /**
@@ -145,7 +154,7 @@ export const getDocksideArticlesForService = (slug: string): DocksideArticle[] =
 /**
  * Total number of Dockside Magazine features
  */
-export const DOCKSIDE_FEATURE_COUNT = docksideArticles.length;
+export const DOCKSIDE_FEATURE_COUNT = docksideArticles.length; // 15
 
 /**
  * Dockside tag page URL
