@@ -31,9 +31,9 @@ const hgtvAppearances = [
     services: ["Interior Painting", "Exterior Painting"],
   },
   {
-    season: "Season 3",
-    episode: "Episode TBC",
-    description: "Interior painting and specialty finishes for a classic Muskoka waterfront property renovation.",
+    season: "Season 4",
+    episode: "Heritage Hideaway",
+    description: "Scott McGillivray and Debra Salmoni transformed a dated cottage on Skeleton Lake into a modern 4-season rental with refined rustic styling. Roll On Painting delivered all painting and finishes — including a lodge-inspired interior with a new stone fireplace surround, bright open-concept living spaces, a modernized kitchen, and refreshed exterior with new decking for enhanced lakeside curb appeal.",
     services: ["Interior Painting", "Exterior Painting"],
   },
 ];
