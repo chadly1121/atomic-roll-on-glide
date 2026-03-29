@@ -25,10 +25,10 @@ const hgtvAppearances = [
     services: ["Exterior Painting", "Interior Painting"],
   },
   {
-    season: "Season 4",
-    episode: "Episode TBC",
-    description: "Complete wallpaper installation and accent wall painting for a lakefront lodge renovation.",
-    services: ["Wallpaper Installation", "Interior Painting"],
+    season: "Season 5, Episode 8",
+    episode: "Lakeside Landing",
+    description: "Scott McGillivray and Debra Salmoni transformed a foundational-stage cottage on the Moon River in Bala into a stunning family rental. Roll On Painting provided all painting and finishes — including a dramatic fireplace feature wall with acoustic panels, bright interiors with large windows, and a cool bunk room for kids.",
+    services: ["Interior Painting", "Exterior Painting"],
   },
   {
     season: "Season 3",
