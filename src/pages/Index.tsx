@@ -8,7 +8,7 @@ import SEOHelmet from '../components/layout/SEOHelmet';
 
 // Lazy-load everything below the fold to cut TBT and improve LCP/FCP
 const ServicesSection = lazy(() => import('../components/ServicesSection'));
-const AsSeenonTVSection = lazy(() => import('../components/AsSeenonTVSection'));
+const AsFeaturedInSection = lazy(() => import('../components/AsFeaturedInSection'));
 const TrustBadges = lazy(() => import('../components/trust/TrustBadges'));
 const ServiceAreaBlock = lazy(() => import('../components/ServiceAreaBlock'));
 const FAQSection = lazy(() => import('../components/FAQSection'));
@@ -65,7 +65,7 @@ const Index = () => {
         <ServicesSection />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
-        <AsSeenonTVSection />
+        <AsFeaturedInSection />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
         <TrustBadges />
