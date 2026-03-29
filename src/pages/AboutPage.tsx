@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
-import { Instagram, Linkedin, Facebook, MapPin, Phone, Mail, Shield, Star, Clock, Award } from 'lucide-react';
+import { Instagram, Linkedin, Facebook, MapPin, Phone, Mail, Shield, Star, Clock, Award, Newspaper } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   const siteUrl = "https://www.roll-onpainting.com";
@@ -101,6 +101,7 @@ const AboutPage: React.FC = () => {
                   { icon: Shield, label: "$5M Insured", desc: "Full liability + WSIB" },
                   { icon: Star, label: `${businessInfo.ratings.average}/5 Stars`, desc: "Google Reviews" },
                   { icon: Award, label: "HGTV Featured", desc: "4x on Scott's Vacation House Rules" },
+                  { icon: Newspaper, label: "Dockside Magazine", desc: "14 features in Muskoka's top publication" },
                 ].map((item, idx) => (
                   <div key={idx} className="bg-background p-6 rounded-lg shadow-sm text-center">
                     <item.icon className="w-8 h-8 text-atomic-turquoise mx-auto mb-3" />

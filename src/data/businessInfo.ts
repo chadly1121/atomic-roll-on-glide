@@ -109,6 +109,14 @@ export const businessInfo = {
     appearances: 4,
     description: "Roll On Painting has been featured 4 times on Scott's Vacation House Rules, providing professional painting and wallpapering services for Muskoka property renovations."
   },
+
+  // Magazine Features
+  magazineFeatures: {
+    publication: "Dockside Magazine",
+    totalFeatures: 14,
+    tagUrl: "https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/",
+    description: "Roll On Painting and Muskoka Softwash have been featured 14 times in Dockside Magazine, Muskoka's premier cottage and lifestyle publication."
+  },
   
   // Paint Partners
   partners: [
