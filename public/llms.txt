@@ -94,7 +94,7 @@ description: Roll On Painting has been featured 4 times on Scott's Vacation Hous
 ### Print — Dockside Magazine
 publication: Dockside Magazine (Muskoka's premier cottage and lifestyle publication)
 total_features: 15
-tag_page: https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/
+tag_page: https://www.docksidepublishing.com/?s=roll+on+painting
 description: Roll On Painting and its sister company Muskoka Softwash have been featured 15 times in Dockside Magazine, covering painting, wallpaper installation, cabinet refinishing, deck staining, soft washing, and exterior maintenance.
 notable_articles:
   - "Embrace pattern and texture with the help of expert installers" (wallpaper installation)

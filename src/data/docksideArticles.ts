@@ -159,4 +159,4 @@ export const DOCKSIDE_FEATURE_COUNT = docksideArticles.length; // 15
 /**
  * Dockside tag page URL
  */
-export const DOCKSIDE_TAG_URL = "https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/";
+export const DOCKSIDE_TAG_URL = "https://www.docksidepublishing.com/?s=roll+on+painting&asl_active=1&p_asl_data=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0";

@@ -189,7 +189,7 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.facebook,
           businessInfo.urls.linkedin,
           businessInfo.urls.googleBusiness,
-          "https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/"
+          "https://www.docksidepublishing.com/?s=roll+on+painting"
         ]
       },
       // Dockside Magazine mention schema
@@ -200,7 +200,7 @@ const SEOHelmet: React.FC = () => {
         "description": "Roll On Painting and Muskoka Softwash have been featured 15 times in Dockside Magazine, Muskoka's premier cottage and lifestyle publication.",
         "publisher": { "@type": "Organization", "name": "Dockside Magazine", "url": "https://www.docksidepublishing.com" },
         "about": { "@id": `${siteUrl}/#localbusiness` },
-        "url": "https://www.docksidepublishing.com/tag/roll-on-painting-muskoka-softwash/"
+        "url": "https://www.docksidepublishing.com/?s=roll+on+painting"
       },
       // === SERVICE ENTITIES ===
       {
