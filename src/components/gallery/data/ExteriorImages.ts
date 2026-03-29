@@ -181,5 +181,35 @@ export const exteriorImages: GalleryImage[] = [
     src: "/lovable-uploads/exterior-siding-paint-grey-trim.jpg",
     category: "exterior",
     title: "Exterior Siding Paint Prep — Grey Siding with White Trim"
+  },
+  {
+    id: 330,
+    src: "/lovable-uploads/exterior-cottage-staining-roller-muskoka.png",
+    category: "exterior",
+    title: "Cottage Exterior Staining — Roller Application, Muskoka"
+  },
+  {
+    id: 331,
+    src: "/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png",
+    category: "exterior",
+    title: "Exterior Staining Crew & Client Consultation — Muskoka Cottage"
+  },
+  {
+    id: 332,
+    src: "/lovable-uploads/exterior-soft-washing-stone-muskoka.jpg",
+    category: "exterior",
+    title: "Soft Washing Stone Foundation — Muskoka Cottage"
+  },
+  {
+    id: 333,
+    src: "/lovable-uploads/exterior-walkway-pressure-washing-muskoka.jpg",
+    category: "exterior",
+    title: "Walkway Pressure Washing — Muskoka Flagstone"
+  },
+  {
+    id: 334,
+    src: "/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg",
+    category: "exterior",
+    title: "Commercial Pressure & Soft Wash Equipment — Muskoka"
   }
 ];

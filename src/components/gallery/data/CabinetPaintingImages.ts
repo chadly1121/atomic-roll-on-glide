@@ -55,5 +55,11 @@ export const cabinetPaintingImages: GalleryImage[] = [
     src: "/lovable-uploads/cabinet-spray-finish-action.jpg",
     category: "cabinet-painting",
     title: "Kitchen Cabinets — Spray Painting in Action"
+  },
+  {
+    id: 339,
+    src: "/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.jpg",
+    category: "cabinet-painting",
+    title: "Kitchen Cabinet Refinish — Muskoka, Dockside Magazine Feature"
   }
 ];
