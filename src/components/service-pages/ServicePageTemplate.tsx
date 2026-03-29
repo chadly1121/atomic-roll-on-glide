@@ -7,6 +7,7 @@ import { ServicePageData } from '@/data/servicePages';
 import AIAnswerBlock from './AIAnswerBlock';
 import ServiceGallery from './ServiceGallery';
 import ServicePageInternalLinks from './ServicePageInternalLinks';
+import DocksideArticlesBlock from './DocksideArticlesBlock';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
@@ -215,6 +216,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
               </div>
             </section>
           )}
+
+          <DocksideArticlesBlock serviceSlug={service.slug} serviceName={service.name} />
 
           <ServicePageInternalLinks currentSlug={service.slug} />
 
