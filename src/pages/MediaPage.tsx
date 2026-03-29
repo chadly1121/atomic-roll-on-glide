@@ -396,6 +396,12 @@ const MediaPage: React.FC = () => {
         </section>
       </main>
 
+      <HgtvEpisodePopup
+        appearance={selectedEpisode}
+        open={popupOpen}
+        onOpenChange={setPopupOpen}
+      />
+
       <Footer />
     </>
   );
