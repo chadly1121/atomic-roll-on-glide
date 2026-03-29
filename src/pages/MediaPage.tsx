@@ -13,28 +13,28 @@ const ogImage = 'https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w
 // HGTV appearances data
 const hgtvAppearances = [
   {
+    season: "Season 6, Episode 3",
+    episode: "Whimsical Woodlands",
+    description: "Scott McGillivray and Debra Salmoni transformed a dated 20-year-old lakeside Muskoka cottage with a whimsical, colorful design. Roll On Painting handled all painting and wallpaper — including deep blue walls, orange accents, a refreshed U-shaped kitchen, spa-like bathroom, and new exterior siding for enhanced curb appeal.",
+    services: ["Interior Painting", "Exterior Painting", "Wallpaper Installation"],
+  },
+  {
     season: "Season 5",
-    episode: "The Rugged Family Retreat",
+    episode: "Episode TBC",
     description: "Full interior and exterior painting for a rustic Muskoka family cottage transformation.",
     services: ["Interior Painting", "Exterior Painting"],
   },
   {
     season: "Season 4",
-    episode: "The Lake of Bays Lodge",
+    episode: "Episode TBC",
     description: "Complete wallpaper installation and accent wall painting for a lakefront lodge renovation.",
     services: ["Wallpaper Installation", "Interior Painting"],
   },
   {
     season: "Season 3",
-    episode: "The Port Carling Getaway",
-    description: "Exterior painting and deck staining to transform a classic Muskoka waterfront property.",
-    services: ["Exterior Painting", "Deck Staining"],
-  },
-  {
-    season: "Season 2",
-    episode: "The Bracebridge Bungalow",
-    description: "Interior painting and cabinet refinishing for a charming cottage bungalow makeover.",
-    services: ["Interior Painting", "Cabinet Refinishing"],
+    episode: "Episode TBC",
+    description: "Interior painting and specialty finishes for a classic Muskoka waterfront property renovation.",
+    services: ["Interior Painting", "Exterior Painting"],
   },
 ];
 
