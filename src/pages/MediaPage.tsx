@@ -36,6 +36,12 @@ const hgtvAppearances = [
     description: "Scott McGillivray and Debra Salmoni transformed a dated cottage on Skeleton Lake into a modern 4-season rental with refined rustic styling. Roll On Painting delivered all painting and finishes — including a lodge-inspired interior with a new stone fireplace surround, bright open-concept living spaces, a modernized kitchen, and refreshed exterior with new decking for enhanced lakeside curb appeal.",
     services: ["Interior Painting", "Exterior Painting"],
   },
+  {
+    season: "Season 4",
+    episode: "European Villa",
+    description: "Scott McGillivray and Debra Salmoni transformed an inherited 1970s cottage on a Muskoka waterfront into a European-inspired villa commanding $1,000/night. Roll On Painting delivered all painting and finishes — including bright white exterior siding with black trim, refined white interior walls that showcase original refinished ceiling beams, and a warm European aesthetic throughout the open-concept living spaces.",
+    services: ["Interior Painting", "Exterior Painting"],
+  },
 ];
 
 // Group Dockside articles by brand
@@ -66,7 +72,7 @@ const MediaPage: React.FC = () => {
         "@id": `${siteUrl}/media#webpage`,
         "url": `${siteUrl}/media`,
         "name": "In The Media — Roll On Painting | HGTV & Dockside Magazine",
-        "description": "Roll On Painting has been featured 4 times on HGTV's Scott's Vacation House Rules and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor.",
+        "description": "Roll On Painting has been featured 5 times on Scott's Vacation House Rules (HGTV/Home Network) and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor.",
         "isPartOf": { "@id": `${siteUrl}#website` },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -79,8 +85,8 @@ const MediaPage: React.FC = () => {
       {
         "@type": "TVSeries",
         "name": "Scott's Vacation House Rules",
-        "description": "Roll On Painting has appeared 4 times on this HGTV Canada home renovation show filmed in the Muskoka region.",
-        "productionCompany": { "@type": "Organization", "name": "HGTV Canada" },
+"description": "Roll On Painting has appeared 5 times on this home renovation show filmed in the Muskoka region.",
+        "productionCompany": { "@type": "Organization", "name": "Home Network (formerly HGTV Canada)" },
         "actor": { "@type": "Person", "name": "Scott McGillivray" },
         "url": "https://www.hgtv.ca/shows/scotts-vacation-house-rules/"
       },
@@ -106,12 +112,12 @@ const MediaPage: React.FC = () => {
     <>
       <Helmet>
         <title>In The Media — Roll On Painting | HGTV & Dockside Magazine Features</title>
-        <meta name="description" content="Roll On Painting featured 4 times on HGTV's Scott's Vacation House Rules and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor." />
+        <meta name="description" content="Roll On Painting featured 5 times on Scott's Vacation House Rules (HGTV/Home Network) and 15 times in Dockside Magazine. Muskoka's most recognized painting contractor." />
         <meta name="keywords" content="Roll On Painting HGTV, Roll On Painting Dockside Magazine, Muskoka painter TV, Scott's Vacation House Rules painting, Muskoka Softwash media, painters Muskoka featured" />
         <link rel="canonical" href={`${siteUrl}/media`} />
 
         <meta property="og:title" content="In The Media — Roll On Painting | HGTV & Dockside Magazine" />
-        <meta property="og:description" content="Featured 4 times on HGTV and 15 times in Dockside Magazine. Meet Muskoka's most recognized painting team." />
+        <meta property="og:description" content="Featured 5 times on HGTV/Home Network and 15 times in Dockside Magazine. Meet Muskoka's most recognized painting team." />
         <meta property="og:url" content={`${siteUrl}/media`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
@@ -136,7 +142,7 @@ const MediaPage: React.FC = () => {
             <h1 className="text-3xl md:text-5xl font-bold text-atomic-navy mb-3">In The Media</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Roll On Painting is Muskoka's most featured painting contractor — recognized{' '}
-              <strong className="text-atomic-navy">4 times on HGTV</strong> and{' '}
+              <strong className="text-atomic-navy">5 times on HGTV / Home Network</strong> and{' '}
               <strong className="text-atomic-navy">15 times in Dockside Magazine</strong>.
             </p>
             <div className="mx-auto mt-4 h-1 w-20 bg-atomic-turquoise rounded-full" />
@@ -148,8 +154,8 @@ const MediaPage: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">4×</div>
-                <div className="text-sm text-muted-foreground">HGTV Appearances</div>
+                <div className="text-3xl md:text-4xl font-bold text-atomic-navy">5×</div>
+                <div className="text-sm text-muted-foreground">HGTV / Home Network</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-atomic-navy">15×</div>
@@ -366,7 +372,7 @@ const MediaPage: React.FC = () => {
                 </div>
                 <div className="text-center p-4">
                   <Tv className="w-10 h-10 text-primary mx-auto mb-3" />
-                  <div className="font-semibold text-foreground text-sm">19 Media Features</div>
+                  <div className="font-semibold text-foreground text-sm">20 Media Features</div>
                   <div className="text-xs text-muted-foreground">TV + print recognition</div>
                 </div>
               </div>
