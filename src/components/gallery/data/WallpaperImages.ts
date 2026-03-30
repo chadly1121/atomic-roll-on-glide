@@ -4,25 +4,25 @@ import { GalleryImage } from '../types';
 export const wallpaperImages: GalleryImage[] = [
   {
     id: 115,
-    src: "/lovable-uploads/wallpaper-feature-wall-collage.jpg",
+    src: "/lovable-uploads/wallpaper-feature-wall-collage.webp",
     category: "wallpaper",
     title: "Feature Wallpaper Accent Wall — Port Carling"
   },
   {
     id: 116,
-    src: "/lovable-uploads/wallpaper-silver-texture-wall.jpg",
+    src: "/lovable-uploads/wallpaper-silver-texture-wall.webp",
     category: "wallpaper",
     title: "Silver Metallic Texture Wallpaper — Muskoka"
   },
   {
     id: 117,
-    src: "/lovable-uploads/wallpaper-dark-croc-accent.jpg",
+    src: "/lovable-uploads/wallpaper-dark-croc-accent.webp",
     category: "wallpaper",
     title: "Dark Crocodile Texture Wallpaper — Accent Wall"
   },
   {
     id: 118,
-    src: "/lovable-uploads/wallpaper-dark-croc-bathroom.jpg",
+    src: "/lovable-uploads/wallpaper-dark-croc-bathroom.webp",
     category: "wallpaper",
     title: "Powder Room Wallpaper Installation — Muskoka"
   }

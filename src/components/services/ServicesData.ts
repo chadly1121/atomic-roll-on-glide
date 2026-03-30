@@ -41,7 +41,7 @@ export const services: Service[] = [
     title: "Kitchen Cabinet Refinishing",
     description: "A fresh kitchen without the full renovation cost. Stunning results that completely transform the space.",
     icon: UtensilsCrossed,
-    image: "/lovable-uploads/cabinet-refinish-stock-1.jpg",
+    image: "/lovable-uploads/cabinet-refinish-stock-1.webp",
     slug: "cabinet-refinishing",
   },
   {

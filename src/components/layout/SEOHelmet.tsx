@@ -418,7 +418,7 @@ const SEOHelmet: React.FC = () => {
         "@id": `${siteUrl}/#video-cabinet-refinishing`,
         "name": "Kitchen Cabinet Refinishing Process — Roll On Painting",
         "description": "Watch Roll On Painting's professional kitchen cabinet refinishing process. From sanding and priming to spray finishing, see how we transform dated cabinets in Muskoka.",
-        "thumbnailUrl": `${siteUrl}/lovable-uploads/cabinet-spray-finish-action.jpg`,
+        "thumbnailUrl": `${siteUrl}/lovable-uploads/cabinet-spray-finish-action.webp`,
         "contentUrl": `${siteUrl}/lovable-uploads/cabinet-repaint-video.mp4`,
         "uploadDate": "2025-06-01",
         "duration": "PT1M30S",
