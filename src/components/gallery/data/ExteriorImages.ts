@@ -184,13 +184,13 @@ export const exteriorImages: GalleryImage[] = [
   },
   {
     id: 330,
-    src: "/lovable-uploads/exterior-cottage-staining-roller-muskoka.png",
+    src: "/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp",
     category: "exterior",
     title: "Cottage Exterior Staining — Roller Application, Muskoka"
   },
   {
     id: 331,
-    src: "/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png",
+    src: "/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp",
     category: "exterior",
     title: "Exterior Staining Crew & Client Consultation — Muskoka Cottage"
   },

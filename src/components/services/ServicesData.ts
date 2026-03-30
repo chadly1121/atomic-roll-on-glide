@@ -49,7 +49,7 @@ export const services: Service[] = [
     title: "Deck & Fence Staining",
     description: "Protect and beautify outdoor wooden surfaces with expert staining that lasts through Muskoka winters.",
     icon: Fence,
-    image: "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.png",
+    image: "/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.webp",
     slug: "deck-staining",
   },
   {
@@ -57,7 +57,7 @@ export const services: Service[] = [
     title: "Institutional Painting",
     description: "Specialized painting for schools, hospitals, and government buildings. All regulatory requirements met.",
     icon: School,
-    image: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.png",
+    image: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.webp",
     slug: "institutional-painting",
   },
   {
@@ -65,7 +65,7 @@ export const services: Service[] = [
     title: "Pre-Finishing",
     description: "Professional pre-finishing for new construction materials. Perfect appearance and enhanced durability from day one.",
     icon: Hammer,
-    image: "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.png",
+    image: "/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.webp",
     slug: "prefinishing",
   },
   {
@@ -73,7 +73,7 @@ export const services: Service[] = [
     title: "Wallpaper Installation",
     description: "Add character and style with professional wallpaper installation. Precision cuts and seamless patterns.",
     icon: Image,
-    image: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.png",
+    image: "/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.webp",
     slug: "wallpaper-installation",
   },
   {
@@ -81,7 +81,7 @@ export const services: Service[] = [
     title: "Epoxy Coatings",
     description: "Durable, attractive epoxy for garage floors, basements, and commercial spaces. Expert application for lasting results.",
     icon: Sparkles,
-    image: "/lovable-uploads/7671fcb5-a810-4e9a-84fc-76713831e5ba.png",
+    image: "/lovable-uploads/7671fcb5-a810-4e9a-84fc-76713831e5ba.webp",
     slug: "epoxy-coatings",
   },
   {
@@ -89,7 +89,7 @@ export const services: Service[] = [
     title: "Power & Soft Washing",
     description: "Remove dirt, grime, mold, and mildew from exterior surfaces. Your property looking brand new.",
     icon: Droplets,
-    image: "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.png",
+    image: "/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.webp",
     slug: "power-washing",
   },
   {
@@ -97,7 +97,7 @@ export const services: Service[] = [
     title: "Stucco Removal",
     description: "Professional stucco and popcorn ceiling removal. Clean surfaces ready for a modern finish.",
     icon: Construction,
-    image: "/lovable-uploads/stucco-popcorn-texture.png",
+    image: "/lovable-uploads/stucco-popcorn-texture.webp",
     slug: "stucco-removal",
   },
 ];

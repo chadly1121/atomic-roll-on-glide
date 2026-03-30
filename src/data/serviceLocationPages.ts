@@ -206,8 +206,8 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
       '/lovable-uploads/exterior-dark-garage-finished.jpg',
       '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
-      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
-      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp',
       '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg',
       '/lovable-uploads/exterior-painting-crew-port-sydney.jpg',
       '/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg'

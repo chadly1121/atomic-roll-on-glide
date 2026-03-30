@@ -10,7 +10,7 @@ import { businessInfo, verifiedFAQs } from '@/data/businessInfo';
  * all Services, FAQPage, and SpeakableSpecification.
  */
 const SEOHelmet: React.FC = () => {
-  const logoUrl = "https://rollonpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png?v=pink";
+  const logoUrl = "https://rollonpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp?v=pink";
   const siteUrl = "https://www.roll-onpainting.com";
   const ogImage = "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg";
 

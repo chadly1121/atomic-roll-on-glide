@@ -66,7 +66,7 @@ const BlogPostPage = () => {
         publisher: {
           '@type': 'Organization',
           name: businessInfo.name,
-          logo: { '@type': 'ImageObject', url: `${siteUrl}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.png` }
+          logo: { '@type': 'ImageObject', url: `${siteUrl}/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp` }
         },
         inLanguage: 'en-CA',
       },
