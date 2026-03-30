@@ -97,20 +97,20 @@ export const servicePages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/interior-modern-cottage-living.jpg',
-      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.jpg',
-      '/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg',
-      '/lovable-uploads/interior-shiplap-fireplace-beams.jpg',
-      '/lovable-uploads/interior-kitchen-masking-prep.jpg',
-      '/lovable-uploads/interior-loft-space-finished.jpg',
-      '/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg',
-      '/lovable-uploads/interior-primer-ceiling-beams.jpg',
-      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg',
-      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg',
-      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg',
-      '/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.jpg',
-      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.jpg',
-      '/lovable-uploads/interior-painting-crew-lakefront-dockside.jpg'
+      '/lovable-uploads/interior-modern-cottage-living.webp',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.webp',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.webp',
+      '/lovable-uploads/interior-shiplap-fireplace-beams.webp',
+      '/lovable-uploads/interior-kitchen-masking-prep.webp',
+      '/lovable-uploads/interior-loft-space-finished.webp',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.webp',
+      '/lovable-uploads/interior-primer-ceiling-beams.webp',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.webp',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.webp',
+      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.webp',
+      '/lovable-uploads/interior-lakefront-painting-crew-lake-muskoka.webp',
+      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.webp',
+      '/lovable-uploads/interior-painting-crew-lakefront-dockside.webp'
     ]
   },
   {
@@ -174,19 +174,19 @@ export const servicePages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/exterior-residential-lakeside-paint.jpg',
-      '/lovable-uploads/exterior-black-brick-home-finished-2.jpg',
-      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg',
-      '/lovable-uploads/exterior-spray-window-masking.jpg',
-      '/lovable-uploads/exterior-repairs-ladder-siding.jpg',
-      '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
-      '/lovable-uploads/exterior-dark-garage-finished.jpg',
-      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
-      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
-      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png',
-      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg',
-      '/lovable-uploads/exterior-painting-crew-port-sydney.jpg',
-      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg'
+      '/lovable-uploads/exterior-residential-lakeside-paint.webp',
+      '/lovable-uploads/exterior-black-brick-home-finished-2.webp',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.webp',
+      '/lovable-uploads/exterior-spray-window-masking.webp',
+      '/lovable-uploads/exterior-repairs-ladder-siding.webp',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.webp',
+      '/lovable-uploads/exterior-dark-garage-finished.webp',
+      '/lovable-uploads/exterior-brick-spray-black-front-entry.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp',
+      '/lovable-uploads/exterior-painting-crew-port-sydney.webp',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.webp'
     ]
   },
   {
@@ -235,14 +235,14 @@ export const servicePages: ServicePageData[] = [
       'References from Muskoka businesses available'
     ],
     galleryImages: [
-      '/lovable-uploads/commercial-interior-spray-canvas-brewing.jpg',
-      '/lovable-uploads/commercial-exterior-muskoka-living-finished.jpg',
-      '/lovable-uploads/commercial-interior-office-wide.jpg',
-      '/lovable-uploads/commercial-interior-real-estate-office-design.jpg',
-      '/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.jpg',
-      '/lovable-uploads/commercial-exterior-opp-gas-pumps-2.jpg',
-      '/lovable-uploads/commercial-interior-new-build-stain-paint.jpg',
-      '/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.jpg'
+      '/lovable-uploads/commercial-interior-spray-canvas-brewing.webp',
+      '/lovable-uploads/commercial-exterior-muskoka-living-finished.webp',
+      '/lovable-uploads/commercial-interior-office-wide.webp',
+      '/lovable-uploads/commercial-interior-real-estate-office-design.webp',
+      '/lovable-uploads/commercial-interior-spray-silver-ceiling-black-beams-3.webp',
+      '/lovable-uploads/commercial-exterior-opp-gas-pumps-2.webp',
+      '/lovable-uploads/commercial-interior-new-build-stain-paint.webp',
+      '/lovable-uploads/commercial-interior-muskoka-brewing-spray-paint.webp'
     ]
   },
   {
@@ -289,15 +289,15 @@ export const servicePages: ServicePageData[] = [
       'Minimal disruption to your kitchen use'
     ],
     galleryImages: [
-      '/lovable-uploads/cabinet-grey-kitchen-finished.jpg',
-      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.jpg',
-      '/lovable-uploads/cabinet-spray-finish-action.jpg',
-      '/lovable-uploads/cabinet-door-sanding-closeup.jpg',
-      '/lovable-uploads/cabinet-painting-masking-prep.jpg',
-      '/lovable-uploads/cabinet-dark-doors-drying-rack.jpg',
-      '/lovable-uploads/cabinet-white-builtin-shelving.jpg',
-      '/lovable-uploads/cabinet-onsite-spray-white.jpg',
-      '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.jpg'
+      '/lovable-uploads/cabinet-grey-kitchen-finished.webp',
+      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.webp',
+      '/lovable-uploads/cabinet-spray-finish-action.webp',
+      '/lovable-uploads/cabinet-door-sanding-closeup.webp',
+      '/lovable-uploads/cabinet-painting-masking-prep.webp',
+      '/lovable-uploads/cabinet-dark-doors-drying-rack.webp',
+      '/lovable-uploads/cabinet-white-builtin-shelving.webp',
+      '/lovable-uploads/cabinet-onsite-spray-white.webp',
+      '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.webp'
     ],
     galleryVideos: [
       '/lovable-uploads/cabinet-repaint-video.mp4'
@@ -346,12 +346,12 @@ export const servicePages: ServicePageData[] = [
       'Available in transparent, semi-transparent, and solid colors'
     ],
     galleryImages: [
-      '/lovable-uploads/exterior-deck-stain-muskoka.jpg',
-      '/lovable-uploads/exterior-deck-staining-action.jpg',
-      '/lovable-uploads/exterior-deck-staining-before-after.jpg',
-      '/lovable-uploads/exterior-deck-staining-hardwood.jpg',
-      '/lovable-uploads/exterior-deck-underside-staining.jpg',
-      '/lovable-uploads/exterior-wood-garage-door-staining.jpg'
+      '/lovable-uploads/exterior-deck-stain-muskoka.webp',
+      '/lovable-uploads/exterior-deck-staining-action.webp',
+      '/lovable-uploads/exterior-deck-staining-before-after.webp',
+      '/lovable-uploads/exterior-deck-staining-hardwood.webp',
+      '/lovable-uploads/exterior-deck-underside-staining.webp',
+      '/lovable-uploads/exterior-wood-garage-door-staining.webp'
     ]
   },
   {
@@ -399,13 +399,13 @@ export const servicePages: ServicePageData[] = [
       'Transforms dull concrete into an attractive surface'
     ],
     galleryImages: [
-      '/lovable-uploads/epoxy-flake-floor-muskoka-1.jpg',
-      '/lovable-uploads/epoxy-garage-floor-grey-finish-1.jpg',
-      '/lovable-uploads/epoxy-prep-grinder-closeup.jpg',
-      '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.jpg',
-      '/lovable-uploads/epoxy-flake-floor-steps.jpg',
-      '/lovable-uploads/epoxy-warehouse-floor-grey-finish.jpg',
-      '/lovable-uploads/epoxy-residential-prep-room.jpg'
+      '/lovable-uploads/epoxy-flake-floor-muskoka-1.webp',
+      '/lovable-uploads/epoxy-garage-floor-grey-finish-1.webp',
+      '/lovable-uploads/epoxy-prep-grinder-closeup.webp',
+      '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.webp',
+      '/lovable-uploads/epoxy-flake-floor-steps.webp',
+      '/lovable-uploads/epoxy-warehouse-floor-grey-finish.webp',
+      '/lovable-uploads/epoxy-residential-prep-room.webp'
     ]
   },
   {
@@ -498,17 +498,17 @@ export const servicePages: ServicePageData[] = [
       'Over 25 years of professional experience'
     ],
     galleryImages: [
-      '/lovable-uploads/interior-spray-painting-vaulted.jpg',
-      '/lovable-uploads/interior-spray-doors-new-build.jpg',
-      '/lovable-uploads/interior-spray-trim-shiplap-after.jpg',
-      '/lovable-uploads/interior-spray-trim-shiplap-during.jpg',
-      '/lovable-uploads/cabinet-spray-finish-action.jpg',
-      '/lovable-uploads/exterior-spray-masked-doors.jpg',
-      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-pine-doors.jpg',
-      '/lovable-uploads/prefinishing-white-trim-boards.jpg',
-      '/lovable-uploads/prefinishing-douglas-fir-boards.jpg'
+      '/lovable-uploads/interior-spray-painting-vaulted.webp',
+      '/lovable-uploads/interior-spray-doors-new-build.webp',
+      '/lovable-uploads/interior-spray-trim-shiplap-after.webp',
+      '/lovable-uploads/interior-spray-trim-shiplap-during.webp',
+      '/lovable-uploads/cabinet-spray-finish-action.webp',
+      '/lovable-uploads/exterior-spray-masked-doors.webp',
+      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-pine-doors.webp',
+      '/lovable-uploads/prefinishing-white-trim-boards.webp',
+      '/lovable-uploads/prefinishing-douglas-fir-boards.webp'
     ],
     faqs: [
       {
@@ -565,9 +565,9 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance'
     ],
     galleryImages: [
-      '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
-      '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
-      '/lovable-uploads/wallpaper-silver-texture-wall.jpg'
+      '/lovable-uploads/wallpaper-feature-wall-collage.webp',
+      '/lovable-uploads/wallpaper-dark-croc-bathroom.webp',
+      '/lovable-uploads/wallpaper-silver-texture-wall.webp'
     ],
     faqs: [
       {
@@ -679,10 +679,10 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance'
     ],
     galleryImages: [
-      '/lovable-uploads/wallpaper-feature-wall-collage.jpg',
-      '/lovable-uploads/wallpaper-dark-croc-bathroom.jpg',
-      '/lovable-uploads/wallpaper-silver-texture-wall.jpg',
-      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.jpg'
+      '/lovable-uploads/wallpaper-feature-wall-collage.webp',
+      '/lovable-uploads/wallpaper-dark-croc-bathroom.webp',
+      '/lovable-uploads/wallpaper-silver-texture-wall.webp',
+      '/lovable-uploads/wallpaper-croc-texture-bathroom-wide.webp'
     ],
     faqs: [
       {
@@ -744,18 +744,18 @@ export const servicePages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance'
     ],
     galleryImages: [
-      '/lovable-uploads/exterior-softwash-before.jpg',
-      '/lovable-uploads/exterior-softwash-after.jpg',
-      '/lovable-uploads/exterior-softwash-roof-steam-team.jpg',
-      '/lovable-uploads/exterior-softwash-cedar-shingles.jpg',
-      '/lovable-uploads/exterior-soft-washing-stone-muskoka.jpg',
-      '/lovable-uploads/exterior-walkway-pressure-washing-muskoka.jpg',
-      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.jpg',
-      '/lovable-uploads/exterior-cedar-roof-soft-wash-muskoka.jpg',
-      '/lovable-uploads/exterior-soft-wash-cottage-protection-muskoka.jpg',
-      '/lovable-uploads/exterior-mossy-cedar-shakes-before.jpg',
-      '/lovable-uploads/exterior-pressure-washing-cedar-roof-steam.jpg',
-      '/lovable-uploads/exterior-soft-wash-cottage-porch-muskoka.jpg'
+      '/lovable-uploads/exterior-softwash-before.webp',
+      '/lovable-uploads/exterior-softwash-after.webp',
+      '/lovable-uploads/exterior-softwash-roof-steam-team.webp',
+      '/lovable-uploads/exterior-softwash-cedar-shingles.webp',
+      '/lovable-uploads/exterior-soft-washing-stone-muskoka.webp',
+      '/lovable-uploads/exterior-walkway-pressure-washing-muskoka.webp',
+      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.webp',
+      '/lovable-uploads/exterior-cedar-roof-soft-wash-muskoka.webp',
+      '/lovable-uploads/exterior-soft-wash-cottage-protection-muskoka.webp',
+      '/lovable-uploads/exterior-mossy-cedar-shakes-before.webp',
+      '/lovable-uploads/exterior-pressure-washing-cedar-roof-steam.webp',
+      '/lovable-uploads/exterior-soft-wash-cottage-porch-muskoka.webp'
     ],
     faqs: [
       {
@@ -828,10 +828,10 @@ export const servicePages: ServicePageData[] = [
       { step: 'Final Inspection & Handoff', description: 'We conduct a thorough walkthrough with your team, address any touch-ups, and leave the space clean and ready for use.' }
     ],
     galleryImages: [
-      '/lovable-uploads/institutional-school-painting.jpg',
-      '/lovable-uploads/institutional-school-interior.jpg',
-      '/lovable-uploads/institutional-stage-floor-before.jpg',
-      '/lovable-uploads/institutional-stage-floor-after.jpg'
+      '/lovable-uploads/institutional-school-painting.webp',
+      '/lovable-uploads/institutional-school-interior.webp',
+      '/lovable-uploads/institutional-stage-floor-before.webp',
+      '/lovable-uploads/institutional-stage-floor-after.webp'
     ],
     faqs: [
       {
@@ -912,16 +912,16 @@ export const servicePages: ServicePageData[] = [
       { step: 'Packaging & Delivery', description: 'Finished materials are carefully stacked and protected for transport. We coordinate delivery timing with your installation schedule.' }
     ],
     galleryImages: [
-      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-pine-doors.jpg',
-      '/lovable-uploads/prefinishing-stained-glass-restoration.jpg',
-      '/lovable-uploads/prefinishing-white-trim-boards.jpg',
-      '/lovable-uploads/prefinishing-douglas-fir-boards.jpg',
-      '/lovable-uploads/prefinishing-rutherford-go-station-ceilings.jpg'
+      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-pine-doors.webp',
+      '/lovable-uploads/prefinishing-stained-glass-restoration.webp',
+      '/lovable-uploads/prefinishing-white-trim-boards.webp',
+      '/lovable-uploads/prefinishing-douglas-fir-boards.webp',
+      '/lovable-uploads/prefinishing-rutherford-go-station-ceilings.webp'
     ],
     galleryVideos: [
-      '/lovable-uploads/prefinishing-video-thumbnail.jpg'
+      '/lovable-uploads/prefinishing-video-thumbnail.webp'
     ],
     faqs: [
       {

@@ -172,7 +172,7 @@ const GoNanoPage = () => {
             {/* Dragon's Den Feature Image — flows on mobile/tablet, absolute on lg+ */}
             <div className="flex justify-center mb-6 lg:mb-0 lg:absolute lg:top-6 lg:right-8 lg:z-10 lg:max-w-[260px]">
               <div className="max-w-[180px] sm:max-w-[220px] lg:max-w-[260px]">
-                <img src="/lovable-uploads/dragons-den-cbc.png" alt="GoNano featured on CBC Dragon's Den — Heard about us on Dragon's Den? Find out if your roof qualifies for a free inspection." className="w-full h-auto rounded-lg shadow-xl" loading="eager" />
+                <img src="/lovable-uploads/dragons-den-cbc.webp" alt="GoNano featured on CBC Dragon's Den — Heard about us on Dragon's Den? Find out if your roof qualifies for a free inspection." className="w-full h-auto rounded-lg shadow-xl" loading="eager" />
                 <p className="text-[10px] sm:text-xs text-center text-gray-300 mt-2 font-semibold tracking-wide leading-tight">As Seen on Dragon's Den on CBC</p>
               </div>
             </div>

@@ -95,19 +95,19 @@ export const serviceLocationPages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/interior-modern-cottage-living.jpg',
-      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.jpg',
-      '/lovable-uploads/interior-stain-paint-fireplace-trusses.jpg',
-      '/lovable-uploads/interior-shiplap-fireplace-beams.jpg',
-      '/lovable-uploads/interior-kitchen-masking-prep.jpg',
-      '/lovable-uploads/interior-loft-space-finished.jpg',
-      '/lovable-uploads/interior-great-room-dark-beams-lakeview.jpg',
-      '/lovable-uploads/interior-primer-ceiling-beams.jpg',
-      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.jpg',
-      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.jpg',
-      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.jpg',
-      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.jpg',
-      '/lovable-uploads/interior-painting-crew-lakefront-dockside.jpg'
+      '/lovable-uploads/interior-modern-cottage-living.webp',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.webp',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.webp',
+      '/lovable-uploads/interior-shiplap-fireplace-beams.webp',
+      '/lovable-uploads/interior-kitchen-masking-prep.webp',
+      '/lovable-uploads/interior-loft-space-finished.webp',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.webp',
+      '/lovable-uploads/interior-primer-ceiling-beams.webp',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.webp',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.webp',
+      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.webp',
+      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.webp',
+      '/lovable-uploads/interior-painting-crew-lakefront-dockside.webp'
     ]
   },
   {
@@ -198,19 +198,19 @@ export const serviceLocationPages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/exterior-residential-lakeside-paint.jpg',
-      '/lovable-uploads/exterior-black-brick-home-finished-2.jpg',
-      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.jpg',
-      '/lovable-uploads/exterior-spray-window-masking.jpg',
-      '/lovable-uploads/exterior-repairs-ladder-siding.jpg',
-      '/lovable-uploads/exterior-siding-paint-grey-trim.jpg',
-      '/lovable-uploads/exterior-dark-garage-finished.jpg',
-      '/lovable-uploads/exterior-brick-spray-black-front-entry.jpg',
-      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.png',
-      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.png',
-      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.jpg',
-      '/lovable-uploads/exterior-painting-crew-port-sydney.jpg',
-      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.jpg'
+      '/lovable-uploads/exterior-residential-lakeside-paint.webp',
+      '/lovable-uploads/exterior-black-brick-home-finished-2.webp',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.webp',
+      '/lovable-uploads/exterior-spray-window-masking.webp',
+      '/lovable-uploads/exterior-repairs-ladder-siding.webp',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.webp',
+      '/lovable-uploads/exterior-dark-garage-finished.webp',
+      '/lovable-uploads/exterior-brick-spray-black-front-entry.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp',
+      '/lovable-uploads/exterior-painting-crew-port-sydney.webp',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.webp'
     ]
   },
   {
@@ -297,16 +297,16 @@ export const serviceLocationPages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/interior-spray-painting-vaulted.jpg',
-      '/lovable-uploads/interior-spray-doors-new-build.jpg',
-      '/lovable-uploads/interior-spray-trim-shiplap-after.jpg',
-      '/lovable-uploads/interior-spray-trim-shiplap-during.jpg',
-      '/lovable-uploads/cabinet-spray-finish-action.jpg',
-      '/lovable-uploads/exterior-spray-masked-doors.jpg',
-      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.jpg',
-      '/lovable-uploads/prefinishing-pine-doors.jpg',
-      '/lovable-uploads/prefinishing-white-trim-boards.jpg'
+      '/lovable-uploads/interior-spray-painting-vaulted.webp',
+      '/lovable-uploads/interior-spray-doors-new-build.webp',
+      '/lovable-uploads/interior-spray-trim-shiplap-after.webp',
+      '/lovable-uploads/interior-spray-trim-shiplap-during.webp',
+      '/lovable-uploads/cabinet-spray-finish-action.webp',
+      '/lovable-uploads/exterior-spray-masked-doors.webp',
+      '/lovable-uploads/prefinishing-stained-boards-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-shop-racks-muskoka-1.webp',
+      '/lovable-uploads/prefinishing-pine-doors.webp',
+      '/lovable-uploads/prefinishing-white-trim-boards.webp'
     ]
   },
   {
@@ -398,15 +398,15 @@ export const serviceLocationPages: ServicePageData[] = [
       }
     ],
     galleryImages: [
-      '/lovable-uploads/cabinet-grey-kitchen-finished.jpg',
-      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.jpg',
-      '/lovable-uploads/cabinet-spray-finish-action.jpg',
-      '/lovable-uploads/cabinet-door-sanding-closeup.jpg',
-      '/lovable-uploads/cabinet-painting-masking-prep.jpg',
-      '/lovable-uploads/cabinet-dark-doors-drying-rack.jpg',
-      '/lovable-uploads/cabinet-white-builtin-shelving.jpg',
-      '/lovable-uploads/cabinet-onsite-spray-white.jpg',
-      '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.jpg'
+      '/lovable-uploads/cabinet-grey-kitchen-finished.webp',
+      '/lovable-uploads/cabinet-white-kitchen-black-backsplash.webp',
+      '/lovable-uploads/cabinet-spray-finish-action.webp',
+      '/lovable-uploads/cabinet-door-sanding-closeup.webp',
+      '/lovable-uploads/cabinet-painting-masking-prep.webp',
+      '/lovable-uploads/cabinet-dark-doors-drying-rack.webp',
+      '/lovable-uploads/cabinet-white-builtin-shelving.webp',
+      '/lovable-uploads/cabinet-onsite-spray-white.webp',
+      '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.webp'
     ],
     galleryVideos: [
       '/lovable-uploads/cabinet-repaint-video.mp4'

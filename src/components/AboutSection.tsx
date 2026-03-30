@@ -70,7 +70,7 @@ const AboutSection = () => {
                   <img 
                     alt="Chad and daughter on the job site — Roll On Painting family business" 
                     className="w-full h-full object-cover object-top" 
-                    src="/lovable-uploads/about-team-selfie.jpg"
+                    src="/lovable-uploads/about-team-selfie.webp"
                     loading="lazy"
                     width={300}
                     height={160}
