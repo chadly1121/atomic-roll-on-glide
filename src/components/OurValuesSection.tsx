@@ -22,7 +22,7 @@ const values = [
   {
     icon: Clock,
     title: 'Reliability',
-    desc: 'We show up on time, complete projects on schedule, and clean up when we're done. Your time matters.',
+    desc: "We show up on time, complete projects on schedule, and clean up when we're done. Your time matters.",
     accent: 'from-atomic-navy to-atomic-navy/60',
     iconBg: 'bg-atomic-navy/10',
     iconColor: 'text-atomic-navy',
