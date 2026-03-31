@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
+import OurValuesSection from '@/components/OurValuesSection';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
 import { Instagram, Linkedin, Facebook, MapPin, Phone, Mail, Shield, Star, Clock, Award, Newspaper } from 'lucide-react';
