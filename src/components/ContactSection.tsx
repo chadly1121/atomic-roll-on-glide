@@ -14,8 +14,8 @@ const ContactSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-heading text-white">Get In Touch</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-300">
+          <h2 className="section-heading text-foreground">Get In Touch</h2>
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Ready to transform your space? Reach out for a free quote or to discuss your project.
           </p>
         </div>

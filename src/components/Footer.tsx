@@ -36,10 +36,10 @@ const Footer = () => {
                 className="h-12 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-300 mb-4">
+            <p className="text-muted-foreground mb-4">
               Professional interior and exterior painting services for residential and commercial properties.
             </p>
-            <address className="text-gray-300 not-italic text-sm space-y-1">
+            <address className="text-muted-foreground not-italic text-sm space-y-1">
               <p className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-atomic-turquoise flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -57,7 +57,7 @@ const Footer = () => {
                 <a 
                   href="/#about" 
                   onClick={(e) => scrollToSection(e, '#about')}
-                  className="text-gray-300 hover:text-atomic-turquoise transition-colors"
+                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
                 >
                   About Us
                 </a>
@@ -66,7 +66,7 @@ const Footer = () => {
                 <a 
                   href="/#services" 
                   onClick={(e) => scrollToSection(e, '#services')}
-                  className="text-gray-300 hover:text-atomic-turquoise transition-colors"
+                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
                 >
                   Services
                 </a>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <a 
                   href="/#gallery" 
                   onClick={(e) => scrollToSection(e, '#gallery')}
-                  className="text-gray-300 hover:text-atomic-turquoise transition-colors"
+                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
                 >
                   Gallery
                 </a>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li>
                 <a 
                   href="/gonano" 
-                  className="text-gray-300 hover:text-atomic-turquoise transition-colors"
+                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
                 >
                   GoNano
                 </a>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <a 
                   href="/#pricing" 
                   onClick={(e) => scrollToSection(e, '#pricing')}
-                  className="text-gray-300 hover:text-atomic-turquoise transition-colors"
+                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
                 >
                   Pricing
                 </a>
@@ -105,32 +105,32 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/interior-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/interior-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Interior Painting Muskoka
                 </Link>
               </li>
               <li>
-                <Link to="/exterior-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/exterior-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Exterior Painting Muskoka
                 </Link>
               </li>
               <li>
-                <Link to="/spray-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/spray-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Spray Painting Muskoka
                 </Link>
               </li>
               <li>
-                <Link to="/cabinet-painting-muskoka" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/cabinet-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Cabinet Painting Muskoka
                 </Link>
               </li>
               <li>
-                <Link to="/cabinet-refinishing" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/cabinet-refinishing" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Cabinet Refinishing
                 </Link>
               </li>
               <li>
-                <Link to="/deck-staining" className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <Link to="/deck-staining" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Deck & Fence Staining
                 </Link>
               </li>
@@ -145,7 +145,7 @@ const Footer = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-atomic-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href={`mailto:${businessInfo.email}`} className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <a href={`mailto:${businessInfo.email}`} className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   {businessInfo.email}
                 </a>
               </li>
@@ -153,7 +153,7 @@ const Footer = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-atomic-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href={`tel:${businessInfo.phone.tel}`} className="text-gray-300 hover:text-atomic-turquoise transition-colors">
+                <a href={`tel:${businessInfo.phone.tel}`} className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   {businessInfo.phone.formatted}
                 </a>
               </li>
@@ -161,7 +161,7 @@ const Footer = () => {
 
             {/* Business Hours */}
             <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white/80 mb-2">Business Hours</h4>
+              <h4 className="text-sm font-semibold text-muted-foreground mb-2">Business Hours</h4>
               <ul className="text-gray-400 text-sm space-y-1">
                 <li>Mon – Fri: 7:00 AM – 5:00 PM</li>
                 <li>Saturday: 10:00 AM – 2:00 PM</li>
@@ -183,7 +183,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="text-center sm:text-left mb-4 sm:mb-0">
-              <p className="text-gray-300 text-sm">
+              <p className="text-muted-foreground text-sm">
                 © {new Date().getFullYear()} {businessInfo.legalName}. All rights reserved.
               </p>
               <p className="text-gray-500 text-xs mt-1">
@@ -198,7 +198,7 @@ const Footer = () => {
                 href={businessInfo.urls.instagram}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-atomic-turquoise transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-atomic-turquoise transition-colors transform hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -207,7 +207,7 @@ const Footer = () => {
                 href={businessInfo.urls.facebook}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-atomic-turquoise transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-atomic-turquoise transition-colors transform hover:scale-110"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -216,7 +216,7 @@ const Footer = () => {
                 href={businessInfo.urls.linkedinOwner}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-atomic-turquoise transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-atomic-turquoise transition-colors transform hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -225,7 +225,7 @@ const Footer = () => {
                 href={businessInfo.urls.googleBusiness}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-atomic-turquoise transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-atomic-turquoise transition-colors transform hover:scale-110"
                 aria-label="Google Business"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="h-5 w-5">
