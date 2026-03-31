@@ -16,12 +16,12 @@ const AsSeenonTVSection = () => {
             As Seen on HGTV
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg mb-6">
-            Roll On Painting has been featured <strong>4 times</strong> on Scott's Vacation House Rules, 
+            Roll On Painting has been Roll On Painting has been featured <strong>5 times</strong> on Scott's Vacation House Rules, on Scott's Vacation House Rules, 
             providing professional painting and wallpapering services for Muskoka property renovations.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="px-4 py-2 bg-background border border-border rounded-full text-sm font-medium text-atomic-navy">
-              🎬 4 TV Appearances
+              🎬 5 TV Appearances
             </span>
             <span className="px-4 py-2 bg-background border border-border rounded-full text-sm font-medium text-atomic-navy">
               📺 Scott's Vacation House Rules
