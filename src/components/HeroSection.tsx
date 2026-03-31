@@ -5,7 +5,7 @@ import HeroBackground from './hero/HeroBackground';
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-[calc(100vh-80px)] sm:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 flex items-center overflow-hidden bg-atomic-cream bg-atomic-pattern">
+    <section id="hero" className="relative min-h-[calc(100vh-80px)] sm:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 flex items-center overflow-hidden bg-background">
       <HeroBackground />
       
       <div className="container mx-auto px-3 sm:px-4 relative z-10">
