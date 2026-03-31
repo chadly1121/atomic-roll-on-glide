@@ -12,7 +12,7 @@ const ServiceAreaBlock: React.FC = () => {
   return (
     <section 
       id="service-area" 
-      className="py-12 bg-accent/30"
+      className="py-12 bg-background"
       aria-labelledby="service-area-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">

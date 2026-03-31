@@ -6,7 +6,7 @@ const AsFeaturedInSection = () => {
   return (
     <section 
       id="asseenontv" 
-      className="py-16 sm:py-20 relative overflow-hidden bg-accent/30"
+      className="py-16 sm:py-20 relative overflow-hidden bg-background"
     >
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
