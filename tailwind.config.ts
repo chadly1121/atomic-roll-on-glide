@@ -64,9 +64,9 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         atomic: {
-          orange: '#E84393',
-          turquoise: '#E84393',
-          coral: '#E84393',
+          orange: '#FF6BB3',
+          turquoise: '#FF6BB3',
+          coral: '#FF6BB3',
           sage: '#98B37F',
           cream: '#F8FAFC',
           navy: '#1A1F2C',
