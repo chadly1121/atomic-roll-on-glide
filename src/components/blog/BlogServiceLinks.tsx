@@ -28,12 +28,21 @@ const locationLinks = [
   { keywords: ['gravenhurst'], url: '/painters-gravenhurst', label: 'Painters in Gravenhurst' },
   { keywords: ['port carling'], url: '/painters-port-carling', label: 'Painters in Port Carling' },
   { keywords: ['parry sound'], url: '/painters-parry-sound', label: 'Painters in Parry Sound' },
-  { keywords: ['lake of bays', 'dorset', 'baysville', 'dwight'], url: '/painters-lake-of-bays', label: 'Painters in Lake of Bays' },
+  { keywords: ['dorset'], url: '/painters-dorset', label: 'Painters in Dorset' },
+  { keywords: ['baysville'], url: '/painters-baysville', label: 'Painters in Baysville' },
+  { keywords: ['dwight'], url: '/painters-dwight', label: 'Painters in Dwight' },
+  { keywords: ['lake of bays'], url: '/painters-lake-of-bays', label: 'Painters in Lake of Bays' },
   { keywords: ['georgian bay'], url: '/painters-georgian-bay', label: 'Painters in Georgian Bay' },
   { keywords: ['bala'], url: '/painters-bala', label: 'Painters in Bala' },
   { keywords: ['rosseau', 'lake rosseau'], url: '/painters-lake-rosseau', label: 'Painters in Lake Rosseau' },
   { keywords: ['lake joseph'], url: '/painters-lake-joseph', label: 'Painters in Lake Joseph' },
   { keywords: ['port sydney'], url: '/painters-port-sydney', label: 'Painters in Port Sydney' },
+  { keywords: ['barrie'], url: '/painters-barrie', label: 'Painters in Barrie' },
+  { keywords: ['orillia'], url: '/painters-orillia', label: 'Painters in Orillia' },
+  { keywords: ['midland'], url: '/painters-midland', label: 'Painters in Midland' },
+  { keywords: ['penetanguishene'], url: '/painters-penetanguishene', label: 'Painters in Penetanguishene' },
+  { keywords: ['windermere'], url: '/painters-windermere', label: 'Painters in Windermere' },
+  { keywords: ['minett'], url: '/painters-minett', label: 'Painters in Minett' },
 ];
 
 interface BlogServiceLinksProps {
