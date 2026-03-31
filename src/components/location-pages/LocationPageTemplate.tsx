@@ -3,7 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Phone, Mail, CheckCircle, MapPin, Star, Shield } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
-import { LocationPageData } from '@/data/locationPages';
+import { LocationPageData, locationPages } from '@/data/locationPages';
+
+// Build a name → slug lookup for nearby area linking
+const nameToSlugMap = new Map(locationPages.map(p => [p.name, p.slug]));
 
 interface LocationPageTemplateProps {
   location: LocationPageData;
@@ -216,11 +219,18 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-xl font-bold text-atomic-navy mb-4">Also Serving Areas Near {location.name}</h2>
               <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
-                {location.nearbyAreas.map((area, idx) => (
-                  <span key={idx} className="inline-block px-3 py-1 bg-background border border-border rounded-full text-sm text-muted-foreground">
-                    {area}
-                  </span>
-                ))}
+                {location.nearbyAreas.map((area, idx) => {
+                  const areaSlug = nameToSlugMap.get(area);
+                  return areaSlug ? (
+                    <Link key={idx} to={`/${areaSlug}`} className="inline-block px-3 py-1 bg-background border border-border rounded-full text-sm text-muted-foreground hover:text-atomic-orange hover:border-atomic-orange/30 transition-colors">
+                      {area}
+                    </Link>
+                  ) : (
+                    <span key={idx} className="inline-block px-3 py-1 bg-background border border-border rounded-full text-sm text-muted-foreground">
+                      {area}
+                    </span>
+                  );
+                })}
               </div>
               <Link to="/service-areas" className="inline-block mt-4 text-sm text-atomic-turquoise hover:underline">
                 View all 48+ service areas →
