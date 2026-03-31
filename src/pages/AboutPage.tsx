@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
         "name": "Chad Gilchrist",
         "jobTitle": "Owner",
         "worksFor": { "@id": `${siteUrl}/#localbusiness` },
-        "description": "Owner of Roll On Painting with over 25 years of painting industry experience. Featured 4 times on HGTV's Scott's Vacation House Rules."
+        "description": "Owner of Roll On Painting with over 25 years of painting industry experience. "description": "Owner of Roll On Painting with over 25 years of painting industry experience. Featured 5 times on HGTV's Scott's Vacation House Rules.""
       }
     ]
   };
