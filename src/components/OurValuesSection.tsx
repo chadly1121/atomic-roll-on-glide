@@ -39,7 +39,7 @@ const values = [
 
 const OurValuesSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 bg-muted/40" aria-labelledby="values-heading">
+    <section className="py-16 sm:py-20 bg-background" aria-labelledby="values-heading">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-14">
           <motion.h2

@@ -18,7 +18,7 @@ const FAQSection: React.FC = () => {
   return (
     <section 
       id="faq" 
-      className="py-16 md:py-24 bg-white"
+      className="py-16 md:py-24 bg-background"
       aria-labelledby="faq-heading"
     >
 
