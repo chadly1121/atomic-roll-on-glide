@@ -79,6 +79,16 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={serviceUrl} />
         
+        {/* Canadian geo-targeting */}
+        <link rel="alternate" hrefLang="en-CA" href={serviceUrl} />
+        <link rel="alternate" hrefLang="en" href={serviceUrl} />
+        <link rel="alternate" hrefLang="x-default" href={serviceUrl} />
+        <meta name="geo.region" content="CA-ON" />
+        <meta name="geo.placename" content="Muskoka, Ontario" />
+        <meta name="geo.position" content="45.3501;-79.2168" />
+        <meta name="ICBM" content="45.3501, -79.2168" />
+        <meta httpEquiv="Content-Language" content="en-CA" />
+        
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${service.name} | Roll On Painting Muskoka`} />
