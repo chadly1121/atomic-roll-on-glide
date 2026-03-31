@@ -3,7 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Phone, Mail, CheckCircle, MapPin, Star, Shield } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
-import { LocationPageData } from '@/data/locationPages';
+import { LocationPageData, locationPages } from '@/data/locationPages';
+
+// Build a name → slug lookup for nearby area linking
+const nameToSlugMap = new Map(locationPages.map(p => [p.name, p.slug]));
 
 interface LocationPageTemplateProps {
   location: LocationPageData;
