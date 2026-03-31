@@ -8,14 +8,12 @@ import FreeTouchUpsButton from './FreeTouchUpsButton';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
-      <div className="atomic-starburst w-80 h-80 top-0 right-0 opacity-20"></div>
-      <div className="atomic-circle w-72 h-72 -bottom-36 left-10 border-atomic-turquoise/20"></div>
+    <section id="contact" className="py-24 relative overflow-hidden bg-background text-foreground">
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-heading text-white">Get In Touch</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-300">
+          <h2 className="section-heading text-foreground">Get In Touch</h2>
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Ready to transform your space? Reach out for a free quote or to discuss your project.
           </p>
         </div>

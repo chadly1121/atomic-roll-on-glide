@@ -83,35 +83,35 @@ const testimonials: Testimonial[] = [{
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-background text-foreground">
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="section-heading">What Our Clients Say</h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-300">
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Don't just take our word for it. See what our satisfied clients have to say about our painting services.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.slice(0, 6).map((testimonial) => (
-            <Card key={testimonial.id} className="bg-white/10 backdrop-blur-sm border-0 h-full">
+            <Card key={testimonial.id} className="bg-muted backdrop-blur-sm border-0 h-full">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="shrink-0 w-12 h-12 rounded-full bg-atomic-turquoise flex items-center justify-center border-2 border-atomic-turquoise">
-                    <span className="text-white font-bold text-lg">
+                    <span className="text-foreground font-bold text-lg">
                       {testimonial.name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-white">{testimonial.name}</h3>
+                    <h3 className="font-bold text-lg text-foreground">{testimonial.name}</h3>
                     <div className="flex items-center gap-1">
                       <span className="text-xs text-yellow-400 font-medium">5-star Google review</span>
-                      <span className="text-xs text-gray-300 ml-1">• {testimonial.location} • {testimonial.date}</span>
+                      <span className="text-xs text-muted-foreground ml-1">• {testimonial.location} • {testimonial.date}</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-200">"{testimonial.content}"</p>
+                <p className="text-sm text-muted-foreground">"{testimonial.content}"</p>
               </CardContent>
             </Card>
           ))}
@@ -133,12 +133,12 @@ const TestimonialsSection = () => {
           {/* Added social media icons below the Google Reviews link */}
           <div className="mt-8 flex justify-center">
             <div className="flex space-x-6 items-center">
-              <span className="text-white mr-2">Follow Us:</span>
+              <span className="text-foreground mr-2">Follow Us:</span>
               <a 
                 href="https://www.instagram.com/roll_on_painting/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                className="bg-muted hover:bg-white/20 p-3 rounded-full transition-all"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5 text-atomic-turquoise" />
@@ -147,7 +147,7 @@ const TestimonialsSection = () => {
                 href="https://www.facebook.com/profile.php?id=100083040946938" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                className="bg-muted hover:bg-white/20 p-3 rounded-full transition-all"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5 text-atomic-turquoise" />
@@ -156,7 +156,7 @@ const TestimonialsSection = () => {
                 href="https://ca.linkedin.com/in/chad-gilchrist-25332b104" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                className="bg-muted hover:bg-white/20 p-3 rounded-full transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5 text-atomic-turquoise" />
@@ -165,7 +165,7 @@ const TestimonialsSection = () => {
                 href="https://goo.gl/maps/xwGdHUy9RwYXcGLb9" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                className="bg-muted hover:bg-white/20 p-3 rounded-full transition-all"
                 aria-label="Google Maps"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="h-5 w-5 text-atomic-turquoise">
