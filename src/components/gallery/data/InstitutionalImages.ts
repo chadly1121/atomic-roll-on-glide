@@ -25,5 +25,11 @@ export const institutionalImages: GalleryImage[] = [
     src: "/lovable-uploads/institutional-stage-floor-after.webp",
     category: "institutional",
     title: "Stage Floor — Checkerboard Pattern Painted"
+  },
+  {
+    id: 205,
+    src: "/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.webp",
+    category: "institutional",
+    title: "Institutional Painting Project"
   }
 ];
