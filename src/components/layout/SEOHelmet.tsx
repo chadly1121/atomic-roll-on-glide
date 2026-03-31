@@ -471,6 +471,7 @@ const SEOHelmet: React.FC = () => {
       <link rel="alternate" hrefLang="en-CA" href={`${siteUrl}/`} />
       <link rel="alternate" hrefLang="en" href={`${siteUrl}/`} />
       <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/`} />
+      <meta httpEquiv="Content-Language" content="en-CA" />
       
       {/* Robots directives */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
