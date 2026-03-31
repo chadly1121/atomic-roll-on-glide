@@ -6,7 +6,7 @@ import App from './App';
 
 // App loading component
 const AppLoading = () => (
-  <div className="fixed inset-0 flex flex-col items-center justify-center bg-atomic-cream">
+  <div className="fixed inset-0 flex flex-col items-center justify-center bg-background">
     <div className="w-16 h-16 border-4 border-atomic-turquoise border-t-atomic-orange rounded-full animate-spin"></div>
     <p className="mt-4 text-atomic-navy font-medium">Loading Roll On Painting...</p>
   </div>
