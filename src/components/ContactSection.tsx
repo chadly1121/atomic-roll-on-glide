@@ -9,8 +9,6 @@ import FreeTouchUpsButton from './FreeTouchUpsButton';
 const ContactSection = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-background text-foreground">
-      <div className="atomic-starburst w-80 h-80 top-0 right-0 opacity-20"></div>
-      <div className="atomic-circle w-72 h-72 -bottom-36 left-10 border-atomic-turquoise/20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
