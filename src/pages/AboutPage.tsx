@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
+import OurValuesSection from '@/components/OurValuesSection';
 import Footer from '@/components/Footer';
 import { businessInfo } from '@/data/businessInfo';
 import { Instagram, Linkedin, Facebook, MapPin, Phone, Mail, Shield, Star, Clock, Award, Newspaper } from 'lucide-react';
@@ -113,25 +114,7 @@ const AboutPage: React.FC = () => {
             </div>
           </section>
 
-          {/* Values */}
-          <section className="py-12 md:py-16">
-            <div className="container mx-auto px-4 max-w-3xl">
-              <h2 className="text-2xl font-bold text-atomic-navy text-center mb-8">Our Values</h2>
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { title: "Quality", desc: "We never compromise on materials or techniques. Every surface is prepared with care and every coat applied with precision." },
-                  { title: "Integrity", desc: "Honest pricing, transparent communication, and no hidden fees. We quote fair and deliver as promised." },
-                  { title: "Reliability", desc: "We show up on time, complete projects on schedule, and clean up when we're done. Your time matters." },
-                  { title: "Community", desc: "We're not a franchise — we're your neighbours in Muskoka. We live here, work here, and take pride in improving our community." }
-                ].map((value, idx) => (
-                  <div key={idx} className="p-5 border border-border rounded-lg">
-                    <h3 className="font-semibold text-atomic-navy mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">{value.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <OurValuesSection />
 
           {/* Contact / Connect */}
           <section className="py-12 bg-muted/50">
