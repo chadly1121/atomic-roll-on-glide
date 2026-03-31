@@ -22,8 +22,8 @@ const relatedServices = [
 ];
 
 const serviceAreas = [
-  { slug: 'painters-port-sydney', name: 'Port Sydney' },
   { slug: 'painters-huntsville', name: 'Huntsville' },
+  { slug: 'painters-port-sydney', name: 'Port Sydney' },
   { slug: 'painters-bracebridge', name: 'Bracebridge' },
   { slug: 'painters-gravenhurst', name: 'Gravenhurst' },
   { slug: 'painters-port-carling', name: 'Port Carling' },
@@ -32,11 +32,22 @@ const serviceAreas = [
   { slug: 'painters-georgian-bay', name: 'Georgian Bay' },
   { slug: 'painters-bala', name: 'Bala' },
   { slug: 'painters-lake-rosseau', name: 'Lake Rosseau' },
+  { slug: 'painters-lake-joseph', name: 'Lake Joseph' },
   { slug: 'painters-lake-muskoka', name: 'Lake Muskoka' },
+  { slug: 'painters-barrie', name: 'Barrie' },
+  { slug: 'painters-orillia', name: 'Orillia' },
+  { slug: 'painters-midland', name: 'Midland' },
+  { slug: 'painters-rosseau', name: 'Rosseau' },
+  { slug: 'painters-dwight', name: 'Dwight' },
+  { slug: 'painters-dorset', name: 'Dorset' },
+  { slug: 'painters-baysville', name: 'Baysville' },
+  { slug: 'painters-windermere', name: 'Windermere' },
+  { slug: 'painters-minett', name: 'Minett' },
 ];
 
 const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ currentSlug }) => {
   const filteredServices = relatedServices.filter(s => s.slug !== currentSlug).slice(0, 6);
+  const filteredAreas = serviceAreas.filter(a => a.slug !== currentSlug);
 
   return (
     <section className="py-12 bg-gray-50" aria-labelledby="internal-links-heading">
@@ -69,8 +80,8 @@ const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ cur
               <MapPin className="w-5 h-5 text-atomic-turquoise" aria-hidden="true" />
               Areas We Serve
             </h3>
-            <ul className="space-y-2">
-              {serviceAreas.map(area => (
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {filteredAreas.map(area => (
                 <li key={area.slug}>
                   <Link
                     to={`/${area.slug}`}
@@ -82,6 +93,15 @@ const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ cur
                 </li>
               ))}
             </ul>
+            <div className="mt-3">
+              <Link
+                to="/service-areas"
+                className="text-atomic-turquoise hover:text-atomic-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
+              >
+                <MapPin className="w-3 h-3" aria-hidden="true" />
+                View all 48 service areas →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
