@@ -1,7 +1,6 @@
 
 import React from 'react';
 import HeroContent from './hero/HeroContent';
-import HeroCarousel from './hero/HeroCarousel';
 import HeroBackground from './hero/HeroBackground';
 
 const HeroSection = () => {
@@ -13,7 +12,18 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
           <HeroContent />
           <div className="hidden sm:block">
-            <HeroCarousel />
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/lovable-uploads/exterior-residential-lakeside-paint.webp"
+                alt="Residential exterior painting by Roll On Painting — lakeside home in Muskoka"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
+                width="800"
+                height="600"
+              />
+            </div>
           </div>
         </div>
       </div>
