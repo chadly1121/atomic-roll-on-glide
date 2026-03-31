@@ -14,8 +14,8 @@ const HeroSection = () => {
           <div className="hidden sm:block">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/lovable-uploads/exterior-boathouse-dockside-painting.webp"
-                alt="Dockside boathouse painting by Roll On Painting — Muskoka waterfront exterior"
+                src="/lovable-uploads/interior-modern-cottage-living.webp"
+                alt="Modern cottage great room interior painting by Roll On Painting — Port Carling, Muskoka"
                 className="w-full h-auto object-cover aspect-[4/3]"
                 loading="eager"
                 fetchPriority="high"
