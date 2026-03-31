@@ -30,7 +30,7 @@ const AsFeaturedInSection = () => {
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-accent text-xs font-medium text-atomic-navy rounded-full">
-                  🎬 4 TV Episodes
+                  🎬 5 TV Episodes
                 </span>
                 <span className="px-3 py-1 bg-accent text-xs font-medium text-atomic-navy rounded-full">
                   📺 Home Network

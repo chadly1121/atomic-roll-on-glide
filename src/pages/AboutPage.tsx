@@ -100,7 +100,7 @@ const AboutPage: React.FC = () => {
                   { icon: Clock, label: "25+ Years", desc: "Industry experience" },
                   { icon: Shield, label: "$5M Insured", desc: "Full liability + WSIB" },
                   { icon: Star, label: `${businessInfo.ratings.average}/5 Stars`, desc: "Google Reviews" },
-                  { icon: Award, label: "HGTV Featured", desc: "4x on Scott's Vacation House Rules" },
+                  { icon: Award, label: "HGTV Featured", { icon: Award, label: "HGTV Featured", desc: "5x on Scott's Vacation House Rules" }, },
                   { icon: Newspaper, label: "Dockside Magazine", desc: "14 features in Muskoka's top publication" },
                 ].map((item, idx) => (
                   <div key={idx} className="bg-background p-6 rounded-lg shadow-sm text-center">

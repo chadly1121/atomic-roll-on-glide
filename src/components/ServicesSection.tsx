@@ -16,7 +16,7 @@ const ServicesSection = () => {
             Our Services
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg">
-            Over 25 years of experience. Featured 4 times on HGTV's Scott's Vacation House Rules.
+            Over 25 years of experience. Over 25 years of experience. Featured 5 times on HGTV's Scott's Vacation House Rules. Scott's Vacation House Rules.
             $5M insured. WSIB covered. Free Touch Ups for Life on every project.
           </p>
           <div className="mx-auto mt-5 h-1 w-20 bg-atomic-orange rounded-full" />

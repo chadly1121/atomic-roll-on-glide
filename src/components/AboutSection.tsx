@@ -43,7 +43,7 @@ const AboutSection = () => {
               {[
                 '$5M Insured',
                 'WSIB Covered',
-                '4x on HGTV',
+                '5x on HGTV',,
                 'Free Touch Ups for Life'
               ].map((badge) => (
                 <span key={badge} className="px-3 py-1.5 bg-atomic-orange/10 text-atomic-orange text-xs font-semibold rounded-full">

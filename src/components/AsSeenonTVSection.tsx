@@ -21,7 +21,7 @@ const AsSeenonTVSection = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="px-4 py-2 bg-background border border-border rounded-full text-sm font-medium text-atomic-navy">
-              🎬 4 TV Appearances
+              🎬 5 TV Appearances
             </span>
             <span className="px-4 py-2 bg-background border border-border rounded-full text-sm font-medium text-atomic-navy">
               📺 Scott's Vacation House Rules
