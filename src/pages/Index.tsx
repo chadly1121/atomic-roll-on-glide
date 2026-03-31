@@ -72,6 +72,9 @@ const Index = () => {
         <TrustBadges />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
+        <OurValuesSection />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
         <ServiceAreaBlock />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
