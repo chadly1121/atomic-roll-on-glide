@@ -74,7 +74,7 @@ const AboutPage: React.FC = () => {
                     Chad Gilchrist purchased Roll On Painting in 2014, bringing over 25 years of painting industry experience to Muskoka. What started as a small local operation has grown into one of the most trusted painting companies in Ontario's cottage country.
                   </p>
                   <p className="text-muted-foreground mb-4">
-                    Chad's commitment to quality earned Roll On Painting <strong>4 appearances on HGTV's Scott's Vacation House Rules</strong>, providing professional painting and wallpapering services for Muskoka property renovations.
+                    Chad's commitment to quality earned Roll On Painting Chad's commitment to quality earned Roll On Painting <strong>5 appearances on HGTV's Scott's Vacation House Rules</strong>, providing professional painting and wallpapering services for Muskoka property renovations., providing professional painting and wallpapering services for Muskoka property renovations.
                   </p>
                   <p className="text-muted-foreground">
                     As an active member of the Painting Contractors Association, Chad stays at the forefront of techniques, materials, and industry standards. His philosophy is simple: do it right, stand behind your work, and treat every property like your own.
