@@ -91,6 +91,9 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         <meta name="keywords" content={`painters ${location.name}, painting ${location.name}, interior painting ${location.name}, exterior painting ${location.name}, house painters ${location.region}, painting contractor ${location.name}, Roll On Painting`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={pageUrl} />
+        <link rel="alternate" hrefLang="en-CA" href={pageUrl} />
+        <link rel="alternate" hrefLang="en" href={pageUrl} />
+        <link rel="alternate" hrefLang="x-default" href={pageUrl} />
         
         <meta property="og:type" content="website" />
         <meta property="og:title" content={location.metaTitle} />
@@ -105,8 +108,9 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         <meta name="twitter:description" content={location.metaDescription} />
         <meta name="twitter:image" content={ogImage} />
         
-        <meta name="geo.placename" content={location.name} />
         <meta name="geo.region" content="CA-ON" />
+        <meta name="geo.placename" content={`${location.name}, Ontario`} />
+        <meta name="ICBM" content="45.0, -79.3" />
         
         <script type="application/ld+json">{JSON.stringify(graphSchema)}</script>
       </Helmet>
