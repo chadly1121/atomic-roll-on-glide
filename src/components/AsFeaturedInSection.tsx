@@ -26,7 +26,7 @@ const AsFeaturedInSection = () => {
               </div>
               <h3 className="font-bold text-atomic-navy text-lg mb-1">HGTV Canada</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Featured <strong>4 times</strong> on Scott's Vacation House Rules, providing professional painting and wallpapering for Muskoka renovations.
+                Featured <strong>5 times</strong> on Scott's Vacation House Rules, providing professional painting and wallpapering for Muskoka renovations.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-accent text-xs font-medium text-atomic-navy rounded-full">
