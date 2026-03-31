@@ -43,6 +43,20 @@ const locationLinks = [
   { keywords: ['penetanguishene'], url: '/painters-penetanguishene', label: 'Painters in Penetanguishene' },
   { keywords: ['windermere'], url: '/painters-windermere', label: 'Painters in Windermere' },
   { keywords: ['minett'], url: '/painters-minett', label: 'Painters in Minett' },
+  { keywords: ['muskoka lakes', 'muskoka lake'], url: '/painters-lake-muskoka', label: 'Painters in Lake Muskoka' },
+  { keywords: ['severn', 'port severn'], url: '/painters-severn', label: 'Painters in Severn' },
+  { keywords: ['torrance'], url: '/painters-torrance', label: 'Painters in Torrance' },
+  { keywords: ['milford bay'], url: '/painters-milford-bay', label: 'Painters in Milford Bay' },
+  { keywords: ['utterson'], url: '/painters-utterson', label: 'Painters in Utterson' },
+  { keywords: ['mactier'], url: '/painters-mactier', label: 'Painters in MacTier' },
+  { keywords: ['burks falls', 'burk\'s falls'], url: '/painters-burks-falls', label: 'Painters in Burks Falls' },
+  { keywords: ['south river'], url: '/painters-south-river', label: 'Painters in South River' },
+  { keywords: ['sundridge'], url: '/painters-sundridge', label: 'Painters in Sundridge' },
+  { keywords: ['magnetawan'], url: '/painters-magnetawan', label: 'Painters in Magnetawan' },
+  { keywords: ['kearney'], url: '/painters-kearney', label: 'Painters in Kearney' },
+  { keywords: ['novar'], url: '/painters-novar', label: 'Painters in Novar' },
+  { keywords: ['oro-medonte', 'oro medonte'], url: '/painters-oro-medonte', label: 'Painters in Oro-Medonte' },
+  { keywords: ['ramara'], url: '/painters-ramara', label: 'Painters in Ramara' },
 ];
 
 interface BlogServiceLinksProps {
