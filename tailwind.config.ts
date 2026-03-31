@@ -68,7 +68,7 @@ export default {
           turquoise: '#FF6BB3',
           coral: '#FF6BB3',
           sage: '#98B37F',
-          cream: '#F8FAFC',
+          cream: '#FAFAFA',
           navy: '#1A1F2C',
           black: '#000000'
         }
