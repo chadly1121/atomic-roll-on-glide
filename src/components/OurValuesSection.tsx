@@ -30,7 +30,7 @@ const values = [
   {
     icon: Heart,
     title: 'Community',
-    desc: 'We're not a franchise — we're your neighbours in Muskoka. We live here, work here, and take pride in improving our community.',
+    desc: "We're not a franchise — we're your neighbours in Muskoka. We live here, work here, and take pride in improving our community.",
     accent: 'from-pink-500 to-pink-500/60',
     iconBg: 'bg-pink-500/10',
     iconColor: 'text-pink-500',
