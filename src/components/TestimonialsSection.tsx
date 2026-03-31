@@ -83,7 +83,7 @@ const testimonials: Testimonial[] = [{
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-atomic-navy text-white">
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-background text-foreground">
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-atomic-navy text-white py-16">
+    <footer className="bg-background text-foreground py-16 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Column 1: Brand + NAP */}
