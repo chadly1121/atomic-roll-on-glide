@@ -29,7 +29,7 @@ const HeroContent = () => {
       </div>
       
       <div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
           Muskoka's Trusted
           <span className="text-atomic-orange block">Painting Company</span>
         </h1>
