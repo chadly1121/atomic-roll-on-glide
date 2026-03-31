@@ -17,7 +17,7 @@ export const services: Service[] = [
     title: "Interior Painting",
     description: "Transform your indoor spaces with expert color consultation, meticulous prep, and flawless finishes for homes and cottages.",
     icon: Home,
-    image: interiorPaintingImg,
+    image: "/lovable-uploads/interior-modern-cottage-living.webp",
     slug: "interior-painting",
   },
   {
