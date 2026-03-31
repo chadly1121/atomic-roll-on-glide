@@ -12,6 +12,7 @@ const AsFeaturedInSection = lazy(() => import('../components/AsFeaturedInSection
 const TrustBadges = lazy(() => import('../components/trust/TrustBadges'));
 const ServiceAreaBlock = lazy(() => import('../components/ServiceAreaBlock'));
 const FAQSection = lazy(() => import('../components/FAQSection'));
+const OurValuesSection = lazy(() => import('../components/OurValuesSection'));
 const LazySectionLoader = lazy(() => import('../components/layout/LazySectionLoader'));
 
 const SectionPlaceholder = () => (
