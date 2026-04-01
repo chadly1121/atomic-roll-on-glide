@@ -42,6 +42,7 @@ const IMGS = {
   trentSevern: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Trent-Severn_Waterway_above_the_Kirkfield_Lift_Lock.jpg/1920px-Trent-Severn_Waterway_above_the_Kirkfield_Lift_Lock.jpg",
   bigChute: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Big_Chute_Marine_Railway_%282899857183%29.jpg/1920px-Big_Chute_Marine_Railway_%282899857183%29.jpg",
   islandQueen: "https://upload.wikimedia.org/wikipedia/commons/8/85/Excursion_vessel_Island_Queen_moored_in_Parry_Sound.jpg",
+  sixMileLake: "/location-heroes/six-mile-lake.jpg",
 };
 
 export interface LocationHeroInfo {
