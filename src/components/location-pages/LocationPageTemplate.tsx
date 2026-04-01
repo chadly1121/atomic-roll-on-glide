@@ -133,28 +133,34 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         </header>
 
         <main>
-          {/* Hero */}
-          <section className="bg-gradient-to-b from-atomic-navy to-atomic-navy/90 text-white py-16 md:py-24">
-            <div className="container mx-auto px-4 text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-atomic-turquoise/20 text-atomic-turquoise text-sm font-medium rounded-full mb-4">
+          {/* Hero with landmark background */}
+          <section 
+            className="relative text-white py-20 md:py-28 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroInfo.heroImage})` }}
+          >
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-atomic-navy/70" />
+            <div className="container mx-auto px-4 text-center relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/15 backdrop-blur-sm text-white text-sm font-medium rounded-full mb-4">
                 <MapPin className="w-3.5 h-3.5" />
                 {location.name}, {location.region}
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{location.headline}</h1>
-              <p className="location-intro text-lg text-white/80 max-w-3xl mx-auto mb-8">{location.intro}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">{location.headline}</h1>
+              <p className="location-intro text-lg text-white/90 max-w-3xl mx-auto mb-4 drop-shadow">{location.intro}</p>
+              <p className="text-sm text-white/60 mb-8 italic">📍 {heroInfo.landmark}</p>
               
               {/* Trust signals */}
-              <div className="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-white/70">
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-white/80">
                 <span className="inline-flex items-center gap-1"><Star className="w-4 h-4 text-yellow-400" /> {businessInfo.ratings.average}/5 Google Rating</span>
                 <span className="inline-flex items-center gap-1"><Shield className="w-4 h-4 text-atomic-turquoise" /> $5M Insured & WSIB</span>
                 <span>As Seen on HGTV</span>
               </div>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors shadow-lg">
                   Get a Free Quote in {location.name}
                 </Link>
-                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm">
                   <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
                 </a>
               </div>
