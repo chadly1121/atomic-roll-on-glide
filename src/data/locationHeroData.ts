@@ -340,6 +340,31 @@ const heroData: Record<string, LocationHeroInfo> = {
     landmark: "Six Mile Lake & Wawautosa Marina",
     localLove: "Six Mile Lake holds a special place in my heart — I'm a former cottage owner on the lake, with deep ties and lasting friendships in this community. I know every bay, every dock, and every sunset view. Wawautosa Marina has been the heartbeat of Six Mile Lake since the 1950s, and the people here are like family. When we paint a cottage on Six Mile Lake, it's personal. We bring the same care and attention we'd give our own place, because this lake isn't just a service area — it's home."
   },
+  "painters-coldwater": {
+    heroImage: IMGS.orilliaLake,
+    landmark: "Coldwater Canadiana Heritage Museum",
+    localLove: "Coldwater is one of those Ontario gems that feels like stepping back in time — in the best way. The Coldwater Canadiana Heritage Museum preserves the village's rich history, from the old mill to its founding as a 19th-century settlement along the Coldwater River. The tree-lined streets, heritage buildings, and friendly neighbours make this community a joy to work in. Properties here have real character, and we love helping homeowners maintain that charm with quality painting that respects the architecture."
+  },
+  "painters-honey-harbour": {
+    heroImage: IMGS.georgianBayCabin,
+    landmark: "Gateway to Georgian Bay Islands National Park",
+    localLove: "Honey Harbour is the gateway to one of Canada's most spectacular natural treasures — Georgian Bay Islands National Park. Every summer, cottagers and visitors flock to this waterfront village to catch the water taxi to Beausoleil Island or launch their boats into the legendary 30,000 islands. The cottages and homes here face some of the most beautiful — and demanding — weather conditions in Ontario. We love working in Honey Harbour because the scenery is breathtaking, the community is tight-knit, and the properties deserve paint that can stand up to Georgian Bay's winds and waves."
+  },
+  "painters-waubaushene": {
+    heroImage: IMGS.trentSevern,
+    landmark: "Trent-Severn Waterway at Waubaushene",
+    localLove: "Waubaushene sits at a historic crossroads of the Trent-Severn Waterway, where boats have been passing through for over a century. This quiet village on Matchedash Bay has a rich lumber-industry heritage and a beautiful waterfront that locals treasure. The mix of heritage homes and waterfront cottages gives every project here its own story. We love the peaceful pace of Waubaushene and the pride residents take in their properties — it's the kind of community where quality workmanship is noticed and appreciated."
+  },
+  "painters-victoria-harbour": {
+    heroImage: IMGS.midlandSainteMarie,
+    landmark: "Victoria Harbour waterfront on Georgian Bay",
+    localLove: "Victoria Harbour is a charming waterfront community on the southeastern shores of Georgian Bay with deep roots in Ontario's maritime and lumber history. The village's historic grain elevator and waterfront parks tell the story of a town built on hard work and water. Today, Victoria Harbour is a mix of year-round families and seasonal cottagers who love the slower pace and stunning Georgian Bay sunsets. We enjoy painting here because the homes have wonderful character, and the community takes real pride in keeping their properties looking their best."
+  },
+  "painters-severn-bridge": {
+    heroImage: IMGS.bigChute,
+    landmark: "Severn River at Severn Bridge",
+    localLove: "Severn Bridge is a small but spirited community straddling the Severn River, right where Muskoka meets Simcoe County. It's the kind of place where everyone knows each other and the river is the centre of life — swimming, fishing, and paddling in summer, and skating in winter. The properties here range from cozy village homes to waterfront retreats along the Severn River corridor. We love working in Severn Bridge because it's a genuine, unpretentious community where people value honest work and lasting quality."
+  },
 };
 
 export const getLocationHero = (slug: string): LocationHeroInfo => {
