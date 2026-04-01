@@ -920,11 +920,34 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painting services in Port Severn at the southern gateway to Muskoka. Interior, exterior, and cottage painting. WSIB covered. Free quotes. 705-787-1401.",
     intro: "Roll On Painting serves Port Severn and the southern gateway to Muskoka with professional painting services. Located where the Trent-Severn Waterway meets Georgian Bay, Port Severn properties benefit from our 25 years of experience painting in waterfront and cottage country environments.",
     localContent: "Port Severn sits at the junction of the Trent-Severn Waterway and Georgian Bay, marking the southern entrance to cottage country. Properties here include waterfront cottages on the Severn River, homes along Georgian Bay, and properties in the Big Chute area. We understand the unique demands of this location — the combination of water exposure and seasonal weather patterns that affect paint durability.",
-    nearbyAreas: ["Severn", "Orillia", "Midland", "Penetanguishene", "Gravenhurst", "Bala"],
+    nearbyAreas: ["Severn", "Orillia", "Midland", "Penetanguishene", "Gravenhurst", "Bala", "Six Mile Lake"],
     faqs: [
       { question: "Do you serve the Port Severn and Big Chute area?", answer: "Yes. We serve Port Severn, Big Chute, Severn Falls, and surrounding communities along the Trent-Severn Waterway and Georgian Bay." },
       { question: "How much does painting cost in Port Severn?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Port Severn property." },
       { question: "Can you paint seasonal properties in Port Severn?", answer: "Yes. We frequently paint seasonal cottages in the Port Severn area and can coordinate scheduling around your cottage season." }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  // SIX MILE LAKE
+  // ═══════════════════════════════════════════
+  {
+    slug: "painters-six-mile-lake",
+    name: "Six Mile Lake",
+    region: "Georgian Bay",
+    postalCode: "P0E 1H0",
+    headline: "Professional Painters for Six Mile Lake, Ontario",
+    metaTitle: "Painters for Six Mile Lake | Cottage & Home Painting | Roll On Painting",
+    metaDescription: "Premium painting services for Six Mile Lake cottages and homes. Owner Chad Gilchrist is a former Six Mile Lake cottage owner. WSIB covered. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting provides premium painting services for Six Mile Lake — and this one's personal. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake, with deep ties and lasting friendships throughout the community. When we paint your cottage or home on Six Mile Lake, we bring not just 25 years of professional expertise, but a genuine love for this lake and the people who call it home.",
+    localContent: "Six Mile Lake sits in the Township of Georgian Bay, a beautiful and accessible lake just off Highway 400 that has attracted generations of cottagers. From the docks at Wawautosa Marina — the lake's beloved full-service marina since the 1950s — to the shores of Six Mile Lake Provincial Park, this community is tight-knit and welcoming. Chad's years as a cottage owner here mean we understand the lake's unique character: the granite shorelines, the mature tree canopy, the mix of classic cottages and modern builds. We know the weather patterns, the water exposure, and exactly what products and techniques deliver lasting results in this environment. Many of our Six Mile Lake clients are friends and neighbours, and we treat every project with the care and attention that comes from being part of the community.",
+    nearbyAreas: ["Port Severn", "Severn", "Coldwater", "Midland", "Georgian Bay", "Penetanguishene"],
+    faqs: [
+      { question: "Is Roll On Painting connected to Six Mile Lake?", answer: "Yes. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake with deep personal ties to the community. Many of our clients on the lake are long-time friends and neighbours." },
+      { question: "How much does cottage painting cost on Six Mile Lake?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Six Mile Lake property." },
+      { question: "Do you paint seasonal cottages on Six Mile Lake?", answer: "Yes. We regularly paint seasonal cottages on Six Mile Lake and can coordinate scheduling around your cottage season — whether that's before opening weekend or after Thanksgiving." },
+      { question: "What paint is best for Six Mile Lake waterfront cottages?", answer: "We recommend premium, weather-resistant products from Benjamin Moore, Dulux, and PPG suited to Six Mile Lake's waterfront exposure. We also offer GoNano permanent coating for long-lasting surface protection." },
+      { question: "Do you serve the Six Mile Lake Provincial Park area?", answer: "Yes. We serve all areas around Six Mile Lake including properties near the Provincial Park, Wawautosa Marina, and throughout the Township of Georgian Bay." }
     ]
   }
 ];

@@ -335,6 +335,12 @@ const heroData: Record<string, LocationHeroInfo> = {
     landmark: "Big Chute Marine Railway",
     localLove: "Port Severn is home to one of Ontario's most unique attractions — the Big Chute Marine Railway, where boats ride a giant carriage over land between waterways. That kind of engineering ingenuity reflects the spirit of this community: creative, resourceful, and built to last. The properties in Port Severn benefit from both the Trent-Severn Waterway and proximity to Georgian Bay, creating a waterfront paradise. We love working here because the community is welcoming, the settings are gorgeous, and the projects are always interesting."
   },
+  },
+  "painters-six-mile-lake": {
+    heroImage: IMGS.sixMileLake,
+    landmark: "Six Mile Lake & Wawautosa Marina",
+    localLove: "Six Mile Lake holds a special place in my heart — I'm a former cottage owner on the lake, with deep ties and lasting friendships in this community. I know every bay, every dock, and every sunset view. Wawautosa Marina has been the heartbeat of Six Mile Lake since the 1950s, and the people here are like family. When we paint a cottage on Six Mile Lake, it's personal. We bring the same care and attention we'd give our own place, because this lake isn't just a service area — it's home."
+  },
 };
 
 export const getLocationHero = (slug: string): LocationHeroInfo => {
