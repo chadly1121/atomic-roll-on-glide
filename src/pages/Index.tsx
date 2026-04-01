@@ -66,13 +66,13 @@ const Index = () => {
         <ServicesSection />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
+        <OurValuesSection />
+      </Suspense>
+      <Suspense fallback={<SectionPlaceholder />}>
         <AsFeaturedInSection />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
         <TrustBadges />
-      </Suspense>
-      <Suspense fallback={<SectionPlaceholder />}>
-        <OurValuesSection />
       </Suspense>
       <Suspense fallback={<SectionPlaceholder />}>
         <ServiceAreaBlock />
