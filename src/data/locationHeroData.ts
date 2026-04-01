@@ -105,8 +105,8 @@ const heroData: Record<string, LocationHeroInfo> = {
     localLove: "Windermere is steeped in Muskoka history — the iconic Windermere House has been welcoming guests since 1870, and the community still has that timeless, gracious feel. We love painting homes here because the architecture tells a story, from grand Victorian cottages to elegant modern lakefront builds. Windermere homeowners have impeccable taste and high standards, which is exactly the kind of challenge we thrive on. Working lakeside here with the gentle waves of Lake Rosseau as your soundtrack — there's nothing better."
   },
   "painters-port-sydney": {
-    heroImage: IMGS.muskokaLake,
-    landmark: "Mary Lake, Port Sydney",
+    heroImage: IMGS.muskokaWindsweptPine,
+    landmark: "The Windswept Pine — Iconic Muskoka",
     localLove: "Port Sydney is a hidden gem on the shores of Mary Lake, and we've loved watching this community grow while keeping its small-town charm. The dam and falls right in town give it a unique character, and the surrounding properties — from cozy year-round homes to waterfront retreats — keep us busy and inspired. There's an authenticity to Port Sydney that you can feel the moment you drive in, and the homeowners here share that genuine, no-nonsense approach to getting things done right."
   },
 
