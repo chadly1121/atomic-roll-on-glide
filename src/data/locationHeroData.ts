@@ -32,7 +32,7 @@ const IMGS = {
   georgianBayCabin: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Georgian_Bay_Littoral_rocks_and_cabin.jpg/1920px-Georgian_Bay_Littoral_rocks_and_cabin.jpg",
   lakeMuskoka: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Lake_Muskoka_%2830578595152%29.jpg/1920px-Lake_Muskoka_%2830578595152%29.jpg",
   muskokaLake: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Muskoka_Lake_ON.JPG",
-  muskokaWindsweptPine: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Windswept_pine_on_Georgian_Bay.jpg/1920px-Windswept_pine_on_Georgian_Bay.jpg",
+  muskokaWindsweptPine: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Windswept_pine_on_Georgian_Bay.jpg",
   barriePark: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Centennial_Park%2C_Barrie_%28166684945%29.jpg/1920px-Centennial_Park%2C_Barrie_%28166684945%29.jpg",
   barrieDowntown: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Downtown_Barrie%2C_Ontario_%282481247940%29.jpg",
   orilliaLake: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Lake_Couchiching_in_Ontario%2C_Canada.jpg/1920px-Lake_Couchiching_in_Ontario%2C_Canada.jpg",
