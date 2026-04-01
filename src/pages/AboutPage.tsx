@@ -65,6 +65,8 @@ const AboutPage: React.FC = () => {
             </div>
           </section>
 
+          <OurValuesSection />
+
           {/* Chad's Story */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">
@@ -114,7 +116,6 @@ const AboutPage: React.FC = () => {
             </div>
           </section>
 
-          <OurValuesSection />
 
           {/* Contact / Connect */}
           <section className="py-12 bg-muted/50">
