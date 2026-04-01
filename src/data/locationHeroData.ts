@@ -95,8 +95,8 @@ const heroData: Record<string, LocationHeroInfo> = {
     localLove: "Port Sandfield sits right where Lake Rosseau meets Lake Joseph — a spot so beautiful it's hard to focus on work sometimes. The historic swing bridge, the pristine waters, and the exquisite cottages along the channel make this one of Muskoka's most special communities. We've painted heritage boathouses and modern waterfront homes here, and each project comes with breathtaking views as a bonus. The families who call Port Sandfield home have an incredible appreciation for quality, and it shows in every property we work on."
   },
   "painters-utterson": {
-    heroImage: IMGS.muskokaLake,
-    landmark: "Muskoka Lakes Region near Utterson",
+    heroImage: IMGS.muskokaWindsweptPine,
+    landmark: "The Windswept Pine — Iconic Muskoka",
     localLove: "Utterson may be small, but it's packed with character — and some of the friendliest folks in Muskoka. This is real cottage country, where the roads wind through forests and every property has a story. We love the variety of work we get here, from rustic cabins that need a refresh to newer homes that want that perfect first coat. The drive into Utterson through the autumn colours is one of our favourite commutes, and the community's warm welcome always makes the work feel less like a job and more like helping neighbours."
   },
   "painters-windermere": {
