@@ -187,7 +187,20 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
             </div>
           </section>
 
-          {/* Why Choose Us */}
+          {/* Why We Love Working Here */}
+          <section className="py-12 bg-gradient-to-br from-atomic-navy/5 to-atomic-turquoise/5 border-y border-atomic-turquoise/10">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <div className="flex items-center gap-3 mb-4">
+                  <Heart className="w-6 h-6 text-atomic-orange flex-shrink-0" />
+                  <h2 className="text-2xl font-bold text-atomic-navy">Why We Love Working in {location.name}</h2>
+                </div>
+                <p className="text-muted-foreground leading-relaxed text-[15px]">{heroInfo.localLove}</p>
+              </div>
+            </div>
+          </section>
+
+
           <section className="py-12 bg-muted/50">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-bold text-atomic-navy text-center mb-8">Why {location.name} Homeowners Choose Roll On Painting</h2>
