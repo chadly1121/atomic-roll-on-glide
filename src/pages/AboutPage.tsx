@@ -116,7 +116,6 @@ const AboutPage: React.FC = () => {
             </div>
           </section>
 
-          <OurValuesSection />
 
           {/* Contact / Connect */}
           <section className="py-12 bg-muted/50">
