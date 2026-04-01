@@ -941,13 +941,118 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Premium painting services for Six Mile Lake cottages and homes. Owner Chad Gilchrist is a former Six Mile Lake cottage owner. WSIB covered. Free quotes. 705-787-1401.",
     intro: "Roll On Painting provides premium painting services for Six Mile Lake — and this one's personal. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake, with deep ties and lasting friendships throughout the community. When we paint your cottage or home on Six Mile Lake, we bring not just 25 years of professional expertise, but a genuine love for this lake and the people who call it home.",
     localContent: "Six Mile Lake sits in the Township of Georgian Bay, a beautiful and accessible lake just off Highway 400 that has attracted generations of cottagers. From the docks at Wawautosa Marina — the lake's beloved full-service marina since the 1950s — to the shores of Six Mile Lake Provincial Park, this community is tight-knit and welcoming. Chad's years as a cottage owner here mean we understand the lake's unique character: the granite shorelines, the mature tree canopy, the mix of classic cottages and modern builds. We know the weather patterns, the water exposure, and exactly what products and techniques deliver lasting results in this environment. Many of our Six Mile Lake clients are friends and neighbours, and we treat every project with the care and attention that comes from being part of the community.",
-    nearbyAreas: ["Port Severn", "Severn", "Coldwater", "Midland", "Georgian Bay", "Penetanguishene"],
+    nearbyAreas: ["Port Severn", "Honey Harbour", "Coldwater", "Waubaushene", "Severn Bridge", "Georgian Bay", "Midland"],
     faqs: [
       { question: "Is Roll On Painting connected to Six Mile Lake?", answer: "Yes. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake with deep personal ties to the community. Many of our clients on the lake are long-time friends and neighbours." },
       { question: "How much does cottage painting cost on Six Mile Lake?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Six Mile Lake property." },
       { question: "Do you paint seasonal cottages on Six Mile Lake?", answer: "Yes. We regularly paint seasonal cottages on Six Mile Lake and can coordinate scheduling around your cottage season — whether that's before opening weekend or after Thanksgiving." },
       { question: "What paint is best for Six Mile Lake waterfront cottages?", answer: "We recommend premium, weather-resistant products from Benjamin Moore, Dulux, and PPG suited to Six Mile Lake's waterfront exposure. We also offer GoNano permanent coating for long-lasting surface protection." },
       { question: "Do you serve the Six Mile Lake Provincial Park area?", answer: "Yes. We serve all areas around Six Mile Lake including properties near the Provincial Park, Wawautosa Marina, and throughout the Township of Georgian Bay." }
+    ]
+  },
+
+  // ─── Coldwater ───────────────────────────────────────────────────
+  {
+    slug: "painters-coldwater",
+    name: "Coldwater",
+    region: "Simcoe County",
+    postalCode: "L0K 1E0",
+    headline: "Professional Painters in Coldwater, Ontario",
+    metaTitle: "Painters in Coldwater | Interior & Exterior Painting | Roll On Painting",
+    metaDescription: "Trusted painting contractors in Coldwater, Ontario. Interior, exterior, cabinet refinishing & more. 25+ years experience. WSIB covered. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting delivers premium painting services to Coldwater and the surrounding Severn Township area. From heritage homes along Coldwater Road to lakeside properties on Lake Couchiching, our 25+ years of experience ensures exceptional results that honour this village's unique character.",
+    localContent: "Coldwater is a picturesque village in the Township of Severn with a rich history dating back to the early 1800s. The Coldwater Canadiana Heritage Museum — housed in a beautifully restored building — showcases the community's deep roots, and the village itself feels like a living museum with its heritage streetscapes and mature tree canopy. Properties in Coldwater range from century-old farmhouses to modern family homes, and many feature architectural details that require a painter's careful touch. The Coldwater River winds through the heart of the village, and the surrounding countryside offers beautiful rural properties that benefit from professional exterior painting to withstand Ontario's seasons. We use premium products from Benjamin Moore, Dulux, and PPG, and every project includes our exclusive Free Touch Ups for Life guarantee. Whether you're refreshing a heritage home's trim or transforming a family room, Roll On Painting brings the expertise and care that Coldwater properties deserve.",
+    nearbyAreas: ["Orillia", "Waubaushene", "Victoria Harbour", "Severn Bridge", "Midland", "Port Severn", "Six Mile Lake"],
+    faqs: [
+      { question: "Do you paint heritage homes in Coldwater?", answer: "Yes. We have extensive experience painting heritage and century homes. We use appropriate techniques and premium products that respect the original architecture while providing lasting protection." },
+      { question: "How much does interior painting cost in Coldwater?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free, no-obligation estimate for your Coldwater property." },
+      { question: "Are you insured to work in Coldwater?", answer: "Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for every project in Coldwater and Severn Township." },
+      { question: "Do you offer cabinet painting in Coldwater?", answer: "Absolutely. Kitchen cabinet refinishing is one of our most popular services in Coldwater. It's a cost-effective way to transform your kitchen without a full renovation." },
+      { question: "What areas near Coldwater do you serve?", answer: "We serve all of Severn Township including Coldwater, Washago, Severn Bridge, and surrounding rural properties, as well as nearby communities like Orillia, Midland, and Waubaushene." }
+    ]
+  },
+
+  // ─── Honey Harbour ──────────────────────────────────────────────
+  {
+    slug: "painters-honey-harbour",
+    name: "Honey Harbour",
+    region: "Township of Georgian Bay",
+    postalCode: "P0E 1E0",
+    headline: "Professional Painters in Honey Harbour, Ontario",
+    metaTitle: "Painters in Honey Harbour | Cottage & Waterfront Painting | Roll On Painting",
+    metaDescription: "Expert cottage and waterfront painting in Honey Harbour, gateway to Georgian Bay Islands. Interior, exterior & specialty coatings. WSIB covered. 705-787-1401.",
+    intro: "Roll On Painting provides expert painting services to Honey Harbour — the gateway to Georgian Bay Islands National Park. From waterfront cottages to year-round homes, we bring 25+ years of experience and products built to withstand Georgian Bay's demanding conditions.",
+    localContent: "Honey Harbour is a unique waterfront community in the Township of Georgian Bay, best known as the launching point for Georgian Bay Islands National Park and the stunning 30,000 Islands archipelago. Every summer, boaters, cottagers, and nature lovers converge on this village to access Beausoleil Island and the surrounding waters. The properties here face some of Ontario's most challenging weather — strong Georgian Bay winds, intense sun exposure, and lake-effect moisture — which makes choosing the right painter and the right products critically important. We specialize in waterfront and cottage painting, using marine-grade and weather-resistant coatings from Benjamin Moore, Dulux, and PPG that stand up to Georgian Bay's elements. Our GoNano permanent coating is especially popular with Honey Harbour cottage owners who want long-lasting surface protection without constant maintenance. Whether your cottage is accessible by road or water, we coordinate logistics to get the job done efficiently. Every project includes our Free Touch Ups for Life guarantee.",
+    nearbyAreas: ["Port Severn", "Six Mile Lake", "Georgian Bay", "Penetanguishene", "Midland", "Victoria Harbour"],
+    faqs: [
+      { question: "Do you paint water-access-only cottages near Honey Harbour?", answer: "Yes. We have experience coordinating water-access cottage painting projects. We work with local marinas and boat services to transport equipment and materials to island and water-access properties." },
+      { question: "What paint works best for Honey Harbour's Georgian Bay exposure?", answer: "We recommend premium weather-resistant products designed for waterfront exposure, including marine-grade coatings. Our GoNano permanent coating is ideal for Georgian Bay properties needing long-lasting protection." },
+      { question: "How much does cottage painting cost in Honey Harbour?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Pricing may vary for water-access properties. Contact us for a free estimate." },
+      { question: "Do you paint decks and docks in Honey Harbour?", answer: "Yes. Deck staining, dock painting, and exterior wood protection are popular services in Honey Harbour. We use products rated for constant water exposure and UV." },
+      { question: "When is the best time to paint a Honey Harbour cottage?", answer: "Spring (May-June) and early fall (September-October) are ideal for exterior painting in Honey Harbour. We recommend booking early as these windows fill quickly." }
+    ]
+  },
+
+  // ─── Waubaushene ─────────────────────────────────────────────────
+  {
+    slug: "painters-waubaushene",
+    name: "Waubaushene",
+    region: "Severn Township",
+    postalCode: "L0K 2C0",
+    headline: "Professional Painters in Waubaushene, Ontario",
+    metaTitle: "Painters in Waubaushene | Interior & Exterior Painting | Roll On Painting",
+    metaDescription: "Quality painting services in Waubaushene on the Trent-Severn Waterway. Interior, exterior, cottage painting & more. WSIB covered. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting serves Waubaushene and the Matchedash Bay area with premium painting services. Situated on the historic Trent-Severn Waterway, this waterfront community deserves painters who understand lakeside living — and that's exactly what we deliver.",
+    localContent: "Waubaushene is a quiet, waterfront village on Matchedash Bay in Severn Township, with a proud history rooted in Ontario's lumber industry. The Trent-Severn Waterway passes right through, and the community's connection to the water shapes everything — from the architecture to the lifestyle. Properties in Waubaushene range from charming village homes to waterfront cottages along Matchedash Bay, and many feature the classic Ontario cottage character that makes this area so appealing. The waterfront exposure means exterior paint needs to stand up to moisture, wind, and UV — and that's where our expertise matters. We use premium coatings from Benjamin Moore, Dulux, and PPG that are formulated for waterfront environments, and our GoNano permanent coating offers exceptional long-term protection for surfaces exposed to the elements. We've painted homes and cottages throughout Severn Township for over two decades, and we understand the unique challenges and beauty of properties in Waubaushene. Every project includes our exclusive Free Touch Ups for Life guarantee.",
+    nearbyAreas: ["Coldwater", "Victoria Harbour", "Port Severn", "Midland", "Orillia", "Six Mile Lake", "Penetanguishene"],
+    faqs: [
+      { question: "Do you paint waterfront properties in Waubaushene?", answer: "Yes. Waterfront and cottage painting is one of our specialties. We use premium, weather-resistant products designed for the moisture and UV exposure common along Matchedash Bay." },
+      { question: "How much does painting cost in Waubaushene?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Waubaushene property." },
+      { question: "Are you WSIB covered for work in Waubaushene?", answer: "Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for every project in Waubaushene and Severn Township." },
+      { question: "Do you offer GoNano coating in Waubaushene?", answer: "Yes. GoNano permanent coating is an excellent option for Waubaushene properties, providing long-lasting surface protection against moisture, UV, and wear. Starting at $0.99/sq ft." },
+      { question: "What services do you offer in Waubaushene?", answer: "We offer interior painting, exterior painting, cabinet refinishing, deck and fence staining, commercial painting, GoNano coating, power washing, wallpaper installation, and epoxy coatings." }
+    ]
+  },
+
+  // ─── Victoria Harbour ────────────────────────────────────────────
+  {
+    slug: "painters-victoria-harbour",
+    name: "Victoria Harbour",
+    region: "Tay Township",
+    postalCode: "L0K 2A0",
+    headline: "Professional Painters in Victoria Harbour, Ontario",
+    metaTitle: "Painters in Victoria Harbour | Interior & Exterior Painting | Roll On Painting",
+    metaDescription: "Trusted painting services in Victoria Harbour on Georgian Bay. Interior, exterior, commercial painting & more. 25+ years experience. WSIB covered. 705-787-1401.",
+    intro: "Roll On Painting provides professional painting services to Victoria Harbour and the Tay Township area. This charming Georgian Bay waterfront community deserves quality workmanship — and our 25+ years of experience ensures every project exceeds expectations.",
+    localContent: "Victoria Harbour is a historic waterfront village in Tay Township on the southeastern shore of Georgian Bay. Once a bustling lumber port, Victoria Harbour today is a peaceful community known for its waterfront parks, heritage grain elevator, and stunning Georgian Bay sunsets. The village's history is written in its architecture — from heritage homes that date back to the lumber era to modern waterfront properties that take full advantage of the bay views. Properties here need paint that can handle Georgian Bay's weather patterns: lake-effect moisture, strong winds, and intense summer sun. We bring premium products from Benjamin Moore, Dulux, and PPG that are proven in waterfront conditions, along with our GoNano permanent coating for homeowners who want maximum durability. Victoria Harbour's proximity to Midland and Penetanguishene means we're in this area regularly, providing efficient scheduling and competitive pricing. Every project includes our exclusive Free Touch Ups for Life guarantee — something no other painter in the area offers.",
+    nearbyAreas: ["Midland", "Penetanguishene", "Waubaushene", "Port McNicoll", "Coldwater", "Six Mile Lake", "Elmvale"],
+    faqs: [
+      { question: "Do you paint heritage homes in Victoria Harbour?", answer: "Yes. Victoria Harbour has many heritage properties from its lumber-era history, and we have extensive experience painting and restoring older homes with appropriate techniques and products." },
+      { question: "How much does painting cost in Victoria Harbour?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free, no-obligation estimate for your Victoria Harbour property." },
+      { question: "Do you serve all of Tay Township?", answer: "Yes. We serve all of Tay Township including Victoria Harbour, Port McNicoll, Waubaushene, and the surrounding rural areas." },
+      { question: "What makes Roll On Painting different from other painters in Victoria Harbour?", answer: "We offer 25+ years of experience, $5M insurance, WSIB coverage, premium products, and our exclusive Free Touch Ups for Life guarantee. We're also HGTV-featured and the only GoNano dealer in the region." },
+      { question: "Do you offer commercial painting in Victoria Harbour?", answer: "Yes. We provide commercial and institutional painting services throughout Tay Township, including retail spaces, offices, restaurants, and community buildings." }
+    ]
+  },
+
+  // ─── Severn Bridge ───────────────────────────────────────────────
+  {
+    slug: "painters-severn-bridge",
+    name: "Severn Bridge",
+    region: "Gravenhurst / Severn Township",
+    postalCode: "L0K 1T0",
+    headline: "Professional Painters in Severn Bridge, Ontario",
+    metaTitle: "Painters in Severn Bridge | Interior & Exterior Painting | Roll On Painting",
+    metaDescription: "Professional painting services in Severn Bridge, Ontario. Interior, exterior, cottage painting & specialty coatings. WSIB covered. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting serves Severn Bridge and the surrounding Severn River corridor with premium painting services. Located where Muskoka meets Simcoe County, this welcoming community is home to beautiful riverfront properties that deserve expert care.",
+    localContent: "Severn Bridge is a small, close-knit community straddling the Severn River, situated at the southern gateway to Muskoka. The village sits at the junction of Highway 11 and the Severn River, making it a natural crossroads between cottage country and the south. Properties here range from classic Ontario village homes to waterfront retreats along the Severn River corridor, and the area attracts both year-round residents and seasonal visitors who love the river lifestyle. The Severn River itself is a major draw — part of the historic Trent-Severn Waterway, it offers boating, fishing, and paddling right from the village. The surrounding landscape is classic Canadian Shield: granite outcroppings, mixed forests, and pristine waterways. We've been painting homes and cottages in the Severn Bridge area for over two decades, and we understand how the river environment affects exterior paint longevity. We use premium products from Benjamin Moore, Dulux, and PPG that are formulated for the moisture and temperature swings common in this corridor. Every project includes our Free Touch Ups for Life guarantee.",
+    nearbyAreas: ["Washago", "Gravenhurst", "Orillia", "Coldwater", "Port Severn", "Six Mile Lake", "Muskoka Lakes"],
+    faqs: [
+      { question: "Do you paint riverfront properties in Severn Bridge?", answer: "Yes. Waterfront and riverfront painting is one of our specialties. We use premium, moisture-resistant products that stand up to the Severn River environment." },
+      { question: "How much does painting cost in Severn Bridge?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate for your Severn Bridge property." },
+      { question: "Is Severn Bridge in Muskoka or Simcoe County?", answer: "Severn Bridge sits right at the boundary — technically in the Town of Gravenhurst (Muskoka) with parts in Severn Township (Simcoe County). We serve both sides of the river." },
+      { question: "Do you offer exterior staining in Severn Bridge?", answer: "Yes. Deck staining, fence staining, and exterior wood protection are popular services in Severn Bridge, especially for riverfront properties with docks and decks." },
+      { question: "What is your Free Touch Ups for Life guarantee?", answer: "Every completed painting project includes our exclusive Free Touch Ups for Life guarantee — we'll touch up your paint at no charge for as long as you own the property. No other painter in the area offers this." }
     ]
   }
 ];
