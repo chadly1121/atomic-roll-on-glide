@@ -17,6 +17,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
   const siteUrl = "https://www.roll-onpainting.com";
   const pageUrl = `${siteUrl}/${location.slug}`;
   const ogImage = "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg";
+  const heroInfo = getLocationHero(location.slug);
 
   const graphSchema = {
     "@context": "https://schema.org",
