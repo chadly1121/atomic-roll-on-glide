@@ -32,6 +32,7 @@ const IMGS = {
   georgianBayCabin: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Georgian_Bay_Littoral_rocks_and_cabin.jpg/1920px-Georgian_Bay_Littoral_rocks_and_cabin.jpg",
   lakeMuskoka: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Lake_Muskoka_%2830578595152%29.jpg/1920px-Lake_Muskoka_%2830578595152%29.jpg",
   muskokaLake: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Muskoka_Lake_ON.JPG",
+  muskokaWindsweptPine: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Windswept_pine_on_Georgian_Bay.jpg/1920px-Windswept_pine_on_Georgian_Bay.jpg",
   barriePark: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Centennial_Park%2C_Barrie_%28166684945%29.jpg/1920px-Centennial_Park%2C_Barrie_%28166684945%29.jpg",
   barrieDowntown: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Downtown_Barrie%2C_Ontario_%282481247940%29.jpg",
   orilliaLake: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Lake_Couchiching_in_Ontario%2C_Canada.jpg/1920px-Lake_Couchiching_in_Ontario%2C_Canada.jpg",
@@ -94,8 +95,8 @@ const heroData: Record<string, LocationHeroInfo> = {
     localLove: "Port Sandfield sits right where Lake Rosseau meets Lake Joseph — a spot so beautiful it's hard to focus on work sometimes. The historic swing bridge, the pristine waters, and the exquisite cottages along the channel make this one of Muskoka's most special communities. We've painted heritage boathouses and modern waterfront homes here, and each project comes with breathtaking views as a bonus. The families who call Port Sandfield home have an incredible appreciation for quality, and it shows in every property we work on."
   },
   "painters-utterson": {
-    heroImage: IMGS.muskokaLake,
-    landmark: "Muskoka Lakes Region near Utterson",
+    heroImage: IMGS.muskokaWindsweptPine,
+    landmark: "The Windswept Pine — Iconic Muskoka",
     localLove: "Utterson may be small, but it's packed with character — and some of the friendliest folks in Muskoka. This is real cottage country, where the roads wind through forests and every property has a story. We love the variety of work we get here, from rustic cabins that need a refresh to newer homes that want that perfect first coat. The drive into Utterson through the autumn colours is one of our favourite commutes, and the community's warm welcome always makes the work feel less like a job and more like helping neighbours."
   },
   "painters-windermere": {
@@ -104,8 +105,8 @@ const heroData: Record<string, LocationHeroInfo> = {
     localLove: "Windermere is steeped in Muskoka history — the iconic Windermere House has been welcoming guests since 1870, and the community still has that timeless, gracious feel. We love painting homes here because the architecture tells a story, from grand Victorian cottages to elegant modern lakefront builds. Windermere homeowners have impeccable taste and high standards, which is exactly the kind of challenge we thrive on. Working lakeside here with the gentle waves of Lake Rosseau as your soundtrack — there's nothing better."
   },
   "painters-port-sydney": {
-    heroImage: IMGS.muskokaLake,
-    landmark: "Mary Lake, Port Sydney",
+    heroImage: IMGS.muskokaWindsweptPine,
+    landmark: "The Windswept Pine — Iconic Muskoka",
     localLove: "Port Sydney is a hidden gem on the shores of Mary Lake, and we've loved watching this community grow while keeping its small-town charm. The dam and falls right in town give it a unique character, and the surrounding properties — from cozy year-round homes to waterfront retreats — keep us busy and inspired. There's an authenticity to Port Sydney that you can feel the moment you drive in, and the homeowners here share that genuine, no-nonsense approach to getting things done right."
   },
 
