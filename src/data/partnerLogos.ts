@@ -17,7 +17,7 @@ export const partnerLogos: PartnerLogo[] = [
   },
   {
     name: "Sansin Stain",
-    logo: "/partner-logos/sansin.png?v=2",
+    logo: "/partner-logos/sansin.webp",
     altText: "Sansin Enviro Stain - Wood Protection",
     url: "https://www.sansin.com/"
   },
