@@ -11,6 +11,8 @@ const HeroSection = () => {
           src="/lovable-uploads/interior-modern-cottage-living.webp"
           alt="Modern cottage great room interior painting by Roll On Painting — Port Carling, Muskoka"
           className="w-full h-full object-cover"
+          width={1440}
+          height={808}
           loading="eager"
           fetchPriority="high"
           decoding="sync"

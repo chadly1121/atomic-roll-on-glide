@@ -34,6 +34,10 @@ const Footer = () => {
                 src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp" 
                 alt="Roll On Painting Logo" 
                 className="h-12 w-auto object-contain"
+                width={200}
+                height={48}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-muted-foreground mb-4">

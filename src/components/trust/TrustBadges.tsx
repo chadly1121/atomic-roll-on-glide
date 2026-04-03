@@ -80,6 +80,8 @@ const TrustBadges: React.FC = () => {
                 <img 
                   src={partner.logo} 
                   alt={partner.altText}
+                  width={140}
+                  height={64}
                   loading="lazy"
                   decoding="async"
                   className="max-h-16 max-w-[140px] w-auto h-auto object-contain"
