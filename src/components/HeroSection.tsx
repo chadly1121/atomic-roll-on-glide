@@ -1,30 +1,32 @@
 
 import React from 'react';
 import HeroContent from './hero/HeroContent';
-import HeroBackground from './hero/HeroBackground';
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-[calc(100vh-80px)] sm:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 flex items-center overflow-hidden bg-background">
-      <HeroBackground />
+      {/* Full-width background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/interior-modern-cottage-living.webp"
+          alt="Modern cottage great room interior painting by Roll On Painting — Port Carling, Muskoka"
+          className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+        />
+        {/* Gradient overlay: more opaque on left (behind text), fading to transparent on right */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0) 100%)'
+          }}
+        />
+      </div>
       
       <div className="container mx-auto px-3 sm:px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+        <div className="max-w-xl">
           <HeroContent />
-          <div className="hidden sm:block">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/lovable-uploads/interior-modern-cottage-living.webp"
-                alt="Modern cottage great room interior painting by Roll On Painting — Port Carling, Muskoka"
-                className="w-full h-auto object-cover aspect-[4/3]"
-                loading="eager"
-                fetchPriority="high"
-                decoding="sync"
-                width="800"
-                height="600"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
