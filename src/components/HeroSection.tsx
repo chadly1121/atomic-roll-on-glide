@@ -15,9 +15,15 @@ const HeroSection = () => {
           fetchPriority="high"
           decoding="sync"
         />
-        {/* Gradient overlay: more opaque on left (behind text), fading to transparent on right */}
+        {/* Mobile: heavy overlay for readability; Desktop: left-to-right fade */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 block sm:hidden"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.88) 60%, rgba(255,255,255,0.7) 85%, rgba(255,255,255,0.5) 100%)'
+          }}
+        />
+        <div 
+          className="absolute inset-0 hidden sm:block"
           style={{
             background: 'linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0) 100%)'
           }}
