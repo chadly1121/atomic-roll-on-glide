@@ -94,6 +94,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'What paint brands do you use?',
         answer: 'We use premium paints from Benjamin Moore, Dulux, and PPG. We recommend specific products based on the room\'s use and your preferences.'
+      },
+      {
+        question: 'How much does interior painting cost in Muskoka?',
+        answer: 'Interior painting starts at $4.50 per square foot with Roll On Painting. This includes full preparation, two coats of premium paint, and cleanup. High-end finishes like stained beams or specialty wallpaper can range up to $15/sq ft.'
+      },
+      {
+        question: 'Can you paint pine ceilings and exposed beams?',
+        answer: 'Absolutely. We specialize in cottage-style interiors including pine ceilings, exposed beams, shiplap walls, and timber trusses. We use appropriate stains and paints to enhance or refresh these natural wood surfaces.'
+      },
+      {
+        question: 'Do you offer colour consultation?',
+        answer: 'Yes. We provide free colour consultation and can bring sample boards to help you choose. We stay current with trending colours and can recommend palettes that suit your space and lighting.'
+      },
+      {
+        question: 'What is the best paint sheen for interior walls?',
+        answer: 'We recommend eggshell for most living areas — it\'s durable and easy to clean. Semi-gloss works best for kitchens, bathrooms, and trim. Flat or matte is ideal for ceilings. We\'ll recommend the right sheen for each surface.'
       }
     ],
     galleryImages: [
