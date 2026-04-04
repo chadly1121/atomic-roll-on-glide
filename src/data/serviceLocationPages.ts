@@ -411,7 +411,6 @@ export const serviceLocationPages: ServicePageData[] = [
     galleryVideos: [
       '/lovable-uploads/cabinet-repaint-video.mp4'
     ]
-  }
   },
   {
     slug: 'cottage-painting-muskoka',
