@@ -700,6 +700,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Is spray painting suitable for interior walls?',
         answer: 'Yes, spray painting can be used on interior walls for a smooth finish, especially in new construction or empty rooms. We mask and protect all areas not being painted.'
+      },
+      {
+        question: 'How much does spray finishing cost in Muskoka?',
+        answer: 'Spray finishing typically starts around $4.50/sq ft for interior surfaces. Cabinet refinishing, specialty trim, and large exterior projects are quoted individually based on scope and complexity.'
+      },
+      {
+        question: 'Can you spray paint kitchen cabinets?',
+        answer: 'Absolutely. Cabinet spray painting is one of our most popular services. We remove doors and hardware, prep all surfaces, and spray multiple coats for a durable, factory-quality finish.'
+      },
+      {
+        question: 'Do you spray paint exterior fences and decks?',
+        answer: 'Yes. Spray application is ideal for fences and large exterior surfaces where speed and even coverage matter. We mask and protect all surrounding areas from overspray.'
+      },
+      {
+        question: 'What equipment do you use for spray finishing?',
+        answer: 'We use professional-grade airless and HVLP spray equipment — not consumer-grade sprayers. This delivers consistent, even coverage with minimal overspray and waste.'
+      },
+      {
+        question: 'Will spray painting create overspray on my property?',
+        answer: 'No. We meticulously mask and protect every surface not being painted. Our experienced crew ensures zero overspray on your property, landscaping, or vehicles.'
       }
     ]
   },
