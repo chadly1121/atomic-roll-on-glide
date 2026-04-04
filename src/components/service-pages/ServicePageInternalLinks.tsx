@@ -103,7 +103,7 @@ const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ cur
                 className="text-atomic-turquoise hover:text-atomic-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
               >
                 <MapPin className="w-3 h-3" aria-hidden="true" />
-                View all 48 service areas →
+                View all 58 service areas →
               </Link>
             </div>
           </div>
