@@ -266,6 +266,36 @@ export const servicePages: ServicePageData[] = [
       'Experienced with retail, office, and industrial spaces',
       'References from Muskoka businesses available'
     ],
+    faqs: [
+      {
+        question: 'How much does commercial painting cost in Muskoka?',
+        answer: 'Commercial painting is quoted per project based on square footage, surface condition, and scheduling requirements. Office refreshes typically start around $3,000-$5,000. Large retail or industrial spaces are quoted individually. Contact us for a free on-site assessment.'
+      },
+      {
+        question: 'Can you paint during evenings or weekends to avoid business disruption?',
+        answer: 'Yes. We routinely work evenings, weekends, and holidays for commercial clients. We develop phased schedules that allow your business to remain open during the project.'
+      },
+      {
+        question: 'Do you carry commercial insurance for business properties?',
+        answer: 'Yes. Roll On Painting carries $5 million in commercial general liability insurance and is fully WSIB covered. We provide certificates of insurance upon request.'
+      },
+      {
+        question: 'How long does a commercial painting project take?',
+        answer: 'Timeline depends on scope. A small office refresh may take 2-3 days. Large commercial spaces can take 1-4 weeks. We provide a detailed timeline in our proposal and stick to it.'
+      },
+      {
+        question: 'What types of commercial properties do you paint?',
+        answer: 'We paint retail stores, offices, restaurants, medical clinics, warehouses, industrial facilities, multi-unit residential buildings, schools, and government buildings across Muskoka and surrounding areas.'
+      },
+      {
+        question: 'Do you use low-odour paints for occupied commercial spaces?',
+        answer: 'Yes. We use low-VOC and zero-VOC commercial-grade paints when working in occupied spaces. This minimizes odour and health concerns while still delivering durable, professional-quality finishes.'
+      },
+      {
+        question: 'Can you match our brand colours exactly?',
+        answer: 'Absolutely. We can colour-match any brand standard using Benjamin Moore, Dulux, or PPG commercial paint lines. We create test samples for your approval before painting.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/commercial-interior-spray-canvas-brewing.webp',
       '/lovable-uploads/commercial-exterior-muskoka-living-finished.webp',
