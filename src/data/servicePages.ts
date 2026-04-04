@@ -1127,6 +1127,14 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you paint gymnasium floors and stage areas?',
         answer: 'Yes. We paint gym floors with regulation line markings and durable floor coatings. We also paint stages, auditoriums, and multipurpose rooms with specialty finishes designed for heavy use.'
+      },
+      {
+        question: 'How much does institutional painting cost?',
+        answer: 'Institutional painting is quoted per project based on square footage, surface types, scheduling requirements, and coating specifications. Contact us for a detailed proposal tailored to your facility.'
+      },
+      {
+        question: 'Do you offer maintenance painting contracts for institutions?',
+        answer: 'Yes. We offer annual and multi-year maintenance painting contracts for schools, hospitals, and government buildings. Scheduled maintenance keeps facilities fresh and extends the life of coatings.'
       }
     ]
   },
