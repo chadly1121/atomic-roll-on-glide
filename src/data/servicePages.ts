@@ -94,6 +94,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'What paint brands do you use?',
         answer: 'We use premium paints from Benjamin Moore, Dulux, and PPG. We recommend specific products based on the room\'s use and your preferences.'
+      },
+      {
+        question: 'How much does interior painting cost in Muskoka?',
+        answer: 'Interior painting starts at $4.50 per square foot with Roll On Painting. This includes full preparation, two coats of premium paint, and cleanup. High-end finishes like stained beams or specialty wallpaper can range up to $15/sq ft.'
+      },
+      {
+        question: 'Can you paint pine ceilings and exposed beams?',
+        answer: 'Absolutely. We specialize in cottage-style interiors including pine ceilings, exposed beams, shiplap walls, and timber trusses. We use appropriate stains and paints to enhance or refresh these natural wood surfaces.'
+      },
+      {
+        question: 'Do you offer colour consultation?',
+        answer: 'Yes. We provide free colour consultation and can bring sample boards to help you choose. We stay current with trending colours and can recommend palettes that suit your space and lighting.'
+      },
+      {
+        question: 'What is the best paint sheen for interior walls?',
+        answer: 'We recommend eggshell for most living areas — it\'s durable and easy to clean. Semi-gloss works best for kitchens, bathrooms, and trim. Flat or matte is ideal for ceilings. We\'ll recommend the right sheen for each surface.'
       }
     ],
     galleryImages: [
@@ -171,6 +187,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you paint log homes and cabins?',
         answer: 'Yes, we specialize in log homes using appropriate stains and finishes. We also partner with Sansin for premium wood treatments.'
+      },
+      {
+        question: 'How much does exterior painting cost in Muskoka?',
+        answer: 'Exterior painting starts at $5.75 per square foot including power washing, full prep, primer, and two coats. A typical Muskoka home exterior ranges from $8,000 to $20,000 depending on size and condition.'
+      },
+      {
+        question: 'What paint lasts longest in Ontario winters?',
+        answer: 'We use premium exterior products from Benjamin Moore Aura Exterior and Dulux WeatherShield rated for Canadian freeze-thaw cycles. These paints resist cracking, peeling, and fading even through harsh Muskoka winters.'
+      },
+      {
+        question: 'Do you paint while I\'m not at my cottage?',
+        answer: 'Yes. Many of our clients are seasonal cottage owners. We coordinate access, provide photo updates, and ensure everything is completed to your satisfaction before you arrive.'
+      },
+      {
+        question: 'What preparation do you do before exterior painting?',
+        answer: 'We power wash all surfaces, scrape loose paint, sand rough areas, caulk all gaps and joints, and apply primer to bare wood and repairs. Proper prep is the single biggest factor in how long your paint job lasts.'
       }
     ],
     galleryImages: [
@@ -234,6 +266,36 @@ export const servicePages: ServicePageData[] = [
       'Experienced with retail, office, and industrial spaces',
       'References from Muskoka businesses available'
     ],
+    faqs: [
+      {
+        question: 'How much does commercial painting cost in Muskoka?',
+        answer: 'Commercial painting is quoted per project based on square footage, surface condition, and scheduling requirements. Office refreshes typically start around $3,000-$5,000. Large retail or industrial spaces are quoted individually. Contact us for a free on-site assessment.'
+      },
+      {
+        question: 'Can you paint during evenings or weekends to avoid business disruption?',
+        answer: 'Yes. We routinely work evenings, weekends, and holidays for commercial clients. We develop phased schedules that allow your business to remain open during the project.'
+      },
+      {
+        question: 'Do you carry commercial insurance for business properties?',
+        answer: 'Yes. Roll On Painting carries $5 million in commercial general liability insurance and is fully WSIB covered. We provide certificates of insurance upon request.'
+      },
+      {
+        question: 'How long does a commercial painting project take?',
+        answer: 'Timeline depends on scope. A small office refresh may take 2-3 days. Large commercial spaces can take 1-4 weeks. We provide a detailed timeline in our proposal and stick to it.'
+      },
+      {
+        question: 'What types of commercial properties do you paint?',
+        answer: 'We paint retail stores, offices, restaurants, medical clinics, warehouses, industrial facilities, multi-unit residential buildings, schools, and government buildings across Muskoka and surrounding areas.'
+      },
+      {
+        question: 'Do you use low-odour paints for occupied commercial spaces?',
+        answer: 'Yes. We use low-VOC and zero-VOC commercial-grade paints when working in occupied spaces. This minimizes odour and health concerns while still delivering durable, professional-quality finishes.'
+      },
+      {
+        question: 'Can you match our brand colours exactly?',
+        answer: 'Absolutely. We can colour-match any brand standard using Benjamin Moore, Dulux, or PPG commercial paint lines. We create test samples for your approval before painting.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/commercial-interior-spray-canvas-brewing.webp',
       '/lovable-uploads/commercial-exterior-muskoka-living-finished.webp',
@@ -287,6 +349,36 @@ export const servicePages: ServicePageData[] = [
       'Durable finish that resists chips and scratches',
       'Wide range of colors and finishes available',
       'Minimal disruption to your kitchen use'
+    ],
+    faqs: [
+      {
+        question: 'How much does cabinet refinishing cost in Muskoka?',
+        answer: 'A standard kitchen cabinet refinishing project in Muskoka typically ranges from $3,500 to $7,000 — a fraction of the $25,000-$40,000 cost of new cabinets. Price depends on the number of doors, drawers, and surface condition.'
+      },
+      {
+        question: 'How long does cabinet refinishing take?',
+        answer: 'Most kitchen cabinet projects take 3-5 business days including door removal, preparation, spraying, drying, and reinstallation. We work efficiently to minimize disruption to your kitchen use.'
+      },
+      {
+        question: 'Will painted cabinets chip or peel?',
+        answer: 'Not when done properly. We use professional-grade bonding primers and durable cabinet-specific paints. Our multi-coat spray process creates a hard, factory-quality finish that resists chipping, scratching, and moisture.'
+      },
+      {
+        question: 'Can you refinish thermofoil or laminate cabinets?',
+        answer: 'Yes. We can refinish thermofoil, laminate, MDF, and solid wood cabinets. Each material requires specific preparation — we assess your cabinet material during our visit and use appropriate primers for maximum adhesion.'
+      },
+      {
+        question: 'What colours are popular for kitchen cabinets in Muskoka?',
+        answer: 'White, warm grey, navy, and black are the most requested cabinet colours right now. We offer the full range of Benjamin Moore, Dulux, and PPG colours and bring samples to help you decide.'
+      },
+      {
+        question: 'Do you refinish bathroom vanities and built-ins too?',
+        answer: 'Yes. We refinish bathroom vanities, laundry room cabinets, built-in bookshelves, entertainment units, and mudroom storage. The same spray finishing process works on any cabinetry.'
+      },
+      {
+        question: 'Is it worth painting cabinets or should I replace them?',
+        answer: 'If your cabinet boxes are structurally sound, refinishing is almost always the better value. You get a brand-new look for 10-20% of replacement cost, with far less disruption and waste.'
+      }
     ],
     galleryImages: [
       '/lovable-uploads/cabinet-grey-kitchen-finished.webp',
@@ -345,6 +437,36 @@ export const servicePages: ServicePageData[] = [
       'Extends the life of your deck by years',
       'Available in transparent, semi-transparent, and solid colors'
     ],
+    faqs: [
+      {
+        question: 'How much does deck staining cost in Muskoka?',
+        answer: 'Deck staining starts at $5.75 per square foot including power washing, wood brightening, and two coats of premium penetrating stain. A standard deck (200-400 sq ft) typically costs $1,500 to $3,000.'
+      },
+      {
+        question: 'How long does deck stain last in Muskoka?',
+        answer: 'A quality penetrating stain lasts 2-4 years on horizontal surfaces like decks and 4-7 years on vertical surfaces like fences. Proper prep — washing, brightening, and sanding — is key to longevity.'
+      },
+      {
+        question: 'What is the best stain for decks in Muskoka?',
+        answer: 'We recommend Sansin DEC for most Muskoka decks. It\'s a penetrating oil that nourishes the wood and provides excellent UV and water protection. We also use Sikkens and Benjamin Moore Arborcoat depending on the application.'
+      },
+      {
+        question: 'When is the best time to stain a deck in Muskoka?',
+        answer: 'Late May through September is ideal. We need temperatures above 10°C and dry weather for 24-48 hours after application. We schedule based on weather forecasts to ensure proper absorption and curing.'
+      },
+      {
+        question: 'Do you stain fences and wood structures too?',
+        answer: 'Yes. We stain fences, pergolas, gazebos, railings, docks, boathouses, and all outdoor wood structures. The same careful prep and premium products apply to every surface.'
+      },
+      {
+        question: 'Should I power wash my deck before staining?',
+        answer: 'Yes — it\'s essential. Power washing removes dirt, mold, and old finish so the new stain can penetrate properly. We include power washing and wood brightening in every staining project.'
+      },
+      {
+        question: 'Can you strip and re-stain a deck that was previously painted?',
+        answer: 'Yes. We can strip old paint or failed coatings, sand the wood, and apply fresh stain. The process takes longer but restores the natural wood look and allows penetrating stain to work properly.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/exterior-deck-stain-muskoka.webp',
       '/lovable-uploads/exterior-deck-staining-action.webp',
@@ -397,6 +519,36 @@ export const servicePages: ServicePageData[] = [
       'Easy to clean and maintain',
       'Available in many colors and finishes',
       'Transforms dull concrete into an attractive surface'
+    ],
+    faqs: [
+      {
+        question: 'How much do epoxy floors cost in Muskoka?',
+        answer: 'Epoxy floor coatings start at $0.99 per square foot. A standard 2-car garage (400-600 sq ft) typically costs $1,500 to $4,000 depending on concrete condition, number of coats, and decorative flake options.'
+      },
+      {
+        question: 'How long does an epoxy floor last?',
+        answer: 'A professionally installed epoxy floor lasts 10-20 years or more with proper care. Our multi-coat system with polyaspartic topcoat provides far superior durability compared to DIY kits.'
+      },
+      {
+        question: 'How long before I can park on an epoxy floor?',
+        answer: 'You can walk on the floor after 24 hours. We recommend waiting 5-7 days before parking vehicles to allow full curing. We provide detailed aftercare instructions.'
+      },
+      {
+        question: 'Can you apply epoxy in a cold Muskoka garage?',
+        answer: 'Yes. We need concrete above 10°C for proper curing. For unheated garages in spring or fall, we use portable heaters. We schedule based on conditions to ensure the best results.'
+      },
+      {
+        question: 'Is epoxy flooring slippery when wet?',
+        answer: 'Our decorative flake broadcast adds texture for traction. We can also add anti-slip additives to the topcoat — especially important for Muskoka garages where snow and water are tracked in during winter.'
+      },
+      {
+        question: 'What colours and finishes are available?',
+        answer: 'We offer solid colours, metallic finishes, and decorative flake blends. Options range from subtle granite-like patterns to bold multi-colour combinations. We bring samples to your space.'
+      },
+      {
+        question: 'Do you do commercial epoxy floors?',
+        answer: 'Yes. We coat commercial floors including warehouses, breweries, retail spaces, workshops, and showrooms. Commercial projects are scheduled around your business operations.'
+      }
     ],
     galleryImages: [
       '/lovable-uploads/epoxy-flake-floor-muskoka-1.webp',
@@ -452,6 +604,36 @@ export const servicePages: ServicePageData[] = [
       'Protects against UV damage',
       'Environmentally friendly nanotechnology',
       'Ideal for Muskoka\'s harsh weather conditions'
+    ],
+    faqs: [
+      {
+        question: 'What is GoNano coating?',
+        answer: 'GoNano is a nanotechnology-based coating that creates an invisible hydrophobic barrier on exterior surfaces. It repels water, prevents mold and mildew growth, protects against UV damage, and dramatically reduces cleaning and maintenance.'
+      },
+      {
+        question: 'How much does GoNano coating cost?',
+        answer: 'GoNano coating starts at $0.99 per square foot. Cost depends on the surface type, area, and accessibility. It can be applied standalone or combined with painting for a complete exterior protection system.'
+      },
+      {
+        question: 'How long does GoNano coating last?',
+        answer: 'GoNano provides years of protection depending on surface type and exposure. It significantly outlasts traditional sealers and is especially effective in Muskoka\'s wet, freeze-thaw climate.'
+      },
+      {
+        question: 'Is GoNano safe for lakefront cottages?',
+        answer: 'Yes. GoNano is an environmentally friendly, water-based nanotechnology product. It\'s safe for use on lakefront properties and does not release harmful chemicals into the environment.'
+      },
+      {
+        question: 'What surfaces can GoNano be applied to?',
+        answer: 'GoNano can be applied to roofing, siding, concrete, stone, brick, wood, and more. It\'s especially effective on surfaces prone to mold, algae, and moisture damage — common issues for Muskoka cottages.'
+      },
+      {
+        question: 'Can GoNano be combined with painting?',
+        answer: 'Yes. GoNano is often applied as a topcoat over freshly painted or stained surfaces for added protection. It can also be applied to existing surfaces without repainting.'
+      },
+      {
+        question: 'Is Roll On Painting a certified GoNano applicator?',
+        answer: 'Yes. Roll On Painting is a certified GoNano dealer and applicator in Muskoka. We have specialized training and equipment for proper GoNano application.'
+      }
     ]
   },
   {
@@ -518,6 +700,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Is spray painting suitable for interior walls?',
         answer: 'Yes, spray painting can be used on interior walls for a smooth finish, especially in new construction or empty rooms. We mask and protect all areas not being painted.'
+      },
+      {
+        question: 'How much does spray finishing cost in Muskoka?',
+        answer: 'Spray finishing typically starts around $4.50/sq ft for interior surfaces. Cabinet refinishing, specialty trim, and large exterior projects are quoted individually based on scope and complexity.'
+      },
+      {
+        question: 'Can you spray paint kitchen cabinets?',
+        answer: 'Absolutely. Cabinet spray painting is one of our most popular services. We remove doors and hardware, prep all surfaces, and spray multiple coats for a durable, factory-quality finish.'
+      },
+      {
+        question: 'Do you spray paint exterior fences and decks?',
+        answer: 'Yes. Spray application is ideal for fences and large exterior surfaces where speed and even coverage matter. We mask and protect all surrounding areas from overspray.'
+      },
+      {
+        question: 'What equipment do you use for spray finishing?',
+        answer: 'We use professional-grade airless and HVLP spray equipment — not consumer-grade sprayers. This delivers consistent, even coverage with minimal overspray and waste.'
+      },
+      {
+        question: 'Will spray painting create overspray on my property?',
+        answer: 'No. We meticulously mask and protect every surface not being painted. Our experienced crew ensures zero overspray on your property, landscaping, or vehicles.'
       }
     ]
   },
@@ -577,6 +779,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How long does wallpaper removal take?',
         answer: 'A typical room takes 1-2 days depending on the number of layers and adhesive type. Older wallpaper with multiple layers takes longer.'
+      },
+      {
+        question: 'How much does wallpaper removal cost in Muskoka?',
+        answer: 'Wallpaper removal is priced per room based on wall area, number of layers, and adhesive type. A typical room ranges from $500 to $1,500 including wall restoration. Contact us for a specific quote.'
+      },
+      {
+        question: 'Can you paint after removing wallpaper?',
+        answer: 'Yes — and we recommend it. After removing wallpaper, we repair and skim coat the walls as needed, prime, and paint. Bundling wallpaper removal with painting ensures the best results and saves you time.'
+      },
+      {
+        question: 'What if there are multiple layers of wallpaper?',
+        answer: 'We handle multi-layer removal regularly. Each layer is removed carefully using the appropriate technique. The process takes longer but we ensure clean walls ready for their new finish.'
+      },
+      {
+        question: 'Will the walls need repair after wallpaper removal?',
+        answer: 'Often yes — and we include wall restoration in our service. We skim coat, patch, and sand as needed to create a smooth surface ready for paint or new wallpaper.'
+      },
+      {
+        question: 'Can you remove wallpaper from plaster walls?',
+        answer: 'Yes. Plaster walls require extra care to avoid damage. We use gentle steaming and controlled moisture techniques specifically for plaster substrates.'
       }
     ]
   },
@@ -631,6 +853,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How long does stucco removal take?',
         answer: 'It depends on the area and number of layers. A typical residential exterior takes 2-5 days including cleanup and surface preparation.'
+      },
+      {
+        question: 'How much does stucco removal cost in Muskoka?',
+        answer: 'Stucco removal is quoted per project based on area, number of layers, and disposal requirements. Contact us with photos and measurements for a free estimate.'
+      },
+      {
+        question: 'What can replace stucco after removal?',
+        answer: 'Common replacement options include new siding (vinyl, wood, or engineered), stone veneer, brick, smooth stucco re-application, or board-and-batten. We can prepare the surface for any new finish.'
+      },
+      {
+        question: 'Is there asbestos in my stucco?',
+        answer: 'Stucco applied before the 1980s may contain asbestos. If we suspect asbestos, we recommend testing before removal. We follow all Ontario safety regulations for hazardous material handling.'
+      },
+      {
+        question: 'Can you do a partial stucco removal?',
+        answer: 'Yes. We can remove stucco from specific areas — for example, around windows, on one wall, or in damaged sections — and patch or blend with the remaining surface.'
+      },
+      {
+        question: 'Do you handle disposal of removed stucco?',
+        answer: 'Yes. We include proper disposal of all removed stucco material in our service. We follow local waste disposal regulations and leave your property clean.'
       }
     ]
   },
@@ -696,6 +938,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Can you install wallpaper over existing wallpaper?',
         answer: 'We generally recommend removing old wallpaper first for the best adhesion and finish. We offer wallpaper removal as a companion service.'
+      },
+      {
+        question: 'How much does wallpaper installation cost in Muskoka?',
+        answer: 'Wallpaper installation is priced per roll or per room depending on complexity. A typical accent wall ranges from $300 to $800 including wall prep. Full rooms depend on wallpaper type and pattern matching difficulty.'
+      },
+      {
+        question: 'What types of wallpaper can you install?',
+        answer: 'We install all types including vinyl, grasscloth, peel-and-stick, pre-pasted, traditional paste, fabric-backed, and specialty textured wallpapers. Each type requires different techniques and adhesives.'
+      },
+      {
+        question: 'Do walls need to be prepared before wallpaper installation?',
+        answer: 'Yes. Proper wall preparation is essential for a long-lasting result. We clean, repair, sand, and prime walls before hanging wallpaper. This ensures smooth adhesion and prevents bubbling or peeling.'
+      },
+      {
+        question: 'Can you install wallpaper in a bathroom or kitchen?',
+        answer: 'Yes. We use moisture-resistant wallpapers and appropriate adhesives for high-humidity areas. Vinyl and vinyl-coated wallpapers work especially well in bathrooms and kitchens.'
       }
     ]
   },
@@ -769,6 +1027,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How often should I have my home exterior washed?',
         answer: 'In Muskoka, we recommend exterior washing every 1-2 years. Properties near water or in shaded areas may benefit from annual cleaning due to increased mold and mildew growth.'
+      },
+      {
+        question: 'How much does power washing cost in Muskoka?',
+        answer: 'A full home soft wash starts at $750 for a bungalow and $1,200 for a 2-storey home (up to 1,800 sq ft footprint). Driveways, decks, and roofs are quoted separately based on size.'
+      },
+      {
+        question: 'Can you wash my roof without damaging the shingles?',
+        answer: 'Yes. We use soft washing — the manufacturer-recommended method for asphalt shingles. Low pressure with specialized solutions removes moss, algae, and black streaks without voiding your warranty.'
+      },
+      {
+        question: 'Is your cleaning solution safe for lakefront properties?',
+        answer: 'Yes. We use biodegradable, environmentally responsible cleaning solutions and take extra precautions on waterfront properties to prevent runoff.'
+      },
+      {
+        question: 'Can I combine power washing with painting or staining?',
+        answer: 'Yes — and we recommend it. Power washing before painting removes contaminants for better paint adhesion. We offer bundled pricing when you combine services.'
       }
     ]
   },
@@ -853,6 +1127,14 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you paint gymnasium floors and stage areas?',
         answer: 'Yes. We paint gym floors with regulation line markings and durable floor coatings. We also paint stages, auditoriums, and multipurpose rooms with specialty finishes designed for heavy use.'
+      },
+      {
+        question: 'How much does institutional painting cost?',
+        answer: 'Institutional painting is quoted per project based on square footage, surface types, scheduling requirements, and coating specifications. Contact us for a detailed proposal tailored to your facility.'
+      },
+      {
+        question: 'Do you offer maintenance painting contracts for institutions?',
+        answer: 'Yes. We offer annual and multi-year maintenance painting contracts for schools, hospitals, and government buildings. Scheduled maintenance keeps facilities fresh and extends the life of coatings.'
       }
     ]
   },
@@ -943,6 +1225,14 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you offer pickup and delivery?',
         answer: 'Yes. Materials can be dropped off at our shop in Port Sydney or we can arrange pickup from your supplier. Finished materials can be delivered directly to your job site anywhere in Muskoka.'
+      },
+      {
+        question: 'How much does pre-finishing cost?',
+        answer: 'Pre-finishing is quoted based on board feet or linear feet, material type, and finish specification. Volume pricing is available for large orders. Contact us with your material list for a quote.'
+      },
+      {
+        question: 'Why is shop finishing better than on-site finishing?',
+        answer: 'Our controlled shop environment eliminates dust, humidity, and temperature fluctuations that can ruin finishes on-site. Materials are sprayed on professional racks, dried in climate-controlled conditions, and arrive at your job site with a perfect, factory-quality finish.'
       }
     ]
   }

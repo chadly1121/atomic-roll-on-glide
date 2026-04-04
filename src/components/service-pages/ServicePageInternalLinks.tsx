@@ -9,8 +9,12 @@ interface ServicePageInternalLinksProps {
 const relatedServices = [
   { slug: 'interior-painting-muskoka', name: 'Interior Painting Muskoka' },
   { slug: 'exterior-painting-muskoka', name: 'Exterior Painting Muskoka' },
+  { slug: 'cottage-painting-muskoka', name: 'Cottage Painting Muskoka' },
   { slug: 'spray-painting-muskoka', name: 'Spray Painting Muskoka' },
   { slug: 'cabinet-painting-muskoka', name: 'Cabinet Painting Muskoka' },
+  { slug: 'epoxy-floors-muskoka', name: 'Epoxy Floors Muskoka' },
+  { slug: 'power-washing-muskoka', name: 'Power Washing Muskoka' },
+  { slug: 'staining-muskoka', name: 'Wood Staining Muskoka' },
   { slug: 'interior-painting', name: 'Interior Painting' },
   { slug: 'exterior-painting', name: 'Exterior Painting' },
   { slug: 'cabinet-refinishing', name: 'Cabinet Refinishing' },
@@ -46,7 +50,7 @@ const serviceAreas = [
 ];
 
 const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ currentSlug }) => {
-  const filteredServices = relatedServices.filter(s => s.slug !== currentSlug).slice(0, 6);
+  const filteredServices = relatedServices.filter(s => s.slug !== currentSlug).slice(0, 8);
   const filteredAreas = serviceAreas.filter(a => a.slug !== currentSlug);
 
   return (
@@ -99,7 +103,7 @@ const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ cur
                 className="text-atomic-turquoise hover:text-atomic-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
               >
                 <MapPin className="w-3 h-3" aria-hidden="true" />
-                View all 48 service areas →
+                View all 58 service areas →
               </Link>
             </div>
           </div>
