@@ -437,6 +437,36 @@ export const servicePages: ServicePageData[] = [
       'Extends the life of your deck by years',
       'Available in transparent, semi-transparent, and solid colors'
     ],
+    faqs: [
+      {
+        question: 'How much does deck staining cost in Muskoka?',
+        answer: 'Deck staining starts at $5.75 per square foot including power washing, wood brightening, and two coats of premium penetrating stain. A standard deck (200-400 sq ft) typically costs $1,500 to $3,000.'
+      },
+      {
+        question: 'How long does deck stain last in Muskoka?',
+        answer: 'A quality penetrating stain lasts 2-4 years on horizontal surfaces like decks and 4-7 years on vertical surfaces like fences. Proper prep — washing, brightening, and sanding — is key to longevity.'
+      },
+      {
+        question: 'What is the best stain for decks in Muskoka?',
+        answer: 'We recommend Sansin DEC for most Muskoka decks. It\'s a penetrating oil that nourishes the wood and provides excellent UV and water protection. We also use Sikkens and Benjamin Moore Arborcoat depending on the application.'
+      },
+      {
+        question: 'When is the best time to stain a deck in Muskoka?',
+        answer: 'Late May through September is ideal. We need temperatures above 10°C and dry weather for 24-48 hours after application. We schedule based on weather forecasts to ensure proper absorption and curing.'
+      },
+      {
+        question: 'Do you stain fences and wood structures too?',
+        answer: 'Yes. We stain fences, pergolas, gazebos, railings, docks, boathouses, and all outdoor wood structures. The same careful prep and premium products apply to every surface.'
+      },
+      {
+        question: 'Should I power wash my deck before staining?',
+        answer: 'Yes — it\'s essential. Power washing removes dirt, mold, and old finish so the new stain can penetrate properly. We include power washing and wood brightening in every staining project.'
+      },
+      {
+        question: 'Can you strip and re-stain a deck that was previously painted?',
+        answer: 'Yes. We can strip old paint or failed coatings, sand the wood, and apply fresh stain. The process takes longer but restores the natural wood look and allows penetrating stain to work properly.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/exterior-deck-stain-muskoka.webp',
       '/lovable-uploads/exterior-deck-staining-action.webp',
