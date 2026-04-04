@@ -938,6 +938,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Can you install wallpaper over existing wallpaper?',
         answer: 'We generally recommend removing old wallpaper first for the best adhesion and finish. We offer wallpaper removal as a companion service.'
+      },
+      {
+        question: 'How much does wallpaper installation cost in Muskoka?',
+        answer: 'Wallpaper installation is priced per roll or per room depending on complexity. A typical accent wall ranges from $300 to $800 including wall prep. Full rooms depend on wallpaper type and pattern matching difficulty.'
+      },
+      {
+        question: 'What types of wallpaper can you install?',
+        answer: 'We install all types including vinyl, grasscloth, peel-and-stick, pre-pasted, traditional paste, fabric-backed, and specialty textured wallpapers. Each type requires different techniques and adhesives.'
+      },
+      {
+        question: 'Do walls need to be prepared before wallpaper installation?',
+        answer: 'Yes. Proper wall preparation is essential for a long-lasting result. We clean, repair, sand, and prime walls before hanging wallpaper. This ensures smooth adhesion and prevents bubbling or peeling.'
+      },
+      {
+        question: 'Can you install wallpaper in a bathroom or kitchen?',
+        answer: 'Yes. We use moisture-resistant wallpapers and appropriate adhesives for high-humidity areas. Vinyl and vinyl-coated wallpapers work especially well in bathrooms and kitchens.'
       }
     ]
   },
