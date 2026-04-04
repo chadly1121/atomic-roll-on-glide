@@ -1225,6 +1225,14 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you offer pickup and delivery?',
         answer: 'Yes. Materials can be dropped off at our shop in Port Sydney or we can arrange pickup from your supplier. Finished materials can be delivered directly to your job site anywhere in Muskoka.'
+      },
+      {
+        question: 'How much does pre-finishing cost?',
+        answer: 'Pre-finishing is quoted based on board feet or linear feet, material type, and finish specification. Volume pricing is available for large orders. Contact us with your material list for a quote.'
+      },
+      {
+        question: 'Why is shop finishing better than on-site finishing?',
+        answer: 'Our controlled shop environment eliminates dust, humidity, and temperature fluctuations that can ruin finishes on-site. Materials are sprayed on professional racks, dried in climate-controlled conditions, and arrive at your job site with a perfect, factory-quality finish.'
       }
     ]
   }
