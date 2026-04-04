@@ -1027,6 +1027,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How often should I have my home exterior washed?',
         answer: 'In Muskoka, we recommend exterior washing every 1-2 years. Properties near water or in shaded areas may benefit from annual cleaning due to increased mold and mildew growth.'
+      },
+      {
+        question: 'How much does power washing cost in Muskoka?',
+        answer: 'A full home soft wash starts at $750 for a bungalow and $1,200 for a 2-storey home (up to 1,800 sq ft footprint). Driveways, decks, and roofs are quoted separately based on size.'
+      },
+      {
+        question: 'Can you wash my roof without damaging the shingles?',
+        answer: 'Yes. We use soft washing — the manufacturer-recommended method for asphalt shingles. Low pressure with specialized solutions removes moss, algae, and black streaks without voiding your warranty.'
+      },
+      {
+        question: 'Is your cleaning solution safe for lakefront properties?',
+        answer: 'Yes. We use biodegradable, environmentally responsible cleaning solutions and take extra precautions on waterfront properties to prevent runoff.'
+      },
+      {
+        question: 'Can I combine power washing with painting or staining?',
+        answer: 'Yes — and we recommend it. Power washing before painting removes contaminants for better paint adhesion. We offer bundled pricing when you combine services.'
       }
     ]
   },
