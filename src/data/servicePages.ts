@@ -187,6 +187,22 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'Do you paint log homes and cabins?',
         answer: 'Yes, we specialize in log homes using appropriate stains and finishes. We also partner with Sansin for premium wood treatments.'
+      },
+      {
+        question: 'How much does exterior painting cost in Muskoka?',
+        answer: 'Exterior painting starts at $5.75 per square foot including power washing, full prep, primer, and two coats. A typical Muskoka home exterior ranges from $8,000 to $20,000 depending on size and condition.'
+      },
+      {
+        question: 'What paint lasts longest in Ontario winters?',
+        answer: 'We use premium exterior products from Benjamin Moore Aura Exterior and Dulux WeatherShield rated for Canadian freeze-thaw cycles. These paints resist cracking, peeling, and fading even through harsh Muskoka winters.'
+      },
+      {
+        question: 'Do you paint while I\'m not at my cottage?',
+        answer: 'Yes. Many of our clients are seasonal cottage owners. We coordinate access, provide photo updates, and ensure everything is completed to your satisfaction before you arrive.'
+      },
+      {
+        question: 'What preparation do you do before exterior painting?',
+        answer: 'We power wash all surfaces, scrape loose paint, sand rough areas, caulk all gaps and joints, and apply primer to bare wood and repairs. Proper prep is the single biggest factor in how long your paint job lasts.'
       }
     ],
     galleryImages: [
