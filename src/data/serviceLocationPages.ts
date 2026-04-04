@@ -412,6 +412,425 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/cabinet-repaint-video.mp4'
     ]
   }
+  },
+  {
+    slug: 'cottage-painting-muskoka',
+    name: 'Cottage Painting Muskoka',
+    headline: 'Cottage Painting in Muskoka – Interior & Exterior Specialists',
+    description: 'Roll On Painting is Muskoka\'s go-to cottage painting contractor. From lakefront exteriors to pine-clad interiors, we deliver clean, professional results on seasonal and year-round cottages across Huntsville, Bracebridge, Port Sydney, and all of cottage country.',
+    metaDescription: 'Cottage painting in Muskoka. Interior & exterior specialists for lakefront properties. 25+ years experience. Serving Huntsville, Bracebridge, Port Sydney. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Interior painting — walls, ceilings, pine boards, beams, shiplap, and trim',
+        'Exterior painting and staining — siding, decks, docks, and boathouses',
+        'Full surface preparation including scraping, sanding, patching, and priming',
+        'Two coats of premium paint or stain rated for Muskoka\'s climate',
+        'Specialty finishes for log homes, timber frames, and exposed wood',
+        'Floor, furniture, and fixture protection throughout the project',
+        'Complete cleanup — we leave your cottage spotless',
+        'Free Touch Ups for Life on every completed cottage project'
+      ],
+      whoItsFor: [
+        'Seasonal cottage owners refreshing for summer',
+        'Year-round lakefront homeowners maintaining their property',
+        'New cottage builds requiring interior and exterior finishing',
+        'Cottage renovations and additions needing professional painting',
+        'Property managers handling cottage rental turnovers',
+        'Families preparing a cottage for sale or transfer'
+      ],
+      whereAvailable: [
+        'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
+        'Lake Rosseau, Lake Joseph, Lake Muskoka, Lake of Bays',
+        'Port Carling, Windermere, Minett, Rosseau, Dorset',
+        'Baysville, Dwight, Bala, Port Severn, Parry Sound',
+        'All lakefront and cottage communities across Muskoka'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or use our online contact form for a free estimate',
+        'We visit your cottage, assess surfaces, and discuss your vision',
+        'Receive a detailed, written quote within 24-48 hours',
+        'Cottage painting in Muskoka starts at $4.50 per square foot for interiors'
+      ]
+    },
+    benefits: [
+      'Muskoka\'s most experienced cottage painting team — over 25 years',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules filming Muskoka cottages',
+      'Specialists in pine, cedar, log, and timber-frame cottage finishes',
+      'Weather-resistant exterior products rated for -30°C Canadian winters',
+      'We coordinate around your cottage schedule — work while you\'re away',
+      'WSIB covered with $5 million liability insurance',
+      'Free Touch Ups for Life on every completed project',
+      'Clean, respectful crews who protect your cottage furnishings and landscaping',
+      'Premium Benjamin Moore, Dulux, PPG, and Sansin products — never builder-grade',
+      'We handle everything from docks and boathouses to great rooms and lofts'
+    ],
+    process: [
+      { step: 'Free Cottage Consultation', description: 'We visit your Muskoka cottage, discuss your goals, and assess interior and exterior surfaces.' },
+      { step: 'Detailed Quote', description: 'Receive a written, itemized quote within 24-48 hours covering all surfaces, prep, and finishes.' },
+      { step: 'Scheduling Around You', description: 'We schedule work around your cottage visits — many clients have us work while they\'re away.' },
+      { step: 'Surface Preparation', description: 'Thorough prep including cleaning, scraping, sanding, filling, and priming for long-lasting results.' },
+      { step: 'Professional Application', description: 'Premium paint and stain applied with the right technique for each surface — spray, brush, or roller.' },
+      { step: 'Final Walkthrough & Warranty', description: 'We walk through every space with you and back our work with Free Touch Ups for Life.' }
+    ],
+    faqs: [
+      {
+        question: 'How much does it cost to paint a cottage in Muskoka?',
+        answer: 'Cottage painting in Muskoka starts at $4.50 per square foot for interior work and $5.75 per square foot for exteriors. A full cottage interior typically ranges from $5,000 to $15,000 depending on size, ceiling type, and number of rooms. Exterior pricing depends on siding material, height, and prep required. Contact us for a free, accurate quote.'
+      },
+      {
+        question: 'Can you paint my cottage while I\'m not there?',
+        answer: 'Absolutely. Many of our Muskoka cottage clients are seasonal. We coordinate access, provide photo updates throughout the project, and ensure everything is perfect before you arrive. We\'ve been doing this for 25 years and have systems in place for remote projects.'
+      },
+      {
+        question: 'What is the best paint for cottage interiors in Muskoka?',
+        answer: 'For cottage interiors, we typically recommend Benjamin Moore Regal Select or Dulux Diamond in eggshell for living areas and semi-gloss for kitchens and bathrooms. For pine and cedar surfaces, we use appropriate stains and clear coats that enhance the natural wood grain while providing protection.'
+      },
+      {
+        question: 'Do you paint cottage exteriors including decks and boathouses?',
+        answer: 'Yes. We handle full cottage exteriors including siding, trim, decks, docks, boathouses, and outbuildings. We use weather-resistant products from Benjamin Moore, Sansin, and other premium brands rated for Muskoka\'s freeze-thaw cycles.'
+      },
+      {
+        question: 'How long does exterior paint last on a Muskoka cottage?',
+        answer: 'With proper preparation and premium products, exterior paint lasts 7-10 years on a Muskoka cottage. Lake-facing and south-facing surfaces may need attention sooner due to UV and weather exposure. Our thorough prep work — including scraping, sanding, and priming — maximizes longevity.'
+      },
+      {
+        question: 'Do you stain log cottages and timber frames?',
+        answer: 'Yes. We specialize in log and timber-frame finishes using Sansin, Sikkens, and other premium wood treatments. We can refresh existing stain or apply new finishes to interior beams, trusses, and exterior logs.'
+      },
+      {
+        question: 'When is the best time to paint a cottage in Muskoka?',
+        answer: 'For exteriors, May through October provides the best conditions — temperatures above 10°C and dry weather. Interior painting can be done year-round. Many cottage owners schedule us for spring before the season starts or fall after closing up.'
+      },
+      {
+        question: 'What areas in Muskoka do you serve for cottage painting?',
+        answer: 'We serve all cottage communities including Huntsville, Bracebridge, Port Sydney, Gravenhurst, Port Carling, Lake Rosseau, Lake Joseph, Lake Muskoka, Lake of Bays, Dorset, Baysville, Dwight, Windermere, Minett, Bala, and all surrounding areas.'
+      }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-modern-cottage-living.webp',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.webp',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.webp',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.webp',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.webp',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.webp',
+      '/lovable-uploads/exterior-residential-lakeside-paint.webp'
+    ]
+  },
+  {
+    slug: 'epoxy-floors-muskoka',
+    name: 'Epoxy Floors Muskoka',
+    headline: 'Epoxy Floor Coatings in Muskoka – Durable, Beautiful Garage & Basement Floors',
+    description: 'Transform your Muskoka garage, basement, or commercial floor with professional epoxy coatings from Roll On Painting. Durable, chemical-resistant, and available in a range of colors and flake finishes.',
+    metaDescription: 'Epoxy floor coatings in Muskoka. Garage, basement & commercial floors. Durable, chemical-resistant finishes. Starting at $0.99/sq ft. Roll On Painting. 705-787-1401.',
+    category: 'specialty',
+    priceFrom: { amount: 0.99, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Professional concrete grinding and surface preparation',
+        'Crack and damage repair before coating',
+        'High-build epoxy primer coat for maximum adhesion',
+        'Colour epoxy coat in your choice of colour',
+        'Optional decorative flake broadcast for texture and style',
+        'Clear polyaspartic or urethane topcoat for maximum durability',
+        'Full garage/space cleanup and curing instructions',
+        'Free Touch Ups for Life on every completed epoxy project'
+      ],
+      whoItsFor: [
+        'Muskoka homeowners upgrading garage floors',
+        'Cottage owners finishing basement and workshop floors',
+        'Auto enthusiasts wanting a showroom-quality garage',
+        'Commercial facilities needing durable, easy-clean flooring',
+        'Restaurants, breweries, and retail spaces',
+        'Workshops, studios, and home gyms'
+      ],
+      whereAvailable: [
+        'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
+        'Muskoka Lakes, Lake of Bays, Parry Sound',
+        'Orillia, Barrie, Midland, Georgian Bay',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or email info@roll-onpainting.com with your floor dimensions',
+        'We visit to assess concrete condition and discuss colour/flake options',
+        'Receive a detailed written quote within 24-48 hours',
+        'Epoxy floor coatings in Muskoka start at $0.99 per square foot'
+      ]
+    },
+    benefits: [
+      'Extremely durable — resists chemicals, oil, salt, and hot tire marks',
+      'Easy to clean and maintain — just sweep and mop',
+      'Available in dozens of colours and decorative flake combinations',
+      'Transforms dull concrete into an attractive, professional-looking surface',
+      'Over 25 years of professional experience in Muskoka',
+      'WSIB covered with $5 million liability insurance',
+      'Free Touch Ups for Life on every completed project',
+      'Professional diamond grinding ensures superior adhesion',
+      'Fast installation — most garages completed in 2-3 days'
+    ],
+    process: [
+      { step: 'Floor Assessment', description: 'We inspect your concrete for cracks, moisture issues, and existing coatings that could affect adhesion.' },
+      { step: 'Diamond Grinding', description: 'Professional concrete grinding creates the ideal surface profile for maximum epoxy adhesion.' },
+      { step: 'Crack & Damage Repair', description: 'All cracks, joints, and damage are filled and repaired before coating begins.' },
+      { step: 'Epoxy Application', description: 'High-build epoxy primer and colour coat applied with professional equipment for even coverage.' },
+      { step: 'Flake Broadcast', description: 'Optional decorative flakes are broadcast into the wet epoxy for texture, style, and slip resistance.' },
+      { step: 'Topcoat & Curing', description: 'Clear topcoat applied for maximum durability. We provide curing timeline and care instructions.' }
+    ],
+    faqs: [
+      {
+        question: 'How much do epoxy floors cost in Muskoka?',
+        answer: 'Epoxy floor coatings in Muskoka start at $0.99 per square foot with Roll On Painting. A standard 2-car garage (400-600 sq ft) typically costs $1,500 to $4,000 depending on concrete condition, number of coats, and decorative flake options. Contact us for a free, accurate quote.'
+      },
+      {
+        question: 'How long does an epoxy floor last?',
+        answer: 'A professionally installed epoxy floor lasts 10-20 years or more with proper care. Our multi-coat system with polyaspartic topcoat provides superior durability compared to DIY kits. We back every project with Free Touch Ups for Life.'
+      },
+      {
+        question: 'Can you epoxy a garage floor in winter in Muskoka?',
+        answer: 'Yes, with proper preparation. We need the concrete to be above 10°C for proper curing. For unheated garages in winter, we can use portable heaters to maintain temperature. Spring and fall are ideal for garage epoxy projects.'
+      },
+      {
+        question: 'How long before I can park on an epoxy garage floor?',
+        answer: 'You can walk on an epoxy floor after 24 hours and place light items after 48 hours. We recommend waiting 5-7 days before parking vehicles to allow full curing. We provide detailed aftercare instructions with every project.'
+      },
+      {
+        question: 'Will epoxy stick to my old concrete floor?',
+        answer: 'Yes, in most cases. We use professional diamond grinders to create the ideal surface profile for adhesion. If there is an existing coating, we test adhesion and may need to remove it first. Moisture testing is also performed to ensure proper bonding.'
+      },
+      {
+        question: 'What colours and styles are available for epoxy floors?',
+        answer: 'We offer solid colours (grey, charcoal, beige, white, and more), metallic finishes, and decorative flake blends. Flake options range from subtle granite-like patterns to bold multi-colour combinations. We bring samples so you can see options in your space.'
+      },
+      {
+        question: 'Is epoxy flooring slippery when wet?',
+        answer: 'Our decorative flake broadcast adds texture that improves traction. We can also add anti-slip additives to the topcoat for additional grip. This is especially important for garage floors in Muskoka where snow and water are tracked in during winter.'
+      }
+    ],
+    galleryImages: [
+      '/lovable-uploads/epoxy-flake-floor-muskoka-1.webp',
+      '/lovable-uploads/epoxy-garage-floor-grey-finish-1.webp',
+      '/lovable-uploads/epoxy-prep-grinder-closeup.webp',
+      '/lovable-uploads/epoxy-canvas-brewery-huntsville-1.webp',
+      '/lovable-uploads/epoxy-flake-floor-steps.webp',
+      '/lovable-uploads/epoxy-warehouse-floor-grey-finish.webp',
+      '/lovable-uploads/epoxy-residential-prep-room.webp'
+    ]
+  },
+  {
+    slug: 'power-washing-muskoka',
+    name: 'Power Washing Muskoka',
+    headline: 'Power Washing & Soft Washing in Muskoka – Safe, Effective Exterior Cleaning',
+    description: 'Roll On Painting provides professional power washing and soft washing services across Muskoka. Remove years of dirt, mold, mildew, and algae from your home, cottage, deck, driveway, and roof — safely and effectively.',
+    metaDescription: 'Power washing & soft washing in Muskoka. Safe exterior cleaning for homes, cottages, decks & roofs. Starting at $750. Roll On Painting. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 750, unit: 'project' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'High-pressure power washing for concrete, driveways, walkways, and patios',
+        'Low-pressure soft washing for siding, soffits, gutters, and delicate surfaces',
+        'Roof soft washing — safe removal of moss, algae, and black streaks',
+        'Deck and dock cleaning and brightening',
+        'Mold, mildew, and algae treatment with commercial-grade solutions',
+        'Gutter exterior cleaning and brightening',
+        'Window and door frame washing',
+        'Full property cleanup after washing'
+      ],
+      whoItsFor: [
+        'Muskoka homeowners refreshing curb appeal',
+        'Cottage owners opening up for the season',
+        'Property managers preparing rentals between guests',
+        'Homeowners prepping exteriors before painting or staining',
+        'Commercial properties needing exterior cleaning',
+        'Anyone with mold, mildew, or algae buildup on their property'
+      ],
+      whereAvailable: [
+        'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
+        'Muskoka Lakes, Lake of Bays, Dorset, Baysville',
+        'Lake Rosseau, Lake Joseph, Port Carling, Windermere',
+        'Parry Sound, Georgian Bay, Bala, Orillia, Barrie',
+        'All communities across Muskoka and Simcoe County'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or use our online contact form',
+        'Describe the surfaces and areas you need cleaned',
+        'We visit to assess and recommend power wash vs. soft wash for each surface',
+        'Power washing in Muskoka starts at $750 per project'
+      ]
+    },
+    benefits: [
+      'Safe soft wash method protects painted surfaces and siding from damage',
+      'Commercial-grade equipment and cleaning solutions for superior results',
+      'Removes mold, mildew, algae, oxidation, and years of buildup',
+      'Dramatically improves curb appeal — instant transformation',
+      'Extends the life of paint, stain, and siding by removing damaging organisms',
+      'Can combine with exterior painting or staining for a complete refresh',
+      'Over 25 years of professional experience in Muskoka',
+      'WSIB covered with $5 million liability insurance',
+      'Environmentally responsible cleaning solutions safe for lakefront properties'
+    ],
+    process: [
+      { step: 'Surface Assessment', description: 'We inspect every surface to determine the safest, most effective cleaning method — power wash or soft wash.' },
+      { step: 'Protection & Prep', description: 'We protect landscaping, cover sensitive areas, and close windows before any washing begins.' },
+      { step: 'Cleaning Solution', description: 'For soft washing, we apply commercial-grade cleaning solutions that kill mold, mildew, and algae at the root.' },
+      { step: 'Wash Application', description: 'We wash each surface using the appropriate pressure and technique — high pressure for concrete, soft wash for siding and roofs.' },
+      { step: 'Rinse & Inspect', description: 'Thorough rinse of all surfaces followed by inspection to ensure complete cleaning.' },
+      { step: 'Cleanup', description: 'Full property cleanup — we leave your property looking fresh and clean.' }
+    ],
+    faqs: [
+      {
+        question: 'How much does power washing cost in Muskoka?',
+        answer: 'Power washing in Muskoka starts at $750 per project with Roll On Painting. A full home soft wash for a bungalow is $750, and a 2-storey home is $1,200 (up to 1,800 sq ft footprint). Driveway, deck, and roof washing are quoted separately based on size and condition.'
+      },
+      {
+        question: 'What is the difference between power washing and soft washing?',
+        answer: 'Power washing uses high pressure (2,000-4,000 PSI) for hard surfaces like concrete, brick, and stone. Soft washing uses low pressure (under 500 PSI) with specialized cleaning solutions for siding, roofs, and painted surfaces — safely killing mold and algae without damaging the finish.'
+      },
+      {
+        question: 'Will power washing damage my siding or paint?',
+        answer: 'Not with our approach. We use soft washing on all painted surfaces and siding. High-pressure power washing is reserved for hard surfaces like concrete and stone. Our team has 25+ years of experience knowing exactly which method to use on each surface.'
+      },
+      {
+        question: 'How often should I have my Muskoka home washed?',
+        answer: 'We recommend exterior washing every 1-2 years in Muskoka. Properties near water, in shaded areas, or with north-facing surfaces may benefit from annual cleaning due to faster mold and algae growth. Regular washing also extends the life of your paint and stain.'
+      },
+      {
+        question: 'Can you soft wash my cottage roof without damaging shingles?',
+        answer: 'Yes. Soft washing is the manufacturer-recommended method for cleaning asphalt shingles. We use low pressure and specialized solutions to remove moss, algae, and black streaks without voiding your roof warranty or damaging shingles.'
+      },
+      {
+        question: 'Do you wash decks and docks at Muskoka cottages?',
+        answer: 'Absolutely. We power wash decks, docks, and boathouse surfaces to remove dirt, mildew, and weathering. This is often the first step before applying fresh stain or sealer. We also offer wood brightening treatments.'
+      },
+      {
+        question: 'Is your cleaning solution safe for lakefront properties?',
+        answer: 'Yes. We use environmentally responsible, biodegradable cleaning solutions. We take extra precautions on lakefront properties to prevent runoff into the water. Our solutions are effective against organic growth while being safe for the Muskoka environment.'
+      },
+      {
+        question: 'Can I combine power washing with exterior painting?',
+        answer: 'Yes — and we recommend it. Power washing before painting removes contaminants and creates the ideal surface for paint adhesion. We offer bundled pricing when you combine washing with painting or staining services.'
+      }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-softwash-before.webp',
+      '/lovable-uploads/exterior-softwash-after.webp',
+      '/lovable-uploads/exterior-softwash-roof-steam-team.webp',
+      '/lovable-uploads/exterior-softwash-cedar-shingles.webp',
+      '/lovable-uploads/exterior-soft-washing-stone-muskoka.webp',
+      '/lovable-uploads/exterior-walkway-pressure-washing-muskoka.webp',
+      '/lovable-uploads/commercial-pressure-wash-equipment-muskoka.webp',
+      '/lovable-uploads/exterior-cedar-roof-soft-wash-muskoka.webp',
+      '/lovable-uploads/exterior-soft-wash-cottage-protection-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'staining-muskoka',
+    name: 'Wood Staining Muskoka',
+    headline: 'Professional Wood Staining in Muskoka – Decks, Fences, Siding & Log Homes',
+    description: 'Roll On Painting specializes in professional wood staining for Muskoka homes and cottages. Protect and beautify your deck, fence, siding, log home, and outdoor structures with premium stains from Sansin, Sikkens, and more.',
+    metaDescription: 'Wood staining in Muskoka. Decks, fences, siding, log homes. Premium Sansin & Sikkens products. 25+ years experience. Roll On Painting. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 5.75, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Power washing and surface cleaning to remove dirt, mold, and old finish',
+        'Wood brightening treatment to restore natural colour',
+        'Sanding of rough areas, splinters, and raised grain',
+        'Application of premium penetrating stain — two coats for maximum protection',
+        'Staining of railings, stairs, trim, and detail work',
+        'UV-resistant and water-repellent formulas for Muskoka weather',
+        'Full site cleanup and stain disposal',
+        'Free Touch Ups for Life on every completed staining project'
+      ],
+      whoItsFor: [
+        'Muskoka homeowners maintaining decks, docks, and fences',
+        'Cottage owners protecting lakeside wood structures',
+        'Log home and timber-frame owners needing exterior refresh',
+        'Property managers maintaining outdoor spaces on rental properties',
+        'New construction projects requiring initial wood finishing',
+        'Anyone with weathered, graying, or peeling wood surfaces'
+      ],
+      whereAvailable: [
+        'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
+        'Lake Rosseau, Lake Joseph, Lake Muskoka, Lake of Bays',
+        'Port Carling, Windermere, Minett, Rosseau, Dorset',
+        'Baysville, Dwight, Bala, Parry Sound, Georgian Bay',
+        'All lakefront and cottage communities across Muskoka'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or use our online contact form',
+        'We visit to assess wood condition, measure surfaces, and discuss stain options',
+        'Receive a detailed written quote within 24-48 hours',
+        'Wood staining in Muskoka starts at $5.75 per square foot'
+      ]
+    },
+    benefits: [
+      'Premium Sansin, Sikkens, and Benjamin Moore stain products — never consumer-grade',
+      'UV protection prevents graying and sun damage',
+      'Water-repellent finish protects against Muskoka rain, snow, and ice',
+      'Penetrating stains nourish wood fibres for long-lasting protection',
+      'Available in transparent, semi-transparent, and solid-colour finishes',
+      'Specialized log home and timber-frame staining expertise',
+      'Over 25 years of wood finishing experience in Muskoka',
+      'WSIB covered with $5 million liability insurance',
+      'Free Touch Ups for Life on every completed project'
+    ],
+    process: [
+      { step: 'Wood Assessment', description: 'We inspect your wood surfaces for rot, damage, and existing finish condition to determine the right approach.' },
+      { step: 'Power Washing', description: 'All surfaces are cleaned with the appropriate pressure to remove dirt, mold, and old finish without damaging the wood.' },
+      { step: 'Wood Brightening', description: 'We apply wood brightener to restore the natural colour and open the pores for maximum stain absorption.' },
+      { step: 'Sanding & Repair', description: 'Rough areas are sanded smooth, splinters removed, and minor repairs completed before staining.' },
+      { step: 'Stain Application', description: 'Two coats of premium penetrating stain applied with the right technique for each surface — spray, brush, or back-brush.' },
+      { step: 'Final Inspection', description: 'We inspect every surface for even coverage and apply additional coats to end-grain and high-wear areas as needed.' }
+    ],
+    faqs: [
+      {
+        question: 'How much does wood staining cost in Muskoka?',
+        answer: 'Wood staining in Muskoka starts at $5.75 per square foot with Roll On Painting. A standard deck (200-400 sq ft) typically costs $1,500 to $3,000 depending on condition and stain type. Fences, siding, and log homes are quoted based on surface area and accessibility. Contact us for a free estimate.'
+      },
+      {
+        question: 'How long does deck stain last in Muskoka?',
+        answer: 'A quality penetrating stain lasts 2-4 years on horizontal surfaces (decks, docks) and 4-7 years on vertical surfaces (siding, fences) in Muskoka\'s climate. Proper preparation is the key to longevity — that\'s why we never skip the wash, brighten, and sand steps.'
+      },
+      {
+        question: 'What is the best stain for Muskoka decks and cottages?',
+        answer: 'We recommend Sansin products for most Muskoka applications. Sansin DEC is excellent for decks, while Sansin ENS and SDF work well for siding and logs. For certain applications, we also use Sikkens, Benjamin Moore Arborcoat, and TWP. We match the product to your wood type and exposure.'
+      },
+      {
+        question: 'Should I stain or paint my cottage exterior?',
+        answer: 'For natural wood siding and log homes, stain is usually the better choice — it penetrates into the wood rather than sitting on top, which means no peeling or flaking. For non-wood surfaces or when you want a solid colour, paint may be more appropriate. We can recommend the best approach during our consultation.'
+      },
+      {
+        question: 'Can you stain a dock or boathouse in Muskoka?',
+        answer: 'Yes. We stain docks, boathouses, and all waterfront wood structures. We use marine-grade and water-resistant stains suitable for surfaces near or over water. We schedule dock work based on water levels and weather conditions.'
+      },
+      {
+        question: 'When is the best time to stain wood in Muskoka?',
+        answer: 'May through October provides the best conditions for staining in Muskoka. We need temperatures above 10°C, dry weather, and no rain in the forecast for 24-48 hours after application. Late spring and early fall are often ideal — warm enough for curing but not too hot.'
+      },
+      {
+        question: 'Do you stain log homes and timber frames?',
+        answer: 'Yes — log homes and timber frames are one of our specialties. We use premium products from Sansin and Sikkens designed specifically for log structures. We can refresh existing stain, strip and re-stain, or apply new finish to bare wood.'
+      },
+      {
+        question: 'How do I know if my deck needs re-staining?',
+        answer: 'Signs your deck needs re-staining include: water no longer beads on the surface, the wood looks gray or faded, the finish is peeling or flaking, or the wood feels rough to the touch. We recommend a simple water test — if water soaks into the wood rather than beading, it\'s time to re-stain.'
+      }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-deck-stain-muskoka.webp',
+      '/lovable-uploads/exterior-deck-staining-action.webp',
+      '/lovable-uploads/exterior-deck-staining-before-after.webp',
+      '/lovable-uploads/exterior-deck-staining-hardwood.webp',
+      '/lovable-uploads/exterior-deck-underside-staining.webp',
+      '/lovable-uploads/exterior-wood-garage-door-staining.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp'
+    ]
+  }
 ];
 
 // Helper to get service-location page by slug
