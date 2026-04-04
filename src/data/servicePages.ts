@@ -350,6 +350,36 @@ export const servicePages: ServicePageData[] = [
       'Wide range of colors and finishes available',
       'Minimal disruption to your kitchen use'
     ],
+    faqs: [
+      {
+        question: 'How much does cabinet refinishing cost in Muskoka?',
+        answer: 'A standard kitchen cabinet refinishing project in Muskoka typically ranges from $3,500 to $7,000 — a fraction of the $25,000-$40,000 cost of new cabinets. Price depends on the number of doors, drawers, and surface condition.'
+      },
+      {
+        question: 'How long does cabinet refinishing take?',
+        answer: 'Most kitchen cabinet projects take 3-5 business days including door removal, preparation, spraying, drying, and reinstallation. We work efficiently to minimize disruption to your kitchen use.'
+      },
+      {
+        question: 'Will painted cabinets chip or peel?',
+        answer: 'Not when done properly. We use professional-grade bonding primers and durable cabinet-specific paints. Our multi-coat spray process creates a hard, factory-quality finish that resists chipping, scratching, and moisture.'
+      },
+      {
+        question: 'Can you refinish thermofoil or laminate cabinets?',
+        answer: 'Yes. We can refinish thermofoil, laminate, MDF, and solid wood cabinets. Each material requires specific preparation — we assess your cabinet material during our visit and use appropriate primers for maximum adhesion.'
+      },
+      {
+        question: 'What colours are popular for kitchen cabinets in Muskoka?',
+        answer: 'White, warm grey, navy, and black are the most requested cabinet colours right now. We offer the full range of Benjamin Moore, Dulux, and PPG colours and bring samples to help you decide.'
+      },
+      {
+        question: 'Do you refinish bathroom vanities and built-ins too?',
+        answer: 'Yes. We refinish bathroom vanities, laundry room cabinets, built-in bookshelves, entertainment units, and mudroom storage. The same spray finishing process works on any cabinetry.'
+      },
+      {
+        question: 'Is it worth painting cabinets or should I replace them?',
+        answer: 'If your cabinet boxes are structurally sound, refinishing is almost always the better value. You get a brand-new look for 10-20% of replacement cost, with far less disruption and waste.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/cabinet-grey-kitchen-finished.webp',
       '/lovable-uploads/cabinet-white-kitchen-black-backsplash.webp',
