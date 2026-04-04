@@ -853,6 +853,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How long does stucco removal take?',
         answer: 'It depends on the area and number of layers. A typical residential exterior takes 2-5 days including cleanup and surface preparation.'
+      },
+      {
+        question: 'How much does stucco removal cost in Muskoka?',
+        answer: 'Stucco removal is quoted per project based on area, number of layers, and disposal requirements. Contact us with photos and measurements for a free estimate.'
+      },
+      {
+        question: 'What can replace stucco after removal?',
+        answer: 'Common replacement options include new siding (vinyl, wood, or engineered), stone veneer, brick, smooth stucco re-application, or board-and-batten. We can prepare the surface for any new finish.'
+      },
+      {
+        question: 'Is there asbestos in my stucco?',
+        answer: 'Stucco applied before the 1980s may contain asbestos. If we suspect asbestos, we recommend testing before removal. We follow all Ontario safety regulations for hazardous material handling.'
+      },
+      {
+        question: 'Can you do a partial stucco removal?',
+        answer: 'Yes. We can remove stucco from specific areas — for example, around windows, on one wall, or in damaged sections — and patch or blend with the remaining surface.'
+      },
+      {
+        question: 'Do you handle disposal of removed stucco?',
+        answer: 'Yes. We include proper disposal of all removed stucco material in our service. We follow local waste disposal regulations and leave your property clean.'
       }
     ]
   },
