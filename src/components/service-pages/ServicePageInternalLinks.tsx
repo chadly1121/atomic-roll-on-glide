@@ -9,8 +9,12 @@ interface ServicePageInternalLinksProps {
 const relatedServices = [
   { slug: 'interior-painting-muskoka', name: 'Interior Painting Muskoka' },
   { slug: 'exterior-painting-muskoka', name: 'Exterior Painting Muskoka' },
+  { slug: 'cottage-painting-muskoka', name: 'Cottage Painting Muskoka' },
   { slug: 'spray-painting-muskoka', name: 'Spray Painting Muskoka' },
   { slug: 'cabinet-painting-muskoka', name: 'Cabinet Painting Muskoka' },
+  { slug: 'epoxy-floors-muskoka', name: 'Epoxy Floors Muskoka' },
+  { slug: 'power-washing-muskoka', name: 'Power Washing Muskoka' },
+  { slug: 'staining-muskoka', name: 'Wood Staining Muskoka' },
   { slug: 'interior-painting', name: 'Interior Painting' },
   { slug: 'exterior-painting', name: 'Exterior Painting' },
   { slug: 'cabinet-refinishing', name: 'Cabinet Refinishing' },
