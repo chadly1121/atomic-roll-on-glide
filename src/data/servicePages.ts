@@ -604,6 +604,36 @@ export const servicePages: ServicePageData[] = [
       'Protects against UV damage',
       'Environmentally friendly nanotechnology',
       'Ideal for Muskoka\'s harsh weather conditions'
+    ],
+    faqs: [
+      {
+        question: 'What is GoNano coating?',
+        answer: 'GoNano is a nanotechnology-based coating that creates an invisible hydrophobic barrier on exterior surfaces. It repels water, prevents mold and mildew growth, protects against UV damage, and dramatically reduces cleaning and maintenance.'
+      },
+      {
+        question: 'How much does GoNano coating cost?',
+        answer: 'GoNano coating starts at $0.99 per square foot. Cost depends on the surface type, area, and accessibility. It can be applied standalone or combined with painting for a complete exterior protection system.'
+      },
+      {
+        question: 'How long does GoNano coating last?',
+        answer: 'GoNano provides years of protection depending on surface type and exposure. It significantly outlasts traditional sealers and is especially effective in Muskoka\'s wet, freeze-thaw climate.'
+      },
+      {
+        question: 'Is GoNano safe for lakefront cottages?',
+        answer: 'Yes. GoNano is an environmentally friendly, water-based nanotechnology product. It\'s safe for use on lakefront properties and does not release harmful chemicals into the environment.'
+      },
+      {
+        question: 'What surfaces can GoNano be applied to?',
+        answer: 'GoNano can be applied to roofing, siding, concrete, stone, brick, wood, and more. It\'s especially effective on surfaces prone to mold, algae, and moisture damage — common issues for Muskoka cottages.'
+      },
+      {
+        question: 'Can GoNano be combined with painting?',
+        answer: 'Yes. GoNano is often applied as a topcoat over freshly painted or stained surfaces for added protection. It can also be applied to existing surfaces without repainting.'
+      },
+      {
+        question: 'Is Roll On Painting a certified GoNano applicator?',
+        answer: 'Yes. Roll On Painting is a certified GoNano dealer and applicator in Muskoka. We have specialized training and equipment for proper GoNano application.'
+      }
     ]
   },
   {
