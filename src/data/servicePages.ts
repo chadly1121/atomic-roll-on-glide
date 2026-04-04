@@ -520,6 +520,36 @@ export const servicePages: ServicePageData[] = [
       'Available in many colors and finishes',
       'Transforms dull concrete into an attractive surface'
     ],
+    faqs: [
+      {
+        question: 'How much do epoxy floors cost in Muskoka?',
+        answer: 'Epoxy floor coatings start at $0.99 per square foot. A standard 2-car garage (400-600 sq ft) typically costs $1,500 to $4,000 depending on concrete condition, number of coats, and decorative flake options.'
+      },
+      {
+        question: 'How long does an epoxy floor last?',
+        answer: 'A professionally installed epoxy floor lasts 10-20 years or more with proper care. Our multi-coat system with polyaspartic topcoat provides far superior durability compared to DIY kits.'
+      },
+      {
+        question: 'How long before I can park on an epoxy floor?',
+        answer: 'You can walk on the floor after 24 hours. We recommend waiting 5-7 days before parking vehicles to allow full curing. We provide detailed aftercare instructions.'
+      },
+      {
+        question: 'Can you apply epoxy in a cold Muskoka garage?',
+        answer: 'Yes. We need concrete above 10°C for proper curing. For unheated garages in spring or fall, we use portable heaters. We schedule based on conditions to ensure the best results.'
+      },
+      {
+        question: 'Is epoxy flooring slippery when wet?',
+        answer: 'Our decorative flake broadcast adds texture for traction. We can also add anti-slip additives to the topcoat — especially important for Muskoka garages where snow and water are tracked in during winter.'
+      },
+      {
+        question: 'What colours and finishes are available?',
+        answer: 'We offer solid colours, metallic finishes, and decorative flake blends. Options range from subtle granite-like patterns to bold multi-colour combinations. We bring samples to your space.'
+      },
+      {
+        question: 'Do you do commercial epoxy floors?',
+        answer: 'Yes. We coat commercial floors including warehouses, breweries, retail spaces, workshops, and showrooms. Commercial projects are scheduled around your business operations.'
+      }
+    ],
     galleryImages: [
       '/lovable-uploads/epoxy-flake-floor-muskoka-1.webp',
       '/lovable-uploads/epoxy-garage-floor-grey-finish-1.webp',
