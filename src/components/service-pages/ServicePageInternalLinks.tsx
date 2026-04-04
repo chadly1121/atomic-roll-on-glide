@@ -50,7 +50,7 @@ const serviceAreas = [
 ];
 
 const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ currentSlug }) => {
-  const filteredServices = relatedServices.filter(s => s.slug !== currentSlug).slice(0, 6);
+  const filteredServices = relatedServices.filter(s => s.slug !== currentSlug).slice(0, 8);
   const filteredAreas = serviceAreas.filter(a => a.slug !== currentSlug);
 
   return (
