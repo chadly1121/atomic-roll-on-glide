@@ -779,6 +779,26 @@ export const servicePages: ServicePageData[] = [
       {
         question: 'How long does wallpaper removal take?',
         answer: 'A typical room takes 1-2 days depending on the number of layers and adhesive type. Older wallpaper with multiple layers takes longer.'
+      },
+      {
+        question: 'How much does wallpaper removal cost in Muskoka?',
+        answer: 'Wallpaper removal is priced per room based on wall area, number of layers, and adhesive type. A typical room ranges from $500 to $1,500 including wall restoration. Contact us for a specific quote.'
+      },
+      {
+        question: 'Can you paint after removing wallpaper?',
+        answer: 'Yes — and we recommend it. After removing wallpaper, we repair and skim coat the walls as needed, prime, and paint. Bundling wallpaper removal with painting ensures the best results and saves you time.'
+      },
+      {
+        question: 'What if there are multiple layers of wallpaper?',
+        answer: 'We handle multi-layer removal regularly. Each layer is removed carefully using the appropriate technique. The process takes longer but we ensure clean walls ready for their new finish.'
+      },
+      {
+        question: 'Will the walls need repair after wallpaper removal?',
+        answer: 'Often yes — and we include wall restoration in our service. We skim coat, patch, and sand as needed to create a smooth surface ready for paint or new wallpaper.'
+      },
+      {
+        question: 'Can you remove wallpaper from plaster walls?',
+        answer: 'Yes. Plaster walls require extra care to avoid damage. We use gentle steaming and controlled moisture techniques specifically for plaster substrates.'
       }
     ]
   },
