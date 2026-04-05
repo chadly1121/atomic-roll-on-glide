@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Dialog } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 import { X } from "lucide-react";
-import CallToAction from './CallToAction';
 import { useToast } from "@/hooks/use-toast";
 
 const ExitIntentPopup = () => {
@@ -11,30 +13,47 @@ const ExitIntentPopup = () => {
   const { toast } = useToast();
   
   useEffect(() => {
-    // Check if user has already seen the popup
     const popupSeen = localStorage.getItem('exitIntentPopupSeen');
     if (popupSeen) return;
     
-    // Trigger popup when mouse leaves the window (exit intent)
+    // Desktop: mouse leaves window
     const handleMouseLeave = (e: MouseEvent) => {
-      // Only trigger if mouse moves to the top of the page
       if (e.clientY <= 0 && !hasTriggered) {
         setIsOpen(true);
         setHasTriggered(true);
       }
     };
+
+    // Mobile: trigger after scrolling up significantly (scroll-up intent)
+    let lastScrollY = window.scrollY;
+    let scrollUpDistance = 0;
+    const handleScroll = () => {
+      if (hasTriggered) return;
+      const currentY = window.scrollY;
+      if (currentY < lastScrollY) {
+        scrollUpDistance += lastScrollY - currentY;
+      } else {
+        scrollUpDistance = 0;
+      }
+      lastScrollY = currentY;
+      // Trigger if user scrolls up 300px+ and is near top
+      if (scrollUpDistance > 300 && currentY < 200) {
+        setIsOpen(true);
+        setHasTriggered(true);
+      }
+    };
     
-    // Add event listeners
     document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [hasTriggered]);
 
   const handleClose = () => {
     setIsOpen(false);
-    // Set flag in localStorage to not show again for this session
     localStorage.setItem('exitIntentPopupSeen', 'true');
   };
 
@@ -49,7 +68,6 @@ const ExitIntentPopup = () => {
       return;
     }
     
-    // Here you would typically send this to your email service
     console.log('Email submitted:', email);
     
     toast({
@@ -62,30 +80,27 @@ const ExitIntentPopup = () => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <Dialog.Content className="sm:max-w-md border-0">
+    <Dialog open={isOpen} onOpenChange={(open) => { if (!open) handleClose(); }}>
+      <DialogContent className="sm:max-w-md border-0 p-0">
         <div className="relative p-6">
-          {/* Close button */}
           <button
             onClick={handleClose}
-            className="absolute top-2 right-2 rounded-full p-1 hover:bg-gray-100"
+            className="absolute top-2 right-2 rounded-full p-1 hover:bg-muted"
             aria-label="Close"
           >
-            <X className="h-5 w-5 text-gray-500" />
+            <X className="h-5 w-5 text-muted-foreground" />
           </button>
           
-          {/* Offer content */}
           <div className="text-center mb-6">
             <div className="bg-atomic-orange/10 inline-flex rounded-full p-3 mb-4">
               <span className="font-bold text-atomic-orange">Special Offer</span>
             </div>
             <h3 className="text-2xl font-bold mb-2">Wait! Don't Miss Out</h3>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               Get 10% off your first painting project when you sign up for our newsletter.
             </p>
           </div>
           
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <input
@@ -93,7 +108,7 @@ const ExitIntentPopup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-atomic-orange"
+                className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-atomic-orange bg-background text-foreground text-base"
                 required
               />
             </div>
@@ -101,7 +116,7 @@ const ExitIntentPopup = () => {
             <div className="flex flex-col gap-3">
               <button 
                 type="submit"
-                className="w-full py-3 px-4 bg-atomic-orange text-white rounded-lg font-medium hover:bg-atomic-orange/90 transition-colors"
+                className="w-full py-3 px-4 bg-atomic-orange text-white rounded-lg font-medium hover:bg-atomic-orange/90 transition-colors min-h-[44px]"
               >
                 Get My 10% Discount
               </button>
@@ -109,14 +124,14 @@ const ExitIntentPopup = () => {
               <button 
                 type="button" 
                 onClick={handleClose}
-                className="text-sm text-gray-500 hover:text-gray-700"
+                className="text-sm text-muted-foreground hover:text-foreground min-h-[44px]"
               >
                 No thanks, I'll pay full price
               </button>
             </div>
           </form>
         </div>
-      </Dialog.Content>
+      </DialogContent>
     </Dialog>
   );
 };

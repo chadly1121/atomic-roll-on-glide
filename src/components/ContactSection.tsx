@@ -12,7 +12,10 @@ const ContactSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-heading text-foreground">Get In Touch</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold relative mb-6 sm:mb-8 md:mb-12 inline-block text-foreground">
+            Get In Touch
+            <span className="absolute left-1/4 -bottom-2 sm:-bottom-4 h-1 w-1/2 bg-atomic-orange rounded-full" />
+          </h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Ready to transform your space? Reach out for a free quote or to discuss your project.
           </p>
