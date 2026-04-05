@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="bg-background text-foreground py-16 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {/* Column 1: Brand + NAP */}
           <div>
             <div className="flex items-center mb-6">
