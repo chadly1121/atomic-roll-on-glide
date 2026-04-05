@@ -46,7 +46,7 @@ const AboutSection = () => {
                 '5x on HGTV',
                 'Free Touch Ups for Life'
               ].map((badge) => (
-                <span key={badge} className="px-3 py-1.5 bg-atomic-orange/10 text-atomic-orange text-xs font-semibold rounded-full">
+                <span key={badge} className="px-3 py-1.5 bg-atomic-orange/15 text-atomic-navy text-xs font-semibold rounded-full border border-atomic-orange/20">
                   {badge}
                 </span>
               ))}
