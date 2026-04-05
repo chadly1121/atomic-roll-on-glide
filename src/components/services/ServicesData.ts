@@ -94,7 +94,7 @@ export const services: Service[] = [
   },
   {
     id: 11,
-    title: "Stucco Removal",
+    title: "Popcorn / Stucco Ceiling Removal",
     description: "Professional stucco and popcorn ceiling removal. Clean surfaces ready for a modern finish.",
     icon: Construction,
     image: "/lovable-uploads/stucco-popcorn-texture.webp",
