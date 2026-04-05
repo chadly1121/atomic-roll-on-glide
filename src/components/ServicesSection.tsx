@@ -108,24 +108,6 @@ const ServicesSection = () => {
           </div>
         )}
 
-        {/* GoNano — secondary add-on */}
-        <div id="gonano" className="scroll-mt-24 rounded-lg border border-border bg-card p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <div className="flex-1 text-center sm:text-left">
-            <span className="inline-block px-2 py-0.5 bg-muted text-muted-foreground text-xs font-medium uppercase tracking-wider rounded mb-2">
-              Add-On Service
-            </span>
-            <h3 className="text-lg font-semibold text-foreground mb-1">GoNano Surface Protection</h3>
-            <p className="text-sm text-muted-foreground max-w-md">
-              Permanent hydrophobic coating from $0.99/sq ft. Pairs with any painting project.
-            </p>
-          </div>
-          <Link
-            to="/gonano"
-            className="inline-flex items-center gap-2 border border-atomic-orange text-atomic-orange px-5 py-2 rounded-lg text-sm font-medium hover:bg-atomic-orange hover:text-white transition-colors whitespace-nowrap"
-          >
-            Learn More <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
 
         {/* Bottom CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
