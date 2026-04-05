@@ -27,11 +27,11 @@ const HeroContent = () => {
           <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
         </h1>
         
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy/80 font-medium">
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
           Painting shouldn't be a headache. We handle the prep, the mess, and the details — so you don't have to.
         </p>
         
-        <p className="mt-2 text-sm sm:text-base text-atomic-navy/60">
+        <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">
           HGTV Featured · $5M Insured · Perfect Finish Promise — Free Touch Ups for Life
         </p>
       </div>
