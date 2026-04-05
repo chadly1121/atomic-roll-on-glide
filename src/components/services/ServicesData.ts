@@ -100,4 +100,12 @@ export const services: Service[] = [
     image: "/lovable-uploads/stucco-popcorn-texture.webp",
     slug: "stucco-removal",
   },
+  {
+    id: 12,
+    title: "GoNano Surface Protection",
+    description: "Permanent hydrophobic nano-coating that repels water, dirt, and mold. Pairs with any painting project from $0.99/sq ft.",
+    icon: Sparkles,
+    image: "/lovable-uploads/7671fcb5-a810-4e9a-84fc-76713831e5ba.webp",
+    slug: "gonano",
+  },
 ];
