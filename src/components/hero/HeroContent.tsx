@@ -18,7 +18,7 @@ const HeroContent = () => {
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
       <div className="flex items-center gap-2 sm:gap-4 mb-2">
-        <h2 className="font-display text-base sm:text-xl font-semibold text-atomic-navy/70 tracking-widest uppercase italic">Clean Reliable Painters</h2>
+        <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">Clean Reliable Painters</h2>
       </div>
       
       <div>
