@@ -105,7 +105,7 @@ export const services: Service[] = [
     title: "GoNano Surface Protection",
     description: "Permanent hydrophobic nano-coating that repels water, dirt, and mold. Pairs with any painting project from $0.99/sq ft.",
     icon: Sparkles,
-    image: "/lovable-uploads/exterior-softwash-roof-lift-angle.webp",
+    image: "/lovable-uploads/dragons-den-cbc.webp",
     slug: "gonano",
   },
 ];
