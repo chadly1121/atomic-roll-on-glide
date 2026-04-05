@@ -12,7 +12,7 @@ const CTAButton = ({ handleNavLinkClick }: CTAButtonProps) => {
       onClick={(e) => handleNavLinkClick(e, '/contact')}
       className="atomic-button text-sm px-4 py-2 whitespace-nowrap block text-center md:inline-block w-full md:w-auto transition-transform hover:scale-105 active:scale-95"
     >
-      Get Quote
+      Book Your Free Estimate
     </a>
   );
 };
