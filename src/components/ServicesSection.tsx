@@ -108,35 +108,23 @@ const ServicesSection = () => {
           </div>
         )}
 
-        {/* GoNano highlight */}
-        <div id="gonano" className="scroll-mt-24 rounded-xl bg-atomic-navy text-white overflow-hidden">
-          <div className="p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="flex-1 text-center md:text-left">
-              <div className="inline-block px-3 py-1 bg-atomic-orange/20 text-atomic-orange text-xs font-bold uppercase tracking-wider rounded-full mb-3">
-                Specialty Coating
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">GoNano Nanotechnology</h3>
-              <p className="text-white/60 text-sm sm:text-base mb-4 max-w-lg">
-                Permanent surface protection starting at $0.99/sq ft. Hydrophobic, UV-resistant, eco-friendly. As seen on Dragon's Den.
-              </p>
-              <Link
-                to="/gonano"
-                className="inline-flex items-center gap-2 bg-atomic-orange text-white px-6 py-2.5 rounded-lg font-medium hover:bg-atomic-orange/90 transition-colors text-sm"
-              >
-                Explore GoNano <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="flex items-center gap-4 text-center">
-              <div className="px-5 py-3 bg-white/10 rounded-lg">
-                <div className="text-2xl font-bold text-atomic-orange">$0.99</div>
-                <div className="text-xs text-white/50">per sq ft</div>
-              </div>
-              <div className="px-5 py-3 bg-white/10 rounded-lg">
-                <div className="text-2xl font-bold text-atomic-orange">10+</div>
-                <div className="text-xs text-white/50">year protection</div>
-              </div>
-            </div>
+        {/* GoNano — secondary add-on */}
+        <div id="gonano" className="scroll-mt-24 rounded-lg border border-border bg-card p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <div className="flex-1 text-center sm:text-left">
+            <span className="inline-block px-2 py-0.5 bg-muted text-muted-foreground text-xs font-medium uppercase tracking-wider rounded mb-2">
+              Add-On Service
+            </span>
+            <h3 className="text-lg font-semibold text-foreground mb-1">GoNano Surface Protection</h3>
+            <p className="text-sm text-muted-foreground max-w-md">
+              Permanent hydrophobic coating from $0.99/sq ft. Pairs with any painting project.
+            </p>
           </div>
+          <Link
+            to="/gonano"
+            className="inline-flex items-center gap-2 border border-atomic-orange text-atomic-orange px-5 py-2 rounded-lg text-sm font-medium hover:bg-atomic-orange hover:text-white transition-colors whitespace-nowrap"
+          >
+            Learn More <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Bottom CTAs */}
