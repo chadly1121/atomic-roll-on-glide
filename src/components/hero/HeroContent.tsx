@@ -1,8 +1,6 @@
-import React, { lazy, Suspense } from 'react';
-import { Atom, FileImage, Phone } from 'lucide-react';
+import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-
-const ResidentialGalleryPopup = lazy(() => import('../gallery/ResidentialGalleryPopup'));
+import { Link } from 'react-router-dom';
 
 const HeroContent = () => {
   const navigate = useNavigate();
@@ -17,57 +15,46 @@ const HeroContent = () => {
     }
   };
 
-  const phoneNumber = "705-787-1401";
-
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
-      <div className="flex items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
-        <div className="p-2 sm:p-3 rounded-full bg-atomic-orange/10 flex-shrink-0">
-          <Atom className="w-6 h-6 sm:w-8 sm:h-8 text-atomic-orange animate-spin-slow" />
-        </div>
-        <h2 className="text-sm sm:text-lg font-medium text-atomic-navy/60">Vintage Craftsmanship • Today's Science</h2>
+      <div className="flex items-center gap-2 sm:gap-4 mb-2">
+        <h2 className="text-sm sm:text-lg font-semibold text-atomic-navy/70 tracking-wide uppercase">Clean Reliable Painters</h2>
       </div>
       
       <div>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
-          Muskoka's Trusted
-          <span className="text-atomic-orange block">Painting Company</span>
+          Muskoka's Premier Painters
+          <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
         </h1>
-        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-atomic-navy/70">
-          Professional interior, exterior & spray painting for homes and cottages across 
-          Port Sydney, Huntsville, Bracebridge & Gravenhurst. 25+ years of high-end results. 
-          Featured on HGTV. $5M insured. Free Touch Ups for Life.
+        
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy/80 font-medium">
+          Painting shouldn't be a headache. We handle the prep, the mess, and the details — so you don't have to.
+        </p>
+        
+        <p className="mt-2 text-sm sm:text-base text-atomic-navy/60">
+          HGTV Featured · $5M Insured · Perfect Finish Promise — Free Touch Ups for Life
         </p>
       </div>
       
-      <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-4">
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="#contact" className="atomic-button group border-2 border-atomic-orange bg-atomic-orange hover:bg-atomic-orange/90 text-center flex-1 text-sm sm:text-base py-3 sm:py-4" onClick={handleScrollToContact}>
-            <span className="relative z-10 flex items-center justify-center">
-              Get a Free Quote
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </a>
-          <a href={`tel:${phoneNumber.replace(/-/g, '')}`} className="atomic-button group border-2 border-atomic-turquoise bg-atomic-turquoise hover:bg-atomic-turquoise/90 text-center flex-1 text-sm sm:text-base py-3 sm:py-4">
-            <span className="relative z-10 flex items-center justify-center">
-              <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-              Call {phoneNumber}
-            </span>
-          </a>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="#contact" className="atomic-button-secondary group border-2 border-atomic-turquoise text-center flex-1 text-sm sm:text-base py-3" onClick={handleScrollToContact}>
-            <span className="relative z-10 flex items-center justify-center">
-              <FileImage className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-              Send Us Your Plans
-            </span>
-          </a>
-          <Suspense fallback={<button className="atomic-button-secondary group border-2 border-atomic-turquoise text-center flex-1 text-sm sm:text-base py-3 opacity-50">View Gallery</button>}>
-            <ResidentialGalleryPopup />
-          </Suspense>
-        </div>
+      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-3 sm:pt-4">
+        <a 
+          href="#contact" 
+          className="atomic-button group border-2 border-atomic-orange bg-atomic-orange hover:bg-atomic-orange/90 text-center w-full sm:w-auto text-base sm:text-lg py-4 px-8 font-bold" 
+          onClick={handleScrollToContact}
+        >
+          <span className="relative z-10 flex items-center justify-center">
+            Book Your Free Estimate
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+        </a>
+        <Link 
+          to="/portfolio" 
+          className="text-sm sm:text-base text-atomic-navy/70 hover:text-atomic-orange underline underline-offset-4 transition-colors"
+        >
+          View Portfolio →
+        </Link>
       </div>
       
       <div className="flex items-center space-x-3 sm:space-x-4 pt-3 sm:pt-4 bg-white/50 p-3 sm:p-4 rounded-xl backdrop-blur-sm">

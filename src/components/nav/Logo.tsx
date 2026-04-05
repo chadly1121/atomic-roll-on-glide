@@ -10,7 +10,7 @@ const Logo = ({ handleLogoClick }: LogoProps) => {
     <a href="#" className="flex items-center hover:opacity-90 transition-opacity group" onClick={handleLogoClick}>
       <img 
         src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp" 
-        alt="Roll On Painting - Vintage Craftsmanship, Today's Science" 
+        alt="Roll On Painting - Clean Reliable Painters in Muskoka" 
         className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 max-w-none flex-shrink-0"
         width={200}
         height={32}
