@@ -331,7 +331,7 @@ const SEOHelmet: React.FC = () => {
         "description": businessInfo.description,
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".service-hero", "section[aria-labelledby]", "h1", "h2"]
+          "cssSelector": ["h1", "h2"]
         },
         "breadcrumb": { "@id": `${siteUrl}/#breadcrumb` }
       },
