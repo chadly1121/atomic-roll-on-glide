@@ -8,6 +8,9 @@ import { businessInfo, verifiedFAQs } from '@/data/businessInfo';
  * Consolidated JSON-LD structured data for AI search engines.
  * Includes WebSite + SearchAction, Organization, LocalBusiness,
  * all Services, FAQPage, and SpeakableSpecification.
+ * 
+ * NOTE: index.html contains a STATIC copy of core schema for crawlers
+ * that don't execute JS. Keep both in sync.
  */
 const SEOHelmet: React.FC = () => {
   const logoUrl = "https://rollonpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp?v=pink";
@@ -35,7 +38,7 @@ const SEOHelmet: React.FC = () => {
           "query-input": "required name=search_term_string"
         }
       },
-      // Organization
+      // Organization (hasCredential and knowsAbout are valid here)
       {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
@@ -68,6 +71,17 @@ const SEOHelmet: React.FC = () => {
           "postalCode": businessInfo.address.postalCode,
           "addressCountry": businessInfo.address.countryCode
         },
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "WSIB Covered" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "$5 Million Liability Insurance" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "membership", "name": "Painting Contractors Association Member" }
+        ],
+        "knowsAbout": [
+          "Interior Painting", "Exterior Painting", "Commercial Painting",
+          "Institutional Painting", "Cabinet Refinishing", "Deck & Fence Staining",
+          "Epoxy Coatings", "GoNano Nanotechnology Coatings", "Wallpaper Installation",
+          "Wallpaper Removal", "Spray Painting and Spray Finishing", "Stucco Removal", "Power Washing"
+        ],
         "sameAs": [
           businessInfo.urls.instagram,
           businessInfo.urls.facebook,
@@ -77,7 +91,7 @@ const SEOHelmet: React.FC = () => {
       },
       // LocalBusiness with aggregateRating
       {
-        "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness", "PaintingContractor"],
+        "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
         "@id": `${siteUrl}/#localbusiness`,
         "name": businessInfo.name,
         "url": `${siteUrl}/`,
@@ -155,7 +169,6 @@ const SEOHelmet: React.FC = () => {
           { "@type": "Place", "name": "Midland, Ontario, Canada (L4R)" },
           { "@type": "Place", "name": "Penetanguishene, Ontario, Canada (L9M)" }
         ],
-        "openingHours": ["Mo-Fr 07:00-17:00", "Sa 10:00-14:00"],
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -170,26 +183,11 @@ const SEOHelmet: React.FC = () => {
             "closes": "14:00"
           }
         ],
-        "additionalProperty": [
-          { "@type": "PropertyValue", "name": "Sunday hours", "value": "By appointment only" }
-        ],
-        "hasCredential": [
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "WSIB Covered" },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "$5 Million Liability Insurance" },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "membership", "name": "Painting Contractors Association Member" }
-        ],
-        "knowsAbout": [
-          "Interior Painting", "Exterior Painting", "Commercial Painting",
-          "Institutional Painting", "Cabinet Refinishing", "Deck & Fence Staining",
-          "Epoxy Coatings", "GoNano Nanotechnology Coatings", "Wallpaper Installation",
-          "Wallpaper Removal", "Spray Painting and Spray Finishing", "Stucco Removal", "Power Washing"
-        ],
         "sameAs": [
           businessInfo.urls.instagram,
           businessInfo.urls.facebook,
           businessInfo.urls.linkedin,
-          businessInfo.urls.googleBusiness,
-          "https://www.docksidepublishing.com/?s=roll+on+painting&asl_active=1&p_asl_data=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0"
+          businessInfo.urls.googleBusiness
         ]
       },
       // Dockside Magazine & Media authority schema
@@ -200,7 +198,9 @@ const SEOHelmet: React.FC = () => {
         "description": "Roll On Painting and Muskoka Softwash have been featured 15 times in Dockside Magazine, Muskoka's premier cottage and lifestyle publication.",
         "publisher": { "@type": "Organization", "name": "Dockside Magazine", "url": "https://www.docksidepublishing.com" },
         "about": { "@id": `${siteUrl}/#localbusiness` },
-        "url": "https://www.docksidepublishing.com/?s=roll+on+painting"
+        "url": "https://www.docksidepublishing.com/?s=roll+on+painting",
+        "headline": "Roll On Painting in Dockside Magazine",
+        "datePublished": "2020-01-01"
       },
       // HGTV / Home Network media authority schema
       {
@@ -320,7 +320,7 @@ const SEOHelmet: React.FC = () => {
           "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
         }))
       },
-      // SpeakableSpecification for voice search / AI overviews
+      // WebPage with SpeakableSpecification for voice search / AI overviews
       {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
@@ -409,8 +409,7 @@ const SEOHelmet: React.FC = () => {
           "bestRating": 5,
           "worstRating": 1
         },
-        "datePublished": review.datePublished,
-        "publisher": { "@type": "Organization", "name": "Google" }
+        "datePublished": review.datePublished
       })),
       // VideoObject for gallery videos
       {
@@ -425,7 +424,12 @@ const SEOHelmet: React.FC = () => {
         "publisher": {
           "@type": "Organization",
           "name": businessInfo.name,
-          "logo": { "@type": "ImageObject", "url": logoUrl }
+          "logo": {
+            "@type": "ImageObject",
+            "url": logoUrl,
+            "width": 400,
+            "height": 100
+          }
         }
       }
     ]
@@ -441,18 +445,7 @@ const SEOHelmet: React.FC = () => {
     "operatingSystem": "Web",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD", "description": "Free instant painting estimate" },
     "provider": { "@type": "ProfessionalService", "name": businessInfo.name, "url": `${siteUrl}/` },
-    "featureList": ["Instant AI-powered estimates", "Interior and exterior painting costs", "Commercial painting quotes", "No obligation required"]
-  };
-
-  // TV Appearance Schema (kept for homepage reference)
-  const tvAppearanceSchema = {
-    "@context": "https://schema.org",
-    "@type": "TVSeries",
-    "name": businessInfo.tvAppearance.show,
-    "description": businessInfo.tvAppearance.description,
-    "productionCompany": { "@type": "Organization", "name": businessInfo.tvAppearance.network },
-    "mentions": { "@type": "ProfessionalService", "name": businessInfo.name },
-    "url": "https://www.homenetwork.ca/scotts-vacation-house-rules/"
+    "featureList": "Instant AI-powered estimates, Interior and exterior painting costs, Commercial painting quotes, No obligation required"
   };
 
   return (
@@ -506,7 +499,6 @@ const SEOHelmet: React.FC = () => {
       {/* Consolidated Structured Data */}
       <script type="application/ld+json">{JSON.stringify(consolidatedSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(tvAppearanceSchema)}</script>
     </Helmet>
   );
 };
