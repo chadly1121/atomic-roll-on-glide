@@ -174,9 +174,9 @@ const SEOHelmet: React.FC = () => {
           { "@type": "PropertyValue", "name": "Sunday hours", "value": "By appointment only" }
         ],
         "hasCredential": [
-          "WSIB Covered",
-          "$5 Million Liability Insurance",
-          "Painting Contractors Association Member"
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "WSIB Covered" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "$5 Million Liability Insurance" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "membership", "name": "Painting Contractors Association Member" }
         ],
         "knowsAbout": [
           "Interior Painting", "Exterior Painting", "Commercial Painting",
@@ -189,7 +189,7 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.facebook,
           businessInfo.urls.linkedin,
           businessInfo.urls.googleBusiness,
-          "https://www.docksidepublishing.com/?s=roll+on+painting"
+          "https://www.docksidepublishing.com/?s=roll+on+painting&asl_active=1&p_asl_data=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0"
         ]
       },
       // Dockside Magazine & Media authority schema
