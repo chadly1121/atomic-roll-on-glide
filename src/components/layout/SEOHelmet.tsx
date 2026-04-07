@@ -188,6 +188,64 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.facebook,
           businessInfo.urls.linkedin,
           businessInfo.urls.googleBusiness
+        ],
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Jacki Hart" },
+            "reviewBody": "I never call anyone other than the great team at Roll On Painting - especially for the tough jobs that I can't do myself. They are detail oriented, meticulous on their after care clean up, leave my walls trim and house exterior looking like brand new... They have painted four different homes for me over the past ten years. Chad leads his team with passion, technical expertise and precision. They are second to none.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-09-01"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "David Tattle" },
+            "reviewBody": "Chad and his team went the extra mile at every turn. They provide a high quality product and they are a pleasure having them in your home! Highly recommend!!!!!",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-03-01"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "John Chapman" },
+            "reviewBody": "Chad and all the Roll On crew were knowledgeable efficient and courteous! The amount of moss algae and accumulated pine needles over the last 20 years was considerable and ugly. After four days of effort our roof is almost new again! We wholeheartedly recommend Roll On",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-06-01"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Leo Ciccone" },
+            "reviewBody": "Great job, had whole exterior of cottage and garage done. They came when they said they would, neat and tidy, would highly recommend.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-01-24"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Ray Rahni" },
+            "reviewBody": "I'm a painting contractor in New York and have known Chad throughout the years in our trade association and other professional business organizations we both belong to. I've come to know and trust him as a skillful craftsman and someone you can count on when it comes to anything painting or staining. He's been always willing to share his knowledge with others in regards to wood preservation, staining, and painting. I won't hesitate to recommend Roll on Painting to anyone looking to hire professional company for their next interior or exterior painting.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2023-01-28"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Steve Warren" },
+            "reviewBody": "Chad is very professional and gets the job done right.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2023-01-26"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Kevin Brumpton" },
+            "reviewBody": "Amazing company, delivers fantastic quality at a competitive price point.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-01-01"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Jeff McLeod" },
+            "reviewBody": "I'm the owner of a residential painting company in Toronto. Roll On Painting delivers professional quality work.",
+            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
+            "datePublished": "2024-01-01"
+          }
         ]
       },
       // Dockside Magazine & Media authority schema
