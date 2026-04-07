@@ -38,26 +38,7 @@ const TrendImageItem = memo(({ image, index }: { image: string, index: number })
 const TrendsSection = () => {
   return (
     <section id="trends" className="py-24 relative overflow-hidden">
-      <Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "Paint Trends",
-              "description": "Stay ahead with the latest painting trends and innovative techniques for your next project.",
-              "publisher": {
-                "@type": "Organization",
-                "name": "Roll On Painting",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://rollonpainting.com/logo.png"
-                }
-              }
-            }
-          `}
-        </script>
-      </Helmet>
+      {/* Schema centralized in SEOHelmet — do not add component-level JSON-LD */}
       
       <div className="atomic-circle w-80 h-80 -bottom-40 -right-20 border-atomic-orange/30"></div>
       <div className="atomic-starburst w-72 h-72 top-20 left-1/4"></div>
