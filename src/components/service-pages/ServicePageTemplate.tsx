@@ -58,15 +58,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           ]
         }
       },
-      // FAQPage
-      ...(service.faqs ? [{
-        "@type": "FAQPage",
-        "mainEntity": service.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-        }))
-      }] : [])
     ]
   };
 
