@@ -1,4 +1,5 @@
 import React, { useState, useCallback, lazy, Suspense, useEffect } from 'react';
+import PrivateClientBanner from '../components/conversion/PrivateClientBanner';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
@@ -77,9 +78,10 @@ const Index = () => {
       <Suspense fallback={<SectionPlaceholder />}>
         <ServiceAreaBlock />
       </Suspense>
-      <Suspense fallback={<SectionPlaceholder />}>
-        <FAQSection />
-      </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <FAQSection />
+        </Suspense>
+        <PrivateClientBanner />
       
       <Suspense fallback={<SectionPlaceholder />}>
         <LazySectionLoader visibleSections={visibleSections} />

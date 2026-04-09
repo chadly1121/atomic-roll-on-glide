@@ -5,6 +5,7 @@ import { ArrowLeft, Phone, Mail, CheckCircle, MapPin, Star, Shield, Heart } from
 import { businessInfo } from '@/data/businessInfo';
 import { LocationPageData, locationPages } from '@/data/locationPages';
 import { getLocationHero } from '@/data/locationHeroData';
+import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
 
 // Build a name → slug lookup for nearby area linking
 const nameToSlugMap = new Map(locationPages.map(p => [p.name, p.slug]));
@@ -262,6 +263,8 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
               </Link>
             </div>
           </section>
+
+          <PrivateClientBanner />
 
           {/* CTA */}
           <section className="py-16 bg-atomic-navy text-white">

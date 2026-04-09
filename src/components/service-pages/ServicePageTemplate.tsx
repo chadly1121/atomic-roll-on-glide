@@ -8,6 +8,7 @@ import AIAnswerBlock from './AIAnswerBlock';
 import ServiceGallery from './ServiceGallery';
 import ServicePageInternalLinks from './ServicePageInternalLinks';
 import DocksideArticlesBlock from './DocksideArticlesBlock';
+import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
@@ -219,6 +220,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           )}
 
           <DocksideArticlesBlock serviceSlug={service.slug} serviceName={service.name} />
+
+          <PrivateClientBanner />
 
           <ServicePageInternalLinks currentSlug={service.slug} />
 
