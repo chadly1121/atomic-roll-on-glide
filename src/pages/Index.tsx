@@ -1,4 +1,5 @@
 import React, { useState, useCallback, lazy, Suspense, useEffect } from 'react';
+import PrivateClientBanner from '../components/conversion/PrivateClientBanner';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import FreeTouchUpsButton from '../components/FreeTouchUpsButton';
