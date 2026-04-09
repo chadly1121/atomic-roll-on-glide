@@ -29,6 +29,7 @@ const FAQPage = lazy(() => import("./pages/FAQPage"));
 const CareersPage = lazy(() => import("./pages/CareersPage"));
 const MediaPage = lazy(() => import("./pages/MediaPage"));
 const PrivateClientPage = lazy(() => import("./pages/PrivateClientPage"));
+const CottageOwnerPage = lazy(() => import("./pages/CottageOwnerPage"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
