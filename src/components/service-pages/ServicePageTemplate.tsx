@@ -221,6 +221,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
 
           <DocksideArticlesBlock serviceSlug={service.slug} serviceName={service.name} />
 
+          <PrivateClientBanner />
+
           <ServicePageInternalLinks currentSlug={service.slug} />
 
           <section className="py-16 bg-atomic-navy text-white">

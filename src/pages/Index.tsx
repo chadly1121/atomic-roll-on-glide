@@ -78,9 +78,10 @@ const Index = () => {
       <Suspense fallback={<SectionPlaceholder />}>
         <ServiceAreaBlock />
       </Suspense>
-      <Suspense fallback={<SectionPlaceholder />}>
-        <FAQSection />
-      </Suspense>
+        <Suspense fallback={<SectionPlaceholder />}>
+          <FAQSection />
+        </Suspense>
+        <PrivateClientBanner />
       
       <Suspense fallback={<SectionPlaceholder />}>
         <LazySectionLoader visibleSections={visibleSections} />

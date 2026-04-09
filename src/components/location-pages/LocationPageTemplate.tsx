@@ -264,6 +264,8 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
             </div>
           </section>
 
+          <PrivateClientBanner />
+
           {/* CTA */}
           <section className="py-16 bg-atomic-navy text-white">
             <div className="container mx-auto px-4 text-center">
