@@ -19,6 +19,10 @@ const PrivateClientPage: React.FC = () => {
     phone: '',
     propertyLocation: '',
     ownsCottage: '',
+    cottageLocation: '',
+    cottageLocationOther: '',
+    propertyType: '',
+    propertyValueRange: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -298,10 +302,76 @@ const PrivateClientPage: React.FC = () => {
                     className="mt-2 w-full bg-transparent border border-[hsl(0,0%,18%)] text-white h-12 px-3 text-sm focus:border-[hsl(0,0%,35%)] focus:outline-none appearance-none"
                   >
                     <option value="" className="bg-[hsl(220,20%,10%)]">Select</option>
-                    <option value="yes" className="bg-[hsl(220,20%,10%)]">Yes</option>
-                    <option value="no" className="bg-[hsl(220,20%,10%)]">No</option>
+                    <option value="Yes" className="bg-[hsl(220,20%,10%)]">Yes</option>
+                    <option value="No" className="bg-[hsl(220,20%,10%)]">No</option>
                   </select>
                 </div>
+
+                {formData.ownsCottage === 'Yes' && (
+                  <div className="space-y-6 border-l border-[hsl(0,0%,15%)] pl-4">
+                    <div>
+                      <Label htmlFor="pc-cottage-loc" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Where is your cottage located?</Label>
+                      <select
+                        id="pc-cottage-loc"
+                        name="cottageLocation"
+                        value={formData.cottageLocation}
+                        onChange={handleChange}
+                        className="mt-2 w-full bg-transparent border border-[hsl(0,0%,18%)] text-white h-12 px-3 text-sm focus:border-[hsl(0,0%,35%)] focus:outline-none appearance-none"
+                      >
+                        <option value="" className="bg-[hsl(220,20%,10%)]">Select a lake</option>
+                        <option value="Lake Muskoka" className="bg-[hsl(220,20%,10%)]">Lake Muskoka</option>
+                        <option value="Lake Rosseau" className="bg-[hsl(220,20%,10%)]">Lake Rosseau</option>
+                        <option value="Lake Joseph" className="bg-[hsl(220,20%,10%)]">Lake Joseph</option>
+                        <option value="Other" className="bg-[hsl(220,20%,10%)]">Other</option>
+                      </select>
+                    </div>
+                    {formData.cottageLocation === 'Other' && (
+                      <div>
+                        <Label htmlFor="pc-cottage-other" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Please specify location</Label>
+                        <Input
+                          id="pc-cottage-other"
+                          name="cottageLocationOther"
+                          value={formData.cottageLocationOther}
+                          onChange={handleChange}
+                          className="mt-2 bg-transparent border-[hsl(0,0%,18%)] text-white placeholder:text-[hsl(0,0%,30%)] focus:border-[hsl(0,0%,35%)] rounded-none h-12"
+                          placeholder="City, lake, or area"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <Label htmlFor="pc-prop-type" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Property type</Label>
+                      <select
+                        id="pc-prop-type"
+                        name="propertyType"
+                        value={formData.propertyType}
+                        onChange={handleChange}
+                        className="mt-2 w-full bg-transparent border border-[hsl(0,0%,18%)] text-white h-12 px-3 text-sm focus:border-[hsl(0,0%,35%)] focus:outline-none appearance-none"
+                      >
+                        <option value="" className="bg-[hsl(220,20%,10%)]">Select property type</option>
+                        <option value="Seasonal cottage" className="bg-[hsl(220,20%,10%)]">Seasonal cottage</option>
+                        <option value="Year-round home" className="bg-[hsl(220,20%,10%)]">Year-round home</option>
+                        <option value="Luxury / estate property" className="bg-[hsl(220,20%,10%)]">Luxury / estate property</option>
+                      </select>
+                    </div>
+                    <div>
+                      <Label htmlFor="pc-prop-value" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Approximate value of property</Label>
+                      <select
+                        id="pc-prop-value"
+                        name="propertyValueRange"
+                        value={formData.propertyValueRange}
+                        onChange={handleChange}
+                        className="mt-2 w-full bg-transparent border border-[hsl(0,0%,18%)] text-white h-12 px-3 text-sm focus:border-[hsl(0,0%,35%)] focus:outline-none appearance-none"
+                      >
+                        <option value="" className="bg-[hsl(220,20%,10%)]">Select range</option>
+                        <option value="Under $1M" className="bg-[hsl(220,20%,10%)]">Under $1M</option>
+                        <option value="$1M–$3M" className="bg-[hsl(220,20%,10%)]">$1M–$3M</option>
+                        <option value="$3M–$7M" className="bg-[hsl(220,20%,10%)]">$3M–$7M</option>
+                        <option value="$7M+" className="bg-[hsl(220,20%,10%)]">$7M+</option>
+                      </select>
+                    </div>
+                  </div>
+                )}
+
                 <div>
                   <Label htmlFor="pc-message" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Tell us about your property</Label>
                   <Textarea

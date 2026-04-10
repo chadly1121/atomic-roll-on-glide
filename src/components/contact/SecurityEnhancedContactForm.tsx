@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Shield, Clock, Upload, X, Loader2, FileIcon, ImageIcon } from 'lucide-react';
 import RateLimitWrapper from './RateLimitWrapper';
+import CottageOwnerFields from './fields/CottageOwnerFields';
 
 const formSchema = z.object({
   name: z.string()
@@ -31,6 +32,11 @@ const formSchema = z.object({
     .min(10, 'Please provide more details about your project')
     .max(5000, 'Message is too long'),
   honeypot: z.string().max(0, 'Bot detected'),
+  ownsCottage: z.string().optional(),
+  cottageLocation: z.string().optional(),
+  cottageLocationOther: z.string().max(200).optional(),
+  propertyType: z.string().optional(),
+  propertyValueRange: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -70,13 +76,17 @@ const SecurityEnhancedContactForm = () => {
       service: '',
       message: '',
       honeypot: '',
+      ownsCottage: '',
+      cottageLocation: '',
+      cottageLocationOther: '',
+      propertyType: '',
+      propertyValueRange: '',
     },
   });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
     
-    // Validate files
     const validFiles = selectedFiles.filter(file => {
       if (!ALLOWED_TYPES.includes(file.type)) {
         toast({
@@ -107,7 +117,6 @@ const SecurityEnhancedContactForm = () => {
     }
 
     setFiles(prev => [...prev, ...validFiles]);
-    // Reset input
     e.target.value = '';
   };
 
@@ -135,7 +144,6 @@ const SecurityEnhancedContactForm = () => {
         throw new Error(`Failed to upload ${file.name}`);
       }
 
-      // Get public URL
       const { data: { publicUrl } } = supabase.storage
         .from('quote-attachments')
         .getPublicUrl(data.path);
@@ -180,11 +188,14 @@ const SecurityEnhancedContactForm = () => {
 
       const submissionId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       
-      // Upload files first if any
       let fileUrls: string[] = [];
       if (files.length > 0) {
         fileUrls = await uploadFiles(submissionId);
       }
+
+      const cottageLocation = data.cottageLocation === 'Other' 
+        ? data.cottageLocationOther || 'Other' 
+        : data.cottageLocation;
 
       const sanitizedData = {
         name: data.name.trim(),
@@ -192,6 +203,10 @@ const SecurityEnhancedContactForm = () => {
         phone: data.phone.trim(),
         service: data.service,
         message: data.message.trim(),
+        ownsCottage: data.ownsCottage || '',
+        cottageLocation: cottageLocation || '',
+        propertyType: data.propertyType || '',
+        propertyValueRange: data.propertyValueRange || '',
       };
 
       const { error } = await supabase.functions.invoke('send-contact-email', {
@@ -363,6 +378,9 @@ const SecurityEnhancedContactForm = () => {
                   </FormItem>
                 )}
               />
+
+              {/* Cottage Owner Fields */}
+              <CottageOwnerFields form={form} />
 
               <FormField
                 control={form.control}
