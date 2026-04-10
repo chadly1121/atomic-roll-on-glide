@@ -130,15 +130,11 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-orange text-white px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-atomic-orange/90 transition-colors shadow-lg">
                   Book Your Free Estimate
                 </Link>
-              </div>
-              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
-              <div className="hidden">
                 <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
                   <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
                 </a>
               </div>
-            </div>
-          </section>
+              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
 
           <AIAnswerBlock {...service.aiAnswerBlock} />
 
