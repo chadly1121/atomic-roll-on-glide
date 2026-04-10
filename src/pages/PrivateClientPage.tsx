@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { businessInfo } from '@/data/businessInfo';
 import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
 import heroImage from '@/assets/private-client-hero.jpg';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const siteUrl = "https://www.roll-onpainting.com";
 const pageUrl = `${siteUrl}/private-client-muskoka-property-care`;
