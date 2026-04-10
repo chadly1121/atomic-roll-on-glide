@@ -365,15 +365,22 @@ serve(async (req) => {
       : leadResult.tags.includes('Cottage Owner') 
         ? '🏡 COTTAGE OWNER: '
         : '';
+
+    // Add priority follow-up note for Private Client Candidates
+    const priorityNote = leadResult.tags.includes('Private Client Candidate')
+      ? '\n⚡ PRIORITY: Flag for follow-up within 1–2 hours.'
+      : '';
     
     // Send email to business
     const businessEmailResponse = await resend.emails.send({
       from: "Roll On Painting <noreply@rollonpainting.com>",
       to: ["info@roll-onpainting.com"],
+      replyTo: "info@roll-onpainting.com",
       subject: `${tagPrefix}New Quote Request: ${sanitizedService}${hasAttachments ? ` (${attachments?.length} files)` : ''}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1f2937; border-bottom: 2px solid #f97316; padding-bottom: 8px;">New Quote Request</h2>
+          ${priorityNote ? `<div style="margin-top: 12px; padding: 10px 14px; background: #fef2f2; border-left: 4px solid #dc2626; font-size: 14px; font-weight: bold; color: #991b1b;">${sanitizeHtml(priorityNote)}</div>` : ''}
           
           <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
             <tr>
@@ -414,37 +421,73 @@ serve(async (req) => {
       `,
     });
 
+    // Determine which confirmation email to send
+    const isCottageOwner = ownsCottage === 'Yes';
+
+    const customerSubject = isCottageOwner
+      ? 'Your Muskoka Property Request'
+      : 'Your Request \u2013 Received';
+
+    const customerHtml = isCottageOwner
+      ? `
+        <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 24px; color: #111111; background-color: #ffffff;">
+          <div style="margin-bottom: 40px;">
+            <strong style="font-size: 16px; letter-spacing: 0.5px; color: #111111;">ROLL-ON PAINTING</strong>
+          </div>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">We've received your request \u2014 thank you.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">We'll review the details of your property and follow up shortly.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">If applicable, we may also outline a more fully managed approach, where inspections, maintenance planning, and exterior work are handled throughout the season.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">For many clients, this removes the need to coordinate multiple projects or be onsite during the work.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 40px;">We'll be in touch shortly.</p>
+
+          <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 0 0 24px;" />
+
+          <p style="font-size: 14px; line-height: 1.6; margin: 0 0 24px; color: #111111;">Roll-On Painting</p>
+
+          <p style="font-size: 13px; line-height: 1.6; margin: 0; color: #666666;">P.S. If your timeline is tied to an upcoming visit or season opening, feel free to include that in your reply.</p>
+        </div>
+      `
+      : `
+        <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 24px; color: #111111; background-color: #ffffff;">
+          <div style="margin-bottom: 40px;">
+            <strong style="font-size: 16px; letter-spacing: 0.5px; color: #111111;">ROLL-ON PAINTING</strong>
+          </div>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">We've received your request.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">Thank you for reaching out.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 24px;">We'll review the details and follow up shortly with next steps.</p>
+
+          <p style="font-size: 15px; line-height: 1.7; margin: 0 0 40px;">In the meantime, no further action is required.</p>
+
+          <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 0 0 24px;" />
+
+          <p style="font-size: 14px; line-height: 1.6; margin: 0 0 24px; color: #111111;">Roll-On Painting</p>
+
+          <p style="font-size: 13px; line-height: 1.6; margin: 0; color: #666666;">P.S. If your timeline is tied to an upcoming project date, feel free to include that in your reply.</p>
+        </div>
+      `;
+
     // Send confirmation email to customer
     const customerEmailResponse = await resend.emails.send({
       from: "Roll On Painting <noreply@rollonpainting.com>",
+      replyTo: "info@roll-onpainting.com",
       to: [email],
-      subject: "We received your quote request - Roll On Painting",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1f2937;">Thank you for contacting Roll On Painting!</h2>
-          <p>Hi ${sanitizedName},</p>
-          <p>We've received your quote request for <strong>${sanitizedService}</strong> and will get back to you within 24 hours.</p>
-          
-          <div style="background-color: #f9fafb; padding: 16px; border-radius: 8px; margin: 24px 0;">
-            <h3 style="color: #1f2937; margin-top: 0;">Your Request Summary:</h3>
-            <p><strong>Service:</strong> ${sanitizedService}</p>
-            <p><strong>Message:</strong> ${sanitizedMessage}</p>
-            ${hasAttachments ? `<p><strong>Files Uploaded:</strong> ${attachments?.length} file(s)</p>` : ''}
-            <p><strong>Reference ID:</strong> ${submissionId || 'N/A'}</p>
-          </div>
-          
-          <p>If you have any urgent questions, feel free to call us directly.</p>
-          
-          <p>Best regards,<br>
-          <strong>The Roll On Painting Team</strong></p>
-        </div>
-      `,
+      subject: customerSubject,
+      html: customerHtml,
     });
 
     console.log("Emails sent successfully:", { 
       businessEmailResponse: businessEmailResponse.id, 
       customerEmailResponse: customerEmailResponse.id,
       submissionId,
+      confirmationType: isCottageOwner ? 'cottage-owner' : 'standard',
       attachmentCount: attachments?.length || 0,
       leadTags: leadResult.tags,
     });
