@@ -5,6 +5,7 @@ import { ArrowLeft, Phone, Mail, CheckCircle, ArrowRight, MapPin, Shield, Star }
 import { businessInfo } from '@/data/businessInfo';
 import { CottageOwnerPageData } from '@/data/cottageOwnerPages';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface CottageOwnerPageTemplateProps {
   page: CottageOwnerPageData;

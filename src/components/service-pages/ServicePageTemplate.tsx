@@ -10,6 +10,7 @@ import ServicePageInternalLinks from './ServicePageInternalLinks';
 import DocksideArticlesBlock from './DocksideArticlesBlock';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
 import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;

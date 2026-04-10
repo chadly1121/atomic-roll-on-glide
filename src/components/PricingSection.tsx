@@ -1,4 +1,5 @@
 import React from 'react';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface PricingTier {
   id: number;
