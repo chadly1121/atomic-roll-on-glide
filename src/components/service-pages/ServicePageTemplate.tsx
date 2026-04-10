@@ -10,6 +10,7 @@ import ServicePageInternalLinks from './ServicePageInternalLinks';
 import DocksideArticlesBlock from './DocksideArticlesBlock';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
 import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
@@ -133,6 +134,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                   <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
                 </a>
               </div>
+              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
             </div>
           </section>
 
@@ -244,6 +246,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                   <Mail className="w-4 h-4" />{businessInfo.email}
                 </a>
               </div>
+              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
             </div>
           </section>
         </main>

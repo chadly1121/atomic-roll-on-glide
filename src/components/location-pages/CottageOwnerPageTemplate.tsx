@@ -5,6 +5,7 @@ import { ArrowLeft, Phone, Mail, CheckCircle, ArrowRight, MapPin, Shield, Star }
 import { businessInfo } from '@/data/businessInfo';
 import { CottageOwnerPageData } from '@/data/cottageOwnerPages';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface CottageOwnerPageTemplateProps {
   page: CottageOwnerPageData;
@@ -238,6 +239,7 @@ const CottageOwnerPageTemplate: React.FC<CottageOwnerPageTemplateProps> = ({ pag
                   <Mail className="w-4 h-4" />{businessInfo.email}
                 </a>
               </div>
+              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
             </div>
           </section>
         </main>

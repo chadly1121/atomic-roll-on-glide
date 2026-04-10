@@ -1,4 +1,5 @@
 import React from 'react';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 interface PricingTier {
   id: number;
@@ -135,6 +136,7 @@ const PricingSection = () => {
           >
             View Service Catalog →
           </a>
+          <PrivateClientWhisper className="mt-4" />
         </div>
       </div>
     </section>

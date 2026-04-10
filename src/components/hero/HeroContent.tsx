@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 const HeroContent = () => {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ const HeroContent = () => {
           View Portfolio →
         </Link>
       </div>
+      <PrivateClientWhisper />
       
       <div className="flex items-center space-x-3 sm:space-x-4 pt-3 sm:pt-4 bg-white/50 p-3 sm:p-4 rounded-xl backdrop-blur-sm">
         <div className="flex -space-x-2 flex-shrink-0">
