@@ -64,33 +64,51 @@ export type Database = {
       }
       quote_requests: {
         Row: {
+          cottage_location: string | null
           created_at: string
           email: string
           has_attachments: boolean | null
           id: string
+          internal_notes: string | null
+          lead_tags: string[] | null
           message: string | null
           name: string
+          owns_cottage: string | null
           phone: string
+          property_type: string | null
+          property_value_range: string | null
           service: string
         }
         Insert: {
+          cottage_location?: string | null
           created_at?: string
           email: string
           has_attachments?: boolean | null
           id?: string
+          internal_notes?: string | null
+          lead_tags?: string[] | null
           message?: string | null
           name: string
+          owns_cottage?: string | null
           phone: string
+          property_type?: string | null
+          property_value_range?: string | null
           service: string
         }
         Update: {
+          cottage_location?: string | null
           created_at?: string
           email?: string
           has_attachments?: boolean | null
           id?: string
+          internal_notes?: string | null
+          lead_tags?: string[] | null
           message?: string | null
           name?: string
+          owns_cottage?: string | null
           phone?: string
+          property_type?: string | null
+          property_value_range?: string | null
           service?: string
         }
         Relationships: []
