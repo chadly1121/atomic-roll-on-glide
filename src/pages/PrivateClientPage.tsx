@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { businessInfo } from '@/data/businessInfo';
 import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
 import heroImage from '@/assets/private-client-hero.jpg';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const siteUrl = "https://www.roll-onpainting.com";
 const pageUrl = `${siteUrl}/private-client-muskoka-property-care`;
@@ -26,6 +28,8 @@ const PrivateClientPage: React.FC = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,10 +39,45 @@ const PrivateClientPage: React.FC = () => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, show confirmation. Integration with edge function can be added.
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const submissionId = crypto.randomUUID();
+      const cottageLoc = formData.cottageLocation === 'Other'
+        ? formData.cottageLocationOther
+        : formData.cottageLocation;
+
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: 'Private Client Program',
+          message: `Property Location: ${formData.propertyLocation}\n\n${formData.message}`,
+          submissionId,
+          userAgent: navigator.userAgent,
+          timestamp: new Date().toISOString(),
+          ownsCottage: formData.ownsCottage || undefined,
+          cottageLocation: cottageLoc || undefined,
+          propertyType: formData.propertyType || undefined,
+          propertyValueRange: formData.propertyValueRange || undefined,
+        },
+      });
+
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Private client form error:', err);
+      toast({
+        title: 'Something went wrong',
+        description: 'Please try again or contact us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToAccess = () => {
@@ -385,9 +424,10 @@ const PrivateClientPage: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full border border-[hsl(0,0%,25%)] text-[hsl(0,0%,80%)] py-4 text-sm tracking-widest uppercase hover:border-[hsl(0,0%,45%)] hover:text-white transition-all duration-500"
+                  disabled={isSubmitting}
+                  className="w-full border border-[hsl(0,0%,25%)] text-[hsl(0,0%,80%)] py-4 text-sm tracking-widest uppercase hover:border-[hsl(0,0%,45%)] hover:text-white transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Private Client Request
+                  {isSubmitting ? 'Submitting...' : 'Submit Private Client Request'}
                 </button>
                 <p className="text-[hsl(0,0%,35%)] text-xs text-center mt-4">
                   All inquiries handled directly and confidentially.
