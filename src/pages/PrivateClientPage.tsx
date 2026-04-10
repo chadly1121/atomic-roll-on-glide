@@ -19,6 +19,10 @@ const PrivateClientPage: React.FC = () => {
     phone: '',
     propertyLocation: '',
     ownsCottage: '',
+    cottageLocation: '',
+    cottageLocationOther: '',
+    propertyType: '',
+    propertyValueRange: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
