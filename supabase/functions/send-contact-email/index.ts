@@ -27,11 +27,46 @@ interface ContactRequest {
   timestamp?: string;
   attachments?: string[];
   fileNames?: string[];
+  ownsCottage?: string;
+  cottageLocation?: string;
+  propertyType?: string;
+  propertyValueRange?: string;
+}
+
+interface LeadTagResult {
+  tags: string[];
+  internalNotes: string;
+}
+
+function computeLeadTags(req: ContactRequest): LeadTagResult {
+  const tags: string[] = [];
+  const notes: string[] = [];
+
+  if (req.ownsCottage === 'Yes') {
+    tags.push('Cottage Owner');
+
+    const highValueRanges = ['$3M–$7M', '$7M+'];
+    if (req.propertyValueRange && highValueRanges.includes(req.propertyValueRange)) {
+      tags.push('Private Client Candidate');
+    }
+
+    const muskokaLakes = ['Lake Muskoka', 'Lake Rosseau', 'Lake Joseph'];
+    if (req.cottageLocation && muskokaLakes.includes(req.cottageLocation)) {
+      notes.push('High-value Muskoka lead – prioritize follow-up');
+    }
+
+    if (req.propertyType === 'Luxury / estate property') {
+      tags.push('Private Client Candidate');
+    }
+  }
+
+  // Deduplicate tags
+  const uniqueTags = [...new Set(tags)];
+  return { tags: uniqueTags, internalNotes: notes.join('; ') };
 }
 
 function sanitizeHtml(input: string): string {
   if (!input) return '';
-  
   return input
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -58,10 +93,6 @@ function isValidName(name: string): boolean {
   return nameRegex.test(name);
 }
 
-/**
- * Database-backed rate limiting — shared across all edge function instances.
- * Records each attempt and checks the count within the last 15 minutes.
- */
 async function isRateLimited(ip: string): Promise<boolean> {
   const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -69,7 +100,6 @@ async function isRateLimited(ip: string): Promise<boolean> {
   
   const windowStart = new Date(Date.now() - 15 * 60 * 1000).toISOString();
   
-  // Count recent attempts
   const { count, error: countError } = await supabase
     .from('edge_function_rate_limits')
     .select('*', { count: 'exact', head: true })
@@ -79,20 +109,18 @@ async function isRateLimited(ip: string): Promise<boolean> {
   
   if (countError) {
     console.error("Rate limit check error:", countError);
-    return false; // fail open to avoid blocking legitimate users
+    return false;
   }
   
   if ((count ?? 0) >= 5) {
     return true;
   }
   
-  // Record this attempt
   await supabase.from('edge_function_rate_limits').insert({
     ip_address: ip,
     function_name: 'send-contact-email',
   });
   
-  // Periodically clean up old entries (1 in 10 chance)
   if (Math.random() < 0.1) {
     await supabase.rpc('cleanup_rate_limits');
   }
@@ -126,38 +154,31 @@ function isImageUrl(url: string): boolean {
   return imageExtensions.some(ext => lowerUrl.includes(ext));
 }
 
-/**
- * Generate signed URLs for attachments stored in the private bucket.
- * Uses the service role key to create short-lived signed URLs (7 days).
- */
 async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
   const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
   const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  
   const supabase = createClient(supabaseUrl, serviceRoleKey);
-  
   const signedUrls: string[] = [];
   
   for (const path of storagePaths) {
-    // Validate URL belongs to our Supabase storage — reject external URLs
     if (!isValidStorageUrl(path, supabaseUrl)) {
       console.warn("Rejected non-Supabase attachment URL:", path);
-      continue; // skip instead of falling back to raw URL
+      continue;
     }
     
     const bucketPath = extractStoragePath(path);
     if (!bucketPath) {
       console.warn("Could not extract storage path from:", path);
-      continue; // skip instead of falling back to raw URL
+      continue;
     }
     
     const { data, error } = await supabase.storage
       .from('quote-attachments')
-      .createSignedUrl(bucketPath, 60 * 60 * 24 * 7); // 7 days
+      .createSignedUrl(bucketPath, 60 * 60 * 24 * 7);
     
     if (error) {
       console.error("Error creating signed URL for path:", bucketPath, error);
-      continue; // skip instead of falling back to raw URL
+      continue;
     } else {
       signedUrls.push(data.signedUrl);
     }
@@ -166,10 +187,6 @@ async function generateSignedUrls(storagePaths: string[]): Promise<string[]> {
   return signedUrls;
 }
 
-/**
- * Validate that a URL belongs to our Supabase storage project.
- * Rejects any external/attacker-controlled URLs.
- */
 function isValidStorageUrl(url: string, supabaseUrl: string): boolean {
   try {
     const parsed = new URL(url);
@@ -182,20 +199,13 @@ function isValidStorageUrl(url: string, supabaseUrl: string): boolean {
   }
 }
 
-/**
- * Extract the storage path from a full Supabase storage URL.
- * Input: https://xxx.supabase.co/storage/v1/object/public/quote-attachments/submissionId/file.jpg
- * Output: submissionId/file.jpg
- */
 function extractStoragePath(url: string): string | null {
   const match = url.match(/quote-attachments\/(.+)$/);
   return match ? match[1] : null;
 }
 
 function generateAttachmentsHtml(attachments: string[], fileNames: string[]): string {
-  if (!attachments || attachments.length === 0) {
-    return '';
-  }
+  if (!attachments || attachments.length === 0) return '';
 
   const attachmentItems = attachments.map((url, index) => {
     const fileName = fileNames?.[index] || `Attachment ${index + 1}`;
@@ -234,6 +244,28 @@ function generateAttachmentsHtml(attachments: string[], fileNames: string[]): st
   `;
 }
 
+function generateCottageInfoHtml(req: ContactRequest, leadResult: LeadTagResult): string {
+  if (req.ownsCottage !== 'Yes') return '';
+
+  const tagBadges = leadResult.tags.map(tag => {
+    const color = tag === 'Private Client Candidate' ? '#dc2626' : '#f97316';
+    return `<span style="display:inline-block;background:${color};color:white;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold;margin-right:4px;">${sanitizeHtml(tag)}</span>`;
+  }).join('');
+
+  return `
+    <div style="margin-top: 24px; padding: 16px; background-color: #fef3c7; border-radius: 8px; border-left: 4px solid #f97316;">
+      <h3 style="color: #92400e; margin-bottom: 12px; font-size: 16px;">🏡 Cottage Owner Details</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr><td style="padding: 4px 0; font-weight: bold; width: 160px;">Cottage Location:</td><td>${sanitizeHtml(req.cottageLocation || 'Not specified')}</td></tr>
+        <tr><td style="padding: 4px 0; font-weight: bold;">Property Type:</td><td>${sanitizeHtml(req.propertyType || 'Not specified')}</td></tr>
+        <tr><td style="padding: 4px 0; font-weight: bold;">Property Value:</td><td>${sanitizeHtml(req.propertyValueRange || 'Not specified')}</td></tr>
+      </table>
+      ${tagBadges ? `<div style="margin-top: 12px;"><strong>Tags:</strong> ${tagBadges}</div>` : ''}
+      ${leadResult.internalNotes ? `<div style="margin-top: 8px; padding: 8px; background: #fde68a; border-radius: 4px; font-size: 13px;"><strong>⚡ Note:</strong> ${sanitizeHtml(leadResult.internalNotes)}</div>` : ''}
+    </div>
+  `;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -242,13 +274,7 @@ serve(async (req) => {
   if (req.method !== 'POST') {
     return new Response(
       JSON.stringify({ success: false, error: "Method not allowed" }),
-      { 
-        status: 405,
-        headers: { 
-          "Content-Type": "application/json",
-          ...corsHeaders
-        } 
-      }
+      { status: 405, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }
 
@@ -260,49 +286,25 @@ serve(async (req) => {
     if (await isRateLimited(clientIP)) {
       return new Response(
         JSON.stringify({ success: false, error: "Rate limit exceeded. Please wait before submitting again." }),
-        { 
-          status: 429,
-          headers: { 
-            "Content-Type": "application/json",
-            "Retry-After": "900",
-            ...corsHeaders
-          } 
-        }
+        { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "900", ...corsHeaders } }
       );
     }
 
+    const contactReq: ContactRequest = await req.json();
     const { 
-      name, 
-      email, 
-      phone, 
-      service, 
-      message, 
-      submissionId, 
-      userAgent, 
-      timestamp,
-      attachments,
-      fileNames
-    }: ContactRequest = await req.json();
+      name, email, phone, service, message,
+      submissionId, userAgent, timestamp,
+      attachments, fileNames,
+      ownsCottage, cottageLocation, propertyType, propertyValueRange
+    } = contactReq;
     
     if (!name || !email || !phone || !service) {
       throw new Error("Missing required fields");
     }
-
-    if (!isValidEmail(email)) {
-      throw new Error("Invalid email format");
-    }
-
-    if (!isValidPhone(phone)) {
-      throw new Error("Invalid phone format");
-    }
-
-    if (!isValidName(name)) {
-      throw new Error("Invalid name format");
-    }
-
-    if (name.length > 100 || message.length > 5000) {
-      throw new Error("Input too long");
-    }
+    if (!isValidEmail(email)) throw new Error("Invalid email format");
+    if (!isValidPhone(phone)) throw new Error("Invalid phone format");
+    if (!isValidName(name)) throw new Error("Invalid name format");
+    if (name.length > 100 || message.length > 5000) throw new Error("Input too long");
 
     const submissionTime = timestamp ? Date.now() - new Date(timestamp).getTime() : undefined;
     if (detectBot(userAgent, submissionTime)) {
@@ -310,13 +312,16 @@ serve(async (req) => {
       throw new Error("Automated submission detected");
     }
 
+    // Compute lead tags
+    const leadResult = computeLeadTags(contactReq);
+
     const sanitizedName = sanitizeHtml(name);
     const sanitizedEmail = sanitizeHtml(email);
     const sanitizedPhone = sanitizeHtml(phone);
     const sanitizedService = sanitizeHtml(service);
     const sanitizedMessage = sanitizeHtml(message);
     
-    // Generate signed URLs for attachments (bucket is now private)
+    // Generate signed URLs for attachments
     const hasAttachments = attachments && attachments.length > 0;
     let signedAttachmentUrls: string[] = [];
     if (hasAttachments) {
@@ -324,19 +329,48 @@ serve(async (req) => {
     }
     
     const attachmentsHtml = generateAttachmentsHtml(signedAttachmentUrls, fileNames || []);
+    const cottageInfoHtml = generateCottageInfoHtml(contactReq, leadResult);
+
+    // Save to database with lead tags
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
+
+    await supabase.from('quote_requests').insert({
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      phone: phone.trim(),
+      service,
+      message: message.trim(),
+      has_attachments: hasAttachments || false,
+      owns_cottage: ownsCottage || null,
+      cottage_location: cottageLocation || null,
+      property_type: propertyType || null,
+      property_value_range: propertyValueRange || null,
+      lead_tags: leadResult.tags,
+      internal_notes: leadResult.internalNotes || null,
+    });
     
     console.log("Processing secure contact form submission:", { 
       submissionId, 
       clientIP, 
       userAgent: userAgent?.substring(0, 100),
-      attachmentCount: attachments?.length || 0
+      attachmentCount: attachments?.length || 0,
+      leadTags: leadResult.tags,
     });
+
+    // Determine email subject with lead tag prefix
+    const tagPrefix = leadResult.tags.includes('Private Client Candidate') 
+      ? '🔥 PRIVATE CLIENT: '
+      : leadResult.tags.includes('Cottage Owner') 
+        ? '🏡 COTTAGE OWNER: '
+        : '';
     
     // Send email to business
     const businessEmailResponse = await resend.emails.send({
       from: "Roll On Painting <noreply@rollonpainting.com>",
       to: ["info@roll-onpainting.com"],
-      subject: `New Quote Request: ${sanitizedService}${hasAttachments ? ` (${attachments?.length} files)` : ''}`,
+      subject: `${tagPrefix}New Quote Request: ${sanitizedService}${hasAttachments ? ` (${attachments?.length} files)` : ''}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1f2937; border-bottom: 2px solid #f97316; padding-bottom: 8px;">New Quote Request</h2>
@@ -359,6 +393,8 @@ serve(async (req) => {
               <td style="padding: 8px 0;">${sanitizedService}</td>
             </tr>
           </table>
+          
+          ${cottageInfoHtml}
           
           <div style="margin-top: 24px;">
             <h3 style="color: #1f2937; margin-bottom: 8px;">Project Details:</h3>
@@ -409,38 +445,21 @@ serve(async (req) => {
       businessEmailResponse: businessEmailResponse.id, 
       customerEmailResponse: customerEmailResponse.id,
       submissionId,
-      attachmentCount: attachments?.length || 0
+      attachmentCount: attachments?.length || 0,
+      leadTags: leadResult.tags,
     });
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
-        message: "Email sent successfully",
-        submissionId
-      }),
-      { 
-        headers: { 
-          "Content-Type": "application/json",
-          ...corsHeaders
-        } 
-      }
+      JSON.stringify({ success: true, message: "Email sent successfully", submissionId }),
+      { headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
     
   } catch (error) {
     console.error("Error in send-contact-email function:", error);
     
     return new Response(
-      JSON.stringify({ 
-        success: false, 
-        error: "Failed to send email. Please try again." 
-      }),
-      { 
-        status: 500,
-        headers: { 
-          "Content-Type": "application/json",
-          ...corsHeaders
-        } 
-      }
+      JSON.stringify({ success: false, error: "Failed to send email. Please try again." }),
+      { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   }
 });
