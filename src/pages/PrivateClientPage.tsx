@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { businessInfo } from '@/data/businessInfo';
+import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
 import heroImage from '@/assets/private-client-hero.jpg';
 
 const siteUrl = "https://www.roll-onpainting.com";
@@ -325,6 +326,9 @@ const PrivateClientPage: React.FC = () => {
             )}
           </div>
         </section>
+
+        {/* ─── COMMON CLIENT LOCATIONS ─── */}
+        <GTACottageOwnersBlock variant="dark" heading="Common client locations" />
 
         {/* ─── SECTION 7: FOOTER ─── */}
         <footer className="py-16 border-t border-[hsl(0,0%,12%)]">

@@ -9,6 +9,7 @@ import ServiceGallery from './ServiceGallery';
 import ServicePageInternalLinks from './ServicePageInternalLinks';
 import DocksideArticlesBlock from './DocksideArticlesBlock';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
+import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock';
 
 interface ServicePageTemplateProps {
   service: ServicePageData;
@@ -222,6 +223,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           <DocksideArticlesBlock serviceSlug={service.slug} serviceName={service.name} />
 
           <PrivateClientBanner />
+
+          {service.slug === 'cottage-painting-muskoka' && (
+            <GTACottageOwnersBlock />
+          )}
 
           <ServicePageInternalLinks currentSlug={service.slug} />
 

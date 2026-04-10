@@ -114,6 +114,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/cottage-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                  Cottage Painting Muskoka
+                </Link>
+              </li>
+              <li>
                 <Link to="/exterior-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Exterior Painting Muskoka
                 </Link>
@@ -136,6 +141,30 @@ const Footer = () => {
               <li>
                 <Link to="/deck-staining" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
                   Deck & Fence Staining
+                </Link>
+              </li>
+            </ul>
+
+            <h3 className="text-lg font-bold mt-6 mb-4">For Toronto & GTA Cottage Owners</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/rosedale-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                  Rosedale to Muskoka
+                </Link>
+              </li>
+              <li>
+                <Link to="/oakville-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                  Oakville to Muskoka
+                </Link>
+              </li>
+              <li>
+                <Link to="/post-road-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                  Post Road to Muskoka
+                </Link>
+              </li>
+              <li>
+                <Link to="/private-client-muskoka-property-care" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                  Private Client Services
                 </Link>
               </li>
             </ul>
