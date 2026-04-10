@@ -14,6 +14,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Shield, Clock, Upload, X, Loader2, FileIcon, ImageIcon } from 'lucide-react';
 import RateLimitWrapper from './RateLimitWrapper';
 import CottageOwnerFields from './fields/CottageOwnerFields';
+import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
 
 const formSchema = z.object({
   name: z.string()
@@ -497,6 +498,7 @@ const SecurityEnhancedContactForm = () => {
               <p className="text-xs text-gray-500 text-center">
                 This form is protected by rate limiting and anti-spam measures.
               </p>
+              <PrivateClientWhisper className="text-center" />
             </form>
           </Form>
         </div>

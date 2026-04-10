@@ -135,6 +135,7 @@ const PricingSection = () => {
           >
             View Service Catalog →
           </a>
+          <PrivateClientWhisper className="mt-4" />
         </div>
       </div>
     </section>

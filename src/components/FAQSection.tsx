@@ -90,6 +90,7 @@ const FAQSection: React.FC = () => {
               Request a Quote
             </a>
           </div>
+          <PrivateClientWhisper className="mt-4" />
         </div>
       </div>
     </section>

@@ -238,6 +238,7 @@ const CottageOwnerPageTemplate: React.FC<CottageOwnerPageTemplateProps> = ({ pag
                   <Mail className="w-4 h-4" />{businessInfo.email}
                 </a>
               </div>
+              <PrivateClientWhisper variant="dark" className="text-center mt-4" />
             </div>
           </section>
         </main>
