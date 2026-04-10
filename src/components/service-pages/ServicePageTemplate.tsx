@@ -135,6 +135,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                 </a>
               </div>
               <PrivateClientWhisper variant="dark" className="text-center mt-4" />
+            </div>
+          </section>
 
           <AIAnswerBlock {...service.aiAnswerBlock} />
 
