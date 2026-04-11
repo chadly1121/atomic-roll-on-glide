@@ -400,7 +400,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Deck & Fence Staining',
     headline: 'Deck and Fence Staining in Muskoka',
     description: 'Protect your outdoor wood surfaces from Muskoka\'s harsh weather with professional deck and fence staining. Roll On Painting uses premium stains from Sansin and other trusted brands for lasting protection.',
-    metaDescription: 'Deck and fence staining services in Muskoka. Power washing, wood treatment, and premium stains. Roll On Painting protects your outdoor spaces. Call 705-787-1401.',
+    metaDescription: 'Deck staining from $5.75/sq ft in Muskoka. Power washing, wood brightening & premium Sansin stains. HGTV featured, $5M insured. Free estimates — 705-787-1401.',
     category: 'residential',
     aiAnswerBlock: {
       whatIncludes: [

@@ -138,15 +138,15 @@ const GoNanoPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GoNano Nanotechnology Coatings | Roof, Concrete & Wood Sealers | Roll On Painting</title>
-        <meta name="description" content="Authorized GoNano dealer in Muskoka. Nanotechnology roof sealers extend shingle life up to 15 years. Concrete and wood sealers with permanent waterproof protection. Starting at $0.99/sq ft." />
+        <title>GoNano Roof & Surface Sealers | Extend Roof Life 15 Years | From $0.99/sq ft</title>
+        <meta name="description" content="GoNano nano-enhanced roof sealers, concrete sealers & wood sealers. Extend your roof life up to 15 years. As seen on Dragon's Den. From $0.99/sq ft. Free estimates — 705-787-1401." />
         <link rel="canonical" href={`${siteUrl}/gonano`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="GoNano Nanotechnology Coatings | Roll On Painting Muskoka" />
-        <meta property="og:description" content="Authorized GoNano dealer in Muskoka. Nanotechnology sealers for roofs, concrete, and wood. Extends surface lifespan up to 15 years. As seen on Dragon's Den." />
+        <meta property="og:title" content="GoNano Roof & Surface Sealers | Extend Roof Life 15 Years | $0.99/sq ft" />
+        <meta property="og:description" content="Nano-enhanced roof sealers, concrete sealers & wood sealers. Extend shingle life up to 15 years. Dragon's Den featured. From $0.99/sq ft." />
         <meta property="og:url" content={`${siteUrl}/gonano`} />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
@@ -156,8 +156,8 @@ const GoNanoPage = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="GoNano Nanotechnology Coatings | Roll On Painting" />
-        <meta name="twitter:description" content="Nanotechnology roof, concrete & wood sealers. Extends surface lifespan up to 15 years. Starting at $0.99/sq ft." />
+        <meta name="twitter:title" content="GoNano Roof & Surface Sealers | Extend Roof Life 15 Years" />
+        <meta name="twitter:description" content="Nano-enhanced sealers for roofs, concrete & wood. Extend shingle life up to 15 years. Dragon's Den featured. From $0.99/sq ft." />
         <meta name="twitter:image" content={ogImage} />
         
         <script type="application/ld+json">{JSON.stringify(goNanoSchema)}</script>
