@@ -244,7 +244,7 @@ export const verifiedFAQs = [
   },
   {
     question: "Do I need to be home for an estimate?",
-    answer: "For exterior projects, you don't need to be home — we can walk the property and assess everything on our own unless there are specific areas you'd like to point out. For interior projects, we do need access to the home, but you don't have to be there personally. A property manager, friend, or neighbour who can let us in works perfectly. We don't require both decision-makers to be present. We know you're busy, and so are we — sometimes it's easiest for us to take a look while you're at work."
+    answer: "For exterior projects, you don't need to be home — we can walk the property and assess everything on our own unless there are specific areas you'd like to point out. For interior projects, we do need access to the home, but you don't have to be there personally. A property manager, friend, or neighbour who can let us in works perfectly. We don't require both decision-makers to be present, and there's no high-pressure sales pitch — we'll assess the project, send you an honest quote, and let you decide on your own time. We know you're busy, and so are we — sometimes it's easiest for us to take a look while you're at work."
   }
 ];
 
