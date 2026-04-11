@@ -113,7 +113,9 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content={`${location.name}, Ontario`} />
+        <meta name="geo.position" content="45.0;-79.3" />
         <meta name="ICBM" content="45.0, -79.3" />
+        <meta httpEquiv="Content-Language" content="en-CA" />
         
         <script type="application/ld+json">{JSON.stringify(graphSchema)}</script>
       </Helmet>
