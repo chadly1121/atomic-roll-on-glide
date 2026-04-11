@@ -444,8 +444,8 @@ const SEOHelmet: React.FC = () => {
 
   return (
     <Helmet>
-      <title>Roll On Painting | HGTV Featured Painters in Huntsville, Bracebridge & Muskoka</title>
-      <meta name="description" content="HGTV featured painters serving Huntsville, Bracebridge, Gravenhurst & all of Muskoka. $5M insured. Free touch-ups for life. Clean, reliable, hassle-free painting. Call 705-787-1401." />
+      <title>Painters Muskoka | HGTV Featured | Huntsville, Bracebridge & Gravenhurst — Roll On Painting</title>
+      <meta name="description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured, WSIB covered. Interior, exterior, cabinet & cottage painting. Free touch-ups for life. Call 705-787-1401 for a free estimate." />
       <meta name="keywords" content="painters Muskoka, painting contractor Huntsville, interior painting Bracebridge, exterior painting Gravenhurst, commercial painting Ontario, cabinet refinishing Muskoka, deck staining, epoxy coatings, power washing, GoNano coating, HGTV painter, cottage painting Muskoka, spray finishing, wallpaper installation, institutional painting, pre-finishing services, Roll On Painting" />
       
       {/* Security headers */}
@@ -468,8 +468,8 @@ const SEOHelmet: React.FC = () => {
       
       {/* Open Graph */}
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={`${businessInfo.name} | ${businessInfo.tagline}`} />
-      <meta property="og:description" content={`${businessInfo.description} As seen on HGTV! Call ${businessInfo.phone.formatted}.`} />
+      <meta property="og:title" content="Painters Muskoka | HGTV Featured | Roll On Painting" />
+      <meta property="og:description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured. Interior, exterior, cabinet & cottage painting. Free touch-ups for life. 705-787-1401." />
       <meta property="og:url" content={`${siteUrl}/`} />
       <meta property="og:site_name" content={businessInfo.name} />
       <meta property="og:locale" content="en_CA" />
