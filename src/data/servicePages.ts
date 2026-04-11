@@ -41,7 +41,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Interior Painting',
     headline: 'Professional Interior Painting in Muskoka',
     description: 'Transform your indoor spaces with premium interior painting services from Roll On Painting. Expert color consultation, meticulous preparation, and flawless finishes for homes and cottages throughout Muskoka.',
-    metaDescription: 'Professional interior painting services in Muskoka. Roll On Painting offers expert color consultation, wall preparation, and premium finishes. Free quotes. Call 705-787-1401.',
+    metaDescription: 'Interior painting from $4.50/sq ft in Muskoka. Expert colour consultation, premium finishes. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
     category: 'residential',
     priceFrom: { amount: 4.50, unit: 'sq ft' },
     aiAnswerBlock: {
@@ -134,7 +134,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Exterior Painting',
     headline: 'Exterior Painting That Withstands Muskoka Weather',
     description: 'Protect and beautify your home with durable exterior painting built to withstand harsh Muskoka winters and humid summers. Roll On Painting uses weather-resistant products and proven techniques for lasting results.',
-    metaDescription: 'Exterior painting services in Muskoka. Weather-resistant finishes, thorough prep work, and 5-year warranty. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
+    metaDescription: 'Exterior painting from $5.75/sq ft in Muskoka. Weather-resistant finishes, 5-year warranty. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
     category: 'residential',
     priceFrom: { amount: 5.75, unit: 'sq ft' },
     aiAnswerBlock: {
@@ -312,7 +312,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Cabinet Refinishing',
     headline: 'Kitchen Cabinet Refinishing in Muskoka',
     description: 'Give your kitchen a fresh, modern look without the cost of a full renovation. Roll On Painting\'s cabinet refinishing transforms dated cabinets with durable, factory-quality finishes.',
-    metaDescription: 'Kitchen cabinet refinishing in Muskoka. Transform your kitchen for a fraction of replacement cost. Roll On Painting serves Huntsville, Bracebridge, Gravenhurst. Call 705-787-1401.',
+    metaDescription: 'Cabinet refinishing in Muskoka — transform your kitchen for 1/3 the cost of replacing. HGTV featured, $5M insured. Spray-finished, factory-quality results. Free estimates — 705-787-1401.',
     category: 'residential',
     aiAnswerBlock: {
       whatIncludes: [
