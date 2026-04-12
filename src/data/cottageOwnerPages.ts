@@ -143,6 +143,78 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
       { question: "Can I combine this with your Private Client program?", answer: "Yes. Many Post Road and Bridle Path clients transition into our Private Client program for ongoing, season-over-season property care." },
     ],
   },
+  {
+    slug: "forest-hill-muskoka-cottage-painting",
+    cityName: "Forest Hill",
+    metaTitle: "Forest Hill to Muskoka Cottage Painting | Roll-On Painting",
+    metaDescription: "Own a Muskoka cottage? We help Forest Hill homeowners manage painting, staining, and seasonal maintenance while they're in the city.",
+    headline: "Own a Muskoka Cottage? We Handle Everything.",
+    subheadline: "We work with Forest Hill homeowners to paint, stain, and maintain their Muskoka cottages — ready before you arrive.",
+    ctaText: "Get My Cottage Ready",
+    heroImage: HERO_IMGS.portCarling,
+    sections: [
+      { heading: "For Forest Hill Homeowners with Muskoka Properties", body: "Many Forest Hill families own cottages on Lake Joseph, Lake Rosseau, and Lake Muskoka. Managing property maintenance from the city is time-consuming. We eliminate that burden entirely — inspections, preparation, painting, staining, and seasonal upkeep — all handled on-site to the highest standard." },
+      { heading: "Fully Managed, Start to Finish", body: "We coordinate with your property manager, caretaker, or neighbour. You receive photo updates at every stage. Whether you're in Forest Hill, at the office, or travelling, your cottage project moves forward on schedule and on budget." },
+      { heading: "Exterior Services Engineered for Muskoka", body: "UV exposure on south-facing lakefront walls, lake humidity, pine needle acid on decks, and severe freeze-thaw cycles demand specialized products. We use Benjamin Moore Aura Exterior, Arborcoat stains, and marine-grade dock finishes with proper substrate preparation." },
+      { heading: "Trusted by Toronto's Cottage Owners", body: "Over 25 years in the Muskoka painting industry, featured 5 times on HGTV, fully insured with $5M liability coverage and WSIB-covered crews. Our clients want one team they can trust — that's us." },
+      { heading: "Book Before Cottage Season", body: "We plan and execute projects during spring and early summer so your property looks its best when you arrive. Book early — our cottage schedule fills 4-8 weeks in advance." }
+    ],
+    faqs: [
+      { question: "Can you do the work while I'm in Toronto?", answer: "Yes. Most GTA-based clients are not present. We coordinate access, provide photo updates, and handle everything on-site." },
+      { question: "Do you work on Lake Joseph and Lake Rosseau?", answer: "Absolutely. We serve all major Muskoka lakes including Lake Joseph, Lake Rosseau, Lake Muskoka, Lake of Bays, and surrounding communities." },
+      { question: "How far in advance should I book?", answer: "4–8 weeks ahead for cottage season work. Spring and early summer slots fill quickly." },
+      { question: "Do you handle dock and deck staining?", answer: "Yes. Complete exterior care including dock staining, deck refinishing, siding painting, and seasonal maintenance." },
+      { question: "Is there a minimum project size?", answer: "We focus on whole-property care. Most cottage projects include exterior walls, decks, docks, and trim." }
+    ]
+  },
+  {
+    slug: "lawrence-park-muskoka-cottage-painting",
+    cityName: "Lawrence Park",
+    metaTitle: "Lawrence Park to Muskoka Cottage Painting | Roll-On Painting",
+    metaDescription: "Own a Muskoka cottage? We help Lawrence Park homeowners manage painting, staining, and maintenance — ready when you arrive.",
+    headline: "Your Muskoka Cottage, Maintained While You're in the City",
+    subheadline: "We work with Lawrence Park families to manage, paint, and maintain their Muskoka properties — professionally and on schedule.",
+    ctaText: "Get My Cottage Ready",
+    heroImage: HERO_IMGS.windermere,
+    sections: [
+      { heading: "For Lawrence Park Families with Muskoka Cottages", body: "Lawrence Park homeowners with properties on Lake Muskoka, Lake Rosseau, and Peninsula Lake know the challenge — coordinating trades from the city. We remove that entirely. One point of contact, fully managed service, results you can trust." },
+      { heading: "We Handle Access, Scheduling, and Updates", body: "You don't need to be there. We coordinate with property managers, caretakers, or neighbours. Detailed photo documentation throughout and a final completion report." },
+      { heading: "Cottage Painting for Muskoka Weather", body: "Intense UV, constant moisture, ice damage, and pine needle acid demand specialized coatings. We use Benjamin Moore's premium exterior lines with thorough preparation for lasting results." },
+      { heading: "Trusted by GTA Cottage Owners", body: "Over 25 years in Muskoka. Featured 5 times on HGTV. WSIB covered and $5M insured. One team, one standard, every project." },
+      { heading: "Get It Done Before the Season", body: "We schedule projects through spring and early summer so everything is finished before your first weekend up. Plan ahead — our cottage calendar fills months in advance." }
+    ],
+    faqs: [
+      { question: "Can you complete work while I'm in Lawrence Park?", answer: "Yes. We manage access, provide regular updates, and handle every detail on-site." },
+      { question: "What lakes do you serve?", answer: "All Muskoka lakes — Lake Muskoka, Lake Rosseau, Lake Joseph, Lake of Bays, Peninsula Lake, and surrounding waterfront areas." },
+      { question: "How do you handle property access?", answer: "We coordinate with you, your property manager, or a neighbour. Lockbox codes and key handoffs are common." },
+      { question: "What services do you offer?", answer: "Full exterior painting, deck and dock staining, siding maintenance, trim refinishing, seasonal touch-ups, and maintenance planning." },
+      { question: "How early should I book?", answer: "Contact us by February or March to secure a spring or early summer start date." }
+    ]
+  },
+  {
+    slug: "vaughan-muskoka-cottage-painting",
+    cityName: "Vaughan",
+    metaTitle: "Vaughan to Muskoka Cottage Painting | Roll-On Painting",
+    metaDescription: "Own a Muskoka cottage? We help Vaughan homeowners manage painting, staining, and seasonal maintenance while they're in the city.",
+    headline: "Own a Muskoka Cottage? We Keep It Ready.",
+    subheadline: "We work with Vaughan homeowners to handle painting, staining, and exterior care for their Muskoka properties — no trips required.",
+    ctaText: "Get My Cottage Ready",
+    heroImage: HERO_IMGS.lakeOfBays,
+    sections: [
+      { heading: "For Vaughan Homeowners with Muskoka Properties", body: "Vaughan families with cottages on Lake Muskoka, Lake of Bays, and surrounding lakes face a common challenge — maintaining a property two hours away. We handle inspections, preparation, painting, staining, and seasonal upkeep entirely on-site." },
+      { heading: "A Hands-Off, Fully Managed Process", body: "Access coordination, material selection, scheduling around your usage, photo documentation, and completion reporting. You tell us what you need — we handle the rest." },
+      { heading: "Exterior Coatings Built for Muskoka", body: "UV exposure, moisture infiltration, and freeze-thaw cycles break down coatings faster than in the city. We use Benjamin Moore Aura Exterior and Arborcoat stains with thorough substrate preparation." },
+      { heading: "Trusted by GTA Cottage Owners", body: "Clients across Vaughan, Woodbridge, Kleinburg, and Maple choose us for reliable results. 25+ years in Muskoka, 5× on HGTV, $5M insured, WSIB-covered." },
+      { heading: "Ready Before Cottage Season", body: "We complete projects before you arrive for summer. Book early — spring is our busiest period for cottage clients." }
+    ],
+    faqs: [
+      { question: "Can you do everything while I'm in Vaughan?", answer: "Yes. We coordinate access, send photo updates, and manage the project from start to finish." },
+      { question: "What Muskoka lakes do you serve?", answer: "All of them — Lake Muskoka, Lake of Bays, Lake Rosseau, Lake Joseph, Peninsula Lake, and surrounding communities." },
+      { question: "How do you handle property access?", answer: "Through you, your property manager, or a neighbour. Lockbox codes and key handoffs are common." },
+      { question: "What services do you offer?", answer: "Exterior painting, interior painting, deck and dock staining, siding maintenance, trim refinishing, and seasonal touch-ups." },
+      { question: "When should I book?", answer: "Contact us by February or March for a spring start. Our cottage calendar fills months ahead." }
+    ]
+  },
 ];
 
 export const getCottageOwnerPageBySlug = (slug: string): CottageOwnerPageData | undefined =>

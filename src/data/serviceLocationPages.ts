@@ -1566,6 +1566,365 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/interior-kitchen-masking-prep.webp',
       '/lovable-uploads/interior-modern-cottage-living.webp'
     ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // GRAVENHURST — 5 service+town combo pages
+  // ═══════════════════════════════════════════════════════════════
+  {
+    slug: 'exterior-painting-gravenhurst',
+    name: 'Exterior Painting Gravenhurst',
+    headline: 'Exterior Painting in Gravenhurst — Gateway to Muskoka',
+    description: 'Professional exterior painting services in Gravenhurst. Premium coatings engineered for Muskoka\'s harsh UV, humidity, and freeze-thaw cycles. Over 25 years of local experience.',
+    metaDescription: 'Expert exterior painting in Gravenhurst, ON. UV-resistant coatings, cedar-safe stains, and 25+ years Muskoka experience. Free Touch Ups for Life. Get your free quote.',
+    category: 'residential',
+    priceFrom: { amount: 5.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full exterior prep (power wash, scrape, sand, caulk)', 'Premium exterior paints — Benjamin Moore Aura & Regal Select', 'UV-resistant coatings for south-facing lakefront walls', 'Trim, fascia, soffit, and window frame finishing', 'Cedar-compatible stain systems', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Gravenhurst homeowners updating curb appeal', 'Cottage owners on Lake Muskoka and Gull Lake', 'Heritage property owners in downtown Gravenhurst', 'Property managers maintaining rental cottages', 'Builders and renovators needing exterior finishing'],
+      whereAvailable: ['Gravenhurst', 'Muskoka Wharf', 'Gull Lake', 'Kahshe Lake', 'Severn Bridge', 'South Muskoka', 'Lake Muskoka south shore'],
+      howQuotesWork: ['Call or submit the online form', 'We visit your Gravenhurst property for a walkthrough', 'Receive a detailed written quote within 48 hours', 'Book your preferred start date', 'Work completed with photo documentation', 'Final walkthrough and Free Touch Ups for Life activation']
+    },
+    benefits: ['25+ years painting Gravenhurst homes and cottages', 'Featured 5 times on HGTV', 'Coatings engineered for Muskoka\'s 4-season climate', 'WSIB covered, $5M insured', 'Free Touch Ups for Life on every project'],
+    process: [
+      { step: 'Property Assessment', description: 'We inspect your Gravenhurst property for moisture damage, peeling, and substrate condition.' },
+      { step: 'Surface Preparation', description: 'Power washing, scraping, sanding, and caulking — the foundation of a lasting finish.' },
+      { step: 'Priming', description: 'Targeted priming on bare wood, stains, and problem areas for maximum adhesion.' },
+      { step: 'Paint Application', description: 'Two coats of premium exterior paint applied with professional spray and back-roll technique.' },
+      { step: 'Detail Work', description: 'Trim, fascia, soffits, and window frames finished with precision brush work.' },
+      { step: 'Final Inspection', description: 'Walkthrough with you to ensure every detail meets our standard.' }
+    ],
+    faqs: [
+      { question: 'How much does exterior painting cost in Gravenhurst?', answer: 'Typical Gravenhurst homes start at $5.50/sq ft. Cottages and waterfront properties vary based on access and condition. We provide free on-site quotes.' },
+      { question: 'When is the best time to paint exteriors in Gravenhurst?', answer: 'Late May through early October. We schedule Gravenhurst projects to avoid blackfly season and ensure optimal drying conditions.' },
+      { question: 'Do you paint cottages on Lake Muskoka?', answer: 'Yes. We serve all of Lake Muskoka including the south shore near Gravenhurst, Muskoka Wharf, and surrounding waterfront.' },
+      { question: 'How long does exterior painting take in Gravenhurst?', answer: 'Most Gravenhurst homes take 5-8 days depending on size, prep work needed, and weather conditions.' },
+      { question: 'Do you handle wood rot repair before painting?', answer: 'Yes. We repair rotted trim, fascia, and siding before painting. Proper substrate repair is essential for a lasting finish in Muskoka.' },
+      { question: 'What paint brands do you use?', answer: 'Benjamin Moore Aura Exterior and Regal Select — premium products engineered to withstand Muskoka UV, humidity, and freeze-thaw.' },
+      { question: 'Are you insured for work in Gravenhurst?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Certificates available on request.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every exterior project includes Free Touch Ups for Life. If paint chips or peels, we fix it — no charge, no expiry.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
+  },
+  {
+    slug: 'interior-painting-gravenhurst',
+    name: 'Interior Painting Gravenhurst',
+    headline: 'Interior Painting in Gravenhurst — Refresh Your Space',
+    description: 'Professional interior painting in Gravenhurst. From heritage homes on Muskoka Road to modern cottages on Gull Lake. Meticulous prep, premium paints, flawless finishes.',
+    metaDescription: 'Interior painting in Gravenhurst, ON. Premium Benjamin Moore paints, meticulous prep, and 25+ years Muskoka experience. Free Touch Ups for Life. Get a quote today.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Complete room preparation — furniture protection, taping, patching', 'Premium Benjamin Moore paints — Regal Select, Aura', 'Walls, ceilings, trim, doors, and closets', 'Colour consultation available', 'Drywall repair and texture matching', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Gravenhurst homeowners refreshing interiors', 'Cottage owners preparing for the season', 'Landlords and property managers', 'Renovators needing professional finishing', 'Heritage home owners in downtown Gravenhurst'],
+      whereAvailable: ['Gravenhurst', 'Gull Lake', 'Kahshe Lake', 'Muskoka Wharf', 'South Muskoka'],
+      howQuotesWork: ['Contact us by phone or form', 'Free on-site walkthrough at your Gravenhurst property', 'Detailed written quote within 48 hours', 'Book your start date', 'Project completed with care and precision', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does interior painting cost in Gravenhurst?', answer: 'Interior painting in Gravenhurst starts at $4.50/sq ft. Final pricing depends on room count, ceiling height, and prep work required.' },
+      { question: 'Can you paint my cottage interior before I arrive for summer?', answer: 'Absolutely. Many Gravenhurst cottage owners book us to complete interior work before the season starts. We coordinate access and provide photo updates.' },
+      { question: 'How long does it take to paint a house interior in Gravenhurst?', answer: 'A typical 3-bedroom Gravenhurst home takes 3-5 days. Larger properties and cottages with vaulted ceilings may take longer.' },
+      { question: 'Do you do drywall repair before painting?', answer: 'Yes — patching holes, fixing cracks, and matching textures is included in our preparation process.' },
+      { question: 'What paint brands do you recommend for cottage interiors?', answer: 'Benjamin Moore Regal Select for most applications. For high-moisture areas like bathrooms and kitchens, we use Aura Bath & Spa.' },
+      { question: 'Do I need to move my furniture?', answer: 'No. We move and protect all furniture as part of our preparation. Everything is returned to its original position.' },
+      { question: 'Do you paint cottage log interiors?', answer: 'Yes. We handle log cabin interiors with appropriate stains and finishes designed for natural wood surfaces.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every interior project includes Free Touch Ups for Life. Scuffs, marks, or wear — we fix them at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/interior-modern-cottage-living.webp', '/lovable-uploads/interior-kitchen-masking-prep.webp']
+  },
+  {
+    slug: 'cottage-painting-gravenhurst',
+    name: 'Cottage Painting Gravenhurst',
+    headline: 'Cottage Painting in Gravenhurst — Lake Muskoka & Gull Lake',
+    description: 'Complete cottage painting services in Gravenhurst. Interior and exterior, deck staining, and seasonal maintenance for Lake Muskoka and Gull Lake properties.',
+    metaDescription: 'Cottage painting in Gravenhurst — interior, exterior, decks & docks. Serving Lake Muskoka & Gull Lake cottages for 25+ years. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 5.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full interior and exterior cottage painting', 'Deck and dock staining', 'Cedar siding maintenance and refinishing', 'Seasonal preparation and touch-up programs', 'Window and trim restoration', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Cottage owners on Lake Muskoka south shore', 'Gull Lake and Kahshe Lake property owners', 'Absentee cottage owners needing managed service', 'Families preparing cottages for sale or rental', 'Property managers in the Gravenhurst area'],
+      whereAvailable: ['Gravenhurst', 'Lake Muskoka', 'Gull Lake', 'Kahshe Lake', 'Severn Bridge', 'South Muskoka'],
+      howQuotesWork: ['Call or submit our online form', 'We visit your cottage for a full assessment', 'Detailed quote covering all surfaces within 48 hours', 'Schedule work around your cottage usage', 'Photo documentation throughout the project', 'Free Touch Ups for Life activated on completion']
+    },
+    faqs: [
+      { question: 'Can you paint my cottage while I\'m not there?', answer: 'Yes. Most of our Gravenhurst cottage clients aren\'t present during work. We coordinate access, provide photo updates, and handle everything on-site.' },
+      { question: 'How much does cottage painting cost in Gravenhurst?', answer: 'Cottage painting starts at $5.50/sq ft for exterior work. Total project cost depends on size, condition, and scope. We provide detailed free quotes.' },
+      { question: 'Do you paint cottages on Gull Lake?', answer: 'Yes. We serve all Gravenhurst-area lakes including Gull Lake, Kahshe Lake, and the south shore of Lake Muskoka.' },
+      { question: 'When should I book for cottage season?', answer: 'Book by February or March for a spring/early summer start. Our cottage schedule fills 4-8 weeks in advance.' },
+      { question: 'Do you stain decks and docks as part of cottage painting?', answer: 'Yes. We offer complete exterior care — painting, deck staining, dock refinishing, trim, and siding maintenance.' },
+      { question: 'What products do you use on cottage exteriors?', answer: 'Premium Benjamin Moore exterior paints and high-performance stains rated for Muskoka\'s UV, moisture, and freeze-thaw conditions.' },
+      { question: 'Is there a minimum project size?', answer: 'We focus on whole-property care. Most cottage projects include multiple surfaces — exterior walls, deck, dock, and trim.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every cottage project includes Free Touch Ups for Life. Weather wear, chips, or fading — we address it at no cost.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
+  },
+  {
+    slug: 'deck-staining-gravenhurst',
+    name: 'Deck Staining Gravenhurst',
+    headline: 'Deck & Dock Staining in Gravenhurst — Built for Muskoka Weather',
+    description: 'Professional deck and dock staining in Gravenhurst. UV-protective, moisture-resistant finishes for Lake Muskoka and Gull Lake properties. 25+ years experience.',
+    metaDescription: 'Deck & dock staining in Gravenhurst, ON. UV-protective finishes for Muskoka\'s harsh climate. 25+ years experience. Free Touch Ups for Life. Get a quote.',
+    category: 'residential',
+    priceFrom: { amount: 4.00, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full deck and dock surface preparation', 'Power washing and brightening', 'Premium semi-transparent and solid stains', 'UV-protective coatings for lakefront exposure', 'Railing, stairs, and post finishing', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Gravenhurst homeowners with wood decks', 'Lake Muskoka and Gull Lake cottage owners', 'Property managers maintaining rental properties', 'Homeowners with docks needing refinishing', 'Anyone with weathered or greying wood surfaces'],
+      whereAvailable: ['Gravenhurst', 'Lake Muskoka', 'Gull Lake', 'Kahshe Lake', 'Muskoka Wharf', 'South Muskoka'],
+      howQuotesWork: ['Contact us by phone or online form', 'Free on-site assessment of your deck/dock', 'Written quote with product recommendations', 'Schedule around your preferred dates', 'Work completed with weather-appropriate timing', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does deck staining cost in Gravenhurst?', answer: 'Deck staining in Gravenhurst starts at $4.00/sq ft. Dock staining is similar. Price depends on size, condition, and product selected.' },
+      { question: 'How often should I stain my deck in Muskoka?', answer: 'Every 2-3 years for horizontal surfaces exposed to Muskoka weather. South-facing docks may need attention sooner due to UV exposure.' },
+      { question: 'Do you stain docks on Lake Muskoka?', answer: 'Yes. We stain docks, boathouses, and waterfront structures across Lake Muskoka, Gull Lake, and Kahshe Lake.' },
+      { question: 'What stain brands do you use?', answer: 'We use premium stains from Benjamin Moore (Arborcoat) and specialized marine-grade finishes for docks and high-wear surfaces.' },
+      { question: 'Can you strip old stain before re-staining?', answer: 'Yes. We offer full stripping and brightening as part of our prep process when the old finish needs to be removed.' },
+      { question: 'When is the best time to stain a deck in Gravenhurst?', answer: 'Late May through September when temperatures are consistently above 10°C and rain risk is manageable.' },
+      { question: 'Do you stain pressure-treated wood?', answer: 'Yes, once it has properly dried (usually 6-12 months after installation). We confirm moisture levels before application.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every staining project includes Free Touch Ups for Life. If the finish wears prematurely, we touch it up — no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
+  },
+  {
+    slug: 'cabinet-painting-gravenhurst',
+    name: 'Cabinet Painting Gravenhurst',
+    headline: 'Cabinet Painting in Gravenhurst — Transform Your Kitchen',
+    description: 'Professional cabinet painting and refinishing in Gravenhurst. HVLP spray finish, premium lacquers, and factory-smooth results at a fraction of replacement cost.',
+    metaDescription: 'Cabinet painting in Gravenhurst, ON. Factory-smooth HVLP spray finishes, premium paints, and 25+ years experience. Save vs. replacing. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 3500, unit: 'per kitchen' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full cabinet degreasing and scuff-sanding', 'High-adhesion primer application', 'HVLP spray finish — factory-smooth results', 'Premium cabinet-grade paints and lacquers', 'Hardware removal and reinstallation', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Gravenhurst homeowners updating their kitchen', 'Cottage owners wanting a fresh kitchen look', 'Landlords improving rental property kitchens', 'Anyone with dated oak, maple, or thermofoil cabinets', 'Renovators needing professional cabinet finishing'],
+      whereAvailable: ['Gravenhurst', 'Gull Lake', 'Kahshe Lake', 'Muskoka Wharf', 'South Muskoka'],
+      howQuotesWork: ['Call or submit our online form', 'Free kitchen assessment at your Gravenhurst property', 'Detailed quote with colour and finish options', 'Book your preferred dates', 'Project completed in 5-7 days typically', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does cabinet painting cost in Gravenhurst?', answer: 'Most Gravenhurst kitchen cabinet projects start at $3,500. Final cost depends on kitchen size, number of doors, and finish selected.' },
+      { question: 'Is cabinet painting worth it vs. new cabinets?', answer: 'If your cabinets are structurally sound, absolutely. Save $10,000-$20,000 by refinishing instead of replacing. Brand-new look at roughly 1/3 the cost.' },
+      { question: 'How long does cabinet painting take?', answer: 'Typically 5-7 days from start to finish for a standard Gravenhurst kitchen. Larger kitchens or multi-room projects take longer.' },
+      { question: 'Do you spray on-site or off-site?', answer: 'Typically on-site with HVLP spray equipment and full containment. Some projects may have doors sprayed in our controlled shop.' },
+      { question: 'Can you paint cottage kitchen cabinets?', answer: 'Yes. We frequently paint cottage kitchen cabinets in the Gravenhurst area. Work can be completed while you\'re not at the cottage.' },
+      { question: 'What finish options are available?', answer: 'Matte, satin, semi-gloss, and high-gloss. We recommend satin or semi-gloss for kitchens — durable and easy to clean.' },
+      { question: 'Can you change the colour of my cabinets?', answer: 'Yes. Any colour change is possible. We handle everything from dark stained oak to bright white modern finishes.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every cabinet project includes Free Touch Ups for Life. Chips or marks from daily use? We fix them — no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/interior-kitchen-masking-prep.webp']
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // PORT CARLING — 4 service+town combo pages (no cabinet painting)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    slug: 'exterior-painting-port-carling',
+    name: 'Exterior Painting Port Carling',
+    headline: 'Exterior Painting in Port Carling — Lake Rosseau & Lake Joseph',
+    description: 'Premium exterior painting in Port Carling for waterfront estates on Lake Rosseau and Lake Joseph. UV-resistant coatings, cedar expertise, and fully managed service.',
+    metaDescription: 'Exterior painting in Port Carling, ON. Premium finishes for Lake Rosseau & Lake Joseph estates. 25+ years Muskoka experience. WSIB, $5M insured. Free quote.',
+    category: 'residential',
+    priceFrom: { amount: 6.00, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Complete exterior preparation — pressure wash, scrape, sand, prime', 'Premium coatings — Benjamin Moore Aura Exterior', 'Cedar siding and shingle expertise', 'UV-resistant systems for south-facing lakefront elevations', 'Trim, fascia, soffit, shutters, and window finishing', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Port Carling waterfront estate owners', 'Lake Rosseau and Lake Joseph cottage owners', 'Absentee owners needing fully managed service', 'Property managers in the Port Carling area', 'Heritage boathouse and Muskoka room owners'],
+      whereAvailable: ['Port Carling', 'Lake Rosseau', 'Lake Joseph', 'Windermere', 'Minett', 'Port Sandfield', 'Milford Bay'],
+      howQuotesWork: ['Contact us by phone or private consultation form', 'On-site property assessment at your Port Carling estate', 'Detailed written proposal within 48 hours', 'Schedule around your cottage usage calendar', 'Photo documentation at every stage', 'Free Touch Ups for Life activated on completion']
+    },
+    faqs: [
+      { question: 'How much does exterior painting cost in Port Carling?', answer: 'Port Carling waterfront properties typically start at $6.00/sq ft due to access complexity and premium finishing standards. Free on-site quotes provided.' },
+      { question: 'Can you paint my cottage while I\'m in Toronto?', answer: 'Yes. Most Port Carling clients are in the GTA during the work. We coordinate access, provide photo updates, and handle everything on-site.' },
+      { question: 'Do you paint boathouses and Muskoka rooms?', answer: 'Yes. We handle all waterfront structures — main cottage, boathouse, bunkie, Muskoka room, and dock structures.' },
+      { question: 'What makes Port Carling exteriors different?', answer: 'South-facing lakefront walls get extreme UV. Lake proximity means constant moisture. We use coatings specifically formulated for these Muskoka conditions.' },
+      { question: 'How far in advance should I book?', answer: 'For Port Carling, we recommend booking 8-12 weeks ahead. Premium waterfront properties require careful scheduling.' },
+      { question: 'Do you work on Lake Joseph properties?', answer: 'Absolutely. We serve all of Lake Joseph, Lake Rosseau, and surrounding Port Carling waterfront communities.' },
+      { question: 'Are you insured for waterfront work?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Essential for waterfront estate work.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every project includes Free Touch Ups for Life. Weather wear, fading, or chips — we fix them at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
+  },
+  {
+    slug: 'interior-painting-port-carling',
+    name: 'Interior Painting Port Carling',
+    headline: 'Interior Painting in Port Carling — Premium Cottage Interiors',
+    description: 'Professional interior painting in Port Carling. From modern open-concept cottages to heritage Muskoka great rooms. Premium paints, meticulous prep, flawless results.',
+    metaDescription: 'Interior painting in Port Carling, ON. Premium Benjamin Moore finishes for Lake Rosseau & Lake Joseph cottages. 25+ years experience. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 5.00, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full interior preparation — protection, patching, sanding', 'Premium Benjamin Moore Aura and Regal Select paints', 'Walls, vaulted ceilings, trim, doors, and built-ins', 'Colour consultation for cottage interiors', 'Log and natural wood finishing', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Port Carling cottage owners refreshing interiors', 'Lake Rosseau and Lake Joseph estate owners', 'Absentee owners wanting pre-season interior refresh', 'Renovators and builders needing premium finishing', 'Property managers in Port Carling'],
+      whereAvailable: ['Port Carling', 'Lake Rosseau', 'Lake Joseph', 'Windermere', 'Minett', 'Port Sandfield'],
+      howQuotesWork: ['Contact us by phone or form', 'Free on-site consultation at your Port Carling property', 'Detailed written quote within 48 hours', 'Schedule around your cottage calendar', 'Work completed with photo documentation', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does interior painting cost in Port Carling?', answer: 'Port Carling cottage interiors typically start at $5.00/sq ft. Vaulted ceilings and complex layouts may be higher. Free on-site quotes.' },
+      { question: 'Can you complete interior work before cottage season?', answer: 'Yes. We schedule pre-season interior work through spring so your cottage is ready before your first visit.' },
+      { question: 'Do you paint vaulted cottage ceilings?', answer: 'Yes. We have the scaffolding and equipment for vaulted, cathedral, and double-height ceilings common in Port Carling cottages.' },
+      { question: 'Do you handle log cottage interiors?', answer: 'Yes. We stain and finish log interiors with appropriate products designed for natural wood movement and breathability.' },
+      { question: 'What paint sheen is best for cottage interiors?', answer: 'Eggshell for walls, satin for trim and high-traffic areas, and semi-gloss for kitchens and bathrooms. We advise based on your space.' },
+      { question: 'Do I need to be at the cottage during the work?', answer: 'No. We coordinate access with you or your property manager. Photo updates keep you informed throughout.' },
+      { question: 'How long does interior painting take in a Port Carling cottage?', answer: 'Depends on size — a typical 3-bedroom cottage takes 4-6 days. Larger estates with multiple buildings take longer.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every interior project includes Free Touch Ups for Life. Scuffs, marks, or wear — we fix them at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/interior-modern-cottage-living.webp']
+  },
+  {
+    slug: 'cottage-painting-port-carling',
+    name: 'Cottage Painting Port Carling',
+    headline: 'Cottage Painting in Port Carling — Complete Property Care',
+    description: 'Full-service cottage painting in Port Carling. Interior, exterior, decks, docks, and boathouses. Serving Lake Rosseau, Lake Joseph, and Windermere for 25+ years.',
+    metaDescription: 'Cottage painting in Port Carling — interior, exterior, decks, docks & boathouses. Lake Rosseau & Lake Joseph specialists. 25+ years. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 5.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Complete cottage interior and exterior painting', 'Deck, dock, and boathouse staining', 'Cedar siding maintenance and restoration', 'Seasonal maintenance programs', 'Multi-structure property care (bunkie, Muskoka room, gazebo)', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Port Carling cottage owners', 'Lake Rosseau and Lake Joseph waterfront property owners', 'GTA-based absentee cottage owners', 'Families preparing cottages for sale', 'Property managers overseeing multiple waterfront units'],
+      whereAvailable: ['Port Carling', 'Lake Rosseau', 'Lake Joseph', 'Windermere', 'Minett', 'Port Sandfield', 'Milford Bay'],
+      howQuotesWork: ['Call or submit our private consultation form', 'Full property assessment at your Port Carling cottage', 'Detailed written proposal covering all structures', 'Schedule around your preferred dates', 'Photo documentation throughout the entire project', 'Free Touch Ups for Life activated on completion']
+    },
+    faqs: [
+      { question: 'Can you manage the entire project while I\'m in Toronto?', answer: 'Yes. Most Port Carling cottage clients are GTA-based. We handle access, scheduling, execution, and reporting — completely hands-off for you.' },
+      { question: 'How much does full cottage painting cost in Port Carling?', answer: 'Depends on scope. Exterior starts at $5.50/sq ft. Full property care (main cottage, boathouse, deck, dock) is quoted as a package.' },
+      { question: 'Do you paint boathouses and bunkies?', answer: 'Yes. We handle all structures on your property — main cottage, boathouse, bunkie, Muskoka room, gazebo, and dock structures.' },
+      { question: 'When should I book for cottage season?', answer: 'February-March for a spring start. Port Carling is our busiest area — early booking is essential.' },
+      { question: 'Do you offer seasonal maintenance programs?', answer: 'Yes. Many Port Carling clients join our Private Client program for ongoing season-over-season property care.' },
+      { question: 'What products do you use on waterfront cottages?', answer: 'Benjamin Moore Aura Exterior, Arborcoat stains, and marine-grade finishes for docks — all rated for Muskoka conditions.' },
+      { question: 'Are you insured for multi-structure properties?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Certificates available on request.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every cottage project includes Free Touch Ups for Life. Chips, peeling, or weather wear — we fix it at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
+  },
+  {
+    slug: 'deck-staining-port-carling',
+    name: 'Deck Staining Port Carling',
+    headline: 'Deck & Dock Staining in Port Carling — Waterfront-Grade Finishes',
+    description: 'Professional deck and dock staining in Port Carling. Marine-grade finishes for Lake Rosseau and Lake Joseph waterfront properties. UV and moisture protection.',
+    metaDescription: 'Deck & dock staining in Port Carling, ON. Marine-grade finishes for Lake Rosseau & Lake Joseph. UV protection, 25+ years experience. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full deck and dock surface preparation', 'Power washing and wood brightening', 'Premium semi-transparent and solid stains', 'Marine-grade dock finishes', 'Railing, stairs, and post finishing', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Port Carling waterfront property owners', 'Lake Rosseau and Lake Joseph cottage owners', 'Boathouse and dock owners needing refinishing', 'Property managers maintaining rental cottages', 'Homeowners with weathered decks and docks'],
+      whereAvailable: ['Port Carling', 'Lake Rosseau', 'Lake Joseph', 'Windermere', 'Minett', 'Port Sandfield'],
+      howQuotesWork: ['Call or submit our online form', 'Free on-site assessment of your deck and dock', 'Written quote with product recommendations', 'Schedule around your cottage calendar', 'Work completed with weather-appropriate timing', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does deck staining cost in Port Carling?', answer: 'Deck staining in Port Carling starts at $4.50/sq ft. Dock staining is similar. Pricing depends on size, condition, and product selected.' },
+      { question: 'Do you stain docks on Lake Rosseau and Lake Joseph?', answer: 'Yes. We stain docks, boathouse decks, and all waterfront structures across Lake Rosseau, Lake Joseph, and surrounding areas.' },
+      { question: 'How often should I re-stain my waterfront deck?', answer: 'Every 2-3 years for horizontal surfaces. Docks and south-facing decks may need attention sooner due to UV and water splash exposure.' },
+      { question: 'What stain do you recommend for waterfront docks?', answer: 'Marine-grade finishes with maximum UV and moisture resistance. We select products based on wood type and exposure level.' },
+      { question: 'Can you stain my deck while I\'m in the city?', answer: 'Yes. We coordinate access and handle everything on-site. Photo updates provided throughout the process.' },
+      { question: 'Do you power wash before staining?', answer: 'Yes. Thorough power washing and wood brightening is included in every staining project. Proper prep is essential for adhesion.' },
+      { question: 'Can you stain a new cedar deck?', answer: 'Yes, once properly dried. New cedar typically needs 3-6 months before staining. We test moisture levels before application.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every staining project includes Free Touch Ups for Life. Wear or fading — we touch it up at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // BARRIE — 4 service+town combo pages (exterior, interior, cabinet, deck staining)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    slug: 'exterior-painting-barrie',
+    name: 'Exterior Painting Barrie',
+    headline: 'Exterior Painting in Barrie — Professional Results, Guaranteed',
+    description: 'Professional exterior painting in Barrie, ON. Premium coatings for Simcoe County homes. Weather-tough finishes, meticulous prep, and Free Touch Ups for Life.',
+    metaDescription: 'Exterior painting in Barrie, ON. Premium Benjamin Moore coatings, 25+ years experience, WSIB covered, $5M insured. Free Touch Ups for Life. Get a free quote.',
+    category: 'residential',
+    priceFrom: { amount: 5.00, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full exterior prep — power wash, scrape, sand, caulk, prime', 'Premium Benjamin Moore exterior paints', 'Trim, fascia, soffit, and window frame finishing', 'Vinyl siding, stucco, and brick painting', 'Garage door and outbuilding painting', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Barrie homeowners updating curb appeal', 'New build homeowners wanting premium finishing', 'Property managers and landlords', 'Real estate agents preparing listings', 'Commercial property owners in Barrie'],
+      whereAvailable: ['Barrie', 'Innisfil', 'Oro-Medonte', 'Springwater', 'Midhurst', 'Angus', 'Shanty Bay'],
+      howQuotesWork: ['Call or submit the online form', 'Free on-site walkthrough at your Barrie property', 'Detailed written quote within 48 hours', 'Book your preferred start date', 'Work completed with photo documentation', 'Final walkthrough and Free Touch Ups for Life activation']
+    },
+    faqs: [
+      { question: 'How much does exterior painting cost in Barrie?', answer: 'Exterior painting in Barrie starts at $5.00/sq ft. Pricing depends on home size, stories, and surface condition. Free on-site quotes provided.' },
+      { question: 'When is the best time to paint a house exterior in Barrie?', answer: 'Late May through October. Barrie\'s climate allows a longer painting season than Muskoka, but we still plan around rain and temperature.' },
+      { question: 'Do you paint vinyl siding in Barrie?', answer: 'Yes. Vinyl siding can be painted with specialized bonding primers and flexible exterior coatings. It\'s a cost-effective alternative to replacement.' },
+      { question: 'How long does exterior painting take in Barrie?', answer: 'A typical Barrie home takes 5-8 days. Multi-story homes and larger properties may take longer depending on prep needs.' },
+      { question: 'Do you paint stucco homes?', answer: 'Yes. Stucco requires specific primers and elastomeric coatings. We have extensive experience with stucco exteriors in Barrie and Simcoe County.' },
+      { question: 'Are you based near Barrie?', answer: 'We\'re based in Muskoka and serve Barrie and all of Simcoe County. Our crews work in Barrie regularly.' },
+      { question: 'Are you insured?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Certificates available on request.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every exterior project includes Free Touch Ups for Life. If paint chips or peels, we fix it — no charge, no expiry.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
+  },
+  {
+    slug: 'interior-painting-barrie',
+    name: 'Interior Painting Barrie',
+    headline: 'Interior Painting in Barrie — Transform Every Room',
+    description: 'Professional interior painting in Barrie, ON. Premium paints, meticulous preparation, and flawless finishes for homes across Simcoe County.',
+    metaDescription: 'Interior painting in Barrie, ON. Premium Benjamin Moore paints, meticulous prep, 25+ years experience. Free Touch Ups for Life. Get your free quote today.',
+    category: 'residential',
+    priceFrom: { amount: 4.00, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Complete room preparation — protection, patching, sanding', 'Premium Benjamin Moore Regal Select and Aura paints', 'Walls, ceilings, trim, doors, and closets', 'Colour consultation available', 'Drywall repair and texture matching', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Barrie homeowners refreshing interiors', 'New homeowners personalizing their space', 'Landlords and property managers', 'Real estate agents staging for sale', 'Renovators needing professional finishing'],
+      whereAvailable: ['Barrie', 'Innisfil', 'Oro-Medonte', 'Springwater', 'Midhurst', 'Angus'],
+      howQuotesWork: ['Contact us by phone or form', 'Free on-site walkthrough at your Barrie property', 'Detailed written quote within 48 hours', 'Book your start date', 'Project completed with precision and care', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does interior painting cost in Barrie?', answer: 'Interior painting in Barrie starts at $4.00/sq ft. Final pricing depends on room count, ceiling height, and prep work needed.' },
+      { question: 'How long does it take to paint a house interior in Barrie?', answer: 'A typical 3-bedroom Barrie home takes 3-5 days. Open-concept layouts and high ceilings may extend the timeline.' },
+      { question: 'Do you paint new construction interiors?', answer: 'Yes. We work with builders and homeowners on new build interiors throughout Barrie and Simcoe County.' },
+      { question: 'Can you remove popcorn ceilings?', answer: 'Yes. We offer popcorn ceiling removal and retexturing as part of our interior services in Barrie.' },
+      { question: 'Do you do accent walls and feature walls?', answer: 'Yes. From bold accent walls to subtle tone-on-tone features — we handle all colour and design requests.' },
+      { question: 'Do I need to move my furniture?', answer: 'No. We move and protect all furniture as part of our preparation. Everything is returned to its original position.' },
+      { question: 'What paint sheens do you recommend?', answer: 'Eggshell for living areas, satin for trim and hallways, semi-gloss for kitchens and bathrooms. We advise based on your space.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every interior project includes Free Touch Ups for Life. Scuffs, marks, or wear — we fix them at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/interior-modern-cottage-living.webp']
+  },
+  {
+    slug: 'cabinet-painting-barrie',
+    name: 'Cabinet Painting Barrie',
+    headline: 'Cabinet Painting in Barrie — New Kitchen, Fraction of the Cost',
+    description: 'Professional cabinet painting in Barrie. HVLP spray finish, premium paints, and factory-smooth results. Save thousands vs. replacing your cabinets.',
+    metaDescription: 'Cabinet painting in Barrie, ON. Factory-smooth HVLP spray finish, premium paints, 25+ years experience. Save vs. replacing. Free Touch Ups for Life.',
+    category: 'residential',
+    priceFrom: { amount: 3500, unit: 'per kitchen' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full cabinet degreasing and scuff-sanding', 'High-adhesion primer application', 'HVLP spray finish — factory-smooth results', 'Premium cabinet-grade paints and lacquers', 'Hardware removal and reinstallation', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Barrie homeowners updating their kitchen', 'Anyone with dated oak, maple, or thermofoil cabinets', 'Landlords improving rental property value', 'Real estate agents staging kitchens for sale', 'Renovators needing professional cabinet finishing'],
+      whereAvailable: ['Barrie', 'Innisfil', 'Oro-Medonte', 'Springwater', 'Midhurst', 'Angus'],
+      howQuotesWork: ['Call or submit our online form', 'Free kitchen assessment at your Barrie home', 'Detailed quote with colour and finish options', 'Book your preferred dates', 'Project completed in 5-7 days typically', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does cabinet painting cost in Barrie?', answer: 'Most Barrie kitchen cabinet projects start at $3,500. Final cost depends on kitchen size, number of doors, and finish selected.' },
+      { question: 'Is cabinet painting worth it vs. new cabinets in Barrie?', answer: 'If your cabinets are structurally sound, absolutely. Save $10,000-$20,000 by refinishing. Brand-new look at roughly 1/3 the cost.' },
+      { question: 'How long does cabinet painting take?', answer: 'Typically 5-7 days for a standard Barrie kitchen. Larger kitchens or multi-room projects may take longer.' },
+      { question: 'Do you spray on-site?', answer: 'Yes — on-site with HVLP spray equipment and full containment for a factory-smooth finish in your home.' },
+      { question: 'Can you paint thermofoil cabinets?', answer: 'Yes. Thermofoil cabinets can be painted with proper adhesion primers and cabinet-grade topcoats. Common in Barrie homes built in the 2000s.' },
+      { question: 'What finish options are available?', answer: 'Matte, satin, semi-gloss, and high-gloss. Satin and semi-gloss are most popular — durable and easy to clean.' },
+      { question: 'Can you change the colour of my cabinets?', answer: 'Yes. Any colour change is possible. Dark stained oak to bright white is our most popular transformation.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every cabinet project includes Free Touch Ups for Life. Chips or marks? We fix them — no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/interior-kitchen-masking-prep.webp']
+  },
+  {
+    slug: 'deck-staining-barrie',
+    name: 'Deck Staining Barrie',
+    headline: 'Deck Staining in Barrie — Protect & Beautify Your Outdoor Space',
+    description: 'Professional deck staining in Barrie, ON. UV-protective, weather-resistant finishes for Simcoe County homes. Premium stains, proper prep, lasting results.',
+    metaDescription: 'Deck staining in Barrie, ON. UV-protective finishes, premium stains, and 25+ years experience. Free Touch Ups for Life. Get your free quote today.',
+    category: 'residential',
+    priceFrom: { amount: 3.50, unit: 'per sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: ['Full deck surface preparation', 'Power washing and wood brightening', 'Premium semi-transparent and solid stains', 'UV-protective coatings', 'Railing, stairs, and post finishing', 'Free Touch Ups for Life guarantee'],
+      whoItsFor: ['Barrie homeowners with wood decks', 'Property managers maintaining rental properties', 'Anyone with a weathered or greying deck', 'New deck owners needing first application', 'Homeowners wanting to restore composite-look decks'],
+      whereAvailable: ['Barrie', 'Innisfil', 'Oro-Medonte', 'Springwater', 'Midhurst', 'Angus'],
+      howQuotesWork: ['Contact us by phone or online form', 'Free on-site assessment of your deck', 'Written quote with product recommendations', 'Schedule your preferred dates', 'Work completed with weather-appropriate timing', 'Free Touch Ups for Life activated']
+    },
+    faqs: [
+      { question: 'How much does deck staining cost in Barrie?', answer: 'Deck staining in Barrie starts at $3.50/sq ft. Price depends on deck size, condition, and stain type selected.' },
+      { question: 'How often should I stain my deck in Barrie?', answer: 'Every 2-3 years for horizontal surfaces. South-facing decks may need attention sooner due to UV exposure.' },
+      { question: 'When is the best time to stain a deck in Barrie?', answer: 'Late May through September when temperatures are consistently above 10°C and there\'s no rain in the forecast.' },
+      { question: 'What stain brands do you use?', answer: 'Benjamin Moore Arborcoat is our primary recommendation — excellent UV protection, durability, and colour retention.' },
+      { question: 'Can you strip old stain before re-staining?', answer: 'Yes. Full stripping and wood brightening is available when the old finish needs to be removed for proper adhesion.' },
+      { question: 'Do you stain fences too?', answer: 'Yes. We stain wood fences, pergolas, gazebos, and all outdoor wood structures in Barrie and surrounding areas.' },
+      { question: 'Do you stain pressure-treated wood?', answer: 'Yes, once properly dried (6-12 months after installation). We test moisture levels before applying stain.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every staining project includes Free Touch Ups for Life. Premature wear or fading — we touch it up at no charge.' }
+    ],
+    galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
   }
 ];
 
