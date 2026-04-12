@@ -85,6 +85,9 @@ const App = () => {
                   <Route path="/rosedale-muskoka-cottage-painting" element={<CottageOwnerPage />} />
                   <Route path="/oakville-muskoka-cottage-painting" element={<CottageOwnerPage />} />
                   <Route path="/post-road-muskoka-cottage-painting" element={<CottageOwnerPage />} />
+                  <Route path="/forest-hill-muskoka-cottage-painting" element={<CottageOwnerPage />} />
+                  <Route path="/lawrence-park-muskoka-cottage-painting" element={<CottageOwnerPage />} />
+                  <Route path="/vaughan-muskoka-cottage-painting" element={<CottageOwnerPage />} />
                   
                   <Route path="/:slug" element={<ServicePage />} />
                   <Route path="*" element={
