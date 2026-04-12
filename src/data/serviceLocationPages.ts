@@ -829,6 +829,743 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
       '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp'
     ]
+  },
+
+  // =============================================
+  // SERVICE + TOWN COMBO PAGES — BRACEBRIDGE
+  // =============================================
+  {
+    slug: 'exterior-painting-bracebridge',
+    name: 'Exterior Painting Bracebridge',
+    headline: 'Exterior Painting in Bracebridge – Weather-Tough Finishes That Last',
+    description: 'Professional exterior painting in Bracebridge by Roll On Painting. We protect homes and cottages along the Muskoka River and throughout Bracebridge with weather-resistant coatings built for harsh Ontario winters. 25+ years experience. HGTV featured.',
+    metaDescription: 'Exterior painting Bracebridge ON. Weather-resistant finishes for homes & cottages. 25+ yrs exp, $5M insured, HGTV featured. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 5.75, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Full power washing to remove Bracebridge dirt, mildew, and pollen buildup',
+        'Scraping, sanding, caulking, and priming all exterior surfaces',
+        'Two coats of premium, weather-resistant exterior paint rated for -30°C winters',
+        'Window, door, and trim detailing with clean, sharp lines',
+        'Soffit, fascia, and gutter painting included when in scope',
+        'Full site cleanup — no mess left on your Bracebridge property',
+        'Free Touch Ups for Life on every completed exterior project'
+      ],
+      whoItsFor: [
+        'Bracebridge homeowners protecting their property from freeze-thaw cycles and UV damage',
+        'Cottage owners on the Muskoka River or nearby lakes needing seasonal exterior updates',
+        'Property managers maintaining curb appeal on Bracebridge rental properties',
+        'Homeowners selling who need exterior updates to boost resale value in the Bracebridge market',
+        'Log home and cabin owners in the Bracebridge area needing specialized stains'
+      ],
+      whereAvailable: [
+        'Downtown Bracebridge, Manitoba Street, Muskoka Road 118',
+        'Muskoka Falls, South Muskoka, Cedar Lane, Pine Street',
+        'Santa\'s Village area, Bracebridge Bay, and all surrounding communities',
+        'Nearby: Gravenhurst, Port Sydney, Huntsville, Muskoka Lakes'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or request a quote online — takes 2 minutes',
+        'We visit your Bracebridge property to inspect surfaces and discuss options',
+        'Receive a detailed written quote within 24-48 hours — no hidden fees',
+        'Exterior painting in Bracebridge starts at $5.75 per square foot'
+      ]
+    },
+    benefits: [
+      'Weather-resistant paints rated for Bracebridge\'s harsh -30°C winters and humid summers',
+      'Over 25 years of exterior painting experience in the Muskoka region',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'WSIB covered with $5 million liability insurance',
+      'Thorough preparation prevents peeling, cracking, and premature paint failure',
+      'Experienced with cedar, pine, wood siding, vinyl, stucco, brick, and log homes',
+      'Free Touch Ups for Life — no other Bracebridge painter offers this',
+      'We partner with Sansin for premium wood treatments and natural finishes'
+    ],
+    process: [
+      { step: 'Property Inspection', description: 'We inspect your Bracebridge home\'s siding, trim, and surfaces to assess condition and recommend the right approach.' },
+      { step: 'Power Washing', description: 'All surfaces are power washed to remove dirt, mildew, and loose paint before any prep work begins.' },
+      { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts through Bracebridge winters.' },
+      { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by experienced crews who know Muskoka conditions.' },
+      { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail finished with clean, precise lines.' },
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and Free Touch Ups for Life on every completed exterior project.' }
+    ],
+    faqs: [
+      { question: 'How much does exterior painting cost in Bracebridge?', answer: 'Exterior painting in Bracebridge starts at $5.75 per square foot with Roll On Painting. This includes power washing, full surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
+      { question: 'When is the best time to paint a house exterior in Bracebridge?', answer: 'May through October is ideal for exterior painting in Bracebridge. We need temperatures above 10°C and dry conditions for proper adhesion. We monitor weather closely and schedule around Muskoka\'s unpredictable spring and fall conditions.' },
+      { question: 'How long does exterior paint last in Bracebridge?', answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Bracebridge. Surfaces facing south or exposed to lake spray may need attention sooner. Our thorough prep work maximizes longevity.' },
+      { question: 'Do you paint log homes in Bracebridge?', answer: 'Yes. We specialize in log homes and cabins using Sansin and other premium wood treatments designed for Canadian log structures. We also handle chinking and log restoration in the Bracebridge area.' },
+      { question: 'Can you paint my Bracebridge cottage while I\'m away?', answer: 'Absolutely. Many Bracebridge cottage owners are seasonal. We coordinate access, send photo updates throughout the project, and ensure everything is perfect before you arrive.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed exterior project with Roll On Painting includes Free Touch Ups for Life. If your paint gets scuffed or damaged after we finish, we come back and fix it — no charge. No other Bracebridge painter offers this.' },
+      { question: 'Are you insured for exterior painting in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage. We are fully insured for all exterior painting work in Bracebridge and across Muskoka.' },
+      { question: 'What paint brands do you use for exteriors in Bracebridge?', answer: 'We use Benjamin Moore Aura Exterior, Sherwin-Williams Duration, and Sansin wood treatments — all rated for Canadian climates. We never use builder-grade products.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-residential-lakeside-paint.webp',
+      '/lovable-uploads/exterior-black-brick-home-finished-2.webp',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.webp',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'interior-painting-bracebridge',
+    name: 'Interior Painting Bracebridge',
+    headline: 'Interior Painting in Bracebridge – Clean, Professional Results Every Time',
+    description: 'Professional interior painting in Bracebridge by Roll On Painting. From heritage homes on Manitoba Street to modern lakefront cottages, we deliver flawless walls, ceilings, and trim work. 25+ years experience. Free Touch Ups for Life.',
+    metaDescription: 'Interior painting Bracebridge ON. Walls, ceilings, trim, cabinets. 25+ yrs exp, $5M insured, HGTV featured. From $4.50/sq ft. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Walls, ceilings, trim, doors, and baseboards — every surface done right',
+        'Spray or brush/roll finishes depending on your Bracebridge project',
+        'Full surface prep: patching, sanding, caulking, and priming',
+        'Two coats of premium paint from Benjamin Moore or Sherwin-Williams',
+        'Complete floor, furniture, and fixture protection',
+        'Clean job sites — we leave your Bracebridge home cleaner than we found it',
+        'Final walkthrough to ensure every detail meets your standards',
+        'Free Touch Ups for Life on every completed interior project'
+      ],
+      whoItsFor: [
+        'Bracebridge homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
+        'Cottage owners on the Muskoka River preparing properties for the season',
+        'Property managers updating rental units between tenants in Bracebridge',
+        'Homeowners staging Bracebridge properties for sale',
+        'New construction and renovation projects requiring premium finishing'
+      ],
+      whereAvailable: [
+        'Downtown Bracebridge, Manitoba Street, Muskoka Road 118',
+        'Bracebridge Bay, Cedar Lane, Pine Street, South Muskoka',
+        'All neighbourhoods and surrounding rural areas',
+        'Nearby: Gravenhurst, Port Sydney, Huntsville, Muskoka Lakes'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or request a quote online',
+        'We visit your Bracebridge home, measure rooms, and discuss colours',
+        'Detailed written quote within 24-48 hours — no hidden fees',
+        'Interior painting in Bracebridge starts at $4.50 per square foot'
+      ]
+    },
+    benefits: [
+      'Over 25 years of interior painting experience in Muskoka',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'WSIB covered with $5 million liability insurance',
+      'Premium Benjamin Moore and Sherwin-Williams paints — never builder-grade',
+      'Free Touch Ups for Life — no other Bracebridge painter offers this',
+      'Clean, respectful crews who treat your home like their own',
+      'Flawless finishes without flashing, lap marks, or drips'
+    ],
+    process: [
+      { step: 'Free Consultation', description: 'We visit your Bracebridge home, discuss your vision, measure rooms, and recommend colours and finishes.' },
+      { step: 'Detailed Quote', description: 'Written, itemized quote within 24-48 hours — no hidden fees, no surprises.' },
+      { step: 'Surface Preparation', description: 'Patching holes, sanding, caulking gaps, priming bare surfaces, and protecting floors and furniture.' },
+      { step: 'Professional Painting', description: 'Two coats of premium paint applied with spray, brush, or roller for the best finish.' },
+      { step: 'Final Walkthrough', description: 'We walk through every room with you to ensure every detail meets your standards.' },
+      { step: 'Free Touch Ups for Life', description: 'After completion, we come back anytime to touch up scuffs or marks — for life.' }
+    ],
+    faqs: [
+      { question: 'How much does interior painting cost in Bracebridge?', answer: 'Interior painting in Bracebridge starts at $4.50 per square foot with Roll On Painting. This includes full preparation, two coats of premium paint, and cleanup. Specialty finishes like stained beams or pine ceilings cost more. Contact us for a free quote.' },
+      { question: 'How long does interior painting take in a Bracebridge home?', answer: 'A typical room takes 1-2 days including preparation. Whole-house projects usually take 3-7 days depending on size and complexity. We provide a clear timeline before starting.' },
+      { question: 'Do you paint cottage interiors in Bracebridge?', answer: 'Yes. We specialize in cottage interiors including pine ceilings, exposed beams, shiplap walls, and lakefront living areas. We use products suited to cottage environments.' },
+      { question: 'What paint brands do you use in Bracebridge?', answer: 'We use premium paints from Benjamin Moore and Sherwin-Williams. We recommend specific sheens based on the room — scrubbable eggshell for high-traffic areas, flat for ceilings.' },
+      { question: 'Do I need to move furniture before painting?', answer: 'No. We handle all furniture moving and protection. Large items are covered and floors are fully protected with drop cloths.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed project includes Free Touch Ups for Life. If your walls get scuffed or nicked, we come back and fix them at no charge.' },
+      { question: 'Are you insured for painting in Bracebridge?', answer: 'Yes. We carry $5 million liability insurance and full WSIB coverage for all work in Bracebridge and across Muskoka.' },
+      { question: 'Do you offer colour consultations in Bracebridge?', answer: 'Yes. We help you select colours that complement your Bracebridge home\'s architecture, lighting, and style. We can bring sample boards and make recommendations based on 25+ years of experience.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-modern-cottage-living.webp',
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.webp',
+      '/lovable-uploads/interior-kitchen-masking-prep.webp',
+      '/lovable-uploads/interior-loft-space-finished.webp',
+      '/lovable-uploads/interior-accent-wall-dark-blue-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'cottage-painting-bracebridge',
+    name: 'Cottage Painting Bracebridge',
+    headline: 'Cottage Painting in Bracebridge – Seasonal Prep, Year-Round Protection',
+    description: 'Bracebridge cottage painting specialists. Roll On Painting handles interior and exterior cottage painting along the Muskoka River and nearby lakes. We work around your schedule — even when you\'re not there. 25+ years experience.',
+    metaDescription: 'Cottage painting Bracebridge ON. Interior & exterior. Seasonal scheduling, remote coordination. 25+ yrs exp, HGTV featured, $5M insured. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Full interior painting: walls, ceilings, trim, pine, beams, and shiplap',
+        'Exterior painting and staining: siding, trim, decks, docks, and boathouses',
+        'Power washing to remove winter grime, mildew, and pollen',
+        'Surface preparation for Muskoka\'s demanding climate conditions',
+        'Weather-resistant coatings that withstand freeze-thaw, UV, and lake moisture',
+        'Remote coordination for seasonal owners — we work while you\'re away',
+        'Photo updates throughout the project so you see progress in real time',
+        'Free Touch Ups for Life on every completed cottage project'
+      ],
+      whoItsFor: [
+        'Seasonal cottage owners in the Bracebridge area who need reliable painters',
+        'GTA families with Bracebridge-area cottages who can\'t be on-site',
+        'Property managers maintaining lakefront vacation rentals near Bracebridge',
+        'Cottage owners doing seasonal opening or closing prep',
+        'Owners upgrading heritage or older cottages with modern finishes'
+      ],
+      whereAvailable: [
+        'Bracebridge town and surrounding cottage country',
+        'Muskoka River cottages and lakefront properties',
+        'South Muskoka, Cedar Lane, and Santa\'s Village area',
+        'Nearby: Gravenhurst, Port Sydney, Huntsville, Lake Muskoka'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos online for a remote estimate',
+        'We can arrange video calls or on-site visits to assess your cottage',
+        'Detailed written quote within 24-48 hours — no hidden fees',
+        'Cottage painting in Bracebridge starts at $4.50/sq ft interior, $5.75/sq ft exterior'
+      ]
+    },
+    benefits: [
+      'Specialists in Muskoka cottage painting — we understand seasonal properties',
+      'Remote coordination: we work while you\'re in the city',
+      'Photo updates so you see every stage of your cottage project',
+      'Weather-resistant products built for Bracebridge\'s freeze-thaw cycles',
+      'Over 25 years painting cottages in Muskoka',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'Free Touch Ups for Life — no other Bracebridge painter offers this',
+      'WSIB covered, $5 million liability insurance'
+    ],
+    process: [
+      { step: 'Remote or On-Site Estimate', description: 'Send us photos or schedule an on-site visit. We assess your Bracebridge cottage and provide a detailed quote.' },
+      { step: 'Schedule Around You', description: 'We coordinate timing around your seasonal schedule — spring opening, fall closing, or mid-summer refresh.' },
+      { step: 'Preparation', description: 'Power washing, scraping, sanding, caulking, and priming — proper prep for Muskoka\'s demanding conditions.' },
+      { step: 'Professional Painting', description: 'Interior and exterior painting with premium, weather-resistant products selected for cottage environments.' },
+      { step: 'Photo Updates', description: 'We send you photos at each stage so you can see the progress from wherever you are.' },
+      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus Free Touch Ups for Life on every completed project.' }
+    ],
+    faqs: [
+      { question: 'Can you paint my Bracebridge cottage while I\'m in the city?', answer: 'Yes — this is one of our specialties. Many Bracebridge cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is perfect before you arrive.' },
+      { question: 'How much does cottage painting cost in Bracebridge?', answer: 'Interior cottage painting starts at $4.50/sq ft and exterior starts at $5.75/sq ft. Pine ceilings, exposed beams, and decks are quoted based on condition and scope. Contact us for a free estimate.' },
+      { question: 'Do you paint cottage decks and docks in Bracebridge?', answer: 'Yes. We stain and paint decks, docks, boathouses, and Muskoka chairs. We use products rated for UV exposure and lake moisture to ensure maximum durability.' },
+      { question: 'What paint is best for Bracebridge cottage interiors?', answer: 'We recommend Benjamin Moore Aura or Regal Select for cottage interiors. For pine ceilings and exposed beams, we use specialized stains and clear coats that enhance the natural wood grain.' },
+      { question: 'When should I schedule cottage painting in Bracebridge?', answer: 'Book early — spring and summer fill up fast. Exterior work is best May-October. Interior painting can be done year-round. Contact us in winter to lock in your preferred dates.' },
+      { question: 'Do you offer seasonal cottage maintenance in Bracebridge?', answer: 'Yes. Many of our clients use our annual touch-up and maintenance service. We inspect your cottage each season and address any painting needs before small issues become big problems.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed cottage project includes Free Touch Ups for Life. Scuffs, marks, or wear — we come back and fix them at no charge. No other Bracebridge painter offers this.' },
+      { question: 'Are you insured for cottage work in Bracebridge?', answer: 'Yes. We carry $5 million liability insurance and full WSIB coverage for all cottage painting work in Bracebridge and across Muskoka.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.webp',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'deck-staining-bracebridge',
+    name: 'Deck Staining Bracebridge',
+    headline: 'Deck Staining in Bracebridge – Stop UV and Weather From Destroying Your Wood',
+    description: 'Professional deck staining in Bracebridge by Roll On Painting. We protect cottage decks, docks, fences, and outdoor wood from Muskoka\'s brutal freeze-thaw cycles, UV damage, and lake moisture. Premium products. 25+ years experience.',
+    metaDescription: 'Deck staining Bracebridge ON. Decks, docks, fences, Muskoka chairs. UV & weather protection. 25+ yrs exp, $5M insured. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.00, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Power washing to strip old stain, dirt, mildew, and grey weathering',
+        'Sanding to open wood grain for maximum stain penetration',
+        'Application of premium, UV-resistant deck stain — Sansin, Sikkens, or equivalent',
+        'Two coats for maximum protection and colour depth',
+        'Railing, step, and post staining included',
+        'Dock and boathouse staining available',
+        'Fence and Muskoka chair staining as add-on services',
+        'Full cleanup and Free Touch Ups for Life'
+      ],
+      whoItsFor: [
+        'Bracebridge homeowners with weathered or greying decks',
+        'Cottage owners needing seasonal deck and dock protection',
+        'Property managers maintaining outdoor areas on rental properties',
+        'Owners of new decks needing first-time staining and sealing',
+        'Anyone with outdoor wood exposed to Muskoka\'s freeze-thaw and UV'
+      ],
+      whereAvailable: [
+        'Bracebridge and all surrounding cottage areas',
+        'Muskoka River properties, lakefront cottages',
+        'South Muskoka, Cedar Lane, Santa\'s Village area',
+        'Nearby: Gravenhurst, Port Sydney, Huntsville, Muskoka Lakes'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos of your deck for a quick estimate',
+        'We inspect your deck in person to assess wood condition and size',
+        'Written quote within 24-48 hours — no hidden fees',
+        'Deck staining in Bracebridge starts at $4.00 per square foot'
+      ]
+    },
+    benefits: [
+      'Premium stains from Sansin and Sikkens — built for Muskoka\'s harsh climate',
+      'UV-resistant formulas that prevent greying and wood degradation',
+      'Proper power washing and sanding for maximum stain penetration and longevity',
+      'Over 25 years staining decks and docks across Muskoka',
+      'Free Touch Ups for Life — no other Bracebridge company offers this',
+      'WSIB covered, $5 million liability insurance',
+      'We stain decks, docks, fences, railings, pergolas, and Muskoka chairs'
+    ],
+    process: [
+      { step: 'Deck Inspection', description: 'We inspect your Bracebridge deck for rot, damage, loose boards, and stain condition.' },
+      { step: 'Power Washing', description: 'Full power wash to strip old stain, dirt, mildew, and grey weathering from the wood.' },
+      { step: 'Sanding & Prep', description: 'We sand the deck to open the wood grain, ensuring maximum stain penetration and adhesion.' },
+      { step: 'Stain Application', description: 'Two coats of premium, UV-resistant deck stain applied for maximum protection and colour depth.' },
+      { step: 'Detail Work', description: 'Railings, steps, posts, and edges — every surface stained consistently and thoroughly.' },
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and Free Touch Ups for Life on every completed deck staining project.' }
+    ],
+    faqs: [
+      { question: 'How much does deck staining cost in Bracebridge?', answer: 'Deck staining in Bracebridge starts at $4.00 per square foot. This includes power washing, sanding, and two coats of premium stain. Larger decks, docks, and multi-level structures are quoted individually.' },
+      { question: 'How often should I re-stain my deck in Bracebridge?', answer: 'Most Bracebridge decks need re-staining every 2-3 years depending on sun exposure and foot traffic. South-facing decks and docks may need annual maintenance. We can set up a recurring schedule.' },
+      { question: 'What stain brands do you use in Bracebridge?', answer: 'We use Sansin, Sikkens, and other premium wood treatments designed for Canadian climates. These provide superior UV protection, water repellency, and colour retention compared to box-store brands.' },
+      { question: 'Do you stain docks and boathouses in Bracebridge?', answer: 'Yes. We stain docks, boathouses, Muskoka chairs, fences, and all outdoor wood structures. We use marine-grade and UV-resistant products for waterfront applications.' },
+      { question: 'Can you strip and re-stain my old deck in Bracebridge?', answer: 'Absolutely. We power wash, sand, and strip old finishes before applying new stain. Proper removal of failed coatings is essential for a lasting result.' },
+      { question: 'When is the best time to stain a deck in Bracebridge?', answer: 'Late spring through early fall is ideal — temperatures above 10°C and dry weather for 48 hours after application. We schedule around weather to ensure optimal results.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed deck staining project includes Free Touch Ups for Life. If areas wear prematurely or get damaged, we come back and address them — no charge.' },
+      { question: 'Are you insured for deck work in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for all deck staining and outdoor work in Bracebridge.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'cabinet-painting-bracebridge',
+    name: 'Cabinet Painting Bracebridge',
+    headline: 'Cabinet Painting in Bracebridge – Transform Your Kitchen Without a Full Reno',
+    description: 'Professional kitchen cabinet painting and refinishing in Bracebridge. Roll On Painting delivers factory-smooth, spray-applied finishes that transform dated kitchens for a fraction of the cost of new cabinets. 25+ years experience.',
+    metaDescription: 'Cabinet painting Bracebridge ON. Factory-smooth spray finishes. Transform your kitchen for less. 25+ yrs exp, HGTV featured, $5M insured. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 3500, unit: 'kitchen' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'All cabinet doors, drawer fronts, and frames painted or refinished',
+        'Professional spray application for a factory-smooth finish — no brush marks',
+        'Full degreasing, sanding, and priming of all surfaces',
+        'Premium bonding primer for maximum adhesion to wood, MDF, thermofoil, or laminate',
+        'Two coats of durable cabinet-grade paint or lacquer',
+        'Hardware removal and reinstallation',
+        'Full masking and protection of countertops, floors, and appliances',
+        'Free Touch Ups for Life on every completed cabinet project'
+      ],
+      whoItsFor: [
+        'Bracebridge homeowners wanting a kitchen refresh without a full renovation',
+        'Cottage owners in the Bracebridge area upgrading dated cottage kitchens',
+        'Property managers refreshing kitchens in Bracebridge rental properties',
+        'Anyone with solid-structure cabinets that need a colour or finish update'
+      ],
+      whereAvailable: [
+        'Bracebridge and all surrounding areas',
+        'Muskoka River properties and lakefront cottages',
+        'Nearby: Gravenhurst, Port Sydney, Huntsville, Muskoka Lakes'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos of your cabinets for a quick estimate',
+        'We visit your Bracebridge kitchen to count doors, assess condition, and discuss finish options',
+        'Written quote within 24-48 hours — no hidden fees',
+        'Cabinet painting in Bracebridge starts at $3,500 per kitchen'
+      ]
+    },
+    benefits: [
+      'Factory-smooth spray finishes — no brush marks, no roller stipple',
+      'Transform your Bracebridge kitchen for 1/3 the cost of new cabinets',
+      'Works on wood, MDF, thermofoil, and laminate cabinets',
+      'Over 25 years of cabinet refinishing experience',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'Free Touch Ups for Life — no other Bracebridge company offers this',
+      'WSIB covered, $5 million liability insurance',
+      'Most kitchens completed in 3-5 days'
+    ],
+    process: [
+      { step: 'Kitchen Assessment', description: 'We inspect your Bracebridge kitchen, count doors and drawers, assess cabinet condition, and discuss colour options.' },
+      { step: 'Preparation', description: 'Doors and hardware are removed. All surfaces are degreased, sanded, and primed with professional bonding primer.' },
+      { step: 'Spray Application', description: 'Two coats of durable cabinet-grade paint or lacquer applied by spray for a flawless, factory-smooth finish.' },
+      { step: 'Reassembly', description: 'Doors, drawers, and hardware are reinstalled with proper alignment. We adjust hinges and ensure smooth operation.' },
+      { step: 'Final Inspection', description: 'Walk-through with you to check every door, drawer, and surface — ensuring perfection.' },
+      { step: 'Free Touch Ups for Life', description: 'Completed cabinet projects include our Free Touch Ups for Life guarantee.' }
+    ],
+    faqs: [
+      { question: 'How much does cabinet painting cost in Bracebridge?', answer: 'Cabinet painting in Bracebridge starts at $3,500 per kitchen with Roll On Painting. Final pricing depends on the number of doors, drawer fronts, and complexity. Island cabinets and specialty finishes may cost more.' },
+      { question: 'How long does cabinet painting take in Bracebridge?', answer: 'Most Bracebridge kitchen cabinet projects are completed in 3-5 days. Larger kitchens or multi-stage finishes may take slightly longer. We provide a clear timeline with every quote.' },
+      { question: 'Can you paint thermofoil or laminate cabinets?', answer: 'Yes. We use specialized bonding primers designed for thermofoil, laminate, and other non-wood surfaces. The result is a durable, professional finish that looks like new.' },
+      { question: 'What finish options do you offer for cabinets?', answer: 'We offer matte, satin, semi-gloss, and high-gloss finishes. Satin is most popular for a modern, fingerprint-resistant look. We can also do two-tone finishes (upper/lower or island contrast).' },
+      { question: 'Is cabinet painting worth it vs. new cabinets?', answer: 'If your cabinets are structurally sound, painting is absolutely worth it. You get a brand-new look for roughly 1/3 the cost of replacement. Most Bracebridge clients save $10,000-$20,000 by refinishing instead of replacing.' },
+      { question: 'Do you spray cabinets on-site or off-site?', answer: 'We typically spray on-site using professional HVLP spray equipment with full masking and containment. For some projects, we remove doors and spray them in our controlled environment for the best possible finish.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed cabinet project includes Free Touch Ups for Life. If a door gets chipped or marked, we come back and fix it — no charge.' },
+      { question: 'Are you insured for kitchen work in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for all cabinet and kitchen painting work in Bracebridge.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-kitchen-masking-prep.webp',
+      '/lovable-uploads/interior-modern-cottage-living.webp'
+    ]
+  },
+
+  // =============================================
+  // SERVICE + TOWN COMBO PAGES — HUNTSVILLE
+  // =============================================
+  {
+    slug: 'exterior-painting-huntsville',
+    name: 'Exterior Painting Huntsville',
+    headline: 'Exterior Painting in Huntsville – Protection Built for Northern Ontario Weather',
+    description: 'Professional exterior painting in Huntsville by Roll On Painting. From downtown Huntsville to Lake Vernon and Peninsula Lake cottages, we deliver weather-resistant finishes that stand up to harsh Northern Ontario conditions. 25+ years experience.',
+    metaDescription: 'Exterior painting Huntsville ON. Weather-resistant finishes for homes & cottages. 25+ yrs exp, $5M insured, HGTV featured. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 5.75, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Full power washing to remove Huntsville dirt, mildew, and winter grime',
+        'Scraping, sanding, caulking, and priming all exterior surfaces',
+        'Two coats of premium exterior paint rated for Northern Ontario\'s -35°C winters',
+        'Window, door, and trim detailing with clean, sharp lines',
+        'Soffit, fascia, and gutter painting when in scope',
+        'Full site cleanup — no mess left on your Huntsville property',
+        'Free Touch Ups for Life on every completed exterior project'
+      ],
+      whoItsFor: [
+        'Huntsville homeowners protecting their property from harsh Northern Ontario weather',
+        'Cottage owners on Lake Vernon, Peninsula Lake, and nearby waterways',
+        'Property managers maintaining curb appeal on Huntsville rental properties',
+        'Owners of log homes and cabins in the Huntsville area',
+        'Commercial property owners in downtown Huntsville and along Highway 60'
+      ],
+      whereAvailable: [
+        'Downtown Huntsville, Main Street, Highway 60 corridor',
+        'Lake Vernon, Peninsula Lake, Fairy Lake, Vernon Lake',
+        'Novar, Ravenscliffe, Port Sydney (10 min south)',
+        'Nearby: Bracebridge, Dorset, Dwight, Lake of Bays, Algonquin Park corridor'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or request a quote online — takes 2 minutes',
+        'We visit your Huntsville property to inspect surfaces and discuss options',
+        'Detailed written quote within 24-48 hours — no hidden fees',
+        'Exterior painting in Huntsville starts at $5.75 per square foot'
+      ]
+    },
+    benefits: [
+      'Weather-resistant paints rated for Huntsville\'s -35°C Northern Ontario winters',
+      'Over 25 years of exterior painting experience in Muskoka — based 10 minutes away in Port Sydney',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'WSIB covered with $5 million liability insurance',
+      'Thorough preparation prevents peeling, cracking, and premature paint failure',
+      'Experienced with cedar, pine, wood siding, vinyl, stucco, and log homes',
+      'Free Touch Ups for Life — no other Huntsville painter offers this',
+      'Sansin partnership for premium wood treatments and natural finishes'
+    ],
+    process: [
+      { step: 'Property Inspection', description: 'We inspect your Huntsville home\'s siding, trim, and surfaces to assess condition and plan the right approach.' },
+      { step: 'Power Washing', description: 'All surfaces power washed to remove dirt, mildew, and loose paint before prep work.' },
+      { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — every issue fixed so paint lasts through Huntsville\'s harsh winters.' },
+      { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by crews who know Northern Ontario conditions.' },
+      { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters finished with clean, precise lines.' },
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and Free Touch Ups for Life on every completed exterior project.' }
+    ],
+    faqs: [
+      { question: 'How much does exterior painting cost in Huntsville?', answer: 'Exterior painting in Huntsville starts at $5.75 per square foot. This includes power washing, surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
+      { question: 'When is the best time to paint a house exterior in Huntsville?', answer: 'May through October is ideal. Huntsville\'s Northern Ontario location means shorter warm seasons — book early to secure your preferred dates. We monitor weather and schedule around rain and cold snaps.' },
+      { question: 'How long does exterior paint last in Huntsville?', answer: 'With proper prep and quality paint, 7-10 years in Huntsville. North-facing surfaces may last longer (less UV), while south-facing walls may need earlier attention. Our thorough prep maximizes longevity.' },
+      { question: 'Do you paint log homes in Huntsville?', answer: 'Yes. We specialize in log home staining and restoration using Sansin and other premium Canadian wood treatments. Huntsville has many log homes and we understand the specific maintenance they require.' },
+      { question: 'Can you paint my Huntsville cottage while I\'m away?', answer: 'Absolutely. Many Huntsville-area cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is completed to your standards before you arrive.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed exterior project includes Free Touch Ups for Life. If your paint gets scuffed or damaged, we come back and fix it at no charge. No other Huntsville painter offers this.' },
+      { question: 'Are you local to Huntsville?', answer: 'Yes — we\'re based in Port Sydney, just 10 minutes south of Huntsville. Owner Chad Gilchrist has been painting in the Huntsville area for over 25 years.' },
+      { question: 'What paint brands do you use for Huntsville exteriors?', answer: 'Benjamin Moore Aura Exterior, Sherwin-Williams Duration, and Sansin wood treatments — all rated for harsh Northern Ontario climates.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-residential-lakeside-paint.webp',
+      '/lovable-uploads/exterior-siding-paint-grey-trim.webp',
+      '/lovable-uploads/exterior-dark-garage-finished.webp',
+      '/lovable-uploads/exterior-painting-crew-port-sydney.webp',
+      '/lovable-uploads/exterior-painting-crew-lakeside-cottage.webp'
+    ]
+  },
+  {
+    slug: 'interior-painting-huntsville',
+    name: 'Interior Painting Huntsville',
+    headline: 'Interior Painting in Huntsville – Premium Finishes for Homes & Cottages',
+    description: 'Professional interior painting in Huntsville by Roll On Painting. We deliver clean, flawless finishes for homes, cottages, and commercial spaces. From downtown Huntsville to Lake Vernon and Peninsula Lake. 25+ years experience.',
+    metaDescription: 'Interior painting Huntsville ON. Walls, ceilings, trim, cabinets. 25+ yrs exp, $5M insured, HGTV featured. From $4.50/sq ft. Free quotes. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Walls, ceilings, trim, doors, and baseboards — every surface done right',
+        'Spray or brush/roll finishes depending on your Huntsville project',
+        'Full surface prep: patching, sanding, caulking, and priming',
+        'Two coats of premium paint from Benjamin Moore or Sherwin-Williams',
+        'Complete floor, furniture, and fixture protection',
+        'Clean job sites — we leave your Huntsville home cleaner than we found it',
+        'Final walkthrough to ensure every detail meets your standards',
+        'Free Touch Ups for Life on every completed interior project'
+      ],
+      whoItsFor: [
+        'Huntsville homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
+        'Cottage owners on Lake Vernon, Peninsula Lake, and nearby waterways',
+        'Commercial spaces in downtown Huntsville needing professional interior updates',
+        'Property managers updating rental units in the Huntsville area',
+        'New construction and renovation projects requiring premium finishing'
+      ],
+      whereAvailable: [
+        'Downtown Huntsville, Main Street, Highway 60 corridor',
+        'Lake Vernon, Peninsula Lake, Fairy Lake area',
+        'Novar, Ravenscliffe, and all surrounding communities',
+        'Nearby: Port Sydney, Bracebridge, Dorset, Dwight, Lake of Bays'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or request a quote online',
+        'We visit your Huntsville home, measure rooms, and discuss colours',
+        'Detailed written quote within 24-48 hours — no hidden fees',
+        'Interior painting in Huntsville starts at $4.50 per square foot'
+      ]
+    },
+    benefits: [
+      'Over 25 years of interior painting experience — based 10 min from Huntsville in Port Sydney',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'WSIB covered with $5 million liability insurance',
+      'Premium Benjamin Moore and Sherwin-Williams paints',
+      'Free Touch Ups for Life — no other Huntsville painter offers this',
+      'Clean, respectful crews who treat your home like their own',
+      'Flawless finishes without flashing, lap marks, or drips'
+    ],
+    process: [
+      { step: 'Free Consultation', description: 'We visit your Huntsville home, discuss your vision, measure rooms, and recommend colours and finishes.' },
+      { step: 'Detailed Quote', description: 'Written, itemized quote within 24-48 hours — no hidden fees, no surprises.' },
+      { step: 'Surface Preparation', description: 'Patching, sanding, caulking, priming, and full floor and furniture protection.' },
+      { step: 'Professional Painting', description: 'Two coats of premium paint applied with spray, brush, or roller — whichever delivers the best finish.' },
+      { step: 'Final Walkthrough', description: 'We walk through every room with you to ensure every detail meets your standards.' },
+      { step: 'Free Touch Ups for Life', description: 'After completion, we come back anytime to touch up scuffs — for life.' }
+    ],
+    faqs: [
+      { question: 'How much does interior painting cost in Huntsville?', answer: 'Interior painting in Huntsville starts at $4.50 per square foot. This includes full preparation, two coats of premium paint, and cleanup. Specialty finishes like stained beams or pine ceilings cost more.' },
+      { question: 'How long does interior painting take in a Huntsville home?', answer: 'A typical room takes 1-2 days. Whole-house projects take 3-7 days depending on size. We provide a clear timeline before starting.' },
+      { question: 'Do you paint cottage interiors near Huntsville?', answer: 'Yes. We specialize in cottage interiors including pine ceilings, exposed beams, shiplap, and lakefront living areas around Lake Vernon and Peninsula Lake.' },
+      { question: 'What paint brands do you use in Huntsville?', answer: 'Premium paints from Benjamin Moore and Sherwin-Williams. We never use builder-grade products. We recommend sheens based on room use and traffic level.' },
+      { question: 'Do I need to move furniture before painting?', answer: 'No. We handle all furniture moving and protection. Large items are covered and floors are fully protected.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed project includes Free Touch Ups for Life. Scuffs or nicks? We come back and fix them — no charge.' },
+      { question: 'Are you local to Huntsville?', answer: 'Yes — based in Port Sydney, 10 minutes south. Owner Chad Gilchrist has painted in Huntsville for over 25 years.' },
+      { question: 'Do you offer colour consultations in Huntsville?', answer: 'Yes. We help select colours that complement your home\'s architecture and lighting. We bring samples and make recommendations based on decades of experience.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-vaulted-ceiling-painting-muskoka-1.webp',
+      '/lovable-uploads/interior-stain-paint-fireplace-trusses.webp',
+      '/lovable-uploads/interior-shiplap-fireplace-beams.webp',
+      '/lovable-uploads/interior-great-room-dark-beams-lakeview.webp',
+      '/lovable-uploads/interior-living-room-fireplace-builtins-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'cottage-painting-huntsville',
+    name: 'Cottage Painting Huntsville',
+    headline: 'Cottage Painting in Huntsville – Your Lake, Our Expertise',
+    description: 'Huntsville cottage painting specialists. Roll On Painting handles interior and exterior cottage painting on Lake Vernon, Peninsula Lake, Fairy Lake, and surrounding areas. We work around your seasonal schedule. 25+ years experience.',
+    metaDescription: 'Cottage painting Huntsville ON. Lake Vernon, Peninsula Lake, Fairy Lake. Interior & exterior. Remote coordination. 25+ yrs exp, $5M insured. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.50, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Full interior painting: walls, ceilings, trim, pine, beams, and shiplap',
+        'Exterior painting and staining: siding, trim, decks, docks, and boathouses',
+        'Power washing to remove winter grime, mildew, and lake-area buildup',
+        'Weather-resistant coatings for Huntsville\'s demanding Northern Ontario climate',
+        'Remote coordination for seasonal owners — we work while you\'re away',
+        'Photo updates throughout the project',
+        'Free Touch Ups for Life on every completed cottage project'
+      ],
+      whoItsFor: [
+        'Seasonal cottage owners on Lake Vernon, Peninsula Lake, and Fairy Lake',
+        'GTA families with Huntsville-area cottages who can\'t always be on-site',
+        'Property managers maintaining lakefront vacation rentals near Huntsville',
+        'Cottage owners doing seasonal opening or closing preparation',
+        'Owners upgrading heritage or older cottages with modern finishes'
+      ],
+      whereAvailable: [
+        'Lake Vernon, Peninsula Lake, Fairy Lake, Vernon Lake',
+        'Downtown Huntsville and surrounding cottage areas',
+        'Novar, Ravenscliffe, Highway 60 corridor toward Algonquin',
+        'Nearby: Port Sydney, Bracebridge, Dorset, Dwight, Lake of Bays'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos for a remote estimate',
+        'We can arrange video calls or on-site visits at your Huntsville cottage',
+        'Detailed written quote within 24-48 hours',
+        'Cottage painting starts at $4.50/sq ft interior, $5.75/sq ft exterior'
+      ]
+    },
+    benefits: [
+      'Specialists in Muskoka cottage painting — based 10 min from Huntsville',
+      'Remote coordination: we work while you\'re in the city',
+      'Photo updates so you see every stage of progress',
+      'Weather-resistant products built for Northern Ontario freeze-thaw cycles',
+      'Over 25 years painting cottages in the Huntsville area',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'Free Touch Ups for Life — no other Huntsville painter offers this',
+      'WSIB covered, $5 million liability insurance'
+    ],
+    process: [
+      { step: 'Remote or On-Site Estimate', description: 'Send photos or schedule an on-site visit. We assess your Huntsville cottage and provide a detailed quote.' },
+      { step: 'Schedule Around You', description: 'We coordinate around your seasonal schedule — spring opening, fall closing, or mid-summer.' },
+      { step: 'Preparation', description: 'Power washing, scraping, sanding, caulking, and priming for Northern Ontario conditions.' },
+      { step: 'Professional Painting', description: 'Interior and exterior painting with premium, climate-appropriate products.' },
+      { step: 'Photo Updates', description: 'Photos at each stage so you see progress from wherever you are.' },
+      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus Free Touch Ups for Life.' }
+    ],
+    faqs: [
+      { question: 'Can you paint my Huntsville cottage while I\'m in Toronto?', answer: 'Yes — this is our specialty. Many Huntsville cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is perfect before you arrive.' },
+      { question: 'How much does cottage painting cost near Huntsville?', answer: 'Interior starts at $4.50/sq ft, exterior at $5.75/sq ft. Pine ceilings, beams, decks, and docks quoted individually based on condition and scope.' },
+      { question: 'Do you paint docks and boathouses near Huntsville?', answer: 'Yes. We stain and paint docks, boathouses, and all outdoor wood on Lake Vernon, Peninsula Lake, and surrounding waterways.' },
+      { question: 'What paint is best for Huntsville cottage interiors?', answer: 'Benjamin Moore Aura or Regal Select for walls, specialized stains for pine ceilings and beams. We select products suited to cottage environments.' },
+      { question: 'When should I book cottage painting near Huntsville?', answer: 'Book early — spring and summer fill fast. Exterior: May-October. Interior: year-round. Contact us in winter to secure preferred dates.' },
+      { question: 'Do you offer seasonal cottage maintenance near Huntsville?', answer: 'Yes. Many clients use our annual touch-up service. We inspect your cottage each season and address painting needs before issues grow.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed cottage project includes Free Touch Ups for Life. Scuffs, marks, or wear — we fix them at no charge.' },
+      { question: 'Are you close to Huntsville?', answer: 'Yes — based in Port Sydney, 10 minutes south. We\'ve been painting Huntsville-area cottages for over 25 years.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-boathouse-lakeside-scaffold.webp',
+      '/lovable-uploads/interior-cottage-shiplap-lake-rosseau.webp',
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp',
+      '/lovable-uploads/interior-great-room-vaulted-ceiling-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'deck-staining-huntsville',
+    name: 'Deck Staining Huntsville',
+    headline: 'Deck Staining in Huntsville – Defend Your Wood Against Northern Ontario Weather',
+    description: 'Professional deck staining in Huntsville by Roll On Painting. Protect cottage decks, docks, fences, and outdoor wood from harsh freeze-thaw cycles, UV damage, and lake moisture. Premium Sansin and Sikkens products. 25+ years experience.',
+    metaDescription: 'Deck staining Huntsville ON. Decks, docks, fences. UV & freeze-thaw protection. Sansin & Sikkens products. 25+ yrs exp, $5M insured. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 4.00, unit: 'sq ft' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'Power washing to strip old stain, dirt, mildew, and grey weathering',
+        'Sanding to open wood grain for maximum stain penetration',
+        'Premium, UV-resistant deck stain — Sansin, Sikkens, or equivalent',
+        'Two coats for maximum protection and colour depth',
+        'Railing, step, and post staining included',
+        'Dock and boathouse staining available for lakefront properties',
+        'Fence and outdoor furniture staining as add-on services',
+        'Full cleanup and Free Touch Ups for Life'
+      ],
+      whoItsFor: [
+        'Huntsville homeowners with weathered or greying decks',
+        'Cottage owners on Lake Vernon, Peninsula Lake needing seasonal deck protection',
+        'Property managers maintaining outdoor areas on Huntsville rental properties',
+        'Owners of new decks needing first-time staining and sealing',
+        'Anyone with outdoor wood exposed to Northern Ontario\'s extreme weather'
+      ],
+      whereAvailable: [
+        'Huntsville and all surrounding cottage areas',
+        'Lake Vernon, Peninsula Lake, Fairy Lake waterfront properties',
+        'Novar, Ravenscliffe, Highway 60 corridor',
+        'Nearby: Port Sydney, Bracebridge, Dorset, Dwight, Lake of Bays'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos of your deck for a quick estimate',
+        'We inspect your deck in person to assess wood condition and size',
+        'Written quote within 24-48 hours — no hidden fees',
+        'Deck staining in Huntsville starts at $4.00 per square foot'
+      ]
+    },
+    benefits: [
+      'Premium Sansin and Sikkens stains — built for Northern Ontario\'s extreme climate',
+      'UV-resistant formulas that prevent greying and wood degradation',
+      'Proper power washing and sanding for maximum stain penetration',
+      'Over 25 years staining decks and docks in Muskoka — based 10 min from Huntsville',
+      'Free Touch Ups for Life — no other Huntsville company offers this',
+      'WSIB covered, $5 million liability insurance',
+      'We stain decks, docks, fences, railings, pergolas, and Muskoka chairs'
+    ],
+    process: [
+      { step: 'Deck Inspection', description: 'We inspect your Huntsville deck for rot, damage, loose boards, and existing stain condition.' },
+      { step: 'Power Washing', description: 'Full power wash to strip old stain, dirt, mildew, and grey weathering.' },
+      { step: 'Sanding & Prep', description: 'Sanding to open wood grain, ensuring maximum stain penetration and adhesion.' },
+      { step: 'Stain Application', description: 'Two coats of premium, UV-resistant stain for maximum protection and colour depth.' },
+      { step: 'Detail Work', description: 'Railings, steps, posts, and edges stained consistently and thoroughly.' },
+      { step: 'Cleanup & Warranty', description: 'Full cleanup and Free Touch Ups for Life on every completed project.' }
+    ],
+    faqs: [
+      { question: 'How much does deck staining cost in Huntsville?', answer: 'Deck staining in Huntsville starts at $4.00 per square foot including power washing, sanding, and two coats of premium stain. Larger structures quoted individually.' },
+      { question: 'How often should I re-stain my deck in Huntsville?', answer: 'Every 2-3 years depending on sun exposure and traffic. South-facing decks and docks near Lake Vernon may need annual maintenance.' },
+      { question: 'What stain brands do you use in Huntsville?', answer: 'Sansin, Sikkens, and other premium wood treatments designed for Canadian climates. Superior UV protection and water repellency compared to box-store brands.' },
+      { question: 'Do you stain docks on Lake Vernon and Peninsula Lake?', answer: 'Yes. We stain docks, boathouses, and all waterfront wood using marine-grade and UV-resistant products.' },
+      { question: 'Can you strip and re-stain my old deck near Huntsville?', answer: 'Yes. We power wash, sand, and strip old finishes before applying new stain. Proper removal of failed coatings is essential for lasting results.' },
+      { question: 'When is the best time to stain a deck in Huntsville?', answer: 'Late spring through early fall — temperatures above 10°C with 48 hours of dry weather after application. Book early as summer fills fast.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed deck staining project includes Free Touch Ups for Life. Premature wear or damage? We come back — no charge.' },
+      { question: 'Are you close to Huntsville?', answer: 'Based in Port Sydney, 10 minutes south. We\'ve been staining decks in the Huntsville area for over 25 years.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/exterior-cottage-staining-roller-muskoka.webp',
+      '/lovable-uploads/exterior-staining-crew-client-consultation-muskoka.webp',
+      '/lovable-uploads/exterior-boathouse-painting-lake-muskoka.webp'
+    ]
+  },
+  {
+    slug: 'cabinet-painting-huntsville',
+    name: 'Cabinet Painting Huntsville',
+    headline: 'Cabinet Painting in Huntsville – Factory-Smooth Kitchen Transformations',
+    description: 'Professional kitchen cabinet painting in Huntsville by Roll On Painting. Spray-applied, factory-smooth finishes that transform dated kitchens for a fraction of new cabinet costs. Based 10 min from Huntsville. 25+ years experience.',
+    metaDescription: 'Cabinet painting Huntsville ON. Factory-smooth spray finishes. Transform your kitchen. 25+ yrs exp, HGTV featured, $5M insured. From $3,500. 705-787-1401.',
+    category: 'residential',
+    priceFrom: { amount: 3500, unit: 'kitchen' },
+    aiAnswerBlock: {
+      whatIncludes: [
+        'All cabinet doors, drawer fronts, and frames painted or refinished',
+        'Professional spray application for factory-smooth results',
+        'Full degreasing, sanding, and priming of all surfaces',
+        'Premium bonding primer for wood, MDF, thermofoil, or laminate',
+        'Two coats of durable cabinet-grade paint or lacquer',
+        'Hardware removal and reinstallation',
+        'Full masking and protection of countertops, floors, and appliances',
+        'Free Touch Ups for Life on every completed cabinet project'
+      ],
+      whoItsFor: [
+        'Huntsville homeowners wanting a kitchen refresh without full renovation',
+        'Cottage owners upgrading dated cottage kitchens near Lake Vernon or Peninsula Lake',
+        'Property managers refreshing kitchens in Huntsville rental properties',
+        'Anyone with structurally sound cabinets needing a colour or finish update'
+      ],
+      whereAvailable: [
+        'Huntsville and all surrounding areas',
+        'Lake Vernon, Peninsula Lake, Fairy Lake cottages',
+        'Nearby: Port Sydney, Bracebridge, Dorset, Dwight'
+      ],
+      howQuotesWork: [
+        'Call 705-787-1401 or send photos of your cabinets',
+        'We visit your Huntsville kitchen to count doors and discuss finish options',
+        'Written quote within 24-48 hours — no hidden fees',
+        'Cabinet painting in Huntsville starts at $3,500 per kitchen'
+      ]
+    },
+    benefits: [
+      'Factory-smooth spray finishes — no brush marks or roller stipple',
+      'Transform your Huntsville kitchen for 1/3 the cost of new cabinets',
+      'Works on wood, MDF, thermofoil, and laminate',
+      'Over 25 years of cabinet refinishing experience',
+      'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
+      'Free Touch Ups for Life — no other Huntsville company offers this',
+      'WSIB covered, $5 million liability insurance',
+      'Most kitchens completed in 3-5 days'
+    ],
+    process: [
+      { step: 'Kitchen Assessment', description: 'We inspect your Huntsville kitchen, count doors, assess condition, and discuss colour and finish options.' },
+      { step: 'Preparation', description: 'Doors and hardware removed. All surfaces degreased, sanded, and primed with professional bonding primer.' },
+      { step: 'Spray Application', description: 'Two coats of durable cabinet-grade paint or lacquer sprayed for a flawless finish.' },
+      { step: 'Reassembly', description: 'Doors, drawers, and hardware reinstalled with proper alignment and smooth operation.' },
+      { step: 'Final Inspection', description: 'Walk-through to check every door, drawer, and surface for perfection.' },
+      { step: 'Free Touch Ups for Life', description: 'Your completed cabinet project includes Free Touch Ups for Life.' }
+    ],
+    faqs: [
+      { question: 'How much does cabinet painting cost in Huntsville?', answer: 'Cabinet painting in Huntsville starts at $3,500 per kitchen. Final pricing depends on door count, drawer fronts, and complexity. Island cabinets and specialty finishes may cost more.' },
+      { question: 'How long does cabinet painting take in Huntsville?', answer: 'Most Huntsville kitchen cabinet projects are completed in 3-5 days. Larger kitchens may take slightly longer.' },
+      { question: 'Can you paint thermofoil or laminate cabinets?', answer: 'Yes. We use specialized bonding primers for thermofoil, laminate, and other non-wood surfaces. Durable, professional results.' },
+      { question: 'What finish options are available?', answer: 'Matte, satin, semi-gloss, and high-gloss. Satin is most popular for modern, fingerprint-resistant look. Two-tone finishes available.' },
+      { question: 'Is cabinet painting worth it vs. new cabinets in Huntsville?', answer: 'If cabinets are structurally sound, absolutely. Save $10,000-$20,000 by refinishing instead of replacing. Brand-new look at roughly 1/3 the cost.' },
+      { question: 'Do you spray on-site or off-site?', answer: 'Typically on-site with HVLP spray equipment and full containment. Some projects may have doors sprayed in our controlled shop environment.' },
+      { question: 'What is the Free Touch Ups for Life guarantee?', answer: 'Every completed cabinet project includes Free Touch Ups for Life. Chips or marks? We fix them — no charge.' },
+      { question: 'Are you close to Huntsville?', answer: 'Based in Port Sydney, 10 minutes south. We\'ve been doing kitchen work in Huntsville for over 25 years.' }
+    ],
+    galleryImages: [
+      '/lovable-uploads/interior-kitchen-masking-prep.webp',
+      '/lovable-uploads/interior-modern-cottage-living.webp'
+    ]
   }
 ];
 
