@@ -5,10 +5,48 @@ import { ArrowLeft, Phone, Mail, CheckCircle, MapPin, Star, Shield, Heart } from
 import { businessInfo } from '@/data/businessInfo';
 import { LocationPageData, locationPages } from '@/data/locationPages';
 import { getLocationHero } from '@/data/locationHeroData';
+import { getLocationCoordinates } from '@/data/locationCoordinates';
 import PrivateClientBanner from '@/components/conversion/PrivateClientBanner';
 
 // Build a name → slug lookup for nearby area linking
 const nameToSlugMap = new Map(locationPages.map(p => [p.name, p.slug]));
+
+// Service list with links to service pages
+const serviceLinks = [
+  { name: "Interior Painting", slug: "/interior-painting-muskoka" },
+  { name: "Exterior Painting", slug: "/exterior-painting-muskoka" },
+  { name: "Kitchen Cabinet Refinishing", slug: "/cabinet-painting-muskoka" },
+  { name: "Deck & Fence Staining", slug: "/staining-muskoka" },
+  { name: "Commercial Painting", slug: "/commercial-painting-muskoka" },
+  { name: "GoNano Permanent Coating", slug: "/gonano" },
+  { name: "Power & Soft Washing", slug: "/power-washing-muskoka" },
+  { name: "Wallpaper Installation", slug: "/wallpaper-installation" },
+  { name: "Epoxy Coatings", slug: "/epoxy-floors-muskoka" },
+];
+
+// Universal FAQs dynamically localized per town
+const getUniversalFaqs = (name: string) => [
+  {
+    question: `Do I need to be home for a painting estimate in ${name}?`,
+    answer: `No. We can provide estimates based on photos, video calls, or on-site visits when you're not home. Many of our ${name} clients — especially cottage owners — arrange estimates remotely. We'll work around your schedule.`
+  },
+  {
+    question: `How long does it take to paint a house in ${name}?`,
+    answer: `Most interior projects in ${name} take 3–5 days, while full exterior painting typically takes 5–10 days depending on size and weather. We provide a detailed timeline with every estimate so you know exactly what to expect.`
+  },
+  {
+    question: `What paint brands do you use in ${name}?`,
+    answer: `We use Benjamin Moore, Sherwin-Williams, and specialty coatings selected for Muskoka's climate. Our team will recommend the best products for your ${name} property based on surface type, exposure, and desired finish.`
+  },
+  {
+    question: `Do you offer winter painting services in ${name}?`,
+    answer: `Yes — we perform interior painting year-round in ${name}. For exterior projects, we plan around Muskoka's freeze-thaw cycles to ensure optimal adhesion and durability. We'll advise you on the best timing for your project.`
+  },
+  {
+    question: `What is the Free Touch Ups for Life guarantee?`,
+    answer: `Every completed project with Roll On Painting includes our exclusive Free Touch Ups for Life program. If your walls get scuffed or nicked after we've finished, we'll come back and touch them up at no charge. No other ${name} painter offers this.`
+  },
+];
 
 interface LocationPageTemplateProps {
   location: LocationPageData;
@@ -19,6 +57,10 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
   const pageUrl = `${siteUrl}/${location.slug}`;
   const ogImage = "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg";
   const heroInfo = getLocationHero(location.slug);
+  const coords = getLocationCoordinates(location.slug);
+
+  // Combine location-specific FAQs with universal ones
+  const allFaqs = [...location.faqs, ...getUniversalFaqs(location.name)];
 
   const graphSchema = {
     "@context": "https://schema.org",
@@ -52,6 +94,11 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         "areaServed": {
           "@type": "Place",
           "name": `${location.name}, Ontario`,
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": coords.latitude,
+            "longitude": coords.longitude
+          },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": location.name,
@@ -65,7 +112,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
       },
       {
         "@type": "FAQPage",
-        "mainEntity": location.faqs.map(faq => ({
+        "mainEntity": allFaqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
           "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
@@ -73,18 +120,6 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
       }
     ]
   };
-
-  const services = [
-    "Interior Painting",
-    "Exterior Painting",
-    "Kitchen Cabinet Refinishing",
-    "Deck & Fence Staining",
-    "Commercial Painting",
-    "GoNano Permanent Coating",
-    "Power & Soft Washing",
-    "Wallpaper Installation",
-    "Epoxy Coatings"
-  ];
 
   return (
     <>
@@ -113,8 +148,8 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content={`${location.name}, Ontario`} />
-        <meta name="geo.position" content="45.0;-79.3" />
-        <meta name="ICBM" content="45.0, -79.3" />
+        <meta name="geo.position" content={`${coords.latitude};${coords.longitude}`} />
+        <meta name="ICBM" content={`${coords.latitude}, ${coords.longitude}`} />
         <meta httpEquiv="Content-Language" content="en-CA" />
         
         <script type="application/ld+json">{JSON.stringify(graphSchema)}</script>
@@ -161,7 +196,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors shadow-lg">
-                  Get a Free Quote in {location.name}
+                  See What Your {location.name} Project Would Cost
                 </Link>
                 <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm">
                   <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
@@ -179,10 +214,12 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
                 
                 <h3 className="text-xl font-semibold text-atomic-navy mb-4">Our Services in {location.name}</h3>
                 <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-                  {services.map((service, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-atomic-turquoise flex-shrink-0" />
-                      {service}
+                  {serviceLinks.map((service, idx) => (
+                    <li key={idx}>
+                      <Link to={service.slug} className="flex items-center gap-2 text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                        <CheckCircle className="w-4 h-4 text-atomic-turquoise flex-shrink-0" />
+                        {service.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -232,7 +269,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
             <div className="container mx-auto px-4">
               <h2 id="location-faq-heading" className="text-2xl font-bold text-atomic-navy text-center mb-8">Frequently Asked Questions — {location.name}</h2>
               <div className="max-w-3xl mx-auto space-y-4">
-                {location.faqs.map((faq, idx) => (
+                {allFaqs.map((faq, idx) => (
                   <div key={idx} className="bg-background p-6 rounded-lg shadow-sm border border-border">
                     <h3 className="font-semibold text-atomic-navy mb-2">{faq.question}</h3>
                     <p className="text-muted-foreground text-sm">{faq.answer}</p>
@@ -271,18 +308,21 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
           {/* CTA */}
           <section className="py-16 bg-atomic-navy text-white">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready for a Quote in {location.name}?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started in {location.name}?</h2>
               <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                Contact Roll On Painting today for a free, no-obligation estimate on your {location.name} painting project.
+                Get a free, no-obligation estimate for your {location.name} painting project. Most quotes delivered within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                  Request a Free Estimate
+                  Request Your Private Quote
                 </Link>
-                <a href={`mailto:${businessInfo.email}`} className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors">
-                  <Mail className="w-4 h-4" />{businessInfo.email}
+                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                  <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
                 </a>
               </div>
+              <a href={`mailto:${businessInfo.email}`} className="inline-flex items-center gap-2 text-white/60 hover:text-white/80 transition-colors mt-4 text-sm">
+                <Mail className="w-4 h-4" />{businessInfo.email}
+              </a>
             </div>
           </section>
         </main>
