@@ -73,6 +73,10 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+# Block legacy crawler artifact paths
+Disallow: /index.php/tools/
+Disallow: /index.php/
+
 # Crawl delay for certain bots
 User-agent: Baiduspider
 Crawl-delay: 5
