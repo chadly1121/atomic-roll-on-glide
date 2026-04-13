@@ -152,7 +152,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         <meta name="ICBM" content={`${coords.latitude}, ${coords.longitude}`} />
         <meta httpEquiv="Content-Language" content="en-CA" />
         
-        <script type="application/ld+json">{JSON.stringify(graphSchema)}</script>
+        <script id="schema-main" type="application/ld+json">{JSON.stringify(graphSchema)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

@@ -491,8 +491,8 @@ const SEOHelmet: React.FC = () => {
       <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
       
       {/* Consolidated Structured Data */}
-      <script type="application/ld+json">{JSON.stringify(consolidatedSchema)}</script>
-      <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>
+      <script id="schema-main" type="application/ld+json">{JSON.stringify(consolidatedSchema)}</script>
+      <script id="schema-webapp" type="application/ld+json">{JSON.stringify(webAppSchema)}</script>
     </Helmet>
   );
 };
