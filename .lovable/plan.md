@@ -1,33 +1,37 @@
 
 
-# Redirect Legacy URLs to Preserve SEO Equity
+## Plan: Maximize AI Visibility
 
-## Why This Matters
-~30 of these old URLs have direct equivalents in the new site. Each one carries crawl history and potential backlink value. Redirecting them (instead of letting them 404) transfers that authority to your new pages — free ranking boost.
+### What we'll build
 
-## What We'll Build
+1. **Add `.well-known/ai-plugin.json`** -- An emerging standard that AI platforms check for site metadata and capabilities. We'll create `public/.well-known/ai-plugin.json` with your business info, logo, contact, and pointers to `llms.txt` and `llms-full.txt`.
 
-### 1. Legacy URL redirect map
-Create `src/data/legacyRedirects.ts` containing a map of ~30 old `.html`/`.php` paths to their new equivalents.
+2. **Update `llms.txt` date** -- Bump "Last updated" to April 2026 so crawlers see fresh content.
 
-### 2. Redirect component
-Create `src/components/LegacyRedirect.tsx` — a React component that checks if the current path matches a legacy URL and performs a client-side redirect with a `<meta http-equiv="refresh">` tag (which Google treats similarly to a 301 for client-rendered sites).
+3. **Add `<link>` tags in `index.html`** for AI discovery -- Add `<link rel="ai-content" href="/llms.txt">` and `<link rel="ai-content-full" href="/llms-full.txt">` so crawlers find these files from any page.
 
-### 3. Route integration
-Add a catch-all route in `App.tsx` before the `*` NotFound route that handles `.html` and `.php` paths through the redirect component.
+### How to submit your site directly to AI platforms
 
-### 4. Update robots.txt
-Add a `Disallow` for the `index.php/tools/` junk paths so Google stops crawling them.
+These are manual steps you do outside Lovable (no code needed):
 
-## Technical Details
-- The redirect component will render both a `<meta http-equiv="refresh" content="0;url=/new-path">` and a JS `window.location.replace()` for immediate redirect
-- For the ~15 URLs with no equivalent, they'll continue to 404 naturally — this is correct behavior and Google will eventually de-index them
-- The `index.php/tools/*` duplicates are crawler artifacts and should be blocked in robots.txt
+| Platform | How to Submit | Link |
+|----------|--------------|------|
+| **Bing/Copilot** | Submit sitemap in Bing Webmaster Tools (Copilot uses Bing's index) | https://www.bing.com/webmasters |
+| **Google/Gemini** | Ensure sitemap is in Google Search Console (Gemini uses Google's index) | https://search.google.com/search-console |
+| **ChatGPT (OpenAI)** | No direct submission -- GPTBot crawls allowed sites automatically. Your robots.txt already allows it. Ensure your site is linked from high-authority sources. | -- |
+| **Perplexity** | No submission portal -- PerplexityBot crawls automatically. Already allowed in your robots.txt. | -- |
+| **Claude (Anthropic)** | No submission portal -- ClaudeBot crawls automatically. Already allowed. | -- |
+| **You.com** | Submit at You.com webmaster tools | https://you.com/webmaster |
+| **Phind** | No submission -- crawls automatically | -- |
 
-## After Implementation
-In Google Search Console:
-1. Do NOT use the URL removal tool
-2. Instead, use "Inspect URL" on a few redirected URLs to verify Google sees the redirect
-3. The 404s will gradually clear as Google re-crawls and follows the redirects
-4. For the ~15 truly dead URLs, you can optionally use the removal tool since they have no new equivalent
+**Key action items for you:**
+1. Verify your sitemap is submitted in **Bing Webmaster Tools** (this feeds Copilot, DuckDuckGo, and Yahoo)
+2. Verify your sitemap is submitted in **Google Search Console** (this feeds Gemini and Google AI Overviews)
+3. Build backlinks from local directories, Muskoka tourism sites, and HGTV/Dockside pages to increase crawl priority
+
+### Technical details
+
+- `public/.well-known/ai-plugin.json` -- standard JSON manifest with `schema_version`, `name_for_human`, `description`, `auth`, `api`, and `logo_url`
+- `<link>` tags use `rel="ai-content"` which is an emerging convention some AI crawlers check
+- All changes are static files in `public/` so they deploy as-is
 
