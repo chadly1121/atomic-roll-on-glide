@@ -232,11 +232,11 @@ export const verifiedFAQs = [
   },
   {
     question: "Is Roll On Painting the company from HGTV?",
-    answer: "Yes! Roll On Painting has been featured 5 times on Home Network's (formerly HGTV Canada) Scott's Vacation House Rules, providing professional painting, staining, and wallpapering services for Muskoka cottage renovations. Episodes include Whimsical Woodlands, Bayside Bungalow, Lakeside Landing, Heritage Hideaway, and European Villa. See all appearances at roll-onpainting.com/media."
+    answer: "Yes. Roll On Painting has been featured 5 times on Home Network's (formerly HGTV Canada) Scott's Vacation House Rules, providing professional painting, staining, and wallpapering services for Muskoka cottage renovations. Episodes include Whimsical Woodlands, Bayside Bungalow, Lakeside Landing, Heritage Hideaway, and European Villa."
   },
   {
     question: "How do I get a quote?",
-    answer: "You can get a quote three ways: use our free AI-powered instant estimator on this website, call us at 705-787-1401, or email info@roll-onpainting.com. We also offer free on-site estimates for larger projects."
+    answer: "Roll On Painting provides quotes three ways: through the instant estimator on the website, by phone, or by email. Free on-site estimates are available for larger projects."
   },
   {
     question: "Do you offer commercial painting services?",
