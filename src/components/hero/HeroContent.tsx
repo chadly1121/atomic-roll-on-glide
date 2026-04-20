@@ -24,12 +24,12 @@ const HeroContent = () => {
       
       <div>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
-          Muskoka's Premier Painters
+          Muskoka House Painters
           <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
         </h1>
-        
+
         <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
-          Painting shouldn't be a headache. We handle the prep, the mess, and the details — so you don't have to.
+          Roll On Painting is a trusted painting company in Muskoka serving Huntsville, Bracebridge, Gravenhurst, Port Carling and the surrounding lakes. Interior, exterior, cottage, and cabinet painting — done right the first time.
         </p>
         
         <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">

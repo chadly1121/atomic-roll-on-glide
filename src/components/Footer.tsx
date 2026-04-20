@@ -210,6 +210,20 @@ const Footer = () => {
                 Request a Quote
               </a>
             </div>
+
+            {/* Review request — boosts review velocity for SEO */}
+            <div className="mt-6 p-4 bg-atomic-orange/10 border border-atomic-orange/20 rounded-lg">
+              <h4 className="text-sm font-bold text-atomic-navy mb-1">Worked with us?</h4>
+              <p className="text-xs text-muted-foreground mb-3">A 30-second Google review helps neighbours find us.</p>
+              <a
+                href="https://g.page/r/CRNVBxUKJEU0EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-atomic-orange hover:underline"
+              >
+                ★ Leave a Google Review →
+              </a>
+            </div>
           </div>
         </div>
         
