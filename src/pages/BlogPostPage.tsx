@@ -60,7 +60,24 @@ const BlogPostPage = () => {
         image: post.image,
         datePublished: post.date_published,
         dateModified: post.date_modified,
-        author: post.authors?.map(a => ({ '@type': 'Person', name: a.name })) || [],
+        author: (post.authors && post.authors.length > 0)
+          ? post.authors.map(a => ({
+              '@type': 'Person',
+              name: a.name,
+              url: a.url || `${siteUrl}/about`,
+            }))
+          : [{
+              '@type': 'Person',
+              name: businessInfo.owner,
+              jobTitle: 'Owner',
+              url: `${siteUrl}/about`,
+              sameAs: businessInfo.urls.linkedinOwner,
+              worksFor: {
+                '@type': 'Organization',
+                name: businessInfo.name,
+                url: siteUrl,
+              },
+            }],
         description: metaDesc,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
         publisher: {
