@@ -86,7 +86,8 @@ const SEOHelmet: React.FC = () => {
           businessInfo.urls.instagram,
           businessInfo.urls.facebook,
           businessInfo.urls.linkedin,
-          businessInfo.urls.googleBusiness
+          businessInfo.urls.googleBusiness,
+          businessInfo.urls.googleReviews
         ]
       },
       // LocalBusiness with aggregateRating
