@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { localBlogPosts } from '@/data/localBlogPosts';
 
 const FEED_URL = 'https://getautoseo.com/feeds/11478/2BAyrFT4mJ27iBtqKG5KC5XTe9wE9K8FMjrMA4C10ok.json';
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -53,7 +54,7 @@ function calcReadingTime(html: string): number {
 }
 
 function processItems(rawItems: any[]): BlogFeedItem[] {
-  return rawItems
+  const remote = rawItems
     .map((item: any) => ({
       ...item,
       tags: item.tags || [],
@@ -61,10 +62,21 @@ function processItems(rawItems: any[]): BlogFeedItem[] {
       _seo: item._seo || {},
       slug: extractSlug(item.url || '', item.id),
       readingTime: calcReadingTime(item.content_html || ''),
-    }))
-    .sort((a: BlogFeedItem, b: BlogFeedItem) =>
+    }));
+
+  const local: BlogFeedItem[] = localBlogPosts.map((p) => ({
+    ...p,
+    readingTime: calcReadingTime(p.content_html || ''),
+  }));
+
+  // Local posts take priority on slug conflicts.
+  const localSlugs = new Set(local.map((p) => p.slug));
+  const merged = [...local, ...remote.filter((r) => !localSlugs.has(r.slug))];
+
+  return merged.sort(
+    (a: BlogFeedItem, b: BlogFeedItem) =>
       new Date(b.date_published).getTime() - new Date(a.date_published).getTime()
-    );
+  );
 }
 
 export function useBlogFeed() {
@@ -94,7 +106,14 @@ export function useBlogFeed() {
       setItems(processed);
     } catch (err: any) {
       console.error('Blog feed fetch error:', err);
-      setError(err.message || 'Failed to load articles');
+      // Even if the remote feed fails, still show local posts so the page is never empty.
+      const fallback = processItems([]);
+      if (fallback.length > 0) {
+        globalCache = { items: fallback, fetchedAt: Date.now() };
+        setItems(fallback);
+      } else {
+        setError(err.message || 'Failed to load articles');
+      }
     } finally {
       setLoading(false);
       fetchingRef.current = false;
