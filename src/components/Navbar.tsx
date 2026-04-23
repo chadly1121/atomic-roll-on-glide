@@ -70,11 +70,13 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
 
       {/* Mobile Menu - CSS transition instead of framer-motion */}
       <div
-        className={`md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden transition-all duration-200 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden bg-white border-t border-gray-200 shadow-lg transition-all duration-200 ease-in-out ${
+          isMobileMenuOpen
+            ? 'max-h-[calc(100vh-3.5rem)] opacity-100 overflow-y-auto overscroll-contain'
+            : 'max-h-0 opacity-0 overflow-hidden'
         }`}
       >
-        <div className="px-4 py-6 space-y-4">
+        <div className="px-4 py-6 space-y-4 pb-8">
           {navLinks.map(link => (
             <a
               key={link.name}
