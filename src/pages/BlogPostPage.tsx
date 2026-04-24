@@ -98,6 +98,98 @@ const BlogPostPage = () => {
     ]
   } : null;
 
+  // Extract H2/H3 + following paragraph pairs from content for FAQPage schema
+  const extractFAQs = (html: string): Array<{ q: string; a: string }> => {
+    if (typeof window === 'undefined' || !html) return [];
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const faqs: Array<{ q: string; a: string }> = [];
+      doc.querySelectorAll('h3').forEach((h) => {
+        const q = (h.textContent || '').trim();
+        if (!q.endsWith('?')) return;
+        let a = '';
+        let next = h.nextElementSibling;
+        while (next && !/^H[1-6]$/i.test(next.tagName)) {
+          a += ' ' + (next.textContent || '').trim();
+          next = next.nextElementSibling;
+        }
+        a = a.trim();
+        if (q && a) faqs.push({ q, a });
+      });
+      return faqs;
+    } catch {
+      return [];
+    }
+  };
+
+  // Extract HowTo steps from <ol><li>...</li></ol> blocks
+  const extractHowTo = (html: string): { name: string; steps: string[] } | null => {
+    if (typeof window === 'undefined' || !html) return null;
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const ol = doc.querySelector('ol');
+      if (!ol) return null;
+      const items = Array.from(ol.querySelectorAll('li')).map(li => (li.textContent || '').trim()).filter(Boolean);
+      if (items.length < 2) return null;
+      // Find a preceding heading for the HowTo name
+      let name = post?.title || 'How To';
+      let prev: Element | null = ol.previousElementSibling;
+      while (prev) {
+        if (/^H[1-6]$/i.test(prev.tagName)) {
+          name = (prev.textContent || name).trim();
+          break;
+        }
+        prev = prev.previousElementSibling;
+      }
+      return { name, steps: items };
+    } catch {
+      return null;
+    }
+  };
+
+  const faqItems = post ? extractFAQs(post.content_html) : [];
+  const howTo = post ? extractHowTo(post.content_html) : null;
+
+  if (jsonLd && faqItems.length > 0) {
+    jsonLd['@graph'].push({
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    } as any);
+  }
+
+  if (jsonLd && howTo) {
+    jsonLd['@graph'].push({
+      '@type': 'HowTo',
+      name: howTo.name,
+      step: howTo.steps.map((text, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: `Step ${i + 1}`,
+        text,
+      })),
+    } as any);
+  }
+
+  if (jsonLd && post) {
+    jsonLd['@graph'].push({
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+      url: canonicalUrl,
+      name: post.title,
+      inLanguage: 'en-CA',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '.blog-prose h2', '.blog-prose h3', '.blog-prose p'],
+      },
+    } as any);
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {post && (
