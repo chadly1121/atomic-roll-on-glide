@@ -288,6 +288,9 @@ const BlogPostPage = () => {
                   <span>{post.authors.map(a => a.name).join(', ')}</span>
                 )}
                 <span>{formatDate(post.date_published)}</span>
+                {post.date_modified && post.date_modified !== post.date_published && (
+                  <span className="italic">Updated {formatDate(post.date_modified)}</span>
+                )}
                 <span>{post.readingTime} min read</span>
                 {post.tags?.map(tag => (
                   <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
