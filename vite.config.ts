@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import { prerenderBlogPlugin } from "./src/build/prerender-blog";
+import { prerenderBlogPlugin } from "./prerender-blog";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
