@@ -1,4 +1,4 @@
-import type { BlogFeedItem } from '../hooks/useBlogFeed';
+import type { BlogFeedItem } from '@/hooks/useBlogFeed';
 
 /**
  * Locally-authored blog posts.
