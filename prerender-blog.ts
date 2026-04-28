@@ -225,8 +225,163 @@ export function prerenderBlogPlugin(): Plugin {
           fs.writeFileSync(path.join(postDir, 'index.html'), html, 'utf-8');
         }
 
+        // ==========================================================
+        // CORE STATIC ROUTES — head-only overrides for SPA pages.
+        // Body content stays the same as the homepage SEO block (it
+        // already includes nav/services/areas/FAQ/contact). Each
+        // route gets a unique <title>, meta description, canonical,
+        // OG tags, and a WebPage JSON-LD so AI bots and search
+        // engines see distinct, indexable URLs without JS.
+        // ==========================================================
+        const renderHeadOnly = (opts: {
+          title: string;
+          description: string;
+          canonical: string;
+          extraJsonLd?: Record<string, unknown>;
+        }) => {
+          let html = template;
+          html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(opts.title)}</title>`);
+          // Replace homepage canonical/description/og:url/og:title/og:description with route-specific values
+          html = html.replace(
+            /<meta name="description"[^>]*\/>/,
+            `<meta name="description" content="${escapeHtml(opts.description)}" />`,
+          );
+          html = html.replace(
+            /<link rel="canonical"[^>]*\/>/,
+            `<link rel="canonical" href="${opts.canonical}" />`,
+          );
+          html = html.replace(
+            /<meta property="og:url"[^>]*\/>/,
+            `<meta property="og:url" content="${opts.canonical}" />`,
+          );
+          html = html.replace(
+            /<meta property="og:title"[^>]*\/>/,
+            `<meta property="og:title" content="${escapeHtml(opts.title)}" />`,
+          );
+          html = html.replace(
+            /<meta property="og:description"[^>]*\/>/,
+            `<meta property="og:description" content="${escapeHtml(opts.description)}" />`,
+          );
+          html = html.replace(
+            /<meta name="twitter:title"[^>]*\/>/,
+            `<meta name="twitter:title" content="${escapeHtml(opts.title)}" />`,
+          );
+          html = html.replace(
+            /<meta name="twitter:description"[^>]*\/>/,
+            `<meta name="twitter:description" content="${escapeHtml(opts.description)}" />`,
+          );
+          if (opts.extraJsonLd) {
+            html = html.replace(
+              '</head>',
+              `    <script type="application/ld+json">${JSON.stringify(opts.extraJsonLd)}</script>\n  </head>`,
+            );
+          }
+          return html;
+        };
+
+        const writeRoute = (routePath: string, html: string) => {
+          const dir = path.join(distDir, routePath);
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
+        };
+
+        const coreRoutes: Array<{ path: string; title: string; description: string }> = [
+          { path: 'about', title: 'About Roll On Painting | HGTV Featured Muskoka Painters', description: 'Family-run painting contractor based in Port Sydney, Ontario. 25+ years experience, HGTV featured, $5M insured, WSIB covered. Serving Muskoka since 2014.' },
+          { path: 'contact', title: 'Contact Roll On Painting | Free Quote in Muskoka', description: 'Request a free painting quote in Muskoka. Call 705-787-1401 or email info@roll-onpainting.com. Serving Huntsville, Bracebridge, Gravenhurst & all of Muskoka.' },
+          { path: 'service-areas', title: 'Service Areas | Painters Across Muskoka & Parry Sound', description: 'Roll On Painting serves 50+ communities across Muskoka, Parry Sound and Simcoe County including Huntsville, Bracebridge, Gravenhurst, Port Carling, Bala and more.' },
+          { path: 'portfolio', title: 'Portfolio | Roll On Painting Muskoka Projects', description: 'Browse interior, exterior, cabinet, commercial and cottage painting projects completed across Muskoka by Roll On Painting.' },
+          { path: 'reviews', title: 'Reviews | Roll On Painting — 4.9★ Google Rated', description: '140+ five-star Google reviews. Real testimonials from Muskoka homeowners and cottage owners about Roll On Painting.' },
+          { path: 'faq', title: 'FAQ | Roll On Painting Muskoka', description: 'Answers to common questions about painting costs, timelines, warranty, insurance and our Free Touch-Ups for Life program in Muskoka.' },
+          { path: 'catalog', title: 'Painting Service Catalog | Fixed-Price Packages | Roll On Painting', description: 'Transparent fixed-price painting packages for Muskoka. Book online with 13% HST included. WSIB covered, $5M insured.' },
+          { path: 'gonano', title: 'GoNano Roof Coatings & Sealers | Authorized Dealer | Muskoka', description: 'GoNano nanotechnology roof and surface coatings. NuRoof Fortify, Revive and Bio-Boost. Authorized dealer for Muskoka. As seen on Dragon\'s Den.' },
+          { path: 'private-client', title: 'Private Client Program | Roll On Painting Muskoka', description: 'Fully managed property painting and care for high-net-worth Muskoka cottage owners. Discreet, premium, headache-free.' },
+          { path: 'free-touch-ups', title: 'Perfect Finish Promise | Free Touch-Ups | Roll On Painting', description: 'Every Roll On Painting project includes our Perfect Finish Promise — complimentary touch-ups so your finish stays flawless.' },
+          { path: 'media', title: 'Media | HGTV & Dockside Magazine Features | Roll On Painting', description: 'Roll On Painting featured 5 times on HGTV\'s Scott\'s Vacation House Rules and 15 times in Dockside Magazine.' },
+          { path: 'careers', title: 'Careers | Join Roll On Painting Muskoka', description: 'Hiring skilled painters in Muskoka. Apply by email — join an HGTV-featured, WSIB-covered, $5M insured painting team.' },
+        ];
+
+        for (const r of coreRoutes) {
+          const canonical = `${SITE_URL}/${r.path}`;
+          const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            url: canonical,
+            name: r.title,
+            description: r.description,
+            isPartOf: { '@id': `${SITE_URL}/#website` },
+            about: { '@id': `${SITE_URL}/#business` },
+            inLanguage: 'en-CA',
+            speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
+          };
+          writeRoute(r.path, renderHeadOnly({ title: r.title, description: r.description, canonical, extraJsonLd: jsonLd }));
+        }
+
+        // ---- Per-service pages ----
+        try {
+          const servicesSrc = fs.readFileSync(
+            path.resolve(process.cwd(), 'src/data/servicePages.ts'),
+            'utf-8',
+          );
+          const serviceBlocks = servicesSrc.split(/\n\s{2}\{\n/).slice(1);
+          for (const block of serviceBlocks) {
+            const slug = block.match(/slug:\s*'([^']+)'/)?.[1];
+            const name = block.match(/name:\s*'([^']+)'/)?.[1];
+            const metaDesc = block.match(/metaDescription:\s*'([^']+)'/)?.[1];
+            if (!slug || !name) continue;
+            const canonical = `${SITE_URL}/${slug}`;
+            const title = `${name} | Roll On Painting | Muskoka`;
+            const description =
+              metaDesc?.replace(/\\'/g, "'") ?? `${name} services in Muskoka by Roll On Painting.`;
+            const jsonLd = {
+              '@context': 'https://schema.org',
+              '@type': 'Service',
+              name,
+              serviceType: name,
+              url: canonical,
+              provider: { '@id': `${SITE_URL}/#business` },
+              areaServed: { '@type': 'AdministrativeArea', name: 'Muskoka, Ontario, Canada' },
+              description,
+            };
+            writeRoute(slug, renderHeadOnly({ title, description, canonical, extraJsonLd: jsonLd }));
+          }
+        } catch (e) {
+          console.warn('[prerender-blog] service pages skipped:', e);
+        }
+
+        // ---- Per-location pages ----
+        try {
+          const locSrc = fs.readFileSync(
+            path.resolve(process.cwd(), 'src/data/locationPages.ts'),
+            'utf-8',
+          );
+          const locBlocks = locSrc.split(/\n\s{2}\{\n/).slice(1);
+          for (const block of locBlocks) {
+            const slug = block.match(/slug:\s*"([^"]+)"/)?.[1];
+            const name = block.match(/name:\s*"([^"]+)"/)?.[1];
+            const metaTitle = block.match(/metaTitle:\s*"([^"]+)"/)?.[1];
+            const metaDesc = block.match(/metaDescription:\s*"([^"]+)"/)?.[1];
+            if (!slug || !name) continue;
+            const canonical = `${SITE_URL}/${slug}`;
+            const title = metaTitle ?? `Painters in ${name} | Roll On Painting`;
+            const description = metaDesc ?? `Professional painters serving ${name}, Ontario.`;
+            const jsonLd = {
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': `${canonical}#localbusiness`,
+              name: `Roll On Painting — ${name}`,
+              url: canonical,
+              areaServed: { '@type': 'Place', name: `${name}, Ontario, Canada` },
+              parentOrganization: { '@id': `${SITE_URL}/#business` },
+              description,
+            };
+            writeRoute(slug, renderHeadOnly({ title, description, canonical, extraJsonLd: jsonLd }));
+          }
+        } catch (e) {
+          console.warn('[prerender-blog] location pages skipped:', e);
+        }
+
         // eslint-disable-next-line no-console
-        console.log(`[prerender-blog] Generated ${posts.length} static blog post page(s) + /blog index.`);
+        console.log(`[prerender-blog] Generated ${posts.length} blog page(s) + core/service/location routes.`);
       } catch (err) {
         // eslint-disable-next-line no-console
         console.warn('[prerender-blog] Skipped pre-render:', err);
