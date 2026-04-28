@@ -481,7 +481,7 @@ const SEOHelmet: React.FC = () => {
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`${businessInfo.name} | ${businessInfo.tagline}`} />
+      <meta name="twitter:title" content="Painters Muskoka | HGTV Featured | Roll On Painting" />
       <meta name="twitter:description" content={businessInfo.description} />
       <meta name="twitter:image" content={ogImage} />
       
