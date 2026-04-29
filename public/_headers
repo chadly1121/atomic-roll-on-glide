@@ -1,0 +1,56 @@
+# Cache policy for Roll On Painting
+# Compatible with Cloudflare Pages, Netlify, and Lovable hosting
+
+# Hashed/fingerprinted build assets — safe to cache forever
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# User-uploaded images (filenames include UUIDs, effectively immutable)
+/lovable-uploads/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static images, fonts, videos at the root
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=2592000
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+/*.webm
+  Cache-Control: public, max-age=31536000, immutable
+
+# SEO/discovery files — short cache, must revalidate
+/sitemap.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+/robots.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+/llms.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+/llms-full.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+
+# HTML — short cache, always revalidate so deploys go live quickly
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# SPA root and all unhashed routes — short cache, must revalidate
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+/*
+  Cache-Control: public, max-age=3600, must-revalidate
