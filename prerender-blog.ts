@@ -269,6 +269,13 @@ export function prerenderBlogPlugin(): Plugin {
     fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
   };
 
+  const writeExactRouteFile = (distDir: string, routePath: string, html: string) => {
+    const filePath = path.join(distDir, routePath);
+    fs.rmSync(filePath, { recursive: true, force: true });
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    fs.writeFileSync(filePath, html, 'utf-8');
+  };
+
   const serviceRouteJsonLd = (slug: string, name: string, description: string) => ({
     '@context': 'https://schema.org',
     '@graph': [
