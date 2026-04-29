@@ -468,13 +468,16 @@ export function prerenderBlogPlugin(): Plugin {
           },
         };
 
+        const blogIndexHtml = replaceRoot(
+          renderStaticRoute(template, blogIndexRoute),
+          `<main><header><h1>Roll On Painting Blog</h1><p>${escapeHtml(blogIndexRoute.description)}</p></header><ul>${blogListItems}</ul></main>`,
+        );
+
+        writeExactRouteFile(distDir, 'blog', blogIndexHtml);
         writeRoute(
           distDir,
           'blog',
-          replaceRoot(
-            renderStaticRoute(template, blogIndexRoute),
-            `<main><header><h1>Roll On Painting Blog</h1><p>${escapeHtml(blogIndexRoute.description)}</p></header><ul>${blogListItems}</ul></main>`,
-          ),
+          blogIndexHtml,
         );
 
         for (const p of posts) {
@@ -508,22 +511,21 @@ export function prerenderBlogPlugin(): Plugin {
       <div>${p.contentHtml}</div>
     </article></main>`;
 
-          writeRoute(
-            distDir,
-            slug,
-            replaceRoot(
-              renderStaticRoute(template, {
-                slug,
-                title,
-                description,
-                h1: p.title,
-                image,
-                ogType: 'article',
-                jsonLd,
-              }),
-              bodyHtml,
-            ),
+          const blogPostHtml = replaceRoot(
+            renderStaticRoute(template, {
+              slug,
+              title,
+              description,
+              h1: p.title,
+              image,
+              ogType: 'article',
+              jsonLd,
+            }),
+            bodyHtml,
           );
+
+          writeExactRouteFile(distDir, slug, blogPostHtml);
+          writeRoute(distDir, slug, blogPostHtml);
         }
 
         const coreRoutes: RouteMeta[] = [
