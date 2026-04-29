@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
+import FloatingCallButton from "./components/conversion/FloatingCallButton";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
@@ -102,6 +103,7 @@ const App = () => {
                   } />
                 </Routes>
               </Suspense>
+              <FloatingCallButton />
             </BrowserRouter>
           </TooltipProvider>
         </HelmetProvider>
