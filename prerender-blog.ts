@@ -659,8 +659,10 @@ export function prerenderBlogPlugin(): Plugin {
           writeRoute(distDir, route.slug, renderStaticRoute(template, route));
         }
 
+        const publishedRouteCount = 1 + posts.length + seen.size;
+
         console.log(
-          `[prerender-blog] Generated ${posts.length} blog post(s), blog index, and ${seen.size} static route(s).`,
+          `[prerender-blog] Generated ${publishedRouteCount} total static HTML route(s): homepage + ${posts.length} blog post(s) + blog index + ${seen.size} page route(s).`,
         );
       } catch (err) {
         console.warn('[prerender-blog] Skipped pre-render:', err);
