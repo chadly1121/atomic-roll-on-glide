@@ -665,7 +665,9 @@ export function prerenderBlogPlugin(): Plugin {
         for (const route of allRoutes) {
           if (seen.has(route.slug)) continue;
           seen.add(route.slug);
-          writeRoute(distDir, route.slug, renderStaticRoute(template, route));
+          const routeHtml = renderStaticRoute(template, route);
+          writeExactRouteFile(distDir, route.slug, routeHtml);
+          writeRoute(distDir, route.slug, routeHtml);
         }
 
         const publishedRouteCount = 1 + posts.length + seen.size;
