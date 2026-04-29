@@ -118,7 +118,7 @@ const SEOHelmet: React.FC = () => {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.7",
-          "reviewCount": "15",
+          "reviewCount": "19",
           "bestRating": "5",
           "worstRating": "1"
         },

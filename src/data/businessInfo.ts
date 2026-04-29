@@ -139,7 +139,7 @@ export const businessInfo = {
   ratings: {
     average: 4.7,
     scale: 5,
-    reviewCount: 15
+    reviewCount: 19
   }
 } as const;
 
