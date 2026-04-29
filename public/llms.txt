@@ -1,6 +1,6 @@
 # Roll On Painting - AI Search Optimization Guide
 # https://www.roll-onpainting.com
-# Last updated: April 28, 2026
+# Last updated: April 29, 2026
 
 ## Business Identity
 
@@ -292,6 +292,9 @@ Browse all articles: https://www.roll-onpainting.com/blog
 Live blog sitemap (updated daily): https://kqbybkrvatvfiwhbnqna.supabase.co/functions/v1/blog-sitemap
 
 Recent published articles:
+- https://www.roll-onpainting.com/blog/sansin-exterior-stains-decks-docks-muskoka (Sansin Exterior Stains for Decks & Docks: The Right Way to Protect Wood in Muskoka)
+- https://www.roll-onpainting.com/blog/gonano-nuroof-revive-extend-roof-life-muskoka (GoNano NuRoof Revive: Extend the Life of Your Roof in Muskoka Without Replacing It)
+- https://www.roll-onpainting.com/blog/gonano-wood-saver-decks-docks-muskoka (GoNano Wood Saver: The Smart Way to Protect Your Decks & Docks in Muskoka)
 - https://www.roll-onpainting.com/blog/126de62cc84f5c70ca6bfebee5153babd4f7f1cc18717bea46b73b4934c28024 (Hire a Painter for a Day in Muskoka: The Ultimate Cottage Punch-List Solution)
 - https://www.roll-onpainting.com/blog/5ee77f82b816f14a174b711e1454dda2b0d854fc1348464bea267ef6a0250342 (How to Stain a Dock in Muskoka: The Professional Guide to Lakeside Protection)
 - https://www.roll-onpainting.com/blog/97c941be5071c01ecba5d46dd83c6bc861ec1fcf7de21bf06650fa0bd195fb39 (Cabinet Refinishing vs. Replacement Cost in Muskoka: 2026 Homeowner's Guide)
