@@ -473,13 +473,6 @@ export function prerenderBlogPlugin(): Plugin {
           `<main><header><h1>Roll On Painting Blog</h1><p>${escapeHtml(blogIndexRoute.description)}</p></header><ul>${blogListItems}</ul></main>`,
         );
 
-        writeExactRouteFile(distDir, 'blog', blogIndexHtml);
-        writeRoute(
-          distDir,
-          'blog',
-          blogIndexHtml,
-        );
-
         for (const p of posts) {
           const slug = `blog/${p.slug}`;
           const description = normalizeText(p.metaDescription ?? p.summary);
@@ -523,10 +516,10 @@ export function prerenderBlogPlugin(): Plugin {
             }),
             bodyHtml,
           );
-
-          writeExactRouteFile(distDir, slug, blogPostHtml);
           writeRoute(distDir, slug, blogPostHtml);
         }
+
+        writeExactRouteFile(distDir, 'blog', blogIndexHtml);
 
         const coreRoutes: RouteMeta[] = [
           {
