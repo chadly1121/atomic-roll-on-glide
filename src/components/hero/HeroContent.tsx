@@ -61,10 +61,10 @@ const HeroContent = () => {
       
       <div className="flex items-center space-x-3 sm:space-x-4 pt-3 sm:pt-4 bg-white/50 p-3 sm:p-4 rounded-xl backdrop-blur-sm">
         <div className="flex -space-x-2 flex-shrink-0">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-atomic-orange text-white flex items-center justify-center font-bold text-xs sm:text-sm">4.7</div>
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-atomic-orange text-white flex items-center justify-center font-bold text-xs sm:text-sm">4.8</div>
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-atomic-turquoise text-white flex items-center justify-center font-bold text-sm sm:text-base">★</div>
         </div>
-        <p className="text-xs sm:text-sm text-atomic-navy"><span className="font-bold">4.7/5</span> from 15 Google reviews</p>
+        <p className="text-xs sm:text-sm text-atomic-navy"><span className="font-bold">4.8/5</span> from 20 Google reviews</p>
       </div>
     </div>
   );
