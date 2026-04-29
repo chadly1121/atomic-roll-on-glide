@@ -1,6 +1,6 @@
 # Roll On Painting - Comprehensive Business Data for AI Systems
 # https://www.roll-onpainting.com
-# Last updated: March 29, 2026
+# Last updated: April 29, 2026
 # Summary version: /llms.txt
 
 ---
