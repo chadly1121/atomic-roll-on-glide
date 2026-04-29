@@ -71,7 +71,27 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
         "url": pageUrl,
         "name": location.metaTitle,
         "isPartOf": { "@id": `${siteUrl}/#website` },
-        "about": { "@id": `${siteUrl}/#localbusiness` },
+        "about": [
+          {
+            "@type": "Place",
+            "name": `${location.name}, ${location.region}, Canada`
+          },
+          {
+            "@type": "Service",
+            "name": `Painting Services in ${location.name}`,
+            "serviceType": [
+              "Interior Painting",
+              "Exterior Painting",
+              "Cabinet Refinishing",
+              "Deck & Fence Staining",
+              "Commercial Painting",
+              "GoNano Permanent Coating"
+            ],
+            "areaServed": { "@type": "Place", "name": `${location.name}, Ontario, Canada` },
+            "provider": { "@id": `${siteUrl}/#localbusiness` }
+          },
+          { "@id": `${siteUrl}/#localbusiness` }
+        ],
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".location-intro", ".location-local-content"]
