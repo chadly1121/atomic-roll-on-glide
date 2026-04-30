@@ -697,6 +697,7 @@ ${exactRouteRewrites}
           ...parseLocationRoutes(),
           ...parseCottageOwnerRoutes(),
         ];
+        const sitemapRoutes = readSitemapRoutes();
 
         const seen = new Set<string>();
         for (const route of allRoutes) {
@@ -705,10 +706,23 @@ ${exactRouteRewrites}
           writeRoute(distDir, route.slug, renderStaticRoute(template, route));
         }
 
+        const generatedRoutes = new Set(['', 'blog', ...posts.map((post) => `blog/${post.slug}`), ...seen]);
+        const missingSitemapRoutes = sitemapRoutes.filter((route) => !generatedRoutes.has(route));
+        if (missingSitemapRoutes.length > 0) {
+          console.warn(
+            `[prerender-blog] Missing prerender metadata for sitemap route(s): ${missingSitemapRoutes.join(', ')}`,
+          );
+        }
+
+        writePrerenderRedirects(
+          distDir,
+          sitemapRoutes.filter((route) => route && generatedRoutes.has(route)),
+        );
+
         const publishedRouteCount = 1 + posts.length + seen.size;
 
         console.log(
-          `[prerender-blog] Generated ${publishedRouteCount} total static HTML route(s): homepage + ${posts.length} blog post(s) + blog index + ${seen.size} page route(s).`,
+          `[prerender-blog] Generated ${publishedRouteCount} total static HTML route(s) and exact rewrites for ${sitemapRoutes.length} sitemap URL(s).`,
         );
       } catch (err) {
         console.warn('[prerender-blog] Skipped pre-render:', err);
