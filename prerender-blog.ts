@@ -110,23 +110,32 @@ export function prerenderBlogPlugin(): Plugin {
     const src = fs.readFileSync(localPostsPath, 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): ParsedPost | null => {
         const slug = readStringField(block, 'slug');
         const title = readStringField(block, 'title');
         const contentHtml = readStringField(block, 'content_html');
         if (!slug || !title || !contentHtml) return null;
 
-        return {
+        const post: ParsedPost = {
           slug,
           title,
           summary: readStringField(block, 'summary') ?? '',
-          image: readStringField(block, 'image'),
-          date_published: readStringField(block, 'date_published'),
-          date_modified: readStringField(block, 'date_modified'),
-          author: readStringField(block, 'name'),
-          metaDescription: readStringField(block, 'meta_description'),
           contentHtml,
-        } satisfies ParsedPost;
+        };
+
+        const image = readStringField(block, 'image');
+        const datePublished = readStringField(block, 'date_published');
+        const dateModified = readStringField(block, 'date_modified');
+        const author = readStringField(block, 'name');
+        const metaDescription = readStringField(block, 'meta_description');
+
+        if (image) post.image = image;
+        if (datePublished) post.date_published = datePublished;
+        if (dateModified) post.date_modified = dateModified;
+        if (author) post.author = author;
+        if (metaDescription) post.metaDescription = metaDescription;
+
+        return post;
       })
       .filter((post): post is ParsedPost => Boolean(post));
   };
@@ -136,25 +145,28 @@ export function prerenderBlogPlugin(): Plugin {
       const res = await fetch(FEED_URL);
       if (!res.ok) return [];
 
-      const data = await res.json();
+      const data = (await res.json()) as { items?: any[] };
       const items = Array.isArray(data.items) ? data.items : [];
 
       return items
-        .map((item: any) => {
+        .map((item: any): ParsedPost | null => {
           const slug = extractSlug(item.url || '', item.id || '');
           if (!slug || !item.title || !item.content_html) return null;
 
-          return {
+          const post: ParsedPost = {
             slug,
             title: String(item.title),
             summary: String(item.summary || ''),
-            image: item.image ? String(item.image) : undefined,
-            date_published: item.date_published ? String(item.date_published) : undefined,
-            date_modified: item.date_modified ? String(item.date_modified) : undefined,
-            author: Array.isArray(item.authors) && item.authors[0]?.name ? String(item.authors[0].name) : undefined,
-            metaDescription: item._seo?.meta_description ? String(item._seo.meta_description) : undefined,
             contentHtml: String(item.content_html),
-          } satisfies ParsedPost;
+          };
+
+          if (item.image) post.image = String(item.image);
+          if (item.date_published) post.date_published = String(item.date_published);
+          if (item.date_modified) post.date_modified = String(item.date_modified);
+          if (Array.isArray(item.authors) && item.authors[0]?.name) post.author = String(item.authors[0].name);
+          if (item._seo?.meta_description) post.metaDescription = String(item._seo.meta_description);
+
+          return post;
         })
         .filter((post): post is ParsedPost => Boolean(post));
     } catch (e) {
