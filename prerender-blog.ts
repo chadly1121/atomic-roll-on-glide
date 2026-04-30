@@ -350,7 +350,7 @@ ${exactRouteRewrites}
     const src = fs.readFileSync(path.resolve(process.cwd(), filePath), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const name = readStringField(block, 'name');
         if (!slug || !name) return null;
@@ -379,7 +379,7 @@ ${exactRouteRewrites}
     const src = fs.readFileSync(path.resolve(process.cwd(), 'src/data/locationPages.ts'), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const name = readStringField(block, 'name');
         if (!slug || !name) return null;
@@ -429,7 +429,7 @@ ${exactRouteRewrites}
     const src = fs.readFileSync(path.resolve(process.cwd(), 'src/data/cottageOwnerPages.ts'), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const cityName = readStringField(block, 'cityName');
         if (!slug || !cityName) return null;
