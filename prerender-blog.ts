@@ -52,6 +52,18 @@ export function prerenderBlogPlugin(): Plugin {
 
   const normalizeText = (value: string) => value.replace(/\s+/g, ' ').trim();
 
+  const readSitemapRoutes = (): string[] => {
+    const sitemapPath = path.resolve(process.cwd(), 'public/sitemap.xml');
+    if (!fs.existsSync(sitemapPath)) return [];
+
+    const sitemap = fs.readFileSync(sitemapPath, 'utf-8');
+    const routes = [...sitemap.matchAll(/<loc>https:\/\/www\.roll-onpainting\.com\/?([^<]*)<\/loc>/g)]
+      .map((match) => match[1].trim().replace(/^\/+|\/+$/g, ''))
+      .sort((a, b) => a.localeCompare(b));
+
+    return [...new Set(routes)];
+  };
+
   const readStringField = (block: string, field: string): string | undefined => {
     const fieldIndex = block.indexOf(`${field}:`);
     if (fieldIndex === -1) return undefined;
@@ -267,6 +279,33 @@ export function prerenderBlogPlugin(): Plugin {
     const dir = path.join(distDir, routePath);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
+  };
+
+  const writePrerenderRedirects = (distDir: string, routePaths: string[]) => {
+    const uniqueRoutes = [...new Set(routePaths.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const exactRouteRewrites = uniqueRoutes
+      .map((route) => `/${route}    /${route}/index.html    200`)
+      .join('\n');
+
+    const redirects = `# Force non-www to www
+https://roll-onpainting.com/*  https://www.roll-onpainting.com/:splat  301!
+http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
+
+# Static assets - serve directly
+/sitemap.xml      /sitemap.xml      200!
+/robots.txt       /robots.txt       200!
+/llms.txt         /llms.txt         200!
+/llms-full.txt    /llms-full.txt    200!
+/site.webmanifest /site.webmanifest 200!
+
+# Pre-rendered sitemap routes - serve route-specific HTML before SPA fallback
+${exactRouteRewrites}
+
+# SPA fallback for non-indexed/client-only routes
+/*    /index.html   200
+`;
+
+    fs.writeFileSync(path.join(distDir, '_redirects'), redirects, 'utf-8');
   };
 
   const serviceRouteJsonLd = (slug: string, name: string, description: string) => ({
