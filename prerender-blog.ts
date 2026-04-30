@@ -52,6 +52,18 @@ export function prerenderBlogPlugin(): Plugin {
 
   const normalizeText = (value: string) => value.replace(/\s+/g, ' ').trim();
 
+  const readSitemapRoutes = (): string[] => {
+    const sitemapPath = path.resolve(process.cwd(), 'public/sitemap.xml');
+    if (!fs.existsSync(sitemapPath)) return [];
+
+    const sitemap = fs.readFileSync(sitemapPath, 'utf-8');
+    const routes = [...sitemap.matchAll(/<loc>https:\/\/www\.roll-onpainting\.com\/?([^<]*)<\/loc>/g)]
+      .map((match) => match[1].trim().replace(/^\/+|\/+$/g, ''))
+      .sort((a, b) => a.localeCompare(b));
+
+    return [...new Set(routes)];
+  };
+
   const readStringField = (block: string, field: string): string | undefined => {
     const fieldIndex = block.indexOf(`${field}:`);
     if (fieldIndex === -1) return undefined;
@@ -98,23 +110,32 @@ export function prerenderBlogPlugin(): Plugin {
     const src = fs.readFileSync(localPostsPath, 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): ParsedPost | null => {
         const slug = readStringField(block, 'slug');
         const title = readStringField(block, 'title');
         const contentHtml = readStringField(block, 'content_html');
         if (!slug || !title || !contentHtml) return null;
 
-        return {
+        const post: ParsedPost = {
           slug,
           title,
           summary: readStringField(block, 'summary') ?? '',
-          image: readStringField(block, 'image'),
-          date_published: readStringField(block, 'date_published'),
-          date_modified: readStringField(block, 'date_modified'),
-          author: readStringField(block, 'name'),
-          metaDescription: readStringField(block, 'meta_description'),
           contentHtml,
-        } satisfies ParsedPost;
+        };
+
+        const image = readStringField(block, 'image');
+        const datePublished = readStringField(block, 'date_published');
+        const dateModified = readStringField(block, 'date_modified');
+        const author = readStringField(block, 'name');
+        const metaDescription = readStringField(block, 'meta_description');
+
+        if (image) post.image = image;
+        if (datePublished) post.date_published = datePublished;
+        if (dateModified) post.date_modified = dateModified;
+        if (author) post.author = author;
+        if (metaDescription) post.metaDescription = metaDescription;
+
+        return post;
       })
       .filter((post): post is ParsedPost => Boolean(post));
   };
@@ -124,25 +145,28 @@ export function prerenderBlogPlugin(): Plugin {
       const res = await fetch(FEED_URL);
       if (!res.ok) return [];
 
-      const data = await res.json();
+      const data = (await res.json()) as { items?: any[] };
       const items = Array.isArray(data.items) ? data.items : [];
 
       return items
-        .map((item: any) => {
+        .map((item: any): ParsedPost | null => {
           const slug = extractSlug(item.url || '', item.id || '');
           if (!slug || !item.title || !item.content_html) return null;
 
-          return {
+          const post: ParsedPost = {
             slug,
             title: String(item.title),
             summary: String(item.summary || ''),
-            image: item.image ? String(item.image) : undefined,
-            date_published: item.date_published ? String(item.date_published) : undefined,
-            date_modified: item.date_modified ? String(item.date_modified) : undefined,
-            author: Array.isArray(item.authors) && item.authors[0]?.name ? String(item.authors[0].name) : undefined,
-            metaDescription: item._seo?.meta_description ? String(item._seo.meta_description) : undefined,
             contentHtml: String(item.content_html),
-          } satisfies ParsedPost;
+          };
+
+          if (item.image) post.image = String(item.image);
+          if (item.date_published) post.date_published = String(item.date_published);
+          if (item.date_modified) post.date_modified = String(item.date_modified);
+          if (Array.isArray(item.authors) && item.authors[0]?.name) post.author = String(item.authors[0].name);
+          if (item._seo?.meta_description) post.metaDescription = String(item._seo.meta_description);
+
+          return post;
         })
         .filter((post): post is ParsedPost => Boolean(post));
     } catch (e) {
@@ -269,6 +293,33 @@ export function prerenderBlogPlugin(): Plugin {
     fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf-8');
   };
 
+  const writePrerenderRedirects = (distDir: string, routePaths: string[]) => {
+    const uniqueRoutes = [...new Set(routePaths.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const exactRouteRewrites = uniqueRoutes
+      .map((route) => `/${route}    /${route}/index.html    200`)
+      .join('\n');
+
+    const redirects = `# Force non-www to www
+https://roll-onpainting.com/*  https://www.roll-onpainting.com/:splat  301!
+http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
+
+# Static assets - serve directly
+/sitemap.xml      /sitemap.xml      200!
+/robots.txt       /robots.txt       200!
+/llms.txt         /llms.txt         200!
+/llms-full.txt    /llms-full.txt    200!
+/site.webmanifest /site.webmanifest 200!
+
+# Pre-rendered sitemap routes - serve route-specific HTML before SPA fallback
+${exactRouteRewrites}
+
+# SPA fallback for non-indexed/client-only routes
+/*    /index.html   200
+`;
+
+    fs.writeFileSync(path.join(distDir, '_redirects'), redirects, 'utf-8');
+  };
+
   const serviceRouteJsonLd = (slug: string, name: string, description: string) => ({
     '@context': 'https://schema.org',
     '@graph': [
@@ -299,7 +350,7 @@ export function prerenderBlogPlugin(): Plugin {
     const src = fs.readFileSync(path.resolve(process.cwd(), filePath), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const name = readStringField(block, 'name');
         if (!slug || !name) return null;
@@ -328,7 +379,7 @@ export function prerenderBlogPlugin(): Plugin {
     const src = fs.readFileSync(path.resolve(process.cwd(), 'src/data/locationPages.ts'), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const name = readStringField(block, 'name');
         if (!slug || !name) return null;
@@ -378,7 +429,7 @@ export function prerenderBlogPlugin(): Plugin {
     const src = fs.readFileSync(path.resolve(process.cwd(), 'src/data/cottageOwnerPages.ts'), 'utf-8');
 
     return splitTopLevelObjects(src)
-      .map((block) => {
+      .map((block): RouteMeta | null => {
         const slug = readStringField(block, 'slug');
         const cityName = readStringField(block, 'cityName');
         if (!slug || !cityName) return null;
@@ -646,6 +697,7 @@ export function prerenderBlogPlugin(): Plugin {
           ...parseLocationRoutes(),
           ...parseCottageOwnerRoutes(),
         ];
+        const sitemapRoutes = readSitemapRoutes();
 
         const seen = new Set<string>();
         for (const route of allRoutes) {
@@ -654,10 +706,23 @@ export function prerenderBlogPlugin(): Plugin {
           writeRoute(distDir, route.slug, renderStaticRoute(template, route));
         }
 
+        const generatedRoutes = new Set(['', 'blog', ...posts.map((post) => `blog/${post.slug}`), ...seen]);
+        const missingSitemapRoutes = sitemapRoutes.filter((route) => !generatedRoutes.has(route));
+        if (missingSitemapRoutes.length > 0) {
+          console.warn(
+            `[prerender-blog] Missing prerender metadata for sitemap route(s): ${missingSitemapRoutes.join(', ')}`,
+          );
+        }
+
+        writePrerenderRedirects(
+          distDir,
+          sitemapRoutes.filter((route) => route && generatedRoutes.has(route)),
+        );
+
         const publishedRouteCount = 1 + posts.length + seen.size;
 
         console.log(
-          `[prerender-blog] Generated ${publishedRouteCount} total static HTML route(s): homepage + ${posts.length} blog post(s) + blog index + ${seen.size} page route(s).`,
+          `[prerender-blog] Generated ${publishedRouteCount} total static HTML route(s) and exact rewrites for ${sitemapRoutes.length} sitemap URL(s).`,
         );
       } catch (err) {
         console.warn('[prerender-blog] Skipped pre-render:', err);

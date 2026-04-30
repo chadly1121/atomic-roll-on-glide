@@ -9,5 +9,6 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /llms-full.txt    /llms-full.txt    200!
 /site.webmanifest /site.webmanifest 200!
 
-# SPA fallback
+# SPA fallback for non-indexed/client-only routes.
+# Do not force this rule: pre-rendered /slug/index.html files must be served first for SEO.
 /*    /index.html   200
