@@ -22,29 +22,19 @@ const HeroContent = () => {
         <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">Clean Reliable Painters</h2>
       </div>
       
-      <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:gap-6">
-        <div className="flex-1">
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
-            Muskoka House Painters
-            <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
-          </h1>
+      <div>
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
+          Muskoka House Painters
+          <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
+        </h1>
 
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
-            Roll On Painting is a trusted painting company in Muskoka serving Huntsville, Bracebridge, Gravenhurst, Port Carling and the surrounding lakes. Interior, exterior, cottage, and cabinet painting — done right the first time.
-          </p>
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
+          Roll On Painting is a trusted painting company in Muskoka serving Huntsville, Bracebridge, Gravenhurst, Port Carling and the surrounding lakes. Interior, exterior, cottage, and cabinet painting — done right the first time.
+        </p>
 
-          <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">
-            HGTV Featured · $5M Insured · Perfect Finish Promise — Free Touch Ups for Life
-          </p>
-        </div>
-        <img
-          src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp"
-          alt="Roll On Painting logo"
-          width={320}
-          height={320}
-          loading="eager"
-          className="w-56 h-56 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain mx-auto sm:mx-0 mb-3 sm:mb-0 flex-shrink-0"
-        />
+        <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">
+          HGTV Featured · $5M Insured · Perfect Finish Promise — Free Touch Ups for Life
+        </p>
       </div>
       
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-3 sm:pt-4">
