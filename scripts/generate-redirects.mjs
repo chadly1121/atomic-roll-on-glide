@@ -16,6 +16,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const MAP_FILE = path.join(ROOT, 'redirect-map.json');
 const OUT_FILE = path.join(ROOT, 'public', '_redirects');
+const SITEMAP_FILE = path.join(ROOT, 'public', 'sitemap.xml');
 
 const VALID_STATUSES = new Set([301, 302, 307, 308]);
 
@@ -93,7 +94,41 @@ for (const { source, destination, status } of sorted) {
 }
 
 lines.push('');
-lines.push('# SPA fallback (last). Pre-rendered /slug/index.html files take priority.');
+
+// Force-serve every prerendered route from its own /slug/index.html file.
+// Without these explicit 200! rules, Cloudflare Pages can fall through to
+// the wildcard SPA fallback below and serve dist/index.html (empty #root)
+// instead of the prerendered dist/<slug>/index.html. The 200! status forces
+// the rewrite even when the source path has no extension.
+try {
+  const xml = await fs.readFile(SITEMAP_FILE, 'utf8');
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  const routes = [
+    ...new Set(
+      locs
+        .map((u) => {
+          try {
+            let p = new URL(u).pathname;
+            if (!p.startsWith('/')) p = '/' + p;
+            return p === '/' ? '/' : p.replace(/\/+$/, '');
+          } catch {
+            return null;
+          }
+        })
+        .filter((p) => p && p !== '/')
+    ),
+  ].sort();
+  lines.push(`# Prerendered route overrides (${routes.length} from sitemap.xml) — must come BEFORE SPA fallback`);
+  for (const r of routes) {
+    lines.push(`${pad(r, 60)}${pad(`${r}/index.html`, 50)}200!`);
+  }
+  lines.push('');
+  console.log(`✓ Added ${routes.length} prerendered-route overrides`);
+} catch (e) {
+  console.warn(`⚠ could not read sitemap for prerender overrides: ${e.message}`);
+}
+
+lines.push('# SPA fallback (last). Pre-rendered /slug/index.html overrides above take priority.');
 lines.push('/*    /index.html   200');
 lines.push('');
 
