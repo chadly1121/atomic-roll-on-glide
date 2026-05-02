@@ -239,10 +239,15 @@ async function prerenderOne(browser, route, idx, total) {
     try {
       await page.waitForFunction(() => {
         const root = document.querySelector('#root');
-        return !!root && (root.innerText || '').trim().length > 200;
+        if (!root) return false;
+        const text = (root.innerText || '').trim();
+        if (text.length > 200) return true;
+        // Fallback: route component clearly rendered (5KB+ of HTML) even if
+        // most of its content is images/links rather than visible text.
+        return (root.innerHTML || '').length > 5000;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root innerText < 200 chars; capturing anyway`);
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root content below thresholds; capturing anyway`);
     }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
