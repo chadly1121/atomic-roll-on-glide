@@ -16,6 +16,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const MAP_FILE = path.join(ROOT, 'redirect-map.json');
 const OUT_FILE = path.join(ROOT, 'public', '_redirects');
+const OUT_ROUTES_FILE = path.join(ROOT, 'public', '_routes.json');
 const SITEMAP_FILE = path.join(ROOT, 'public', 'sitemap.xml');
 
 const VALID_STATUSES = new Set([301, 302, 307, 308]);
@@ -23,6 +24,26 @@ const VALID_STATUSES = new Set([301, 302, 307, 308]);
 function fail(msg) {
   console.error(`❌ generate-redirects: ${msg}`);
   process.exit(1);
+}
+
+async function readPrerenderRoutesFromSitemap() {
+  const xml = await fs.readFile(SITEMAP_FILE, 'utf8');
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  return [
+    ...new Set(
+      locs
+        .map((u) => {
+          try {
+            let p = new URL(u).pathname;
+            if (!p.startsWith('/')) p = '/' + p;
+            return p === '/' ? '/' : p.replace(/\/+$/, '');
+          } catch {
+            return null;
+          }
+        })
+        .filter((p) => p && p !== '/')
+    ),
+  ].sort();
 }
 
 const raw = await fs.readFile(MAP_FILE, 'utf8').catch(() => fail(`missing ${MAP_FILE}`));
@@ -101,23 +122,7 @@ lines.push('');
 // instead of the prerendered dist/<slug>/index.html. The 200! status forces
 // the rewrite even when the source path has no extension.
 try {
-  const xml = await fs.readFile(SITEMAP_FILE, 'utf8');
-  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
-  const routes = [
-    ...new Set(
-      locs
-        .map((u) => {
-          try {
-            let p = new URL(u).pathname;
-            if (!p.startsWith('/')) p = '/' + p;
-            return p === '/' ? '/' : p.replace(/\/+$/, '');
-          } catch {
-            return null;
-          }
-        })
-        .filter((p) => p && p !== '/')
-    ),
-  ].sort();
+  const routes = await readPrerenderRoutesFromSitemap();
   lines.push(`# Prerendered route overrides (${routes.length} from sitemap.xml) — must come BEFORE SPA fallback`);
   for (const r of routes) {
     lines.push(`${pad(r, 60)}${pad(`${r}/index.html`, 50)}200!`);
