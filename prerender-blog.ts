@@ -33,6 +33,7 @@ export function prerenderBlogPlugin(): Plugin {
     jsonLd: Record<string, unknown>;
     image?: string;
     ogType?: 'website' | 'article';
+    bodyHtml?: string;
   };
 
   const escapeHtml = (s: string) =>
@@ -94,6 +95,264 @@ export function prerenderBlogPlugin(): Plugin {
   };
 
   const splitTopLevelObjects = (src: string) => src.split(/\n\s{2}\{\n/).slice(1);
+
+  // Extract a string-array field like:  whatIncludes: [ 'a', "b", `c` ],
+  const readStringArrayField = (block: string, field: string): string[] => {
+    const re = new RegExp(`${field}\\s*:\\s*\\[`);
+    const m = re.exec(block);
+    if (!m) return [];
+    let i = m.index + m[0].length;
+    let depth = 1;
+    let buf = '';
+    while (i < block.length && depth > 0) {
+      const ch = block[i];
+      if (ch === '[') depth++;
+      else if (ch === ']') {
+        depth--;
+        if (depth === 0) break;
+      }
+      buf += ch;
+      i++;
+    }
+    const items: string[] = [];
+    let j = 0;
+    while (j < buf.length) {
+      const ch = buf[j];
+      if (ch === "'" || ch === '"' || ch === '`') {
+        const quote = ch;
+        j++;
+        let val = '';
+        while (j < buf.length) {
+          const c = buf[j];
+          if (c === '\\' && j + 1 < buf.length) {
+            val += c + buf[j + 1];
+            j += 2;
+            continue;
+          }
+          if (c === quote) {
+            j++;
+            break;
+          }
+          val += c;
+          j++;
+        }
+        items.push(unescapeSourceString(val));
+      } else {
+        j++;
+      }
+    }
+    return items;
+  };
+
+  // Extract an object-array field, returning each object's body as a substring
+  // for further per-field parsing via readStringField.
+  const readObjectArrayField = (block: string, field: string): string[] => {
+    const re = new RegExp(`${field}\\s*:\\s*\\[`);
+    const m = re.exec(block);
+    if (!m) return [];
+    let i = m.index + m[0].length;
+    let arrDepth = 1;
+    const objects: string[] = [];
+    while (i < block.length && arrDepth > 0) {
+      const ch = block[i];
+      if (ch === '[') {
+        arrDepth++;
+        i++;
+        continue;
+      }
+      if (ch === ']') {
+        arrDepth--;
+        i++;
+        continue;
+      }
+      if (ch === '{') {
+        let depth = 1;
+        i++;
+        let buf = '';
+        while (i < block.length && depth > 0) {
+          const c = block[i];
+          if (c === "'" || c === '"' || c === '`') {
+            const quote = c;
+            buf += c;
+            i++;
+            while (i < block.length) {
+              const cc = block[i];
+              if (cc === '\\' && i + 1 < block.length) {
+                buf += cc + block[i + 1];
+                i += 2;
+                continue;
+              }
+              buf += cc;
+              i++;
+              if (cc === quote) break;
+            }
+            continue;
+          }
+          if (c === '{') depth++;
+          else if (c === '}') {
+            depth--;
+            if (depth === 0) {
+              i++;
+              break;
+            }
+          }
+          buf += c;
+          i++;
+        }
+        objects.push(buf);
+        continue;
+      }
+      i++;
+    }
+    return objects;
+  };
+
+  // Extract a nested object field's inner body, e.g. aiAnswerBlock: { ... }
+  const readObjectField = (block: string, field: string): string | null => {
+    const re = new RegExp(`${field}\\s*:\\s*\\{`);
+    const m = re.exec(block);
+    if (!m) return null;
+    let i = m.index + m[0].length;
+    let depth = 1;
+    let buf = '';
+    while (i < block.length && depth > 0) {
+      const c = block[i];
+      if (c === "'" || c === '"' || c === '`') {
+        const quote = c;
+        buf += c;
+        i++;
+        while (i < block.length) {
+          const cc = block[i];
+          if (cc === '\\' && i + 1 < block.length) {
+            buf += cc + block[i + 1];
+            i += 2;
+            continue;
+          }
+          buf += cc;
+          i++;
+          if (cc === quote) break;
+        }
+        continue;
+      }
+      if (c === '{') depth++;
+      else if (c === '}') {
+        depth--;
+        if (depth === 0) break;
+      }
+      buf += c;
+      i++;
+    }
+    return buf;
+  };
+
+  const renderList = (items: string[], ordered = false): string => {
+    if (!items.length) return '';
+    const tag = ordered ? 'ol' : 'ul';
+    return `<${tag}>${items.map((it) => `<li>${escapeHtml(it)}</li>`).join('')}</${tag}>`;
+  };
+
+  const renderFaqs = (faqs: { question: string; answer: string }[]): string => {
+    if (!faqs.length) return '';
+    return `<section aria-labelledby="faq-heading"><h2 id="faq-heading">Frequently Asked Questions</h2>${faqs
+      .map(
+        (f) =>
+          `<details><summary>${escapeHtml(f.question)}</summary><p>${escapeHtml(f.answer)}</p></details>`,
+      )
+      .join('')}</section>`;
+  };
+
+  const parseFaqArray = (block: string): { question: string; answer: string }[] => {
+    return readObjectArrayField(block, 'faqs')
+      .map((obj) => {
+        const question = readStringField(obj, 'question');
+        const answer = readStringField(obj, 'answer');
+        if (!question || !answer) return null;
+        return { question, answer };
+      })
+      .filter((x): x is { question: string; answer: string } => Boolean(x));
+  };
+
+  const coreRouteBody = (slug: string, h1: string, description: string): string => {
+    const wrap = (inner: string) =>
+      `<main><header><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(description)}</p></header>${inner}</main>`;
+
+    switch (slug) {
+      case 'about':
+        return wrap(`
+  <section><h2>Who We Are</h2><p>Roll On Painting is a family-run painting contractor based in Port Sydney, Ontario, serving Muskoka, Parry Sound and Simcoe County since 2014. With over 25 years of combined experience, our crews specialize in interior, exterior, cabinet and cottage painting for homes, cottages and commercial properties throughout the region.</p></section>
+  <section><h2>Featured on HGTV</h2><p>Roll On Painting has been featured five times on HGTV's Scott's Vacation House Rules and 15 times in Dockside Magazine — Muskoka's premier lifestyle publication. We're known for clean job sites, premium finishes, and the Perfect Finish Promise that backs every project we complete.</p></section>
+  <section><h2>Trust & Coverage</h2><ul><li>WSIB covered for every employee on every job.</li><li>$5 million general liability insurance.</li><li>Registered Ontario business: 2458115 Ontario Inc. operating as Roll On Painting.</li><li>Premium products: Benjamin Moore, Dulux, PPG, GoNano.</li></ul></section>
+  <section><h2>Areas We Serve</h2><p>Huntsville, Bracebridge, Gravenhurst, Port Sydney, Port Carling, Bala, Baysville, Dorset, Dwight, Lake of Bays, Lake Muskoka, Lake Rosseau, Lake Joseph, Parry Sound, Orillia, Barrie and surrounding communities.</p></section>
+`);
+      case 'contact':
+        return wrap(`
+  <section><h2>How to Reach Us</h2><p>Call <a href="tel:+17057871401">705-787-1401</a> or email <a href="mailto:info@roll-onpainting.com">info@roll-onpainting.com</a> for a free, no-obligation painting quote in Muskoka. We respond to all enquiries within one business day.</p></section>
+  <section><h2>What to Expect</h2><ol><li>Tell us about your project — interior, exterior, cabinets, cottage, or commercial.</li><li>We arrange a free on-site assessment at a time that works for you.</li><li>You receive a detailed written quote within 24-48 hours.</li><li>Once approved, we schedule the work and protect your home throughout.</li><li>Final walkthrough plus the Perfect Finish Promise on every project.</li></ol></section>
+  <section><h2>Service Area</h2><p>Roll On Painting serves Huntsville, Bracebridge, Gravenhurst, Port Sydney, Port Carling, Bala, Baysville, Dorset, Dwight, Lake of Bays, all of Muskoka Lakes, Parry Sound and Simcoe County.</p></section>
+`);
+      case 'service-areas':
+        return wrap(`
+  <section><h2>Communities We Serve</h2><p>Roll On Painting serves more than 50 communities across Muskoka, Parry Sound and Simcoe County. Our home base in Port Sydney puts us within easy reach of every major lake and town in the region.</p></section>
+  <section><h2>Muskoka</h2><ul><li>Huntsville, Bracebridge, Gravenhurst</li><li>Port Sydney, Port Carling, Bala</li><li>Baysville, Dorset, Dwight, Lake of Bays</li><li>Muskoka Lakes, Lake Rosseau, Lake Joseph, Lake Muskoka</li><li>Windermere, Minett, Port Sandfield, Milford Bay, Utterson, Novar</li></ul></section>
+  <section><h2>Parry Sound &amp; Georgian Bay</h2><ul><li>Parry Sound, MacTier, Pointe au Baril</li><li>Honey Harbour, Port Severn, Georgian Bay communities</li></ul></section>
+  <section><h2>Simcoe County</h2><ul><li>Orillia, Barrie, Severn Bridge, Coldwater, Washago</li></ul></section>
+`);
+      case 'portfolio':
+        return wrap(`
+  <section><h2>Project Categories</h2><ul><li>Interior painting — walls, ceilings, trim, vaulted spaces and exposed beams.</li><li>Exterior painting — siding, soffits, fascia, decks and docks.</li><li>Cabinet refinishing — kitchens and built-ins, sprayed finishes.</li><li>Commercial &amp; institutional — schools, retail, offices.</li><li>Cottage painting — waterfront properties across Muskoka Lakes.</li><li>Wallpaper installation, prefinishing, epoxy and specialty finishes.</li></ul></section>
+  <section><h2>What Our Portfolio Shows</h2><p>Every project shown is a real Roll On Painting job photographed on-site in Muskoka. We don't use stock or AI-generated imagery. You'll see prep, application and finished results across cottages, custom homes and commercial buildings.</p></section>
+`);
+      case 'reviews':
+        return wrap(`
+  <section><h2>4.8★ Google Rated</h2><p>Roll On Painting carries a 4.8-star Google rating with 20+ verified reviews from Muskoka homeowners, cottage owners, builders and property managers. Customers consistently highlight clean job sites, on-time delivery, premium finishes and the Perfect Finish Promise.</p></section>
+  <section><h2>What Customers Say</h2><ul><li>Reliable, on-time scheduling and clear communication.</li><li>Premium Benjamin Moore, Dulux and PPG paints — never builder-grade.</li><li>Detailed prep work — patching, sanding, caulking, priming.</li><li>Free Touch Ups for Life on every completed project.</li><li>HGTV-featured craftsmanship at fair Muskoka pricing.</li></ul></section>
+`);
+      case 'faq':
+        return wrap(`
+  <section><h2>Pricing &amp; Quotes</h2><details><summary>How much does interior painting cost in Muskoka?</summary><p>Interior painting starts at $4.50 per square foot including prep, two coats of premium paint and cleanup.</p></details><details><summary>How much does exterior painting cost?</summary><p>Exterior painting starts at $5.75 per square foot. Final pricing depends on surface condition, height and product selection.</p></details><details><summary>Are estimates free?</summary><p>Yes. We provide free, no-obligation on-site estimates throughout Muskoka and Parry Sound.</p></details></section>
+  <section><h2>Insurance &amp; Warranty</h2><details><summary>Are you insured?</summary><p>Yes — $5 million general liability insurance and full WSIB coverage on every employee.</p></details><details><summary>What is the Perfect Finish Promise?</summary><p>Every Roll On Painting project includes complimentary touch-ups so your finish stays flawless after we leave.</p></details></section>
+  <section><h2>Scheduling</h2><details><summary>How far in advance should I book?</summary><p>Cottage and exterior work books 4–8 weeks ahead. Interior projects can often be scheduled within 2–3 weeks.</p></details></section>
+`);
+      case 'catalog':
+        return wrap(`
+  <section><h2>Fixed-Price Painting Packages</h2><p>Our service catalog offers transparent, fixed-price painting packages for Muskoka homeowners and cottage owners. Every package includes 13% HST, premium materials, surface preparation and the Perfect Finish Promise.</p></section>
+  <section><h2>What's Included in Every Package</h2><ul><li>Premium Benjamin Moore, Dulux or PPG paint.</li><li>Full surface preparation: patching, sanding, caulking, priming.</li><li>Two coats of paint applied by experienced crews.</li><li>Floor and furniture protection plus full cleanup.</li><li>WSIB-covered, $5M-insured workmanship.</li><li>Perfect Finish Promise — complimentary touch-ups.</li></ul></section>
+  <section><h2>How Booking Works</h2><ol><li>Choose a package that matches your project size.</li><li>Provide your jobsite address (required for scheduling).</li><li>Pay securely online — 13% HST included.</li><li>We schedule the work and execute it to spec.</li></ol></section>
+`);
+      case 'gonano':
+        return wrap(`
+  <section><h2>GoNano Roof &amp; Surface Coatings</h2><p>Roll On Painting is an authorized GoNano dealer for Muskoka. GoNano's nanotechnology coatings restore, protect and extend the life of asphalt shingles, metal roofs, concrete and other exterior surfaces — without replacement.</p></section>
+  <section><h2>The Three GoNano Tiers</h2><ul><li><strong>GoNano NuRoof Revive</strong> — restores faded asphalt shingles with deep color and water resistance.</li><li><strong>GoNano NuRoof Fortify</strong> — premium protective layer that strengthens shingles and extends roof life.</li><li><strong>GoNano Bio-Boost</strong> — biological treatment that prevents moss, algae and lichen regrowth.</li></ul></section>
+  <section><h2>As Seen on Dragon's Den</h2><p>GoNano was featured on CBC's Dragon's Den. Roll On Painting installs all three NuRoof tiers throughout Muskoka, Parry Sound and Simcoe County.</p></section>
+`);
+      case 'private-client-muskoka-property-care':
+        return wrap(`
+  <section><h2>Fully Managed Property Care</h2><p>The Private Client Program is designed for high-net-worth Muskoka cottage owners who expect their lakefront property to be maintained to a hospitality standard — without ever needing to coordinate trades themselves.</p></section>
+  <section><h2>What's Included</h2><ul><li>Single point of contact for every painting and exterior need.</li><li>Annual property condition assessments and proactive scheduling.</li><li>Premium Benjamin Moore Aura, Arborcoat and marine-grade systems.</li><li>Discreet, uniformed crews and confidential reporting.</li><li>Photo documentation and completion summaries for every visit.</li></ul></section>
+  <section><h2>Who It's For</h2><p>Cottage owners on Lake Joseph, Lake Rosseau, Lake Muskoka and Lake of Bays who value time, discretion and consistent quality above all else.</p></section>
+`);
+      case 'free-touch-ups':
+        return wrap(`
+  <section><h2>The Perfect Finish Promise</h2><p>Every completed Roll On Painting project includes the Perfect Finish Promise — complimentary touch-ups so your interior finish stays flawless. We schedule a return visit to address scuffs, marks and small imperfections at no additional cost.</p></section>
+  <section><h2>How It Works</h2><ol><li>We complete your interior painting project to spec.</li><li>You enjoy your freshly painted space.</li><li>When touch-ups are needed, contact us to schedule a complimentary return visit (up to 2 hours per year).</li><li>We return with the original paint to refresh marked or scuffed areas.</li></ol></section>
+  <section><h2>What Qualifies</h2><p>The program covers normal wear-and-tear scuffs and marks on surfaces we originally painted. Major repairs, new construction damage or repainting full rooms are quoted separately.</p></section>
+`);
+      case 'media':
+        return wrap(`
+  <section><h2>HGTV — Scott's Vacation House Rules</h2><p>Roll On Painting has been featured five times on HGTV's Scott's Vacation House Rules with Scott McGillivray. Episodes showcased our interior and exterior cottage painting work on Muskoka properties.</p></section>
+  <section><h2>Dockside Magazine</h2><p>Roll On Painting has been featured 15 times in Dockside Magazine — Muskoka's premier lifestyle publication. Articles cover cottage painting, exterior maintenance, GoNano roof coatings and Muskoka design trends.</p></section>
+  <section><h2>Home Network</h2><p>Additional features have appeared across Home Network's Canadian programming, highlighting our cabinet refinishing and waterfront cottage work.</p></section>
+`);
+      case 'careers':
+        return wrap(`
+  <section><h2>Join Roll On Painting</h2><p>Roll On Painting is hiring skilled painters in Muskoka. We offer steady, year-round work with an HGTV-featured, WSIB-covered, $5M-insured painting team based in Port Sydney, Ontario.</p></section>
+  <section><h2>What We Look For</h2><ul><li>Experienced interior and exterior painters with sharp prep and finish skills.</li><li>Spray and brush/roller proficiency on premium paints.</li><li>Reliable, punctual crew members who respect customers' homes.</li><li>Valid driver's license and reliable transportation.</li></ul></section>
+  <section><h2>How to Apply</h2><p>Email your resume and a brief note about your experience to <a href="mailto:info@roll-onpainting.com">info@roll-onpainting.com</a>. We respond to qualified applicants within one week.</p></section>
+`);
+      default:
+        return wrap('');
+    }
+  };
 
   const extractSlug = (url: string, id: string): string => {
     try {
@@ -283,7 +542,9 @@ export function prerenderBlogPlugin(): Plugin {
     const schema = `    <script type="application/ld+json">${safeJson(route.jsonLd)}</script>\n`;
     html = html.replace('</head>', `${schema}  </head>`);
 
-    const bodyHtml = `<main><header><h1>${escapeHtml(route.h1)}</h1><p>${escapeHtml(route.description)}</p></header></main>`;
+    const bodyHtml =
+      route.bodyHtml ??
+      `<main><header><h1>${escapeHtml(route.h1)}</h1><p>${escapeHtml(route.description)}</p></header></main>`;
     return replaceRoot(html, bodyHtml);
   };
 
@@ -363,6 +624,49 @@ ${exactRouteRewrites}
         const h1 = readStringField(block, 'headline') ?? `${name} in Muskoka`;
         const title = `${name} | Roll On Painting | Muskoka`;
 
+        const longDescription = readStringField(block, 'description') ?? description;
+        const aiBlock = readObjectField(block, 'aiAnswerBlock') ?? '';
+        const whatIncludes = readStringArrayField(aiBlock, 'whatIncludes');
+        const whoItsFor = readStringArrayField(aiBlock, 'whoItsFor');
+        const whereAvailable = readStringArrayField(aiBlock, 'whereAvailable');
+        const howQuotesWork = readStringArrayField(aiBlock, 'howQuotesWork');
+        const benefits = readStringArrayField(block, 'benefits');
+        const processSteps = readObjectArrayField(block, 'process')
+          .map((obj) => {
+            const step = readStringField(obj, 'step');
+            const desc = readStringField(obj, 'description');
+            if (!step || !desc) return null;
+            return { step, description: desc };
+          })
+          .filter((x): x is { step: string; description: string } => Boolean(x));
+        const faqs = parseFaqArray(block);
+
+        const sectionHtml = (heading: string, body: string) =>
+          body ? `<section><h2>${escapeHtml(heading)}</h2>${body}</section>` : '';
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    <p>${escapeHtml(longDescription)}</p>
+  </header>
+  ${sectionHtml("What's Included", renderList(whatIncludes))}
+  ${sectionHtml("Who It's For", renderList(whoItsFor))}
+  ${sectionHtml('Where We Serve', renderList(whereAvailable))}
+  ${sectionHtml('How to Get a Quote', renderList(howQuotesWork, true))}
+  ${sectionHtml(`Why Choose Roll On Painting for ${name}`, renderList(benefits))}
+  ${
+    processSteps.length
+      ? `<section><h2>Our ${escapeHtml(name)} Process</h2><ol>${processSteps
+          .map(
+            (s) =>
+              `<li><strong>${escapeHtml(s.step)}.</strong> ${escapeHtml(s.description)}</li>`,
+          )
+          .join('')}</ol></section>`
+      : ''
+  }
+  ${renderFaqs(faqs)}
+</main>`;
+
         return {
           slug,
           title,
@@ -370,6 +674,7 @@ ${exactRouteRewrites}
           h1,
           image: DEFAULT_IMAGE,
           jsonLd: serviceRouteJsonLd(slug, name, description),
+          bodyHtml,
         } satisfies RouteMeta;
       })
       .filter((route): route is RouteMeta => Boolean(route));
@@ -390,12 +695,31 @@ ${exactRouteRewrites}
         );
         const h1 = readStringField(block, 'headline') ?? `Painters in ${name}`;
 
+        const intro = readStringField(block, 'intro') ?? '';
+        const localContent = readStringField(block, 'localContent') ?? '';
+        const region = readStringField(block, 'region') ?? '';
+        const nearbyAreas = readStringArrayField(block, 'nearbyAreas');
+        const faqs = parseFaqArray(block);
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    ${region ? `<p><strong>Region:</strong> ${escapeHtml(region)}, Ontario</p>` : ''}
+  </header>
+  ${intro ? `<section><h2>About Our ${escapeHtml(name)} Painting Services</h2><p>${escapeHtml(intro)}</p></section>` : ''}
+  ${localContent ? `<section><h2>Local Expertise in ${escapeHtml(name)}</h2><p>${escapeHtml(localContent)}</p></section>` : ''}
+  ${nearbyAreas.length ? `<section><h2>Nearby Areas We Serve</h2>${renderList(nearbyAreas)}</section>` : ''}
+  ${renderFaqs(faqs)}
+  <section><h2>Get a Free Quote</h2><p>Call Roll On Painting at 705-787-1401 or email info@roll-onpainting.com for a free, no-obligation painting estimate in ${escapeHtml(name)}.</p></section>
+</main>`;
+
         return {
           slug,
           title,
           description,
           h1,
           image: DEFAULT_IMAGE,
+          bodyHtml,
           jsonLd: {
             '@context': 'https://schema.org',
             '@graph': [
@@ -440,12 +764,37 @@ ${exactRouteRewrites}
         );
         const h1 = readStringField(block, 'headline') ?? `Muskoka Cottage Painting for ${cityName} Homeowners`;
 
+        const subheadline = readStringField(block, 'subheadline') ?? '';
+        const ctaText = readStringField(block, 'ctaText') ?? 'Request a Consultation';
+        const sections = readObjectArrayField(block, 'sections')
+          .map((obj) => {
+            const heading = readStringField(obj, 'heading');
+            const body = readStringField(obj, 'body');
+            if (!heading || !body) return null;
+            return { heading, body };
+          })
+          .filter((x): x is { heading: string; body: string } => Boolean(x));
+        const faqs = parseFaqArray(block);
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    ${subheadline ? `<p>${escapeHtml(subheadline)}</p>` : ''}
+  </header>
+  ${sections
+    .map((s) => `<section><h2>${escapeHtml(s.heading)}</h2><p>${escapeHtml(s.body)}</p></section>`)
+    .join('\n  ')}
+  ${renderFaqs(faqs)}
+  <section><h2>${escapeHtml(ctaText)}</h2><p>Call 705-787-1401 or email info@roll-onpainting.com to discuss your Muskoka cottage. Serving ${escapeHtml(cityName)} homeowners with discreet, fully managed property care.</p></section>
+</main>`;
+
         return {
           slug,
           title,
           description,
           h1,
           image: DEFAULT_IMAGE,
+          bodyHtml,
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
@@ -676,6 +1025,7 @@ ${exactRouteRewrites}
           },
         ].map((route) => ({
           ...route,
+          bodyHtml: coreRouteBody(route.slug, route.h1, route.description),
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': (route.jsonLd as any)['@type'] ?? 'WebPage',
