@@ -224,6 +224,18 @@ async function prerenderOne(browser, route, idx, total) {
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
     ).catch(() => '');
+    // DIAGNOSTIC: log root content state for the huntsville route
+    if (route === '/painters-huntsville' || route === '/interior-painting') {
+      const diag = await page.evaluate(() => ({
+        rootChildCount: document.querySelector('#root')?.children?.length ?? 0,
+        rootChildTags: Array.from(document.querySelector('#root')?.children ?? []).map(c => c.tagName + (c.getAttribute('role') ? `[role=${c.getAttribute('role')}]` : '')),
+        h1Count: document.querySelectorAll('h1').length,
+        h1Texts: Array.from(document.querySelectorAll('h1')).map(h => (h.textContent || '').trim().slice(0, 80)),
+        rootInnerHTMLLength: document.querySelector('#root')?.innerHTML?.length ?? 0,
+        bodyTextLength: (document.body.innerText || '').length,
+      }));
+      console.log(`[DIAG ${route}]`, JSON.stringify(diag));
+    }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
     }
