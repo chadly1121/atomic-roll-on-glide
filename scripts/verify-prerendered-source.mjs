@@ -15,17 +15,27 @@ function pick(html, regex) {
 }
 
 const html = await fs.readFile(htmlPath, 'utf8');
-const title = pick(html, /<title[^>]*>([\s\S]*?)<\/title>/i);
 const canonical =
   pick(html, /<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']*)["']/i) ||
   pick(html, /<link[^>]+href=["']([^"']*)["'][^>]*rel=["']canonical["']/i);
 
-if (!title || /Muskoka House Painting|Roll On Painting/i.test(title)) {
-  throw new Error(`${route} still has the homepage/raw shell title: "${title}"`);
+// Confirm prerendering actually populated the root div with real content.
+// Extract <div id="root">…</div>, strip scripts/styles/tags, count chars.
+const rootMatch = html.match(/<div[^>]+id=["']root["'][^>]*>([\s\S]*?)<\/div>\s*(?:<script|<\/body)/i);
+const rootInner = rootMatch ? rootMatch[1] : '';
+const bodyText = rootInner
+  .replace(/<script[\s\S]*?<\/script>/gi, '')
+  .replace(/<style[\s\S]*?<\/style>/gi, '')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+if (bodyText.length <= 500) {
+  throw new Error(`${route} appears unrendered: only ${bodyText.length} chars of text inside #root (expected > 500)`);
 }
 
 if (canonical.replace(/\/$/, '') !== expectedCanonical.replace(/\/$/, '')) {
   throw new Error(`${route} canonical mismatch: expected "${expectedCanonical}", got "${canonical}"`);
 }
 
-console.log(`✓ Deploy source verified: ${path.relative(process.cwd(), htmlPath)} — "${title}" — ${canonical}`);
+console.log(`✓ Deploy source verified: ${path.relative(process.cwd(), htmlPath)} — ${bodyText.length} chars rendered — ${canonical}`);
