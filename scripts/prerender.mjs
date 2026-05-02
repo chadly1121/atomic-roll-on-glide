@@ -92,6 +92,40 @@ function routeToOutputFile(route) {
   return path.join(DIST, route.replace(/^\//, ''), 'index.html');
 }
 
+/**
+ * Remove all <link rel="canonical"> and <meta name="description"> tags from
+ * the HTML, then inject exactly one of each into <head>. Canonical URL is
+ * derived from CANONICAL_ORIGIN + route. Description is taken from the first
+ * occurrence found in the captured HTML (preserving Helmet-rendered copy).
+ */
+function dedupeSeoTags(html, route) {
+  // Capture the first description before stripping
+  const descMatch =
+    html.match(/<meta[^>]+name=["']description["'][^>]*content=["']([^"']*)["'][^>]*\/?>/i) ||
+    html.match(/<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["'][^>]*\/?>/i);
+  const description = descMatch ? descMatch[1] : '';
+
+  // Strip ALL canonical link tags
+  html = html.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*\/?>(?:\s*<\/link>)?/gi, '');
+  // Strip ALL meta description tags (both attribute orders)
+  html = html.replace(/<meta\b[^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
+  html = html.replace(/<meta\b[^>]*\bcontent=["'][^"']*["'][^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
+
+  const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : route}`;
+  const canonicalTag = `<link rel="canonical" href="${canonicalHref}">`;
+  const descTag = description
+    ? `<meta name="description" content="${description.replace(/"/g, '&quot;')}">`
+    : '';
+
+  const injection = `${canonicalTag}${descTag ? '\n    ' + descTag : ''}`;
+  if (/<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `    ${injection}\n  </head>`);
+  } else {
+    html = injection + html;
+  }
+  return html;
+}
+
 async function prerenderOne(browser, route, idx, total) {
   const ctx = await browser.newContext({
     userAgent: 'LovablePrerender/1.0 (+https://www.roll-onpainting.com)',
