@@ -19,11 +19,9 @@ const canonical =
   pick(html, /<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']*)["']/i) ||
   pick(html, /<link[^>]+href=["']([^"']*)["'][^>]*rel=["']canonical["']/i);
 
-// Confirm prerendering actually populated the root div with real content.
-// Extract <div id="root">…</div>, strip scripts/styles/tags, count chars.
-const rootMatch = html.match(/<div[^>]+id=["']root["'][^>]*>([\s\S]*?)<\/div>\s*(?:<script|<\/body)/i);
-const rootInner = rootMatch ? rootMatch[1] : '';
-const bodyText = rootInner
+const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+const bodyInner = bodyMatch ? bodyMatch[1] : '';
+const bodyText = bodyInner
   .replace(/<script[\s\S]*?<\/script>/gi, '')
   .replace(/<style[\s\S]*?<\/style>/gi, '')
   .replace(/<[^>]+>/g, ' ')
@@ -31,7 +29,7 @@ const bodyText = rootInner
   .trim();
 
 if (bodyText.length <= 500) {
-  throw new Error(`${route} appears unrendered: only ${bodyText.length} chars of text inside #root (expected > 500)`);
+  throw new Error(`${route} appears unrendered: only ${bodyText.length} chars of text inside <body> (expected > 500)`);
 }
 
 if (canonical.replace(/\/$/, '') !== expectedCanonical.replace(/\/$/, '')) {
