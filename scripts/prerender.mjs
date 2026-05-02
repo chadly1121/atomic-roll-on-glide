@@ -11,6 +11,7 @@ import fs from 'node:fs/promises';
 import { existsSync, createReadStream, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { CANONICAL_ORIGIN } from './seo-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, '..', 'dist');
@@ -126,7 +127,8 @@ async function prerenderOne(browser, route, idx, total) {
     }
     // Small settle to let any remaining meta tags flush
     await page.waitForTimeout(300);
-    const html = await page.content();
+    let html = await page.content();
+    html = dedupeSeoTags(html, route);
     // Sanity: non-home routes must not retain the homepage canonical
     if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
       // fallthrough — already validated above, but log
