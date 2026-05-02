@@ -24,7 +24,7 @@ const HeroContent = () => {
       
       <div>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
-          Muskoka House Painters
+          Muskoka House Painters{' '}
           <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
         </h1>
 
