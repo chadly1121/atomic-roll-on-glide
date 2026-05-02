@@ -217,12 +217,16 @@ async function main() {
     server.close();
   }
 
+  const successCount = routes.length - failures.length;
   if (failures.length) {
-    console.error(`\n${failures.length} routes failed to prerender:`);
-    for (const f of failures) console.error(`  - ${f.item}: ${f.error}`);
+    console.warn(`\n⚠ ${failures.length} routes failed to prerender:`);
+    for (const f of failures) console.warn(`  - ${f.item}: ${f.error}`);
+  }
+  console.log(`\n✅ Prerendered ${successCount}/${routes.length} routes successfully.`);
+  if (successCount === 0) {
+    console.error('No routes were prerendered — failing build.');
     process.exit(1);
   }
-  console.log(`\n✅ Prerendered ${routes.length} routes successfully.`);
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });
