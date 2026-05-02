@@ -943,6 +943,7 @@ ${exactRouteRewrites}
           },
         ].map((route) => ({
           ...route,
+          bodyHtml: coreRouteBody(route.slug, route.h1, route.description),
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': (route.jsonLd as any)['@type'] ?? 'WebPage',
