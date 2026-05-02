@@ -140,3 +140,16 @@ lines.push('');
 await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
 await fs.writeFile(OUT_FILE, lines.join('\n'), 'utf8');
 console.log(`✓ Wrote ${path.relative(ROOT, OUT_FILE)} (${entries.length} legacy redirects + canonical rules)`);
+
+try {
+  const routes = await readPrerenderRoutesFromSitemap();
+  const routesManifest = {
+    version: 1,
+    include: ['/*'],
+    exclude: routes,
+  };
+  await fs.writeFile(OUT_ROUTES_FILE, JSON.stringify(routesManifest, null, 2) + '\n', 'utf8');
+  console.log(`✓ Wrote ${path.relative(ROOT, OUT_ROUTES_FILE)} (${routes.length} prerendered routes excluded from Functions/SPA fallback)`);
+} catch (e) {
+  fail(`could not generate _routes.json from sitemap: ${e.message}`);
+}
