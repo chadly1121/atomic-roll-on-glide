@@ -9,7 +9,7 @@
 /lovable-uploads/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Static images, fonts, videos at the root
+# Static images and fonts at the root
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
 /*.jpg
@@ -28,11 +28,6 @@
   Cache-Control: public, max-age=31536000, immutable
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
-/*.mp4
-  Cache-Control: public, max-age=31536000, immutable
-/*.webm
-  Cache-Control: public, max-age=31536000, immutable
-
 # SEO/discovery files — short cache, must revalidate
 /sitemap.xml
   Cache-Control: public, max-age=3600, must-revalidate
