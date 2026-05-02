@@ -1,39 +1,32 @@
-# Add Logo to Homepage Hero Heading
+## Full-Site Audit — Results
 
-## Goal
-Make the Roll On Painting pink logo visible and recognizable directly alongside the main "Muskoka House Painters" headline on the homepage hero.
+### ✅ Healthy
+- **Image assets**: All 204 referenced `/lovable-uploads/*` files exist on disk and on production (spot-checked live URLs return HTTP 200).
+- **Partner logos**: All 5 referenced logos present.
+- **Routes**: All `<Link to="/...">` targets resolve to defined routes (the two `to="/404"` are intentional `<Navigate>` fallbacks in `ServicePage` / `CottageOwnerPage`).
+- **Production**: `https://rollonpainting.com/` returns 200, serves correct HTML, all spot-checked images load.
+- **Vite config**: `publicDir` default is correct — Manus's emergency fix is not needed.
 
-## Layout
-- **Desktop (sm and up)**: Logo sits to the **right** of the "Muskoka House Painters" heading block, vertically centered.
-- **Mobile (< sm)**: Logo stacks **above** the heading, centered.
+### 🐛 Real issues found (small, worth fixing)
 
-```text
-Desktop:                          Mobile:
-[ Muskoka House Painters ]  [LOGO]      [ LOGO ]
-[ Huntsville, Bracebridge…  ]           [ Muskoka House Painters ]
-                                        [ Huntsville, Bracebridge… ]
-```
+1. **Duplicated text in Services section heading** (`src/components/ServicesSection.tsx` line 19):
+   > "Over 25 years of experience. **Over 25 years of experience.** Featured 5 times on HGTV's Scott's Vacation House Rules. **Scott's Vacation House Rules.**"
+   
+   Phrases are accidentally repeated. Fix to single clean sentence.
 
-## Implementation
-**File:** `src/components/hero/HeroContent.tsx`
+2. **React DOM warning** (`HeroSection.tsx`): `fetchPriority` prop should be lowercase `fetchpriority` to silence the console warning. (Functionally works in modern React, but throws a dev warning.)
 
-1. Wrap the existing `<div>` containing the H1, subline, and trust paragraph (lines 25–38) in a flex container:
-   - `flex flex-col-reverse sm:flex-row sm:items-center sm:gap-6`
-   - `flex-col-reverse` ensures the logo (placed after the text in DOM) appears **above** on mobile while staying on the **right** on desktop.
-2. Add the logo as a sibling after the text block:
-   ```tsx
-   <img
-     src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp"
-     alt="Roll On Painting logo"
-     width={160}
-     height={160}
-     loading="eager"
-     className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain mx-auto sm:mx-0 flex-shrink-0"
-   />
-   ```
-3. No other files need to change — the asset already exists at that path (it's the same logo used in the navbar/footer).
+3. **3 orphan partner logo files** in `public/partner-logos/`:
+   - `dragons-den.png`, `hgtv.svg`, `sansin.png` — exist on disk but nothing references them. Safe to leave (small files), or delete to clean up. Recommend leaving since they may be used as future swap-ins.
 
-## Notes
-- Uses `loading="eager"` and explicit width/height so it doesn't hurt LCP or cause layout shift.
-- Reuses the existing brand asset path — no new uploads, no SEO/Open Graph changes.
-- Pure CSS/markup change; no logic, routes, or data touched.
+### Plan
+
+1. Edit `src/components/ServicesSection.tsx` — replace duplicated subheading copy with a single clean sentence.
+2. Edit `src/components/HeroSection.tsx` — change `fetchPriority="high"` → `fetchpriority="high"`.
+3. Leave orphan partner logos in place (no action) — flag only.
+
+### Not changing
+- No Vite config changes (Manus's request was based on an incorrect diagnosis — folders are already in `public/`, paths are correct, prod images load).
+- No image-asset work needed.
+
+Approve and I'll apply the two small fixes.
