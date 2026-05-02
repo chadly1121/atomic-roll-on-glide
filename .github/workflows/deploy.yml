@@ -1,7 +1,9 @@
-name: Build, Prerender, Assert & Deploy
+name: Build, Prerender, Audit & Deploy
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -10,84 +12,125 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build React App
+  install-and-build:
+    name: Install & Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-artifact@v4
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Generate _redirects from redirect-map.json
+        run: bun run generate:redirects
+      - name: Build site
+        run: bun run build
+      - name: Upload base build artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: dist
+          name: dist-base
           path: dist
           retention-days: 1
 
   prerender:
-    name: Playwright Prerender
+    name: Prerender (Playwright)
+    needs: install-and-build
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
       - uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist-base
           path: dist
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-      - name: Prerender all sitemap URLs
-        run: node scripts/prerender.mjs
-      - uses: actions/upload-artifact@v4
+      - name: Detect Playwright version
+        id: pw
+        run: echo "version=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.pw.outputs.version }}-${{ hashFiles('bun.lock', 'bun.lockb', 'package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-${{ steps.pw.outputs.version }}-
+      - name: Install Playwright Chromium (with system deps)
+        run: bunx playwright install --with-deps chromium
+      - name: Prerender all sitemap routes
+        run: bun run prerender
+      - name: Upload Playwright artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-logs
+          path: |
+            playwright-report
+            test-results
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Upload prerendered build artifact
+        uses: actions/upload-artifact@v4
         with:
           name: dist-prerendered
           path: dist
           retention-days: 1
 
-  assert:
-    name: SEO & AI Assertions
-    runs-on: ubuntu-latest
+  seo-assertions:
+    name: SEO & AI Audit
     needs: prerender
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: '20'
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
       - uses: actions/download-artifact@v4
         with:
           name: dist-prerendered
           path: dist
-      - name: Run SEO + llms.txt assertions
-        run: DIST_DIR=dist node scripts/assert-seo.mjs
+      - name: Re-generate redirects (sanity check map is in sync)
+        run: bun run generate:redirects
+      - name: Run SEO + AI assertions
+        run: DIST_DIR=dist bun run audit:seo
+      - name: Verify prerendered source on a known route
+        run: node scripts/verify-prerendered-source.mjs dist /interior-painting
+      - name: Upload audited build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-audited
+          path: dist
+          retention-days: 1
 
   deploy:
     name: Deploy to Cloudflare Pages
+    needs: seo-assertions
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: assert
+    environment:
+      name: production
+      url: https://www.roll-onpainting.com
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - uses: actions/download-artifact@v4
         with:
-          name: dist-prerendered
-          path: dist-prerendered
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+          name: dist-audited
+          path: dist-audited
       - name: Verify prerendered source before deploy
-        run: node scripts/verify-prerendered-source.mjs dist-prerendered /interior-painting
+        run: node scripts/verify-prerendered-source.mjs dist-audited /interior-painting
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist-prerendered --project-name=roll-onpainting --branch=main
+          command: pages deploy dist-audited --project-name=roll-onpainting --branch=main
       - name: Ping IndexNow (Bing)
         run: node scripts/indexnow-ping.mjs
