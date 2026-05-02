@@ -5,7 +5,7 @@
  * React to hydrate + network idle, then writes the rendered HTML over
  * the corresponding dist/<route>/index.html shell.
  */
-import { chromium } from 'playwright';
+import { chromium } from '@playwright/test';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import { existsSync, createReadStream, statSync } from 'node:fs';
