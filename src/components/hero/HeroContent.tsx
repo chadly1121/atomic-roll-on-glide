@@ -40,10 +40,10 @@ const HeroContent = () => {
         <img
           src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp"
           alt="Roll On Painting logo"
-          width={160}
-          height={160}
+          width={320}
+          height={320}
           loading="eager"
-          className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain mx-auto sm:mx-0 mb-3 sm:mb-0 flex-shrink-0"
+          className="w-56 h-56 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain mx-auto sm:mx-0 mb-3 sm:mb-0 flex-shrink-0"
         />
       </div>
       
