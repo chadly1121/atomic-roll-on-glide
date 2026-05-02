@@ -37,7 +37,7 @@ function pick(html, regex) {
   return m ? m[1].trim() : '';
 }
 function pickAll(html, regex) {
-  return [...html.matchAll(regex)].map(m => m[1].trim());
+  return [...html.matchAll(regex)].map(m => m[1]?.trim()).filter(Boolean);
 }
 
 function extractMeta(html) {
