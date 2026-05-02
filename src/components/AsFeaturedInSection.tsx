@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tv, Newspaper, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { DOCKSIDE_FEATURE_COUNT, DOCKSIDE_TAG_URL } from '@/data/docksideArticles';
 
 const AsFeaturedInSection = () => {
@@ -21,9 +21,6 @@ const AsFeaturedInSection = () => {
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {/* HGTV Card */}
             <div className="bg-background border border-border rounded-xl p-6 text-left shadow-sm">
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-atomic-orange/10 mb-4">
-                <Tv className="h-5 w-5 text-atomic-orange" aria-hidden="true" />
-              </div>
               <h3 className="font-bold text-atomic-navy text-lg mb-1">HGTV Canada</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Featured <strong>5 times</strong> on Scott's Vacation House Rules, providing professional painting and wallpapering for Muskoka renovations.
@@ -40,9 +37,6 @@ const AsFeaturedInSection = () => {
 
             {/* Dockside Magazine Card */}
             <div className="bg-background border border-border rounded-xl p-6 text-left shadow-sm">
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-atomic-turquoise/10 mb-4">
-                <Newspaper className="h-5 w-5 text-atomic-turquoise" aria-hidden="true" />
-              </div>
               <h3 className="font-bold text-atomic-navy text-lg mb-1">Dockside Magazine</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Featured <strong>{DOCKSIDE_FEATURE_COUNT} times</strong> in Dockside Magazine, Muskoka's premier lifestyle publication covering cottage living.

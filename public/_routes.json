@@ -114,6 +114,27 @@
     "/stucco-removal",
     "/vaughan-muskoka-cottage-painting",
     "/wallpaper-installation",
-    "/wallpaper-removal"
+    "/wallpaper-removal",
+    "/assets/*",
+    "/lovable-uploads/*",
+    "/partner-logos/*",
+    "/.well-known/*",
+    "/*.html",
+    "/*.xml",
+    "/*.txt",
+    "/*.json",
+    "/*.webp",
+    "/*.png",
+    "/*.jpg",
+    "/*.jpeg",
+    "/*.svg",
+    "/*.ico",
+    "/*.webmanifest",
+    "/*.woff",
+    "/*.woff2",
+    "/*.css",
+    "/*.js",
+    "/*.map",
+    "/*.mp4"
   ]
 }
