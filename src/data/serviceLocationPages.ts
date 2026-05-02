@@ -407,9 +407,6 @@ export const serviceLocationPages: ServicePageData[] = [
       '/lovable-uploads/cabinet-white-builtin-shelving.webp',
       '/lovable-uploads/cabinet-onsite-spray-white.webp',
       '/lovable-uploads/cabinet-kitchen-refinish-dockside-muskoka.webp'
-    ],
-    galleryVideos: [
-      '/lovable-uploads/cabinet-repaint-video.mp4'
     ]
   },
   {
