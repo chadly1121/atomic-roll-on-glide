@@ -31,7 +31,6 @@ const CareersPage = lazy(() => import("./pages/CareersPage"));
 const MediaPage = lazy(() => import("./pages/MediaPage"));
 const PrivateClientPage = lazy(() => import("./pages/PrivateClientPage"));
 const CottageOwnerPage = lazy(() => import("./pages/CottageOwnerPage"));
-const LegacyRedirect = lazy(() => import("./components/LegacyRedirect"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -92,9 +91,6 @@ const App = () => {
                   <Route path="/vaughan-muskoka-cottage-painting" element={<CottageOwnerPage />} />
                   
                   <Route path="/:slug" element={<ServicePage />} />
-                  <Route path="*.html" element={<LegacyRedirect />} />
-                  <Route path="*.php" element={<LegacyRedirect />} />
-                  <Route path="index.php/*" element={<LegacyRedirect />} />
                   <Route path="*" element={
                     <>
                       <PageBreadcrumbs />
