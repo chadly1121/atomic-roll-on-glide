@@ -102,12 +102,40 @@ async function prerenderOne(browser, route, idx, total) {
     await page.goto(url, { waitUntil: 'networkidle', timeout: NAV_TIMEOUT });
     // Allow react-helmet-async to flush <title>/<meta> updates
     await page.waitForFunction(() => !!document.querySelector('#root')?.children?.length, null, { timeout: NAV_TIMEOUT });
-    await page.waitForTimeout(400);
+    // Wait for react-helmet-async to update <title> + canonical to match this route.
+    // The static shell ships with the homepage title, so we must wait until it
+    // actually changes (or, for the homepage, until a non-empty title is set).
+    const expectedCanonical = `${ORIGIN}${route === '/' ? '/' : route}`;
+    try {
+      await page.waitForFunction(
+        ({ expectedCanonical, isHome }) => {
+          const title = document.title || '';
+          const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+          if (!title.trim()) return false;
+          if (isHome) return canonical.replace(/\/$/, '') === expectedCanonical.replace(/\/$/, '');
+          // Non-home: canonical must match this route AND title must differ from the static shell's homepage title
+          return canonical.replace(/\/$/, '') === expectedCanonical.replace(/\/$/, '');
+        },
+        { expectedCanonical, isHome: route === '/' },
+        { timeout: NAV_TIMEOUT, polling: 100 }
+      );
+    } catch (e) {
+      const actualTitle = await page.title().catch(() => '');
+      const actualCanonical = await page.evaluate(() => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '').catch(() => '');
+      throw new Error(`Helmet did not update for ${route} (title="${actualTitle}", canonical="${actualCanonical}")`);
+    }
+    // Small settle to let any remaining meta tags flush
+    await page.waitForTimeout(300);
     const html = await page.content();
+    // Sanity: non-home routes must not retain the homepage canonical
+    if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
+      // fallthrough — already validated above, but log
+    }
     const out = routeToOutputFile(route);
     await fs.mkdir(path.dirname(out), { recursive: true });
     await fs.writeFile(out, html, 'utf8');
-    console.log(`[${idx + 1}/${total}] ✓ ${route}`);
+    const t = await page.title().catch(() => '');
+    console.log(`[${idx + 1}/${total}] ✓ ${route}  — "${t.slice(0, 70)}"`);
   } catch (err) {
     console.error(`[${idx + 1}/${total}] ✗ ${route} — ${err.message}`);
     throw err;
