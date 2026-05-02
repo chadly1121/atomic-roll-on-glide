@@ -1,11 +1,8 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Switch } from "@/components/ui/switch";
-import { VolumeX, Volume2, DollarSign, Check } from "lucide-react";
+import { DollarSign, Check } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { LazyImage } from "@/components/ui/lazy-image";
-import GoNanoVideo from "./GoNanoVideo";
 
 interface GoNanoSectionProps {
   sectionRef: React.RefObject<HTMLDivElement>;
@@ -149,9 +146,6 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
           </a>
         </div>
         
-        <div className="space-y-6">
-          <GoNanoVideo />
-        </div>
       </div>
     </div>
   );
