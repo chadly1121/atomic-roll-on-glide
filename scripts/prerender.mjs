@@ -95,16 +95,10 @@ function routeToOutputFile(route) {
 /**
  * Remove all <link rel="canonical"> and <meta name="description"> tags from
  * the HTML, then inject exactly one of each into <head>. Canonical URL is
- * derived from CANONICAL_ORIGIN + route. Description is taken from the first
- * occurrence found in the captured HTML (preserving Helmet-rendered copy).
+ * derived from CANONICAL_ORIGIN + route. Description is passed in explicitly
+ * (extracted from the live DOM by the caller — Helmet always wins).
  */
-function dedupeSeoTags(html, route) {
-  // Capture the first description before stripping
-  const descMatch =
-    html.match(/<meta[^>]+name=["']description["'][^>]*content=["']([^"']*)["'][^>]*\/?>/i) ||
-    html.match(/<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["'][^>]*\/?>/i);
-  const description = descMatch ? descMatch[1] : '';
-
+function dedupeSeoTags(html, route, description) {
   // Strip ALL canonical link tags
   html = html.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*\/?>(?:\s*<\/link>)?/gi, '');
   // Strip ALL meta description tags (both attribute orders)
@@ -114,7 +108,7 @@ function dedupeSeoTags(html, route) {
   const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : route}`;
   const canonicalTag = `<link rel="canonical" href="${canonicalHref}">`;
   const descTag = description
-    ? `<meta name="description" content="${description.replace(/"/g, '&quot;')}">`
+    ? `<meta name="description" content="${description.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">`
     : '';
 
   const injection = `${canonicalTag}${descTag ? '\n    ' + descTag : ''}`;
@@ -151,8 +145,27 @@ async function prerenderOne(browser, route, idx, total) {
       // title never set — fatal
       throw new Error(`Helmet never set <title> for ${route}`);
     }
+    // Wait for Helmet to inject a real (multi-word) meta description, not a stub
+    let actualDescription = '';
+    try {
+      await page.waitForFunction(() => {
+        const metas = document.querySelectorAll('meta[name="description"]');
+        if (!metas.length) return false;
+        const last = metas[metas.length - 1].getAttribute('content') || '';
+        // Require at least 5 words to be confident Helmet has flushed
+        return last.trim().split(/\s+/).length >= 5;
+      }, null, { timeout: NAV_TIMEOUT, polling: 100 });
+    } catch {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — description never reached 5 words; capturing whatever is present`);
+    }
     // Small settle to let any remaining meta tags flush
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(300);
+    actualDescription = await page.evaluate(() => {
+      const metas = document.querySelectorAll('meta[name="description"]');
+      if (!metas.length) return '';
+      // Helmet appends last — last element wins
+      return metas[metas.length - 1].getAttribute('content') || '';
+    }).catch(() => '');
     const actualTitle = await page.title().catch(() => '');
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
@@ -166,7 +179,7 @@ async function prerenderOne(browser, route, idx, total) {
       console.warn(`[${idx + 1}/${total}] ⚠ canonical mismatch for ${route} (got "${actualCanonical}", expected "${expectedCanonical}") — writing anyway`);
     }
     let html = await page.content();
-    html = dedupeSeoTags(html, route);
+    html = dedupeSeoTags(html, route, actualDescription);
     // Sanity: non-home routes must not retain the homepage canonical
     if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
       // fallthrough — already validated above, but log
