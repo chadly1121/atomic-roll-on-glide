@@ -54,7 +54,9 @@ function extractMeta(html) {
   const canonicalCount = (html.match(/rel=["']canonical["']/gi) || []).length;
   const h1 = pick(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i).replace(/<[^>]+>/g, '').trim();
   // Strip script/style/tags for body content count
-  const bodyText = html
+  const bodyMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const bodyInner = bodyMatch ? bodyMatch[1] : '';
+  const bodyText = bodyInner
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<style[\s\S]*?<\/style>/gi, '')
     .replace(/<[^>]+>/g, ' ')
