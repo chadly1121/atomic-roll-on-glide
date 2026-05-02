@@ -33,6 +33,7 @@ export function prerenderBlogPlugin(): Plugin {
     jsonLd: Record<string, unknown>;
     image?: string;
     ogType?: 'website' | 'article';
+    bodyHtml?: string;
   };
 
   const escapeHtml = (s: string) =>
@@ -94,6 +95,182 @@ export function prerenderBlogPlugin(): Plugin {
   };
 
   const splitTopLevelObjects = (src: string) => src.split(/\n\s{2}\{\n/).slice(1);
+
+  // Extract a string-array field like:  whatIncludes: [ 'a', "b", `c` ],
+  const readStringArrayField = (block: string, field: string): string[] => {
+    const re = new RegExp(`${field}\\s*:\\s*\\[`);
+    const m = re.exec(block);
+    if (!m) return [];
+    let i = m.index + m[0].length;
+    let depth = 1;
+    let buf = '';
+    while (i < block.length && depth > 0) {
+      const ch = block[i];
+      if (ch === '[') depth++;
+      else if (ch === ']') {
+        depth--;
+        if (depth === 0) break;
+      }
+      buf += ch;
+      i++;
+    }
+    const items: string[] = [];
+    let j = 0;
+    while (j < buf.length) {
+      const ch = buf[j];
+      if (ch === "'" || ch === '"' || ch === '`') {
+        const quote = ch;
+        j++;
+        let val = '';
+        while (j < buf.length) {
+          const c = buf[j];
+          if (c === '\\' && j + 1 < buf.length) {
+            val += c + buf[j + 1];
+            j += 2;
+            continue;
+          }
+          if (c === quote) {
+            j++;
+            break;
+          }
+          val += c;
+          j++;
+        }
+        items.push(unescapeSourceString(val));
+      } else {
+        j++;
+      }
+    }
+    return items;
+  };
+
+  // Extract an object-array field, returning each object's body as a substring
+  // for further per-field parsing via readStringField.
+  const readObjectArrayField = (block: string, field: string): string[] => {
+    const re = new RegExp(`${field}\\s*:\\s*\\[`);
+    const m = re.exec(block);
+    if (!m) return [];
+    let i = m.index + m[0].length;
+    let arrDepth = 1;
+    const objects: string[] = [];
+    while (i < block.length && arrDepth > 0) {
+      const ch = block[i];
+      if (ch === '[') {
+        arrDepth++;
+        i++;
+        continue;
+      }
+      if (ch === ']') {
+        arrDepth--;
+        i++;
+        continue;
+      }
+      if (ch === '{') {
+        let depth = 1;
+        i++;
+        let buf = '';
+        while (i < block.length && depth > 0) {
+          const c = block[i];
+          if (c === "'" || c === '"' || c === '`') {
+            const quote = c;
+            buf += c;
+            i++;
+            while (i < block.length) {
+              const cc = block[i];
+              if (cc === '\\' && i + 1 < block.length) {
+                buf += cc + block[i + 1];
+                i += 2;
+                continue;
+              }
+              buf += cc;
+              i++;
+              if (cc === quote) break;
+            }
+            continue;
+          }
+          if (c === '{') depth++;
+          else if (c === '}') {
+            depth--;
+            if (depth === 0) {
+              i++;
+              break;
+            }
+          }
+          buf += c;
+          i++;
+        }
+        objects.push(buf);
+        continue;
+      }
+      i++;
+    }
+    return objects;
+  };
+
+  // Extract a nested object field's inner body, e.g. aiAnswerBlock: { ... }
+  const readObjectField = (block: string, field: string): string | null => {
+    const re = new RegExp(`${field}\\s*:\\s*\\{`);
+    const m = re.exec(block);
+    if (!m) return null;
+    let i = m.index + m[0].length;
+    let depth = 1;
+    let buf = '';
+    while (i < block.length && depth > 0) {
+      const c = block[i];
+      if (c === "'" || c === '"' || c === '`') {
+        const quote = c;
+        buf += c;
+        i++;
+        while (i < block.length) {
+          const cc = block[i];
+          if (cc === '\\' && i + 1 < block.length) {
+            buf += cc + block[i + 1];
+            i += 2;
+            continue;
+          }
+          buf += cc;
+          i++;
+          if (cc === quote) break;
+        }
+        continue;
+      }
+      if (c === '{') depth++;
+      else if (c === '}') {
+        depth--;
+        if (depth === 0) break;
+      }
+      buf += c;
+      i++;
+    }
+    return buf;
+  };
+
+  const renderList = (items: string[], ordered = false): string => {
+    if (!items.length) return '';
+    const tag = ordered ? 'ol' : 'ul';
+    return `<${tag}>${items.map((it) => `<li>${escapeHtml(it)}</li>`).join('')}</${tag}>`;
+  };
+
+  const renderFaqs = (faqs: { question: string; answer: string }[]): string => {
+    if (!faqs.length) return '';
+    return `<section aria-labelledby="faq-heading"><h2 id="faq-heading">Frequently Asked Questions</h2>${faqs
+      .map(
+        (f) =>
+          `<details><summary>${escapeHtml(f.question)}</summary><p>${escapeHtml(f.answer)}</p></details>`,
+      )
+      .join('')}</section>`;
+  };
+
+  const parseFaqArray = (block: string): { question: string; answer: string }[] => {
+    return readObjectArrayField(block, 'faqs')
+      .map((obj) => {
+        const question = readStringField(obj, 'question');
+        const answer = readStringField(obj, 'answer');
+        if (!question || !answer) return null;
+        return { question, answer };
+      })
+      .filter((x): x is { question: string; answer: string } => Boolean(x));
+  };
 
   const extractSlug = (url: string, id: string): string => {
     try {
