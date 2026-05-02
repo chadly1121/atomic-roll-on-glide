@@ -460,7 +460,9 @@ export function prerenderBlogPlugin(): Plugin {
     const schema = `    <script type="application/ld+json">${safeJson(route.jsonLd)}</script>\n`;
     html = html.replace('</head>', `${schema}  </head>`);
 
-    const bodyHtml = `<main><header><h1>${escapeHtml(route.h1)}</h1><p>${escapeHtml(route.description)}</p></header></main>`;
+    const bodyHtml =
+      route.bodyHtml ??
+      `<main><header><h1>${escapeHtml(route.h1)}</h1><p>${escapeHtml(route.description)}</p></header></main>`;
     return replaceRoot(html, bodyHtml);
   };
 
