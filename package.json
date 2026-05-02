@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "vite build && node scripts/remove-large-assets.mjs",
     "build:dev": "vite build --mode development && node scripts/remove-large-assets.mjs",
+    "generate:redirects": "node scripts/generate-redirects.mjs",
+    "prerender": "node scripts/prerender.mjs",
+    "audit:seo": "node scripts/assert-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
