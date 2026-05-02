@@ -12,7 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(__dirname, '..', 'dist');
+const DIST = path.resolve(process.env.DIST_DIR || path.join(__dirname, '..', 'dist'));
 
 const MIN_LLMS = 1800;
 const MIN_LLMS_FULL = 3800;
@@ -55,6 +55,8 @@ function extractMeta(html) {
     pick(html, /<link[^>]+href=["']([^"']*)["'][^>]*rel=["']canonical["']/i);
   return { title, desc, canonical };
 }
+
+export { extractMeta, routeToFile };
 
 function wordCount(s) {
   return (s.trim().match(/\S+/g) || []).length;
