@@ -89,3 +89,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist-prerendered --project-name=roll-onpainting --branch=main
+      - name: Ping IndexNow (Bing)
+        run: node scripts/indexnow-ping.mjs
