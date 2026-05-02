@@ -14,7 +14,7 @@ const HeroSection = () => {
           width={1440}
           height={808}
           loading="eager"
-          fetchpriority="high"
+          {...({ fetchpriority: "high" } as any)}
           decoding="sync"
         />
         {/* Mobile: heavy overlay for readability; Desktop: left-to-right fade */}
