@@ -93,25 +93,52 @@ function routeToOutputFile(route) {
 }
 
 /**
- * Remove all <link rel="canonical"> and <meta name="description"> tags from
- * the HTML, then inject exactly one of each into <head>. Canonical URL is
- * derived from CANONICAL_ORIGIN + route. Description is passed in explicitly
- * (extracted from the live DOM by the caller — Helmet always wins).
+ * Remove duplicate SEO tags (canonical, description, OG, Twitter) from the
+ * HTML, then inject the single authoritative version of each. Authoritative
+ * values are extracted from the live DOM by the caller — Helmet always wins
+ * because it appends its tags last.
  */
-function dedupeSeoTags(html, route, description) {
+function dedupeSeoTags(html, route, seo) {
+  const { description = '', ogTitle = '', ogDescription = '', ogUrl = '',
+    ogImage = '', twitterTitle = '', twitterDescription = '', twitterImage = '',
+    twitterCard = '' } = seo || {};
+
   // Strip ALL canonical link tags
   html = html.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*\/?>(?:\s*<\/link>)?/gi, '');
   // Strip ALL meta description tags (both attribute orders)
   html = html.replace(/<meta\b[^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
   html = html.replace(/<meta\b[^>]*\bcontent=["'][^"']*["'][^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
+  // Strip ALL og: meta tags we manage
+  const ogProps = ['og:title', 'og:description', 'og:url', 'og:image'];
+  for (const prop of ogProps) {
+    const re1 = new RegExp(`<meta\\b[^>]*\\bproperty=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    const re2 = new RegExp(`<meta\\b[^>]*\\bcontent=["'][^"']*["'][^>]*\\bproperty=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    html = html.replace(re1, '').replace(re2, '');
+  }
+  // Strip ALL twitter: meta tags we manage
+  const twProps = ['twitter:title', 'twitter:description', 'twitter:image', 'twitter:card'];
+  for (const prop of twProps) {
+    const re1 = new RegExp(`<meta\\b[^>]*\\bname=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    const re2 = new RegExp(`<meta\\b[^>]*\\bcontent=["'][^"']*["'][^>]*\\bname=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    html = html.replace(re1, '').replace(re2, '');
+  }
 
   const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : route}`;
-  const canonicalTag = `<link rel="canonical" href="${canonicalHref}">`;
-  const descTag = description
-    ? `<meta name="description" content="${description.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">`
-    : '';
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  const tags = [];
+  tags.push(`<link rel="canonical" href="${esc(canonicalHref)}">`);
+  if (description) tags.push(`<meta name="description" content="${esc(description)}">`);
+  if (ogTitle) tags.push(`<meta property="og:title" content="${esc(ogTitle)}">`);
+  if (ogDescription) tags.push(`<meta property="og:description" content="${esc(ogDescription)}">`);
+  // og:url must always be the route's canonical, not whatever Helmet may have left
+  tags.push(`<meta property="og:url" content="${esc(ogUrl || canonicalHref)}">`);
+  if (ogImage) tags.push(`<meta property="og:image" content="${esc(ogImage)}">`);
+  if (twitterCard) tags.push(`<meta name="twitter:card" content="${esc(twitterCard)}">`);
+  if (twitterTitle) tags.push(`<meta name="twitter:title" content="${esc(twitterTitle)}">`);
+  if (twitterDescription) tags.push(`<meta name="twitter:description" content="${esc(twitterDescription)}">`);
+  if (twitterImage) tags.push(`<meta name="twitter:image" content="${esc(twitterImage)}">`);
 
-  const injection = `${canonicalTag}${descTag ? '\n    ' + descTag : ''}`;
+  const injection = tags.join('\n    ');
   if (/<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `    ${injection}\n  </head>`);
   } else {
@@ -129,8 +156,20 @@ async function prerenderOne(browser, route, idx, total) {
   const url = `http://127.0.0.1:${PORT}${route === '/' ? '/' : route}`;
   try {
     await page.goto(url, { waitUntil: 'networkidle', timeout: NAV_TIMEOUT });
-    // Allow react-helmet-async to flush <title>/<meta> updates
-    await page.waitForFunction(() => !!document.querySelector('#root')?.children?.length, null, { timeout: NAV_TIMEOUT });
+    // Wait for the route component (not just the Suspense spinner / toaster) to
+    // actually render. We require a visible <h1> with non-trivial text inside #root.
+    try {
+      await page.waitForFunction(() => {
+        const root = document.querySelector('#root');
+        if (!root) return false;
+        const h1 = root.querySelector('h1');
+        if (!h1) return false;
+        const text = (h1.textContent || '').trim();
+        return text.length >= 8;
+      }, null, { timeout: NAV_TIMEOUT, polling: 100 });
+    } catch {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — no <h1> rendered after ${NAV_TIMEOUT}ms; capturing whatever is present`);
+    }
     // Wait for react-helmet-async to set a non-empty <title>. Canonical mismatch
     // is non-fatal — we'll warn and still write the prerendered HTML (the
     // dedupeSeoTags step injects the correct canonical for this route).
@@ -160,12 +199,27 @@ async function prerenderOne(browser, route, idx, total) {
     }
     // Small settle to let any remaining meta tags flush
     await page.waitForTimeout(300);
-    actualDescription = await page.evaluate(() => {
-      const metas = document.querySelectorAll('meta[name="description"]');
-      if (!metas.length) return '';
-      // Helmet appends last — last element wins
-      return metas[metas.length - 1].getAttribute('content') || '';
-    }).catch(() => '');
+    // Capture ALL route-specific SEO tags from the live DOM. Helmet appends
+    // last, so the LAST element wins for each key.
+    const seo = await page.evaluate(() => {
+      const lastContent = (sel) => {
+        const els = document.querySelectorAll(sel);
+        if (!els.length) return '';
+        return els[els.length - 1].getAttribute('content') || '';
+      };
+      return {
+        description: lastContent('meta[name="description"]'),
+        ogTitle: lastContent('meta[property="og:title"]'),
+        ogDescription: lastContent('meta[property="og:description"]'),
+        ogUrl: lastContent('meta[property="og:url"]'),
+        ogImage: lastContent('meta[property="og:image"]'),
+        twitterCard: lastContent('meta[name="twitter:card"]'),
+        twitterTitle: lastContent('meta[name="twitter:title"]'),
+        twitterDescription: lastContent('meta[name="twitter:description"]'),
+        twitterImage: lastContent('meta[name="twitter:image"]'),
+      };
+    }).catch(() => ({}));
+    actualDescription = seo.description || '';
     const actualTitle = await page.title().catch(() => '');
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
@@ -179,7 +233,7 @@ async function prerenderOne(browser, route, idx, total) {
       console.warn(`[${idx + 1}/${total}] ⚠ canonical mismatch for ${route} (got "${actualCanonical}", expected "${expectedCanonical}") — writing anyway`);
     }
     let html = await page.content();
-    html = dedupeSeoTags(html, route, actualDescription);
+    html = dedupeSeoTags(html, route, seo);
     // Sanity: non-home routes must not retain the homepage canonical
     if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
       // fallthrough — already validated above, but log
