@@ -155,20 +155,30 @@ async function prerenderOne(browser, route, idx, total) {
   const page = await ctx.newPage();
   const url = `http://127.0.0.1:${PORT}${route === '/' ? '/' : route}`;
   try {
-    await page.goto(url, { waitUntil: 'networkidle', timeout: NAV_TIMEOUT });
+    // Use domcontentloaded + explicit content gates below. `networkidle` can
+    // hang indefinitely on routes that load Cloudinary images, embeds, or any
+    // long-poll requests, causing the entire route to be skipped.
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT });
+    } catch (e) {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — goto threw (${e.message}); continuing with whatever loaded`);
+    }
     // Wait for the route component (not just the Suspense spinner / toaster) to
-    // actually render. We require a visible <h1> with non-trivial text inside #root.
+    // actually render. Primary gate: visible <h1> with non-trivial text.
+    // Fallback gate: #root has > 5000 chars of innerHTML (route clearly mounted
+    // even if the H1 heuristic is too strict, e.g. /media).
     try {
       await page.waitForFunction(() => {
         const root = document.querySelector('#root');
         if (!root) return false;
         const h1 = root.querySelector('h1');
-        if (!h1) return false;
-        const text = (h1.textContent || '').trim();
-        return text.length >= 8;
+        const h1Text = h1 ? (h1.textContent || '').trim() : '';
+        if (h1Text.length >= 8) return true;
+        // Fallback: substantial rendered HTML in root means the route mounted
+        return (root.innerHTML || '').length > 5000;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — no <h1> rendered after ${NAV_TIMEOUT}ms; capturing whatever is present`);
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — neither <h1> nor 5KB+ #root after ${NAV_TIMEOUT}ms; capturing anyway`);
     }
     // Wait for react-helmet-async to set a non-empty <title>. Canonical mismatch
     // is non-fatal — we'll warn and still write the prerendered HTML (the
@@ -229,10 +239,15 @@ async function prerenderOne(browser, route, idx, total) {
     try {
       await page.waitForFunction(() => {
         const root = document.querySelector('#root');
-        return !!root && (root.innerText || '').trim().length > 200;
+        if (!root) return false;
+        const text = (root.innerText || '').trim();
+        if (text.length > 200) return true;
+        // Fallback: route component clearly rendered (5KB+ of HTML) even if
+        // most of its content is images/links rather than visible text.
+        return (root.innerHTML || '').length > 5000;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root innerText < 200 chars; capturing anyway`);
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root content below thresholds; capturing anyway`);
     }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
