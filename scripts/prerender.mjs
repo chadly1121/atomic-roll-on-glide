@@ -224,17 +224,15 @@ async function prerenderOne(browser, route, idx, total) {
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
     ).catch(() => '');
-    // DIAGNOSTIC: log root content state for the huntsville route
-    if (route === '/painters-huntsville' || route === '/interior-painting') {
-      const diag = await page.evaluate(() => ({
-        rootChildCount: document.querySelector('#root')?.children?.length ?? 0,
-        rootChildTags: Array.from(document.querySelector('#root')?.children ?? []).map(c => c.tagName + (c.getAttribute('role') ? `[role=${c.getAttribute('role')}]` : '')),
-        h1Count: document.querySelectorAll('h1').length,
-        h1Texts: Array.from(document.querySelectorAll('h1')).map(h => (h.textContent || '').trim().slice(0, 80)),
-        rootInnerHTMLLength: document.querySelector('#root')?.innerHTML?.length ?? 0,
-        bodyTextLength: (document.body.innerText || '').length,
-      }));
-      console.log(`[DIAG ${route}]`, JSON.stringify(diag));
+    // Belt-and-suspenders: require substantive root text before capturing.
+    // The H1 wait can resolve a tick before the rest of the route flushes.
+    try {
+      await page.waitForFunction(() => {
+        const root = document.querySelector('#root');
+        return !!root && (root.innerText || '').trim().length > 200;
+      }, null, { timeout: NAV_TIMEOUT, polling: 100 });
+    } catch {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root innerText < 200 chars; capturing anyway`);
     }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
