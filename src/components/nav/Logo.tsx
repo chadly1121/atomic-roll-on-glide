@@ -11,9 +11,9 @@ const Logo = ({ handleLogoClick }: LogoProps) => {
       <img 
         src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp" 
         alt="Roll On Painting - Clean Reliable Painters in Muskoka" 
-        className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 max-w-none flex-shrink-0"
-        width={200}
-        height={32}
+        className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 max-w-none flex-shrink-0"
+        width={240}
+        height={80}
         decoding="async"
       />
     </a>
