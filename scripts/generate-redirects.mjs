@@ -146,7 +146,34 @@ try {
   const routesManifest = {
     version: 1,
     include: ['/*'],
-    exclude: routes,
+    // Exclude prerendered routes AND all static asset directories so
+    // Cloudflare Pages serves them directly from /dist instead of routing
+    // them through the SPA Function (which 403s for non-route paths and
+    // bypasses _redirects rules for legacy .html paths).
+    exclude: [
+      ...routes,
+      '/assets/*',
+      '/lovable-uploads/*',
+      '/partner-logos/*',
+      '/.well-known/*',
+      '/*.html',
+      '/*.xml',
+      '/*.txt',
+      '/*.json',
+      '/*.webp',
+      '/*.png',
+      '/*.jpg',
+      '/*.jpeg',
+      '/*.svg',
+      '/*.ico',
+      '/*.webmanifest',
+      '/*.woff',
+      '/*.woff2',
+      '/*.css',
+      '/*.js',
+      '/*.map',
+      '/*.mp4',
+    ],
   };
   await fs.writeFile(OUT_ROUTES_FILE, JSON.stringify(routesManifest, null, 2) + '\n', 'utf8');
   console.log(`✓ Wrote ${path.relative(ROOT, OUT_ROUTES_FILE)} (${routes.length} prerendered routes excluded from Functions/SPA fallback)`);
