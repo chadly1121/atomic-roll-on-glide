@@ -39,12 +39,6 @@ export const exteriorImages: GalleryImage[] = [
     title: "Soft Wash Roof Cleaning — Elevated Access View"
   },
   {
-    id: 220,
-    src: "/lovable-uploads/exterior-softwash-video-action.webp",
-    category: "exterior",
-    title: "Soft Wash Roof Cleaning — Video Thumbnail"
-  },
-  {
     id: 230,
     src: "/lovable-uploads/exterior-residential-lakeside-paint.webp",
     category: "exterior",

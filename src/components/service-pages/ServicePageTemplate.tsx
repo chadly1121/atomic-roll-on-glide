@@ -140,10 +140,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
 
           <AIAnswerBlock {...service.aiAnswerBlock} />
 
-          {(service.galleryImages?.length || service.galleryVideos?.length) && (
+          {service.galleryImages?.length && (
             <ServiceGallery
               images={service.galleryImages || []}
-              videos={service.galleryVideos || []}
               serviceName={service.name}
             />
           )}

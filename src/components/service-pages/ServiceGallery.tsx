@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ServiceGalleryProps {
   images: string[];
-  videos?: string[];
   serviceName: string;
 }
 
-const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], serviceName }) => {
+const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, serviceName }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const isMobile = useIsMobile();
 
-  const allMedia = [...images, ...videos];
-  if (allMedia.length === 0) return null;
-
-  const isVideo = (src: string) => src.endsWith('.mp4');
+  if (images.length === 0) return null;
 
   const openLightbox = (index: number) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
@@ -23,9 +19,9 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], se
   const navigate = (dir: 'prev' | 'next') => {
     if (lightboxIndex === null) return;
     if (dir === 'prev') {
-      setLightboxIndex(lightboxIndex === 0 ? allMedia.length - 1 : lightboxIndex - 1);
+      setLightboxIndex(lightboxIndex === 0 ? images.length - 1 : lightboxIndex - 1);
     } else {
-      setLightboxIndex(lightboxIndex === allMedia.length - 1 ? 0 : lightboxIndex + 1);
+      setLightboxIndex(lightboxIndex === images.length - 1 ? 0 : lightboxIndex + 1);
     }
   };
 
@@ -36,32 +32,18 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], se
           Our {serviceName} Work
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
-          {allMedia.map((src, idx) => (
+          {images.map((src, idx) => (
             <button
               key={src}
               onClick={() => openLightbox(idx)}
               className="relative aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-atomic-turquoise"
             >
-              {isVideo(src) ? (
-                <>
-                  <video
-                    src={src}
-                    muted
-                    preload="metadata"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
-                    <Play className="w-10 h-10 text-white drop-shadow-lg" fill="white" />
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={src}
-                  alt={`${serviceName} project`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              )}
+              <img
+                src={src}
+                alt={`${serviceName} project`}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
             </button>
           ))}
@@ -99,20 +81,11 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({ images, videos = [], se
             <ChevronRight className="h-6 w-6" />
           </button>
           <div className="max-w-4xl max-h-[85vh] w-full" onClick={(e) => e.stopPropagation()}>
-            {isVideo(allMedia[lightboxIndex]) ? (
-              <video
-                src={allMedia[lightboxIndex]}
-                controls
-                autoPlay
-                className="w-full max-h-[85vh] object-contain rounded-lg"
-              />
-            ) : (
-              <img
-                src={allMedia[lightboxIndex]}
-                alt={`${serviceName} project`}
-                className="w-full max-h-[85vh] object-contain rounded-lg"
-              />
-            )}
+            <img
+              src={images[lightboxIndex]}
+              alt={`${serviceName} project`}
+              className="w-full max-h-[85vh] object-contain rounded-lg"
+            />
           </div>
         </div>
       )}

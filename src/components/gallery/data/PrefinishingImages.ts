@@ -39,15 +39,9 @@ export const prefinishingImages: GalleryImage[] = [
     title: "Pre-Finishing Douglas Fir Boards — Natural Stain"
   },
   {
-    id: 227,
-    src: "/lovable-uploads/prefinishing-video-thumbnail.webp",
-    category: "prefinishing",
-    title: "Pre-Finishing Process — Video Thumbnail"
-  },
-  {
     id: 228,
     src: "/lovable-uploads/prefinishing-rutherford-go-station-ceilings.webp",
     category: "prefinishing",
-    title: "Rutherford GO Station Ceilings — Pre-Finishing Video Thumbnail"
+    title: "Rutherford GO Station Ceilings — Pre-Finishing"
   }
 ];

@@ -441,7 +441,7 @@ const SEOHelmet: React.FC = () => {
       <meta httpEquiv="Content-Language" content="en-CA" />
       
       {/* Robots directives */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
       
       {/* Referrer Policy */}
       <meta name="referrer" content="no-referrer-when-downgrade" />
