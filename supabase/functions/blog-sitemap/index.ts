@@ -1,7 +1,7 @@
 import "https://deno.land/std@0.168.0/dotenv/load.ts";
 
 const FEED_URL = 'https://getautoseo.com/feeds/11478/2BAyrFT4mJ27iBtqKG5KC5XTe9wE9K8FMjrMA4C10ok.json';
-const SITE_URL = 'https://rollonpainting.com';
+const SITE_URL = 'https://www.roll-onpainting.com';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
