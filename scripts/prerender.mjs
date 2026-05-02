@@ -93,25 +93,52 @@ function routeToOutputFile(route) {
 }
 
 /**
- * Remove all <link rel="canonical"> and <meta name="description"> tags from
- * the HTML, then inject exactly one of each into <head>. Canonical URL is
- * derived from CANONICAL_ORIGIN + route. Description is passed in explicitly
- * (extracted from the live DOM by the caller — Helmet always wins).
+ * Remove duplicate SEO tags (canonical, description, OG, Twitter) from the
+ * HTML, then inject the single authoritative version of each. Authoritative
+ * values are extracted from the live DOM by the caller — Helmet always wins
+ * because it appends its tags last.
  */
-function dedupeSeoTags(html, route, description) {
+function dedupeSeoTags(html, route, seo) {
+  const { description = '', ogTitle = '', ogDescription = '', ogUrl = '',
+    ogImage = '', twitterTitle = '', twitterDescription = '', twitterImage = '',
+    twitterCard = '' } = seo || {};
+
   // Strip ALL canonical link tags
   html = html.replace(/<link\b[^>]*\brel=["']canonical["'][^>]*\/?>(?:\s*<\/link>)?/gi, '');
   // Strip ALL meta description tags (both attribute orders)
   html = html.replace(/<meta\b[^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
   html = html.replace(/<meta\b[^>]*\bcontent=["'][^"']*["'][^>]*\bname=["']description["'][^>]*\/?>(?:\s*<\/meta>)?/gi, '');
+  // Strip ALL og: meta tags we manage
+  const ogProps = ['og:title', 'og:description', 'og:url', 'og:image'];
+  for (const prop of ogProps) {
+    const re1 = new RegExp(`<meta\\b[^>]*\\bproperty=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    const re2 = new RegExp(`<meta\\b[^>]*\\bcontent=["'][^"']*["'][^>]*\\bproperty=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    html = html.replace(re1, '').replace(re2, '');
+  }
+  // Strip ALL twitter: meta tags we manage
+  const twProps = ['twitter:title', 'twitter:description', 'twitter:image', 'twitter:card'];
+  for (const prop of twProps) {
+    const re1 = new RegExp(`<meta\\b[^>]*\\bname=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    const re2 = new RegExp(`<meta\\b[^>]*\\bcontent=["'][^"']*["'][^>]*\\bname=["']${prop}["'][^>]*\\/?>(?:\\s*<\\/meta>)?`, 'gi');
+    html = html.replace(re1, '').replace(re2, '');
+  }
 
   const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : route}`;
-  const canonicalTag = `<link rel="canonical" href="${canonicalHref}">`;
-  const descTag = description
-    ? `<meta name="description" content="${description.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">`
-    : '';
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  const tags = [];
+  tags.push(`<link rel="canonical" href="${esc(canonicalHref)}">`);
+  if (description) tags.push(`<meta name="description" content="${esc(description)}">`);
+  if (ogTitle) tags.push(`<meta property="og:title" content="${esc(ogTitle)}">`);
+  if (ogDescription) tags.push(`<meta property="og:description" content="${esc(ogDescription)}">`);
+  // og:url must always be the route's canonical, not whatever Helmet may have left
+  tags.push(`<meta property="og:url" content="${esc(ogUrl || canonicalHref)}">`);
+  if (ogImage) tags.push(`<meta property="og:image" content="${esc(ogImage)}">`);
+  if (twitterCard) tags.push(`<meta name="twitter:card" content="${esc(twitterCard)}">`);
+  if (twitterTitle) tags.push(`<meta name="twitter:title" content="${esc(twitterTitle)}">`);
+  if (twitterDescription) tags.push(`<meta name="twitter:description" content="${esc(twitterDescription)}">`);
+  if (twitterImage) tags.push(`<meta name="twitter:image" content="${esc(twitterImage)}">`);
 
-  const injection = `${canonicalTag}${descTag ? '\n    ' + descTag : ''}`;
+  const injection = tags.join('\n    ');
   if (/<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `    ${injection}\n  </head>`);
   } else {
