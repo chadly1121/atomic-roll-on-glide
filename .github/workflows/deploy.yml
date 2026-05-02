@@ -66,7 +66,7 @@ jobs:
           name: dist-prerendered
           path: dist
       - name: Run SEO + llms.txt assertions
-        run: node scripts/assert-seo.mjs
+        run: DIST_DIR=dist node scripts/assert-seo.mjs
 
   deploy:
     name: Deploy to Cloudflare Pages
@@ -77,10 +77,15 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: dist-prerendered
-          path: dist
+          path: dist-prerendered
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify prerendered source before deploy
+        run: node scripts/verify-prerendered-source.mjs dist-prerendered /interior-painting
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=roll-onpainting --branch=main
+          command: pages deploy dist-prerendered --project-name=roll-onpainting --branch=main
