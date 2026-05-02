@@ -1,5 +1,6 @@
 # Cache policy for Roll On Painting
 # Compatible with Cloudflare Pages, Netlify, and Lovable hosting
+# Updated: 2026-05-02 (post video cleanup)
 
 # Hashed/fingerprinted build assets — safe to cache forever
 /assets/*
