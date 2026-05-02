@@ -242,15 +242,34 @@ async function prerenderOne(browser, route, idx, total) {
     if (!canonicalOk) {
       console.warn(`[${idx + 1}/${total}] ⚠ canonical mismatch for ${route} (got "${actualCanonical}", expected "${expectedCanonical}") — writing anyway`);
     }
-    let html = await page.content();
-    html = dedupeSeoTags(html, route, seo);
+    const capturedHtml = await page.content();
+    const finalHtml = dedupeSeoTags(capturedHtml, route, seo);
+    if (route === '/painters-huntsville') {
+      console.log(`[diag] ${route} capturedHtml=${capturedHtml.length} finalHtml=${finalHtml.length}`);
+    }
     // Sanity: non-home routes must not retain the homepage canonical
-    if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
+    if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(finalHtml)) {
       // fallthrough — already validated above, but log
     }
     const out = routeToOutputFile(route);
     await fs.mkdir(path.dirname(out), { recursive: true });
-    await fs.writeFile(out, html, 'utf8');
+    await fs.writeFile(out, finalHtml, 'utf8');
+    if (route === '/painters-huntsville') {
+      const onDisk = await fs.readFile(out, 'utf8');
+      const start = onDisk.indexOf('<div id="root">');
+      let end = -1, depth = 1;
+      if (start !== -1) {
+        const re = /<\/?div\b[^>]*>/gi;
+        re.lastIndex = start + '<div id="root">'.length;
+        let m;
+        while ((m = re.exec(onDisk))) {
+          if (m[0].startsWith('</')) { depth--; if (depth === 0) { end = m.index; break; } }
+          else if (!m[0].endsWith('/>')) { depth++; }
+        }
+      }
+      const innerLen = start !== -1 && end !== -1 ? end - (start + '<div id="root">'.length) : -1;
+      console.log(`[diag] ${route} on-disk file=${onDisk.length} bytes, #root inner=${innerLen} chars`);
+    }
     const t = await page.title().catch(() => '');
     console.log(`[${idx + 1}/${total}] ✓ ${route}  — "${t.slice(0, 70)}"`);
   } catch (err) {
