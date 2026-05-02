@@ -6,7 +6,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { businessInfo } from '@/data/businessInfo';
-import GoNanoVideo from '@/components/services/GoNanoVideo';
 
 const roofProducts = [
   {
@@ -349,7 +348,6 @@ const GoNanoPage = () => {
                   </div>
                 </CardFooter>
               </Card>
-              <GoNanoVideo />
             </div>
           </div>
         </section>
