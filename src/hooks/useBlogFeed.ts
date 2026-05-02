@@ -1,8 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useCallback, useMemo } from 'react';
 import { localBlogPosts } from '@/data/localBlogPosts';
-
-const FEED_URL = 'https://getautoseo.com/feeds/11478/2BAyrFT4mJ27iBtqKG5KC5XTe9wE9K8FMjrMA4C10ok.json';
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 export interface BlogFeedAuthor {
   name: string;
@@ -30,13 +27,6 @@ export interface BlogFeedItem {
   readingTime: number;
 }
 
-interface FeedCache {
-  items: BlogFeedItem[];
-  fetchedAt: number;
-}
-
-let globalCache: FeedCache | null = null;
-
 function extractSlug(url: string, id: string): string {
   try {
     const parts = url.split('/').filter(Boolean);
@@ -53,83 +43,26 @@ function calcReadingTime(html: string): number {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-function processItems(rawItems: any[]): BlogFeedItem[] {
-  const remote = rawItems
-    .map((item: any) => ({
-      ...item,
-      tags: item.tags || [],
-      authors: item.authors || [],
-      _seo: item._seo || {},
-      slug: extractSlug(item.url || '', item.id),
-      readingTime: calcReadingTime(item.content_html || ''),
-    }));
-
-  const local: BlogFeedItem[] = localBlogPosts.map((p) => ({
-    ...p,
-    readingTime: calcReadingTime(p.content_html || ''),
-  }));
-
-  // Local posts take priority on slug conflicts.
-  const localSlugs = new Set(local.map((p) => p.slug));
-  const merged = [...local, ...remote.filter((r) => !localSlugs.has(r.slug))];
-
-  return merged.sort(
-    (a: BlogFeedItem, b: BlogFeedItem) =>
-      new Date(b.date_published).getTime() - new Date(a.date_published).getTime()
-  );
-}
-
+/**
+ * Blog data source: code-as-content via `src/data/localBlogPosts.ts`.
+ * To publish a new post, add an entry to that file and deploy.
+ */
 export function useBlogFeed() {
-  const [items, setItems] = useState<BlogFeedItem[]>(globalCache?.items || []);
-  const [loading, setLoading] = useState(!globalCache);
-  const [error, setError] = useState<string | null>(null);
-  const fetchingRef = useRef(false);
-
-  const fetchFeed = useCallback(async (force = false) => {
-    if (fetchingRef.current) return;
-    if (!force && globalCache && Date.now() - globalCache.fetchedAt < CACHE_TTL) {
-      setItems(globalCache.items);
-      setLoading(false);
-      return;
-    }
-
-    fetchingRef.current = true;
-    setLoading(true);
-    setError(null);
-
-    try {
-      const res = await fetch(FEED_URL);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      const processed = processItems(data.items || []);
-      globalCache = { items: processed, fetchedAt: Date.now() };
-      setItems(processed);
-    } catch (err: any) {
-      console.error('Blog feed fetch error:', err);
-      // Even if the remote feed fails, still show local posts so the page is never empty.
-      const fallback = processItems([]);
-      if (fallback.length > 0) {
-        globalCache = { items: fallback, fetchedAt: Date.now() };
-        setItems(fallback);
-      } else {
-        setError(err.message || 'Failed to load articles');
-      }
-    } finally {
-      setLoading(false);
-      fetchingRef.current = false;
-    }
+  const items = useMemo<BlogFeedItem[]>(() => {
+    return localBlogPosts
+      .map((p) => ({ ...p, readingTime: calcReadingTime(p.content_html || '') }))
+      .sort(
+        (a, b) =>
+          new Date(b.date_published).getTime() - new Date(a.date_published).getTime()
+      );
   }, []);
-
-  useEffect(() => {
-    fetchFeed();
-  }, [fetchFeed]);
-
-  const retry = useCallback(() => fetchFeed(true), [fetchFeed]);
 
   const getBySlug = useCallback(
     (slug: string) => items.find((item) => item.slug === slug) || null,
     [items]
   );
 
-  return { items, loading, error, retry, getBySlug };
+  const retry = useCallback(() => {}, []);
+
+  return { items, loading: false, error: null as string | null, retry, getBySlug };
 }
