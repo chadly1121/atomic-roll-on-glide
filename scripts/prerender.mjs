@@ -156,8 +156,20 @@ async function prerenderOne(browser, route, idx, total) {
   const url = `http://127.0.0.1:${PORT}${route === '/' ? '/' : route}`;
   try {
     await page.goto(url, { waitUntil: 'networkidle', timeout: NAV_TIMEOUT });
-    // Allow react-helmet-async to flush <title>/<meta> updates
-    await page.waitForFunction(() => !!document.querySelector('#root')?.children?.length, null, { timeout: NAV_TIMEOUT });
+    // Wait for the route component (not just the Suspense spinner / toaster) to
+    // actually render. We require a visible <h1> with non-trivial text inside #root.
+    try {
+      await page.waitForFunction(() => {
+        const root = document.querySelector('#root');
+        if (!root) return false;
+        const h1 = root.querySelector('h1');
+        if (!h1) return false;
+        const text = (h1.textContent || '').trim();
+        return text.length >= 8;
+      }, null, { timeout: NAV_TIMEOUT, polling: 100 });
+    } catch {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — no <h1> rendered after ${NAV_TIMEOUT}ms; capturing whatever is present`);
+    }
     // Wait for react-helmet-async to set a non-empty <title>. Canonical mismatch
     // is non-fatal — we'll warn and still write the prerendered HTML (the
     // dedupeSeoTags step injects the correct canonical for this route).
@@ -187,12 +199,27 @@ async function prerenderOne(browser, route, idx, total) {
     }
     // Small settle to let any remaining meta tags flush
     await page.waitForTimeout(300);
-    actualDescription = await page.evaluate(() => {
-      const metas = document.querySelectorAll('meta[name="description"]');
-      if (!metas.length) return '';
-      // Helmet appends last — last element wins
-      return metas[metas.length - 1].getAttribute('content') || '';
-    }).catch(() => '');
+    // Capture ALL route-specific SEO tags from the live DOM. Helmet appends
+    // last, so the LAST element wins for each key.
+    const seo = await page.evaluate(() => {
+      const lastContent = (sel) => {
+        const els = document.querySelectorAll(sel);
+        if (!els.length) return '';
+        return els[els.length - 1].getAttribute('content') || '';
+      };
+      return {
+        description: lastContent('meta[name="description"]'),
+        ogTitle: lastContent('meta[property="og:title"]'),
+        ogDescription: lastContent('meta[property="og:description"]'),
+        ogUrl: lastContent('meta[property="og:url"]'),
+        ogImage: lastContent('meta[property="og:image"]'),
+        twitterCard: lastContent('meta[name="twitter:card"]'),
+        twitterTitle: lastContent('meta[name="twitter:title"]'),
+        twitterDescription: lastContent('meta[name="twitter:description"]'),
+        twitterImage: lastContent('meta[name="twitter:image"]'),
+      };
+    }).catch(() => ({}));
+    actualDescription = seo.description || '';
     const actualTitle = await page.title().catch(() => '');
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
@@ -206,7 +233,7 @@ async function prerenderOne(browser, route, idx, total) {
       console.warn(`[${idx + 1}/${total}] ⚠ canonical mismatch for ${route} (got "${actualCanonical}", expected "${expectedCanonical}") — writing anyway`);
     }
     let html = await page.content();
-    html = dedupeSeoTags(html, route, actualDescription);
+    html = dedupeSeoTags(html, route, seo);
     // Sanity: non-home routes must not retain the homepage canonical
     if (route !== '/' && /<link[^>]+rel=["']canonical["'][^>]+href=["'][^"']*\/["']/i.test(html)) {
       // fallthrough — already validated above, but log
