@@ -5,7 +5,7 @@
  * React to hydrate + network idle, then writes the rendered HTML over
  * the corresponding dist/<route>/index.html shell.
  */
-import { chromium } from 'playwright';
+import { chromium } from '@playwright/test';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import { existsSync, createReadStream, statSync } from 'node:fs';
@@ -224,6 +224,16 @@ async function prerenderOne(browser, route, idx, total) {
     const actualCanonical = await page.evaluate(
       () => document.querySelector('link[rel="canonical"]')?.getAttribute('href') || ''
     ).catch(() => '');
+    // Belt-and-suspenders: require substantive root text before capturing.
+    // The H1 wait can resolve a tick before the rest of the route flushes.
+    try {
+      await page.waitForFunction(() => {
+        const root = document.querySelector('#root');
+        return !!root && (root.innerText || '').trim().length > 200;
+      }, null, { timeout: NAV_TIMEOUT, polling: 100 });
+    } catch {
+      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root innerText < 200 chars; capturing anyway`);
+    }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
     }
@@ -275,7 +285,9 @@ async function main() {
   const routes = [...new Set(urls.map(urlToRoute).filter(Boolean))];
   console.log(`Found ${routes.length} unique routes in sitemap.xml`);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(
+    process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}
+  );
   let failures = [];
   try {
     failures = await runPool(routes, (route, idx, total) => prerenderOne(browser, route, idx, total));
