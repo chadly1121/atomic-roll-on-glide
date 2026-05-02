@@ -32,7 +32,6 @@ export interface ServicePageData {
   
   // Gallery media
   galleryImages?: string[];
-  galleryVideos?: string[];
 }
 
 export const servicePages: ServicePageData[] = [
@@ -1198,9 +1197,6 @@ export const servicePages: ServicePageData[] = [
       '/lovable-uploads/prefinishing-white-trim-boards.webp',
       '/lovable-uploads/prefinishing-douglas-fir-boards.webp',
       '/lovable-uploads/prefinishing-rutherford-go-station-ceilings.webp'
-    ],
-    galleryVideos: [
-      '/lovable-uploads/prefinishing-video-thumbnail.webp'
     ],
     faqs: [
       {
