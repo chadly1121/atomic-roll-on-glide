@@ -542,6 +542,49 @@ ${exactRouteRewrites}
         const h1 = readStringField(block, 'headline') ?? `${name} in Muskoka`;
         const title = `${name} | Roll On Painting | Muskoka`;
 
+        const longDescription = readStringField(block, 'description') ?? description;
+        const aiBlock = readObjectField(block, 'aiAnswerBlock') ?? '';
+        const whatIncludes = readStringArrayField(aiBlock, 'whatIncludes');
+        const whoItsFor = readStringArrayField(aiBlock, 'whoItsFor');
+        const whereAvailable = readStringArrayField(aiBlock, 'whereAvailable');
+        const howQuotesWork = readStringArrayField(aiBlock, 'howQuotesWork');
+        const benefits = readStringArrayField(block, 'benefits');
+        const processSteps = readObjectArrayField(block, 'process')
+          .map((obj) => {
+            const step = readStringField(obj, 'step');
+            const desc = readStringField(obj, 'description');
+            if (!step || !desc) return null;
+            return { step, description: desc };
+          })
+          .filter((x): x is { step: string; description: string } => Boolean(x));
+        const faqs = parseFaqArray(block);
+
+        const sectionHtml = (heading: string, body: string) =>
+          body ? `<section><h2>${escapeHtml(heading)}</h2>${body}</section>` : '';
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    <p>${escapeHtml(longDescription)}</p>
+  </header>
+  ${sectionHtml("What's Included", renderList(whatIncludes))}
+  ${sectionHtml("Who It's For", renderList(whoItsFor))}
+  ${sectionHtml('Where We Serve', renderList(whereAvailable))}
+  ${sectionHtml('How to Get a Quote', renderList(howQuotesWork, true))}
+  ${sectionHtml(`Why Choose Roll On Painting for ${name}`, renderList(benefits))}
+  ${
+    processSteps.length
+      ? `<section><h2>Our ${escapeHtml(name)} Process</h2><ol>${processSteps
+          .map(
+            (s) =>
+              `<li><strong>${escapeHtml(s.step)}.</strong> ${escapeHtml(s.description)}</li>`,
+          )
+          .join('')}</ol></section>`
+      : ''
+  }
+  ${renderFaqs(faqs)}
+</main>`;
+
         return {
           slug,
           title,
@@ -549,6 +592,7 @@ ${exactRouteRewrites}
           h1,
           image: DEFAULT_IMAGE,
           jsonLd: serviceRouteJsonLd(slug, name, description),
+          bodyHtml,
         } satisfies RouteMeta;
       })
       .filter((route): route is RouteMeta => Boolean(route));
@@ -569,12 +613,31 @@ ${exactRouteRewrites}
         );
         const h1 = readStringField(block, 'headline') ?? `Painters in ${name}`;
 
+        const intro = readStringField(block, 'intro') ?? '';
+        const localContent = readStringField(block, 'localContent') ?? '';
+        const region = readStringField(block, 'region') ?? '';
+        const nearbyAreas = readStringArrayField(block, 'nearbyAreas');
+        const faqs = parseFaqArray(block);
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    ${region ? `<p><strong>Region:</strong> ${escapeHtml(region)}, Ontario</p>` : ''}
+  </header>
+  ${intro ? `<section><h2>About Our ${escapeHtml(name)} Painting Services</h2><p>${escapeHtml(intro)}</p></section>` : ''}
+  ${localContent ? `<section><h2>Local Expertise in ${escapeHtml(name)}</h2><p>${escapeHtml(localContent)}</p></section>` : ''}
+  ${nearbyAreas.length ? `<section><h2>Nearby Areas We Serve</h2>${renderList(nearbyAreas)}</section>` : ''}
+  ${renderFaqs(faqs)}
+  <section><h2>Get a Free Quote</h2><p>Call Roll On Painting at 705-787-1401 or email info@roll-onpainting.com for a free, no-obligation painting estimate in ${escapeHtml(name)}.</p></section>
+</main>`;
+
         return {
           slug,
           title,
           description,
           h1,
           image: DEFAULT_IMAGE,
+          bodyHtml,
           jsonLd: {
             '@context': 'https://schema.org',
             '@graph': [
@@ -619,12 +682,37 @@ ${exactRouteRewrites}
         );
         const h1 = readStringField(block, 'headline') ?? `Muskoka Cottage Painting for ${cityName} Homeowners`;
 
+        const subheadline = readStringField(block, 'subheadline') ?? '';
+        const ctaText = readStringField(block, 'ctaText') ?? 'Request a Consultation';
+        const sections = readObjectArrayField(block, 'sections')
+          .map((obj) => {
+            const heading = readStringField(obj, 'heading');
+            const body = readStringField(obj, 'body');
+            if (!heading || !body) return null;
+            return { heading, body };
+          })
+          .filter((x): x is { heading: string; body: string } => Boolean(x));
+        const faqs = parseFaqArray(block);
+
+        const bodyHtml = `<main>
+  <header>
+    <h1>${escapeHtml(h1)}</h1>
+    ${subheadline ? `<p>${escapeHtml(subheadline)}</p>` : ''}
+  </header>
+  ${sections
+    .map((s) => `<section><h2>${escapeHtml(s.heading)}</h2><p>${escapeHtml(s.body)}</p></section>`)
+    .join('\n  ')}
+  ${renderFaqs(faqs)}
+  <section><h2>${escapeHtml(ctaText)}</h2><p>Call 705-787-1401 or email info@roll-onpainting.com to discuss your Muskoka cottage. Serving ${escapeHtml(cityName)} homeowners with discreet, fully managed property care.</p></section>
+</main>`;
+
         return {
           slug,
           title,
           description,
           h1,
           image: DEFAULT_IMAGE,
+          bodyHtml,
           jsonLd: {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
