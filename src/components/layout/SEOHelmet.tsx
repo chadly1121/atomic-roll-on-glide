@@ -405,27 +405,6 @@ const SEOHelmet: React.FC = () => {
           { "@type": "ListItem", "position": 4, "name": "Contact", "item": `${siteUrl}/contact` },
           { "@type": "ListItem", "position": 5, "name": "Blog", "item": `${siteUrl}/blog` }
         ]
-      },
-      // VideoObject for gallery videos
-      {
-        "@type": "VideoObject",
-        "@id": `${siteUrl}/#video-cabinet-refinishing`,
-        "name": "Kitchen Cabinet Refinishing Process — Roll On Painting",
-        "description": "Watch Roll On Painting's professional kitchen cabinet refinishing process. From sanding and priming to spray finishing, see how we transform dated cabinets in Muskoka.",
-        "thumbnailUrl": `${siteUrl}/lovable-uploads/cabinet-spray-finish-action.webp`,
-        "contentUrl": `${siteUrl}/lovable-uploads/cabinet-repaint-video.mp4`,
-        "uploadDate": "2025-06-01",
-        "duration": "PT1M30S",
-        "publisher": {
-          "@type": "Organization",
-          "name": businessInfo.name,
-          "logo": {
-            "@type": "ImageObject",
-            "url": logoUrl,
-            "width": 400,
-            "height": 100
-          }
-        }
       }
     ]
   };
