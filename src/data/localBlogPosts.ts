@@ -1,9 +1,15 @@
 import type { BlogFeedItem } from '@/hooks/useBlogFeed';
 
 /**
- * Locally-authored blog posts.
- * These are merged with the GetAutoSEO feed and take priority on slug conflicts.
- * Use this for in-house articles you want published immediately.
+ * Blog posts (canonical source).
+ *
+ * This file IS the blog CMS. To publish a new article:
+ *   1. Copy an existing entry below.
+ *   2. Update id, slug, title, summary, image, tags, date_published, date_modified, content_html.
+ *   3. Add the same { slug, lastmod } to POSTS in supabase/functions/blog-sitemap/index.ts.
+ *   4. Commit + push. IndexNow pings Bing automatically on deploy.
+ *
+ * Sorted automatically by date_published (newest first) at runtime.
  */
 
 type LocalPost = Omit<BlogFeedItem, 'slug' | 'readingTime'> & {
