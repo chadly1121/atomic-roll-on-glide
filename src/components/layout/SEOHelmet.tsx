@@ -92,7 +92,7 @@ const SEOHelmet: React.FC = () => {
       },
       // LocalBusiness with aggregateRating
       {
-        "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
+        "@type": ["HousePainter", "LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
         "@id": `${siteUrl}/#localbusiness`,
         "name": businessInfo.name,
         "url": `${siteUrl}/`,
