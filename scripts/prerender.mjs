@@ -287,7 +287,9 @@ async function main() {
   const routes = [...new Set(urls.map(urlToRoute).filter(Boolean))];
   console.log(`Found ${routes.length} unique routes in sitemap.xml`);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(
+    process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}
+  );
   let failures = [];
   try {
     failures = await runPool(routes, (route, idx, total) => prerenderOne(browser, route, idx, total));
