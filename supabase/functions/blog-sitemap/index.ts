@@ -8,6 +8,7 @@ const SITE_URL = 'https://www.roll-onpainting.com';
  * slug + lastmod date here too so the sitemap stays accurate.
  */
 const POSTS: Array<{ slug: string; lastmod: string }> = [
+  { slug: 'best-interior-paint-colours-muskoka-cottage', lastmod: '2026-05-03' },
   { slug: 'exterior-painting-muskoka-cottage-owners-guide', lastmod: '2026-05-03' },
   { slug: 'flood-damaged-boathouses-docks-muskoka-2026', lastmod: '2026-05-03' },
   { slug: 'sansin-exterior-stains-decks-docks-muskoka', lastmod: '2026-04-25' },
