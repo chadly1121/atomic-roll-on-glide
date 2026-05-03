@@ -58,8 +58,9 @@ const BlogPostPage = () => {
     '@graph': [
       {
         '@type': 'Article',
+        name: post.title,
         headline: post.title,
-        image: post.image,
+        image: post.image?.startsWith('http') ? post.image : `${siteUrl}${post.image?.startsWith('/') ? '' : '/'}${post.image || ''}`,
         datePublished: post.date_published,
         dateModified: post.date_modified,
         author: (post.authors && post.authors.length > 0)
@@ -157,6 +158,7 @@ const BlogPostPage = () => {
   if (jsonLd && faqItems.length > 0) {
     jsonLd['@graph'].push({
       '@type': 'FAQPage',
+      name: 'Frequently Asked Questions',
       mainEntity: faqItems.map(({ q, a }) => ({
         '@type': 'Question',
         name: q,
@@ -203,7 +205,7 @@ const BlogPostPage = () => {
           <link rel="alternate" hrefLang="en-CA" href={canonicalUrl} />
           <meta property="og:title" content={post.title} />
           <meta property="og:description" content={metaDesc} />
-          <meta property="og:image" content={post.image} />
+          <meta property="og:image" content={post.image?.startsWith('http') ? post.image : `${siteUrl}${post.image?.startsWith('/') ? '' : '/'}${post.image || ''}`} />
           <meta property="og:type" content="article" />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:site_name" content={businessInfo.name} />
@@ -219,7 +221,7 @@ const BlogPostPage = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={post.title} />
           <meta name="twitter:description" content={metaDesc} />
-          <meta name="twitter:image" content={post.image} />
+          <meta name="twitter:image" content={post.image?.startsWith('http') ? post.image : `${siteUrl}${post.image?.startsWith('/') ? '' : '/'}${post.image || ''}`} />
           <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         </Helmet>
       )}
