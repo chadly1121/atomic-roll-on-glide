@@ -19,21 +19,21 @@ const HeroContent = () => {
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
       <div className="flex items-center gap-2 sm:gap-4 mb-2">
-        <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">Clean Reliable Painters</h2>
+        <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">Muskoka's Premier Painting Company</h2>
       </div>
       
       <div>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 tracking-tight">
-          Muskoka House Painters{' '}
+          Muskoka's Most Trusted Painters{' '}
           <span className="text-atomic-orange block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-1">Huntsville, Bracebridge & Gravenhurst</span>
         </h1>
 
         <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
-          Roll On Painting is a trusted painting company in Muskoka serving Huntsville, Bracebridge, Gravenhurst, Port Carling and the surrounding lakes. Interior, exterior, cottage, and cabinet painting — done right the first time.
+          Muskoka's premier painting and coatings company. 25 years of uncompromising craftsmanship on lakefront cottages, luxury homes, and heritage properties. When the standard of your home demands the best — we're who Muskoka calls.
         </p>
 
         <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">
-          HGTV Featured · $5M Insured · Perfect Finish Promise — Free Touch Ups for Life
+          5× HGTV Featured · GoNano Certified · $5M Insured · 25+ Years · Free Touch-Ups for Life
         </p>
       </div>
       
