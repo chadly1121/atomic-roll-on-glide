@@ -145,11 +145,16 @@ const SecurityEnhancedContactForm = () => {
         throw new Error(`Failed to upload ${file.name}`);
       }
 
-      const { data: { publicUrl } } = supabase.storage
+      const { data: signed, error: signedError } = await supabase.storage
         .from('quote-attachments')
-        .getPublicUrl(data.path);
-      
-      uploadedUrls.push(publicUrl);
+        .createSignedUrl(data.path, 60 * 60 * 24 * 7); // 7 days
+
+      if (signedError || !signed?.signedUrl) {
+        console.error('Signed URL error:', signedError);
+        throw new Error(`Failed to generate signed URL for ${file.name}`);
+      }
+
+      uploadedUrls.push(signed.signedUrl);
       setUploadProgress(Math.round(((i + 1) / files.length) * 100));
     }
 
