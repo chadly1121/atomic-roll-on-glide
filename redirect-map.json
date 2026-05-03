@@ -293,5 +293,10 @@
     "source": "/privacy-policy.html",
     "destination": "/",
     "status": 301
+  },
+  {
+    "source": "/index.php/tools/*",
+    "destination": "/",
+    "status": 301
   }
 ]
