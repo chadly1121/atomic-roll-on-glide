@@ -4,7 +4,7 @@
  * This file contains all verified business facts for Roll On Painting.
  * Used across schema, components, and AI-readable content blocks.
  * 
- * Last verified: February 2025
+ * Last verified: May 2026
  * Source: Site codebase extraction
  */
 
