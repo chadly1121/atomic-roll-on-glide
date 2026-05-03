@@ -143,40 +143,97 @@ console.log(`✓ Wrote ${path.relative(ROOT, OUT_FILE)} (${entries.length} legac
 
 try {
   const routes = await readPrerenderRoutesFromSitemap();
+  // Cloudflare Pages enforces a hard limit of 100 entries on the
+  // _routes.json `exclude` array. Listing every prerendered route
+  // individually (~111) silently invalidates the file and falls back
+  // to default SPA routing. Use glob patterns to cover all routes
+  // with a small, fixed number of entries.
+  const excludePatterns = [
+    // Top-level static pages
+    '/about',
+    '/portfolio',
+    '/contact',
+    '/reviews',
+    '/faq',
+    '/blog',
+    '/blog/*',
+    '/careers',
+    '/media',
+    '/catalog',
+    '/service-areas',
+    '/free-touch-ups',
+    '/private-client-muskoka-property-care',
+    // Service pages
+    '/interior-painting',
+    '/exterior-painting',
+    '/cabinet-refinishing',
+    '/commercial-painting',
+    '/deck-staining',
+    '/spray-finishing',
+    '/epoxy-coatings',
+    '/wallpaper-removal',
+    '/wallpaper-installation',
+    '/stucco-removal',
+    '/institutional-painting',
+    '/prefinishing',
+    '/power-washing',
+    '/gonano',
+    // Town painters (covers /painters-huntsville, etc.)
+    '/painters-*',
+    // Regional/town service variants
+    '/*-muskoka',
+    '/*-gravenhurst',
+    '/*-port-carling',
+    '/*-barrie',
+    '/*-cottage-painting',
+    // Static asset directories and file extensions — serve directly
+    '/assets/*',
+    '/lovable-uploads/*',
+    '/partner-logos/*',
+    '/.well-known/*',
+    '/*.html',
+    '/*.xml',
+    '/*.txt',
+    '/*.json',
+    '/*.webp',
+    '/*.png',
+    '/*.jpg',
+    '/*.jpeg',
+    '/*.svg',
+    '/*.ico',
+    '/*.webmanifest',
+    '/*.woff',
+    '/*.woff2',
+    '/*.css',
+    '/*.js',
+    '/*.map',
+    '/*.mp4',
+  ];
+
+  if (excludePatterns.length > 100) {
+    fail(`_routes.json exclude has ${excludePatterns.length} entries (Cloudflare limit is 100)`);
+  }
+
+  // Verify our glob patterns actually cover every prerendered route.
+  const matchesPattern = (route, pattern) => {
+    // Convert Cloudflare glob to RegExp: only `*` is a wildcard (matches any chars).
+    const re = new RegExp(
+      '^' + pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$'
+    );
+    return re.test(route);
+  };
+  const uncovered = routes.filter((r) => !excludePatterns.some((p) => matchesPattern(r, p)));
+  if (uncovered.length) {
+    fail(`${uncovered.length} prerendered route(s) not covered by exclude patterns:\n  - ${uncovered.join('\n  - ')}`);
+  }
+
   const routesManifest = {
     version: 1,
     include: ['/*'],
-    // Exclude prerendered routes AND all static asset directories so
-    // Cloudflare Pages serves them directly from /dist instead of routing
-    // them through the SPA Function (which 403s for non-route paths and
-    // bypasses _redirects rules for legacy .html paths).
-    exclude: [
-      ...routes,
-      '/assets/*',
-      '/lovable-uploads/*',
-      '/partner-logos/*',
-      '/.well-known/*',
-      '/*.html',
-      '/*.xml',
-      '/*.txt',
-      '/*.json',
-      '/*.webp',
-      '/*.png',
-      '/*.jpg',
-      '/*.jpeg',
-      '/*.svg',
-      '/*.ico',
-      '/*.webmanifest',
-      '/*.woff',
-      '/*.woff2',
-      '/*.css',
-      '/*.js',
-      '/*.map',
-      '/*.mp4',
-    ],
+    exclude: excludePatterns,
   };
   await fs.writeFile(OUT_ROUTES_FILE, JSON.stringify(routesManifest, null, 2) + '\n', 'utf8');
-  console.log(`✓ Wrote ${path.relative(ROOT, OUT_ROUTES_FILE)} (${routes.length} prerendered routes excluded from Functions/SPA fallback)`);
+  console.log(`✓ Wrote ${path.relative(ROOT, OUT_ROUTES_FILE)} (${excludePatterns.length} glob patterns covering ${routes.length} prerendered routes)`);
 } catch (e) {
   fail(`could not generate _routes.json from sitemap: ${e.message}`);
 }
