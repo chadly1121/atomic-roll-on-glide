@@ -12,7 +12,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /llms-full.txt    /llms-full.txt    200!
 /site.webmanifest /site.webmanifest 200!
 
-# Legacy 301 redirects (59 entries from redirect-map.json)
+# Legacy 301 redirects (60 entries from redirect-map.json)
 /Bracebridge.html                                           /painters-bracebridge                             301
 /Burks%20Falls.html                                         /painters-burks-falls                             301
 /Burks-Falls.html                                           /painters-burks-falls                             301
@@ -28,6 +28,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /Dwight.html                                                /painters-dwight                                  301
 /Huntsville.html                                            /painters-huntsville                              301
 /index.php                                                  /                                                 301
+/index.php/tools/*                                          /                                                 301
 /Muskoka-awning-painting-repair.html                        /exterior-painting-muskoka                        301
 /Muskoka-commercial-deck-wood-refinishing.html              /staining-muskoka                                 301
 /Muskoka-commercial-molding-painters.html                   /commercial-painting                              301
