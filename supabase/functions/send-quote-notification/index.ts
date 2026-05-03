@@ -2,13 +2,29 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-// More restrictive CORS headers
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", // TODO: Restrict to your domain in production
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Max-Age": "86400",
-};
+const allowedOrigins = [
+  "https://www.roll-onpainting.com",
+  "https://roll-onpainting.com",
+  "http://localhost:8080",
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
+
+function buildCorsHeaders(req: Request): Record<string, string> {
+  const origin = req.headers.get("origin") || "";
+  const isLovablePreview = /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin);
+  const allowOrigin =
+    allowedOrigins.includes(origin) || isLovablePreview
+      ? origin
+      : "https://www.roll-onpainting.com";
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, x-client-info, apikey",
+    "Access-Control-Max-Age": "86400",
+    "Vary": "Origin",
+  };
+}
 
 // Interface for the request body
 interface QuoteRequest {
@@ -41,6 +57,7 @@ function isValidEmail(email: string): boolean {
 }
 
 serve(async (req) => {
+  const corsHeaders = buildCorsHeaders(req);
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
