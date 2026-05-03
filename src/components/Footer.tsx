@@ -207,7 +207,7 @@ const Footer = () => {
                 href="/contact" 
                 className="bg-atomic-turquoise text-white px-6 py-2 rounded-full inline-block hover:bg-atomic-turquoise/80 transition-all hover:-translate-y-1 hover:shadow-md duration-300"
               >
-                Request a Quote
+                Start the Conversation
               </a>
             </div>
 
