@@ -37,7 +37,7 @@ const TrustBadges: React.FC = () => {
     },
     {
       icon: <Shield className="h-12 w-12" aria-hidden="true" />,
-      title: "Free Estimates",
+      title: "Expert Estimates",
       description: "Professional estimates with no obligation"
     }
   ];

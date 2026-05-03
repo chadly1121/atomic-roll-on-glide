@@ -98,7 +98,7 @@ const ServicesSection = () => {
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed mb-3">{service.description}</p>
                     <span className="inline-flex items-center text-sm font-medium text-atomic-orange">
-                      Get a Quote
+                      Book a Consultation
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
@@ -122,7 +122,7 @@ const ServicesSection = () => {
             className="inline-flex items-center gap-2 bg-atomic-orange text-white px-6 py-2.5 rounded-lg font-medium hover:bg-atomic-orange/90 transition-colors text-sm"
           >
             <Phone className="w-4 h-4" />
-            Get a Free Quote
+            Book Your Consultation
           </Link>
         </div>
       </div>

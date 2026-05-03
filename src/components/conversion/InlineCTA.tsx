@@ -40,7 +40,7 @@ const InlineCTA = ({
   const trustBadges = [
     { text: "5-star rated service" },
     { text: "W.S.I.B covered" },
-    { text: "Free estimates" }
+    { text: "Expert estimates" }
   ];
 
   return (

@@ -40,7 +40,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.description}</p>
         
         <div className="flex items-center text-sm font-medium text-atomic-turquoise group-hover:text-atomic-orange transition-colors">
-          {hasPage ? 'Learn More' : 'Get a Quote'}
+          {hasPage ? 'Learn More' : 'Book a Consultation'}
           <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </div>
       </div>

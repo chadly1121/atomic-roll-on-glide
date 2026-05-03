@@ -119,7 +119,7 @@ const PricingSection = () => {
                     : 'bg-gray-100 hover:bg-gray-200 text-atomic-navy'
                 }`}
               >
-                Get a Quote
+                Book a Consultation
               </a>
             </div>
           ))}
