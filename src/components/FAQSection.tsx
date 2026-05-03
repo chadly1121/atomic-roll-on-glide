@@ -88,7 +88,7 @@ const FAQSection: React.FC = () => {
               }}
               className="inline-flex items-center justify-center gap-2 border-2 border-atomic-turquoise text-atomic-turquoise px-6 py-3 rounded-full font-medium hover:bg-atomic-turquoise/10 transition-colors"
             >
-              Request a Quote
+              Start the Conversation
             </a>
           </div>
           <PrivateClientWhisper className="mt-4" />

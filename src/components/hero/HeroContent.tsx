@@ -19,7 +19,7 @@ const HeroContent = () => {
   return (
     <div className="space-y-4 sm:space-y-6 max-w-xl px-2 sm:px-0">
       <div className="flex items-center gap-2 sm:gap-4 mb-2">
-        <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">Muskoka's Premier Painting Company</h2>
+        <h2 className="font-display text-base sm:text-xl font-bold text-atomic-orange tracking-widest uppercase">MUSKOKA'S PREMIER PAINTING COMPANY</h2>
       </div>
       
       <div>
@@ -29,11 +29,11 @@ const HeroContent = () => {
         </h1>
 
         <p className="mt-3 sm:mt-4 text-base sm:text-lg text-atomic-navy font-medium">
-          Muskoka's premier painting and coatings company. 25 years of uncompromising craftsmanship on lakefront cottages, luxury homes, and heritage properties. When the standard of your home demands the best — we're who Muskoka calls.
+          Muskoka's premier painting and coatings company. 25 years of uncompromising craftsmanship on lakefront cottages, luxury homes, and heritage properties. When the standard of your property demands the best — we're who Muskoka calls.
         </p>
 
         <p className="mt-2 text-sm sm:text-base text-atomic-navy/80 font-medium">
-          5× HGTV Featured · GoNano Certified · $5M Insured · 25+ Years · Free Touch-Ups for Life
+          5× HGTV Featured · GoNano Certified · Sansin Certified · $5M Insured · 25+ Years
         </p>
       </div>
       
