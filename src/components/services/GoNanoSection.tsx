@@ -109,7 +109,7 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
                 }}
                 className="atomic-button-secondary w-full text-center justify-center"
               >
-                <span className="relative z-10">Get a Free Quote</span>
+                <span className="relative z-10">Book Your Consultation</span>
               </a>
               
               {/* Instant Estimate Section */}

@@ -157,7 +157,7 @@ const AboutPage: React.FC = () => {
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Work With Us?</h2>
               <p className="text-white/80 mb-8 max-w-xl mx-auto">Get a free, no-obligation quote for your painting project.</p>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                Get a Free Quote
+                Book Your Consultation
               </Link>
             </div>
           </section>

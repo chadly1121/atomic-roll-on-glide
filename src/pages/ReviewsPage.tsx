@@ -83,7 +83,7 @@ const ReviewsPage: React.FC = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-atomic-navy mb-4">Ready to Experience the Difference?</h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Join our list of happy customers. Get a free quote today.</p>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                Get a Free Quote
+                Book Your Consultation
               </Link>
             </div>
           </section>

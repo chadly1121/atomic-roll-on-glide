@@ -439,7 +439,7 @@ const MediaPage: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white font-semibold px-8 py-3 rounded-lg hover:bg-atomic-turquoise/90 transition-colors min-h-[48px]"
               >
                 <Mail className="w-5 h-5" aria-hidden="true" />
-                Get a Free Quote
+                Book Your Consultation
               </Link>
               <a
                 href={`tel:${businessInfo.phone.tel}`}
