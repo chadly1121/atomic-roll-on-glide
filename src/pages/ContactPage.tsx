@@ -134,7 +134,7 @@ const ContactPage = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
               <div className="bg-card rounded-xl shadow-lg p-6 sm:p-8">
-                <h2 id="contact-form-heading" className="text-2xl font-bold text-atomic-navy mb-6">Request a Free Quote</h2>
+                <h2 id="contact-form-heading" className="text-2xl font-bold text-atomic-navy mb-6">Request a Consultation</h2>
                 <ContactForm />
                 <PrivateClientWhisper className="text-center mt-4" />
               </div>

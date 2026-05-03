@@ -176,7 +176,7 @@ const ServiceAreasPage: React.FC = () => {
               to="/#contact"
               className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors"
             >
-              Get a Free Quote
+              Book Your Consultation
             </Link>
           </div>
 

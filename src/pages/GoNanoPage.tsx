@@ -334,7 +334,7 @@ const GoNanoPage = () => {
                 </CardContent>
                 <CardFooter className="flex flex-col gap-4 pb-6">
                   <Link to="/contact" className="atomic-button-secondary w-full text-center justify-center block">
-                    <span className="relative z-10">Get a Free Quote</span>
+                    <span className="relative z-10">Book Your Consultation</span>
                   </Link>
                     <div className="w-full border-t border-atomic-turquoise/20 pt-4">
                     <div className="text-center mb-3">
@@ -379,7 +379,7 @@ const GoNanoPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="atomic-button-secondary inline-flex items-center justify-center px-8 py-3 rounded-full">
-                <span className="relative z-10">Get a Free Quote</span>
+                <span className="relative z-10">Book Your Consultation</span>
               </Link>
               <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
                 Call {businessInfo.phone.formatted}

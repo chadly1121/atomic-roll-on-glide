@@ -367,7 +367,7 @@ const CatalogPage = () => {
             to="/contact"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors min-h-[48px] active:scale-95"
           >
-            Get a Free Quote
+            Book Your Consultation
           </Link>
         </div>
       </section>

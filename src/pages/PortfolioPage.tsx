@@ -165,7 +165,7 @@ const PortfolioPage: React.FC = () => {
                 Let us transform your property next. Get a free, no-obligation quote today.
               </p>
               <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                Request a Free Quote
+                Request a Consultation
               </Link>
             </div>
           </section>

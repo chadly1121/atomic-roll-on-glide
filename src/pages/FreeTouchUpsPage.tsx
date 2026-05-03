@@ -226,7 +226,7 @@ const FreeTouchUpsPage = () => {
               Get a free quote on your painting project — and enjoy free touch-ups for life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CallToAction text="Request a Free Quote" href="/contact" variant="primary" size="lg" />
+              <CallToAction text="Request a Consultation" href="/contact" variant="primary" size="lg" />
               <CallToAction text={`Call ${businessInfo.phone.formatted}`} href={`tel:${businessInfo.phone.primary}`} variant="outline" size="lg" />
             </div>
           </div>
