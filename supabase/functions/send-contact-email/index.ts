@@ -217,8 +217,14 @@ function isValidStorageUrl(url: string, supabaseUrl: string): boolean {
 }
 
 function extractStoragePath(url: string): string | null {
-  const match = url.match(/quote-attachments\/(.+)$/);
-  return match ? match[1] : null;
+  try {
+    const parsed = new URL(url);
+    const match = parsed.pathname.match(/quote-attachments\/(.+)$/);
+    return match ? decodeURIComponent(match[1]) : null;
+  } catch {
+    const match = url.split('?')[0].match(/quote-attachments\/(.+)$/);
+    return match ? match[1] : null;
+  }
 }
 
 function generateAttachmentsHtml(attachments: string[], fileNames: string[]): string {
