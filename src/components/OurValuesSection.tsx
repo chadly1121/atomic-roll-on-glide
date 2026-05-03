@@ -16,7 +16,7 @@ const values = [
   {
     icon: Handshake,
     title: 'Integrity',
-    desc: 'Honest pricing, transparent communication, and no hidden fees. We quote fair and deliver as promised.',
+    desc: "Honest scoping, transparent pricing, and no surprises. We've built our reputation on doing exactly what we say we'll do.",
     accent: 'from-atomic-orange to-atomic-orange/60',
     iconBg: 'bg-atomic-orange/10',
     iconColor: 'text-atomic-orange',
@@ -26,7 +26,7 @@ const values = [
   {
     icon: Clock,
     title: 'Reliability',
-    desc: "We show up on time, complete projects on schedule, and clean up when we're done. Your time matters.",
+    desc: 'We show up on time, finish on schedule, and leave your property cleaner than we found it. 25 years of earned trust in Muskoka.',
     accent: 'from-atomic-turquoise to-atomic-turquoise/60',
     iconBg: 'bg-atomic-turquoise/10',
     iconColor: 'text-atomic-turquoise',
@@ -36,7 +36,7 @@ const values = [
   {
     icon: Heart,
     title: 'Community',
-    desc: "We're not a franchise — we're your neighbours in Muskoka. We live here, work here, and take pride in improving our community.",
+    desc: "We're not a franchise. We live here, work here, and raise our families here. Every project is a reflection of our community.",
     accent: 'from-pink-500 to-pink-500/60',
     iconBg: 'bg-pink-500/10',
     iconColor: 'text-pink-500',
