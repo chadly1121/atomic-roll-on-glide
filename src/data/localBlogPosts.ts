@@ -808,7 +808,7 @@ export const localBlogPosts: LocalPost[] = [
     title: 'GoNano Wood Saver: The Smart Way to Protect Your Decks & Docks in Muskoka',
     summary:
       'How GoNano Wood Saver penetrates wood fibres to stop rot, freeze-thaw damage, and slippery moss buildup on Muskoka decks and docks — without changing the natural wood look.',
-    image: '/lovable-uploads/exterior-deck-staining-hardwood.webp',
+    image: '/lovable-uploads/exterior-deck-underside-staining.webp',
     url: 'https://www.roll-onpainting.com/blog/gonano-wood-saver-decks-docks-muskoka',
     tags: ['GoNano', 'Deck Staining', 'Dock Protection', 'Muskoka', 'Wood Care', 'Cottage Maintenance'],
     date_published: '2026-04-23T09:00:00-04:00',
