@@ -12,13 +12,15 @@ const ServiceAreaMap = () => {
   
   // Adjusted center for the service area circle to include Barrie and Collingwood
   const serviceAreaCenter: [number, number] = [-79.7000, 44.5000]; // Adjusted center point to include Barrie and Collingwood
-  
+
+  const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
+
   const initializeMap = () => {
     if (!mapContainer.current || map.current) return;
-    
-    // Use the provided Mapbox token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhZGx5MTEyMTExMjEiLCJhIjoiY21hMW5ncGpoMTRydTJyb2s1ZGEzZjNvOSJ9.3dOdlxYDu7hjPshi-JACmw';
-    
+    if (!mapboxToken) return;
+
+    mapboxgl.accessToken = mapboxToken;
+
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -145,8 +147,9 @@ const ServiceAreaMap = () => {
   };
   
   useEffect(() => {
+    if (!mapboxToken) return;
     initializeMap();
-    
+
     // Cleanup function
     return () => {
       if (map.current) {
@@ -154,7 +157,30 @@ const ServiceAreaMap = () => {
         map.current = null;
       }
     };
-  }, []);
+  }, [mapboxToken]);
+
+  if (!mapboxToken) {
+    const mapsUrl =
+      'https://www.google.com/maps/search/?api=1&query=836+Greer+Road,+Port+Sydney,+Ontario';
+    return (
+      <div className="rounded-xl overflow-hidden shadow-lg bg-muted p-6">
+        <h3 className="font-bold text-lg mb-2">Our Service Area</h3>
+        <p className="text-sm mb-4">
+          Located in Muskoka we service: Huntsville, Dwight, Lake of Bays,
+          Bracebridge, Port Carling, Parry Sound, Port Severn, Midland, Orillia
+          and Barrie.
+        </p>
+        <a
+          href={mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block underline font-medium"
+        >
+          View service area on Google Maps →
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-xl overflow-hidden shadow-lg relative">
