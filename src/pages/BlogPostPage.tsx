@@ -22,7 +22,9 @@ const BlogPostPage = () => {
   const { items, loading, getBySlug } = useBlogFeed();
   const post = getBySlug(slug || '');
   const [imgError, setImgError] = useState(false);
-  const siteUrl = businessInfo.urls.website;
+  // Use www.roll-onpainting.com (the site's canonical host) so blog post
+  // canonical/og:url/twitter:url match every other route on the site.
+  const siteUrl = businessInfo.urls.websiteAlt;
 
   useEffect(() => {
     window.scrollTo(0, 0);
