@@ -144,7 +144,7 @@ const PrivateClientPage: React.FC = () => {
               onClick={scrollToAccess}
               className="inline-flex items-center gap-3 border border-[hsl(0,0%,30%)] text-[hsl(0,0%,80%)] px-8 py-4 text-sm tracking-widest uppercase hover:border-[hsl(0,0%,50%)] hover:text-white transition-all duration-500"
             >
-              Request Private Client Access
+              Apply for Private Client
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -427,7 +427,7 @@ const PrivateClientPage: React.FC = () => {
                   disabled={isSubmitting}
                   className="w-full border border-[hsl(0,0%,25%)] text-[hsl(0,0%,80%)] py-4 text-sm tracking-widest uppercase hover:border-[hsl(0,0%,45%)] hover:text-white transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit Private Client Request'}
+                  {isSubmitting ? 'Submitting...' : 'Apply for Private Client'}
                 </button>
                 <p className="text-[hsl(0,0%,35%)] text-xs text-center mt-4">
                   All inquiries handled directly and confidentially.

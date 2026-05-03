@@ -239,7 +239,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                  Request a Quote
+                  Request a Private Proposal
                 </Link>
                 <a href={`mailto:${businessInfo.email}`} className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors">
                   <Mail className="w-4 h-4" />{businessInfo.email}

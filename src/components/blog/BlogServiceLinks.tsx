@@ -116,7 +116,7 @@ const BlogServiceLinks: React.FC<BlogServiceLinksProps> = ({ contentHtml, tags =
         </>
       )}
       <p className="text-xs text-muted-foreground">
-        Serving Muskoka, Parry Sound & Simcoe County · <Link to="/contact" className="text-primary hover:underline">Book Your Consultation</Link>
+        Serving Muskoka, Parry Sound & Simcoe County · <Link to="/contact" className="text-primary hover:underline">Start the Conversation</Link>
       </p>
     </aside>
   );

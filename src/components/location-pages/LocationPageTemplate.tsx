@@ -334,7 +334,7 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
-                  Request Your Private Quote
+                  Request a Private Proposal
                 </Link>
                 <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
                   <Phone className="w-4 h-4" />Call {businessInfo.phone.formatted}
