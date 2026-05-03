@@ -27,7 +27,7 @@ const PrivateClientBanner: React.FC<PrivateClientBannerProps> = ({ variant = 'li
             to="/private-client-muskoka-property-care"
             className="inline-flex items-center gap-2 text-[hsl(0,0%,55%)] text-sm tracking-widest uppercase hover:text-white transition-colors duration-300"
           >
-            Learn More
+            Apply for Private Client
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -46,7 +46,7 @@ const PrivateClientBanner: React.FC<PrivateClientBannerProps> = ({ variant = 'li
           to="/private-client-muskoka-property-care"
           className="inline-flex items-center gap-2 text-muted-foreground/70 text-sm tracking-widest uppercase hover:text-foreground transition-colors duration-300"
         >
-          Learn More
+          Apply for Private Client
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
