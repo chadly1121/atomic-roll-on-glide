@@ -23,7 +23,7 @@ export const localBlogPosts: LocalPost[] = [
     title: 'Exterior Painting in Muskoka: What Cottage Owners Need to Know Before They Start',
     summary:
       "Exterior painting in Muskoka requires more prep than most contractors admit. Here's what cottage owners in Huntsville, Bracebridge, Gravenhurst, and Port Carling need to know.",
-    image: '/lovable-uploads/exterior-boathouse-dockside-painting.webp',
+    image: '/lovable-uploads/exterior-painting-crew-lakeside-cottage.webp',
     url: 'https://www.roll-onpainting.com/blog/exterior-painting-muskoka-cottage-owners-guide',
     tags: ['Exterior Painting', 'Muskoka', 'Cottage Maintenance', 'Huntsville', 'Bracebridge', 'Gravenhurst', 'Port Carling', 'Sansin'],
     date_published: '2026-05-03T09:00:00-04:00',
