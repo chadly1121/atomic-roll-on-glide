@@ -20,9 +20,9 @@ export interface CottageOwnerPageData {
 
 // Muskoka-specific hero images from Wikimedia Commons
 const HERO_IMGS = {
-  portCarling: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Muskoka_Chairs_-_Port_Carling_-_Canada_%285159311050%29.jpg/1920px-Muskoka_Chairs_-_Port_Carling_-_Canada_%285159311050%29.jpg",
+  portCarling: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Muskoka_Chairs_-_Port_Carling_-_Canada_%285159311050%29.jpg/1200px-Muskoka_Chairs_-_Port_Carling_-_Canada_%285159311050%29.jpg",
   windermere: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Windermere_House_%282%29_%2810576367376%29.jpg",
-  lakeOfBays: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Dorset_Lookout_Tower%2C_ON.jpg/1920px-Dorset_Lookout_Tower%2C_ON.jpg",
+  lakeOfBays: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Dorset_Lookout_Tower%2C_ON.jpg/1200px-Dorset_Lookout_Tower%2C_ON.jpg",
 };
 
 export const cottageOwnerPages: CottageOwnerPageData[] = [
