@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet-async";
-import { businessInfo, verifiedFAQs } from '@/data/businessInfo';
+import { businessInfo } from '@/data/businessInfo';
 
 /**
  * AISO-Optimized SEO Helmet
@@ -368,16 +368,6 @@ const SEOHelmet: React.FC = () => {
         "description": "Professional power washing and soft washing services in Muskoka. Safe exterior cleaning for siding, roofs, decks, and driveways.",
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
-      },
-      // FAQPage
-      {
-        "@type": "FAQPage",
-        "@id": `${siteUrl}/#faq`,
-        "mainEntity": verifiedFAQs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-        }))
       },
       // WebPage with SpeakableSpecification for voice search / AI overviews
       {
