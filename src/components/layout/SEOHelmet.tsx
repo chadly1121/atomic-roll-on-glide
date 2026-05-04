@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet-async";
-import { businessInfo, verifiedFAQs } from '@/data/businessInfo';
+import { businessInfo } from '@/data/businessInfo';
 
 /**
  * AISO-Optimized SEO Helmet
