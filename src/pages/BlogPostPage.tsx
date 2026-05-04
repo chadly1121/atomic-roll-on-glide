@@ -60,7 +60,14 @@ const BlogPostPage = () => {
         '@type': 'Article',
         name: post.title,
         headline: post.title,
-        image: post.image?.startsWith('http') ? post.image : `${siteUrl}${post.image?.startsWith('/') ? '' : '/'}${post.image || ''}`,
+        image: {
+          '@type': 'ImageObject',
+          url: post.image?.startsWith('http')
+            ? post.image
+            : `${siteUrl}${post.image?.startsWith('/') ? '' : '/'}${post.image || ''}`,
+          width: 1200,
+          height: 630,
+        },
         datePublished: post.date_published,
         dateModified: post.date_modified,
         author: (post.authors && post.authors.length > 0)
