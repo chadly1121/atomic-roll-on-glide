@@ -369,16 +369,6 @@ const SEOHelmet: React.FC = () => {
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
-      // FAQPage
-      {
-        "@type": "FAQPage",
-        "@id": `${siteUrl}/#faq`,
-        "mainEntity": verifiedFAQs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-        }))
-      },
       // WebPage with SpeakableSpecification for voice search / AI overviews
       {
         "@type": "WebPage",
