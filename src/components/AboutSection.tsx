@@ -21,10 +21,10 @@ const AboutSection = () => {
                 Our <span className="text-atomic-orange">Story</span>
               </h3>
               <p className="text-sm sm:text-base text-muted-foreground">
-                Purchased by Chad Gilchrist in 2014, Roll On Painting has grown from a small local operation 
+                Serving Muskoka since 1999, Roll On Painting has grown from a small local operation 
                 to a trusted name in the painting industry throughout Muskoka, Ontario and surrounding areas. 
-                With over 25 years of experience, we've built our reputation on quality workmanship and 
-                exceptional customer service.
+                With 25+ years of experience under owner Chad Gilchrist, we've built our reputation on 
+                quality workmanship and exceptional customer service.
               </p>
             </div>
             

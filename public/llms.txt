@@ -7,7 +7,7 @@
 name: Roll On Painting
 legal_name: 2458115 Ontario Inc. O/A Roll On Painting
 tagline: Muskoka's Premier Painting Service
-founded: 2014
+founded: 1999
 owner: Chad Gilchrist
 experience: 25+ years in painting industry
 

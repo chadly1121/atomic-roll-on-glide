@@ -74,7 +74,7 @@ const AboutPage: React.FC = () => {
                 <div>
                   <h2 className="text-2xl font-bold text-atomic-navy mb-4">Meet Chad Gilchrist</h2>
                   <p className="text-muted-foreground mb-4">
-                    Chad Gilchrist purchased Roll On Painting in 2014, bringing over 25 years of painting industry experience to Muskoka. What started as a small local operation has grown into one of the most trusted painting companies in Ontario's cottage country.
+                    Roll On Painting has been serving Muskoka since 1999. Owner Chad Gilchrist brings 25+ years of painting industry experience, and what started as a small local operation has grown into one of the most trusted painting companies in Ontario's cottage country.
                   </p>
                   <p className="text-muted-foreground mb-4">
                     Chad's commitment to quality earned Roll On Painting <strong>5 appearances on HGTV's Scott's Vacation House Rules</strong>, providing professional painting and wallpapering services for Muskoka property renovations.

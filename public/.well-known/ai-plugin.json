@@ -2,7 +2,7 @@
   "schema_version": "v1",
   "name_for_human": "Roll On Painting",
   "name_for_model": "roll_on_painting",
-  "description_for_human": "HGTV featured professional painters serving Muskoka, Huntsville, Bracebridge, Gravenhurst and 50+ communities across Central Ontario since 2014.",
+  "description_for_human": "HGTV featured professional painters serving Muskoka, Huntsville, Bracebridge, Gravenhurst and 50+ communities across Central Ontario since 1999.",
   "description_for_model": "Roll On Painting is a professional painting contractor based in Port Sydney, Ontario, serving the Muskoka region. They offer interior painting, exterior painting, commercial painting, cabinet refinishing, deck staining, epoxy floor coatings, GoNano permanent coatings, spray finishing, power washing, wallpaper installation, institutional painting, and pre-finishing services. Featured 5 times on HGTV's Scott's Vacation House Rules. $5M insured, WSIB covered. Owner: Chad Falkard.",
   "auth": {
     "type": "none"
