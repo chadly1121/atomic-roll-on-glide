@@ -56,7 +56,7 @@ const SEOHelmet: React.FC = () => {
         "image": logoUrl,
         "email": businessInfo.email,
         "telephone": businessInfo.phone.international,
-        "foundingDate": "2014",
+        "foundingDate": "1999",
         "founder": {
           "@type": "Person",
           "name": businessInfo.owner,

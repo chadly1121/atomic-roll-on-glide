@@ -13,11 +13,11 @@ export const businessInfo = {
   name: "Roll On Painting",
   legalName: "2458115 Ontario Inc. O/A Roll On Painting",
   tagline: "Muskoka's Premier Painting Service",
-  description: "Professional painting contractor serving Muskoka, Ontario since 2014. Specializing in residential, commercial, and institutional painting with over 25 years of industry experience.",
+  description: "Professional painting contractor serving Muskoka, Ontario since 1999. Specializing in residential, commercial, and institutional painting with 25+ years of industry experience.",
   
   // Owner & History
   owner: "Chad Gilchrist",
-  foundedYear: 2014, // When Chad purchased the business
+  foundedYear: 1999, // Business founding year (Chad Gilchrist took ownership in 2014)
   yearsExperience: 25, // Industry experience
   
   // Contact Information
