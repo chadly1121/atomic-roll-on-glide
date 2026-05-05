@@ -415,7 +415,7 @@ const SEOHelmet: React.FC = () => {
   return (
     <Helmet>
       <title>Painters Muskoka | HGTV Featured | Roll On Painting</title>
-      <meta name="description" content="Muskoka's top-rated painters. HGTV featured, $5M insured. Interior, exterior & cabinet painting. Free estimates: 705-787-1401." />
+      <meta name="description" content="Muskoka's premier cottage painting and coatings company. 25+ years on lakefront cottages, luxury homes, and heritage properties. 5× HGTV featured. GoNano + Sansin certified. $5M insured. Book your consultation." />
       <meta name="keywords" content="painters Muskoka, painting contractor Huntsville, interior painting Bracebridge, exterior painting Gravenhurst, commercial painting Ontario, cabinet refinishing Muskoka, deck staining, epoxy coatings, power washing, GoNano coating, HGTV painter, cottage painting Muskoka, spray finishing, wallpaper installation, institutional painting, pre-finishing services, Roll On Painting" />
       
       {/* Security headers */}
