@@ -9,7 +9,7 @@ interface PrivateClientWhisperProps {
 const PrivateClientWhisper: React.FC<PrivateClientWhisperProps> = ({ variant = 'light', className = '' }) => {
   return (
     <p className={`text-xs font-normal mt-3 ${variant === 'dark' ? 'text-white/50' : 'text-muted-foreground/70'} ${className}`}>
-      Own a Muskoka cottage? Ask about our{' '}
+      Toronto cottage owner? Ask about our{' '}
       <Link
         to="/private-client-muskoka-property-care"
         className={`underline underline-offset-2 transition-colors ${
@@ -20,7 +20,7 @@ const PrivateClientWhisper: React.FC<PrivateClientWhisperProps> = ({ variant = '
       >
         Private Client program
       </Link>
-      .
+      {' '}for the properties you can't always be at.
     </p>
   );
 };
