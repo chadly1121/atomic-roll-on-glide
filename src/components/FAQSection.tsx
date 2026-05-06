@@ -56,12 +56,26 @@ const FAQSection: React.FC = () => {
                 <AccordionTrigger className="text-left font-semibold text-atomic-navy py-4 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-4">
+                <AccordionContent forceMount className="text-gray-600 pb-4 data-[state=closed]:hidden">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+
+          {/* SEO-only: ensure all Q&A pairs are present in prerendered HTML for
+              crawlers and AI engines, regardless of accordion open/closed state. */}
+          <div className="sr-only" aria-hidden="true">
+            <h3>Frequently Asked Questions — Full Answers</h3>
+            <dl>
+              {verifiedFAQs.map((faq, index) => (
+                <React.Fragment key={`seo-${index}`}>
+                  <dt>{faq.question}</dt>
+                  <dd>{faq.answer}</dd>
+                </React.Fragment>
+              ))}
+            </dl>
+          </div>
         </div>
 
         {/* CTA Block */}
