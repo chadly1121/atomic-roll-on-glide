@@ -1,20 +1,34 @@
 
+export interface NavChild {
+  name: string;
+  href: string;
+  divider?: boolean;
+}
+
 export interface NavLink {
   name: string;
   href: string;
+  children?: NavChild[];
 }
 
-// Navigation links used in desktop and mobile navbars
+// Primary navigation — slim 6-item structure with grouped Services dropdown.
 export const navLinks: NavLink[] = [
   { name: 'About', href: '/about' },
-  { name: 'Services', href: '#services' },
+  {
+    name: 'Services',
+    href: '/services',
+    children: [
+      { name: 'Interior Painting', href: '/interior-painting' },
+      { name: 'Exterior Painting', href: '/exterior-painting' },
+      { name: 'Cabinet Refinishing', href: '/cabinet-refinishing' },
+      { name: 'Deck & Dock Staining', href: '/deck-staining' },
+      { name: 'GoNano Coatings', href: '/gonano' },
+      { name: 'Commercial Painting', href: '/commercial-painting' },
+      { name: 'View All Services', href: '/services', divider: true },
+    ],
+  },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'GoNano', href: '/gonano' },
-  { name: 'Catalog', href: '/catalog' },
   { name: 'How We Quote', href: '/how-we-quote' },
   { name: 'Reviews', href: '/reviews' },
-  { name: 'Media', href: '/media' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' }
+  { name: 'Contact', href: '/contact' },
 ];
