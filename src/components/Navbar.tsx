@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from './nav/Logo';
 import DesktopNav from './nav/DesktopNav';
 import CTAButton from './nav/CTAButton';
@@ -76,16 +76,13 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
             : 'max-h-0 opacity-0 overflow-hidden'
         }`}
       >
-        <div className="px-4 py-6 space-y-4 pb-8">
-          {navLinks.map(link => (
-            <a
+        <div className="px-4 py-6 space-y-2 pb-8">
+          {navLinks.map((link) => (
+            <MobileNavItem
               key={link.name}
-              href={link.href}
-              className="block py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors border-b border-gray-100 last:border-b-0 active:scale-95 transition-transform"
-              onClick={(e) => handleNavLinkClick(e, link.href)}
-            >
-              {link.name}
-            </a>
+              link={link}
+              handleNavLinkClick={handleNavLinkClick}
+            />
           ))}
           
           <div className="pt-4">
@@ -98,3 +95,68 @@ const Navbar = ({ activeSection = '' }: NavbarProps) => {
 };
 
 export default Navbar;
+
+interface MobileNavItemProps {
+  link: import('./nav/NavLinks').NavLink;
+  handleNavLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+}
+
+const MobileNavItem: React.FC<MobileNavItemProps> = ({ link, handleNavLinkClick }) => {
+  const [open, setOpen] = useState(false);
+  const baseLink =
+    'block py-3 px-2 text-lg font-medium text-atomic-navy hover:text-atomic-orange transition-colors active:scale-95';
+
+  if (!link.children) {
+    return (
+      <a
+        href={link.href}
+        className={`${baseLink} border-b border-gray-100`}
+        onClick={(e) => handleNavLinkClick(e, link.href)}
+      >
+        {link.name}
+      </a>
+    );
+  }
+
+  return (
+    <div className="border-b border-gray-100">
+      <div className="flex items-center justify-between">
+        <a
+          href={link.href}
+          className={`${baseLink} flex-1`}
+          onClick={(e) => handleNavLinkClick(e, link.href)}
+        >
+          {link.name}
+        </a>
+        <button
+          type="button"
+          aria-label={`Toggle ${link.name} submenu`}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="p-3 text-atomic-navy hover:text-atomic-orange min-w-[48px] min-h-[48px] flex items-center justify-center"
+        >
+          <ChevronDown
+            size={20}
+            className={`transition-transform ${open ? 'rotate-180' : ''}`}
+          />
+        </button>
+      </div>
+      {open && (
+        <div className="pl-4 pb-2 space-y-1">
+          {link.children.map((child) => (
+            <React.Fragment key={`${child.name}-${child.href}`}>
+              {child.divider && <div className="my-2 border-t border-gray-100" />}
+              <a
+                href={child.href}
+                className="block py-2 px-2 text-base text-atomic-navy hover:text-atomic-orange transition-colors"
+                onClick={(e) => handleNavLinkClick(e, child.href)}
+              >
+                {child.name}
+              </a>
+            </React.Fragment>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
