@@ -159,7 +159,6 @@ try {
     '/blog/*',
     '/careers',
     '/media',
-    '/catalog',
     '/service-areas',
     '/free-touch-ups',
     '/private-client-muskoka-property-care',
