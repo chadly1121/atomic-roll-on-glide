@@ -57,50 +57,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li>
-                <a 
-                  href="/#about" 
-                  onClick={(e) => scrollToSection(e, '#about')}
-                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/#services" 
-                  onClick={(e) => scrollToSection(e, '#services')}
-                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/#gallery" 
-                  onClick={(e) => scrollToSection(e, '#gallery')}
-                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
-                >
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/gonano" 
-                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
-                >
-                  GoNano
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/#pricing" 
-                  onClick={(e) => scrollToSection(e, '#pricing')}
-                  className="text-muted-foreground hover:text-atomic-turquoise transition-colors"
-                >
-                  Pricing
-                </a>
-              </li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">About</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Services</Link></li>
+              <li><Link to="/portfolio" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Portfolio</Link></li>
+              <li><Link to="/how-we-quote" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">How We Quote</Link></li>
+              <li><Link to="/reviews" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Reviews</Link></li>
+              <li><Link to="/catalog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Catalog</Link></li>
+              <li><Link to="/media" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Media</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Blog</Link></li>
+              <li><Link to="/careers" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Contact</Link></li>
             </ul>
           </div>
           
