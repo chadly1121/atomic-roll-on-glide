@@ -18,6 +18,8 @@ export const navLinks: NavLink[] = [
     name: 'Services',
     href: '/services',
     children: [
+      { name: 'All Services', href: '/services' },
+      { name: 'Service Areas', href: '/service-areas' },
       { name: 'Interior Painting', href: '/interior-painting' },
       { name: 'Exterior Painting', href: '/exterior-painting' },
       { name: 'Cabinet Refinishing', href: '/cabinet-refinishing' },

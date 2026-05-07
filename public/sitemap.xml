@@ -467,14 +467,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Service Catalog -->
-  <url>
-    <loc>https://www.roll-onpainting.com/catalog</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Service Areas -->
   <url>
     <loc>https://www.roll-onpainting.com/service-areas</loc>

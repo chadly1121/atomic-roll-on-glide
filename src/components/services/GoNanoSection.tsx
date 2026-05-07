@@ -123,7 +123,7 @@ const GoNanoSection = ({ sectionRef }: GoNanoSectionProps) => {
                   </p>
                 </div>
                 <Link 
-                  to="/catalog#gonano"
+                  to="/gonano"
                   className="atomic-button w-full text-center justify-center bg-gradient-to-r from-atomic-turquoise to-atomic-turquoise/80 hover:from-atomic-turquoise/90 hover:to-atomic-turquoise border-2 border-atomic-turquoise/30 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 block"
                 >
                   <span className="relative z-10 font-bold">🚀 Instant Estimate Tool</span>
