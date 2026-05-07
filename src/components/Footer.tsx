@@ -59,12 +59,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/about" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">About</Link></li>
               <li><Link to="/services" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Services</Link></li>
+              <li><Link to="/service-areas" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Service Areas</Link></li>
               <li><Link to="/portfolio" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Portfolio</Link></li>
               <li><Link to="/how-we-quote" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">How We Quote</Link></li>
               <li><Link to="/reviews" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Reviews</Link></li>
               <li><Link to="/catalog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Catalog</Link></li>
+              <li><Link to="/gonano" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">GoNano Coatings</Link></li>
+              <li><Link to="/free-touch-ups" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Free Touch-Ups</Link></li>
+              <li><Link to="/private-client-muskoka-property-care" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Private Client Program</Link></li>
               <li><Link to="/media" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Media</Link></li>
               <li><Link to="/blog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Blog</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">FAQ</Link></li>
               <li><Link to="/careers" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Contact</Link></li>
             </ul>
