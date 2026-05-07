@@ -20,7 +20,6 @@ export const PRIORITY_ROUTES = [
   '/service-areas',
   '/media',
   '/free-touch-ups',
-  '/catalog',
   '/gonano',
   // Service pages
   '/interior-painting',
