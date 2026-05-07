@@ -31,6 +31,7 @@ const CareersPage = lazy(() => import("./pages/CareersPage"));
 const MediaPage = lazy(() => import("./pages/MediaPage"));
 const PrivateClientPage = lazy(() => import("./pages/PrivateClientPage"));
 const CottageOwnerPage = lazy(() => import("./pages/CottageOwnerPage"));
+const HowWeQuotePage = lazy(() => import("./pages/HowWeQuotePage"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -82,6 +83,7 @@ const App = () => {
                   <Route path="/payment-success" element={<PaymentSuccess />} />
                   <Route path="/free-touch-ups" element={<FreeTouchUpsPage />} />
                   <Route path="/media" element={<MediaPage />} />
+                  <Route path="/how-we-quote" element={<HowWeQuotePage />} />
                   <Route path="/private-client-muskoka-property-care" element={<PrivateClientPage />} />
                   <Route path="/rosedale-muskoka-cottage-painting" element={<CottageOwnerPage />} />
                   <Route path="/oakville-muskoka-cottage-painting" element={<CottageOwnerPage />} />
