@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -20,7 +20,6 @@ const BlogPage = lazy(() => import("./pages/BlogPage"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const GoNanoPage = lazy(() => import("./pages/GoNanoPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const CatalogPage = lazy(() => import("./pages/CatalogPage"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
 const FreeTouchUpsPage = lazy(() => import("./pages/FreeTouchUpsPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -75,7 +74,7 @@ const App = () => {
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
                   <Route path="/gonano" element={<GoNanoPage />} />
                   <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/catalog" element={<CatalogPage />} />
+                  <Route path="/catalog" element={<Navigate to="/portfolio" replace />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/portfolio" element={<PortfolioPage />} />
                   <Route path="/reviews" element={<ReviewsPage />} />
