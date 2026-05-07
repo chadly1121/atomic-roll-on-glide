@@ -24,10 +24,10 @@ const cards: ServiceCard[] = [
   { title: 'GoNano Coatings', description: 'Permanent hydrophobic nano-coating from $0.99/sq ft. Pairs with most projects.', href: '/gonano', image: '/lovable-uploads/dragons-den-cbc.webp', icon: Sparkles },
   { title: 'Commercial Painting', description: 'Off-hours, on-schedule painting that keeps your business running.', href: '/commercial-painting', image: '/lovable-uploads/033a3727-9412-4815-8892-28a94d347c4b.webp', icon: Building2 },
   { title: 'Wallpaper Installation', description: 'Precision cuts, seamless patterns, walls that look like a designer hung them.', href: '/wallpaper-installation', image: '/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.webp', icon: ImageIcon },
-  { title: 'Wallpaper Removal', description: 'Old paper, glue, and surface defects taken back to a paint-ready substrate.', href: '/wallpaper-installation', image: '/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.webp', icon: Eraser },
+  { title: 'Wallpaper Removal', description: 'Old paper, glue, and surface defects taken back to a paint-ready substrate.', href: '/wallpaper-removal', image: '/lovable-uploads/a71ffb89-e69e-48e3-bf5c-9632a6b728ae.webp', icon: Eraser },
   { title: 'Stucco & Popcorn Removal', description: 'Dated textured ceilings removed cleanly and finished smooth.', href: '/stucco-removal', image: '/lovable-uploads/stucco-popcorn-texture.webp', icon: Construction },
   { title: 'Power & Soft Washing', description: 'Dirt, mildew, algae, and pollen washed off siding, decks, and stone.', href: '/power-washing', image: '/lovable-uploads/5d50956e-9da8-4286-b5e3-daa38c6413a5.webp', icon: Droplets },
-  { title: 'Spray Finishing', description: 'HVLP and airless spray work for cabinets, trim packages, and millwork.', href: '/cabinet-refinishing', image: '/lovable-uploads/cabinet-refinish-stock-1.webp', icon: SprayCan },
+  { title: 'Spray Finishing', description: 'HVLP and airless spray work for cabinets, trim packages, and millwork.', href: '/spray-finishing', image: '/lovable-uploads/cabinet-refinish-stock-1.webp', icon: SprayCan },
   { title: 'Pre-Finishing', description: 'New construction trim, doors, and panels finished in-shop before install.', href: '/prefinishing', image: '/lovable-uploads/963fb41b-91e9-4c30-9898-38f5beeeb300.webp', icon: Hammer },
   { title: 'Institutional Painting', description: 'Schools, healthcare, municipal — full WSIB and regulatory compliance.', href: '/institutional-painting', image: '/lovable-uploads/d59b04c1-a87c-430a-a6a5-8c28a9fa05d7.webp', icon: School },
 ];
