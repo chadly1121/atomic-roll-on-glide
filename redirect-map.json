@@ -298,5 +298,10 @@
     "source": "/index.php/tools/*",
     "destination": "/",
     "status": 301
+  },
+  {
+    "source": "/catalog",
+    "destination": "/portfolio",
+    "status": 301
   }
 ]

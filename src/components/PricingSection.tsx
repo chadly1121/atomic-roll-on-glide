@@ -131,10 +131,10 @@ const PricingSection = () => {
             Looking for fixed-price packages? Browse our full service catalog with instant online booking.
           </p>
           <a
-            href="/catalog"
+            href="/portfolio"
             className="inline-flex items-center justify-center px-6 sm:px-8 py-3 rounded-full font-semibold bg-atomic-orange text-white hover:bg-atomic-orange/90 transition-colors min-h-[48px] active:scale-95 text-sm sm:text-base"
           >
-            View Service Catalog →
+            View Our Portfolio →
           </a>
           <PrivateClientWhisper className="mt-4" />
         </div>

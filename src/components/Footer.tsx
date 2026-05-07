@@ -53,91 +53,74 @@ const Footer = () => {
             </address>
           </div>
           
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Company */}
           <div>
-            <h3 className="text-lg font-bold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-6">Company</h3>
             <ul className="space-y-3">
-              <li><Link to="/about" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">About</Link></li>
-              <li><Link to="/services" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Services</Link></li>
-              <li><Link to="/service-areas" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Service Areas</Link></li>
-              <li><Link to="/portfolio" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Portfolio</Link></li>
-              <li><Link to="/how-we-quote" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">How We Quote</Link></li>
-              <li><Link to="/reviews" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Reviews</Link></li>
-              <li><Link to="/catalog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Catalog</Link></li>
-              <li><Link to="/gonano" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">GoNano Coatings</Link></li>
-              <li><Link to="/free-touch-ups" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Free Touch-Ups</Link></li>
-              <li><Link to="/private-client-muskoka-property-care" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Private Client Program</Link></li>
-              <li><Link to="/media" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Media</Link></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Blog</Link></li>
-              <li><Link to="/faq" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">FAQ</Link></li>
-              <li><Link to="/careers" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Careers</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">Contact</Link></li>
+              {[
+                ['About', '/about'],
+                ['Service Areas', '/service-areas'],
+                ['Reviews', '/reviews'],
+                ['Media', '/media'],
+                ['Blog', '/blog'],
+                ['Careers', '/careers'],
+                ['FAQ', '/faq'],
+                ['How We Quote', '/how-we-quote'],
+                ['Free Touch-Ups', '/free-touch-ups'],
+                ['Private Client Program', '/private-client-muskoka-property-care'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link to={href} className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          
+
           {/* Column 3: Services */}
           <div>
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/interior-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Interior Painting Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/cottage-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Cottage Painting Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/exterior-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Exterior Painting Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/spray-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Spray Painting Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/cabinet-painting-muskoka" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Cabinet Painting Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/cabinet-refinishing" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Cabinet Refinishing
-                </Link>
-              </li>
-              <li>
-                <Link to="/deck-staining" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Deck & Fence Staining
-                </Link>
-              </li>
+              {[
+                ['All Services', '/services'],
+                ['Interior Painting', '/interior-painting'],
+                ['Exterior Painting', '/exterior-painting'],
+                ['Cabinet Refinishing', '/cabinet-refinishing'],
+                ['Deck & Dock Staining', '/deck-staining'],
+                ['GoNano Coatings', '/gonano'],
+                ['Wallpaper Installation', '/wallpaper-installation'],
+                ['Wallpaper Removal', '/wallpaper-removal'],
+                ['Stucco/Popcorn Removal', '/stucco-popcorn-removal'],
+                ['Power & Soft Washing', '/power-soft-washing'],
+                ['Spray Finishing', '/spray-finishing'],
+                ['Pre-Finishing', '/pre-finishing'],
+                ['Commercial Painting', '/commercial-painting'],
+                ['Institutional Painting', '/institutional-painting'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link to={href} className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
-            <h3 className="text-lg font-bold mt-6 mb-4">For Toronto & GTA Cottage Owners</h3>
+            <h4 className="text-xs font-bold uppercase tracking-wider mt-6 mb-3 text-muted-foreground">
+              Toronto Cottage Owners
+            </h4>
             <ul className="space-y-3">
-              <li>
-                <Link to="/rosedale-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Rosedale to Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/oakville-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Oakville to Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/post-road-muskoka-cottage-painting" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Post Road to Muskoka
-                </Link>
-              </li>
-              <li>
-                <Link to="/private-client-muskoka-property-care" className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
-                  Private Client Services
-                </Link>
-              </li>
+              {[
+                ['Rosedale → Muskoka', '/rosedale-muskoka-cottage-painting'],
+                ['Oakville → Muskoka', '/oakville-muskoka-cottage-painting'],
+                ['Post Road → Muskoka', '/post-road-muskoka-cottage-painting'],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link to={href} className="text-muted-foreground hover:text-atomic-turquoise transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
