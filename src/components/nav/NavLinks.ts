@@ -3,6 +3,7 @@ export interface NavChild {
   name: string;
   href: string;
   divider?: boolean;
+  accent?: boolean;
 }
 
 export interface NavLink {
@@ -26,7 +27,7 @@ export const navLinks: NavLink[] = [
       { name: 'Deck & Dock Staining', href: '/deck-staining' },
       { name: 'GoNano Coatings', href: '/gonano' },
       { name: 'Commercial Painting', href: '/commercial-painting' },
-      { name: 'View All Services', href: '/services', divider: true },
+      { name: 'View All Services →', href: '/services', divider: true, accent: true },
     ],
   },
   { name: 'Portfolio', href: '/portfolio' },

@@ -84,7 +84,11 @@ const DesktopNav = ({ navLinks, handleNavLinkClick }: DesktopNavProps) => {
                       <a
                         href={child.href}
                         role="menuitem"
-                        className="block px-4 py-2 text-sm text-atomic-navy hover:bg-atomic-orange/10 hover:text-atomic-orange transition-colors"
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          child.accent
+                            ? 'font-semibold text-atomic-orange hover:bg-atomic-orange/10'
+                            : 'text-atomic-navy hover:bg-atomic-orange/10 hover:text-atomic-orange'
+                        }`}
                         onClick={(e) => {
                           handleNavLinkClick(e, child.href);
                           setOpenIndex(null);
