@@ -54,7 +54,7 @@ const HowWeQuotePage: React.FC = () => {
     {
       title: "Interior cottage repaint",
       subtitle: "walls, ceilings, trim, doors, standard prep",
-      body: "$15,000 – $25,000 for a typical 1,500–2,500 square foot cottage. Larger properties, specialty finishes (pine ceilings, stained beams, oak trim, ash walls, wallpaper), or significant prep can push this materially higher."
+      body: "$8,500 – $25,000 for a typical 1,500–2,500 square foot cottage. Larger properties, specialty finishes (pine ceilings, stained beams, oak trim, ash walls, wallpaper), or significant prep can push this materially higher."
     },
     {
       title: "Exterior cottage repaint",
