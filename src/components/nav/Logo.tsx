@@ -7,7 +7,7 @@ interface LogoProps {
 
 const Logo = ({ handleLogoClick }: LogoProps) => {
   return (
-    <a href="#" className="flex items-center hover:opacity-90 transition-opacity group" onClick={handleLogoClick}>
+    <a href="/" className="flex items-center hover:opacity-90 transition-opacity group" onClick={handleLogoClick}>
       <img 
         src="/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp" 
         alt="Roll On Painting - Clean Reliable Painters in Muskoka" 
