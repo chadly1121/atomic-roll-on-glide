@@ -5,6 +5,9 @@
 https://roll-onpainting.com/*  https://www.roll-onpainting.com/:splat  301!
 http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 
+# Canonicalize: strip trailing slashes (except root)
+/*/  /:splat  301!
+
 # Static assets — serve directly, never SPA-fallback
 /sitemap.xml      /sitemap.xml      200!
 /robots.txt       /robots.txt       200!
@@ -12,10 +15,11 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /llms-full.txt    /llms-full.txt    200!
 /site.webmanifest /site.webmanifest 200!
 
-# Legacy 301 redirects (60 entries from redirect-map.json)
+# Legacy 301 redirects (61 entries from redirect-map.json)
 /Bracebridge.html                                           /painters-bracebridge                             301
 /Burks%20Falls.html                                         /painters-burks-falls                             301
 /Burks-Falls.html                                           /painters-burks-falls                             301
+/catalog                                                    /portfolio                                        301
 /commercial-brick-waterproofing.html                        /exterior-painting-muskoka                        301
 /commercial-concrete-ceiling-painting-repair.html           /commercial-painting                              301
 /commercial-concrete-staining.html                          /epoxy-floors-muskoka                             301
@@ -74,7 +78,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /roof-coating-painting-Muskoka.html                         /gonano                                           301
 /site-map.html                                              /                                                 301
 
-# Prerendered route overrides (111 from sitemap.xml) — must come BEFORE SPA fallback
+# Prerendered route overrides (110 from sitemap.xml) — must come BEFORE SPA fallback
 /about                                                      /about/index.html                                 200!
 /blog                                                       /blog/index.html                                  200!
 /blog/gonano-nuroof-revive-extend-roof-life-muskoka         /blog/gonano-nuroof-revive-extend-roof-life-muskoka/index.html 200!
@@ -85,7 +89,6 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /cabinet-painting-muskoka                                   /cabinet-painting-muskoka/index.html              200!
 /cabinet-refinishing                                        /cabinet-refinishing/index.html                   200!
 /careers                                                    /careers/index.html                               200!
-/catalog                                                    /catalog/index.html                               200!
 /commercial-painting                                        /commercial-painting/index.html                   200!
 /contact                                                    /contact/index.html                               200!
 /cottage-painting-gravenhurst                               /cottage-painting-gravenhurst/index.html          200!
