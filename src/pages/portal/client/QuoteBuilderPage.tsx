@@ -181,10 +181,8 @@ export default function QuoteBuilderPage() {
       // Notify staff (best-effort, non-blocking)
       supabase.functions.invoke("send-lumber-quote", {
         body: {
+          quote_id: quote.id,
           project_name: projectName,
-          contact_name: client.contact_name ?? client.email,
-          contact_phone: client.phone ?? "",
-          details: `Quote ${quote.quote_number} submitted via portal. Total: $${totals.total.toFixed(2)} (${validRows.length} line items, ${tab}).`,
         },
       }).catch(() => null);
 
