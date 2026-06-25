@@ -1,3 +1,4 @@
+import { formatDateCA, formatDateTimeCA } from "@/lib/format";
 import { useList } from "@/hooks/portal/usePortalData";
 import { PageHeader, StatCard, LoadingBlock } from "@/components/portal/admin/AdminUI";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -45,7 +46,7 @@ export default function DashboardPage() {
                       </Link>
                       <div className="flex items-center gap-2 shrink-0">
                         <StatusBadge status={a.status} kind={a.kind as any} />
-                        <span className="text-xs text-muted-foreground hidden sm:inline">{new Date(a.at).toLocaleDateString()}</span>
+                        <span className="text-xs text-muted-foreground hidden sm:inline">{formatDateCA(a.at)}</span>
                       </div>
                     </li>
                   ))}

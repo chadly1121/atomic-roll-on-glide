@@ -12,6 +12,7 @@ const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 
 const ADMIN_EMAIL = "chad@roll-onpainting.com";
 const FROM_ADDRESS = "Roll-On Painting <onboarding@resend.dev>";
+const ADMIN_PORTAL_URL = "https://www.rollonpainting.com/admin/quotes";
 
 function escapeHtml(s: string) {
   return s
@@ -19,6 +20,16 @@ function escapeHtml(s: string) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function fmtMoney(n: number | null | undefined): string {
+  const v = Number(n ?? 0);
+  return `$${v.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+function fmtDateCA(d: Date): string {
+  const dd = String(d.getDate()).padStart(2, "0");
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  return `${dd}/${mm}/${d.getFullYear()}`;
 }
 
 async function sendEmail(to: string, subject: string, html: string) {
@@ -55,52 +66,118 @@ Deno.serve(async (req) => {
     }
 
     const body = await req.json();
+    const quote_id = String(body.quote_id ?? "").trim();
     const project_name = String(body.project_name ?? "").trim().slice(0, 200);
-    const contact_name = String(body.contact_name ?? "").trim().slice(0, 120);
-    const contact_phone = String(body.contact_phone ?? "").trim().slice(0, 40);
-    const details = String(body.details ?? "").trim().slice(0, 5000);
-    const client_email = userData.user.email!;
-
-    if (!project_name || !contact_name || !details) {
-      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+    if (!quote_id) {
+      return new Response(JSON.stringify({ error: "quote_id is required" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    const detailsHtml = escapeHtml(details).replace(/\n/g, "<br/>");
+    // Fetch the quote with the caller's RLS so they can only email their own quotes.
+    const { data: quote, error: qErr } = await supabase
+      .from("quotes")
+      .select("*, clients:client_id(*)")
+      .eq("id", quote_id)
+      .maybeSingle();
+    if (qErr || !quote) {
+      return new Response(JSON.stringify({ error: "Quote not found" }), {
+        status: 404,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
-    // Notify Chad
-    await sendEmail(
-      ADMIN_EMAIL,
-      `New Lumber Quote — ${project_name}`,
-      `
-        <div style="font-family:Arial,sans-serif;color:#111;max-width:600px">
-          <h2 style="margin:0 0 16px">New Prefinishing Quote Request</h2>
-          <table style="border-collapse:collapse;width:100%">
-            <tr><td style="padding:6px 0;color:#666;width:140px">Project</td><td>${escapeHtml(project_name)}</td></tr>
-            <tr><td style="padding:6px 0;color:#666">Client</td><td>${escapeHtml(contact_name)} &lt;${escapeHtml(client_email)}&gt;</td></tr>
-            <tr><td style="padding:6px 0;color:#666">Phone</td><td>${escapeHtml(contact_phone) || "—"}</td></tr>
-          </table>
-          <h3 style="margin:20px 0 8px">Details</h3>
-          <div style="padding:12px;background:#f6f6f6;border-radius:6px;white-space:pre-wrap">${detailsHtml}</div>
-        </div>
-      `,
-    );
+    const [{ data: lumberItems }, { data: shakeItems }] = await Promise.all([
+      supabase
+        .from("quote_lumber_items")
+        .select("*, profile:profile_id(name), species:species_id(name), coating:coating_product_id(name)")
+        .eq("quote_id", quote_id),
+      supabase
+        .from("quote_shake_items")
+        .select("*, coating:coating_product_id(name)")
+        .eq("quote_id", quote_id),
+    ]);
 
-    // Confirmation to client
-    await sendEmail(
-      client_email,
-      "We received your quote request — Roll-On Painting",
-      `
-        <div style="font-family:Arial,sans-serif;color:#111;max-width:600px">
-          <p>Hi ${escapeHtml(contact_name)},</p>
-          <p>Thank you for submitting your quote request. Roll-On Painting will review your quote and be in touch shortly.</p>
-          <p style="color:#666;font-size:13px">Project: <strong>${escapeHtml(project_name)}</strong></p>
-          <p style="margin-top:24px">— Roll-On Painting</p>
-        </div>
-      `,
-    );
+    const client = quote.clients ?? {};
+    const client_email = client.email ?? userData.user.email!;
+    const contact_name = client.contact_name ?? client_email;
+    const company = client.company_name ?? "";
+    const submitted = quote.submitted_at ? new Date(quote.submitted_at) : new Date();
+
+    const lumberRowsHtml = (lumberItems ?? []).map((i: any) => `
+      <tr>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee">${escapeHtml(i.profile?.name ?? "—")}${i.species?.name ? ` · ${escapeHtml(i.species.name)}` : ""}</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee">${escapeHtml(i.coating?.name ?? "—")}</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${i.lineal_feet} LF</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center">${i.coats_front}F / ${i.coats_back}B</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${fmtMoney(i.total_cost)}</td>
+      </tr>`).join("");
+
+    const shakeRowsHtml = (shakeItems ?? []).map((i: any) => `
+      <tr>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee">${escapeHtml(i.coating?.name ?? "—")}</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${i.number_of_bundles} bundles</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center">${i.coats} coats</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${fmtMoney(i.total_cost)}</td>
+      </tr>`).join("");
+
+    const itemsHtml = quote.quote_type === "cedar_shake"
+      ? `<table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px">
+           <thead><tr style="background:#f6f6f6;text-align:left">
+             <th style="padding:6px 8px">Coating</th><th style="padding:6px 8px;text-align:right">Bundles</th><th style="padding:6px 8px;text-align:center">Coats</th><th style="padding:6px 8px;text-align:right">Total</th>
+           </tr></thead><tbody>${shakeRowsHtml}</tbody></table>`
+      : `<table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px">
+           <thead><tr style="background:#f6f6f6;text-align:left">
+             <th style="padding:6px 8px">Profile / Species</th><th style="padding:6px 8px">Coating</th><th style="padding:6px 8px;text-align:right">LF</th><th style="padding:6px 8px;text-align:center">Coats</th><th style="padding:6px 8px;text-align:right">Total</th>
+           </tr></thead><tbody>${lumberRowsHtml}</tbody></table>`;
+
+    const projectLabel = project_name || (quote.client_notes ?? "").split("\n")[0] || "—";
+    const jobsite = [client.address_line1, client.city, client.province, client.postal_code].filter(Boolean).join(", ");
+    const notes = quote.client_notes ?? "";
+
+    // ---- Notify Chad ----
+    const adminSubject = `New Quote Request - ${quote.quote_number} - ${company || contact_name}`;
+    await sendEmail(ADMIN_EMAIL, adminSubject, `
+      <div style="font-family:Arial,sans-serif;color:#111;max-width:680px">
+        <h2 style="margin:0 0 12px">New Prefinishing Quote — ${escapeHtml(quote.quote_number)}</h2>
+        <table style="border-collapse:collapse;font-size:14px">
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Client</td><td>${escapeHtml(contact_name)}${company ? ` · ${escapeHtml(company)}` : ""}</td></tr>
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Email</td><td>${escapeHtml(client_email)}</td></tr>
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Phone</td><td>${escapeHtml(client.phone ?? "—")}</td></tr>
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Submitted</td><td>${fmtDateCA(submitted)}</td></tr>
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Project</td><td>${escapeHtml(projectLabel)}</td></tr>
+          <tr><td style="padding:4px 12px 4px 0;color:#666">Job site</td><td>${escapeHtml(jobsite || "—")}</td></tr>
+        </table>
+        <h3 style="margin:18px 0 4px">Line items</h3>
+        ${itemsHtml}
+        <table style="margin-top:14px;font-size:14px;border-collapse:collapse">
+          <tr><td style="padding:2px 12px 2px 0;color:#666">Material</td><td style="text-align:right">${fmtMoney(quote.total_material_cost)}</td></tr>
+          <tr><td style="padding:2px 12px 2px 0;color:#666">Labour</td><td style="text-align:right">${fmtMoney(quote.total_labour_cost)}</td></tr>
+          <tr><td style="padding:6px 12px 2px 0;font-weight:600;border-top:1px solid #ddd">Total</td><td style="text-align:right;font-weight:600;border-top:1px solid #ddd">${fmtMoney(quote.total_cost)}</td></tr>
+        </table>
+        ${notes ? `<h3 style="margin:18px 0 4px">Special instructions</h3><div style="padding:10px;background:#f6f6f6;border-radius:6px;white-space:pre-wrap;font-size:13px">${escapeHtml(notes)}</div>` : ""}
+        <p style="margin-top:20px"><a href="${ADMIN_PORTAL_URL}/${encodeURIComponent(quote.id)}" style="background:#111;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-size:14px">Review in admin portal</a></p>
+      </div>`);
+
+    // ---- Client confirmation ----
+    const clientSubject = `Quote Received - Roll-On Painting - ${quote.quote_number}`;
+    await sendEmail(client_email, clientSubject, `
+      <div style="font-family:Arial,sans-serif;color:#111;max-width:600px">
+        <p>Hi ${escapeHtml(contact_name)},</p>
+        <p>Thank you for submitting your prefinishing quote to Roll-On Painting. Your reference number is <strong>${escapeHtml(quote.quote_number)}</strong>.</p>
+        <p><strong>Summary</strong></p>
+        ${itemsHtml}
+        <table style="margin-top:14px;font-size:14px;border-collapse:collapse">
+          <tr><td style="padding:2px 12px 2px 0;color:#666">Estimated total</td><td style="text-align:right;font-weight:600">${fmtMoney(quote.total_cost)}</td></tr>
+        </table>
+        <p style="margin-top:18px">We will review your quote and contact you within <strong>1–2 business days</strong>.</p>
+        <hr style="border:none;border-top:1px solid #eee;margin:20px 0"/>
+        <p style="font-size:13px;color:#555;margin:0">Roll-On Painting<br/>
+        Phone: (705) 644-9929<br/>
+        Email: info@rollonpainting.com<br/>
+        Web: <a href="https://www.rollonpainting.com">rollonpainting.com</a></p>
+      </div>`);
 
     return new Response(JSON.stringify({ ok: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

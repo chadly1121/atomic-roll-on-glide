@@ -1,3 +1,4 @@
+import { formatDateCA, formatDateTimeCA } from "@/lib/format";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -68,7 +69,7 @@ export default function ClientQuoteDetailPage() {
       <Button asChild variant="ghost" size="sm" className="gap-2"><Link to="/client/quotes"><ArrowLeft className="h-4 w-4" /> All quotes</Link></Button>
       <PageHeader
         title={`Quote ${quote.quote_number}`}
-        description={`Submitted ${new Date(quote.created_at).toLocaleString()}`}
+        description={`Submitted ${formatDateTimeCA(quote.created_at)}`}
         actions={<StatusBadge status={quote.status} kind="quote" />}
       />
 

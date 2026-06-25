@@ -1,3 +1,4 @@
+import { formatDateCA, formatDateTimeCA } from "@/lib/format";
 import { useState } from "react";
 import { useList, useInsert } from "@/hooks/portal/usePortalData";
 import { PageHeader, LoadingBlock } from "@/components/portal/admin/AdminUI";
@@ -105,7 +106,7 @@ export default function LabourPage() {
                       <div className="font-medium">${Number(h.rate_per_lineal_ft_per_pass).toFixed(2)} <span className="text-muted-foreground font-normal">— {p?.name ?? "default"}</span></div>
                       {h.notes && <div className="text-xs text-muted-foreground">{h.notes}</div>}
                     </div>
-                    <div className="text-xs text-muted-foreground">{new Date(h.created_at).toLocaleString()}</div>
+                    <div className="text-xs text-muted-foreground">{formatDateTimeCA(h.created_at)}</div>
                   </li>
                 );
               })}
