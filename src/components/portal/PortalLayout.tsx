@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutDashboard, FileText, Users, Package, LogOut, Settings, ClipboardList } from "lucide-react";
+import { LayoutDashboard, FileText, Users, Package, LogOut, ClipboardList, Layers, Trees, DollarSign, Hammer, Sparkles } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,8 +20,13 @@ import {
 const adminNav = [
   { title: "Dashboard", url: "/admin/dashboard", icon: LayoutDashboard },
   { title: "Quotes", url: "/admin/quotes", icon: FileText },
+  { title: "Orders", url: "/admin/orders", icon: Package },
   { title: "Clients", url: "/admin/clients", icon: Users },
-  { title: "Pricing", url: "/admin/pricing", icon: Settings },
+  { title: "Products", url: "/admin/products", icon: Sparkles },
+  { title: "Profiles", url: "/admin/profiles", icon: Layers },
+  { title: "Species", url: "/admin/species", icon: Trees },
+  { title: "Labour", url: "/admin/labour", icon: Hammer },
+  { title: "Shake pricing", url: "/admin/shake-pricing", icon: DollarSign },
 ];
 
 const clientNav = [

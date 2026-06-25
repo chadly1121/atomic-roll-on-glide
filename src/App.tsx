@@ -39,11 +39,21 @@ const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 // Portal pages
 const LoginPage = lazy(() => import("./pages/portal/LoginPage"));
 const ResetPasswordPage = lazy(() => import("./pages/portal/ResetPasswordPage"));
-const AdminDashboard = lazy(() => import("./pages/portal/AdminDashboard"));
 const ClientDashboard = lazy(() => import("./pages/portal/ClientDashboard"));
 const QuoteRequestPage = lazy(() => import("./pages/portal/QuoteRequestPage"));
 const PortalIndex = lazy(() => import("./pages/portal/PortalIndex"));
 const AdminPlaceholder = lazy(() => import("./pages/portal/AdminPlaceholder"));
+const AdminDashboard = lazy(() => import("./pages/portal/admin/DashboardPage"));
+const AdminProducts = lazy(() => import("./pages/portal/admin/ProductsPage"));
+const AdminProfiles = lazy(() => import("./pages/portal/admin/ProfilesPage"));
+const AdminSpecies = lazy(() => import("./pages/portal/admin/SpeciesPage"));
+const AdminLabour = lazy(() => import("./pages/portal/admin/LabourPage"));
+const AdminShakePricing = lazy(() => import("./pages/portal/admin/ShakePricingPage"));
+const AdminQuotes = lazy(() => import("./pages/portal/admin/QuotesPage"));
+const AdminQuoteDetail = lazy(() => import("./pages/portal/admin/QuoteDetailPage"));
+const AdminOrders = lazy(() => import("./pages/portal/admin/OrdersPage"));
+const AdminOrderDetail = lazy(() => import("./pages/portal/admin/OrderDetailPage"));
+const AdminClients = lazy(() => import("./pages/portal/admin/ClientsPage"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -97,9 +107,16 @@ const App = () => {
                   >
                     <Route index element={<PortalIndex />} />
                     <Route path="dashboard" element={<AdminDashboard />} />
-                    <Route path="quotes" element={<AdminPlaceholder title="Quotes" />} />
-                    <Route path="clients" element={<AdminPlaceholder title="Clients" />} />
-                    <Route path="pricing" element={<AdminPlaceholder title="Pricing" />} />
+                    <Route path="quotes" element={<AdminQuotes />} />
+                    <Route path="quotes/:id" element={<AdminQuoteDetail />} />
+                    <Route path="orders" element={<AdminOrders />} />
+                    <Route path="orders/:id" element={<AdminOrderDetail />} />
+                    <Route path="clients" element={<AdminClients />} />
+                    <Route path="products" element={<AdminProducts />} />
+                    <Route path="profiles" element={<AdminProfiles />} />
+                    <Route path="species" element={<AdminSpecies />} />
+                    <Route path="labour" element={<AdminLabour />} />
+                    <Route path="shake-pricing" element={<AdminShakePricing />} />
                   </Route>
                   <Route
                     path="/client"
