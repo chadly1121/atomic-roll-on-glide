@@ -35,6 +35,30 @@ export type Database = {
         }
         Relationships: []
       }
+      cedar_shake_pricing_history: {
+        Row: {
+          changed_by: string | null
+          created_at: string
+          id: string
+          labour_per_bundle_per_coat: number
+          notes: string | null
+        }
+        Insert: {
+          changed_by?: string | null
+          created_at?: string
+          id?: string
+          labour_per_bundle_per_coat: number
+          notes?: string | null
+        }
+        Update: {
+          changed_by?: string | null
+          created_at?: string
+          id?: string
+          labour_per_bundle_per_coat?: number
+          notes?: string | null
+        }
+        Relationships: []
+      }
       clients: {
         Row: {
           address: string | null
@@ -152,6 +176,44 @@ export type Database = {
         }
         Relationships: []
       }
+      labour_rate_history: {
+        Row: {
+          changed_by: string | null
+          created_at: string
+          effective_date: string
+          id: string
+          notes: string | null
+          profile_id: string | null
+          rate_per_lineal_ft_per_pass: number
+        }
+        Insert: {
+          changed_by?: string | null
+          created_at?: string
+          effective_date?: string
+          id?: string
+          notes?: string | null
+          profile_id?: string | null
+          rate_per_lineal_ft_per_pass: number
+        }
+        Update: {
+          changed_by?: string | null
+          created_at?: string
+          effective_date?: string
+          id?: string
+          notes?: string | null
+          profile_id?: string | null
+          rate_per_lineal_ft_per_pass?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "labour_rate_history_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles_lumber"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       labour_rates: {
         Row: {
           created_at: string
@@ -186,6 +248,41 @@ export type Database = {
             columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles_lumber"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      order_status_history: {
+        Row: {
+          changed_by: string | null
+          created_at: string
+          id: string
+          notes: string | null
+          order_id: string
+          status: Database["public"]["Enums"]["order_status"]
+        }
+        Insert: {
+          changed_by?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          order_id: string
+          status: Database["public"]["Enums"]["order_status"]
+        }
+        Update: {
+          changed_by?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          order_id?: string
+          status?: Database["public"]["Enums"]["order_status"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_status_history_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
             referencedColumns: ["id"]
           },
         ]
