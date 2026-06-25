@@ -46,7 +46,7 @@ export default function DashboardPage() {
                       </Link>
                       <div className="flex items-center gap-2 shrink-0">
                         <StatusBadge status={a.status} kind={a.kind as any} />
-                        <span className="text-xs text-muted-foreground hidden sm:inline">{new Date(a.at).toLocaleDateString()}</span>
+                        <span className="text-xs text-muted-foreground hidden sm:inline">{formatDateCA(a.at)}</span>
                       </div>
                     </li>
                   ))}

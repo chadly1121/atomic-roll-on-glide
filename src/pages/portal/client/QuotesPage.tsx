@@ -42,7 +42,7 @@ export default function ClientQuotesPage() {
                 <li key={q.id}>
                   <Link to={`/client/quotes/${q.id}`} className="flex items-center justify-between p-4 hover:bg-muted/40 gap-4">
                     <div className="min-w-0">
-                      <div className="font-medium truncate">{q.quote_number} <span className="text-muted-foreground text-xs">· {new Date(q.created_at).toLocaleDateString()}</span></div>
+                      <div className="font-medium truncate">{q.quote_number} <span className="text-muted-foreground text-xs">· {formatDateCA(q.created_at)}</span></div>
                       <div className="text-xs text-muted-foreground capitalize truncate">{q.quote_type.replace("_", " ")} · {q.client_notes?.split("\n")[0] ?? "—"}</div>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">

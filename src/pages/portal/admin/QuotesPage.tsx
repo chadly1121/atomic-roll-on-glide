@@ -41,7 +41,7 @@ export default function QuotesPage() {
                   <Link to={`/admin/quotes/${q.id}`} className="flex flex-col sm:flex-row sm:items-center gap-2 px-4 py-3 hover:bg-muted/40">
                     <div className="flex-1 min-w-0">
                       <div className="font-medium">{q.quote_number} <span className="text-muted-foreground font-normal">· {c?.company_name ?? "—"}</span></div>
-                      <div className="text-xs text-muted-foreground">{new Date(q.created_at).toLocaleDateString()} · {(q.quote_type ?? "").replace(/_/g, " ")}</div>
+                      <div className="text-xs text-muted-foreground">{formatDateCA(q.created_at)} · {(q.quote_type ?? "").replace(/_/g, " ")}</div>
                     </div>
                     <div className="flex items-center justify-between sm:justify-end gap-3">
                       <div className="text-sm font-medium">${Number(q.total_cost ?? 0).toFixed(2)}</div>

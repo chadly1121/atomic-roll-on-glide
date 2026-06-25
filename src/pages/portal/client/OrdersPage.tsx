@@ -36,7 +36,7 @@ export default function ClientOrdersPage() {
                   <Link to={`/client/orders/${o.id}`} className="flex items-center justify-between p-4 hover:bg-muted/40 gap-4">
                     <div className="min-w-0">
                       <div className="font-medium truncate">{o.order_number}</div>
-                      <div className="text-xs text-muted-foreground truncate">{o.job_number ?? "—"} · {new Date(o.created_at).toLocaleDateString()}</div>
+                      <div className="text-xs text-muted-foreground truncate">{o.job_number ?? "—"} · {formatDateCA(o.created_at)}</div>
                     </div>
                     <StatusBadge status={o.status} kind="order" />
                   </Link>

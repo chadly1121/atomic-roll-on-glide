@@ -129,7 +129,7 @@ export default function OrderDetailPage() {
               {(history.data ?? []).map((h: any) => (
                 <li key={h.id} className="px-4 py-2 flex justify-between">
                   <StatusBadge status={h.status} kind="order" />
-                  <span className="text-xs text-muted-foreground">{new Date(h.created_at).toLocaleString()}</span>
+                  <span className="text-xs text-muted-foreground">{formatDateTimeCA(h.created_at)}</span>
                 </li>
               ))}
             </ul>

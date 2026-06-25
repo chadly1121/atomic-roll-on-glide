@@ -87,7 +87,7 @@ export default function ClientOrderDetailPage() {
                 {history.map((h: any) => (
                   <li key={h.id} className="py-2 flex justify-between gap-2">
                     <span className="capitalize">{h.from_status?.replace("_", " ") ?? "—"} → <strong>{h.to_status?.replace("_", " ")}</strong></span>
-                    <span className="text-xs text-muted-foreground shrink-0">{new Date(h.changed_at).toLocaleString()}</span>
+                    <span className="text-xs text-muted-foreground shrink-0">{formatDateTimeCA(h.changed_at)}</span>
                   </li>
                 ))}
               </ul>

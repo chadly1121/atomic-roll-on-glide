@@ -59,7 +59,7 @@ export default function ShakePricingPage() {
                     <div className="font-medium">${Number(h.labour_per_bundle_per_coat).toFixed(2)}</div>
                     {h.notes && <div className="text-xs text-muted-foreground">{h.notes}</div>}
                   </div>
-                  <div className="text-xs text-muted-foreground">{new Date(h.created_at).toLocaleString()}</div>
+                  <div className="text-xs text-muted-foreground">{formatDateTimeCA(h.created_at)}</div>
                 </li>
               ))}
             </ul>
