@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutDashboard, FileText, Users, Package, LogOut, ClipboardList, Layers, Trees, DollarSign, Hammer, Sparkles } from "lucide-react";
+import { LayoutDashboard, FileText, Users, Package, LogOut, ClipboardList, Layers, Trees, DollarSign, Hammer, Sparkles, User } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,8 +31,10 @@ const adminNav = [
 
 const clientNav = [
   { title: "Dashboard", url: "/client/dashboard", icon: LayoutDashboard },
-  { title: "Request a Quote", url: "/client/quote/new", icon: ClipboardList },
+  { title: "New Quote", url: "/client/quote/new", icon: ClipboardList },
+  { title: "My Quotes", url: "/client/quotes", icon: FileText },
   { title: "My Orders", url: "/client/orders", icon: Package },
+  { title: "Profile", url: "/client/profile", icon: User },
 ];
 
 export default function PortalLayout() {

@@ -39,8 +39,13 @@ const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 // Portal pages
 const LoginPage = lazy(() => import("./pages/portal/LoginPage"));
 const ResetPasswordPage = lazy(() => import("./pages/portal/ResetPasswordPage"));
-const ClientDashboard = lazy(() => import("./pages/portal/ClientDashboard"));
-const QuoteRequestPage = lazy(() => import("./pages/portal/QuoteRequestPage"));
+const ClientDashboard = lazy(() => import("./pages/portal/client/DashboardPage"));
+const QuoteBuilderPage = lazy(() => import("./pages/portal/client/QuoteBuilderPage"));
+const ClientQuotes = lazy(() => import("./pages/portal/client/QuotesPage"));
+const ClientQuoteDetail = lazy(() => import("./pages/portal/client/QuoteDetailPage"));
+const ClientOrders = lazy(() => import("./pages/portal/client/OrdersPage"));
+const ClientOrderDetail = lazy(() => import("./pages/portal/client/OrderDetailPage"));
+const ClientProfile = lazy(() => import("./pages/portal/client/ProfilePage"));
 const PortalIndex = lazy(() => import("./pages/portal/PortalIndex"));
 const AdminPlaceholder = lazy(() => import("./pages/portal/AdminPlaceholder"));
 const AdminDashboard = lazy(() => import("./pages/portal/admin/DashboardPage"));
@@ -128,8 +133,12 @@ const App = () => {
                   >
                     <Route index element={<PortalIndex />} />
                     <Route path="dashboard" element={<ClientDashboard />} />
-                    <Route path="quote/new" element={<QuoteRequestPage />} />
-                    <Route path="orders" element={<AdminPlaceholder title="My Orders" />} />
+                    <Route path="quote/new" element={<QuoteBuilderPage />} />
+                    <Route path="quotes" element={<ClientQuotes />} />
+                    <Route path="quotes/:id" element={<ClientQuoteDetail />} />
+                    <Route path="orders" element={<ClientOrders />} />
+                    <Route path="orders/:id" element={<ClientOrderDetail />} />
+                    <Route path="profile" element={<ClientProfile />} />
                   </Route>
 
                   <Route path="/blog" element={<BlogPage />} />
