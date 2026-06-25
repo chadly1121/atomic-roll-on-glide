@@ -9,6 +9,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 import FloatingCallButton from "./components/conversion/FloatingCallButton";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/portal/ProtectedRoute";
+import PortalLayout from "@/components/portal/PortalLayout";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
@@ -32,6 +35,14 @@ const PrivateClientPage = lazy(() => import("./pages/PrivateClientPage"));
 const CottageOwnerPage = lazy(() => import("./pages/CottageOwnerPage"));
 const HowWeQuotePage = lazy(() => import("./pages/HowWeQuotePage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+
+// Portal pages
+const LoginPage = lazy(() => import("./pages/portal/LoginPage"));
+const AdminDashboard = lazy(() => import("./pages/portal/AdminDashboard"));
+const ClientDashboard = lazy(() => import("./pages/portal/ClientDashboard"));
+const QuoteRequestPage = lazy(() => import("./pages/portal/QuoteRequestPage"));
+const PortalIndex = lazy(() => import("./pages/portal/PortalIndex"));
+const AdminPlaceholder = lazy(() => import("./pages/portal/AdminPlaceholder"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -66,9 +77,42 @@ const App = () => {
             <Sonner />
             
             <BrowserRouter>
+              <AuthProvider>
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
+
+                  {/* Portal */}
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/portal" element={<PortalIndex />} />
+                  <Route
+                    path="/admin"
+                    element={
+                      <ProtectedRoute requireRole="admin">
+                        <PortalLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route index element={<PortalIndex />} />
+                    <Route path="dashboard" element={<AdminDashboard />} />
+                    <Route path="quotes" element={<AdminPlaceholder title="Quotes" />} />
+                    <Route path="clients" element={<AdminPlaceholder title="Clients" />} />
+                    <Route path="pricing" element={<AdminPlaceholder title="Pricing" />} />
+                  </Route>
+                  <Route
+                    path="/client"
+                    element={
+                      <ProtectedRoute requireRole="client">
+                        <PortalLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route index element={<PortalIndex />} />
+                    <Route path="dashboard" element={<ClientDashboard />} />
+                    <Route path="quote/new" element={<QuoteRequestPage />} />
+                    <Route path="orders" element={<AdminPlaceholder title="My Orders" />} />
+                  </Route>
+
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/service-areas" element={<ServiceAreasPage />} />
@@ -102,6 +146,7 @@ const App = () => {
                   } />
                 </Routes>
               </Suspense>
+              </AuthProvider>
               <FloatingCallButton />
             </BrowserRouter>
           </TooltipProvider>
