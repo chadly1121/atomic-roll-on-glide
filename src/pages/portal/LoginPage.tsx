@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +15,10 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [showReset, setShowReset] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetSending, setResetSending] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
 
   // Redirect if already signed in
   useEffect(() => {
@@ -33,6 +38,20 @@ export default function LoginPage() {
     }
     toast.success("Signed in");
     // Redirect handled by useEffect once role loads
+  };
+
+  const handleReset = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setResetSending(true);
+    const { error } = await supabase.auth.resetPasswordForEmail(resetEmail.trim(), {
+      redirectTo: "https://portal.roll-onpainting.com/reset-password",
+    });
+    setResetSending(false);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    setResetSent(true);
   };
 
   return (
@@ -87,6 +106,40 @@ export default function LoginPage() {
                   {submitting ? "Signing in..." : "Sign in"}
                 </Button>
               </form>
+              <div className="mt-4 text-center">
+                <button
+                  type="button"
+                  className="text-sm text-muted-foreground underline hover:text-foreground"
+                  onClick={() => { setShowReset((v) => !v); setResetSent(false); }}
+                >
+                  Forgot your password?
+                </button>
+              </div>
+              {showReset && (
+                <div className="mt-4 border-t pt-4">
+                  {resetSent ? (
+                    <p className="text-sm text-center text-muted-foreground">
+                      Password reset email sent. Check your inbox.
+                    </p>
+                  ) : (
+                    <form onSubmit={handleReset} className="space-y-3">
+                      <div className="space-y-2">
+                        <Label htmlFor="reset-email">Email</Label>
+                        <Input
+                          id="reset-email"
+                          type="email"
+                          required
+                          value={resetEmail}
+                          onChange={(e) => setResetEmail(e.target.value)}
+                        />
+                      </div>
+                      <Button type="submit" variant="outline" className="w-full" disabled={resetSending}>
+                        {resetSending ? "Sending..." : "Send reset email"}
+                      </Button>
+                    </form>
+                  )}
+                </div>
+              )}
               <p className="text-xs text-muted-foreground mt-6 text-center">
                 Need access? Contact{" "}
                 <a className="underline" href="mailto:chad@roll-onpainting.com">
