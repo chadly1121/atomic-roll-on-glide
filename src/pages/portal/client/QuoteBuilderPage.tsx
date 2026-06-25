@@ -197,6 +197,22 @@ export default function QuoteBuilderPage() {
 
   if (clientLoading) return <LoadingBlock />;
 
+  const catalogReady = products.length > 0 && (tab === "cedar_shake" ? shakePricing.length > 0 : profiles.length > 0 && labour.length > 0);
+  if (!catalogReady) {
+    return (
+      <div className="space-y-6 max-w-3xl">
+        <PageHeader title="New Quote" description="Build a quote for prefinishing." />
+        <Card>
+          <CardHeader><CardTitle className="text-base">Catalog not ready</CardTitle></CardHeader>
+          <CardContent className="text-sm text-muted-foreground">
+            The prefinishing catalog isn’t fully set up yet (coating products, profiles, or labour rates are missing).
+            Please contact Roll-On Painting at <a className="underline" href="mailto:info@rollonpainting.com">info@rollonpainting.com</a> and we’ll have you quoting shortly.
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6 max-w-6xl">
       <PageHeader
