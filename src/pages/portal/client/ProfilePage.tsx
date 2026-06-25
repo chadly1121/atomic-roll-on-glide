@@ -25,6 +25,10 @@ export default function ClientProfilePage() {
   const qc = useQueryClient();
   const [form, setForm] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [pwSaving, setPwSaving] = useState(false);
 
   useEffect(() => {
     if (client) {
@@ -47,6 +51,42 @@ export default function ClientProfilePage() {
     qc.invalidateQueries({ queryKey: ["clients", "me"] });
   };
 
+  const changePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newPassword !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+    if (newPassword.length < 8) {
+      toast.error("Password must be at least 8 characters");
+      return;
+    }
+    if (!client.email) {
+      toast.error("Missing account email");
+      return;
+    }
+    setPwSaving(true);
+    const { error: verifyError } = await supabase.auth.signInWithPassword({
+      email: client.email,
+      password: currentPassword,
+    });
+    if (verifyError) {
+      setPwSaving(false);
+      toast.error("Current password is incorrect");
+      return;
+    }
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    setPwSaving(false);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    toast.success("Password updated successfully");
+    setCurrentPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+  };
+
   return (
     <div className="space-y-6 max-w-2xl">
       <PageHeader title="My Profile" description="Keep your contact and billing info up to date." />
@@ -62,6 +102,28 @@ export default function ClientProfilePage() {
           <div className="sm:col-span-2">
             <Button onClick={save} disabled={saving}>{saving ? "Saving…" : "Save changes"}</Button>
           </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle className="text-base">Change Password</CardTitle></CardHeader>
+        <CardContent>
+          <form onSubmit={changePassword} className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-1.5 sm:col-span-2">
+              <Label htmlFor="current-password">Current password</Label>
+              <Input id="current-password" type="password" autoComplete="current-password" required value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new-password">New password</Label>
+              <Input id="new-password" type="password" autoComplete="new-password" required minLength={8} value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="confirm-password">Confirm new password</Label>
+              <Input id="confirm-password" type="password" autoComplete="new-password" required minLength={8} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            </div>
+            <div className="sm:col-span-2">
+              <Button type="submit" disabled={pwSaving}>{pwSaving ? "Saving…" : "Save password"}</Button>
+            </div>
+          </form>
         </CardContent>
       </Card>
     </div>
