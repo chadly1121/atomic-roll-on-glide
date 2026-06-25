@@ -14,6 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
+      cedar_shake_pricing: {
+        Row: {
+          created_at: string
+          id: string
+          labour_per_bundle_per_coat: number
+          notes: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          labour_per_bundle_per_coat?: number
+          notes?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          labour_per_bundle_per_coat?: number
+          notes?: string | null
+        }
+        Relationships: []
+      }
+      clients: {
+        Row: {
+          address: string | null
+          auth_user_id: string | null
+          city: string | null
+          company_name: string | null
+          contact_name: string | null
+          created_at: string
+          email: string | null
+          id: string
+          is_active: boolean
+          notes: string | null
+          phone: string | null
+          postal_code: string | null
+          province: string | null
+        }
+        Insert: {
+          address?: string | null
+          auth_user_id?: string | null
+          city?: string | null
+          company_name?: string | null
+          contact_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          province?: string | null
+        }
+        Update: {
+          address?: string | null
+          auth_user_id?: string | null
+          city?: string | null
+          company_name?: string | null
+          contact_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          phone?: string | null
+          postal_code?: string | null
+          province?: string | null
+        }
+        Relationships: []
+      }
+      coating_products: {
+        Row: {
+          cost_per_gallon: number
+          coverage_mdf_preprimed_sqft_per_gallon: number
+          coverage_mdf_raw_first_coat_sqft_per_gallon: number
+          coverage_mdf_raw_subsequent_sqft_per_gallon: number
+          coverage_rough_sqft_per_gallon: number
+          coverage_smooth_sqft_per_gallon: number
+          created_at: string
+          id: string
+          is_active: boolean
+          manufacturer: string | null
+          name: string
+          notes: string | null
+          sale_price_per_gallon: number | null
+        }
+        Insert: {
+          cost_per_gallon: number
+          coverage_mdf_preprimed_sqft_per_gallon?: number
+          coverage_mdf_raw_first_coat_sqft_per_gallon?: number
+          coverage_mdf_raw_subsequent_sqft_per_gallon?: number
+          coverage_rough_sqft_per_gallon?: number
+          coverage_smooth_sqft_per_gallon?: number
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          manufacturer?: string | null
+          name: string
+          notes?: string | null
+          sale_price_per_gallon?: number | null
+        }
+        Update: {
+          cost_per_gallon?: number
+          coverage_mdf_preprimed_sqft_per_gallon?: number
+          coverage_mdf_raw_first_coat_sqft_per_gallon?: number
+          coverage_mdf_raw_subsequent_sqft_per_gallon?: number
+          coverage_rough_sqft_per_gallon?: number
+          coverage_smooth_sqft_per_gallon?: number
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          manufacturer?: string | null
+          name?: string
+          notes?: string | null
+          sale_price_per_gallon?: number | null
+        }
+        Relationships: []
+      }
       edge_function_rate_limits: {
         Row: {
           attempted_at: string
@@ -34,6 +151,186 @@ export type Database = {
           ip_address?: string
         }
         Relationships: []
+      }
+      labour_rates: {
+        Row: {
+          created_at: string
+          effective_date: string
+          id: string
+          is_active: boolean
+          notes: string | null
+          profile_id: string | null
+          rate_per_lineal_ft_per_pass: number
+        }
+        Insert: {
+          created_at?: string
+          effective_date?: string
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          profile_id?: string | null
+          rate_per_lineal_ft_per_pass: number
+        }
+        Update: {
+          created_at?: string
+          effective_date?: string
+          id?: string
+          is_active?: boolean
+          notes?: string | null
+          profile_id?: string | null
+          rate_per_lineal_ft_per_pass?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "labour_rates_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles_lumber"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          actual_end_date: string | null
+          actual_start_date: string | null
+          anticipated_end_date: string | null
+          anticipated_start_date: string | null
+          architect_designer: string | null
+          assigned_staff: string | null
+          bundle_lot_numbers: string | null
+          client_id: string
+          coating_brand_specified: string | null
+          created_at: string
+          delivery_method: Database["public"]["Enums"]["delivery_method"] | null
+          end_builder_company: string | null
+          end_builder_email: string | null
+          end_builder_name: string | null
+          end_builder_phone: string | null
+          end_sealing_required: boolean | null
+          id: string
+          internal_notes: string | null
+          invoice_number: string | null
+          job_number: string | null
+          job_site_address: string | null
+          job_site_city: string | null
+          job_site_postal: string | null
+          job_site_province: string | null
+          moisture_content: string | null
+          order_number: string
+          payment_status: Database["public"]["Enums"]["payment_status"]
+          photo_documentation_requested: boolean | null
+          primer_required: boolean | null
+          purchase_order_number: string | null
+          quote_id: string | null
+          return_delivery_required: boolean | null
+          rush_order: boolean
+          special_instructions: string | null
+          status: Database["public"]["Enums"]["order_status"]
+          warranty_registered: boolean
+          wood_grade: string | null
+          wood_supplied_by: Database["public"]["Enums"]["wood_supplier"] | null
+        }
+        Insert: {
+          actual_end_date?: string | null
+          actual_start_date?: string | null
+          anticipated_end_date?: string | null
+          anticipated_start_date?: string | null
+          architect_designer?: string | null
+          assigned_staff?: string | null
+          bundle_lot_numbers?: string | null
+          client_id: string
+          coating_brand_specified?: string | null
+          created_at?: string
+          delivery_method?:
+            | Database["public"]["Enums"]["delivery_method"]
+            | null
+          end_builder_company?: string | null
+          end_builder_email?: string | null
+          end_builder_name?: string | null
+          end_builder_phone?: string | null
+          end_sealing_required?: boolean | null
+          id?: string
+          internal_notes?: string | null
+          invoice_number?: string | null
+          job_number?: string | null
+          job_site_address?: string | null
+          job_site_city?: string | null
+          job_site_postal?: string | null
+          job_site_province?: string | null
+          moisture_content?: string | null
+          order_number?: string
+          payment_status?: Database["public"]["Enums"]["payment_status"]
+          photo_documentation_requested?: boolean | null
+          primer_required?: boolean | null
+          purchase_order_number?: string | null
+          quote_id?: string | null
+          return_delivery_required?: boolean | null
+          rush_order?: boolean
+          special_instructions?: string | null
+          status?: Database["public"]["Enums"]["order_status"]
+          warranty_registered?: boolean
+          wood_grade?: string | null
+          wood_supplied_by?: Database["public"]["Enums"]["wood_supplier"] | null
+        }
+        Update: {
+          actual_end_date?: string | null
+          actual_start_date?: string | null
+          anticipated_end_date?: string | null
+          anticipated_start_date?: string | null
+          architect_designer?: string | null
+          assigned_staff?: string | null
+          bundle_lot_numbers?: string | null
+          client_id?: string
+          coating_brand_specified?: string | null
+          created_at?: string
+          delivery_method?:
+            | Database["public"]["Enums"]["delivery_method"]
+            | null
+          end_builder_company?: string | null
+          end_builder_email?: string | null
+          end_builder_name?: string | null
+          end_builder_phone?: string | null
+          end_sealing_required?: boolean | null
+          id?: string
+          internal_notes?: string | null
+          invoice_number?: string | null
+          job_number?: string | null
+          job_site_address?: string | null
+          job_site_city?: string | null
+          job_site_postal?: string | null
+          job_site_province?: string | null
+          moisture_content?: string | null
+          order_number?: string
+          payment_status?: Database["public"]["Enums"]["payment_status"]
+          photo_documentation_requested?: boolean | null
+          primer_required?: boolean | null
+          purchase_order_number?: string | null
+          quote_id?: string | null
+          return_delivery_required?: boolean | null
+          rush_order?: boolean
+          special_instructions?: string | null
+          status?: Database["public"]["Enums"]["order_status"]
+          warranty_registered?: boolean
+          wood_grade?: string | null
+          wood_supplied_by?: Database["public"]["Enums"]["wood_supplier"] | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "orders_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profiles: {
         Row: {
@@ -61,6 +358,155 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: []
+      }
+      profiles_lumber: {
+        Row: {
+          actual_thickness_inches: number
+          actual_width_inches: number
+          back_face_sqft_per_lineal_ft: number
+          created_at: string
+          edge_sqft_per_lineal_ft: number
+          front_face_sqft_per_lineal_ft: number
+          id: string
+          is_active: boolean
+          material_type: Database["public"]["Enums"]["material_type"]
+          name: string
+          nominal_thickness_inches: number
+          nominal_width_inches: number
+          notes: string | null
+          profile_type: Database["public"]["Enums"]["profile_type"]
+          surface_type: Database["public"]["Enums"]["surface_type"]
+          total_sqft_per_lineal_ft: number
+        }
+        Insert: {
+          actual_thickness_inches: number
+          actual_width_inches: number
+          back_face_sqft_per_lineal_ft: number
+          created_at?: string
+          edge_sqft_per_lineal_ft: number
+          front_face_sqft_per_lineal_ft: number
+          id?: string
+          is_active?: boolean
+          material_type: Database["public"]["Enums"]["material_type"]
+          name: string
+          nominal_thickness_inches: number
+          nominal_width_inches: number
+          notes?: string | null
+          profile_type: Database["public"]["Enums"]["profile_type"]
+          surface_type: Database["public"]["Enums"]["surface_type"]
+          total_sqft_per_lineal_ft: number
+        }
+        Update: {
+          actual_thickness_inches?: number
+          actual_width_inches?: number
+          back_face_sqft_per_lineal_ft?: number
+          created_at?: string
+          edge_sqft_per_lineal_ft?: number
+          front_face_sqft_per_lineal_ft?: number
+          id?: string
+          is_active?: boolean
+          material_type?: Database["public"]["Enums"]["material_type"]
+          name?: string
+          nominal_thickness_inches?: number
+          nominal_width_inches?: number
+          notes?: string | null
+          profile_type?: Database["public"]["Enums"]["profile_type"]
+          surface_type?: Database["public"]["Enums"]["surface_type"]
+          total_sqft_per_lineal_ft?: number
+        }
+        Relationships: []
+      }
+      quote_lumber_items: {
+        Row: {
+          back_sqft_per_coat: number | null
+          coating_product_id: string | null
+          coats_back: number
+          coats_front: number
+          edge_sqft_per_pass: number | null
+          front_sqft_per_pass: number | null
+          gallons_required: number | null
+          id: string
+          labour_cost: number | null
+          lineal_feet: number
+          material_cost: number | null
+          notes: string | null
+          profile_id: string | null
+          quote_id: string
+          species_id: string | null
+          total_cost: number | null
+          total_material_sqft: number | null
+          total_passes: number
+        }
+        Insert: {
+          back_sqft_per_coat?: number | null
+          coating_product_id?: string | null
+          coats_back?: number
+          coats_front: number
+          edge_sqft_per_pass?: number | null
+          front_sqft_per_pass?: number | null
+          gallons_required?: number | null
+          id?: string
+          labour_cost?: number | null
+          lineal_feet: number
+          material_cost?: number | null
+          notes?: string | null
+          profile_id?: string | null
+          quote_id: string
+          species_id?: string | null
+          total_cost?: number | null
+          total_material_sqft?: number | null
+          total_passes: number
+        }
+        Update: {
+          back_sqft_per_coat?: number | null
+          coating_product_id?: string | null
+          coats_back?: number
+          coats_front?: number
+          edge_sqft_per_pass?: number | null
+          front_sqft_per_pass?: number | null
+          gallons_required?: number | null
+          id?: string
+          labour_cost?: number | null
+          lineal_feet?: number
+          material_cost?: number | null
+          notes?: string | null
+          profile_id?: string | null
+          quote_id?: string
+          species_id?: string | null
+          total_cost?: number | null
+          total_material_sqft?: number | null
+          total_passes?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_lumber_items_coating_product_id_fkey"
+            columns: ["coating_product_id"]
+            isOneToOne: false
+            referencedRelation: "coating_products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quote_lumber_items_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles_lumber"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quote_lumber_items_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quote_lumber_items_species_id_fkey"
+            columns: ["species_id"]
+            isOneToOne: false
+            referencedRelation: "species"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       quote_requests: {
         Row: {
@@ -110,6 +556,146 @@ export type Database = {
           property_type?: string | null
           property_value_range?: string | null
           service?: string
+        }
+        Relationships: []
+      }
+      quote_shake_items: {
+        Row: {
+          coating_product_id: string | null
+          coats: number
+          id: string
+          labour_cost_per_bundle_per_coat: number
+          material_cost_per_bundle_per_coat: number | null
+          notes: string | null
+          number_of_bundles: number
+          quote_id: string
+          total_cost: number | null
+          total_labour_cost: number | null
+          total_material_cost: number | null
+        }
+        Insert: {
+          coating_product_id?: string | null
+          coats: number
+          id?: string
+          labour_cost_per_bundle_per_coat?: number
+          material_cost_per_bundle_per_coat?: number | null
+          notes?: string | null
+          number_of_bundles: number
+          quote_id: string
+          total_cost?: number | null
+          total_labour_cost?: number | null
+          total_material_cost?: number | null
+        }
+        Update: {
+          coating_product_id?: string | null
+          coats?: number
+          id?: string
+          labour_cost_per_bundle_per_coat?: number
+          material_cost_per_bundle_per_coat?: number | null
+          notes?: string | null
+          number_of_bundles?: number
+          quote_id?: string
+          total_cost?: number | null
+          total_labour_cost?: number | null
+          total_material_cost?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_shake_items_coating_product_id_fkey"
+            columns: ["coating_product_id"]
+            isOneToOne: false
+            referencedRelation: "coating_products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quote_shake_items_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quotes: {
+        Row: {
+          admin_notes: string | null
+          approved_at: string | null
+          client_id: string
+          client_notes: string | null
+          created_at: string
+          id: string
+          quote_number: string
+          quote_type: Database["public"]["Enums"]["quote_type"]
+          reviewed_at: string | null
+          status: Database["public"]["Enums"]["quote_status"]
+          submitted_at: string | null
+          total_cost: number
+          total_labour_cost: number
+          total_material_cost: number
+        }
+        Insert: {
+          admin_notes?: string | null
+          approved_at?: string | null
+          client_id: string
+          client_notes?: string | null
+          created_at?: string
+          id?: string
+          quote_number?: string
+          quote_type: Database["public"]["Enums"]["quote_type"]
+          reviewed_at?: string | null
+          status?: Database["public"]["Enums"]["quote_status"]
+          submitted_at?: string | null
+          total_cost?: number
+          total_labour_cost?: number
+          total_material_cost?: number
+        }
+        Update: {
+          admin_notes?: string | null
+          approved_at?: string | null
+          client_id?: string
+          client_notes?: string | null
+          created_at?: string
+          id?: string
+          quote_number?: string
+          quote_type?: Database["public"]["Enums"]["quote_type"]
+          reviewed_at?: string | null
+          status?: Database["public"]["Enums"]["quote_status"]
+          submitted_at?: string | null
+          total_cost?: number
+          total_labour_cost?: number
+          total_material_cost?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quotes_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "clients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      species: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          name: string
+          notes: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name: string
+          notes?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          notes?: string | null
         }
         Relationships: []
       }
@@ -221,6 +807,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_admin: { Args: { _user_id: string }; Returns: boolean }
       is_team_member: {
         Args: { _team_id: string; _user_id: string }
         Returns: boolean
@@ -233,9 +820,42 @@ export type Database = {
         Args: { _team_id: string; _user_id: string }
         Returns: boolean
       }
+      owns_client: {
+        Args: { _client_id: string; _user_id: string }
+        Returns: boolean
+      }
+      owns_quote: {
+        Args: { _quote_id: string; _user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       app_role: "admin" | "client"
+      delivery_method: "client_delivers" | "roll_on_picks_up" | "third_party"
+      material_type: "wood" | "mdf"
+      order_status:
+        | "received"
+        | "in_queue"
+        | "in_progress"
+        | "quality_check"
+        | "complete"
+        | "shipped"
+      payment_status: "unpaid" | "invoiced" | "partial" | "paid"
+      profile_type:
+        | "tongue_groove"
+        | "shiplap"
+        | "bevel"
+        | "board_batten"
+        | "dimensional"
+        | "other"
+      quote_status:
+        | "pending_review"
+        | "approved"
+        | "declined"
+        | "converted_to_order"
+      quote_type: "lumber" | "cedar_shake"
+      surface_type: "smooth" | "rough" | "mdf_preprimed" | "mdf_raw"
+      wood_supplier: "client" | "roll_on"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -364,6 +984,34 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "client"],
+      delivery_method: ["client_delivers", "roll_on_picks_up", "third_party"],
+      material_type: ["wood", "mdf"],
+      order_status: [
+        "received",
+        "in_queue",
+        "in_progress",
+        "quality_check",
+        "complete",
+        "shipped",
+      ],
+      payment_status: ["unpaid", "invoiced", "partial", "paid"],
+      profile_type: [
+        "tongue_groove",
+        "shiplap",
+        "bevel",
+        "board_batten",
+        "dimensional",
+        "other",
+      ],
+      quote_status: [
+        "pending_review",
+        "approved",
+        "declined",
+        "converted_to_order",
+      ],
+      quote_type: ["lumber", "cedar_shake"],
+      surface_type: ["smooth", "rough", "mdf_preprimed", "mdf_raw"],
+      wood_supplier: ["client", "roll_on"],
     },
   },
 } as const
