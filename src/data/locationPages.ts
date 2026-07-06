@@ -673,15 +673,15 @@ export const locationPages: LocationPageData[] = [
     region: "Parry Sound District",
     postalCode: "P2A",
     headline: "Professional Painters for The Archipelago, Georgian Bay",
-    metaTitle: "Painters for The Archipelago | Island & Cottage Painting | Roll On Painting",
-    metaDescription: "Expert painters for The Archipelago and 30,000 Islands. Island cottage and waterfront painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting serves The Archipelago — the municipality encompassing Georgian Bay's legendary 30,000 Islands. These iconic island properties require painters with specialized logistics expertise and weather-resistant finishing knowledge, both of which we've developed over 25 years.",
-    localContent: "The Archipelago is one of Ontario's most unique municipalities, spanning the 30,000 Islands of Georgian Bay. Properties here are predominantly water-access, ranging from rustic family cottages to stunning custom-built island homes. Painting in The Archipelago requires careful logistics planning — coordinating boat transport for crews and materials, managing weather windows, and using products that withstand Georgian Bay's extreme exposure. We've painted numerous island properties and have the expertise to handle these unique challenges.",
+    metaTitle: "Painters for The Archipelago | Mainland Cottage Painting | Roll On Painting",
+    metaDescription: "Painters serving mainland and road-accessible properties in The Archipelago area on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting serves mainland and road-accessible properties in The Archipelago area on Georgian Bay. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of weather-resistant finishing expertise.",
+    localContent: "The Archipelago is one of Ontario's most unique municipalities, along the 30,000 Islands of Georgian Bay. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we do service, we use products built to withstand Georgian Bay's extreme sun, wind, and moisture exposure.",
     nearbyAreas: ["Parry Sound", "Nobel", "Pointe au Baril", "Britt", "Georgian Bay", "McKellar"],
     faqs: [
-      { question: "Can you paint island properties in The Archipelago?", answer: "Yes. We have extensive experience with water-access-only island properties in the 30,000 Islands. We handle all logistics including equipment and material transport." },
-      { question: "What products work best for 30,000 Islands properties?", answer: "We use premium marine-grade and UV-resistant products from Benjamin Moore, Dulux, and Sansin that are specifically formulated for extreme Georgian Bay weather exposure." },
-      { question: "How do you schedule island painting projects?", answer: "Island projects require multi-day scheduling to account for weather and boat access. We coordinate closely with owners to plan efficient work windows during the season." }
+      { question: "Do you paint island properties in The Archipelago?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the area." },
+      { question: "What products work best for Georgian Bay properties?", answer: "For mainland Georgian Bay properties we service, we use premium UV- and weather-resistant products from Benjamin Moore, Dulux, and Sansin, formulated for extreme exposure." },
+      { question: "How do you schedule projects in The Archipelago area?", answer: "For road-accessible properties in the area, we schedule multi-day work windows during the painting season to maximize efficiency." }
     ]
   },
   {
