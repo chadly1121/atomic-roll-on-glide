@@ -59,6 +59,7 @@ const AdminQuoteDetail = lazy(() => import("./pages/portal/admin/QuoteDetailPage
 const AdminOrders = lazy(() => import("./pages/portal/admin/OrdersPage"));
 const AdminOrderDetail = lazy(() => import("./pages/portal/admin/OrderDetailPage"));
 const AdminClients = lazy(() => import("./pages/portal/admin/ClientsPage"));
+const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -101,6 +102,7 @@ const App = () => {
                   {/* Portal */}
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/reset-password" element={<ResetPasswordPage />} />
+                  <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
                   <Route path="/portal" element={<PortalIndex />} />
                   <Route
                     path="/admin"
