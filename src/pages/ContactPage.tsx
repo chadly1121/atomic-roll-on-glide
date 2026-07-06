@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ContactForm from '../components/contact/ContactForm';
 import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
+import GhlContactForm from '../components/contact/GhlContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
 import SocialLinks from '../components/contact/SocialLinks';
 import FeatureBenefits from '../components/contact/FeatureBenefits';
@@ -135,7 +135,7 @@ const ContactPage = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
               <div className="bg-card rounded-xl shadow-lg p-6 sm:p-8">
                 <h2 id="contact-form-heading" className="text-2xl font-bold text-atomic-navy mb-6">Request a Private Proposal</h2>
-                <ContactForm />
+                <GhlContactForm />
                 <PrivateClientWhisper className="text-center mt-4" />
               </div>
               <div className="space-y-8 text-atomic-navy">
