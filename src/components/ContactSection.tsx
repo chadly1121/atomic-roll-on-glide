@@ -1,6 +1,6 @@
 
 import React from 'react';
-import ContactForm from './contact/ContactForm';
+import GhlContactForm from './contact/GhlContactForm';
 import ContactInfo from './contact/ContactInfo';
 import SocialLinks from './contact/SocialLinks';
 import FeatureBenefits from './contact/FeatureBenefits';
@@ -26,7 +26,7 @@ const ContactSection = () => {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <ContactForm />
+          <GhlContactForm />
           
           <div className="space-y-8">
             <ContactInfo />
