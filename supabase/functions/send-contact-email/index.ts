@@ -397,7 +397,7 @@ serve(async (req) => {
     
     // Send email to business
     const businessEmailResponse = await resend.emails.send({
-      from: "Roll On Painting <noreply@rollonpainting.com>",
+      from: "Roll On Painting <onboarding@resend.dev>",
       to: ["info@roll-onpainting.com"],
       replyTo: "info@roll-onpainting.com",
       subject: `${tagPrefix}New Quote Request: ${sanitizedService}${hasAttachments ? ` (${attachments?.length} files)` : ''}`,
@@ -500,7 +500,7 @@ serve(async (req) => {
 
     // Send confirmation email to customer
     const customerEmailResponse = await resend.emails.send({
-      from: "Roll On Painting <noreply@rollonpainting.com>",
+      from: "Roll On Painting <onboarding@resend.dev>",
       replyTo: "info@roll-onpainting.com",
       to: [email],
       subject: customerSubject,
