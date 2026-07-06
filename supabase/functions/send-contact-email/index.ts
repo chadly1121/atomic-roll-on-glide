@@ -15,7 +15,10 @@ const allowedOrigins = [
 
 function buildCorsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get("origin") || "";
-  const isLovablePreview = /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin);
+  const isLovablePreview =
+    /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin) ||
+    /^https:\/\/[a-z0-9-]+\.lovableproject\.com$/.test(origin) ||
+    /^https:\/\/[a-z0-9-]+\.lovable\.dev$/.test(origin);
   const allowOrigin =
     allowedOrigins.includes(origin) || isLovablePreview
       ? origin
