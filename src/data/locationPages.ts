@@ -758,14 +758,14 @@ export const locationPages: LocationPageData[] = [
     region: "Parry Sound District",
     postalCode: "P0G 1K0",
     headline: "Professional Painters in Pointe au Baril, Ontario",
-    metaTitle: "Painters in Pointe au Baril | Island & Cottage Painting | Roll On Painting",
-    metaDescription: "Expert painters in Pointe au Baril on Georgian Bay. Island cottage and waterfront painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting provides painting services to Pointe au Baril and its Georgian Bay island communities. This iconic cottage community features stunning waterfront and island properties that demand painters with specialized experience — exactly what we bring with 25 years in cottage country.",
-    localContent: "Pointe au Baril is one of Georgian Bay's most cherished cottage communities, known for its rugged Canadian Shield islands and clear waters. Many properties are water-access only, requiring painters who can manage logistics, coordinate boat transport, and work efficiently during weather windows. We've painted island properties throughout Georgian Bay and bring that expertise to every Pointe au Baril project.",
+    metaTitle: "Painters in Pointe au Baril | Mainland Cottage Painting | Roll On Painting",
+    metaDescription: "Painters serving mainland and road-accessible properties in Pointe au Baril on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting provides painting services to mainland and road-accessible properties in the Pointe au Baril area. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of cottage-country experience.",
+    localContent: "Pointe au Baril is one of Georgian Bay's most cherished cottage communities, set among rugged Canadian Shield shoreline and clear waters. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we service, we use durable products suited to Georgian Bay's harsh exposure.",
     nearbyAreas: ["Britt", "Byng Inlet", "Parry Sound", "The Archipelago", "Nobel", "Pickerel"],
     faqs: [
-      { question: "Can you paint island cottages at Pointe au Baril?", answer: "Yes. We specialize in island and water-access property painting throughout Georgian Bay, including Pointe au Baril's island communities." },
-      { question: "How do you handle equipment transport to islands?", answer: "We coordinate boat transport for crews, equipment, and materials. We plan multi-day work schedules to maximize productivity on island projects." },
+      { question: "Do you paint island cottages at Pointe au Baril?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the Pointe au Baril area." },
+      { question: "How do you schedule projects at Pointe au Baril?", answer: "For road-accessible properties, we plan multi-day work schedules during the painting season to maximize productivity." },
       { question: "What products last longest at Pointe au Baril?", answer: "We recommend premium marine-grade and UV-resistant products designed for Georgian Bay's extreme weather exposure, including Benjamin Moore, Sansin, and PPG." }
     ]
   },
