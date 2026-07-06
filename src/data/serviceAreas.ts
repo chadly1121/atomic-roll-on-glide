@@ -68,7 +68,7 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
   },
   {
     name: "Parry Sound & Georgian Bay Islands",
-    description: "Parry Sound district and island communities",
+    description: "Parry Sound district and mainland shoreline communities",
     locations: [
       { name: "Parry Sound", postalCode: "P2A" },
       { name: "Seguin", postalCode: "P2A" },
