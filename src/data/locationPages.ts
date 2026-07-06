@@ -625,11 +625,11 @@ export const locationPages: LocationPageData[] = [
     metaTitle: "Painters in Parry Sound | Residential & Commercial Painting | Roll On Painting",
     metaDescription: "Professional painting services in Parry Sound, Ontario. Residential, commercial, and cottage painting by Roll On Painting. WSIB covered. Free estimates. 705-787-1401.",
     intro: "Roll On Painting extends our premium painting services to Parry Sound and the surrounding Georgian Bay area. With over 25 years of industry experience and a commitment to quality, we serve Parry Sound homeowners and businesses with the same exceptional results we're known for in Muskoka.",
-    localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to waterfront homes and island cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful.",
+    localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to road-accessible waterfront homes and cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful. Note: we do not service island or water-access-only properties.",
     nearbyAreas: ["Seguin", "McKellar", "Nobel", "The Archipelago", "Rosseau", "Magnetawan"],
     faqs: [
       { question: "Do you travel to Parry Sound for painting jobs?", answer: "Yes. We regularly serve Parry Sound and surrounding communities. For larger projects, we schedule multi-day work to maximize efficiency and minimize travel costs." },
-      { question: "Can you paint in the Georgian Bay islands?", answer: "Yes. We have experience with island and water-access properties in the Georgian Bay area including the 30,000 Islands. Contact us to discuss the specifics of your project." },
+      { question: "Do you paint properties in the Georgian Bay islands?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Parry Sound and Georgian Bay area." },
       { question: "What commercial painting do you do in Parry Sound?", answer: "We provide commercial and institutional painting throughout Parry Sound including retail, office, restaurant, and municipal buildings. We offer flexible scheduling including evenings and weekends." }
     ]
   },
