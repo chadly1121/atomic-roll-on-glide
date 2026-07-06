@@ -89,7 +89,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Rosseau", "Windermere", "Minett", "Milford Bay", "Bala", "Gravenhurst"],
     faqs: [
       { question: "Do you paint luxury homes in Port Carling?", answer: "Yes. We specialize in high-end residential painting for Port Carling and Muskoka Lakes properties. We use premium paints, meticulous prep work, and offer our Free Touch Ups for Life guarantee." },
-      { question: "Can you access island properties near Port Carling?", answer: "Yes. We have experience working on island and water-access-only properties throughout the Muskoka Lakes chain. Contact us to discuss logistics for your specific location." },
+      { question: "Do you paint island properties near Port Carling?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Muskoka Lakes area." },
       { question: "What painting services do you offer in Port Carling?", answer: "We offer interior and exterior painting, deck and dock staining, cabinet refinishing, wallpaper installation, GoNano permanent coating, and commercial painting for Port Carling businesses." }
     ]
   },
@@ -157,7 +157,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Port Carling", "Minett", "Lake Joseph", "Lake Rosseau", "Windermere", "Rosseau"],
     faqs: [
       { question: "Do you paint boathouses in Port Sandfield?", answer: "Yes. Port Sandfield is famous for its heritage boathouses, and we have extensive experience painting and staining these iconic structures with appropriate marine-grade products." },
-      { question: "How do you handle water-access properties in Port Sandfield?", answer: "We have logistics expertise for water-access properties. We coordinate equipment transport, scheduling, and multi-day work plans for island and boat-access-only sites." },
+      { question: "Do you paint water-access properties in Port Sandfield?", answer: "No. We service road-accessible homes and cottages only — we do not take on island or boat-access-only projects." },
       { question: "What services do you offer in Port Sandfield?", answer: "We provide interior and exterior painting, staining, cabinet refinishing, deck and dock finishing, power washing, and GoNano permanent coating." }
     ]
   },
@@ -264,7 +264,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Port Carling", "Windermere", "Minett", "Parry Sound", "Seguin", "MacTier"],
     faqs: [
       { question: "Do you paint waterfront estates near Rosseau?", answer: "Yes. We specialize in premium painting for Lake Rosseau waterfront properties, from classic cottages to luxury estates." },
-      { question: "Can you access island properties on Lake Rosseau?", answer: "Yes. We have extensive experience with boat-access and island properties throughout Lake Rosseau. Contact us to discuss logistics." },
+      { question: "Do you paint island properties on Lake Rosseau?", answer: "No. We service road-accessible Lake Rosseau properties only — island and boat-access-only sites are outside our service area." },
       { question: "What services do you offer in Rosseau?", answer: "Full painting services including interior, exterior, cabinet refinishing, deck staining, wallpaper, GoNano coating, and power washing." }
     ]
   },
