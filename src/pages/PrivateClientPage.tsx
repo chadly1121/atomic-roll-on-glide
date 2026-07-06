@@ -273,15 +273,8 @@ const PrivateClientPage: React.FC = () => {
               Request Access
             </h2>
 
-            {submitted ? (
-              <div className="text-center py-16">
-                <div className="w-12 h-12 rounded-full border border-[hsl(0,0%,25%)] flex items-center justify-center mx-auto mb-6">
-                  <Check className="w-5 h-5 text-[hsl(0,0%,60%)]" />
-                </div>
-                <p className="text-white text-lg font-light mb-3">Thank you for your inquiry.</p>
-                <p className="text-[hsl(0,0%,45%)] text-sm">We'll be in touch within 48 hours.</p>
-              </div>
-            ) : (
+            <GhlContactForm />
+            {false && (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="pc-name" className="text-[hsl(0,0%,50%)] text-xs tracking-widest uppercase">Name</Label>
