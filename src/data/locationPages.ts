@@ -89,7 +89,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Rosseau", "Windermere", "Minett", "Milford Bay", "Bala", "Gravenhurst"],
     faqs: [
       { question: "Do you paint luxury homes in Port Carling?", answer: "Yes. We specialize in high-end residential painting for Port Carling and Muskoka Lakes properties. We use premium paints, meticulous prep work, and offer our Free Touch Ups for Life guarantee." },
-      { question: "Can you access island properties near Port Carling?", answer: "Yes. We have experience working on island and water-access-only properties throughout the Muskoka Lakes chain. Contact us to discuss logistics for your specific location." },
+      { question: "Do you paint island properties near Port Carling?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Muskoka Lakes area." },
       { question: "What painting services do you offer in Port Carling?", answer: "We offer interior and exterior painting, deck and dock staining, cabinet refinishing, wallpaper installation, GoNano permanent coating, and commercial painting for Port Carling businesses." }
     ]
   },
@@ -157,7 +157,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Port Carling", "Minett", "Lake Joseph", "Lake Rosseau", "Windermere", "Rosseau"],
     faqs: [
       { question: "Do you paint boathouses in Port Sandfield?", answer: "Yes. Port Sandfield is famous for its heritage boathouses, and we have extensive experience painting and staining these iconic structures with appropriate marine-grade products." },
-      { question: "How do you handle water-access properties in Port Sandfield?", answer: "We have logistics expertise for water-access properties. We coordinate equipment transport, scheduling, and multi-day work plans for island and boat-access-only sites." },
+      { question: "Do you paint water-access properties in Port Sandfield?", answer: "No. We service road-accessible homes and cottages only — we do not take on island or boat-access-only projects." },
       { question: "What services do you offer in Port Sandfield?", answer: "We provide interior and exterior painting, staining, cabinet refinishing, deck and dock finishing, power washing, and GoNano permanent coating." }
     ]
   },
@@ -264,7 +264,7 @@ export const locationPages: LocationPageData[] = [
     nearbyAreas: ["Port Carling", "Windermere", "Minett", "Parry Sound", "Seguin", "MacTier"],
     faqs: [
       { question: "Do you paint waterfront estates near Rosseau?", answer: "Yes. We specialize in premium painting for Lake Rosseau waterfront properties, from classic cottages to luxury estates." },
-      { question: "Can you access island properties on Lake Rosseau?", answer: "Yes. We have extensive experience with boat-access and island properties throughout Lake Rosseau. Contact us to discuss logistics." },
+      { question: "Do you paint island properties on Lake Rosseau?", answer: "No. We service road-accessible Lake Rosseau properties only — island and boat-access-only sites are outside our service area." },
       { question: "What services do you offer in Rosseau?", answer: "Full painting services including interior, exterior, cabinet refinishing, deck staining, wallpaper, GoNano coating, and power washing." }
     ]
   },
@@ -625,11 +625,11 @@ export const locationPages: LocationPageData[] = [
     metaTitle: "Painters in Parry Sound | Residential & Commercial Painting | Roll On Painting",
     metaDescription: "Professional painting services in Parry Sound, Ontario. Residential, commercial, and cottage painting by Roll On Painting. WSIB covered. Free estimates. 705-787-1401.",
     intro: "Roll On Painting extends our premium painting services to Parry Sound and the surrounding Georgian Bay area. With over 25 years of industry experience and a commitment to quality, we serve Parry Sound homeowners and businesses with the same exceptional results we're known for in Muskoka.",
-    localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to waterfront homes and island cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful.",
+    localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to road-accessible waterfront homes and cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful. Note: we do not service island or water-access-only properties.",
     nearbyAreas: ["Seguin", "McKellar", "Nobel", "The Archipelago", "Rosseau", "Magnetawan"],
     faqs: [
       { question: "Do you travel to Parry Sound for painting jobs?", answer: "Yes. We regularly serve Parry Sound and surrounding communities. For larger projects, we schedule multi-day work to maximize efficiency and minimize travel costs." },
-      { question: "Can you paint in the Georgian Bay islands?", answer: "Yes. We have experience with island and water-access properties in the Georgian Bay area including the 30,000 Islands. Contact us to discuss the specifics of your project." },
+      { question: "Do you paint properties in the Georgian Bay islands?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Parry Sound and Georgian Bay area." },
       { question: "What commercial painting do you do in Parry Sound?", answer: "We provide commercial and institutional painting throughout Parry Sound including retail, office, restaurant, and municipal buildings. We offer flexible scheduling including evenings and weekends." }
     ]
   },
@@ -673,15 +673,15 @@ export const locationPages: LocationPageData[] = [
     region: "Parry Sound District",
     postalCode: "P2A",
     headline: "Professional Painters for The Archipelago, Georgian Bay",
-    metaTitle: "Painters for The Archipelago | Island & Cottage Painting | Roll On Painting",
-    metaDescription: "Expert painters for The Archipelago and 30,000 Islands. Island cottage and waterfront painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting serves The Archipelago — the municipality encompassing Georgian Bay's legendary 30,000 Islands. These iconic island properties require painters with specialized logistics expertise and weather-resistant finishing knowledge, both of which we've developed over 25 years.",
-    localContent: "The Archipelago is one of Ontario's most unique municipalities, spanning the 30,000 Islands of Georgian Bay. Properties here are predominantly water-access, ranging from rustic family cottages to stunning custom-built island homes. Painting in The Archipelago requires careful logistics planning — coordinating boat transport for crews and materials, managing weather windows, and using products that withstand Georgian Bay's extreme exposure. We've painted numerous island properties and have the expertise to handle these unique challenges.",
+    metaTitle: "Painters for The Archipelago | Mainland Cottage Painting | Roll On Painting",
+    metaDescription: "Painters serving mainland and road-accessible properties in The Archipelago area on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting serves mainland and road-accessible properties in The Archipelago area on Georgian Bay. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of weather-resistant finishing expertise.",
+    localContent: "The Archipelago is one of Ontario's most unique municipalities, along the 30,000 Islands of Georgian Bay. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we do service, we use products built to withstand Georgian Bay's extreme sun, wind, and moisture exposure.",
     nearbyAreas: ["Parry Sound", "Nobel", "Pointe au Baril", "Britt", "Georgian Bay", "McKellar"],
     faqs: [
-      { question: "Can you paint island properties in The Archipelago?", answer: "Yes. We have extensive experience with water-access-only island properties in the 30,000 Islands. We handle all logistics including equipment and material transport." },
-      { question: "What products work best for 30,000 Islands properties?", answer: "We use premium marine-grade and UV-resistant products from Benjamin Moore, Dulux, and Sansin that are specifically formulated for extreme Georgian Bay weather exposure." },
-      { question: "How do you schedule island painting projects?", answer: "Island projects require multi-day scheduling to account for weather and boat access. We coordinate closely with owners to plan efficient work windows during the season." }
+      { question: "Do you paint island properties in The Archipelago?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the area." },
+      { question: "What products work best for Georgian Bay properties?", answer: "For mainland Georgian Bay properties we service, we use premium UV- and weather-resistant products from Benjamin Moore, Dulux, and Sansin, formulated for extreme exposure." },
+      { question: "How do you schedule projects in The Archipelago area?", answer: "For road-accessible properties in the area, we schedule multi-day work windows during the painting season to maximize efficiency." }
     ]
   },
   {
@@ -758,14 +758,14 @@ export const locationPages: LocationPageData[] = [
     region: "Parry Sound District",
     postalCode: "P0G 1K0",
     headline: "Professional Painters in Pointe au Baril, Ontario",
-    metaTitle: "Painters in Pointe au Baril | Island & Cottage Painting | Roll On Painting",
-    metaDescription: "Expert painters in Pointe au Baril on Georgian Bay. Island cottage and waterfront painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting provides painting services to Pointe au Baril and its Georgian Bay island communities. This iconic cottage community features stunning waterfront and island properties that demand painters with specialized experience — exactly what we bring with 25 years in cottage country.",
-    localContent: "Pointe au Baril is one of Georgian Bay's most cherished cottage communities, known for its rugged Canadian Shield islands and clear waters. Many properties are water-access only, requiring painters who can manage logistics, coordinate boat transport, and work efficiently during weather windows. We've painted island properties throughout Georgian Bay and bring that expertise to every Pointe au Baril project.",
+    metaTitle: "Painters in Pointe au Baril | Mainland Cottage Painting | Roll On Painting",
+    metaDescription: "Painters serving mainland and road-accessible properties in Pointe au Baril on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
+    intro: "Roll On Painting provides painting services to mainland and road-accessible properties in the Pointe au Baril area. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of cottage-country experience.",
+    localContent: "Pointe au Baril is one of Georgian Bay's most cherished cottage communities, set among rugged Canadian Shield shoreline and clear waters. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we service, we use durable products suited to Georgian Bay's harsh exposure.",
     nearbyAreas: ["Britt", "Byng Inlet", "Parry Sound", "The Archipelago", "Nobel", "Pickerel"],
     faqs: [
-      { question: "Can you paint island cottages at Pointe au Baril?", answer: "Yes. We specialize in island and water-access property painting throughout Georgian Bay, including Pointe au Baril's island communities." },
-      { question: "How do you handle equipment transport to islands?", answer: "We coordinate boat transport for crews, equipment, and materials. We plan multi-day work schedules to maximize productivity on island projects." },
+      { question: "Do you paint island cottages at Pointe au Baril?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the Pointe au Baril area." },
+      { question: "How do you schedule projects at Pointe au Baril?", answer: "For road-accessible properties, we plan multi-day work schedules during the painting season to maximize productivity." },
       { question: "What products last longest at Pointe au Baril?", answer: "We recommend premium marine-grade and UV-resistant products designed for Georgian Bay's extreme weather exposure, including Benjamin Moore, Sansin, and PPG." }
     ]
   },
@@ -982,12 +982,12 @@ export const locationPages: LocationPageData[] = [
     metaTitle: "Painters in Honey Harbour | Cottage & Waterfront Painting | Roll On Painting",
     metaDescription: "Expert cottage and waterfront painting in Honey Harbour, gateway to Georgian Bay Islands. Interior, exterior & specialty coatings. WSIB covered. 705-787-1401.",
     intro: "Roll On Painting provides expert painting services to Honey Harbour — the gateway to Georgian Bay Islands National Park. From waterfront cottages to year-round homes, we bring 25+ years of experience and products built to withstand Georgian Bay's demanding conditions.",
-    localContent: "Honey Harbour is a unique waterfront community in the Township of Georgian Bay, best known as the launching point for Georgian Bay Islands National Park and the stunning 30,000 Islands archipelago. Every summer, boaters, cottagers, and nature lovers converge on this village to access Beausoleil Island and the surrounding waters. The properties here face some of Ontario's most challenging weather — strong Georgian Bay winds, intense sun exposure, and lake-effect moisture — which makes choosing the right painter and the right products critically important. We specialize in waterfront and cottage painting, using marine-grade and weather-resistant coatings from Benjamin Moore, Dulux, and PPG that stand up to Georgian Bay's elements. Our GoNano permanent coating is especially popular with Honey Harbour cottage owners who want long-lasting surface protection without constant maintenance. Whether your cottage is accessible by road or water, we coordinate logistics to get the job done efficiently. Every project includes our Free Touch Ups for Life guarantee.",
+    localContent: "Honey Harbour is a unique waterfront community in the Township of Georgian Bay, best known as the launching point for Georgian Bay Islands National Park and the stunning 30,000 Islands archipelago. The properties here face some of Ontario's most challenging weather — strong Georgian Bay winds, intense sun exposure, and lake-effect moisture — which makes choosing the right painter and the right products critically important. We specialize in mainland waterfront and cottage painting, using weather-resistant coatings from Benjamin Moore, Dulux, and PPG that stand up to Georgian Bay's elements. Our GoNano permanent coating is especially popular with Honey Harbour cottage owners who want long-lasting surface protection without constant maintenance. Please note: we service road-accessible properties only — we do not take on island or water-access-only projects. Every project includes our Free Touch Ups for Life guarantee.",
     nearbyAreas: ["Port Severn", "Six Mile Lake", "Georgian Bay", "Penetanguishene", "Midland", "Victoria Harbour"],
     faqs: [
-      { question: "Do you paint water-access-only cottages near Honey Harbour?", answer: "Yes. We have experience coordinating water-access cottage painting projects. We work with local marinas and boat services to transport equipment and materials to island and water-access properties." },
+      { question: "Do you paint water-access-only cottages near Honey Harbour?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the Honey Harbour area." },
       { question: "What paint works best for Honey Harbour's Georgian Bay exposure?", answer: "We recommend premium weather-resistant products designed for waterfront exposure, including marine-grade coatings. Our GoNano permanent coating is ideal for Georgian Bay properties needing long-lasting protection." },
-      { question: "How much does cottage painting cost in Honey Harbour?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Pricing may vary for water-access properties. Contact us for a free estimate." },
+      { question: "How much does cottage painting cost in Honey Harbour?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate on your road-accessible property." },
       { question: "Do you paint decks and docks in Honey Harbour?", answer: "Yes. Deck staining, dock painting, and exterior wood protection are popular services in Honey Harbour. We use products rated for constant water exposure and UV." },
       { question: "When is the best time to paint a Honey Harbour cottage?", answer: "Spring (May-June) and early fall (September-October) are ideal for exterior painting in Honey Harbour. We recommend booking early as these windows fill quickly." }
     ]

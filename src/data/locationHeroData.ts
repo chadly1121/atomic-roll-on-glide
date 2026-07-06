@@ -137,7 +137,7 @@ const heroData: Record<string, LocationHeroInfo> = {
   "painters-lake-rosseau": {
     heroImage: IMGS.lakeMuskoka,
     landmark: "Lake Rosseau, Muskoka",
-    localLove: "Lake Rosseau is legendary — one of Muskoka's crown jewels, lined with some of the most spectacular properties in all of Canada. We've had the honour of painting island cottages accessible only by boat, grand estates with wraparound verandas, and cozy family retreats passed down through generations. Every project on Lake Rosseau comes with a view that makes you stop and stare. The homeowners here expect the very best, and we're proud to deliver craftsmanship worthy of this extraordinary lake."
+    localLove: "Lake Rosseau is legendary — one of Muskoka's crown jewels, lined with some of the most spectacular properties in all of Canada. We've had the honour of painting grand estates with wraparound verandas and cozy family retreats passed down through generations. Every road-accessible project on Lake Rosseau comes with a view that makes you stop and stare. The homeowners here expect the very best, and we're proud to deliver craftsmanship worthy of this extraordinary lake."
   },
   "painters-lake-joseph": {
     heroImage: IMGS.lakeMuskoka,
@@ -259,7 +259,7 @@ const heroData: Record<string, LocationHeroInfo> = {
   "painters-the-archipelago": {
     heroImage: IMGS.georgianBayCabin,
     landmark: "Georgian Bay's 30,000 Islands",
-    localLove: "The Archipelago is one of the most extraordinary places we've ever had the privilege of working — literally painting on islands accessible only by boat among the 30,000 Islands of Georgian Bay. The logistics can be challenging, but the settings are absolutely world-class. These properties face some of the harshest weather conditions in Ontario, which means our weatherproofing expertise really shines. There's nothing quite like finishing a project here, stepping back, and seeing your work against that endless Georgian Bay horizon."
+    localLove: "The Archipelago area is one of the most extraordinary places we work — mainland and road-accessible properties framed by the 30,000 Islands of Georgian Bay. These homes and cottages face some of the harshest weather conditions in Ontario, which is where our weatherproofing expertise really shines. Please note we do not service island or water-access-only properties."
   },
   "painters-britt": {
     heroImage: IMGS.georgianBayRocks,
@@ -284,7 +284,7 @@ const heroData: Record<string, LocationHeroInfo> = {
   "painters-pointe-au-baril": {
     heroImage: IMGS.pointeAuBarilLight,
     landmark: "Pointe au Baril Lighthouse",
-    localLove: "Pointe au Baril is where Georgian Bay reveals its most dramatic beauty — rocky islands, wind-sculpted pines, and some of the most exclusive cottage properties in Ontario. The iconic lighthouse has guided boats through these islands for over a century, and we feel a similar sense of purpose guiding homeowners through their painting projects. Working here often means boat access and unique logistics, but the spectacular settings and appreciative clients make every challenge worthwhile. Pointe au Baril is truly one-of-a-kind."
+    localLove: "Pointe au Baril is where Georgian Bay reveals its most dramatic beauty — rocky shoreline, wind-sculpted pines, and some of the most exclusive cottage properties in Ontario. The iconic lighthouse has guided boats through these waters for over a century, and we feel a similar sense of purpose guiding homeowners through their painting projects. We service mainland and road-accessible properties in the area — the settings are one-of-a-kind."
   },
 
   // ═══════════════════════════════════════════
