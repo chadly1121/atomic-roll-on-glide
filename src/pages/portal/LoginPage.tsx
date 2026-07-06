@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -12,6 +12,12 @@ import { toast } from "sonner";
 export default function LoginPage() {
   const { signIn, user, role, loading } = useAuth();
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const nextParam = params.get("next");
+  // Only allow same-origin relative paths as redirect targets.
+  const safeNext = nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//")
+    ? nextParam
+    : null;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -23,9 +29,13 @@ export default function LoginPage() {
   // Redirect if already signed in
   useEffect(() => {
     if (!loading && user && role) {
+      if (safeNext) {
+        window.location.href = safeNext;
+        return;
+      }
       navigate(role === "admin" ? "/admin/dashboard" : "/client/dashboard", { replace: true });
     }
-  }, [loading, user, role, navigate]);
+  }, [loading, user, role, navigate, safeNext]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
