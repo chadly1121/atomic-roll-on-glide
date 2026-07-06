@@ -10,6 +10,7 @@ import GTACottageOwnersBlock from '@/components/conversion/GTACottageOwnersBlock
 import heroImage from '@/assets/private-client-hero.jpg';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import GhlContactForm from '@/components/contact/GhlContactForm';
 
 const siteUrl = "https://www.roll-onpainting.com";
 const pageUrl = `${siteUrl}/private-client-muskoka-property-care`;
