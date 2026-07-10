@@ -8,7 +8,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { FileText, RefreshCw } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
-import { Helmet as HelmetHead } from 'react-helmet-async';
 
 const SoroBlogEmbed = () => {
   useEffect(() => {
