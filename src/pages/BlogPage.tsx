@@ -9,6 +9,24 @@ import { Button } from '@/components/ui/button';
 import { FileText, RefreshCw } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 
+const SoroBlogEmbed = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://app.trysoro.com/api/embed/f969f1b1-59f3-4676-8ab4-1b0322f585cc';
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  return (
+    <section className="mt-16 pt-12 border-t border-border">
+      <h2 className="text-2xl font-bold mb-6">More from our team</h2>
+      <div id="soro-blog"></div>
+    </section>
+  );
+};
+
 const ITEMS_PER_PAGE = 12;
 
 function formatDate(iso: string) {
@@ -165,6 +183,8 @@ const BlogPage = () => {
                 )}
               </>
             )}
+
+            <SoroBlogEmbed />
           </div>
         </div>
       </main>
