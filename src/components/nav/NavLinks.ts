@@ -33,5 +33,6 @@ export const navLinks: NavLink[] = [
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'How We Quote', href: '/how-we-quote' },
   { name: 'Reviews', href: '/reviews' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
