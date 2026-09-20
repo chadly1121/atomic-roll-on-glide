@@ -38,8 +38,8 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight',
         'Lake Rosseau, Lake Joseph, Lake Muskoka, Port Carling',
-        'Parry Sound, Georgian Bay, Bala, Port Severn',
-        'Orillia, Barrie, and all communities across Muskoka and Simcoe County'
+        'Parry Sound, Bala, Rosseau',
+        'Orillia and all communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or use our online contact form for a free estimate',
@@ -91,7 +91,7 @@ export const serviceLocationPages: ServicePageData[] = [
       },
       {
         question: 'What areas in Muskoka do you serve for interior painting?',
-        answer: 'We serve all of Muskoka and surrounding areas including Port Sydney, Huntsville, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Parry Sound, Georgian Bay, Bala, Orillia, and Barrie.'
+        answer: 'We serve all of Muskoka and surrounding areas including Port Sydney, Huntsville, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Parry Sound, Bala, and Orillia — everywhere within about an hour of our Port Sydney shop.'
       }
     ],
     galleryImages: [
@@ -142,8 +142,8 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight',
         'Lake Rosseau, Lake Joseph, Lake Muskoka, Port Carling',
-        'Parry Sound, Georgian Bay, Bala, Port Severn',
-        'Orillia, Barrie, and all communities across Muskoka and Simcoe County'
+        'Parry Sound, Bala, Rosseau',
+        'Orillia and all communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or submit a request through our online contact form',
@@ -194,7 +194,7 @@ export const serviceLocationPages: ServicePageData[] = [
       },
       {
         question: 'What areas do you serve for exterior painting?',
-        answer: 'We serve all of Muskoka and surrounding areas including Port Sydney, Huntsville, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Parry Sound, Georgian Bay, Bala, Orillia, and Barrie.'
+        answer: 'We serve all of Muskoka and surrounding areas including Port Sydney, Huntsville, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Parry Sound, Bala, and Orillia — everywhere within about an hour of our Port Sydney shop.'
       }
     ],
     galleryImages: [
@@ -245,8 +245,8 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight',
         'Lake Rosseau, Lake Joseph, Lake Muskoka, Port Carling',
-        'Parry Sound, Georgian Bay, Bala, Port Severn',
-        'Orillia, Barrie, and all communities across Muskoka and Simcoe County'
+        'Parry Sound, Bala, Rosseau',
+        'Orillia and all communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com to describe your project',
@@ -341,8 +341,8 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Dorset, Baysville',
         'Lake Rosseau, Lake Joseph, Port Carling',
-        'Parry Sound, Georgian Bay, Bala',
-        'All communities across Muskoka and Simcoe County'
+        'Parry Sound, Bala, Rosseau',
+        'All communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Send photos of your cabinets via our contact form or email info@roll-onpainting.com',
@@ -440,7 +440,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Lake Rosseau, Lake Joseph, Lake Muskoka, Lake of Bays',
         'Port Carling, Windermere, Minett, Rosseau, Dorset',
-        'Baysville, Dwight, Bala, Port Severn, Parry Sound',
+        'Baysville, Dwight, Bala, Parry Sound',
         'All lakefront and cottage communities across Muskoka'
       ],
       howQuotesWork: [
@@ -547,8 +547,8 @@ export const serviceLocationPages: ServicePageData[] = [
       whereAvailable: [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Parry Sound',
-        'Orillia, Barrie, Midland, Georgian Bay',
-        'All communities across Muskoka and Simcoe County'
+        'Orillia, Parry Sound, Rosseau',
+        'All communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com with your floor dimensions',
@@ -647,8 +647,8 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Muskoka Lakes, Lake of Bays, Dorset, Baysville',
         'Lake Rosseau, Lake Joseph, Port Carling, Windermere',
-        'Parry Sound, Georgian Bay, Bala, Orillia, Barrie',
-        'All communities across Muskoka and Simcoe County'
+        'Parry Sound, Bala, Rosseau, Orillia',
+        'All communities within about an hour of our Port Sydney shop'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or use our online contact form',
@@ -753,7 +753,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Port Sydney, Huntsville, Bracebridge, Gravenhurst',
         'Lake Rosseau, Lake Joseph, Lake Muskoka, Lake of Bays',
         'Port Carling, Windermere, Minett, Rosseau, Dorset',
-        'Baysville, Dwight, Bala, Parry Sound, Georgian Bay',
+        'Baysville, Dwight, Bala, Parry Sound',
         'All lakefront and cottage communities across Muskoka'
       ],
       howQuotesWork: [
