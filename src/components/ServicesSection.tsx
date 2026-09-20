@@ -17,7 +17,7 @@ const ServicesSection = () => {
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg">
             Twenty-five years. Five HGTV features. GoNano and Sansin certified. $5M insured.
-            Every project backed by our Free Touch-Ups for Life guarantee — because our standard doesn't end when we pack up.
+            Every project backed by our Perfect Finish Promise — because our standard doesn't end when we pack up.
           </p>
           <div className="mx-auto mt-5 h-1 w-20 bg-atomic-orange rounded-full" />
         </div>
