@@ -183,7 +183,6 @@ const SecurityEnhancedContactForm = () => {
   };
 
   const onSubmit = async (data: FormData, canSubmit: boolean) => {
-    trackEvent('form_submit_attempt', { form_name: ANALYTICS_FORM_NAME });
     if (!canSubmit) {
       toast({
         title: "Rate limit exceeded",
