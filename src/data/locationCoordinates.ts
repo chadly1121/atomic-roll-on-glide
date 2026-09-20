@@ -30,7 +30,6 @@ const coords: Record<string, GeoCoordinates> = {
   "painters-lake-rosseau":    { latitude: 45.1500, longitude: -79.6000 },
   "painters-lake-joseph":     { latitude: 45.1000, longitude: -79.6500 },
   "painters-lake-muskoka":    { latitude: 45.0000, longitude: -79.4500 },
-  "painters-georgian-bay":    { latitude: 44.9000, longitude: -79.8500 },
 
   // ALGONQUIN & NORTH MUSKOKA
   "painters-lake-of-bays":    { latitude: 45.2500, longitude: -79.0500 },
@@ -54,27 +53,10 @@ const coords: Record<string, GeoCoordinates> = {
   "painters-seguin":          { latitude: 45.2500, longitude: -79.8500 },
   "painters-mckellar":        { latitude: 45.4333, longitude: -79.8000 },
   "painters-the-archipelago": { latitude: 45.1667, longitude: -80.0500 },
-  "painters-britt":           { latitude: 45.7667, longitude: -80.5167 },
-  "painters-byng-inlet":      { latitude: 45.7833, longitude: -80.5667 },
-  "painters-nobel":           { latitude: 45.3833, longitude: -80.1000 },
-  "painters-pickerel":        { latitude: 45.6500, longitude: -80.3500 },
-  "painters-pointe-au-baril": { latitude: 45.5500, longitude: -80.3667 },
 
   // SIMCOE COUNTY & BARRIE
   "painters-orillia":         { latitude: 44.6083, longitude: -79.4200 },
-  "painters-oro-medonte":     { latitude: 44.5333, longitude: -79.5833 },
-  "painters-ramara":          { latitude: 44.6333, longitude: -79.2167 },
-  "painters-severn":          { latitude: 44.7500, longitude: -79.5167 },
-  "painters-warminster":      { latitude: 44.7000, longitude: -79.2500 },
-  "painters-barrie":          { latitude: 44.3894, longitude: -79.6903 },
-  "painters-midland":         { latitude: 44.7494, longitude: -79.8875 },
-  "painters-penetanguishene": { latitude: 44.7689, longitude: -79.9356 },
-  "painters-port-severn":     { latitude: 44.8000, longitude: -79.7167 },
   "painters-six-mile-lake":   { latitude: 44.8167, longitude: -79.6333 },
-  "painters-coldwater":       { latitude: 44.6833, longitude: -79.6667 },
-  "painters-honey-harbour":   { latitude: 44.8667, longitude: -79.8167 },
-  "painters-waubaushene":     { latitude: 44.7500, longitude: -79.7167 },
-  "painters-victoria-harbour":{ latitude: 44.7500, longitude: -79.7833 },
   "painters-severn-bridge":   { latitude: 44.8167, longitude: -79.4833 },
 };
 

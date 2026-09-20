@@ -576,7 +576,6 @@ export const localBlogPosts: LocalPost[] = [
   <li>Huntsville</li>
   <li>Bracebridge</li>
   <li>Muskoka</li>
-  <li>Georgian Bay</li>
 </ul>
 
 <h2>Bottom Line</h2>
@@ -784,7 +783,6 @@ export const localBlogPosts: LocalPost[] = [
   <li>Huntsville</li>
   <li>Bracebridge</li>
   <li>Muskoka</li>
-  <li>Georgian Bay</li>
 </ul>
 
 <h2>Final Take</h2>
@@ -920,7 +918,7 @@ export const localBlogPosts: LocalPost[] = [
 
 <h2>Service Area</h2>
 <p>Roll On Painting serves:</p>
-<ul><li>Port Sydney</li><li>Huntsville</li><li>Bracebridge</li><li>All of Muskoka</li><li>Georgian Bay properties</li></ul>
+<ul><li>Port Sydney</li><li>Huntsville</li><li>Bracebridge</li><li>All of Muskoka</li></ul>
 <p>If you've got a dock or deck, this applies to you.</p>
 
 <h2>Final Take</h2>
