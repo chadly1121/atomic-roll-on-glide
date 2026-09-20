@@ -234,7 +234,7 @@ export default function QuoteBuilderPage() {
   }
 
   return (
-    <div className="space-y-6 max-w-6xl">
+    <div className="space-y-6 max-w-6xl" onFocusCapture={trackFormStart} onInputCapture={trackFormStart}>
       <PageHeader
         title="New Quote"
         description="Build your line items below. Pricing updates live; submit when ready for review."
