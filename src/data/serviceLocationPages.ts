@@ -24,7 +24,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Clean job sites — we leave your home cleaner than we found it',
         'Sharp, consistent paint lines with no flashing or lap marks',
         'Final walkthrough with you to ensure every detail meets your standards',
-        'Perfect Finish Promise on every completed interior painting project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior painting project'
       ],
       whoItsFor: [
         'Muskoka homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -53,7 +53,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance for your protection',
       'Premium Benjamin Moore, Dulux, and PPG paints — never builder-grade products',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'Clean, respectful, and punctual crews who treat your home like their own',
       'Proper preparation is everything — we never skip steps',
       'Consistent, flawless finishes without flashing, lap marks, or drips',
@@ -128,7 +128,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Gutter, soffit, and fascia painting when included in scope',
         'Deck and porch floor coating available as an add-on',
         'Full site cleanup — no paint cans, no drop cloths, no mess left behind',
-        'Perfect Finish Promise on every completed exterior project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
       ],
       whoItsFor: [
         'Muskoka homeowners protecting their investment from harsh weather',
@@ -159,7 +159,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Thorough preparation prevents peeling, cracking, and premature failure',
       'Experienced with cedar, pine, wood siding, vinyl, stucco, brick, and log homes',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'We partner with Sansin for premium wood treatments and natural finishes',
       'Clean, professional crews who respect your property and landscaping'
     ],
@@ -169,7 +169,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint rated for Canadian climates, applied by experienced crews.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail is finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
     ],
     faqs: [
       {
@@ -231,7 +231,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Cabinets, built-ins, and custom millwork',
         'Exterior fences, decks, siding, and garage doors',
         'Full cleanup and inspection — no overspray left behind',
-        'Perfect Finish Promise on every completed spray painting project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed spray painting project'
       ],
       whoItsFor: [
         'Homeowners who want a smooth, brushstroke-free finish on trim and doors',
@@ -262,7 +262,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Over 25 years of professional spray painting experience in Muskoka',
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'We use professional airless and HVLP equipment — not consumer-grade sprayers',
       'Meticulous masking protects every surface not being painted'
     ],
@@ -327,7 +327,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Reinstallation of all doors, drawers, and hardware',
         'Optional hardware replacement and soft-close hinge upgrades',
         'Full kitchen cleanup and protection throughout the process',
-        'Perfect Finish Promise on every completed cabinet project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
       ],
       whoItsFor: [
         'Muskoka homeowners updating dated or worn kitchen cabinets',
@@ -359,7 +359,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Over 25 years of professional painting experience in Muskoka',
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'Minimal disruption to your daily routine — we work clean and fast',
       'Premium primers and paints designed specifically for kitchen cabinets'
     ],
@@ -426,7 +426,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Specialty finishes for log homes, timber frames, and exposed wood',
         'Floor, furniture, and fixture protection throughout the project',
         'Complete cleanup — we leave your cottage spotless',
-        'Perfect Finish Promise on every completed cottage project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners refreshing for summer',
@@ -457,7 +457,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Weather-resistant exterior products rated for -30°C Canadian winters',
       'We coordinate around your cottage schedule — work while you\'re away',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'Clean, respectful crews who protect your cottage furnishings and landscaping',
       'Premium Benjamin Moore, Dulux, PPG, and Sansin products — never builder-grade',
       'We handle everything from docks and boathouses to great rooms and lofts'
@@ -534,7 +534,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Optional decorative flake broadcast for texture and style',
         'Clear polyaspartic or urethane topcoat for maximum durability',
         'Full garage/space cleanup and curing instructions',
-        'Perfect Finish Promise on every completed epoxy project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed epoxy project'
       ],
       whoItsFor: [
         'Muskoka homeowners upgrading garage floors',
@@ -564,7 +564,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Transforms dull concrete into an attractive, professional-looking surface',
       'Over 25 years of professional experience in Muskoka',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise on every completed project',
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
       'Professional diamond grinding ensures superior adhesion',
       'Fast installation — most garages completed in 2-3 days'
     ],
@@ -739,7 +739,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Staining of railings, stairs, trim, and detail work',
         'UV-resistant and water-repellent formulas for Muskoka weather',
         'Full site cleanup and stain disposal',
-        'Perfect Finish Promise on every completed staining project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed staining project'
       ],
       whoItsFor: [
         'Muskoka homeowners maintaining decks, docks, and fences',
@@ -772,7 +772,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Specialized log home and timber-frame staining expertise',
       'Over 25 years of wood finishing experience in Muskoka',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise on every completed project'
+      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project'
     ],
     process: [
       { step: 'Wood Assessment', description: 'We inspect your wood surfaces for rot, damage, and existing finish condition to determine the right approach.' },
@@ -847,7 +847,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Window, door, and trim detailing with clean, sharp lines',
         'Soffit, fascia, and gutter painting included when in scope',
         'Full site cleanup — no mess left on your Bracebridge property',
-        'Perfect Finish Promise on every completed exterior project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
       ],
       whoItsFor: [
         'Bracebridge homeowners protecting their property from freeze-thaw cycles and UV damage',
@@ -885,7 +885,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts through Bracebridge winters.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by experienced crews who know Muskoka conditions.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
     ],
     faqs: [
       { question: 'How much does exterior painting cost in Bracebridge?', answer: 'Exterior painting in Bracebridge starts at $5.75 per square foot with Roll On Painting. This includes power washing, full surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
@@ -922,7 +922,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Complete floor, furniture, and fixture protection',
         'Clean job sites — we leave your Bracebridge home cleaner than we found it',
         'Final walkthrough to ensure every detail meets your standards',
-        'Perfect Finish Promise on every completed interior project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior project'
       ],
       whoItsFor: [
         'Bracebridge homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -996,7 +996,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Weather-resistant coatings that withstand freeze-thaw, UV, and lake moisture',
         'Remote coordination for seasonal owners — we work while you\'re away',
         'Photo updates throughout the project so you see progress in real time',
-        'Perfect Finish Promise on every completed cottage project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners in the Bracebridge area who need reliable painters',
@@ -1034,7 +1034,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Preparation', description: 'Power washing, scraping, sanding, caulking, and priming — proper prep for Muskoka\'s demanding conditions.' },
       { step: 'Professional Painting', description: 'Interior and exterior painting with premium, weather-resistant products selected for cottage environments.' },
       { step: 'Photo Updates', description: 'We send you photos at each stage so you can see the progress from wherever you are.' },
-      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus our Perfect Finish Promise on every completed project.' }
+      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus our Perfect Finish Promise — two hours of free touch-ups every year — on every completed project.' }
     ],
     faqs: [
       { question: 'Can you paint my Bracebridge cottage while I\'m in the city?', answer: 'Yes — this is one of our specialties. Many Bracebridge cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is perfect before you arrive.' },
@@ -1108,7 +1108,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Sanding & Prep', description: 'We sand the deck to open the wood grain, ensuring maximum stain penetration and adhesion.' },
       { step: 'Stain Application', description: 'Two coats of premium, UV-resistant deck stain applied for maximum protection and colour depth.' },
       { step: 'Detail Work', description: 'Railings, steps, posts, and edges — every surface stained consistently and thoroughly.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise on every completed deck staining project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed deck staining project.' }
     ],
     faqs: [
       { question: 'How much does deck staining cost in Bracebridge?', answer: 'Deck staining in Bracebridge starts at $4.00 per square foot. This includes power washing, sanding, and two coats of premium stain. Larger decks, docks, and multi-level structures are quoted individually.' },
@@ -1143,7 +1143,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Two coats of durable cabinet-grade paint or lacquer',
         'Hardware removal and reinstallation',
         'Full masking and protection of countertops, floors, and appliances',
-        'Perfect Finish Promise on every completed cabinet project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
       ],
       whoItsFor: [
         'Bracebridge homeowners wanting a kitchen refresh without a full renovation',
@@ -1216,7 +1216,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Window, door, and trim detailing with clean, sharp lines',
         'Soffit, fascia, and gutter painting when in scope',
         'Full site cleanup — no mess left on your Huntsville property',
-        'Perfect Finish Promise on every completed exterior project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
       ],
       whoItsFor: [
         'Huntsville homeowners protecting their property from harsh Northern Ontario weather',
@@ -1254,7 +1254,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — every issue fixed so paint lasts through Huntsville\'s harsh winters.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by crews who know Northern Ontario conditions.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
     ],
     faqs: [
       { question: 'How much does exterior painting cost in Huntsville?', answer: 'Exterior painting in Huntsville starts at $5.75 per square foot. This includes power washing, surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
@@ -1291,7 +1291,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Complete floor, furniture, and fixture protection',
         'Clean job sites — we leave your Huntsville home cleaner than we found it',
         'Final walkthrough to ensure every detail meets your standards',
-        'Perfect Finish Promise on every completed interior project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior project'
       ],
       whoItsFor: [
         'Huntsville homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -1364,7 +1364,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Weather-resistant coatings for Huntsville\'s demanding Northern Ontario climate',
         'Remote coordination for seasonal owners — we work while you\'re away',
         'Photo updates throughout the project',
-        'Perfect Finish Promise on every completed cottage project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners on Lake Vernon, Peninsula Lake, and Fairy Lake',
@@ -1476,7 +1476,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Sanding & Prep', description: 'Sanding to open wood grain, ensuring maximum stain penetration and adhesion.' },
       { step: 'Stain Application', description: 'Two coats of premium, UV-resistant stain for maximum protection and colour depth.' },
       { step: 'Detail Work', description: 'Railings, steps, posts, and edges stained consistently and thoroughly.' },
-      { step: 'Cleanup & Warranty', description: 'Full cleanup and our Perfect Finish Promise on every completed project.' }
+      { step: 'Cleanup & Warranty', description: 'Full cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed project.' }
     ],
     faqs: [
       { question: 'How much does deck staining cost in Huntsville?', answer: 'Deck staining in Huntsville starts at $4.00 per square foot including power washing, sanding, and two coats of premium stain. Larger structures quoted individually.' },
@@ -1511,7 +1511,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Two coats of durable cabinet-grade paint or lacquer',
         'Hardware removal and reinstallation',
         'Full masking and protection of countertops, floors, and appliances',
-        'Perfect Finish Promise on every completed cabinet project'
+        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
       ],
       whoItsFor: [
         'Huntsville homeowners wanting a kitchen refresh without full renovation',
