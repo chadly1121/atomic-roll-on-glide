@@ -38,8 +38,8 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     ]
   },
   {
-    name: "Lake Muskoka & Georgian Bay",
-    description: "Western Muskoka and Georgian Bay shoreline",
+    name: "West Muskoka",
+    description: "Western Muskoka lakes and villages",
     locations: [
       { name: "Bala", postalCode: "P0C 1A0" },
       { name: "MacTier", postalCode: "P0C 1H0" },
