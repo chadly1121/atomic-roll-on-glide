@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 import FloatingCallButton from "./components/conversion/FloatingCallButton";
+import PhoneClickTracker from "./components/analytics/PhoneClickTracker";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/portal/ProtectedRoute";
 import PortalLayout from "@/components/portal/PortalLayout";
