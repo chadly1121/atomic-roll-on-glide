@@ -4,7 +4,7 @@
  * Each location gets a unique page with locally-relevant content,
  * targeting "painter in [town]" and "[town] painting company" keywords.
  * 
- * Covers all 48 communities from serviceAreas.ts
+ * Covers the communities within about an hour of the Port Sydney shop (see serviceAreas.ts)
  */
 
 export interface LocationPageData {
@@ -672,7 +672,7 @@ export const locationPages: LocationPageData[] = [
   {
     slug: "painters-orillia",
     name: "Orillia",
-    region: "Simcoe County",
+    region: "Southern Edge",
     postalCode: "L3V",
     headline: "Professional Painters in Orillia, Ontario",
     metaTitle: "Painters in Orillia | Residential & Commercial Painting | Roll On Painting",

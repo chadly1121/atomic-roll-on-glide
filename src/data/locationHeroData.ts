@@ -253,7 +253,7 @@ const heroData: Record<string, LocationHeroInfo> = {
   },
 
   // ═══════════════════════════════════════════
-  // SIMCOE COUNTY
+  // SOUTHERN EDGE
   // ═══════════════════════════════════════════
   "painters-orillia": {
     heroImage: IMGS.orilliaLake,

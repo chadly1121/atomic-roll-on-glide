@@ -267,7 +267,7 @@ const SEOHelmet: React.FC = () => {
         "areaServed": [
           { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
           { "@type": "Place", "name": "Parry Sound District, Ontario, Canada" },
-          { "@type": "Place", "name": "Simcoe County, Ontario, Canada" }
+          { "@type": "Place", "name": "Orillia, Ontario, Canada" }
         ]
       },
       {
@@ -295,7 +295,7 @@ const SEOHelmet: React.FC = () => {
         "areaServed": [
           { "@type": "Place", "name": "Muskoka District, Ontario, Canada" },
           { "@type": "Place", "name": "Parry Sound District, Ontario, Canada" },
-          { "@type": "Place", "name": "Simcoe County, Ontario, Canada" }
+          { "@type": "Place", "name": "Orillia, Ontario, Canada" }
         ]
       },
       {
