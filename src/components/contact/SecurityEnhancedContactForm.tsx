@@ -15,6 +15,9 @@ import { Shield, Clock, Upload, X, Loader2, FileIcon, ImageIcon } from 'lucide-r
 import RateLimitWrapper from './RateLimitWrapper';
 import CottageOwnerFields from './fields/CottageOwnerFields';
 import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
+import { trackEvent, trackEventOnce, currentPath } from '@/lib/analytics';
+
+const ANALYTICS_FORM_NAME = 'direct_contact_form';
 
 const formSchema = z.object({
   name: z.string()
