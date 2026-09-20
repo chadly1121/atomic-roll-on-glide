@@ -206,7 +206,7 @@ export const localBlogPosts: LocalPost[] = [
 <h2>Ready to Protect Your Investment?</h2>
 <p>Exterior painting on a Muskoka property is a significant investment — and done right, it's one that pays back in curb appeal, property value, and years of low-maintenance enjoyment. Done wrong, it's a frustrating cycle of premature failure and repair.</p>
 <p>If your cottage is due for exterior work this season, the time to act is now. We serve Huntsville, Bracebridge, Gravenhurst, Port Carling, and 44 other communities across the Muskoka region.</p>
-<p>Book your consultation at <a href="https://www.roll-onpainting.com/contact">roll-onpainting.com/contact</a> — or call Chad directly at <a href="tel:+17057871401">705-787-1401</a> to talk through your project.</p>
+<p>Book your consultation at <a href="https://www.roll-onpainting.com/contact">roll-onpainting.com/contact</a> — or call Chad directly at <a href="tel:+17057871401" data-analytics-location="blog">705-787-1401</a> to talk through your project.</p>
 <p><em>Related reading: <a href="https://www.roll-onpainting.com/services/exterior-painting">Exterior Painting</a> · <a href="https://www.roll-onpainting.com/services/deck-fence-staining">Deck &amp; Fence Staining</a></em></p>`,
   },
   {
@@ -346,7 +346,7 @@ export const localBlogPosts: LocalPost[] = [
 <p>We've been part of Muskoka since 1999. We've watched the lakes through good springs and brutal ones. The low-lying area near Huntsville's Main Street bridge and the Town Dock went underwater this spring, and major closures included Town Dock Park, Hunter's Bay Trail, and Avery Beach. We've had clients calling us all week.</p>
 <p>This is hard. And the recovery is going to take time. But when you're ready — when the wood is dry and the conditions are right — doing this properly will protect your investment for years to come.</p>
 <p>Roll On Painting serves lakefront properties across Huntsville, Bracebridge, Port Carling, Lake of Bays, and 34 communities within about an hour of our Port Sydney shop. Chad Gilchrist and his crew have 25+ years of experience with exactly this kind of exterior wood work, in exactly these conditions.</p>
-<p>When you're ready for your free assessment, reach out at <a href="tel:+17057871401">705-787-1401</a> or book through <a href="/contact">roll-onpainting.com/contact</a>. We'll come to you, assess the damage, and give you a straight answer about what needs to happen — in the right order.</p>`,
+<p>When you're ready for your free assessment, reach out at <a href="tel:+17057871401" data-analytics-location="blog">705-787-1401</a> or book through <a href="/contact">roll-onpainting.com/contact</a>. We'll come to you, assess the damage, and give you a straight answer about what needs to happen — in the right order.</p>`,
   },
   {
     id: 'local-sansin-exterior-stains-decks-docks-muskoka',
