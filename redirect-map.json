@@ -413,5 +413,20 @@
     "source": "/deck-staining-barrie",
     "destination": "/service-areas",
     "status": 301
+  },
+  {
+    "source": "/painters-ahmic-harbour",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-dunchurch",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-mckellar",
+    "destination": "/service-areas",
+    "status": 301
   }
 ]

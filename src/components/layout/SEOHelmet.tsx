@@ -123,11 +123,9 @@ const SEOHelmet: React.FC = () => {
           "worstRating": "1"
         },
         "areaServed": [
-          { "@type": "Place", "name": "Ahmic Harbour, Ontario, Canada (P0A 1A0)" },
           { "@type": "Place", "name": "Algonquin Park, Ontario, Canada (P0A 1B0)" },
           { "@type": "Place", "name": "Burk's Falls, Ontario, Canada (P0A 1C0)" },
           { "@type": "Place", "name": "Dorset, Ontario, Canada (P0A 1E0)" },
-          { "@type": "Place", "name": "Dunchurch, Ontario, Canada (P0A 1G0)" },
           { "@type": "Place", "name": "Dwight, Ontario, Canada (P0A 1H0)" },
           { "@type": "Place", "name": "Emsdale, Ontario, Canada (P0A 1J0)" },
           { "@type": "Place", "name": "Katrine, Ontario, Canada (P0A 1L0)" },
@@ -148,7 +146,6 @@ const SEOHelmet: React.FC = () => {
           { "@type": "Place", "name": "MacTier, Ontario, Canada (P0C 1H0)" },
           { "@type": "Place", "name": "Rosseau, Ontario, Canada (P0C 1J0)" },
           { "@type": "Place", "name": "Torrance, Ontario, Canada (P0C 1M0)" },
-          { "@type": "Place", "name": "McKellar, Ontario, Canada (P0G 1C0)" },
           { "@type": "Place", "name": "Huntsville, Ontario, Canada (P1H)" },
           { "@type": "Place", "name": "Gravenhurst, Ontario, Canada (P1P)" },
           { "@type": "Place", "name": "Bracebridge, Ontario, Canada (P1L)" },

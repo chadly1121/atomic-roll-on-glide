@@ -357,23 +357,6 @@ export const locationPages: LocationPageData[] = [
     ]
   },
   {
-    slug: "painters-ahmic-harbour",
-    name: "Ahmic Harbour",
-    region: "Parry Sound District",
-    postalCode: "P0A 1A0",
-    headline: "Professional Painters in Ahmic Harbour, Ontario",
-    metaTitle: "Painters in Ahmic Harbour | Home & Cottage Painting | Roll On Painting",
-    metaDescription: "Professional painters serving Ahmic Harbour and Ahmic Lake. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting extends our professional painting services to Ahmic Harbour and the Ahmic Lake area. This scenic community north of Muskoka features beautiful cottages and waterfront properties that benefit from our 25 years of painting expertise.",
-    localContent: "Ahmic Harbour sits on Ahmic Lake in the Parry Sound District, offering a quieter cottage experience compared to the busier Muskoka lakes. Properties here include traditional cottages, year-round homes, and rural retreats surrounded by pristine wilderness. The area's northern exposure and seasonal weather demand durable paint products and expert application techniques.",
-    nearbyAreas: ["Magnetawan", "Burk's Falls", "Parry Sound", "Sundridge", "Katrine", "Dunchurch"],
-    faqs: [
-      { question: "Do you travel to Ahmic Harbour for painting?", answer: "Yes. We serve Ahmic Harbour and the broader Parry Sound District. For larger projects, we plan multi-day schedules to maximize efficiency." },
-      { question: "What painting services do you offer in Ahmic Harbour?", answer: "Full painting services including interior, exterior, staining, deck finishing, power washing, and GoNano permanent coating." },
-      { question: "How do I get a quote for my Ahmic Harbour property?", answer: "Call 705-787-1401 or email info@roll-onpainting.com for a free estimate. We'll arrange an on-site visit to assess your property." }
-    ]
-  },
-  {
     slug: "painters-algonquin-park",
     name: "Algonquin Park",
     region: "Algonquin",
@@ -422,23 +405,6 @@ export const locationPages: LocationPageData[] = [
       { question: "Do you paint cottages near Dorset?", answer: "Yes. We paint cottages throughout the Dorset area including properties on Lake of Bays, Paint Lake, Kawagama Lake, and surrounding waterways." },
       { question: "How far is Dorset from your base?", answer: "Dorset is approximately 45 minutes from our base. For larger projects we schedule multi-day work to maximize efficiency and minimize travel costs." },
       { question: "Do you offer deck staining in Dorset?", answer: "Yes. We provide professional deck, dock, and boathouse staining using UV-resistant products suited to lakefront conditions." }
-    ]
-  },
-  {
-    slug: "painters-dunchurch",
-    name: "Dunchurch",
-    region: "Parry Sound District",
-    postalCode: "P0A 1G0",
-    headline: "Professional Painters in Dunchurch, Ontario",
-    metaTitle: "Painters in Dunchurch | Home & Cottage Painting | Roll On Painting",
-    metaDescription: "Professional painters serving Dunchurch, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
-    intro: "Roll On Painting provides reliable painting services to Dunchurch and the Whitestone area. This quiet community in the Parry Sound District offers scenic lake properties and rural homes that benefit from our professional painting expertise.",
-    localContent: "Dunchurch is a small community in the Municipality of Whitestone, surrounded by lakes and Canadian Shield landscape. Properties here include lakefront cottages, year-round homes, and rural retreats. The area's northern location means significant weather exposure — harsh winters and humid summers — making quality paint products and proper application techniques essential for lasting results.",
-    nearbyAreas: ["Parry Sound", "Ahmic Harbour", "Magnetawan", "McKellar", "Rosseau"],
-    faqs: [
-      { question: "Do you serve the Dunchurch area?", answer: "Yes. We serve Dunchurch and the surrounding Whitestone municipality with residential and cottage painting services." },
-      { question: "What exterior paints work best in Dunchurch?", answer: "We recommend premium weather-resistant paints from Benjamin Moore and Dulux, specifically formulated for Ontario's northern climate." },
-      { question: "How do I book a painting estimate in Dunchurch?", answer: "Call 705-787-1401 or email info@roll-onpainting.com. We'll schedule a free on-site estimate at your Dunchurch property." }
     ]
   },
   {
@@ -518,10 +484,10 @@ export const locationPages: LocationPageData[] = [
     metaTitle: "Painters in Magnetawan | Home & Cottage Painting | Roll On Painting",
     metaDescription: "Trusted painters in Magnetawan, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting extends our professional painting services to Magnetawan and the Magnetawan River corridor. This historic village and its surrounding cottage communities benefit from our Muskoka-based expertise and commitment to quality.",
-    localContent: "Magnetawan is a picturesque village on the Magnetawan River, known for its lock station and beautiful surrounding waterways. Properties include village homes, waterfront cottages on Ahmic Lake and Cecebe Lake, and rural retreats. The area's northern location requires painters who understand harsh weather conditions and select products accordingly — something we've perfected over 25 years of painting in Ontario's cottage country.",
-    nearbyAreas: ["Ahmic Harbour", "Burk's Falls", "Parry Sound", "Sundridge", "Kearney", "Dunchurch"],
+    localContent: "Magnetawan is a picturesque village on the Magnetawan River, known for its lock station and beautiful surrounding waterways. Properties include village homes, waterfront cottages on Cecebe Lake, and rural retreats. The area's northern location requires painters who understand harsh weather conditions and select products accordingly — something we've perfected over 25 years of painting in Ontario's cottage country.",
+    nearbyAreas: ["Burk's Falls", "Parry Sound", "Sundridge", "Kearney"],
     faqs: [
-      { question: "Do you serve Magnetawan for painting?", answer: "Yes. We serve Magnetawan and surrounding communities including properties on the Magnetawan River system, Ahmic Lake, and Cecebe Lake." },
+      { question: "Do you serve Magnetawan for painting?", answer: "Yes. We serve Magnetawan and surrounding communities including properties on the Magnetawan River system and Cecebe Lake." },
       { question: "What painting services do you offer in Magnetawan?", answer: "Full services including interior and exterior painting, staining, deck finishing, power washing, and GoNano permanent coating." },
       { question: "How much does cottage painting cost near Magnetawan?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free on-site estimate." }
     ]
@@ -608,7 +574,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painting services in Parry Sound, Ontario. Residential, commercial, and cottage painting by Roll On Painting. WSIB covered. Free estimates. 705-787-1401.",
     intro: "Roll On Painting extends our premium painting services to Parry Sound and the surrounding Georgian Bay area. With over 25 years of industry experience and a commitment to quality, we serve Parry Sound homeowners and businesses with the same exceptional results we're known for in Muskoka.",
     localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to road-accessible waterfront homes and cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful. Note: we do not service island or water-access-only properties.",
-    nearbyAreas: ["Seguin", "McKellar", "The Archipelago", "Rosseau", "Magnetawan"],
+    nearbyAreas: ["Seguin", "The Archipelago", "Rosseau", "Magnetawan"],
     faqs: [
       { question: "Do you travel to Parry Sound for painting jobs?", answer: "Yes. We regularly serve Parry Sound and surrounding communities. For larger projects, we schedule multi-day work to maximize efficiency and minimize travel costs." },
       { question: "Do you paint properties in the Georgian Bay islands?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Parry Sound and Georgian Bay area." },
@@ -625,28 +591,11 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painters serving Seguin Township near Parry Sound. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
     intro: "Roll On Painting serves Seguin Township with professional painting services. This large township between Parry Sound and Muskoka encompasses beautiful lake communities and rural properties that benefit from our 25 years of painting expertise.",
     localContent: "Seguin Township covers a vast area south of Parry Sound, including communities along the Seguin River and numerous lakes. The township features a mix of cottage properties, year-round homes, and rural retreats surrounded by the Canadian Shield landscape. Properties in Seguin face Georgian Bay-influenced weather patterns that demand quality paint products and expert application.",
-    nearbyAreas: ["Parry Sound", "Rosseau", "McKellar", "Port Carling", "MacTier", "The Archipelago"],
+    nearbyAreas: ["Parry Sound", "Rosseau", "Port Carling", "MacTier", "The Archipelago"],
     faqs: [
       { question: "Do you serve Seguin Township?", answer: "Yes. We serve Seguin Township and all its communities, from lakefront cottages to rural properties." },
       { question: "How much does painting cost in Seguin?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free on-site estimate." },
       { question: "What services do you offer in Seguin Township?", answer: "Full painting services including interior, exterior, staining, cabinet refinishing, deck finishing, power washing, and GoNano permanent coating." }
-    ]
-  },
-  {
-    slug: "painters-mckellar",
-    name: "McKellar",
-    region: "Parry Sound District",
-    postalCode: "P2A",
-    headline: "Professional Painters in McKellar, Ontario",
-    metaTitle: "Painters in McKellar | Home & Cottage Painting | Roll On Painting",
-    metaDescription: "Professional painters in McKellar, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
-    intro: "Roll On Painting provides painting services to McKellar Township near Parry Sound. This community between Georgian Bay and Muskoka offers scenic properties that deserve the professional painting quality we've delivered for 25 years.",
-    localContent: "McKellar is a township north of Parry Sound known for its lakes, forests, and peaceful rural character. Properties range from lakefront cottages on Manitouwabing Lake to year-round homes and rural retreats. The area's proximity to Georgian Bay brings weather patterns that demand durable, weather-resistant paint products — our specialty.",
-    nearbyAreas: ["Parry Sound", "Dunchurch", "Seguin", "Rosseau", "Magnetawan"],
-    faqs: [
-      { question: "Do you serve McKellar for painting?", answer: "Yes. McKellar Township is within our service area and we serve properties throughout the community." },
-      { question: "Can you paint cottages on Manitouwabing Lake?", answer: "Yes. We paint cottages on Manitouwabing Lake and other lakes in the McKellar area." },
-      { question: "How do I get a painting estimate in McKellar?", answer: "Call 705-787-1401 or email info@roll-onpainting.com to arrange your free on-site estimate." }
     ]
   },
   {
@@ -659,7 +608,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Painters serving mainland and road-accessible properties in The Archipelago area on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
     intro: "Roll On Painting serves mainland and road-accessible properties in The Archipelago area on Georgian Bay. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of weather-resistant finishing expertise.",
     localContent: "The Archipelago is one of Ontario's most unique municipalities, along the 30,000 Islands of Georgian Bay. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we do service, we use products built to withstand Georgian Bay's extreme sun, wind, and moisture exposure.",
-    nearbyAreas: ["Parry Sound", "McKellar"],
+    nearbyAreas: ["Parry Sound"],
     faqs: [
       { question: "Do you paint island properties in The Archipelago?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the area." },
       { question: "What products work best for Georgian Bay properties?", answer: "For mainland Georgian Bay properties we service, we use premium UV- and weather-resistant products from Benjamin Moore, Dulux, and Sansin, formulated for extreme exposure." },

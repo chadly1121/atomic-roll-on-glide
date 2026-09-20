@@ -51,11 +51,9 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     name: "Algonquin & North Muskoka",
     description: "Northern Muskoka and Algonquin region",
     locations: [
-      { name: "Ahmic Harbour", postalCode: "P0A 1A0" },
       { name: "Algonquin Park", postalCode: "P0A 1B0" },
       { name: "Burk's Falls", postalCode: "P0A 1C0" },
       { name: "Dorset", postalCode: "P0A 1E0" },
-      { name: "Dunchurch", postalCode: "P0A 1G0" },
       { name: "Dwight", postalCode: "P0A 1H0" },
       { name: "Emsdale", postalCode: "P0A 1J0" },
       { name: "Katrine", postalCode: "P0A 1L0" },
@@ -73,7 +71,6 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     locations: [
       { name: "Parry Sound", postalCode: "P2A" },
       { name: "Seguin", postalCode: "P2A" },
-      { name: "McKellar", postalCode: "P2A" },
       { name: "The Archipelago", postalCode: "P2A" },
     ]
   },

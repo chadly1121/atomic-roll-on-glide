@@ -157,11 +157,6 @@ const heroData: Record<string, LocationHeroInfo> = {
   // ═══════════════════════════════════════════
   // ALGONQUIN / NORTH MUSKOKA
   // ═══════════════════════════════════════════
-  "painters-ahmic-harbour": {
-    heroImage: IMGS.muskokaLake,
-    landmark: "Ahmic Lake",
-    localLove: "Ahmic Harbour is one of those magical spots where the lake meets the wilderness and everything slows down in the best possible way. The crystal-clear waters of Ahmic Lake and the friendly, close-knit community make every trip here feel like a mini escape. We love working on the charming cottages and year-round homes that dot the shoreline — each one reflecting the unique personality of its owners. This is real cottage country at its finest, and painting here is always a pleasure."
-  },
   "painters-algonquin-park": {
     heroImage: IMGS.algonquinLake,
     landmark: "Algonquin Provincial Park",
@@ -176,11 +171,6 @@ const heroData: Record<string, LocationHeroInfo> = {
     heroImage: IMGS.dorsetTower,
     landmark: "Dorset Lookout Tower",
     localLove: "Dorset is famous for its fire tower lookout, and honestly, the view from up there is one of the best in all of Ontario — especially during fall colours. But what we love most about Dorset is the community below the tower. This is a place where craftsmanship is appreciated, where homeowners maintain their properties with genuine care, and where every paint job matters. The combination of spectacular scenery and wonderful people makes Dorset one of our favourite communities to work in."
-  },
-  "painters-dunchurch": {
-    heroImage: IMGS.georgianBayCabin,
-    landmark: "Georgian Bay Cottage Country near Dunchurch",
-    localLove: "Dunchurch is off the beaten path in the best possible way — a peaceful community where the lakes are pristine and the people are as genuine as they come. We've built wonderful relationships with homeowners here who value honest work and fair dealings. The cottages and homes around Whitestone Lake and the surrounding area are beautifully maintained, and it's clear that people here take enormous pride in their properties. Painting in Dunchurch reminds us of why we love serving smaller communities."
   },
   "painters-dwight": {
     heroImage: IMGS.algonquinRidges,
@@ -240,11 +230,6 @@ const heroData: Record<string, LocationHeroInfo> = {
     heroImage: IMGS.georgianBayRocks,
     landmark: "Georgian Bay Shore near Seguin",
     localLove: "Seguin Township is a vast, beautiful area dotted with pristine lakes and surrounded by the rugged Canadian Shield. Working here means driving through some of the most spectacular scenery in Ontario on the way to every job. The properties in Seguin range from modest family cottages to expansive year-round homes, and we love the variety. The homeowners here are passionate about their properties and the natural environment that surrounds them, and that passion is something we deeply respect."
-  },
-  "painters-mckellar": {
-    heroImage: IMGS.islandQueen,
-    landmark: "Island Queen Cruise Ship, Parry Sound",
-    localLove: "McKellar is a quiet, beautiful community where the lakes are crystal clear and the living is easy. We've been fortunate to work on some stunning properties here — both lakefront cottages and charming village homes. McKellar's residents are the kind of people who notice and appreciate quality workmanship, and their feedback always makes our day. The drive into McKellar through the Shield country is gorgeous in every season, and we always look forward to projects here."
   },
   "painters-the-archipelago": {
     heroImage: IMGS.georgianBayCabin,

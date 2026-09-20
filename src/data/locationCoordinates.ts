@@ -33,11 +33,9 @@ const coords: Record<string, GeoCoordinates> = {
 
   // ALGONQUIN & NORTH MUSKOKA
   "painters-lake-of-bays":    { latitude: 45.2500, longitude: -79.0500 },
-  "painters-ahmic-harbour":   { latitude: 45.6167, longitude: -79.7167 },
   "painters-algonquin-park":  { latitude: 45.5500, longitude: -78.5000 },
   "painters-burks-falls":     { latitude: 45.6167, longitude: -79.4167 },
   "painters-dorset":          { latitude: 45.2333, longitude: -78.9333 },
-  "painters-dunchurch":       { latitude: 45.5833, longitude: -79.8833 },
   "painters-dwight":          { latitude: 45.3167, longitude: -78.9833 },
   "painters-emsdale":         { latitude: 45.4667, longitude: -79.3000 },
   "painters-katrine":         { latitude: 45.4333, longitude: -79.3167 },
@@ -51,7 +49,6 @@ const coords: Record<string, GeoCoordinates> = {
   // PARRY SOUND AREA
   "painters-parry-sound":     { latitude: 45.3432, longitude: -80.1892 },
   "painters-seguin":          { latitude: 45.2500, longitude: -79.8500 },
-  "painters-mckellar":        { latitude: 45.4333, longitude: -79.8000 },
   "painters-the-archipelago": { latitude: 45.1667, longitude: -80.0500 },
 
   // SOUTHERN EDGE
