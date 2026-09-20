@@ -33,8 +33,8 @@ best_rating: 5
 ## Service Area
 
 primary_region: Muskoka, Ontario, Canada
-coverage: 30 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, Parry Sound and Orillia
-cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Port Carling, Dorset, Baysville, Dwight, Rosseau, Bala, Parry Sound, Orillia
+coverage: 34 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, Parry Sound and Orillia
+cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Port Carling, Dorset, Baysville, Dwight, Rosseau, Bala, Parry Sound, Orillia
 
 ## Services Offered
 
@@ -144,7 +144,7 @@ notable_articles:
 6. Full insurance coverage ($5M liability + WSIB)
 7. Certified GoNano applicator for advanced surface protection
 8. AI-powered instant estimator available on website
-9. Serves 30 communities within about an hour of the Port Sydney shop
+9. Serves 34 communities within about an hour of the Port Sydney shop
 10. Specialty services: brick painting, metal roof painting, pine sealing, tannin sealing
 
 ## Pricing Guidelines
@@ -184,7 +184,7 @@ Q: Do you offer commercial painting?
 A: Yes, including after-hours and weekend service to minimize business disruption. WSIB covered.
 
 Q: What areas do you serve?
-A: 30 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia. Includes Huntsville, Bracebridge, Gravenhurst, Parry Sound and Orillia.
+A: 34 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia. Includes Huntsville, Bracebridge, Gravenhurst, Parry Sound and Orillia.
 
 Q: How do I get a quote?
 A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at roll-onpainting.com/contact, or try the free AI estimator on the website.
