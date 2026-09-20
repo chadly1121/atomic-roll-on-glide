@@ -14,6 +14,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Trash2, Plus } from "lucide-react";
 import { toast } from "sonner";
+import { trackEvent, trackEventOnce, currentPath } from "@/lib/analytics";
+
+const ANALYTICS_FORM_NAME = "quote_builder";
 
 interface LumberRow {
   id: string;
