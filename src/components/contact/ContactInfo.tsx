@@ -41,7 +41,8 @@ const ContactInfo = () => {
           <div>
             <h4 className="font-bold">Phone</h4>
             <a 
-              href="tel:+17057871401" 
+              href="tel:+17057871401"
+              data-analytics-location="contact_page"
               className="text-atomic-turquoise hover:underline active:text-atomic-turquoise/80 text-base md:text-lg flex items-center"
               aria-label="Call 705-787-1401"
             >

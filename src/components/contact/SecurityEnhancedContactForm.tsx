@@ -15,6 +15,9 @@ import { Shield, Clock, Upload, X, Loader2, FileIcon, ImageIcon } from 'lucide-r
 import RateLimitWrapper from './RateLimitWrapper';
 import CottageOwnerFields from './fields/CottageOwnerFields';
 import PrivateClientWhisper from '@/components/conversion/PrivateClientWhisper';
+import { trackEvent, trackEventOnce, currentPath } from '@/lib/analytics';
+
+const ANALYTICS_FORM_NAME = 'direct_contact_form';
 
 const formSchema = z.object({
   name: z.string()
@@ -171,6 +174,14 @@ const SecurityEnhancedContactForm = () => {
     return file.type.startsWith('image/');
   };
 
+  // Fires once per page view on the visitor's first genuine interaction with the form.
+  const handleFormStart = () => {
+    trackEventOnce(`form_start:${ANALYTICS_FORM_NAME}:${currentPath()}`, 'form_start', {
+      form_name: ANALYTICS_FORM_NAME,
+      page_path: currentPath(),
+    });
+  };
+
   const onSubmit = async (data: FormData, canSubmit: boolean) => {
     if (!canSubmit) {
       toast({
@@ -287,7 +298,15 @@ const SecurityEnhancedContactForm = () => {
           )}
           
           <Form {...form}>
-            <form onSubmit={form.handleSubmit((data) => onSubmit(data, canSubmit))} className="space-y-4">
+            <form
+              onSubmit={form.handleSubmit((data) => onSubmit(data, canSubmit))}
+              onSubmitCapture={() =>
+                trackEvent('form_submit_attempt', { form_name: ANALYTICS_FORM_NAME })
+              }
+              onFocusCapture={handleFormStart}
+              onInputCapture={handleFormStart}
+              className="space-y-4"
+            >
               {/* Honeypot field - hidden from users */}
               <FormField
                 control={form.control}

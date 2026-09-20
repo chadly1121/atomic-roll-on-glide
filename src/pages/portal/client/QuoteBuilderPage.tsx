@@ -14,6 +14,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Trash2, Plus } from "lucide-react";
 import { toast } from "sonner";
+import { trackEvent, trackEventOnce, currentPath } from "@/lib/analytics";
+
+const ANALYTICS_FORM_NAME = "quote_builder";
 
 interface LumberRow {
   id: string;
@@ -114,7 +117,24 @@ export default function QuoteBuilderPage() {
   const updateShake = (id: string, patch: Partial<ShakeRow>) =>
     setShakeRows((rows) => rows.map((r) => (r.id === id ? { ...r, ...patch } : r)));
 
+  const trackFormStart = () =>
+    trackEventOnce(`form_start:${ANALYTICS_FORM_NAME}:${currentPath()}`, "form_start", {
+      form_name: ANALYTICS_FORM_NAME,
+      page_path: currentPath(),
+    });
+
+  const handleTabChange = (v: string) => {
+    trackFormStart();
+    setTab(v as any);
+    trackEvent("form_step", {
+      form_name: ANALYTICS_FORM_NAME,
+      step_number: v === "lumber" ? 1 : 2,
+      step_name: v,
+    });
+  };
+
   const submit = async () => {
+    trackEvent("form_submit_attempt", { form_name: ANALYTICS_FORM_NAME });
     if (!client) return toast.error("Account not ready. Try again.");
     if (!projectName.trim()) return toast.error("Project name is required.");
 
@@ -214,7 +234,7 @@ export default function QuoteBuilderPage() {
   }
 
   return (
-    <div className="space-y-6 max-w-6xl">
+    <div className="space-y-6 max-w-6xl" onFocusCapture={trackFormStart} onInputCapture={trackFormStart}>
       <PageHeader
         title="New Quote"
         description="Build your line items below. Pricing updates live; submit when ready for review."
@@ -236,7 +256,7 @@ export default function QuoteBuilderPage() {
         </CardContent>
       </Card>
 
-      <Tabs value={tab} onValueChange={(v) => setTab(v as any)}>
+      <Tabs value={tab} onValueChange={handleTabChange}>
         <TabsList>
           <TabsTrigger value="lumber">Lumber / MDF</TabsTrigger>
           <TabsTrigger value="cedar_shake">Cedar Shake</TabsTrigger>
