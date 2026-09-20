@@ -199,7 +199,7 @@ export const locationPages: LocationPageData[] = [
     slug: "painters-port-sydney",
     name: "Port Sydney",
     region: "Muskoka",
-    postalCode: "P0B 1L0",
+    postalCode: "P0B 1M0",
     headline: "Professional Painters in Port Sydney, Muskoka",
     metaTitle: "Painters in Port Sydney | Roll On Painting | Interior & Exterior",
     metaDescription: "Professional painters in Port Sydney, Muskoka. Interior, exterior, spray finishes, and cabinet painting. 25+ years experience. Free quotes. Call 705-787-1401.",
@@ -244,7 +244,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Trusted painters in MacTier, Ontario. Interior, exterior, and cottage painting services. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting provides professional painting services throughout MacTier and the surrounding area. Located on the rail line between Muskoka and Parry Sound, MacTier is a gateway community with beautiful properties that deserve quality painting.",
     localContent: "MacTier is a historic railway village nestled between Lake Muskoka and Georgian Bay. The community offers a mix of charming village homes, rural properties, and nearby cottage retreats. Many MacTier homes feature classic Ontario architecture that benefits from careful paint selection and expert application. We bring our Muskoka expertise to every MacTier project, ensuring weather-resistant finishes that protect your investment.",
-    nearbyAreas: ["Bala", "Rosseau", "Parry Sound", "Port Carling", "Torrance", "Georgian Bay"],
+    nearbyAreas: ["Bala", "Rosseau", "Parry Sound", "Port Carling", "Torrance"],
     faqs: [
       { question: "Do you serve MacTier for painting?", answer: "Yes. We regularly serve MacTier and surrounding communities with residential, cottage, and commercial painting services." },
       { question: "How much does exterior painting cost in MacTier?", answer: "Exterior painting in MacTier starts at $5.75/sq ft. Contact us for a free on-site estimate based on your property's size and condition." },
@@ -278,7 +278,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painters serving Torrance, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting serves Torrance and the surrounding area with reliable, professional painting services. Located in the heart of Muskoka's lake country, Torrance properties benefit from our 25 years of local painting expertise.",
     localContent: "Torrance is a small community south of Bala, surrounded by lakes and forests typical of the Muskoka landscape. Properties here include year-round homes, seasonal cottages, and rural retreats. The area's natural beauty and Muskoka weather patterns require durable, quality paint products applied with professional expertise. Our team serves Torrance regularly and understands what works in this environment.",
-    nearbyAreas: ["Bala", "Gravenhurst", "MacTier", "Port Severn", "Severn", "Port Carling"],
+    nearbyAreas: ["Bala", "Gravenhurst", "MacTier", "Severn", "Port Carling"],
     faqs: [
       { question: "Do you travel to Torrance for painting projects?", answer: "Yes. Torrance is within our core service area and we regularly complete projects here. Travel costs are minimal for Torrance jobs." },
       { question: "What painting do you do in Torrance?", answer: "We offer interior and exterior painting, staining, deck finishing, power washing, and all our other services in the Torrance area." },
@@ -434,7 +434,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painters serving Dunchurch, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
     intro: "Roll On Painting provides reliable painting services to Dunchurch and the Whitestone area. This quiet community in the Parry Sound District offers scenic lake properties and rural homes that benefit from our professional painting expertise.",
     localContent: "Dunchurch is a small community in the Municipality of Whitestone, surrounded by lakes and Canadian Shield landscape. Properties here include lakefront cottages, year-round homes, and rural retreats. The area's northern location means significant weather exposure — harsh winters and humid summers — making quality paint products and proper application techniques essential for lasting results.",
-    nearbyAreas: ["Parry Sound", "Ahmic Harbour", "Magnetawan", "McKellar", "Nobel", "Rosseau"],
+    nearbyAreas: ["Parry Sound", "Ahmic Harbour", "Magnetawan", "McKellar", "Rosseau"],
     faqs: [
       { question: "Do you serve the Dunchurch area?", answer: "Yes. We serve Dunchurch and the surrounding Whitestone municipality with residential and cottage painting services." },
       { question: "What exterior paints work best in Dunchurch?", answer: "We recommend premium weather-resistant paints from Benjamin Moore and Dulux, specifically formulated for Ontario's northern climate." },
@@ -608,7 +608,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painting services in Parry Sound, Ontario. Residential, commercial, and cottage painting by Roll On Painting. WSIB covered. Free estimates. 705-787-1401.",
     intro: "Roll On Painting extends our premium painting services to Parry Sound and the surrounding Georgian Bay area. With over 25 years of industry experience and a commitment to quality, we serve Parry Sound homeowners and businesses with the same exceptional results we're known for in Muskoka.",
     localContent: "Parry Sound sits on the shores of Georgian Bay, known for the 30,000 Islands and stunning natural scenery. From downtown commercial buildings to road-accessible waterfront homes and cottages, Parry Sound properties face unique weather exposure that demands quality paint application. Our experience with Georgian Bay's wind, moisture, and UV conditions ensures your property stays protected and beautiful. Note: we do not service island or water-access-only properties.",
-    nearbyAreas: ["Seguin", "McKellar", "Nobel", "The Archipelago", "Rosseau", "Magnetawan"],
+    nearbyAreas: ["Seguin", "McKellar", "The Archipelago", "Rosseau", "Magnetawan"],
     faqs: [
       { question: "Do you travel to Parry Sound for painting jobs?", answer: "Yes. We regularly serve Parry Sound and surrounding communities. For larger projects, we schedule multi-day work to maximize efficiency and minimize travel costs." },
       { question: "Do you paint properties in the Georgian Bay islands?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages throughout the Parry Sound and Georgian Bay area." },
@@ -642,7 +642,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painters in McKellar, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting provides painting services to McKellar Township near Parry Sound. This community between Georgian Bay and Muskoka offers scenic properties that deserve the professional painting quality we've delivered for 25 years.",
     localContent: "McKellar is a township north of Parry Sound known for its lakes, forests, and peaceful rural character. Properties range from lakefront cottages on Manitouwabing Lake to year-round homes and rural retreats. The area's proximity to Georgian Bay brings weather patterns that demand durable, weather-resistant paint products — our specialty.",
-    nearbyAreas: ["Parry Sound", "Dunchurch", "Nobel", "Seguin", "Rosseau", "Magnetawan"],
+    nearbyAreas: ["Parry Sound", "Dunchurch", "Seguin", "Rosseau", "Magnetawan"],
     faqs: [
       { question: "Do you serve McKellar for painting?", answer: "Yes. McKellar Township is within our service area and we serve properties throughout the community." },
       { question: "Can you paint cottages on Manitouwabing Lake?", answer: "Yes. We paint cottages on Manitouwabing Lake and other lakes in the McKellar area." },
@@ -659,7 +659,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Painters serving mainland and road-accessible properties in The Archipelago area on Georgian Bay. WSIB covered, $5M insured. Free quotes. 705-787-1401.",
     intro: "Roll On Painting serves mainland and road-accessible properties in The Archipelago area on Georgian Bay. We do not service island or water-access-only properties. For homes and cottages reachable by road, we bring 25 years of weather-resistant finishing expertise.",
     localContent: "The Archipelago is one of Ontario's most unique municipalities, along the 30,000 Islands of Georgian Bay. We paint mainland and road-accessible homes and cottages in the area — we do not take on island or water-access-only projects. For properties we do service, we use products built to withstand Georgian Bay's extreme sun, wind, and moisture exposure.",
-    nearbyAreas: ["Parry Sound", "Nobel", "Pointe au Baril", "Britt", "Georgian Bay", "McKellar"],
+    nearbyAreas: ["Parry Sound", "McKellar"],
     faqs: [
       { question: "Do you paint island properties in The Archipelago?", answer: "No. We do not service island or water-access-only properties. We paint mainland and road-accessible homes and cottages in the area." },
       { question: "What products work best for Georgian Bay properties?", answer: "For mainland Georgian Bay properties we service, we use premium UV- and weather-resistant products from Benjamin Moore, Dulux, and Sansin, formulated for extreme exposure." },
@@ -667,7 +667,7 @@ export const locationPages: LocationPageData[] = [
     ]
   },
   // ═══════════════════════════════════════════
-  // SIMCOE COUNTY & BARRIE
+  // SOUTHERN EDGE
   // ═══════════════════════════════════════════
   {
     slug: "painters-orillia",
@@ -679,7 +679,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painting services in Orillia, Ontario. Interior, exterior, and commercial painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting serves Orillia with premium painting services. Known as the Sunshine City, Orillia is the southern gateway to cottage country and a growing city with diverse residential and commercial painting needs that our 25 years of experience can address.",
     localContent: "Orillia sits between Lake Couchiching and Lake Simcoe, making it a vibrant lakefront city with everything from downtown heritage buildings to modern suburban developments and waterfront properties. We serve Orillia regularly, bringing the same quality painting standards that made us Muskoka's most trusted painting company. Whether it's a historic home on Mississaga Street or a new build in the south end, we deliver lasting results.",
-    nearbyAreas: ["Ramara", "Severn", "Oro-Medonte", "Gravenhurst", "Barrie", "Midland"],
+    nearbyAreas: ["Severn", "Gravenhurst"],
     faqs: [
       { question: "Do you serve Orillia for painting?", answer: "Yes. Orillia is a key service area and we regularly complete residential, commercial, and cottage painting projects throughout the city." },
       { question: "How much does house painting cost in Orillia?", answer: "Interior painting in Orillia starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free on-site estimate." },
@@ -699,7 +699,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Premium painting services for Six Mile Lake cottages and homes. Owner Chad Gilchrist is a former Six Mile Lake cottage owner. WSIB covered. Free quotes. 705-787-1401.",
     intro: "Roll On Painting provides premium painting services for Six Mile Lake — and this one's personal. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake, with deep ties and lasting friendships throughout the community. When we paint your cottage or home on Six Mile Lake, we bring not just 25 years of professional expertise, but a genuine love for this lake and the people who call it home.",
     localContent: "Six Mile Lake sits in the Township of Georgian Bay, a beautiful and accessible lake just off Highway 400 that has attracted generations of cottagers. From the docks at Wawautosa Marina — the lake's beloved full-service marina since the 1950s — to the shores of Six Mile Lake Provincial Park, this community is tight-knit and welcoming. Chad's years as a cottage owner here mean we understand the lake's unique character: the granite shorelines, the mature tree canopy, the mix of classic cottages and modern builds. We know the weather patterns, the water exposure, and exactly what products and techniques deliver lasting results in this environment. Many of our Six Mile Lake clients are friends and neighbours, and we treat every project with the care and attention that comes from being part of the community.",
-    nearbyAreas: ["Port Severn", "Honey Harbour", "Coldwater", "Waubaushene", "Severn Bridge", "Georgian Bay", "Midland"],
+    nearbyAreas: ["Severn Bridge"],
     faqs: [
       { question: "Is Roll On Painting connected to Six Mile Lake?", answer: "Yes. Owner Chad Gilchrist is a former cottage owner on Six Mile Lake with deep personal ties to the community. Many of our clients on the lake are long-time friends and neighbours." },
       { question: "How much does cottage painting cost on Six Mile Lake?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate specific to your Six Mile Lake property." },
@@ -724,7 +724,7 @@ export const locationPages: LocationPageData[] = [
     metaDescription: "Professional painting services in Severn Bridge, Ontario. Interior, exterior, cottage painting & specialty coatings. WSIB covered. Free quotes. 705-787-1401.",
     intro: "Roll On Painting serves Severn Bridge and the surrounding Severn River corridor with premium painting services. Located where Muskoka meets Simcoe County, this welcoming community is home to beautiful riverfront properties that deserve expert care.",
     localContent: "Severn Bridge is a small, close-knit community straddling the Severn River, situated at the southern gateway to Muskoka. The village sits at the junction of Highway 11 and the Severn River, making it a natural crossroads between cottage country and the south. Properties here range from classic Ontario village homes to waterfront retreats along the Severn River corridor, and the area attracts both year-round residents and seasonal visitors who love the river lifestyle. The Severn River itself is a major draw — part of the historic Trent-Severn Waterway, it offers boating, fishing, and paddling right from the village. The surrounding landscape is classic Canadian Shield: granite outcroppings, mixed forests, and pristine waterways. We've been painting homes and cottages in the Severn Bridge area for over two decades, and we understand how the river environment affects exterior paint longevity. We use premium products from Benjamin Moore, Dulux, and PPG that are formulated for the moisture and temperature swings common in this corridor. Every project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property.",
-    nearbyAreas: ["Washago", "Gravenhurst", "Orillia", "Coldwater", "Port Severn", "Six Mile Lake", "Muskoka Lakes"],
+    nearbyAreas: ["Washago", "Gravenhurst", "Orillia", "Six Mile Lake", "Muskoka Lakes"],
     faqs: [
       { question: "Do you paint riverfront properties in Severn Bridge?", answer: "Yes. Waterfront and riverfront painting is one of our specialties. We use premium, moisture-resistant products that stand up to the Severn River environment." },
       { question: "How much does painting cost in Severn Bridge?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate for your Severn Bridge property." },

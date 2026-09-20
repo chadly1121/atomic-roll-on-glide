@@ -61,7 +61,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-bold">Location</h4>
-            <p>836 Greer Road, Port Sydney, Ontario P0B 1L0, Canada</p>
+            <p>836 Greer Road, Port Sydney, Ontario P0B 1M0, Canada</p>
             <p className="mt-1 text-sm md:text-base opacity-70">Serving Muskoka and surrounding areas</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-bold">Working Hours</h4>
-            <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
             <p>Saturday: 10:00 AM - 2:00 PM</p>
             <p>Sunday: By appointment only</p>
           </div>

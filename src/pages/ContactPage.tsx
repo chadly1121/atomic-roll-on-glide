@@ -58,7 +58,7 @@ const ContactPage = () => {
           "latitude": businessInfo.geo.latitude,
           "longitude": businessInfo.geo.longitude
         },
-        "openingHours": ["Mo-Fr 07:00-17:00", "Sa 10:00-14:00"],
+        "openingHours": ["Mo-Fr 08:00-17:00", "Sa 10:00-14:00"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": businessInfo.phone.international,
