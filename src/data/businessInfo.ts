@@ -65,7 +65,7 @@ export const businessInfo = {
       "Parry Sound",
       "Orillia"
     ],
-    totalLocations: 33, // Full count from serviceAreas.ts
+    totalLocations: 30, // Full count from serviceAreas.ts
     description: "Serving communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia"
   },
   
@@ -223,7 +223,7 @@ export const verifiedFAQs = [
   },
   {
     question: "What areas does Roll On Painting serve?",
-    answer: "We work within about an hour of our Port Sydney shop — 33 communities across Muskoka and Almaguin, and as far as Parry Sound and Orillia. That includes Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound and Orillia."
+    answer: "We work within about an hour of our Port Sydney shop — 30 communities across Muskoka and Almaguin, and as far as Parry Sound and Orillia. That includes Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound and Orillia."
   },
   {
     question: "Are you insured and WSIB covered?",
