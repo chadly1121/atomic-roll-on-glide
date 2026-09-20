@@ -96,7 +96,7 @@ const CottageOwnerPageTemplate: React.FC<CottageOwnerPageTemplateProps> = ({ pag
               <ArrowLeft className="w-4 h-4" />
               Roll On Painting
             </Link>
-            <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 text-white hover:text-atomic-turquoise transition-colors">
+            <a href={`tel:${businessInfo.phone.tel}`} data-analytics-location="header" className="inline-flex items-center gap-2 text-white hover:text-atomic-turquoise transition-colors">
               <Phone className="w-4 h-4" />
               <span className="hidden sm:inline">{businessInfo.phone.formatted}</span>
             </a>
@@ -131,6 +131,7 @@ const CottageOwnerPageTemplate: React.FC<CottageOwnerPageTemplateProps> = ({ pag
                 </Link>
                 <a
                   href={`tel:${businessInfo.phone.tel}`}
+                  data-analytics-location="hero"
                   className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors backdrop-blur-sm"
                 >
                   <Phone className="w-4 h-4" />
