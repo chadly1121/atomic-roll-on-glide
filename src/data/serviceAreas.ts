@@ -25,15 +25,18 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     name: "Muskoka Core",
     description: "Heart of Muskoka cottage country",
     locations: [
-      { name: "Huntsville", postalCode: "P1H" },
-      { name: "Gravenhurst", postalCode: "P1P" },
-      { name: "Bracebridge", postalCode: "P1L" },
       { name: "Baysville", postalCode: "P0B 1A0" },
+      { name: "Bracebridge", postalCode: "P1L" },
+      { name: "Gravenhurst", postalCode: "P1P" },
+      { name: "Huntsville", postalCode: "P1H" },
+      { name: "Lake of Bays", postalCode: "P0B 1A0" },
       { name: "Milford Bay", postalCode: "P0B 1E0" },
       { name: "Minett", postalCode: "P0B 1G0" },
+      { name: "Muskoka Lakes", postalCode: "P0B 1J0" },
       { name: "Port Carling", postalCode: "P0B 1J0" },
       { name: "Port Sandfield", postalCode: "P0B 1K0" },
       { name: "Port Sydney", postalCode: "P0B 1M0" },
+      { name: "Utterson", postalCode: "P0B 1M0" },
       { name: "Windermere", postalCode: "P0B 1P0" },
     ]
   },
@@ -79,6 +82,7 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     description: "Southern gateway to cottage country",
     locations: [
       { name: "Orillia", postalCode: "L3V" },
+      { name: "Severn Bridge", postalCode: "P0E 1N0" },
     ]
   }
 ];
