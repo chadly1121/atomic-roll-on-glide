@@ -54,7 +54,7 @@ const ServiceAreaBlock: React.FC = () => {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-atomic-turquoise flex-shrink-0" aria-hidden="true" />
-                  <a href={`tel:${businessInfo.phone.tel}`} className="text-atomic-navy hover:text-atomic-turquoise">
+                  <a href={`tel:${businessInfo.phone.tel}`} data-analytics-location="service_areas" className="text-atomic-navy hover:text-atomic-turquoise">
                     {businessInfo.phone.formatted}
                   </a>
                 </li>

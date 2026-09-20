@@ -105,7 +105,7 @@ const FAQPage: React.FC = () => {
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-atomic-turquoise text-white px-8 py-3 rounded-lg font-medium hover:bg-atomic-turquoise/90 transition-colors">
                   Contact Us
                 </Link>
-                <a href={`tel:${businessInfo.phone.tel}`} className="text-white/80 hover:text-white transition-colors">
+                <a href={`tel:${businessInfo.phone.tel}`} data-analytics-location="faq" className="text-white/80 hover:text-white transition-colors">
                   Or call {businessInfo.phone.formatted}
                 </a>
               </div>
