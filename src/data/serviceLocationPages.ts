@@ -1817,7 +1817,6 @@ export const serviceLocationPages: ServicePageData[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════
-  // BARRIE — 4 service+town combo pages (exterior, interior, cabinet, deck staining)
   // ═══════════════════════════════════════════════════════════════
 ];
 
