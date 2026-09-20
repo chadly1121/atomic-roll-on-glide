@@ -345,7 +345,7 @@ export const localBlogPosts: LocalPost[] = [
 <h2>We're Your Neighbours. We Know What This Feels Like.</h2>
 <p>We've been part of Muskoka since 1999. We've watched the lakes through good springs and brutal ones. The low-lying area near Huntsville's Main Street bridge and the Town Dock went underwater this spring, and major closures included Town Dock Park, Hunter's Bay Trail, and Avery Beach. We've had clients calling us all week.</p>
 <p>This is hard. And the recovery is going to take time. But when you're ready — when the wood is dry and the conditions are right — doing this properly will protect your investment for years to come.</p>
-<p>Roll On Painting serves lakefront properties across Huntsville, Bracebridge, Port Carling, Lake of Bays, and 48 communities across Muskoka and Parry Sound District. Chad Gilchrist and his crew have 25+ years of experience with exactly this kind of exterior wood work, in exactly these conditions.</p>
+<p>Roll On Painting serves lakefront properties across Huntsville, Bracebridge, Port Carling, Lake of Bays, and 33 communities within about an hour of our Port Sydney shop. Chad Gilchrist and his crew have 25+ years of experience with exactly this kind of exterior wood work, in exactly these conditions.</p>
 <p>When you're ready for your free assessment, reach out at <a href="tel:+17057871401">705-787-1401</a> or book through <a href="/contact">roll-onpainting.com/contact</a>. We'll come to you, assess the damage, and give you a straight answer about what needs to happen — in the right order.</p>`,
   },
   {
@@ -576,7 +576,6 @@ export const localBlogPosts: LocalPost[] = [
   <li>Huntsville</li>
   <li>Bracebridge</li>
   <li>Muskoka</li>
-  <li>Georgian Bay</li>
 </ul>
 
 <h2>Bottom Line</h2>
@@ -784,7 +783,6 @@ export const localBlogPosts: LocalPost[] = [
   <li>Huntsville</li>
   <li>Bracebridge</li>
   <li>Muskoka</li>
-  <li>Georgian Bay</li>
 </ul>
 
 <h2>Final Take</h2>
@@ -920,7 +918,7 @@ export const localBlogPosts: LocalPost[] = [
 
 <h2>Service Area</h2>
 <p>Roll On Painting serves:</p>
-<ul><li>Port Sydney</li><li>Huntsville</li><li>Bracebridge</li><li>All of Muskoka</li><li>Georgian Bay properties</li></ul>
+<ul><li>Port Sydney</li><li>Huntsville</li><li>Bracebridge</li><li>All of Muskoka</li></ul>
 <p>If you've got a dock or deck, this applies to you.</p>
 
 <h2>Final Take</h2>

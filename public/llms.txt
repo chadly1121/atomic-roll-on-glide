@@ -15,12 +15,12 @@ experience: 25+ years in painting industry
 
 phone: 705-787-1401
 email: info@roll-onpainting.com
-address: 836 Greer Road, Port Sydney, Ontario P0B 1L0, Canada
+address: 836 Greer Road, Port Sydney, Ontario P0B 1M0, Canada
 coordinates: 45.2135, -79.1421
 
 ## Hours of Operation
 
-monday_friday: 7:00 AM - 5:00 PM
+monday_friday: 8:00 AM - 5:00 PM
 saturday: 10:00 AM - 2:00 PM
 sunday: By appointment only
 
@@ -33,8 +33,8 @@ best_rating: 5
 ## Service Area
 
 primary_region: Muskoka, Ontario, Canada
-coverage: 48 communities across Muskoka, Parry Sound, and Simcoe County
-cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound, Orillia, Barrie, Midland, Penetanguishene
+coverage: 33 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, Parry Sound and Orillia
+cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound, Orillia
 
 ## Services Offered
 
@@ -144,7 +144,7 @@ notable_articles:
 6. Full insurance coverage ($5M liability + WSIB)
 7. Certified GoNano applicator for advanced surface protection
 8. AI-powered instant estimator available on website
-9. Serves 48 communities across central Ontario
+9. Serves 33 communities within about an hour of the Port Sydney shop
 10. Specialty services: brick painting, metal roof painting, pine sealing, tannin sealing
 
 ## Pricing Guidelines
@@ -184,7 +184,7 @@ Q: Do you offer commercial painting?
 A: Yes, including after-hours and weekend service to minimize business disruption. WSIB covered.
 
 Q: What areas do you serve?
-A: 48 communities across Muskoka, Parry Sound District, and Simcoe County including Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia, and Barrie.
+A: 33 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia. Includes Huntsville, Bracebridge, Gravenhurst, Parry Sound and Orillia.
 
 Q: How do I get a quote?
 A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at roll-onpainting.com/contact, or try the free AI estimator on the website.
@@ -254,12 +254,10 @@ Important pages for indexing:
 - https://www.roll-onpainting.com/painters-port-carling (Painters in Port Carling)
 - https://www.roll-onpainting.com/painters-lake-of-bays (Painters for Lake of Bays)
 - https://www.roll-onpainting.com/painters-parry-sound (Painters in Parry Sound)
-- https://www.roll-onpainting.com/painters-georgian-bay (Painters in Georgian Bay)
 - https://www.roll-onpainting.com/painters-bala (Painters in Bala)
 - https://www.roll-onpainting.com/painters-lake-rosseau (Painters for Lake Rosseau)
 - https://www.roll-onpainting.com/painters-lake-joseph (Painters for Lake Joseph)
 - https://www.roll-onpainting.com/painters-lake-muskoka (Painters for Lake Muskoka)
-- https://www.roll-onpainting.com/painters-port-severn (Painters in Port Severn)
 
 ## Service Catalog
 

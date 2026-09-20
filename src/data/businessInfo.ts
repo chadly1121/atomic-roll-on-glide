@@ -35,7 +35,7 @@ export const businessInfo = {
     city: "Port Sydney",
     region: "Ontario",
     regionCode: "ON",
-    postalCode: "P0B 1L0",
+    postalCode: "P0B 1M0",
     country: "Canada",
     countryCode: "CA",
     full: "836 Greer Road, Port Sydney, Ontario, Canada"
@@ -50,7 +50,7 @@ export const businessInfo = {
   // Service Area (primary display list - full list in src/data/serviceAreas.ts)
   serviceArea: {
     primary: "Muskoka",
-    regions: ["Muskoka", "Parry Sound District", "Simcoe County"],
+    regions: ["Muskoka", "Almaguin Highlands", "Parry Sound", "Orillia"],
     cities: [
       "Huntsville",
       "Port Sydney",
@@ -63,20 +63,19 @@ export const businessInfo = {
       "Dwight",
       "Rosseau",
       "Parry Sound",
-      "Orillia",
-      "Barrie"
+      "Orillia"
     ],
-    totalLocations: 48, // Full count from serviceAreas.ts
-    description: "Serving Muskoka, Parry Sound, and Simcoe County in Ontario, Canada"
+    totalLocations: 33, // Full count from serviceAreas.ts
+    description: "Serving communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia"
   },
   
   // Operating Hours
   hours: {
-    weekdays: { open: "07:00", close: "17:00" },
+    weekdays: { open: "08:00", close: "17:00" },
     saturday: { open: "10:00", close: "14:00" },
     sunday: "By appointment only",
     formatted: [
-      "Monday - Friday: 7:00 AM - 5:00 PM",
+      "Monday - Friday: 8:00 AM - 5:00 PM",
       "Saturday: 10:00 AM - 2:00 PM",
       "Sunday: By appointment only"
     ]
@@ -224,7 +223,7 @@ export const verifiedFAQs = [
   },
   {
     question: "What areas does Roll On Painting serve?",
-    answer: "We serve Muskoka and surrounding areas including Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, and Rosseau in Ontario, Canada."
+    answer: "We work within about an hour of our Port Sydney shop — 33 communities across Muskoka and Almaguin, and as far as Parry Sound and Orillia. That includes Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound and Orillia."
   },
   {
     question: "Are you insured and WSIB covered?",

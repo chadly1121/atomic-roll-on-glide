@@ -4,7 +4,9 @@
  * This data powers the hidden /service-areas page for AI search engines
  * and the areaServed schema in structured data.
  * 
- * Last updated: February 2025
+ * Coverage: within about an hour's drive of our Port Sydney shop.
+ *
+ * Last updated: September 20, 2026
  */
 
 export interface ServiceAreaLocation {
@@ -31,14 +33,13 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
       { name: "Minett", postalCode: "P0B 1G0" },
       { name: "Port Carling", postalCode: "P0B 1J0" },
       { name: "Port Sandfield", postalCode: "P0B 1K0" },
-      { name: "Port Sydney", postalCode: "P0B 1L0" },
-      { name: "Utterson", postalCode: "P0B 1M0" },
+      { name: "Port Sydney", postalCode: "P0B 1M0" },
       { name: "Windermere", postalCode: "P0B 1P0" },
     ]
   },
   {
-    name: "Lake Muskoka & Georgian Bay",
-    description: "Western Muskoka and Georgian Bay shoreline",
+    name: "West Muskoka",
+    description: "Western Muskoka lakes and villages",
     locations: [
       { name: "Bala", postalCode: "P0C 1A0" },
       { name: "MacTier", postalCode: "P0C 1H0" },
@@ -67,32 +68,20 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     ]
   },
   {
-    name: "Parry Sound & Georgian Bay Islands",
-    description: "Parry Sound district and mainland shoreline communities",
+    name: "Parry Sound Area",
+    description: "Parry Sound and nearby mainland townships",
     locations: [
       { name: "Parry Sound", postalCode: "P2A" },
       { name: "Seguin", postalCode: "P2A" },
       { name: "McKellar", postalCode: "P2A" },
       { name: "The Archipelago", postalCode: "P2A" },
-      { name: "Britt", postalCode: "P0G 1A0" },
-      { name: "Byng Inlet", postalCode: "P0G 1B0" },
-      { name: "Nobel", postalCode: "P0G 1G0" },
-      { name: "Pickerel", postalCode: "P0G 1J0" },
-      { name: "Pointe au Baril", postalCode: "P0G 1K0" },
     ]
   },
   {
-    name: "Simcoe County & Barrie",
+    name: "Southern Edge",
     description: "Southern gateway to cottage country",
     locations: [
       { name: "Orillia", postalCode: "L3V" },
-      { name: "Oro-Medonte", postalCode: "L3V" },
-      { name: "Ramara", postalCode: "L3V" },
-      { name: "Severn", postalCode: "L3V" },
-      { name: "Warminster", postalCode: "L3V" },
-      { name: "Barrie", postalCode: "L4M" },
-      { name: "Midland", postalCode: "L4R" },
-      { name: "Penetanguishene", postalCode: "L9M" },
     ]
   }
 ];
@@ -115,6 +104,5 @@ export const primaryServiceCities = [
   "Dwight",
   "Rosseau",
   "Parry Sound",
-  "Orillia",
-  "Barrie"
+  "Orillia"
 ];

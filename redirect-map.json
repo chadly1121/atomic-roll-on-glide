@@ -303,5 +303,115 @@
     "source": "/catalog",
     "destination": "/portfolio",
     "status": 301
+  },
+  {
+    "source": "/painters-georgian-bay",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-britt",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-byng-inlet",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-nobel",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-pickerel",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-pointe-au-baril",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-oro-medonte",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-ramara",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-severn",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-warminster",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-barrie",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-midland",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-penetanguishene",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-port-severn",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-coldwater",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-honey-harbour",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-waubaushene",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-victoria-harbour",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/exterior-painting-barrie",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/interior-painting-barrie",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/cabinet-painting-barrie",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/deck-staining-barrie",
+    "destination": "/service-areas",
+    "status": 301
   }
 ]

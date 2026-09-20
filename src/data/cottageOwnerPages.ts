@@ -77,7 +77,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
     sections: [
       {
         heading: "For Oakville Homeowners with Muskoka Properties",
-        body: "Oakville families with cottages on Lake Muskoka, Lake Rosseau, and Georgian Bay know the challenge: managing property maintenance from two hours away. We eliminate that burden. Our team handles everything on-site — inspections, preparation, painting, staining, and seasonal upkeep — so your cottage is maintained year-round without requiring your time.",
+        body: "Oakville families with cottages on Lake Muskoka, Lake Rosseau, and Lake of Bays know the challenge: managing property maintenance from two hours away. We eliminate that burden. Our team handles everything on-site — inspections, preparation, painting, staining, and seasonal upkeep — so your cottage is maintained year-round without requiring your time.",
       },
       {
         heading: "We Manage Access, Scheduling, and Updates",

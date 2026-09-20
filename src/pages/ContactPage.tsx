@@ -58,7 +58,7 @@ const ContactPage = () => {
           "latitude": businessInfo.geo.latitude,
           "longitude": businessInfo.geo.longitude
         },
-        "openingHours": ["Mo-Fr 07:00-17:00", "Sa 10:00-14:00"],
+        "openingHours": ["Mo-Fr 08:00-17:00", "Sa 10:00-14:00"],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": businessInfo.phone.international,
@@ -152,7 +152,7 @@ const ContactPage = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold text-atomic-navy mb-4">Serving Muskoka & Surrounding Areas</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              We serve {businessInfo.serviceArea.totalLocations} communities across {businessInfo.serviceArea.primary}, Parry Sound, and Simcoe County.
+              We serve {businessInfo.serviceArea.totalLocations} communities within about an hour of our Port Sydney shop — {businessInfo.serviceArea.primary}, Almaguin, and as far as Parry Sound and Orillia.
             </p>
             <Link to="/service-areas" className="inline-flex items-center gap-2 text-atomic-turquoise font-medium hover:text-atomic-navy transition-colors">
               View All Service Areas →

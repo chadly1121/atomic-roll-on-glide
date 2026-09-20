@@ -32,19 +32,14 @@ const locationLinks = [
   { keywords: ['baysville'], url: '/painters-baysville', label: 'Painters in Baysville' },
   { keywords: ['dwight'], url: '/painters-dwight', label: 'Painters in Dwight' },
   { keywords: ['lake of bays'], url: '/painters-lake-of-bays', label: 'Painters in Lake of Bays' },
-  { keywords: ['georgian bay'], url: '/painters-georgian-bay', label: 'Painters in Georgian Bay' },
   { keywords: ['bala'], url: '/painters-bala', label: 'Painters in Bala' },
   { keywords: ['rosseau', 'lake rosseau'], url: '/painters-lake-rosseau', label: 'Painters in Lake Rosseau' },
   { keywords: ['lake joseph'], url: '/painters-lake-joseph', label: 'Painters in Lake Joseph' },
   { keywords: ['port sydney'], url: '/painters-port-sydney', label: 'Painters in Port Sydney' },
-  { keywords: ['barrie'], url: '/painters-barrie', label: 'Painters in Barrie' },
   { keywords: ['orillia'], url: '/painters-orillia', label: 'Painters in Orillia' },
-  { keywords: ['midland'], url: '/painters-midland', label: 'Painters in Midland' },
-  { keywords: ['penetanguishene'], url: '/painters-penetanguishene', label: 'Painters in Penetanguishene' },
   { keywords: ['windermere'], url: '/painters-windermere', label: 'Painters in Windermere' },
   { keywords: ['minett'], url: '/painters-minett', label: 'Painters in Minett' },
   { keywords: ['muskoka lakes', 'muskoka lake'], url: '/painters-lake-muskoka', label: 'Painters in Lake Muskoka' },
-  { keywords: ['severn', 'port severn'], url: '/painters-severn', label: 'Painters in Severn' },
   { keywords: ['torrance'], url: '/painters-torrance', label: 'Painters in Torrance' },
   { keywords: ['milford bay'], url: '/painters-milford-bay', label: 'Painters in Milford Bay' },
   { keywords: ['utterson'], url: '/painters-utterson', label: 'Painters in Utterson' },
@@ -55,8 +50,6 @@ const locationLinks = [
   { keywords: ['magnetawan'], url: '/painters-magnetawan', label: 'Painters in Magnetawan' },
   { keywords: ['kearney'], url: '/painters-kearney', label: 'Painters in Kearney' },
   { keywords: ['novar'], url: '/painters-novar', label: 'Painters in Novar' },
-  { keywords: ['oro-medonte', 'oro medonte'], url: '/painters-oro-medonte', label: 'Painters in Oro-Medonte' },
-  { keywords: ['ramara'], url: '/painters-ramara', label: 'Painters in Ramara' },
 ];
 
 interface BlogServiceLinksProps {
@@ -116,7 +109,7 @@ const BlogServiceLinks: React.FC<BlogServiceLinksProps> = ({ contentHtml, tags =
         </>
       )}
       <p className="text-xs text-muted-foreground">
-        Serving Muskoka, Parry Sound & Simcoe County · <Link to="/contact" className="text-primary hover:underline">Start the Conversation</Link>
+        Serving Muskoka, Almaguin, Parry Sound and Orillia — within about an hour of Port Sydney · <Link to="/contact" className="text-primary hover:underline">Start the Conversation</Link>
       </p>
     </aside>
   );

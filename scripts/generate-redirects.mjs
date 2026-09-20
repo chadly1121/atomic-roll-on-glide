@@ -186,7 +186,6 @@ try {
     '/*-muskoka',
     '/*-gravenhurst',
     '/*-port-carling',
-    '/*-barrie',
     '/*-cottage-painting',
     // Static asset directories and file extensions — serve directly
     '/assets/*',
