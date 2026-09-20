@@ -179,6 +179,7 @@ const App = () => {
               </Suspense>
               </AuthProvider>
               <FloatingCallButton />
+              <PhoneClickTracker />
             </BrowserRouter>
           </TooltipProvider>
         </HelmetProvider>
