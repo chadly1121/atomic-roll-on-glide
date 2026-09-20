@@ -256,7 +256,7 @@ export default function QuoteBuilderPage() {
         </CardContent>
       </Card>
 
-      <Tabs value={tab} onValueChange={(v) => setTab(v as any)}>
+      <Tabs value={tab} onValueChange={handleTabChange}>
         <TabsList>
           <TabsTrigger value="lumber">Lumber / MDF</TabsTrigger>
           <TabsTrigger value="cedar_shake">Cedar Shake</TabsTrigger>
