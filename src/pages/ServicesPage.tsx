@@ -18,7 +18,7 @@ interface ServiceCard {
 
 const cards: ServiceCard[] = [
   { title: 'Interior Painting', description: 'Walls, ceilings, trim, and doors finished to a cottage-quality standard.', href: '/interior-painting', image: '/lovable-uploads/interior-modern-cottage-living.webp', icon: Home },
-  { title: 'Exterior Painting', description: 'Durable coatings engineered for Muskoka winters, with a 5-year warranty.', href: '/exterior-painting', image: '/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp', icon: Paintbrush },
+  { title: 'Exterior Painting', description: 'Durable coatings engineered for Muskoka winters, with a 5-year warranty on vertical surfaces.', href: '/exterior-painting', image: '/lovable-uploads/dad95b14-ad28-4aab-ab8b-05f9a56458ec.webp', icon: Paintbrush },
   { title: 'Cabinet Refinishing', description: 'Factory-quality spray finish, refinished in our Port Sydney prefinishing shop.', href: '/cabinet-refinishing', image: '/lovable-uploads/cabinet-refinish-stock-1.webp', icon: UtensilsCrossed },
   { title: 'Deck & Dock Staining', description: 'Premium stain and full prep for the surfaces that take the worst of the lake.', href: '/deck-staining', image: '/lovable-uploads/8ef8ff98-b72d-4bb2-981c-a2a94dae744a.webp', icon: Fence },
   { title: 'GoNano Coatings', description: 'Permanent hydrophobic nano-coating from $0.99/sq ft. Pairs with most projects.', href: '/gonano', image: '/lovable-uploads/dragons-den-cbc.webp', icon: Sparkles },

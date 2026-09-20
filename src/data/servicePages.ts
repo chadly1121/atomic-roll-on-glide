@@ -78,7 +78,7 @@ export const servicePages: ServicePageData[] = [
       'Over 25 years of professional painting experience',
       'WSIB covered with $5 million liability insurance',
       'Premium Benjamin Moore, Dulux, and PPG paints',
-      'Free touch-ups on completed projects',
+      'Two hours of free touch-ups every year you own the home',
       'Clean, respectful, and punctual crews'
     ],
     faqs: [
@@ -133,7 +133,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Exterior Painting',
     headline: 'Exterior Painting That Withstands Muskoka Weather',
     description: 'Protect and beautify your home with durable exterior painting built to withstand harsh Muskoka winters and humid summers. Roll On Painting uses weather-resistant products and proven techniques for lasting results.',
-    metaDescription: 'Exterior painting from $5.75/sq ft in Muskoka. Weather-resistant finishes, 5-year warranty. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
+    metaDescription: 'Exterior painting from $5.75/sq ft in Muskoka. Weather-resistant finishes, 5-year warranty on vertical surfaces. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
     category: 'residential',
     priceFrom: { amount: 5.75, unit: 'sq ft' },
     aiAnswerBlock: {
@@ -169,7 +169,7 @@ export const servicePages: ServicePageData[] = [
     },
     benefits: [
       'Weather-resistant paints rated for Canadian climates',
-      '5-year warranty on exterior work',
+      '5-year warranty on vertical surfaces above the splash and snow zones',
       'Thorough preparation prevents peeling and cracking',
       'WSIB covered with $5 million liability insurance',
       'Experienced with cedar, wood siding, stucco, and more'
@@ -181,7 +181,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         question: 'How long does exterior paint last?',
-        answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Muskoka\'s climate. We offer a 5-year warranty on our exterior work.'
+        answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Muskoka\'s climate. We offer a 5-year warranty on vertical surfaces above the splash and snow zones — siding, soffit, fascia, vertical trim, doors and railing uprights. Horizontal and high-exposure areas like decks, docks, railing caps and snow-load zones aren\'t warranted, but they\'re still looked after under our Perfect Finish Promise.'
       },
       {
         question: 'Do you paint log homes and cabins?',

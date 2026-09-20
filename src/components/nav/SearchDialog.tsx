@@ -67,7 +67,7 @@ const SearchDialog: React.FC<SearchDialogProps> = ({ isOpen, onClose }) => {
     // Additional pages
     { title: 'About Us', url: '#about', type: 'page' as const, description: 'Learn about Roll On Painting Muskoka' },
     { title: 'Contact', url: '#contact', type: 'page' as const, description: 'Get in touch with us' },
-    { title: 'Free Touch-Ups', url: '#', type: 'page' as const, description: 'Information about our free touch-ups offer' }
+    { title: 'Free Touch-Ups', url: '#', type: 'page' as const, description: 'Two hours of free touch-ups every year you own the home' }
   ];
   
   const filteredResults = searchQuery === '' 
