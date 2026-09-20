@@ -33,14 +33,11 @@ const serviceAreas = [
   { slug: 'painters-port-carling', name: 'Port Carling' },
   { slug: 'painters-lake-of-bays', name: 'Lake of Bays' },
   { slug: 'painters-parry-sound', name: 'Parry Sound' },
-  { slug: 'painters-georgian-bay', name: 'Georgian Bay' },
   { slug: 'painters-bala', name: 'Bala' },
   { slug: 'painters-lake-rosseau', name: 'Lake Rosseau' },
   { slug: 'painters-lake-joseph', name: 'Lake Joseph' },
   { slug: 'painters-lake-muskoka', name: 'Lake Muskoka' },
-  { slug: 'painters-barrie', name: 'Barrie' },
   { slug: 'painters-orillia', name: 'Orillia' },
-  { slug: 'painters-midland', name: 'Midland' },
   { slug: 'painters-rosseau', name: 'Rosseau' },
   { slug: 'painters-dwight', name: 'Dwight' },
   { slug: 'painters-dorset', name: 'Dorset' },
@@ -103,7 +100,7 @@ const ServicePageInternalLinks: React.FC<ServicePageInternalLinksProps> = ({ cur
                 className="text-atomic-turquoise hover:text-atomic-orange transition-colors text-sm font-medium inline-flex items-center gap-1"
               >
                 <MapPin className="w-3 h-3" aria-hidden="true" />
-                View all 58 service areas →
+                View all service areas →
               </Link>
             </div>
           </div>
