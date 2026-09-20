@@ -1,18 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Calculator, Sparkles, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import { trackEvent, currentPath } from '@/lib/analytics';
 // Quohta AI estimator iframe embed – do not delete
 
 const AIEstimatorSection = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const engagedRef = useRef(false);
 
-  // Listen for custom event from FloatingEstimateButton
+  const openChat = () => {
+    setIsOpen(true);
+    trackEvent('chat_open', { page_path: currentPath() });
+  };
+
+  // Listen for custom event from FloatingEstimateButton (user-initiated click)
   useEffect(() => {
-    const handler = () => setIsOpen(true);
+    const handler = () => openChat();
     window.addEventListener('open-ai-estimator', handler);
     return () => window.removeEventListener('open-ai-estimator', handler);
   }, []);
+
+  // The chat runs in a cross-origin iframe, so first interaction inside it is
+  // detected via focus moving into the frame. Fires at most once per page view.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onBlur = () => {
+      if (engagedRef.current) return;
+      if (document.activeElement?.tagName === 'IFRAME') {
+        engagedRef.current = true;
+        trackEvent('chat_engaged', { page_path: currentPath() });
+      }
+    };
+    window.addEventListener('blur', onBlur);
+    return () => window.removeEventListener('blur', onBlur);
+  }, [isOpen]);
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   const benefits = [
