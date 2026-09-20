@@ -34,7 +34,7 @@ best_rating: 5
 
 primary_region: Muskoka, Ontario, Canada
 coverage: 30 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, Parry Sound and Orillia
-cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound, Orillia
+cities: Huntsville, Port Sydney, Bracebridge, Gravenhurst, Port Carling, Dorset, Baysville, Dwight, Rosseau, Bala, Parry Sound, Orillia
 
 ## Services Offered
 
