@@ -381,7 +381,7 @@ const GoNanoPage = () => {
               <Link to="/contact" className="atomic-button-secondary inline-flex items-center justify-center px-8 py-3 rounded-full">
                 <span className="relative z-10">Book Your Consultation</span>
               </Link>
-              <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
+              <a href={`tel:${businessInfo.phone.tel}`} data-analytics-location="gonano" className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors">
                 Call {businessInfo.phone.formatted}
               </a>
             </div>

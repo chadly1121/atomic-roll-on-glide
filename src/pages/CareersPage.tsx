@@ -254,7 +254,7 @@ const CareersPage: React.FC = () => {
                   <Mail className="w-4 h-4" />
                   Apply Now
                 </a>
-                <a href={`tel:${businessInfo.phone.tel}`} className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                <a href={`tel:${businessInfo.phone.tel}`} data-analytics-location="careers" className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
                   <Phone className="w-4 h-4" />
                   Call {businessInfo.phone.formatted}
                 </a>

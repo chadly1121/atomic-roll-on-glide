@@ -86,6 +86,7 @@ const FAQSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href={`tel:${businessInfo.phone.tel}`}
+              data-analytics-location="faq"
               className="inline-flex items-center justify-center gap-2 bg-atomic-turquoise text-white px-6 py-3 rounded-full font-medium hover:bg-atomic-turquoise/90 transition-colors"
             >
               Call {businessInfo.phone.formatted}

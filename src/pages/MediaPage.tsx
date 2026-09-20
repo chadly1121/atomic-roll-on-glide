@@ -443,6 +443,7 @@ const MediaPage: React.FC = () => {
               </Link>
               <a
                 href={`tel:${businessInfo.phone.tel}`}
+                data-analytics-location="media"
                 className="inline-flex items-center justify-center gap-2 border border-atomic-navy/20 text-atomic-navy font-semibold px-8 py-3 rounded-lg hover:bg-atomic-navy/5 transition-colors min-h-[48px]"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />

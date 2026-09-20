@@ -227,7 +227,7 @@ const FreeTouchUpsPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CallToAction text="Request a Private Proposal" href="/contact" variant="primary" size="lg" />
-              <CallToAction text={`Call ${businessInfo.phone.formatted}`} href={`tel:${businessInfo.phone.primary}`} variant="outline" size="lg" />
+              <CallToAction text={`Call ${businessInfo.phone.formatted}`} href={`tel:${businessInfo.phone.primary}`} variant="outline" size="lg" analyticsLocation="free_touch_ups" />
             </div>
           </div>
         </section>
