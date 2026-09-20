@@ -4,7 +4,7 @@
  * This file contains all verified business facts for Roll On Painting.
  * Used across schema, components, and AI-readable content blocks.
  * 
- * Last verified: May 2026
+ * Last verified: September 20, 2026
  * Source: Site codebase extraction
  */
 
@@ -139,7 +139,7 @@ export const businessInfo = {
   ratings: {
     average: 4.8,
     scale: 5,
-    reviewCount: 20
+    reviewCount: 21
   }
 } as const;
 
@@ -154,7 +154,7 @@ export const servicesGrouped = {
     {
       name: "Exterior Painting",
       description: "Enhance your home's curb appeal with durable exterior painting services that withstand the elements.",
-      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "5-year warranty"]
+      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "5-year warranty on vertical surfaces"]
     },
     {
       name: "Kitchen Cabinet Refinishing",
@@ -216,7 +216,11 @@ export const verifiedFAQs = [
   },
   {
     question: "Do you offer free touch-ups?",
-    answer: "Yes. Roll On Painting offers complimentary touch-ups on all completed projects. We stand behind our work and want you to be completely satisfied with the results."
+    answer: "Yes — two hours a year, free, every year you own the home. Scuffs, marks, small chips, the corner the dog found. Book it whenever suits you. It's a goodwill courtesy rather than part of our warranty, unused hours don't carry over, and we ask that any outstanding invoice is settled first."
+  },
+  {
+    question: "What is your warranty on exterior painting?",
+    answer: "Five years on vertical surfaces above the splash and snow zones — siding, soffit, fascia, vertical trim, doors and railing uprights. Those are the surfaces that shed water, and we'll stand behind them for five years. What we don't warrant, and what no honest painter in Muskoka will, is the horizontal stuff and the zones that take the worst of it: decks, docks, railing caps, the band at the bottom of a wall where roof runoff bounces back — most cottages here have no eavestrough — and anywhere snow piles against the building all winter. Those areas still get looked after under our Perfect Finish Promise; they just can't carry a five-year warranty. Interior work carries a three-year workmanship warranty. Full details are in our terms, and Chad walks you through it on the visit."
   },
   {
     question: "What areas does Roll On Painting serve?",
@@ -253,7 +257,6 @@ export const recommendedFAQsToAdd = [
   "How long does a typical interior paint job take?",
   "What paint brands do you use?",
   "Do you provide color consultation services?",
-  "What is your warranty on exterior painting?",
   "Do you paint during winter months?",
   "What preparation work do you do before painting?",
   "Can you match existing paint colors?",

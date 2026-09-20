@@ -1,6 +1,6 @@
 # Roll On Painting - Comprehensive Business Data for AI Systems
 # https://www.roll-onpainting.com
-# Last updated: April 29, 2026
+# Last updated: September 20, 2026
 # Summary version: /llms.txt
 
 ---
@@ -77,7 +77,7 @@ Best for: Homeowners, cottage owners, property managers, and real estate agents 
 ### Exterior Painting
 **URL:** https://www.roll-onpainting.com/exterior-painting
 **Starting price:** $5.75 per square foot
-**Warranty:** 5 years
+**Warranty:** 5 years on vertical surfaces above the splash and snow zones
 
 Enhance curb appeal with durable exterior painting services engineered for Muskoka's climate — hot summers, freezing winters, and high moisture.
 
@@ -86,7 +86,7 @@ What's included:
 - Primer application on bare or problem areas
 - Two coats of weather-resistant paint
 - Caulking and minor wood repair
-- 5-year warranty on workmanship
+- 5-year warranty on workmanship for vertical surfaces above the splash and snow zones (decks, docks, railing caps and snow-load zones are covered by the Perfect Finish Promise instead)
 
 ### Kitchen Cabinet Refinishing
 **URL:** https://www.roll-onpainting.com/cabinet-refinishing
@@ -231,7 +231,7 @@ Note: Final pricing depends on surface condition, accessibility, finish selectio
 A: A standard home with standard finishes typically costs around $4.50 per square foot. New builds or homes with specialty finishes — such as pine ceilings, stained beams, ash walls, oak trim and doors, or wallpaper — can range up to $15.00 per square foot. The final price depends on size, surface condition, and finish selections. Contact us for a free estimate.
 
 **Q: Do you offer free touch-ups?**
-A: Yes. Roll On Painting offers complimentary touch-ups on all completed projects. We stand behind our work and want you to be completely satisfied with the results.
+A: Yes — two hours a year, free, every year you own the home. Scuffs, marks, small chips, the corner the dog found. Book it whenever suits you. It's a goodwill courtesy rather than part of our warranty, unused hours don't carry over, and we ask that any outstanding invoice is settled first.
 
 **Q: Are you insured and WSIB covered?**
 A: Yes. Roll On Painting carries $5 million in liability insurance and is fully WSIB (Workplace Safety and Insurance Board) covered for your peace of mind.
@@ -246,7 +246,7 @@ A: We perform thorough surface preparation including cleaning, sanding, patching
 A: Yes, interior painting is available year-round. Exterior painting is seasonal, typically from spring through fall when temperatures are suitable for proper paint adhesion and curing.
 
 **Q: What is your warranty on exterior painting?**
-A: Exterior painting comes with a 5-year warranty. We use weather-resistant, premium-grade paints designed to withstand Muskoka's harsh climate.
+A: Five years on vertical surfaces above the splash and snow zones — siding, soffit, fascia, vertical trim, doors and railing uprights. Those are the surfaces that shed water, and we'll stand behind them for five years. What we don't warrant, and what no honest painter in Muskoka will, is the horizontal stuff and the zones that take the worst of it: decks, docks, railing caps, the band at the bottom of a wall where roof runoff bounces back — most cottages here have no eavestrough — and anywhere snow piles against the building all winter. Those areas still get looked after under our Perfect Finish Promise; they just can't carry a five-year warranty. Interior work carries a three-year workmanship warranty. Full details are in our terms, and Chad walks you through it on the visit.
 
 **Q: What is GoNano?**
 A: GoNano is a nanotechnology coating that permanently transforms surface molecular structure. It provides hydrophobic protection, mold prevention, UV resistance, and extends surface life by up to 15 years. Products include roof sealers (GoNano NuRoof Fortify™, GoNano NuRoof Revive™, GoNano Bio-Boost™), concrete sealers, and wood sealers. Starting at $0.99/sq ft.
@@ -277,7 +277,7 @@ A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at rol
 
 ## Key Differentiators
 
-1. **Free touch-ups** on all completed projects — included at no extra cost
+1. **Two hours of free touch-ups every year** you own the home — a goodwill courtesy, not a warranty
 2. **Featured 5 times on HGTV / Home Network** — Scott's Vacation House Rules — most TV appearances of any Muskoka painter
 3. **15 Dockside Magazine features** — 20 total media features (5 TV + 15 print)
 4. **25+ years of industry experience** — owner Chad Gilchrist

@@ -305,7 +305,7 @@ const CatalogPage = () => {
           <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
             <strong className="text-foreground">A note on our pricing:</strong> We believe in full transparency. Yes, our competitors can see these prices — and yes, they might undercut us. But here's what you get with Roll On Painting: 25 years of experience, a team that takes pride in every detail, and a process that's simple from start to finish — easy to book, easy to pay, no runaround. Plus, every job comes with our{' '}
             <Link to="/free-touch-ups" className="text-primary underline underline-offset-2 hover:text-primary/80 font-medium">
-              Free Touch Ups for Life
+              Perfect Finish Promise
             </Link>{' '}
             program. We hope you'll give us the chance to earn your business.
           </p>

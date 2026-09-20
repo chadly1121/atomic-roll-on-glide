@@ -18,14 +18,14 @@ const FreeTouchUpsPage = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Free Touch Ups for Life | Roll On Painting",
-    "description": "Roll On Painting offers free touch-ups for life on all painting projects. Learn about our commitment to long-term quality and what's included.",
+    "name": "Perfect Finish Promise: Two Hours of Free Touch-Ups Every Year | Roll On Painting",
+    "description": "Two hours of free touch-ups every calendar year, for as long as you own the property. A goodwill courtesy from Roll On Painting — not a warranty. Learn what's included.",
     "url": pageUrl,
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
-        { "@type": "ListItem", "position": 2, "name": "Free Touch Ups for Life", "item": pageUrl }
+        { "@type": "ListItem", "position": 2, "name": "Perfect Finish Promise", "item": pageUrl }
       ]
     }
   };
@@ -48,12 +48,12 @@ const FreeTouchUpsPage = () => {
       description: "Touch-ups must be the same colour as originally painted. We keep your colour records on file."
     },
     {
-      title: "2-Hour Visit, Once Per Year",
-      description: "Each touch-up visit is up to 2 hours and is available once per calendar year."
+      title: "Two Hours Every Calendar Year",
+      description: "Two hours of touch-ups per calendar year, for as long as you own the property. Unused hours don’t carry over to the following year."
     },
     {
-      title: "No Questions Asked",
-      description: "We'll handle your touch-ups without hassle or complicated explanations."
+      title: "A Courtesy, Not a Warranty",
+      description: "This is goodwill, offered because we like our work to keep looking right. It sits outside our warranty, and it’s paused while any invoice is overdue."
     }
   ];
 
@@ -83,16 +83,16 @@ const FreeTouchUpsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Free Touch Ups for Life | Roll On Painting Muskoka</title>
-        <meta name="description" content="Roll On Painting offers free touch-ups for life on all painting projects in Muskoka. No questions asked. Learn what's included and why we do it." />
+        <title>Perfect Finish Promise: Two Hours of Free Touch-Ups Every Year | Roll On Painting Muskoka</title>
+        <meta name="description" content="Two hours of free touch-ups every calendar year, for as long as you own the property. A goodwill courtesy from Roll On Painting in Muskoka — not a warranty." />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content="Free Touch Ups for Life | Roll On Painting" />
-        <meta property="og:description" content="We offer free touch-ups for life on all painting projects. No questions asked." />
+        <meta property="og:title" content="Perfect Finish Promise | Roll On Painting" />
+        <meta property="og:description" content="Two hours of free touch-ups every year, for as long as you own the property. A goodwill courtesy, not a warranty." />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Free Touch Ups for Life | Roll On Painting" />
-        <meta name="twitter:description" content="Free touch-ups for life on all painting projects in Muskoka. No questions asked." />
+        <meta name="twitter:title" content="Perfect Finish Promise | Roll On Painting" />
+        <meta name="twitter:description" content="Two hours of free touch-ups every year, for as long as you own the property in Muskoka." />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
@@ -111,23 +111,23 @@ const FreeTouchUpsPage = () => {
               <span className="text-sm font-semibold text-secondary">Included with Every Painting Project</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Free Touch Ups <span className="text-secondary">for Life</span>
+              Two Hours of Free Touch-Ups, <span className="text-secondary">Every Year</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Every painting project we complete comes with complimentary touch-ups — for as long as you own your property. No fine print. No expiry date.
+              Every painting project we complete comes with two hours of free touch-ups every calendar year, for as long as you own the property. It’s a goodwill courtesy — not a warranty, and not a guarantee — and it’s ours to keep offering because we like standing behind what we paint.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
                 <Clock className="h-4 w-4 text-secondary" />
-                <span className="text-sm font-medium text-foreground">2-Hour Visit</span>
+                <span className="text-sm font-medium text-foreground">Two Hours</span>
               </div>
               <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
                 <Calendar className="h-4 w-4 text-secondary" />
-                <span className="text-sm font-medium text-foreground">Once Per Year</span>
+                <span className="text-sm font-medium text-foreground">Every Calendar Year</span>
               </div>
               <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
                 <CheckCircle className="h-4 w-4 text-secondary" />
-                <span className="text-sm font-medium text-foreground">No Questions Asked</span>
+                <span className="text-sm font-medium text-foreground">As Long As You Own It</span>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ const FreeTouchUpsPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">How It Works</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              It's simple. After we complete your painting project, you're covered for life.
+              It’s simple. After we complete your painting project, you get two hours of free touch-ups every calendar year you own the home.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -160,7 +160,7 @@ const FreeTouchUpsPage = () => {
                   <span className="text-2xl font-bold text-secondary">3</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-                <p className="text-sm text-muted-foreground">Give us a call and we'll schedule a free touch-up. No questions asked.</p>
+                <p className="text-sm text-muted-foreground">Give us a call and we’ll book your two hours. Scuffs, marks, small chips, the corner the dog found.</p>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ const FreeTouchUpsPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">What's Covered</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Our free touch-up program is straightforward. Here are the details:
+              The Perfect Finish Promise is straightforward. Here are the details:
             </p>
             <div className="space-y-4">
               {conditions.map((condition, index) => (
@@ -211,7 +211,7 @@ const FreeTouchUpsPage = () => {
                 <AlertTriangle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground space-y-2">
                   <p className="font-semibold text-foreground">Disclaimer</p>
-                  <p>Roll On Painting offers free touch-ups for life on our painting services with the following conditions: This offer applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Each touch-up visit is up to 2 hours in duration and is available once per calendar year. Contact us for full details and to schedule your free touch-up.</p>
+                  <p>The Perfect Finish Promise provides two hours of free touch-ups per calendar year, for as long as the original client owns the property. It is a goodwill courtesy offered by Roll On Painting — it is not a warranty and not a guarantee. It applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Unused hours do not carry over to the following year, and the courtesy is suspended while any invoice is overdue. Contact us for full details and to book your two hours.</p>
                 </div>
               </div>
             </div>
@@ -223,7 +223,7 @@ const FreeTouchUpsPage = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Get a free quote on your painting project — and enjoy free touch-ups for life.
+              Get a free quote on your painting project — and two hours of free touch-ups every year you own the home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CallToAction text="Request a Private Proposal" href="/contact" variant="primary" size="lg" />

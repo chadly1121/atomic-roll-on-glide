@@ -64,7 +64,7 @@ const HeroContent = () => {
       
       <div className="flex items-center space-x-2 pt-2 opacity-70">
         <span className="text-atomic-orange font-bold text-xs">4.8 ★</span>
-        <p className="text-xs text-atomic-navy/70">4.8/5 from 20 Google reviews</p>
+        <p className="text-xs text-atomic-navy/70">4.8/5 from 21 Google reviews</p>
       </div>
     </div>
   );

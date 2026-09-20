@@ -43,8 +43,8 @@ const getUniversalFaqs = (name: string) => [
     answer: `Yes — we perform interior painting year-round in ${name}. For exterior projects, we plan around Muskoka's freeze-thaw cycles to ensure optimal adhesion and durability. We'll advise you on the best timing for your project.`
   },
   {
-    question: `What is the Free Touch Ups for Life guarantee?`,
-    answer: `Every completed project with Roll On Painting includes our exclusive Free Touch Ups for Life program. If your walls get scuffed or nicked after we've finished, we'll come back and touch them up at no charge. No other ${name} painter offers this.`
+    question: `What is the Perfect Finish Promise?`,
+    answer: `Every completed project with Roll On Painting includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If your walls get scuffed or nicked after we've finished, we'll come back and touch them up at no charge. No other ${name} painter offers this.`
   },
 ];
 
@@ -272,8 +272,8 @@ const LocationPageTemplate: React.FC<LocationPageTemplateProps> = ({ location })
                 </div>
                 <div className="bg-background p-6 rounded-lg shadow-sm text-center">
                   <Shield className="w-8 h-8 text-atomic-turquoise mx-auto mb-3" />
-                  <h3 className="font-semibold text-atomic-navy mb-2">Free Touch Ups for Life</h3>
-                  <p className="text-sm text-muted-foreground">Every completed project includes our exclusive Free Touch Ups for Life guarantee — no other {location.name} painter offers this.</p>
+                  <h3 className="font-semibold text-atomic-navy mb-2">Perfect Finish Promise</h3>
+                  <p className="text-sm text-muted-foreground">Every completed project includes our Perfect Finish Promise — no other {location.name} painter offers this.</p>
                 </div>
                 <div className="bg-background p-6 rounded-lg shadow-sm text-center">
                   <MapPin className="w-8 h-8 text-atomic-turquoise mx-auto mb-3" />

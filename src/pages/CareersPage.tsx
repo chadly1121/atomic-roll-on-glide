@@ -90,7 +90,7 @@ const CareersPage: React.FC = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-atomic-navy mb-4">The Roll On Standard</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  We've been featured on HGTV. We carry $5 million in insurance. We offer Free Touch Ups for Life on every project. That level of commitment requires a certain kind of person.
+                  We've been featured on HGTV. We carry $5 million in insurance. We offer our Perfect Finish Promise on every project. That level of commitment requires a certain kind of person.
                 </p>
               </div>
 

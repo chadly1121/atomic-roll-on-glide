@@ -118,7 +118,7 @@ const SEOHelmet: React.FC = () => {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
-          "reviewCount": "20",
+          "reviewCount": "21",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -439,7 +439,7 @@ const SEOHelmet: React.FC = () => {
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Painters Muskoka | HGTV Featured | Roll On Painting" />
-      <meta property="og:description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured. Interior, exterior, cabinet & cottage painting. Free touch-ups for life. 705-787-1401." />
+      <meta property="og:description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured. Interior, exterior, cabinet & cottage painting. Two hours of free touch-ups every year. 705-787-1401." />
       <meta property="og:url" content={`${siteUrl}/`} />
       <meta property="og:site_name" content={businessInfo.name} />
       <meta property="og:locale" content="en_CA" />
