@@ -15,10 +15,11 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /llms-full.txt    /llms-full.txt    200!
 /site.webmanifest /site.webmanifest 200!
 
-# Legacy 301 redirects (61 entries from redirect-map.json)
+# Legacy 301 redirects (83 entries from redirect-map.json)
 /Bracebridge.html                                           /painters-bracebridge                             301
 /Burks%20Falls.html                                         /painters-burks-falls                             301
 /Burks-Falls.html                                           /painters-burks-falls                             301
+/cabinet-painting-barrie                                    /service-areas                                    301
 /catalog                                                    /portfolio                                        301
 /commercial-brick-waterproofing.html                        /exterior-painting-muskoka                        301
 /commercial-concrete-ceiling-painting-repair.html           /commercial-painting                              301
@@ -29,10 +30,13 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /commercial-interior-services.html                          /commercial-painting                              301
 /commercial-painters-Muskoka.html                           /commercial-painting                              301
 /commercial-painting-epoxy-floor-coating.html               /epoxy-floors-muskoka                             301
+/deck-staining-barrie                                       /service-areas                                    301
 /Dwight.html                                                /painters-dwight                                  301
+/exterior-painting-barrie                                   /service-areas                                    301
 /Huntsville.html                                            /painters-huntsville                              301
 /index.php                                                  /                                                 301
 /index.php/tools/*                                          /                                                 301
+/interior-painting-barrie                                   /service-areas                                    301
 /Muskoka-awning-painting-repair.html                        /exterior-painting-muskoka                        301
 /Muskoka-commercial-deck-wood-refinishing.html              /staining-muskoka                                 301
 /Muskoka-commercial-molding-painters.html                   /commercial-painting                              301
@@ -65,6 +69,24 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /Muskoka-wood-refinishing-services.html                     /staining-muskoka                                 301
 /Muskoka.html                                               /                                                 301
 /New-builds.html                                            /                                                 301
+/painters-barrie                                            /service-areas                                    301
+/painters-britt                                             /service-areas                                    301
+/painters-byng-inlet                                        /service-areas                                    301
+/painters-coldwater                                         /service-areas                                    301
+/painters-georgian-bay                                      /service-areas                                    301
+/painters-honey-harbour                                     /service-areas                                    301
+/painters-midland                                           /service-areas                                    301
+/painters-nobel                                             /service-areas                                    301
+/painters-oro-medonte                                       /service-areas                                    301
+/painters-penetanguishene                                   /service-areas                                    301
+/painters-pickerel                                          /service-areas                                    301
+/painters-pointe-au-baril                                   /service-areas                                    301
+/painters-port-severn                                       /service-areas                                    301
+/painters-ramara                                            /service-areas                                    301
+/painters-severn                                            /service-areas                                    301
+/painters-victoria-harbour                                  /service-areas                                    301
+/painters-warminster                                        /service-areas                                    301
+/painters-waubaushene                                       /service-areas                                    301
 /painting-areas-served.html                                 /service-areas                                    301
 /parking-lot-striping-Muskoka.html                          /epoxy-floors-muskoka                             301
 /Parry%20Sound.html                                         /painters-parry-sound                             301
@@ -78,13 +100,12 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /roof-coating-painting-Muskoka.html                         /gonano                                           301
 /site-map.html                                              /                                                 301
 
-# Prerendered route overrides (110 from sitemap.xml) — must come BEFORE SPA fallback
+# Prerendered route overrides (88 from sitemap.xml) — must come BEFORE SPA fallback
 /about                                                      /about/index.html                                 200!
 /blog                                                       /blog/index.html                                  200!
 /blog/gonano-nuroof-revive-extend-roof-life-muskoka         /blog/gonano-nuroof-revive-extend-roof-life-muskoka/index.html 200!
 /blog/gonano-wood-saver-decks-docks-muskoka                 /blog/gonano-wood-saver-decks-docks-muskoka/index.html 200!
 /blog/sansin-exterior-stains-decks-docks-muskoka            /blog/sansin-exterior-stains-decks-docks-muskoka/index.html 200!
-/cabinet-painting-barrie                                    /cabinet-painting-barrie/index.html               200!
 /cabinet-painting-gravenhurst                               /cabinet-painting-gravenhurst/index.html          200!
 /cabinet-painting-muskoka                                   /cabinet-painting-muskoka/index.html              200!
 /cabinet-refinishing                                        /cabinet-refinishing/index.html                   200!
@@ -95,13 +116,11 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /cottage-painting-muskoka                                   /cottage-painting-muskoka/index.html              200!
 /cottage-painting-port-carling                              /cottage-painting-port-carling/index.html         200!
 /deck-staining                                              /deck-staining/index.html                         200!
-/deck-staining-barrie                                       /deck-staining-barrie/index.html                  200!
 /deck-staining-gravenhurst                                  /deck-staining-gravenhurst/index.html             200!
 /deck-staining-port-carling                                 /deck-staining-port-carling/index.html            200!
 /epoxy-coatings                                             /epoxy-coatings/index.html                        200!
 /epoxy-floors-muskoka                                       /epoxy-floors-muskoka/index.html                  200!
 /exterior-painting                                          /exterior-painting/index.html                     200!
-/exterior-painting-barrie                                   /exterior-painting-barrie/index.html              200!
 /exterior-painting-gravenhurst                              /exterior-painting-gravenhurst/index.html         200!
 /exterior-painting-muskoka                                  /exterior-painting-muskoka/index.html             200!
 /exterior-painting-port-carling                             /exterior-painting-port-carling/index.html        200!
@@ -111,7 +130,6 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /gonano                                                     /gonano/index.html                                200!
 /institutional-painting                                     /institutional-painting/index.html                200!
 /interior-painting                                          /interior-painting/index.html                     200!
-/interior-painting-barrie                                   /interior-painting-barrie/index.html              200!
 /interior-painting-gravenhurst                              /interior-painting-gravenhurst/index.html         200!
 /interior-painting-muskoka                                  /interior-painting-muskoka/index.html             200!
 /interior-painting-port-carling                             /interior-painting-port-carling/index.html        200!
@@ -120,20 +138,14 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /painters-ahmic-harbour                                     /painters-ahmic-harbour/index.html                200!
 /painters-algonquin-park                                    /painters-algonquin-park/index.html               200!
 /painters-bala                                              /painters-bala/index.html                         200!
-/painters-barrie                                            /painters-barrie/index.html                       200!
 /painters-baysville                                         /painters-baysville/index.html                    200!
 /painters-bracebridge                                       /painters-bracebridge/index.html                  200!
-/painters-britt                                             /painters-britt/index.html                        200!
 /painters-burks-falls                                       /painters-burks-falls/index.html                  200!
-/painters-byng-inlet                                        /painters-byng-inlet/index.html                   200!
-/painters-coldwater                                         /painters-coldwater/index.html                    200!
 /painters-dorset                                            /painters-dorset/index.html                       200!
 /painters-dunchurch                                         /painters-dunchurch/index.html                    200!
 /painters-dwight                                            /painters-dwight/index.html                       200!
 /painters-emsdale                                           /painters-emsdale/index.html                      200!
-/painters-georgian-bay                                      /painters-georgian-bay/index.html                 200!
 /painters-gravenhurst                                       /painters-gravenhurst/index.html                  200!
-/painters-honey-harbour                                     /painters-honey-harbour/index.html                200!
 /painters-huntsville                                        /painters-huntsville/index.html                   200!
 /painters-katrine                                           /painters-katrine/index.html                      200!
 /painters-kearney                                           /painters-kearney/index.html                      200!
@@ -144,25 +156,16 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /painters-mactier                                           /painters-mactier/index.html                      200!
 /painters-magnetawan                                        /painters-magnetawan/index.html                   200!
 /painters-mckellar                                          /painters-mckellar/index.html                     200!
-/painters-midland                                           /painters-midland/index.html                      200!
 /painters-milford-bay                                       /painters-milford-bay/index.html                  200!
 /painters-minett                                            /painters-minett/index.html                       200!
-/painters-nobel                                             /painters-nobel/index.html                        200!
 /painters-novar                                             /painters-novar/index.html                        200!
 /painters-orillia                                           /painters-orillia/index.html                      200!
-/painters-oro-medonte                                       /painters-oro-medonte/index.html                  200!
 /painters-parry-sound                                       /painters-parry-sound/index.html                  200!
-/painters-penetanguishene                                   /painters-penetanguishene/index.html              200!
-/painters-pickerel                                          /painters-pickerel/index.html                     200!
-/painters-pointe-au-baril                                   /painters-pointe-au-baril/index.html              200!
 /painters-port-carling                                      /painters-port-carling/index.html                 200!
 /painters-port-sandfield                                    /painters-port-sandfield/index.html               200!
-/painters-port-severn                                       /painters-port-severn/index.html                  200!
 /painters-port-sydney                                       /painters-port-sydney/index.html                  200!
-/painters-ramara                                            /painters-ramara/index.html                       200!
 /painters-rosseau                                           /painters-rosseau/index.html                      200!
 /painters-seguin                                            /painters-seguin/index.html                       200!
-/painters-severn                                            /painters-severn/index.html                       200!
 /painters-severn-bridge                                     /painters-severn-bridge/index.html                200!
 /painters-six-mile-lake                                     /painters-six-mile-lake/index.html                200!
 /painters-south-river                                       /painters-south-river/index.html                  200!
@@ -171,9 +174,6 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /painters-the-archipelago                                   /painters-the-archipelago/index.html              200!
 /painters-torrance                                          /painters-torrance/index.html                     200!
 /painters-utterson                                          /painters-utterson/index.html                     200!
-/painters-victoria-harbour                                  /painters-victoria-harbour/index.html             200!
-/painters-warminster                                        /painters-warminster/index.html                   200!
-/painters-waubaushene                                       /painters-waubaushene/index.html                  200!
 /painters-windermere                                        /painters-windermere/index.html                   200!
 /portfolio                                                  /portfolio/index.html                             200!
 /power-washing                                              /power-washing/index.html                         200!
