@@ -22,7 +22,7 @@ const coords: Record<string, GeoCoordinates> = {
   "painters-windermere":      { latitude: 45.0500, longitude: -79.5000 },
   "painters-port-sydney":     { latitude: 45.2167, longitude: -79.2500 },
 
-  // MUSKOKA LAKES & GEORGIAN BAY
+  // WEST MUSKOKA
   "painters-bala":            { latitude: 44.9967, longitude: -79.6178 },
   "painters-mactier":         { latitude: 45.0500, longitude: -79.7000 },
   "painters-rosseau":         { latitude: 45.1667, longitude: -79.6333 },
@@ -48,13 +48,13 @@ const coords: Record<string, GeoCoordinates> = {
   "painters-sprucedale":      { latitude: 45.4167, longitude: -79.4500 },
   "painters-sundridge":       { latitude: 45.7667, longitude: -79.3667 },
 
-  // PARRY SOUND & GEORGIAN BAY ISLANDS
+  // PARRY SOUND AREA
   "painters-parry-sound":     { latitude: 45.3432, longitude: -80.1892 },
   "painters-seguin":          { latitude: 45.2500, longitude: -79.8500 },
   "painters-mckellar":        { latitude: 45.4333, longitude: -79.8000 },
   "painters-the-archipelago": { latitude: 45.1667, longitude: -80.0500 },
 
-  // SIMCOE COUNTY & BARRIE
+  // SOUTHERN EDGE
   "painters-orillia":         { latitude: 44.6083, longitude: -79.4200 },
   "painters-six-mile-lake":   { latitude: 44.8167, longitude: -79.6333 },
   "painters-severn-bridge":   { latitude: 44.8167, longitude: -79.4833 },

@@ -5,13 +5,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const ServiceAreaMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const circleRadius = 70; // 70km radius
+  const circleRadius = 80; // ~80km — about an hour's drive
   
   // Port Sydney, Ontario coordinates (836 Greer Road)
   const officeLoc: [number, number] = [-79.2784, 45.1932]; // 836 Greer Road, Port Sydney
   
-  // Adjusted center for the service area circle to include Barrie and Collingwood
-  const serviceAreaCenter: [number, number] = [-79.7000, 44.5000]; // Adjusted center point to include Barrie and Collingwood
+  // Service area is centred on the shop — roughly an hour's drive in any direction
+  const serviceAreaCenter: [number, number] = [-79.2784, 45.1932];
 
   const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
 
@@ -24,7 +24,7 @@ const ServiceAreaMap = () => {
     const newMap = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-79.5000, 44.8000], // Set view center between Port Sydney and Barrie
+      center: [-79.2784, 45.1932], // Centred on the Port Sydney shop
       zoom: 7.5, // Zoom out a bit to show the entire service area
       attributionControl: true
     });
@@ -94,16 +94,16 @@ const ServiceAreaMap = () => {
         .setPopup(new mapboxgl.Popup().setHTML('<p>Huntsville</p>'))
         .addTo(newMap);
         
-      // Add Barrie marker
+      // Add Parry Sound marker
       new mapboxgl.Marker({ color: '#3b82f6' })
-        .setLngLat([-79.6903, 44.3894])
-        .setPopup(new mapboxgl.Popup().setHTML('<p>Barrie</p>'))
+        .setLngLat([-80.0353, 45.3474])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Parry Sound</p>'))
         .addTo(newMap);
       
-      // Add Collingwood marker
+      // Add Orillia marker
       new mapboxgl.Marker({ color: '#3b82f6' })
-        .setLngLat([-80.2167, 44.5008])
-        .setPopup(new mapboxgl.Popup().setHTML('<p>Collingwood</p>'))
+        .setLngLat([-79.4203, 44.6082])
+        .setPopup(new mapboxgl.Popup().setHTML('<p>Orillia</p>'))
         .addTo(newMap);
     });
     
@@ -166,9 +166,9 @@ const ServiceAreaMap = () => {
       <div className="rounded-xl overflow-hidden shadow-lg bg-muted p-6">
         <h3 className="font-bold text-lg mb-2">Our Service Area</h3>
         <p className="text-sm mb-4">
-          Located in Muskoka we service: Huntsville, Dwight, Lake of Bays,
-          Bracebridge, Port Carling, Parry Sound, Port Severn, Midland, Orillia
-          and Barrie.
+          We work within about an hour of our Port Sydney shop: Huntsville,
+          Dwight, Lake of Bays, Bracebridge, Port Carling, Burk's Falls,
+          Parry Sound and Orillia.
         </p>
         <a
           href={mapsUrl}
@@ -187,7 +187,7 @@ const ServiceAreaMap = () => {
       <div ref={mapContainer} className="h-[400px] w-full" />
       <div className="absolute top-2 left-2 bg-white px-3 py-2 rounded-md shadow-md z-10 max-w-md">
         <h3 className="font-bold text-sm mb-1">Our Service Area</h3>
-        <p className="text-sm">Located in Muskoka we service: Huntsville, Dwight, Lake of Bays, Bracebridge, Port Carling, Parry Sound, Port Severn, Midland, Orillia and Barrie.</p>
+        <p className="text-sm">We work within about an hour of our Port Sydney shop: Huntsville, Dwight, Lake of Bays, Bracebridge, Port Carling, Burk's Falls, Parry Sound and Orillia.</p>
       </div>
     </div>
   );
