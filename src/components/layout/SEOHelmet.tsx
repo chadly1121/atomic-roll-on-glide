@@ -223,13 +223,6 @@ const SEOHelmet: React.FC = () => {
           },
           {
             "@type": "Review",
-            "author": { "@type": "Person", "name": "Kevin Brumpton" },
-            "reviewBody": "Amazing company, delivers fantastic quality at a competitive price point.",
-            "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
-            "datePublished": "2024-01-01"
-          },
-          {
-            "@type": "Review",
             "author": { "@type": "Person", "name": "Jeff McLeod" },
             "reviewBody": "I'm the owner of a residential painting company in Toronto. Roll On Painting delivers professional quality work.",
             "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5, "worstRating": 1 },
