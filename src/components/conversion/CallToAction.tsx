@@ -15,6 +15,8 @@ interface CallToActionProps {
   size?: CTASize;
   icon?: boolean;
   className?: string;
+  /** Optional analytics label, e.g. "free_touch_ups" — used for phone CTAs. */
+  analyticsLocation?: string;
 }
 
 const CallToAction = ({ 
