@@ -25,7 +25,8 @@ const CallToAction = ({
   variant = 'primary', 
   size = 'md',
   icon = true,
-  className = '' 
+  className = '',
+  analyticsLocation,
 }: CallToActionProps) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -72,6 +73,8 @@ const CallToAction = ({
   
   return (
     <motion.button
+      {...(href.startsWith('tel:') ? { 'data-phone-cta': href.slice(4) } : {})}
+      {...(analyticsLocation ? { 'data-analytics-location': analyticsLocation } : {})}
       className={`rounded-full font-medium flex items-center justify-center gap-2 transition-all ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       onClick={handleClick}
       whileHover={{ scale: 1.05 }}
