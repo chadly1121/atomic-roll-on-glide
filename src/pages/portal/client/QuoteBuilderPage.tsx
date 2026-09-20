@@ -117,7 +117,24 @@ export default function QuoteBuilderPage() {
   const updateShake = (id: string, patch: Partial<ShakeRow>) =>
     setShakeRows((rows) => rows.map((r) => (r.id === id ? { ...r, ...patch } : r)));
 
+  const trackFormStart = () =>
+    trackEventOnce(`form_start:${ANALYTICS_FORM_NAME}:${currentPath()}`, "form_start", {
+      form_name: ANALYTICS_FORM_NAME,
+      page_path: currentPath(),
+    });
+
+  const handleTabChange = (v: string) => {
+    trackFormStart();
+    setTab(v as any);
+    trackEvent("form_step", {
+      form_name: ANALYTICS_FORM_NAME,
+      step_number: v === "lumber" ? 1 : 2,
+      step_name: v,
+    });
+  };
+
   const submit = async () => {
+    trackEvent("form_submit_attempt", { form_name: ANALYTICS_FORM_NAME });
     if (!client) return toast.error("Account not ready. Try again.");
     if (!projectName.trim()) return toast.error("Project name is required.");
 
