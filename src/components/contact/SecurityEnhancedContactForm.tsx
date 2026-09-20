@@ -298,7 +298,15 @@ const SecurityEnhancedContactForm = () => {
           )}
           
           <Form {...form}>
-            <form onSubmit={form.handleSubmit((data) => onSubmit(data, canSubmit))} className="space-y-4">
+            <form
+              onSubmit={form.handleSubmit((data) => onSubmit(data, canSubmit))}
+              onSubmitCapture={() =>
+                trackEvent('form_submit_attempt', { form_name: ANALYTICS_FORM_NAME })
+              }
+              onFocusCapture={handleFormStart}
+              onInputCapture={handleFormStart}
+              className="space-y-4"
+            >
               {/* Honeypot field - hidden from users */}
               <FormField
                 control={form.control}
