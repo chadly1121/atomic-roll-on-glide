@@ -32,7 +32,7 @@ export const locationPages: LocationPageData[] = [
     postalCode: "P1L",
     headline: "Bracebridge's Most Trusted Painters — HGTV Featured, $5M Insured",
     metaTitle: "Painters in Bracebridge | HGTV Featured | Free Estimates — Roll On Painting",
-    metaDescription: "Bracebridge's top-rated painters. Interior, exterior & cabinet painting. HGTV featured, WSIB covered, $5M insured. two hours of free touch-ups every year. Call 705-787-1401.",
+    metaDescription: "Bracebridge's top-rated painters. Interior, exterior & cabinet painting. HGTV featured, WSIB covered, $5M insured. Two hours of free touch-ups every year. Call 705-787-1401.",
     intro: "Roll On Painting is Bracebridge's trusted painting contractor, serving homeowners and businesses throughout the heart of Muskoka. With over 25 years of industry experience and as seen on HGTV's Scott's Vacation House Rules, we deliver premium painting results with our Perfect Finish Promise.",
     localContent: "Bracebridge is the commercial hub of Muskoka, home to Bracebridge Falls and a vibrant downtown core. From heritage homes on Manitoba Street to waterfront cottages along the Muskoka River, our team understands the unique painting needs of Bracebridge properties. We work with local suppliers and understand the weather conditions that affect paint longevity in the Muskoka region.",
     nearbyAreas: ["Gravenhurst", "Huntsville", "Port Sydney", "Baysville", "Utterson", "Milford Bay"],
@@ -49,7 +49,7 @@ export const locationPages: LocationPageData[] = [
     postalCode: "P1H",
     headline: "Professional Painters in Huntsville, Ontario",
     metaTitle: "Painters in Huntsville | HGTV Featured | Free Estimates — Roll On Painting",
-    metaDescription: "Huntsville's top-rated painters. HGTV featured, $5M insured, WSIB covered. Interior, exterior & cottage painting. two hours of free touch-ups every year. Call 705-787-1401.",
+    metaDescription: "Huntsville's top-rated painters. HGTV featured, $5M insured, WSIB covered. Interior, exterior & cottage painting. Two hours of free touch-ups every year. Call 705-787-1401.",
     intro: "Roll On Painting proudly serves Huntsville and the surrounding Lake of Bays area. Based nearby in Port Sydney, we're your local painting experts with over 25 years of experience. Featured on HGTV's Scott's Vacation House Rules, we bring professional-grade results to every Huntsville home and cottage.",
     localContent: "Huntsville is the gateway to Algonquin Park and one of Muskoka's most beautiful towns. From the historic Main Street buildings to luxury homes on Peninsula Lake and Lake Vernon, we've painted properties across every neighbourhood. Our proximity to Huntsville means fast response times and deep knowledge of local building styles and weather patterns.",
     nearbyAreas: ["Port Sydney", "Dwight", "Dorset", "Lake of Bays", "Baysville", "Novar"],
@@ -66,7 +66,7 @@ export const locationPages: LocationPageData[] = [
     postalCode: "P1P",
     headline: "Professional Painters in Gravenhurst, Ontario",
     metaTitle: "Painters in Gravenhurst | HGTV Featured | Free Estimates — Roll On Painting",
-    metaDescription: "Gravenhurst's trusted painters. Interior, exterior & cottage painting. HGTV featured, WSIB covered, $5M insured. two hours of free touch-ups every year. Call 705-787-1401.",
+    metaDescription: "Gravenhurst's trusted painters. Interior, exterior & cottage painting. HGTV featured, WSIB covered, $5M insured. Two hours of free touch-ups every year. Call 705-787-1401.",
     intro: "Roll On Painting delivers premium painting services throughout Gravenhurst, the Gateway to Muskoka. Whether it's a heritage home near the wharf, a lakeside cottage on Lake Muskoka, or a commercial property on Muskoka Road, we bring 25 years of experience to every project.",
     localContent: "Gravenhurst sits at the southern entrance to Muskoka, known for its steamship heritage and beautiful waterfront. Properties here range from Victorian-era homes downtown to modern lakefront builds. We understand the specific paint requirements for Gravenhurst's diverse architecture, including the importance of weather-resistant finishes for properties exposed to Lake Muskoka's conditions.",
     nearbyAreas: ["Bracebridge", "Muskoka Lakes", "Port Carling", "Bala", "Severn", "Orillia"],
@@ -1052,7 +1052,7 @@ export const locationPages: LocationPageData[] = [
       { question: "How much does painting cost in Severn Bridge?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free estimate for your Severn Bridge property." },
       { question: "Is Severn Bridge in Muskoka or Simcoe County?", answer: "Severn Bridge sits right at the boundary — technically in the Town of Gravenhurst (Muskoka) with parts in Severn Township (Simcoe County). We serve both sides of the river." },
       { question: "Do you offer exterior staining in Severn Bridge?", answer: "Yes. Deck staining, fence staining, and exterior wood protection are popular services in Severn Bridge, especially for riverfront properties with docks and decks." },
-      { question: "What is your Perfect Finish Promise?", answer: "Every completed painting project includes our Perfect Finish Promise — we'll touch up your paint at no charge, two hours a year, for as long as you own the property — two hours a year. It’s a goodwill courtesy rather than a warranty." }
+      { question: "What is your Perfect Finish Promise?", answer: "Every completed painting project includes our Perfect Finish Promise — we'll touch up your paint at no charge, two hours a year, for as long as you own the property. It’s a goodwill courtesy rather than a warranty." }
     ]
   }
 ];
