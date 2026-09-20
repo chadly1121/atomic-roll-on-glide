@@ -44,7 +44,7 @@ const getUniversalFaqs = (name: string) => [
   },
   {
     question: `What is the Perfect Finish Promise?`,
-    answer: `Every completed project with Roll On Painting includes our Perfect Finish Promise. If your walls get scuffed or nicked after we've finished, we'll come back and touch them up at no charge. No other ${name} painter offers this.`
+    answer: `Every completed project with Roll On Painting includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If your walls get scuffed or nicked after we've finished, we'll come back and touch them up at no charge. No other ${name} painter offers this.`
   },
 ];
 
