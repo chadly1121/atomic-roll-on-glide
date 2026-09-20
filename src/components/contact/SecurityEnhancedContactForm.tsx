@@ -174,7 +174,16 @@ const SecurityEnhancedContactForm = () => {
     return file.type.startsWith('image/');
   };
 
+  // Fires once per page view on the visitor's first genuine interaction with the form.
+  const handleFormStart = () => {
+    trackEventOnce(`form_start:${ANALYTICS_FORM_NAME}:${currentPath()}`, 'form_start', {
+      form_name: ANALYTICS_FORM_NAME,
+      page_path: currentPath(),
+    });
+  };
+
   const onSubmit = async (data: FormData, canSubmit: boolean) => {
+    trackEvent('form_submit_attempt', { form_name: ANALYTICS_FORM_NAME });
     if (!canSubmit) {
       toast({
         title: "Rate limit exceeded",
