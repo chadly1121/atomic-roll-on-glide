@@ -153,11 +153,6 @@ const heroData: Record<string, LocationHeroInfo> = {
   // ═══════════════════════════════════════════
   // GEORGIAN BAY
   // ═══════════════════════════════════════════
-  "painters-georgian-bay": {
-    heroImage: IMGS.georgianBayRocks,
-    landmark: "Georgian Bay's Iconic Rock Shoreline",
-    localLove: "Georgian Bay is raw, rugged, and absolutely breathtaking — and painting properties here is like no other experience. The windswept pines, the pink granite rocks, and the endless blue horizon create a setting that demands we bring our toughest, most weather-resistant work. Properties on the Bay face serious elements, and we take enormous pride in delivering finishes that stand up to Mother Nature while looking incredible. Georgian Bay teaches you respect for the landscape, and that respect shows in every project we complete."
-  },
   "painters-lake-of-bays": {
     heroImage: IMGS.algonquinLake,
     landmark: "Lake of Bays, Algonquin Highlands",
@@ -261,31 +256,6 @@ const heroData: Record<string, LocationHeroInfo> = {
     landmark: "Georgian Bay's 30,000 Islands",
     localLove: "The Archipelago area is one of the most extraordinary places we work — mainland and road-accessible properties framed by the 30,000 Islands of Georgian Bay. These homes and cottages face some of the harshest weather conditions in Ontario, which is where our weatherproofing expertise really shines. Please note we do not service island or water-access-only properties."
   },
-  "painters-britt": {
-    heroImage: IMGS.georgianBayRocks,
-    landmark: "Georgian Bay Rocky Shore near Britt",
-    localLove: "Britt is a gateway to the wild beauty of Georgian Bay's eastern shore, and the properties here are as rugged and characterful as the landscape. Working in Britt means understanding the unique challenges that come with the Bay — wind, water, and weather that demand the toughest, most durable finishes. We respect what this environment throws at homes, and we prepare for it with every coat. The reward? Stunning waterfront properties that stand strong and look beautiful season after season."
-  },
-  "painters-byng-inlet": {
-    heroImage: IMGS.georgianBayCabin,
-    landmark: "Byng Inlet on Georgian Bay",
-    localLove: "Byng Inlet is where the Magnetawan River meets Georgian Bay in one of the most beautiful settings imaginable. The community here is tight-knit and deeply connected to the water, and the properties reflect that maritime character. We love working on the unique homes and cottages that line the inlet — each one has its own personality and its own set of challenges that keep us sharp. Byng Inlet reminds us that the best painting work happens when you truly understand the environment you're working in."
-  },
-  "painters-nobel": {
-    heroImage: IMGS.parrySoundDock,
-    landmark: "Parry Sound Town Dock",
-    localLove: "Nobel sits just south of Parry Sound, perfectly positioned between the highway and the beautiful Georgian Bay coastline. This growing community has a wonderful mix of established homes and new developments, giving us a great variety of projects to work on. We appreciate Nobel's convenient location and the friendly, down-to-earth nature of its residents. Whether it's a family home needing a refresh or a new build getting its first coat, we bring the same dedication and care to every Nobel project."
-  },
-  "painters-pickerel": {
-    heroImage: IMGS.georgianBayRocks,
-    landmark: "French River & Georgian Bay near Pickerel",
-    localLove: "The Pickerel area, near the historic French River, is a paradise for outdoor enthusiasts and a beautiful place to paint homes. The properties here range from fishing lodges to family cottages, all surrounded by pristine wilderness. We love the adventure that comes with working in this more remote area — it keeps things exciting and ensures that every day is different. The homeowners in Pickerel country are independent, resourceful, and deeply appreciative of quality work, which makes serving them a genuine pleasure."
-  },
-  "painters-pointe-au-baril": {
-    heroImage: IMGS.pointeAuBarilLight,
-    landmark: "Pointe au Baril Lighthouse",
-    localLove: "Pointe au Baril is where Georgian Bay reveals its most dramatic beauty — rocky shoreline, wind-sculpted pines, and some of the most exclusive cottage properties in Ontario. The iconic lighthouse has guided boats through these waters for over a century, and we feel a similar sense of purpose guiding homeowners through their painting projects. We service mainland and road-accessible properties in the area — the settings are one-of-a-kind."
-  },
 
   // ═══════════════════════════════════════════
   // SIMCOE COUNTY
@@ -295,70 +265,10 @@ const heroData: Record<string, LocationHeroInfo> = {
     landmark: "Lake Couchiching, Orillia",
     localLove: "Orillia — the 'Sunshine City' — has one of the best waterfronts in Ontario, and the community's energy is absolutely infectious. From the heritage homes along Mississaga Street to the vibrant lakeshore properties on Couchiching, Orillia offers an incredible variety of painting projects. This is Stephen Leacock's beloved 'Mariposa,' and you can still feel that literary charm in every neighbourhood. We love Orillia's perfect blend of small-town warmth and big-town amenities, and the homeowners here never fail to impress us with their vision."
   },
-  "painters-oro-medonte": {
-    heroImage: IMGS.barriePark,
-    landmark: "Horseshoe Valley, Oro-Medonte",
-    localLove: "Oro-Medonte is rolling countryside at its most beautiful — think horse farms, ski hills, and estate properties that take your breath away. Horseshoe Valley draws visitors year-round, and the homes in this area reflect that active, upscale lifestyle. We've painted stunning properties here that range from modern ski chalets to century farmhouses, and the variety keeps our skills razor-sharp. Oro-Medonte's combination of natural beauty and sophisticated living makes it one of our favourite areas to work in Simcoe County."
-  },
-  "painters-ramara": {
-    heroImage: IMGS.orilliaLake,
-    landmark: "Lake Couchiching & Lake Simcoe, Ramara",
-    localLove: "Ramara Township stretches between Lake Couchiching and Lake Simcoe, giving it some of the best waterfront real estate in the region. The mix of year-round homes and seasonal cottages keeps our schedule full and our work varied. We love the unpretentious character of Ramara's communities — places like Washago, Brechin, and Atherley where people value good work and fair prices. The stunning lake sunsets here are the perfect backdrop for admiring a freshly painted home."
-  },
-  "painters-severn": {
-    heroImage: IMGS.trentSevern,
-    landmark: "Trent-Severn Waterway",
-    localLove: "Severn Township is threaded with the historic Trent-Severn Waterway, one of the most scenic boat routes in North America. The communities along the waterway — from Port Severn to Washago — are charming, welcoming, and full of beautiful properties. We love working in Severn because every job seems to come with a water view and a friendly chat. The waterway's locks and dams add historic character to the area, and the homes here deserve painting that matches that quality and heritage."
-  },
-  "painters-warminster": {
-    heroImage: IMGS.barriePark,
-    landmark: "Simcoe County Countryside near Warminster",
-    localLove: "Warminster is genuine rural Ontario — open fields, mature forests, and a community that values hard work and neighbourly spirit. The properties here have that classic country appeal, from well-maintained farmhouses to newer rural estates. We appreciate the honesty and directness of Warminster's residents — they know what they want, and they appreciate it when we deliver. Painting in this peaceful countryside setting is a welcome change of pace that lets us focus on craftsmanship and precision."
-  },
-  "painters-barrie": {
-    heroImage: IMGS.barriePark,
-    landmark: "Centennial Park & Kempenfelt Bay, Barrie",
-    localLove: "Barrie has transformed into one of Ontario's most exciting cities, and the stunning waterfront along Kempenfelt Bay — crowned by the iconic Spirit Catcher sculpture — is proof of that evolution. From heritage homes in the downtown core to new developments with lake views, Barrie offers an incredible range of painting projects. We love the city's energy and ambition, and we're proud to help homeowners here keep their properties looking their very best. Barrie's combination of urban convenience and Lake Simcoe beauty makes it a fantastic place to work."
-  },
-  "painters-midland": {
-    heroImage: IMGS.midlandSainteMarie,
-    landmark: "Sainte-Marie Among the Hurons, Midland",
-    localLove: "Midland is a town that celebrates art and history — its stunning outdoor murals tell the story of the region, and the nearby Sainte-Marie Among the Hurons brings centuries of history to life. We feel a special connection to a community that values visual beauty as much as we do. The homes and businesses here are well-maintained and proud, from the charming downtown core to the waterfront properties overlooking Georgian Bay. Painting in Midland always feels like we're adding our own small contribution to a town that truly cares about aesthetics."
-  },
-  "painters-penetanguishene": {
-    heroImage: IMGS.midlandMartyrs,
-    landmark: "Martyrs' Shrine near Penetanguishene",
-    localLove: "Penetanguishene — or 'Penetang' as the locals say — is one of the most historically significant towns in Ontario, and Discovery Harbour beautifully preserves that naval heritage. The bilingual character of this community adds a unique cultural richness, and the properties here reflect that blend of English and French Canadian traditions. We love painting in Penetang because the architecture has such wonderful character, from waterfront estates to heritage downtown buildings. It's a town that wears its history with pride, and we're honoured to help maintain that legacy."
-  },
-  "painters-port-severn": {
-    heroImage: IMGS.bigChute,
-    landmark: "Big Chute Marine Railway",
-    localLove: "Port Severn is home to one of Ontario's most unique attractions — the Big Chute Marine Railway, where boats ride a giant carriage over land between waterways. That kind of engineering ingenuity reflects the spirit of this community: creative, resourceful, and built to last. The properties in Port Severn benefit from both the Trent-Severn Waterway and proximity to Georgian Bay, creating a waterfront paradise. We love working here because the community is welcoming, the settings are gorgeous, and the projects are always interesting."
-  },
   "painters-six-mile-lake": {
     heroImage: IMGS.sixMileLake,
     landmark: "Six Mile Lake & Wawautosa Marina",
     localLove: "Six Mile Lake holds a special place in my heart — I'm a former cottage owner on the lake, with deep ties and lasting friendships in this community. I know every bay, every dock, and every sunset view. Wawautosa Marina has been the heartbeat of Six Mile Lake since the 1950s, and the people here are like family. When we paint a cottage on Six Mile Lake, it's personal. We bring the same care and attention we'd give our own place, because this lake isn't just a service area — it's home."
-  },
-  "painters-coldwater": {
-    heroImage: IMGS.orilliaLake,
-    landmark: "Coldwater Canadiana Heritage Museum",
-    localLove: "Coldwater is one of those Ontario gems that feels like stepping back in time — in the best way. The Coldwater Canadiana Heritage Museum preserves the village's rich history, from the old mill to its founding as a 19th-century settlement along the Coldwater River. The tree-lined streets, heritage buildings, and friendly neighbours make this community a joy to work in. Properties here have real character, and we love helping homeowners maintain that charm with quality painting that respects the architecture."
-  },
-  "painters-honey-harbour": {
-    heroImage: IMGS.georgianBayCabin,
-    landmark: "Gateway to Georgian Bay Islands National Park",
-    localLove: "Honey Harbour is the gateway to one of Canada's most spectacular natural treasures — Georgian Bay Islands National Park. Every summer, cottagers and visitors flock to this waterfront village to catch the water taxi to Beausoleil Island or launch their boats into the legendary 30,000 islands. The cottages and homes here face some of the most beautiful — and demanding — weather conditions in Ontario. We love working in Honey Harbour because the scenery is breathtaking, the community is tight-knit, and the properties deserve paint that can stand up to Georgian Bay's winds and waves."
-  },
-  "painters-waubaushene": {
-    heroImage: IMGS.trentSevern,
-    landmark: "Trent-Severn Waterway at Waubaushene",
-    localLove: "Waubaushene sits at a historic crossroads of the Trent-Severn Waterway, where boats have been passing through for over a century. This quiet village on Matchedash Bay has a rich lumber-industry heritage and a beautiful waterfront that locals treasure. The mix of heritage homes and waterfront cottages gives every project here its own story. We love the peaceful pace of Waubaushene and the pride residents take in their properties — it's the kind of community where quality workmanship is noticed and appreciated."
-  },
-  "painters-victoria-harbour": {
-    heroImage: IMGS.midlandSainteMarie,
-    landmark: "Victoria Harbour waterfront on Georgian Bay",
-    localLove: "Victoria Harbour is a charming waterfront community on the southeastern shores of Georgian Bay with deep roots in Ontario's maritime and lumber history. The village's historic grain elevator and waterfront parks tell the story of a town built on hard work and water. Today, Victoria Harbour is a mix of year-round families and seasonal cottagers who love the slower pace and stunning Georgian Bay sunsets. We enjoy painting here because the homes have wonderful character, and the community takes real pride in keeping their properties looking their best."
   },
   "painters-severn-bridge": {
     heroImage: IMGS.bigChute,
