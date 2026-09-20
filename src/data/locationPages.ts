@@ -484,10 +484,10 @@ export const locationPages: LocationPageData[] = [
     metaTitle: "Painters in Magnetawan | Home & Cottage Painting | Roll On Painting",
     metaDescription: "Trusted painters in Magnetawan, Ontario. Interior, exterior, and cottage painting. WSIB covered, $5M insured. Free quotes. Call 705-787-1401.",
     intro: "Roll On Painting extends our professional painting services to Magnetawan and the Magnetawan River corridor. This historic village and its surrounding cottage communities benefit from our Muskoka-based expertise and commitment to quality.",
-    localContent: "Magnetawan is a picturesque village on the Magnetawan River, known for its lock station and beautiful surrounding waterways. Properties include village homes, waterfront cottages on Ahmic Lake and Cecebe Lake, and rural retreats. The area's northern location requires painters who understand harsh weather conditions and select products accordingly — something we've perfected over 25 years of painting in Ontario's cottage country.",
+    localContent: "Magnetawan is a picturesque village on the Magnetawan River, known for its lock station and beautiful surrounding waterways. Properties include village homes, waterfront cottages on Cecebe Lake, and rural retreats. The area's northern location requires painters who understand harsh weather conditions and select products accordingly — something we've perfected over 25 years of painting in Ontario's cottage country.",
     nearbyAreas: ["Burk's Falls", "Parry Sound", "Sundridge", "Kearney"],
     faqs: [
-      { question: "Do you serve Magnetawan for painting?", answer: "Yes. We serve Magnetawan and surrounding communities including properties on the Magnetawan River system, Ahmic Lake, and Cecebe Lake." },
+      { question: "Do you serve Magnetawan for painting?", answer: "Yes. We serve Magnetawan and surrounding communities including properties on the Magnetawan River system and Cecebe Lake." },
       { question: "What painting services do you offer in Magnetawan?", answer: "Full services including interior and exterior painting, staining, deck finishing, power washing, and GoNano permanent coating." },
       { question: "How much does cottage painting cost near Magnetawan?", answer: "Interior painting starts at $4.50/sq ft and exterior at $5.75/sq ft. Contact us for a free on-site estimate." }
     ]
