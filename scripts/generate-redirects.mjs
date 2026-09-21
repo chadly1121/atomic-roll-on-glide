@@ -119,6 +119,46 @@ for (const { source, destination, status } of sorted) {
 
 lines.push('');
 
+// Retired blog posts from the old Soro/GetAutoSEO feed. These 64-char hex ids
+// have no matching entry in src/data/localBlogPosts.ts, so the SPA rendered a
+// "post not found" page with an HTTP 200 (a soft 404). Serve a genuine 404 for
+// each one, listed explicitly — never a wildcard over /blog/*, which would
+// break the six real posts and /blog itself.
+const DEAD_BLOG_PATHS = [
+  '/blog/0b68787be4a982b5fe32e39f7a6585238716ab8bcdac5b5bfbfc18574a6fd753',
+  '/blog/10f2153238cbe26adc73468fc0e16e9f214b632c34fb800ed1d0133144faf17a',
+  '/blog/126de62cc84f5c70ca6bfebee5153babd4f7f1cc18717bea46b73b4934c28024',
+  '/blog/1b428e84a4a8c942157ecc6fa31c68fd5119d656bf7f87999dcbf26e4c08054f',
+  '/blog/227314ebe595181fda94766cdd140dd06a0c635b81cf7d85a86d10be15d78498',
+  '/blog/26f5995dd5ca507253b0c5c42f69853cc3eea6a469ef58ff6930bed59ee2b107',
+  '/blog/356023696e9d3a29b34141df57485383c1717549fa000968b287dc00863b5be6',
+  '/blog/405687dc70e50d826c6e5ed3c55b4472bf017df931ad30d70cc55ecda0911610',
+  '/blog/47da4f392880367ab9e89335b2f5f30e38da5aa0fa6b169471539347b2ccb5aa',
+  '/blog/5ee77f82b816f14a174b711e1454dda2b0d854fc1348464bea267ef6a0250342',
+  '/blog/6a65d13f0d6e30fae53a1d1277221d55cd0aa32a1460d0f083f6604f573ba007',
+  '/blog/7e79e7e48ef13da73405dd860796dd84bf364da897252d648afa74758b4688a2',
+  '/blog/83e47cbe2f62a2f002acc919665a5280043d67e2872ea62ca907f5dce444286a',
+  '/blog/89edf69f200a9fc02e0ba53875008a6707281403f2abe6c6eacae6ef4d46c702',
+  '/blog/9031a931cbddb3cc0cc1bd7b1e9075b220efcae335eb4df318c4fad1ef71a643',
+  '/blog/97c941be5071c01ecba5d46dd83c6bc861ec1fcf7de21bf06650fa0bd195fb39',
+  '/blog/9c66787c02389911b79c7526169b3bda2f641599bf2ffa63f8a9a92322145158',
+  '/blog/aad09b90ff0c5c783b3c9313691f5529c5d1e90bd469c5d9e1d76796c6c54754',
+  '/blog/ab1273b20084d92e70fd523046ee3ef47ab03354a05b5ceac6e706868c771ba3',
+  '/blog/b2ddc48b799f3c0389104faef849d4995af2d6476e2573e0c9a452fef98fed71',
+  '/blog/bad6d94679de52d5cfc22e800fee31f85ef06474c9eb405deb4f61a9448533ee',
+  '/blog/c770a9f51469e525811964e1f41c7d3e2101dbdfdf83ae42d4ed75a0a2e5a4e2',
+  '/blog/d920430efd025803ef4c801aef369d7c7a404341312dbb16451aeef406409dd7',
+  '/blog/df82062a53eec14105508e436770dc34fbef3e1ce0386db24420abf38887924a',
+  '/blog/fe992cc0cb66ac11007de2a53bf83b8e3da3252048c45625de5883e614a58188',
+];
+
+lines.push(`# Retired blog posts — genuine 404 (${DEAD_BLOG_PATHS.length} paths, explicit, no wildcard)`);
+for (const p of [...DEAD_BLOG_PATHS].sort()) {
+  lines.push(`${pad(p, 60)}${pad('/404.html', 50)}404`);
+}
+lines.push('');
+
+
 // Force-serve every prerendered route from its own /slug/index.html file.
 // Without these explicit 200! rules, Cloudflare Pages can fall through to
 // the wildcard SPA fallback below and serve dist/index.html (empty #root)
