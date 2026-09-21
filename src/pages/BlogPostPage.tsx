@@ -4,12 +4,14 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useBlogFeed } from '@/hooks/useBlogFeed';
+import { loadPostContent } from '@/data/blog/content';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, FileQuestion } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 import BlogServiceLinks from '@/components/blog/BlogServiceLinks';
 import RelatedPosts from '@/components/blog/RelatedPosts';
+
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -22,6 +24,9 @@ const BlogPostPage = () => {
   const { items, loading, getBySlug } = useBlogFeed();
   const post = getBySlug(slug || '');
   const [imgError, setImgError] = useState(false);
+  // The article body is code-split per post, so it is fetched on demand here
+  // instead of shipping with the blog index.
+  const [contentHtml, setContentHtml] = useState('');
   // Use www.roll-onpainting.com (the site's canonical host) so blog post
   // canonical/og:url/twitter:url match every other route on the site.
   const siteUrl = businessInfo.urls.websiteAlt;
@@ -35,9 +40,20 @@ const BlogPostPage = () => {
     setImgError(false);
   }, [slug]);
 
+  // Load this article's body
+  useEffect(() => {
+    let cancelled = false;
+    setContentHtml('');
+    if (!slug) return;
+    loadPostContent(slug).then((html) => {
+      if (!cancelled) setContentHtml(html);
+    });
+    return () => { cancelled = true; };
+  }, [slug]);
+
   // Make all content links open in new tabs & hide broken images
   useEffect(() => {
-    if (!post) return;
+    if (!post || !contentHtml) return;
     const container = document.querySelector('.blog-prose');
     if (!container) return;
     container.querySelectorAll('a').forEach((a) => {
@@ -47,7 +63,8 @@ const BlogPostPage = () => {
     container.querySelectorAll('img').forEach((img) => {
       img.onerror = () => { img.style.display = 'none'; };
     });
-  }, [post, slug]);
+  }, [post, slug, contentHtml]);
+
 
   const metaDesc = post?._seo?.meta_description || post?.summary || '';
   const metaKeywords = post?._seo?.meta_keywords?.join(', ') || '';
