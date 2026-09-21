@@ -428,5 +428,75 @@
     "source": "/painters-mckellar",
     "destination": "/service-areas",
     "status": 301
+  },
+  {
+    "source": "/painters-bowmanville",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/painters-collingwood",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/interior-painting-midland",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/exterior-painting-midland",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/cabinet-painting-midland",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/deck-staining-midland",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/interior-painting-collingwood",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/exterior-painting-collingwood",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/cabinet-painting-collingwood",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/deck-staining-collingwood",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/interior-painting-bowmanville",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/exterior-painting-bowmanville",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/cabinet-painting-bowmanville",
+    "destination": "/service-areas",
+    "status": 301
+  },
+  {
+    "source": "/deck-staining-bowmanville",
+    "destination": "/service-areas",
+    "status": 301
   }
 ]
