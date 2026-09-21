@@ -109,7 +109,7 @@ const BlogServiceLinks: React.FC<BlogServiceLinksProps> = ({ contentHtml, tags =
         </>
       )}
       <p className="text-xs text-muted-foreground">
-        Serving Muskoka, Almaguin, Parry Sound and Orillia — within about an hour of Port Sydney · <Link to="/contact" className="text-primary hover:underline">Start the Conversation</Link>
+        Serving Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia · <Link to="/contact" className="text-primary hover:underline">Start the Conversation</Link>
       </p>
     </aside>
   );

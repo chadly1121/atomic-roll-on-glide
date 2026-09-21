@@ -65,7 +65,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Use our free AI estimator for an instant ballpark quote',
@@ -158,7 +158,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Use our free AI estimator for an instant ballpark quote',
@@ -249,7 +249,7 @@ export const servicePages: ServicePageData[] = [
         'Huntsville, Bracebridge, Gravenhurst',
         'Parry Sound and surrounding areas',
         'Parry Sound and Orillia',
-        'All commercial properties within about an hour of our Port Sydney shop'
+        'Commercial properties across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 to schedule a site visit',
@@ -500,7 +500,7 @@ export const servicePages: ServicePageData[] = [
       whereAvailable: [
         'Huntsville, Bracebridge, Gravenhurst',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com',
@@ -659,7 +659,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com',
@@ -746,7 +746,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or send photos via our contact form',
@@ -825,7 +825,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com',
@@ -900,7 +900,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or send photos via our contact form',
@@ -981,7 +981,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Use our free AI estimator for a ballpark price',
@@ -1070,7 +1070,7 @@ export const servicePages: ServicePageData[] = [
         'Port Sydney, Dorset, Baysville, Dwight',
         'Muskoka Lakes, Lake of Bays, Rosseau',
         'Parry Sound and Orillia',
-        'All communities within about an hour of our Port Sydney shop'
+        'Communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia'
       ],
       howQuotesWork: [
         'Call 705-787-1401 or email info@roll-onpainting.com',
