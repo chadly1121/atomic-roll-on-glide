@@ -15,11 +15,14 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /llms-full.txt    /llms-full.txt    200!
 /site.webmanifest /site.webmanifest 200!
 
-# Legacy 301 redirects (86 entries from redirect-map.json)
+# Legacy 301 redirects (100 entries from redirect-map.json)
 /Bracebridge.html                                           /painters-bracebridge                             301
 /Burks%20Falls.html                                         /painters-burks-falls                             301
 /Burks-Falls.html                                           /painters-burks-falls                             301
 /cabinet-painting-barrie                                    /service-areas                                    301
+/cabinet-painting-bowmanville                               /service-areas                                    301
+/cabinet-painting-collingwood                               /service-areas                                    301
+/cabinet-painting-midland                                   /service-areas                                    301
 /catalog                                                    /portfolio                                        301
 /commercial-brick-waterproofing.html                        /exterior-painting-muskoka                        301
 /commercial-concrete-ceiling-painting-repair.html           /commercial-painting                              301
@@ -31,12 +34,21 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /commercial-painters-Muskoka.html                           /commercial-painting                              301
 /commercial-painting-epoxy-floor-coating.html               /epoxy-floors-muskoka                             301
 /deck-staining-barrie                                       /service-areas                                    301
+/deck-staining-bowmanville                                  /service-areas                                    301
+/deck-staining-collingwood                                  /service-areas                                    301
+/deck-staining-midland                                      /service-areas                                    301
 /Dwight.html                                                /painters-dwight                                  301
 /exterior-painting-barrie                                   /service-areas                                    301
+/exterior-painting-bowmanville                              /service-areas                                    301
+/exterior-painting-collingwood                              /service-areas                                    301
+/exterior-painting-midland                                  /service-areas                                    301
 /Huntsville.html                                            /painters-huntsville                              301
 /index.php                                                  /                                                 301
 /index.php/tools/*                                          /                                                 301
 /interior-painting-barrie                                   /service-areas                                    301
+/interior-painting-bowmanville                              /service-areas                                    301
+/interior-painting-collingwood                              /service-areas                                    301
+/interior-painting-midland                                  /service-areas                                    301
 /Muskoka-awning-painting-repair.html                        /exterior-painting-muskoka                        301
 /Muskoka-commercial-deck-wood-refinishing.html              /staining-muskoka                                 301
 /Muskoka-commercial-molding-painters.html                   /commercial-painting                              301
@@ -71,9 +83,11 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /New-builds.html                                            /                                                 301
 /painters-ahmic-harbour                                     /service-areas                                    301
 /painters-barrie                                            /service-areas                                    301
+/painters-bowmanville                                       /service-areas                                    301
 /painters-britt                                             /service-areas                                    301
 /painters-byng-inlet                                        /service-areas                                    301
 /painters-coldwater                                         /service-areas                                    301
+/painters-collingwood                                       /service-areas                                    301
 /painters-dunchurch                                         /service-areas                                    301
 /painters-georgian-bay                                      /service-areas                                    301
 /painters-honey-harbour                                     /service-areas                                    301

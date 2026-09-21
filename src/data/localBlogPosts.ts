@@ -138,7 +138,7 @@ export const localBlogPosts: LocalPost[] = [
         'Benjamin Moore exterior',
       ],
     },
-    content_html: `<p>If you've invested in a property on one of Muskoka's lakes, you already understand that maintaining it is a different discipline than maintaining a home in the city. The climate here — the freeze-thaw cycles, the lake humidity, the UV exposure through open water — puts pressure on exterior surfaces that most paint jobs in Toronto or Barrie simply never face.</p>
+    content_html: `<p>If you've invested in a property on one of Muskoka's lakes, you already understand that maintaining it is a different discipline than maintaining a home in the city. The climate here — the freeze-thaw cycles, the lake humidity, the UV exposure through open water — puts pressure on exterior surfaces that most paint jobs in the city simply never face.</p>
 <p>Exterior painting in Muskoka isn't just about choosing a colour. It's about understanding what happens to a painted surface over four seasons of hard use, and making sure every step — from surface prep to primer to topcoat — is done in a way that actually lasts.</p>
 <p>This guide covers what to expect, what questions to ask, and how to make sure your investment holds up.</p>
 
