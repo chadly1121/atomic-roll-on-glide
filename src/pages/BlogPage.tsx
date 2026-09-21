@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { FileText, RefreshCw } from 'lucide-react';
 import { businessInfo } from '@/data/businessInfo';
 
-const ITEMS_PER_PAGE_PLACEHOLDER = null;
 
 
 const ITEMS_PER_PAGE = 12;
@@ -169,7 +168,6 @@ const BlogPage = () => {
               </>
             )}
 
-            <SoroBlogEmbed />
           </div>
         </div>
       </main>
