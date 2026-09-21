@@ -30,15 +30,19 @@ export const businessInfo = {
   email: "info@roll-onpainting.com",
   
   // Physical Address
+  // Business address locality is Port Sydney. This is a fixed owner decision —
+  // do not change it to Utterson, even though the postal code P0B 1M0 maps to
+  // Utterson in Canada Post data. Utterson appears elsewhere in this project
+  // only as a service-area community, which is correct and separate.
   address: {
     street: "836 Greer Road",
-    city: "Utterson",
+    city: "Port Sydney",
     region: "Ontario",
     regionCode: "ON",
     postalCode: "P0B 1M0",
     country: "Canada",
     countryCode: "CA",
-    full: "836 Greer Road, Utterson, Ontario, Canada"
+    full: "836 Greer Road, Port Sydney, Ontario, Canada"
   },
   
   // Geographic Coordinates (Port Sydney, ON)

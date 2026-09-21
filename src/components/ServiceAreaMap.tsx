@@ -85,7 +85,7 @@ const ServiceAreaMap = () => {
         anchor: 'bottom',
       })
         .setLngLat(officeLoc)
-        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Utterson, Ontario</p>'))
+        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Port Sydney, Ontario</p>'))
         .addTo(newMap);
         
       // Add Huntsville marker

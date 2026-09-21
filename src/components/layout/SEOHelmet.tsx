@@ -441,7 +441,7 @@ const SEOHelmet: React.FC = () => {
       
       {/* Geo Tags */}
       <meta name="geo.region" content="CA-ON" />
-      <meta name="geo.placename" content="Utterson, Muskoka" />
+      <meta name="geo.placename" content="Port Sydney, Muskoka" />
       <meta name="geo.position" content={`${businessInfo.geo.latitude};${businessInfo.geo.longitude}`} />
       <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
       
