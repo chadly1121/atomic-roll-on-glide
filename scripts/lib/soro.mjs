@@ -189,20 +189,29 @@ const PLACE_RULES = [
 export function generateTags(title, html) {
   const titleText = title || '';
   const bodyText = (html || '').replace(/<[^>]+>/g, ' ');
-  const tags = [];
+  const scored = [];
 
   for (const [re, tag] of TAG_RULES) {
-    // Title matches always count; body matches need to be substantive.
+    // A title match means the article is about the subject. A body match only
+    // counts when the subject is discussed repeatedly, so passing mentions
+    // ("preparation", "moisture") don't become tags on every article.
     const inTitle = re.test(titleText);
     const bodyHits = (bodyText.match(new RegExp(re.source, 'gi')) || []).length;
-    if (inTitle || bodyHits >= 3) if (!tags.includes(tag)) tags.push(tag);
+    if (!inTitle && bodyHits < 10) continue;
+    if (scored.some((s) => s.tag === tag)) continue;
+    scored.push({ tag, score: (inTitle ? 1000 : 0) + bodyHits });
   }
+  // Places only when the article genuinely discusses them.
   for (const [re, place] of PLACE_RULES) {
     const hits = (bodyText.match(new RegExp(re.source, 'g')) || []).length;
-    if (re.test(titleText) || hits >= 2) if (!tags.includes(place)) tags.push(place);
+    if (!re.test(titleText) && hits < 3) continue;
+    if (scored.some((s) => s.tag === place)) continue;
+    scored.push({ tag: place, score: (re.test(titleText) ? 900 : 0) + hits });
   }
-  return tags.slice(0, 8);
+
+  return scored.sort((a, b) => b.score - a.score).slice(0, 6).map((s) => s.tag);
 }
+
 
 export function generateKeywords(tags, title) {
   const fromTitle = (title || '')
