@@ -233,6 +233,15 @@ const BlogPostPage = () => {
         </Helmet>
       )}
 
+      {/* Unknown / retired post slug — never allow it to be indexed */}
+      {!loading && !post && (
+        <Helmet>
+          <title>Article not found | Roll On Painting</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
+      )}
+
+
       <Navbar activeSection="blog" />
 
       <main className="pt-32 pb-16">
