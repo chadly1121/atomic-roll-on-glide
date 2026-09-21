@@ -118,7 +118,32 @@ for (const route of PRIORITY_ROUTES) {
   }
 }
 
+// Blog sitemap sync: every post in src/data/localBlogPosts.ts must be listed in
+// public/sitemap.xml, and the sitemap must not list a blog URL with no post.
+// Prevents silent 404s on real posts (they only get prerendered if in sitemap).
+try {
+  const postsSrc = await fs.readFile(path.join(__dirname, '..', 'src', 'data', 'localBlogPosts.ts'), 'utf8');
+  const postSlugs = new Set(
+    [...postsSrc.matchAll(/^\s*slug:\s*'([^']+)'/gm)].map(m => m[1])
+  );
+  const sitemapXml = await fs.readFile(path.join(__dirname, '..', 'public', 'sitemap.xml'), 'utf8');
+  const sitemapSlugs = new Set(
+    [...sitemapXml.matchAll(/<loc>[^<]*\/blog\/([^<\/]+)<\/loc>/g)].map(m => m[1])
+  );
+  for (const s of postSlugs) {
+    if (!sitemapSlugs.has(s)) errors.push(`public/sitemap.xml is missing blog post /blog/${s} (present in localBlogPosts.ts) — it would not be prerendered and would 404`);
+  }
+  for (const s of sitemapSlugs) {
+    if (!postSlugs.has(s)) errors.push(`public/sitemap.xml lists /blog/${s} but no such post exists in localBlogPosts.ts`);
+  }
+  if (postSlugs.size === 0) errors.push('Could not parse any blog slugs from src/data/localBlogPosts.ts');
+  else console.log(`✓ sitemap.xml blog section in sync with localBlogPosts.ts (${postSlugs.size} posts)`);
+} catch (e) {
+  errors.push(`Blog sitemap sync check failed: ${e.message}`);
+}
+
 // llms.txt word counts
+
 for (const [file, min] of [['llms.txt', MIN_LLMS], ['llms-full.txt', MIN_LLMS_FULL]]) {
   const p = path.join(DIST, file);
   try {
