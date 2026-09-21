@@ -30,7 +30,7 @@ const ServiceAreasPage: React.FC = () => {
     "@id": `${businessInfo.urls.website}/#organization`,
     "name": businessInfo.name,
     "legalName": businessInfo.legalName,
-    "description": `Professional painting contractor serving ${allServiceAreaNames.length} communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia.`,
+    "description": `Professional painting contractor serving ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.`,
     "url": businessInfo.urls.website,
     "telephone": businessInfo.phone.international,
     "email": businessInfo.email,
@@ -60,7 +60,7 @@ const ServiceAreasPage: React.FC = () => {
         <title>Service Areas | Roll On Painting | Muskoka, Parry Sound, Orillia</title>
         <meta 
           name="description" 
-          content={`Roll On Painting serves ${allServiceAreaNames.length} communities within about an hour of our Port Sydney shop. Professional painting in Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia and surrounding areas.`}
+          content={`Roll On Painting serves ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia. Professional painting in Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia and surrounding areas.`}
         />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://www.roll-onpainting.com/service-areas" />
@@ -68,7 +68,7 @@ const ServiceAreasPage: React.FC = () => {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Service Areas | Roll On Painting Muskoka" />
-        <meta property="og:description" content={`Professional painting in ${allServiceAreaNames.length} communities within about an hour of our Port Sydney shop.`} />
+        <meta property="og:description" content={`Professional painting in ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.`} />
         <meta property="og:url" content="https://www.roll-onpainting.com/service-areas" />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
@@ -76,7 +76,7 @@ const ServiceAreasPage: React.FC = () => {
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Service Areas | Roll On Painting" />
-        <meta name="twitter:description" content={`Serving ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound and Orillia.`} />
+        <meta name="twitter:description" content={`Serving ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.`} />
         
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -105,7 +105,7 @@ const ServiceAreasPage: React.FC = () => {
             </h1>
             <p className="text-lg text-muted-foreground">
               Roll On Painting provides professional painting services to {allServiceAreaNames.length} communities 
-              within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia.
+              across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.
             </p>
           </div>
 

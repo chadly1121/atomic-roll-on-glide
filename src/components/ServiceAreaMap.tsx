@@ -85,7 +85,7 @@ const ServiceAreaMap = () => {
         anchor: 'bottom',
       })
         .setLngLat(officeLoc)
-        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Port Sydney, Ontario</p>'))
+        .setPopup(new mapboxgl.Popup().setHTML('<h3>Roll On Painting</h3><p>836 Greer Road, Utterson, Ontario</p>'))
         .addTo(newMap);
         
       // Add Huntsville marker
@@ -166,7 +166,7 @@ const ServiceAreaMap = () => {
       <div className="rounded-xl overflow-hidden shadow-lg bg-muted p-6">
         <h3 className="font-bold text-lg mb-2">Our Service Area</h3>
         <p className="text-sm mb-4">
-          We work within about an hour of our Port Sydney shop: Huntsville,
+          We work across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia: Huntsville,
           Dwight, Lake of Bays, Bracebridge, Port Carling, Burk's Falls,
           Parry Sound and Orillia.
         </p>
@@ -187,7 +187,7 @@ const ServiceAreaMap = () => {
       <div ref={mapContainer} className="h-[400px] w-full" />
       <div className="absolute top-2 left-2 bg-white px-3 py-2 rounded-md shadow-md z-10 max-w-md">
         <h3 className="font-bold text-sm mb-1">Our Service Area</h3>
-        <p className="text-sm">We work within about an hour of our Port Sydney shop: Huntsville, Dwight, Lake of Bays, Bracebridge, Port Carling, Burk's Falls, Parry Sound and Orillia.</p>
+        <p className="text-sm">We work across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia: Huntsville, Dwight, Lake of Bays, Bracebridge, Port Carling, Burk's Falls, Parry Sound and Orillia.</p>
       </div>
     </div>
   );

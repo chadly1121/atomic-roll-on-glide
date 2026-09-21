@@ -4,7 +4,7 @@
  * Each location gets a unique page with locally-relevant content,
  * targeting "painter in [town]" and "[town] painting company" keywords.
  * 
- * Covers the communities within about an hour of the Port Sydney shop (see serviceAreas.ts)
+ * Covers the communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia (see serviceAreas.ts)
  */
 
 export interface LocationPageData {

@@ -153,7 +153,11 @@ const SEOHelmet: React.FC = () => {
           { "@type": "Place", "name": "Huntsville, Ontario, Canada (P1H)" },
           { "@type": "Place", "name": "Gravenhurst, Ontario, Canada (P1P)" },
           { "@type": "Place", "name": "Bracebridge, Ontario, Canada (P1L)" },
+          { "@type": "Place", "name": "McKellar, Ontario, Canada (P0G 1C0)" },
           { "@type": "Place", "name": "Parry Sound, Ontario, Canada (P2A)" },
+          { "@type": "Place", "name": "Pointe au Baril, Ontario, Canada (P0G 1K0)" },
+          { "@type": "Place", "name": "Honey Harbour, Ontario, Canada (P0E 1E0)" },
+          { "@type": "Place", "name": "Port Severn, Ontario, Canada (L0K 1S0)" },
           { "@type": "Place", "name": "Seguin, Ontario, Canada (P2A)" },
           { "@type": "Place", "name": "The Archipelago, Ontario, Canada (P2A)" },
           { "@type": "Place", "name": "Orillia, Ontario, Canada (L3V)" }
@@ -437,7 +441,7 @@ const SEOHelmet: React.FC = () => {
       
       {/* Geo Tags */}
       <meta name="geo.region" content="CA-ON" />
-      <meta name="geo.placename" content="Port Sydney, Muskoka" />
+      <meta name="geo.placename" content="Utterson, Muskoka" />
       <meta name="geo.position" content={`${businessInfo.geo.latitude};${businessInfo.geo.longitude}`} />
       <meta name="ICBM" content={`${businessInfo.geo.latitude}, ${businessInfo.geo.longitude}`} />
       

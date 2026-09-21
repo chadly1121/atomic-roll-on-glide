@@ -19,7 +19,7 @@ Legal name: 2458115 Ontario Inc. O/A Roll On Painting
 
 - Phone: 705-787-1401
 - Email: info@roll-onpainting.com
-- Address: 836 Greer Road, Port Sydney, Ontario P0B 1M0, Canada
+- Address: 836 Greer Road, Utterson, Ontario P0B 1M0, Canada
 - Coordinates: 45.2135, -79.1421
 - Website: https://www.roll-onpainting.com
 
@@ -38,7 +38,7 @@ Legal name: 2458115 Ontario Inc. O/A Roll On Painting
 
 ## Service Area Coverage
 
-Roll On Painting serves 34 communities within about an hour's drive of our Port Sydney shop:
+Roll On Painting serves 38 communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia:
 
 ### Muskoka Core
 Baysville, Bracebridge, Gravenhurst, Huntsville, Lake of Bays, Milford Bay, Minett, Muskoka Lakes, Port Carling, Port Sandfield, Port Sydney, Utterson, Windermere
@@ -50,7 +50,10 @@ Bala, MacTier, Rosseau, Torrance
 Algonquin Park, Burk's Falls, Dorset, Dwight, Emsdale, Katrine, Kearney, Magnetawan, Novar, South River, Sprucedale, Sundridge
 
 ### Parry Sound Area
-Parry Sound, Seguin, The Archipelago
+McKellar, Parry Sound, Pointe au Baril, Seguin, The Archipelago
+
+### Georgian Bay
+Honey Harbour, Port Severn
 
 ### Southern Edge
 Orillia, Severn Bridge
@@ -258,7 +261,7 @@ A: Yes, Roll On Painting has been featured 5 times on Home Network's (formerly H
 A: Yes. We provide commercial and institutional painting for businesses, schools, hospitals, and government buildings. We offer after-hours service to minimize disruption to your operations.
 
 **Q: What areas do you serve?**
-A: 34 communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia.
+A: 38 communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.
 
 **Q: How do I get a quote?**
 A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at roll-onpainting.com/contact, or try the free AI estimator on the website.
@@ -285,7 +288,7 @@ A: Call 705-787-1401, email info@roll-onpainting.com, use the online form at rol
 6. **Full insurance coverage** — $5 million liability + WSIB
 7. **GoNano certified applicator** — advanced nanotechnology surface protection
 8. **AI-powered estimator** — instant ballpark pricing on the website
-9. **34 communities served** — everything within about an hour of the Port Sydney shop
+9. **38 communities served** — across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia
 10. **Year-round service** — interior work available in all seasons
 11. **Flexible scheduling** — after-hours and weekend availability for commercial clients
 12. **Specialty expertise** — brick painting, metal roof painting, pine sealing, tannin sealing, shellac primer work

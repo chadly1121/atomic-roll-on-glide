@@ -32,13 +32,13 @@ export const businessInfo = {
   // Physical Address
   address: {
     street: "836 Greer Road",
-    city: "Port Sydney",
+    city: "Utterson",
     region: "Ontario",
     regionCode: "ON",
     postalCode: "P0B 1M0",
     country: "Canada",
     countryCode: "CA",
-    full: "836 Greer Road, Port Sydney, Ontario, Canada"
+    full: "836 Greer Road, Utterson, Ontario, Canada"
   },
   
   // Geographic Coordinates (Port Sydney, ON)
@@ -65,8 +65,8 @@ export const businessInfo = {
       "Parry Sound",
       "Orillia"
     ],
-    totalLocations: 34, // Full count from serviceAreas.ts
-    description: "Serving communities within about an hour of our Port Sydney shop — Muskoka, Almaguin, and as far as Parry Sound and Orillia"
+    totalLocations: 38, // Full count from serviceAreas.ts
+    description: "Serving 38 communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia"
   },
   
   // Operating Hours
@@ -223,7 +223,7 @@ export const verifiedFAQs = [
   },
   {
     question: "What areas does Roll On Painting serve?",
-    answer: "We work within about an hour of our Port Sydney shop — 34 communities across Muskoka and Almaguin, and as far as Parry Sound and Orillia. That includes Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound and Orillia."
+    answer: "We serve 38 communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia. That includes Huntsville, Port Sydney, Bracebridge, Gravenhurst, Muskoka Lakes, Lake of Bays, Dorset, Baysville, Dwight, Rosseau, Parry Sound and Orillia."
   },
   {
     question: "Are you insured and WSIB covered?",
