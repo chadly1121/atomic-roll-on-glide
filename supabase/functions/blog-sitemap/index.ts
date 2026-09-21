@@ -4,9 +4,11 @@ const SITE_URL = 'https://www.roll-onpainting.com';
 
 /**
  * Locally-authored blog posts.
- * Mirrors src/data/localBlogPosts.ts — when you add a post there, add the
+ * Mirrors src/data/blog/index.ts — when you add a post there, add the
  * slug + lastmod date here too so the sitemap stays accurate.
+ * scripts/sync-soro.mjs keeps both in sync automatically.
  */
+
 const POSTS: Array<{ slug: string; lastmod: string }> = [
   { slug: 'best-interior-paint-colours-muskoka-cottage', lastmod: '2026-05-03' },
   { slug: 'exterior-painting-muskoka-cottage-owners-guide', lastmod: '2026-05-03' },
