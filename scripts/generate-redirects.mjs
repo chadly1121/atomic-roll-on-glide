@@ -120,7 +120,7 @@ for (const { source, destination, status } of sorted) {
 lines.push('');
 
 // Retired blog posts from the old Soro/GetAutoSEO feed. These 64-char hex ids
-// have no matching entry in src/data/localBlogPosts.ts, so the SPA rendered a
+// have no matching post file in src/data/blog/posts/, so the SPA rendered a
 // "post not found" page with an HTTP 200 (a soft 404). Serve a genuine 404 for
 // each one, listed explicitly — never a wildcard over /blog/*, which would
 // break the six real posts and /blog itself.

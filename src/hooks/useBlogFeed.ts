@@ -1,60 +1,28 @@
 import { useCallback, useMemo } from 'react';
-import { localBlogPosts } from '@/data/localBlogPosts';
+import { blogPostsMeta } from '@/data/blog';
+import type { BlogPostMeta, BlogAuthor } from '@/data/blog/types';
 
-export interface BlogFeedAuthor {
-  name: string;
-  url?: string;
-}
-
-export interface BlogFeedItem {
-  id: string;
-  title: string;
-  summary: string;
-  content_html: string;
-  image: string;
-  url: string;
-  tags: string[];
-  date_published: string;
-  date_modified: string;
-  authors: BlogFeedAuthor[];
-  language: string;
-  _seo?: {
-    meta_description?: string;
-    meta_keywords?: string[];
-  };
-  // computed
-  slug: string;
-  readingTime: number;
-}
-
-function extractSlug(url: string, id: string): string {
-  try {
-    const parts = url.split('/').filter(Boolean);
-    if (parts.length > 0) {
-      return parts[parts.length - 1];
-    }
-  } catch {}
-  return id;
-}
-
-function calcReadingTime(html: string): number {
-  const text = html.replace(/<[^>]*>/g, '');
-  const words = text.split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.ceil(words / 200));
-}
+export type BlogFeedAuthor = BlogAuthor;
 
 /**
- * Blog data source: code-as-content via `src/data/localBlogPosts.ts`.
- * To publish a new post, add an entry to that file and deploy.
+ * Metadata for one post. Article bodies are NOT part of this object — they are
+ * code-split per post and loaded with `loadPostContent(slug)` from
+ * `@/data/blog/content`, so the blog index never ships any article text.
+ */
+export type BlogFeedItem = BlogPostMeta;
+
+/**
+ * Blog data source: code-as-content via `src/data/blog/`.
+ * To publish a new post, add an entry to `src/data/blog/index.ts` and a body
+ * file under `src/data/blog/posts/`. `scripts/sync-soro.mjs` does this
+ * automatically for newly published Soro articles.
  */
 export function useBlogFeed() {
   const items = useMemo<BlogFeedItem[]>(() => {
-    return localBlogPosts
-      .map((p) => ({ ...p, readingTime: calcReadingTime(p.content_html || '') }))
-      .sort(
-        (a, b) =>
-          new Date(b.date_published).getTime() - new Date(a.date_published).getTime()
-      );
+    return [...blogPostsMeta].sort(
+      (a, b) =>
+        new Date(b.date_published).getTime() - new Date(a.date_published).getTime()
+    );
   }, []);
 
   const getBySlug = useCallback(

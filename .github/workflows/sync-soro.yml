@@ -1,0 +1,64 @@
+name: Sync Soro blog articles
+
+# Soro publishes new articles every couple of days. This job imports any new
+# ones into src/data/blog/ and opens a pull request. It deliberately never
+# pushes to main: the deploy workflow uses cancel-in-progress, so an
+# unattended push could cancel a deploy that is already running.
+
+on:
+  schedule:
+    # Mondays at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-soro
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.3
+
+      - name: Import new articles
+        run: bun scripts/sync-soro.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new articles."
+          fi
+
+      - name: Open pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/sync-soro-articles
+          delete-branch: true
+          commit-message: 'chore(blog): import new Soro articles'
+          title: 'chore(blog): import new Soro articles'
+          body: |
+            Automated import from the Soro embed feed.
+
+            Each new article was added as:
+            - a body file in `src/data/blog/posts/`
+            - a metadata entry in `src/data/blog/index.ts`
+            - a featured image in `public/lovable-uploads/blog/`
+            - a URL in `public/sitemap.xml` and in `POSTS` in `supabase/functions/blog-sitemap/index.ts`
+
+            Review the copy before merging — the importer applies automated
+            corrections but does not replace an editor.
