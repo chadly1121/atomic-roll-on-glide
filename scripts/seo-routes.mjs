@@ -114,6 +114,10 @@ export const VALID_DESTINATIONS = new Set([
   '/post-road-muskoka-cottage-painting',
   '/blog/gonano-nuroof-revive-extend-roof-life-muskoka',
   '/blog/gonano-wood-saver-decks-docks-muskoka',
+  '/blog/best-interior-paint-colours-muskoka-cottage',
+  '/blog/exterior-painting-muskoka-cottage-owners-guide',
+  '/blog/flood-damaged-boathouses-docks-muskoka-2026',
+
 ]);
 
 export const CANONICAL_ORIGIN = 'https://www.roll-onpainting.com';

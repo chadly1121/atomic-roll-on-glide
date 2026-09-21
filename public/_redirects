@@ -130,9 +130,12 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /blog/df82062a53eec14105508e436770dc34fbef3e1ce0386db24420abf38887924a /404.html                                         404
 /blog/fe992cc0cb66ac11007de2a53bf83b8e3da3252048c45625de5883e614a58188 /404.html                                         404
 
-# Prerendered route overrides (85 from sitemap.xml) — must come BEFORE SPA fallback
+# Prerendered route overrides (88 from sitemap.xml) — must come BEFORE SPA fallback
 /about                                                      /about/index.html                                 200!
 /blog                                                       /blog/index.html                                  200!
+/blog/best-interior-paint-colours-muskoka-cottage           /blog/best-interior-paint-colours-muskoka-cottage/index.html 200!
+/blog/exterior-painting-muskoka-cottage-owners-guide        /blog/exterior-painting-muskoka-cottage-owners-guide/index.html 200!
+/blog/flood-damaged-boathouses-docks-muskoka-2026           /blog/flood-damaged-boathouses-docks-muskoka-2026/index.html 200!
 /blog/gonano-nuroof-revive-extend-roof-life-muskoka         /blog/gonano-nuroof-revive-extend-roof-life-muskoka/index.html 200!
 /blog/gonano-wood-saver-decks-docks-muskoka                 /blog/gonano-wood-saver-decks-docks-muskoka/index.html 200!
 /blog/sansin-exterior-stains-decks-docks-muskoka            /blog/sansin-exterior-stains-decks-docks-muskoka/index.html 200!
