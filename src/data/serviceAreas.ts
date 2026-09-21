@@ -4,7 +4,7 @@
  * This data powers the hidden /service-areas page for AI search engines
  * and the areaServed schema in structured data.
  * 
- * Coverage: within about an hour's drive of our Port Sydney shop.
+ * Coverage: 38 communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.
  *
  * Last updated: September 20, 2026
  */
@@ -72,9 +72,19 @@ export const serviceAreaRegions: ServiceAreaRegion[] = [
     name: "Parry Sound Area",
     description: "Parry Sound and nearby mainland townships",
     locations: [
+      { name: "McKellar", postalCode: "P0G 1C0" },
       { name: "Parry Sound", postalCode: "P2A" },
+      { name: "Pointe au Baril", postalCode: "P0G 1K0" },
       { name: "Seguin", postalCode: "P2A" },
       { name: "The Archipelago", postalCode: "P2A" },
+    ]
+  },
+  {
+    name: "Georgian Bay",
+    description: "Southern Georgian Bay communities",
+    locations: [
+      { name: "Honey Harbour", postalCode: "P0E 1E0" },
+      { name: "Port Severn", postalCode: "L0K 1S0" },
     ]
   },
   {
