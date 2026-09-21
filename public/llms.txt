@@ -15,7 +15,7 @@ experience: 25+ years in painting industry
 
 phone: 705-787-1401
 email: info@roll-onpainting.com
-address: 836 Greer Road, Utterson, Ontario P0B 1M0, Canada
+address: 836 Greer Road, Port Sydney, Ontario P0B 1M0, Canada
 coordinates: 45.2135, -79.1421
 
 ## Hours of Operation
