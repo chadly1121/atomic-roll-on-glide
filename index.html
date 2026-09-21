@@ -73,10 +73,10 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "LocalBusiness",
-          "@id": "https://www.roll-onpainting.com/#business",
+          "@type": ["HousePainter", "LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
+          "@id": "https://www.roll-onpainting.com/#localbusiness",
           "name": "Roll On Painting",
-          "legalName": "2458115 Ontario Inc.",
+          "legalName": "2458115 Ontario Inc. O/A Roll On Painting",
           "url": "https://www.roll-onpainting.com",
           "logo": "https://www.roll-onpainting.com/lovable-uploads/9058a595-b38f-4cdc-893a-19baaccf57d5.webp",
           "image": "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg",
@@ -130,12 +130,17 @@
         {
           "@type": "WebSite",
           "@id": "https://www.roll-onpainting.com/#website",
-          "url": "https://www.roll-onpainting.com",
+          "url": "https://www.roll-onpainting.com/",
           "name": "Roll On Painting",
-          "publisher": { "@id": "https://www.roll-onpainting.com/#business" },
+          "description": "Muskoka's premier cottage painting and coatings company. 25+ years on lakefront cottages, luxury homes, and heritage properties. 5× HGTV featured. GoNano + Sansin certified. $5M insured. Book your consultation.",
+          "publisher": { "@id": "https://www.roll-onpainting.com/#organization" },
+          "inLanguage": "en-CA",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.roll-onpainting.com/?q={search_term_string}",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.roll-onpainting.com/?s={search_term_string}"
+            },
             "query-input": "required name=search_term_string"
           }
         },
@@ -145,7 +150,7 @@
           "url": "https://www.roll-onpainting.com",
           "name": "Painters Muskoka | HGTV Featured | Roll On Painting",
           "isPartOf": { "@id": "https://www.roll-onpainting.com/#website" },
-          "about": { "@id": "https://www.roll-onpainting.com/#business" },
+          "about": { "@id": "https://www.roll-onpainting.com/#localbusiness" },
           "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "h2"] }
         },
         {
