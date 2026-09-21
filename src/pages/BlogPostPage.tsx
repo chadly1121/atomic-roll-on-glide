@@ -337,11 +337,11 @@ const BlogPostPage = () => {
               {/* Content */}
               <div
                 className="blog-prose"
-                dangerouslySetInnerHTML={{ __html: post.content_html }}
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
               />
 
               {/* Contextual internal links to service pages */}
-              <BlogServiceLinks contentHtml={post.content_html} tags={post.tags} />
+              <BlogServiceLinks contentHtml={contentHtml} tags={post.tags} />
 
               {/* Related posts to reduce bounce rate */}
               <RelatedPosts currentSlug={post.slug} currentTags={post.tags || []} allPosts={items} />
