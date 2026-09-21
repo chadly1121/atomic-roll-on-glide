@@ -176,8 +176,9 @@ const BlogPostPage = () => {
     }
   };
 
-  const faqItems = post ? extractFAQs(post.content_html) : [];
-  const howTo = post ? extractHowTo(post.content_html) : null;
+  const faqItems = contentHtml ? extractFAQs(contentHtml) : [];
+  const howTo = contentHtml ? extractHowTo(contentHtml) : null;
+
 
   if (jsonLd && faqItems.length > 0) {
     jsonLd['@graph'].push({
