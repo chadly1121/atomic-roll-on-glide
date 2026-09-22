@@ -540,7 +540,7 @@ export function renderReviewReport(reviews, edits = []) {
   lines.push('');
   lines.push('## Verdict');
   for (const r of reviews) {
-    lines.push(`- **${r.slug}** — ${r.count === 0 ? 'CLEAN' : `${r.count} item${r.count === 1 ? '' : 's'} need a human read`}`);
+    lines.push(`- **${r.slug}** — ${r.count === 0 ? 'CLEAN' : `${r.count} item${r.count === 1 ? ' needs' : 's need'} a human read`}`);
   }
   lines.push('');
   lines.push('Approved credential list (`scripts/lib/approved-credentials.mjs`): ' + APPROVED_CREDENTIALS.join('; ') + '.');
