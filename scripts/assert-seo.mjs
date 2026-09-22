@@ -195,6 +195,47 @@ for (const url of sitemapSet) {
 if (routerRoutes.length) console.log(`✓ router/sitemap parity: ${routerRoutes.length} routes in src/App.tsx, ${sitemapSet.size} sitemap URLs`);
 
 // ---------------------------------------------------------------------------
+// Every unlisted route must have an explicit SPA-shell 200 rule in _redirects.
+//
+// An unlisted route is never prerendered, so if nothing rewrites it to the SPA
+// shell Cloudflare Pages serves public/404.html and the page 404s in
+// production. For /login that means nobody can sign in at all; for
+// /client/dashboard it means a refresh throws the client out.
+// ---------------------------------------------------------------------------
+try {
+  const redirectsTxt = await fs.readFile(path.join(ROOT, 'public', '_redirects'), 'utf8');
+  const spaRules = redirectsTxt
+    .split('\n')
+    .map(l => l.trim())
+    .filter(l => l && !l.startsWith('#'))
+    .map(l => l.split(/\s+/))
+    .filter(p => p.length >= 3 && p[1] === '/index.html' && /^200!?$/.test(p[2]))
+    .map(p => p[0]);
+  const covers = (route) => spaRules.some((rule) => {
+    if (rule === '/*') return false;                       // the catch-all doesn't count
+    if (rule === route) return true;
+    if (rule.endsWith('/*')) return route.startsWith(rule.slice(0, -1));
+    return false;
+  });
+  let checked = 0;
+  for (const route of UNLISTED_ROUTES) {
+    if (route === '/catalog' || route.includes(':')) continue;
+    checked++;
+    if (covers(route)) continue;
+    errors.push(
+      `Unlisted route "${route}" has no explicit SPA-shell rule in public/_redirects. ` +
+      `It is not in the sitemap, so it is never prerendered, and Cloudflare Pages serves ` +
+      `public/404.html instead — the route returns 404 in production` +
+      (route === '/login' ? ', which means nobody can sign in at all' : '') + `. ` +
+      `Fix: scripts/generate-redirects.mjs derives these rules from UNLISTED_ROUTES — re-run \`npm run generate:redirects\`.`
+    );
+  }
+  console.log(`✓ unlisted routes: ${checked} routes have SPA-shell 200 rules in public/_redirects`);
+} catch (e) {
+  errors.push(`Unlisted-route SPA rewrite check failed: ${e.message}`);
+}
+
+// ---------------------------------------------------------------------------
 // Internal links inside blog article bodies must resolve to a real route.
 // A dead link in a published article should break the build, not sit there.
 // ---------------------------------------------------------------------------
