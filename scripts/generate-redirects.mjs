@@ -152,7 +152,7 @@ lines.push('');
   }
   lines.push(`# SPA shell rewrites for unlisted routes (${spaRules.length} rules from UNLISTED_ROUTES)`);
   for (const r of spaRules) {
-    lines.push(`${pad(r, 60)}${pad('/index.html', 50)}200`);
+    lines.push(`${pad(r, 60)}${pad('/index.html', 50)}200!`);
   }
   lines.push('');
   console.log(`✓ Added ${spaRules.length} SPA shell rewrites for unlisted routes`);
