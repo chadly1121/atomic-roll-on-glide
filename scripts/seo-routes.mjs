@@ -21,6 +21,8 @@ export const PRIORITY_ROUTES = [
   '/media',
   '/free-touch-ups',
   '/gonano',
+  '/services',
+  '/how-we-quote',
   // Service pages
   '/interior-painting',
   '/exterior-painting',
@@ -121,3 +123,57 @@ export const VALID_DESTINATIONS = new Set([
 ]);
 
 export const CANONICAL_ORIGIN = 'https://www.roll-onpainting.com';
+
+/**
+ * Routes registered in src/App.tsx that must NEVER appear in public/sitemap.xml.
+ * Everything else in the router is required to be in the sitemap — see the
+ * router/sitemap parity assertion in scripts/assert-seo.mjs.
+ *
+ * Adding a route here is a deliberate decision that the page should not be
+ * crawled or prerendered. It is NOT a way to silence the assertion for a real
+ * public page: an unlisted page is never prerendered, and public/404.html then
+ * takes precedence over the SPA fallback on Cloudflare Pages, so it 404s in
+ * production while working perfectly in dev.
+ */
+export const UNLISTED_ROUTES = new Set([
+  // Auth surfaces — no SEO value, must not be indexed.
+  '/login',
+  '/reset-password',
+  '/portal',
+  '/.lovable/oauth/consent',
+
+  // Transactional endpoint reached only after a Stripe checkout.
+  '/payment-success',
+
+  // Admin portal — authenticated staff only.
+  '/admin',
+  '/admin/dashboard',
+  '/admin/quotes',
+  '/admin/quotes/:id',
+  '/admin/orders',
+  '/admin/orders/:id',
+  '/admin/clients',
+  '/admin/products',
+  '/admin/profiles',
+  '/admin/species',
+  '/admin/labour',
+  '/admin/shake-pricing',
+
+  // Client portal — authenticated clients only.
+  '/client',
+  '/client/dashboard',
+  '/client/quote/new',
+  '/client/quotes',
+  '/client/quotes/:id',
+  '/client/orders',
+  '/client/orders/:id',
+  '/client/profile',
+
+  // Legacy alias: a real 301 to /portfolio lives in redirect-map.json, so the
+  // router <Navigate> is only a fallback and the URL must not be advertised.
+  '/catalog',
+
+  // Dynamic patterns — their concrete URLs are listed in the sitemap individually.
+  '/blog/:slug',
+  '/:slug',
+]);
