@@ -181,7 +181,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         question: 'How long does exterior paint last?',
-        answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Muskoka\'s climate. We offer a 5-year warranty on vertical surfaces above the splash and snow zones — siding, soffit, fascia, vertical trim, doors and railing uprights. Horizontal and high-exposure areas like decks, docks, railing caps and snow-load zones aren\'t warranted, but they\'re still looked after under our Perfect Finish Promise.'
+        answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Muskoka\'s climate. Roll On Painting warrants its workmanship for three years from substantial completion. Decks, docks, railing caps and runoff zones are not covered, and other exclusions apply — the written terms set them out. Separately, our Perfect Finish Promise provides two hours of complimentary touch-ups per year of ownership as a goodwill courtesy; unused hours do not carry over.'
       },
       {
         question: 'Do you paint log homes and cabins?',
