@@ -195,12 +195,22 @@ for (const url of sitemapSet) {
 if (routerRoutes.length) console.log(`✓ router/sitemap parity: ${routerRoutes.length} routes in src/App.tsx, ${sitemapSet.size} sitemap URLs`);
 
 // ---------------------------------------------------------------------------
-// Every unlisted route must have an explicit SPA-shell 200 rule in _redirects.
+// Every unlisted route must have an explicit SPA-shell `200!` rule in
+// _redirects.
 //
 // An unlisted route is never prerendered, so if nothing rewrites it to the SPA
 // shell Cloudflare Pages serves public/404.html and the page 404s in
 // production. For /login that means nobody can sign in at all; for
 // /client/dashboard it means a refresh throws the client out.
+//
+// The forcing form (`200!`) is required, not optional: a plain `200` rewrite
+// loses to Cloudflare's static-asset layer, and public/404.html is part of that
+// layer. A plain-200 rule was shipped once and every portal route still 404'd
+// in production while this check reported green.
+//
+// LIMITATION: this verifies only that the rule is present and correctly formed
+// in the generated file. It cannot verify how Cloudflare actually behaves, so a
+// live check against production after each deploy is still required.
 // ---------------------------------------------------------------------------
 try {
   const redirectsTxt = await fs.readFile(path.join(ROOT, 'public', '_redirects'), 'utf8');
@@ -209,7 +219,7 @@ try {
     .map(l => l.trim())
     .filter(l => l && !l.startsWith('#'))
     .map(l => l.split(/\s+/))
-    .filter(p => p.length >= 3 && p[1] === '/index.html' && /^200!?$/.test(p[2]))
+    .filter(p => p.length >= 3 && p[1] === '/index.html' && p[2] === '200!')
     .map(p => p[0]);
   const covers = (route) => spaRules.some((rule) => {
     if (rule === '/*') return false;                       // the catch-all doesn't count
@@ -223,14 +233,14 @@ try {
     checked++;
     if (covers(route)) continue;
     errors.push(
-      `Unlisted route "${route}" has no explicit SPA-shell rule in public/_redirects. ` +
-      `It is not in the sitemap, so it is never prerendered, and Cloudflare Pages serves ` +
-      `public/404.html instead — the route returns 404 in production` +
+      `Unlisted route "${route}" has no forcing SPA-shell rule ("${route}  /index.html  200!") in public/_redirects. ` +
+      `It is not in the sitemap, so it is never prerendered; without the "!" the rewrite loses to ` +
+      `Cloudflare's static-asset layer and public/404.html is served — the route returns 404 in production` +
       (route === '/login' ? ', which means nobody can sign in at all' : '') + `. ` +
       `Fix: scripts/generate-redirects.mjs derives these rules from UNLISTED_ROUTES — re-run \`npm run generate:redirects\`.`
     );
   }
-  console.log(`✓ unlisted routes: ${checked} routes have SPA-shell 200 rules in public/_redirects`);
+  console.log(`✓ unlisted routes: ${checked} routes have forcing SPA-shell 200! rules in public/_redirects`);
 } catch (e) {
   errors.push(`Unlisted-route SPA rewrite check failed: ${e.message}`);
 }
