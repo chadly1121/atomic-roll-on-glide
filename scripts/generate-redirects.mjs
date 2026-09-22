@@ -268,6 +268,18 @@ try {
     '/*-gravenhurst',
     '/*-port-carling',
     '/*-cottage-painting',
+    // Unlisted portal/auth routes — these now have real SPA-shell files in the
+    // build output (scripts/write-spa-shells.mjs), so serve them statically
+    // rather than letting the Functions layer fall through to 404.html.
+    '/login',
+    '/reset-password',
+    '/portal',
+    '/payment-success',
+    '/admin',
+    '/admin/*',
+    '/client',
+    '/client/*',
+    '/.lovable/*',
     // Static asset directories and file extensions — serve directly
     '/assets/*',
     '/lovable-uploads/*',
