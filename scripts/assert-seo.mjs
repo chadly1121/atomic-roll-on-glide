@@ -200,18 +200,20 @@ if (routerRoutes.length) console.log(`✓ router/sitemap parity: ${routerRoutes.
 //
 // An unlisted route is never prerendered, so if nothing rewrites it to the SPA
 // shell Cloudflare Pages serves public/404.html and the page 404s in
-// production. For /login that means nobody can sign in at all; for
-// /client/dashboard it means a refresh throws the client out.
+// production. Since the prefinishing portal was deleted this covers exactly
+// one route, /payment-success — the Stripe return URL. One route is not
+// nothing: a customer who has just paid is the worst person to show a 404.
 //
 // The forcing form (`200!`) is required, not optional: a plain `200` rewrite
 // loses to Cloudflare's static-asset layer, and public/404.html is part of that
-// layer. A plain-200 rule was shipped once and every portal route still 404'd
-// in production while this check reported green.
+// layer. A plain-200 rule was shipped once and every route relying on it still
+// 404'd in production while this check reported green.
 //
 // LIMITATION: this verifies only that the rule is present and correctly formed
 // in the generated file. It cannot verify how Cloudflare actually behaves, so a
 // live check against production after each deploy is still required.
 // ---------------------------------------------------------------------------
+
 try {
   const redirectsTxt = await fs.readFile(path.join(ROOT, 'public', '_redirects'), 'utf8');
   const spaRules = redirectsTxt
@@ -236,8 +238,9 @@ try {
       `Unlisted route "${route}" has no forcing SPA-shell rule ("${route}  /index.html  200!") in public/_redirects. ` +
       `It is not in the sitemap, so it is never prerendered; without the "!" the rewrite loses to ` +
       `Cloudflare's static-asset layer and public/404.html is served — the route returns 404 in production` +
-      (route === '/login' ? ', which means nobody can sign in at all' : '') + `. ` +
+      (route === '/payment-success' ? ', which means a customer who has just paid sees a dead page' : '') + `. ` +
       `Fix: scripts/generate-redirects.mjs derives these rules from UNLISTED_ROUTES — re-run \`npm run generate:redirects\`.`
+
     );
   }
   console.log(`✓ unlisted routes: ${checked} routes have forcing SPA-shell 200! rules in public/_redirects`);
@@ -245,11 +248,11 @@ try {
   // -------------------------------------------------------------------------
   // Every landing route in SHELL_ROUTES must ALSO have a real file in dist/.
   //
-  // The rule alone is not enough and we have the production evidence: the
-  // forcing `200!` rules were deployed and /login still returned 404.html. On
-  // Cloudflare Pages a path with a real file in the build output returns 200
+  // The rule alone is not enough and we have the production evidence: forcing
+  // `200!` rules were deployed and the fileless routes still returned 404.html.
+  // On Cloudflare Pages a path with a real file in the build output returns 200
   // and a path without one gets the custom 404.html, which is why every
-  // prerendered page works and every fileless portal route did not.
+  // prerendered page works and every fileless route did not.
   // scripts/write-spa-shells.mjs writes those files during `npm run build`.
   //
   // AND public/_routes.json must exclude the path. THIS IS THE DECIDING PIECE:
@@ -261,10 +264,10 @@ try {
   //
   // LIMITATION (unchanged): this proves only that the file and the rule exist
   // in the build output. It cannot prove how Cloudflare resolves them at the
-  // edge, and it says nothing about dynamic children such as
-  // /client/quotes/<id>, which have no file of their own and depend on the
-  // /client/* glob. Both still require a live check after each deploy.
+  // edge. Since the portal was deleted this loop covers one route; it stays
+  // because /payment-success depends on exactly the mechanism that failed.
   // -------------------------------------------------------------------------
+
   let excludePatterns = [];
   try {
     const routesJson = JSON.parse(await fs.readFile(path.join(ROOT, 'public', '_routes.json'), 'utf8'));

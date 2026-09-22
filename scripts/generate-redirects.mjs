@@ -120,18 +120,21 @@ for (const { source, destination, status } of sorted) {
 lines.push('');
 
 // ---------------------------------------------------------------------------
-// SPA shell rewrites for unlisted routes (auth, Stripe return, admin, client).
+// SPA shell rewrites for unlisted routes.
 //
 // These routes are deliberately absent from sitemap.xml, so they are never
-// prerendered and no /<route>/index.html exists. Without an explicit 200 rule
-// Cloudflare Pages serves public/404.html for them, which means /login 404s in
-// production (nobody can sign in) and a client refreshing /client/dashboard is
-// thrown out. Derived from UNLISTED_ROUTES in scripts/seo-routes.mjs so the two
-// can never drift. Placed AFTER the legacy 301s (a legacy URL still redirects)
-// and BEFORE the 404 and SPA-fallback rules (first match wins).
+// prerendered and no /<route>/index.html exists. Without an explicit forcing
+// rule Cloudflare Pages serves public/404.html for them. Today the only such
+// landing route is /payment-success, the Stripe return URL for the public
+// catalog — if it 404s, a customer who has just paid sees a dead page.
+// (The prefinishing portal that used to live here was deleted; its routes are
+// gone from UNLISTED_ROUTES.) Derived from UNLISTED_ROUTES in
+// scripts/seo-routes.mjs so the two can never drift. Placed AFTER the legacy
+// 301s and BEFORE the 404 and SPA-fallback rules (first match wins).
 // Excluded: /catalog (already has a real 301) and the dynamic patterns
 // /blog/:slug and /:slug (their concrete URLs are prerendered).
 // ---------------------------------------------------------------------------
+
 {
   const unlisted = [...UNLISTED_ROUTES].filter((r) => r !== '/catalog' && r !== '/blog/:slug' && r !== '/:slug');
   const groups = new Map(); // first segment -> routes
