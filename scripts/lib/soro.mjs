@@ -78,7 +78,6 @@ export async function fetchArticleBody(id) {
 
 // ---------------------------------------------------------------- content scan
 
-// ---------------------------------------------------------------- content scan
 
 /**
  * Split HTML into sentence-sized chunks. A chunk keeps whatever tags and
@@ -152,9 +151,10 @@ export function normalisePromiseSentences(html, slug = 'article') {
 }
 
 /**
-
+ * Corrects imported copy against the real record and strips anything that
  * shouldn't ship. Returns { html, edits: string[], blockers: string[] }.
  */
+
 export function sanitizeContent(rawHtml, slug) {
   let html = rawHtml;
   const edits = [];
