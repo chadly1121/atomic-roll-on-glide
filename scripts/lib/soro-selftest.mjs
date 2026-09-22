@@ -98,7 +98,16 @@ function checkTiers() {
     html: '<p>Test for asbestos before disturbing the ceiling.</p>',
   });
   if (must.count < 1) return 'an asbestos mention was not tiered as MUST READ';
+  const leadTo = reviewArticle({
+    slug: 'tier-test-3',
+    html: '<p>Poor preparation can lead to patchy fading and flaking.</p>',
+  });
+  if (leadTo.count !== 0) return '"lead to" was mistaken for lead paint';
+  const scope = normalisePromiseSentences(
+    '<p>Are touch-ups included, and who removes the protective coverings at the end?</p>', 'selftest');
+  if (scope.blockers.length || scope.edits.length) return 'a touch-up scope question was treated as our promise';
   return null;
+
 }
 
 export function runSelfTest() {
