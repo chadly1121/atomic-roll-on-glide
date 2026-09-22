@@ -118,15 +118,15 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /site-map.html                                              /                                                 301
 
 # SPA shell rewrites for unlisted routes (9 rules from UNLISTED_ROUTES)
-/.lovable/oauth/consent                                     /index.html                                       200
-/admin                                                      /index.html                                       200
-/admin/*                                                    /index.html                                       200
-/client                                                     /index.html                                       200
-/client/*                                                   /index.html                                       200
-/login                                                      /index.html                                       200
-/payment-success                                            /index.html                                       200
-/portal                                                     /index.html                                       200
-/reset-password                                             /index.html                                       200
+/.lovable/oauth/consent                                     /index.html                                       200!
+/admin                                                      /index.html                                       200!
+/admin/*                                                    /index.html                                       200!
+/client                                                     /index.html                                       200!
+/client/*                                                   /index.html                                       200!
+/login                                                      /index.html                                       200!
+/payment-success                                            /index.html                                       200!
+/portal                                                     /index.html                                       200!
+/reset-password                                             /index.html                                       200!
 
 # Retired blog posts — genuine 404 (25 paths, explicit, no wildcard)
 /blog/0b68787be4a982b5fe32e39f7a6585238716ab8bcdac5b5bfbfc18574a6fd753 /404.html                                         404
