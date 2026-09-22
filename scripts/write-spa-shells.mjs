@@ -31,6 +31,20 @@ const DIST = path.resolve(process.env.DIST_DIR || path.join(__dirname, '..', 'di
 
 const ROBOTS_TAG = '<meta name="robots" content="noindex, nofollow">';
 
+// Build marker. A single `curl https://www.roll-onpainting.com/login | grep
+// spa-shell` tells us whether a deploy carrying these shells actually landed.
+// Without it, a failed deploy and a failed fix look identical from outside,
+// because these shells contain no other build-specific content.
+export const MARKER_PREFIX = '<!-- spa-shell';
+function buildMarker() {
+  const sha =
+    process.env.GITHUB_SHA ||
+    process.env.CF_PAGES_COMMIT_SHA ||
+    process.env.COMMIT_SHA ||
+    'local';
+  return `${MARKER_PREFIX} build=${new Date().toISOString()} sha=${String(sha).slice(0, 12)} -->`;
+}
+
 export function shellRouteToFile(route, dist = DIST) {
   return path.join(dist, route.replace(/^\//, ''), 'index.html');
 }
@@ -41,10 +55,11 @@ function addNoindex(html) {
     /<meta\b[^>]*\bname=["']robots["'][^>]*\/?>(?:\s*<\/meta>)?/gi,
     ''
   );
+  const marker = buildMarker();
   if (/<head[^>]*>/i.test(stripped)) {
-    return stripped.replace(/<head([^>]*)>/i, `<head$1>\n    ${ROBOTS_TAG}`);
+    return stripped.replace(/<head([^>]*)>/i, `<head$1>\n    ${ROBOTS_TAG}\n    ${marker}`);
   }
-  return ROBOTS_TAG + stripped;
+  return `${ROBOTS_TAG}\n${marker}\n` + stripped;
 }
 
 export async function writeSpaShells(dist = DIST) {

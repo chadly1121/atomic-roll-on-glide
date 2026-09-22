@@ -252,12 +252,34 @@ try {
   // prerendered page works and every fileless portal route did not.
   // scripts/write-spa-shells.mjs writes those files during `npm run build`.
   //
+  // AND public/_routes.json must exclude the path. THIS IS THE DECIDING PIECE:
+  // _routes.json `include: ["/*"]` hands every path to the Functions layer, and
+  // for a path claimed by Functions neither _redirects nor a real static file
+  // is ever consulted — the request falls through to 404.html. So the shell
+  // file and the 200! rule are both inert unless the path is in `exclude`.
+  // That cost three deploys to discover; do not remove this check.
+  //
   // LIMITATION (unchanged): this proves only that the file and the rule exist
   // in the build output. It cannot prove how Cloudflare resolves them at the
   // edge, and it says nothing about dynamic children such as
   // /client/quotes/<id>, which have no file of their own and depend on the
   // /client/* glob. Both still require a live check after each deploy.
   // -------------------------------------------------------------------------
+  let excludePatterns = [];
+  try {
+    const routesJson = JSON.parse(await fs.readFile(path.join(ROOT, 'public', '_routes.json'), 'utf8'));
+    excludePatterns = Array.isArray(routesJson.exclude) ? routesJson.exclude : [];
+    if (excludePatterns.length > 100) {
+      errors.push(`public/_routes.json exclude has ${excludePatterns.length} entries; Cloudflare's hard limit is 100 and an oversized file is silently ignored.`);
+    }
+  } catch (e) {
+    errors.push(`Could not read public/_routes.json: ${e.message}`);
+  }
+  const excluded = (route) =>
+    excludePatterns.some((p) =>
+      new RegExp('^' + p.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*') + '$').test(route)
+    );
+
   let shellsChecked = 0;
   for (const route of SHELL_ROUTES) {
     const file = path.join(DIST, route.replace(/^\//, ''), 'index.html');
@@ -279,15 +301,29 @@ try {
         `Fix: scripts/write-spa-shells.mjs.`
       );
     }
+    if (!/<!-- spa-shell /.test(html)) {
+      errors.push(
+        `SPA shell for "${route}" has no build marker. The marker is how we tell a failed deploy apart from a ` +
+        `failed fix with one curl. Fix: scripts/write-spa-shells.mjs.`
+      );
+    }
     if (!covers(route)) {
       errors.push(
         `Landing route "${route}" has a shell file but no forcing 200! rule in public/_redirects. ` +
-        `Both are required. Fix: re-run \`npm run generate:redirects\`.`
+        `All three are required. Fix: re-run \`npm run generate:redirects\`.`
+      );
+    }
+    if (!excluded(route)) {
+      errors.push(
+        `Landing route "${route}" is NOT in the exclude list of public/_routes.json, so Cloudflare hands it to the ` +
+        `Functions layer and neither its shell file nor its _redirects rule is ever consulted — the request falls ` +
+        `through to public/404.html and the route 404s in production. ` +
+        `Fix: scripts/generate-redirects.mjs derives the exclude entries from UNLISTED_ROUTES — re-run \`npm run generate:redirects\`.`
       );
     }
     shellsChecked++;
   }
-  console.log(`✓ landing routes: ${shellsChecked} routes have BOTH a noindex SPA-shell file in dist/ and a forcing 200! rule`);
+  console.log(`✓ landing routes: ${shellsChecked} routes have a noindex SPA-shell file with a build marker in dist/, a forcing 200! rule in _redirects, and an exclude entry in _routes.json (${excludePatterns.length}/100 patterns)`);
 } catch (e) {
   errors.push(`Unlisted-route SPA rewrite check failed: ${e.message}`);
 }

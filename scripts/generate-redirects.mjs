@@ -225,6 +225,34 @@ console.log(`✓ Wrote ${path.relative(ROOT, OUT_FILE)} (${entries.length} legac
 
 try {
   const routes = await readPrerenderRoutesFromSitemap();
+
+  // -------------------------------------------------------------------------
+  // _routes.json decides which paths reach the Functions layer and which are
+  // served by the static layer. `include: ["/*"]` claims EVERYTHING for
+  // Functions; only paths listed in `exclude` reach static files.
+  //
+  // This is the piece that was missing all day: for a path claimed by
+  // Functions, neither public/_redirects NOR a real file in the build output is
+  // ever consulted — the request falls through to 404.html. That is why every
+  // prerendered route works (they are all excluded) and why /login 404'd with a
+  // shell file present and a forcing `200!` rule deployed.
+  //
+  // Derived from UNLISTED_ROUTES so the exclude list cannot drift from the
+  // shells and the _redirects rules. Dynamic children collapse into a glob per
+  // tree (/admin/*, /client/*).
+  // -------------------------------------------------------------------------
+  const unlistedExcludes = (() => {
+    const out = new Set();
+    for (const r of UNLISTED_ROUTES) {
+      if (r === '/catalog' || r === '/:slug' || r === '/blog/:slug') continue;
+      const segs = r.split('/').filter(Boolean);
+      if (r.startsWith('/.lovable/')) { out.add('/.lovable/*'); continue; }
+      if (segs.length > 1) { out.add(`/${segs[0]}`); out.add(`/${segs[0]}/*`); continue; }
+      out.add(r);
+    }
+    return [...out].sort();
+  })();
+
   // Cloudflare Pages enforces a hard limit of 100 entries on the
   // _routes.json `exclude` array. Listing every prerendered route
   // individually (~111) silently invalidates the file and falls back
@@ -268,18 +296,11 @@ try {
     '/*-gravenhurst',
     '/*-port-carling',
     '/*-cottage-painting',
-    // Unlisted portal/auth routes — these now have real SPA-shell files in the
-    // build output (scripts/write-spa-shells.mjs), so serve them statically
-    // rather than letting the Functions layer fall through to 404.html.
-    '/login',
-    '/reset-password',
-    '/portal',
-    '/payment-success',
-    '/admin',
-    '/admin/*',
-    '/client',
-    '/client/*',
-    '/.lovable/*',
+    // Unlisted portal/auth routes — derived from UNLISTED_ROUTES above. These
+    // have real SPA-shell files in the build output
+    // (scripts/write-spa-shells.mjs); excluding them here is what allows the
+    // static layer to serve those files at all.
+    ...unlistedExcludes,
     // Static asset directories and file extensions — serve directly
     '/assets/*',
     '/lovable-uploads/*',
