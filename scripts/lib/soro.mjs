@@ -9,13 +9,18 @@
  * (hand edits to imported posts survive future syncs).
  */
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   APPROVED_CREDENTIALS, PENDING_CREDENTIALS, CREDENTIAL_PATTERNS, WARRANTY_PATTERNS,
-  ABSOLUTE_PATTERNS, HAZARD_PATTERNS, SAFETY_PATTERNS, CONTACT_PATTERNS,
-  WARRANTY_LONG, WARRANTY_SHORT,
+  ABSOLUTE_PATTERNS, CONTACT_PATTERNS, WARRANTY_LONG, WARRANTY_SHORT,
+  PROMISE_TRIGGER_PATTERNS, PROMISE_VOCABULARY, BROKEN_SENTENCE_PATTERNS,
+  HAZARD_SERIOUS_PATTERNS, HAZARD_CEILING_PATTERNS,
+  SAFETY_CHEMICAL_PATTERNS, SAFETY_ABRASIVE_PATTERNS,
+  CLAIM_CONTEXT_PATTERN, RETIRED_TOWNS,
 } from './approved-credentials.mjs';
+
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -74,10 +79,83 @@ export async function fetchArticleBody(id) {
 
 // ---------------------------------------------------------------- content scan
 
+
+/**
+ * Split HTML into sentence-sized chunks. A chunk keeps whatever tags and
+ * whitespace surround it, so re-joining the chunks reproduces the input
+ * exactly.
+ */
+export function splitSentences(html) {
+  return html.split(/(?<=\.)(?=\s*(?:<|["\u201c]?[A-Z]|$))/);
+}
+
+/** Plain text of a chunk, whitespace collapsed. */
+function chunkText(chunk) {
+  return chunk.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Replace WHOLE sentences that assert a Perfect Finish Promise, a touch-up
+ * entitlement or a Roll On warranty term with the canonical wording.
+ *
+ * Rules, in order:
+ *   - a sentence already inside the canonical wording is left alone;
+ *   - a sentence that is *only* a promise is replaced in full;
+ *   - a sentence that mixes a promise with substantive content it would be
+ *     wrong to discard is NOT touched — it becomes a blocker for a human;
+ *   - after replacement the result is sanity-checked, and any spliced-looking
+ *     output fails the import rather than being written.
+ */
+export function normalisePromiseSentences(html, slug = 'article') {
+  const edits = [];
+  const blockers = [];
+  const canonical = WARRANTY_LONG.replace(/\s+/g, ' ');
+
+  const out = splitSentences(html).map((chunk) => {
+    const text = chunkText(chunk);
+    if (!text) return chunk;
+    if (!PROMISE_TRIGGER_PATTERNS.some((re) => re.test(text))) return chunk;
+    if (canonical.includes(text)) return chunk; // already canonical
+
+    // What remains once the promise vocabulary is stripped out? Anything
+    // meaningful means the sentence carries content we must not throw away.
+    const residual = text
+      .replace(PROMISE_VOCABULARY, ' ')
+      .replace(/[^A-Za-z ]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length > 2);
+
+    if (residual.length > 4) {
+      blockers.push(
+        `${slug}: a warranty/touch-up claim is mixed with other content and must be rewritten by hand — "${text}"`
+      );
+      return chunk;
+    }
+
+    // Swap the sentence text, keeping any surrounding tags and whitespace.
+    const m = chunk.match(/^((?:\s|<[^>]+>)*)([\s\S]*?)((?:\s|<[^>]+>)*)$/);
+    const replaced = `${m[1]}${WARRANTY_LONG}${m[3]}`;
+
+    const broken = BROKEN_SENTENCE_PATTERNS.find((re) => re.test(chunkText(replaced)));
+    if (broken) {
+      blockers.push(
+        `${slug}: normalising a promise sentence produced ungrammatical output (${broken}) — rewrite by hand: "${text}"`
+      );
+      return chunk;
+    }
+
+    edits.push(`${slug}: replaced a whole promise sentence with the canonical warranty wording`);
+    return replaced;
+  }).join('');
+
+  return { html: out, edits, blockers };
+}
+
 /**
  * Corrects imported copy against the real record and strips anything that
  * shouldn't ship. Returns { html, edits: string[], blockers: string[] }.
  */
+
 export function sanitizeContent(rawHtml, slug) {
   let html = rawHtml;
   const edits = [];
@@ -88,38 +166,20 @@ export function sanitizeContent(rawHtml, slug) {
     if (html !== before) edits.push(`${slug}: ${label}`);
   };
 
-  // Perfect Finish Promise / warranty — normalise any variant to the canonical
-  // wording in scripts/lib/approved-credentials.mjs.
-  sub(
-    /a lifetime complimentary touch-up promise on painting projects/gi,
-    WARRANTY_LONG,
-    'normalised a touch-up promise to the canonical warranty wording'
-  );
-  sub(
-    /lifetime complimentary touch-ups( on painting projects)?/gi,
-    WARRANTY_LONG,
-    'normalised a touch-up promise to the canonical warranty wording'
-  );
-  sub(
-    /two hours of (free|complimentary) touch-ups (each|every|per) calendar year[^.]*\./gi,
-    WARRANTY_LONG,
-    'normalised "per calendar year" touch-ups to the canonical warranty wording'
-  );
-  sub(
-    /(two hours of (free|complimentary) touch-ups (every|each) year( you own the (home|property))?)/gi,
-    'two hours of complimentary touch-ups per year of ownership',
-    'normalised touch-up wording to "per year of ownership"'
-  );
-  sub(
-    /[^.<>]*\b(?:five|5)[- ]year warranty\b[^.<>]*\./gi,
-    WARRANTY_LONG,
-    'replaced a five-year warranty claim with the canonical three-year wording'
-  );
+  // Perfect Finish Promise / warranty — normalised at SENTENCE level below,
+  // never by splicing into a clause. Retired stand-alone sentence first.
   sub(
     /It is not a workmanship or material warranty\.?/gi,
     '',
     'removed the retired "not a workmanship or material warranty" sentence'
   );
+  {
+    const r = normalisePromiseSentences(html, slug);
+    html = r.html;
+    edits.push(...r.edits);
+    blockers.push(...r.blockers);
+  }
+
 
   // Canadian spelling.
   sub(/\bmold\b/g, 'mould', 'standardised "mold" to "mould"');
@@ -378,70 +438,99 @@ export async function addToEdgeSitemap(entries) {
 
 // ---------------------------------------------------------------- review
 
-const TOWNS = [
-  'Muskoka', 'Huntsville', 'Bracebridge', 'Gravenhurst', 'Port Sydney', 'Port Carling',
-  'Parry Sound', 'Orillia', 'Baysville', 'Dorset', 'Dwight', 'Rosseau', 'Utterson',
-  'Barrie', 'Bowmanville', 'Collingwood', 'Midland',
-];
+/**
+ * The communities we actually serve, read straight from
+ * src/data/serviceAreas.ts so this list can never drift from the site.
+ */
+export function servedCommunities() {
+  const src = fsSync.readFileSync(path.join(ROOT, 'src', 'data', 'serviceAreas.ts'), 'utf8');
+  return [...src.matchAll(/name:\s*"([^"]+)"/g)].map((m) => m[1]);
+}
+
+/** Retired towns only — anything we serve is removed from the check. */
+export function retiredTowns() {
+  const served = new Set(servedCommunities().map((s) => s.toLowerCase()));
+  return RETIRED_TOWNS.filter((t) => !served.has(t.toLowerCase()));
+}
 
 function stripTags(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function sentencesMatching(text, patterns) {
+function sentencesMatching(text, patterns, extraTest) {
   const hits = [];
   for (const s of text.split(/(?<=[.!?])\s+/)) {
     for (const re of patterns) {
-      if (re.test(s)) { hits.push(s.trim()); break; }
+      if (re.test(s) && (!extraTest || extraTest(s))) { hits.push(s.trim()); break; }
     }
   }
   return [...new Set(hits)].slice(0, 12);
 }
 
 /**
- * Read an article the way an editor would and report everything that needs a
- * human decision. Returns { slug, title, findings: [{label, items[]}], count }.
- * Nothing here rewrites content — sanitizeContent already applied the
- * unambiguous corrections; this is the "needs Chad's eyes" list.
+ * Read an article the way an editor would.
+ *
+ * Findings are tiered: MUST READ is what can get the owner in trouble, FYI is
+ * everything else. The verdict counts MUST READ items only, so an article
+ * with nothing but FYI notes reports CLEAN.
+ *
+ * Returns { slug, title, findings: [{label, items, tier}], count, blockers }.
  */
-export function reviewArticle({ slug, title = '', html = '', excerpt = '' }) {
+export function reviewArticle({ slug, title = '', html = '', excerpt = '', blockers = [] }) {
   const text = stripTags(html);
   const findings = [];
-  const add = (label, items) => { if (items.length) findings.push({ label, items }); };
+  const add = (tier, label, items) => { if (items.length) findings.push({ tier, label, items }); };
 
-  add('Credential / affiliation claim not on the approved list',
+  // ---- MUST READ
+  add('must', 'Credential / affiliation claim not on the approved list',
     sentencesMatching(text, CREDENTIAL_PATTERNS));
-  add('Warranty, guarantee or lifespan claim',
+  add('must', 'Warranty, guarantee or lifespan claim',
     sentencesMatching(text, WARRANTY_PATTERNS));
-  add('Absolute promise word',
-    sentencesMatching(text, ABSOLUTE_PATTERNS));
-  add('Hazard mention — check the caution wording (2\u20133 sentences, no regulation citations)',
-    sentencesMatching(text, HAZARD_PATTERNS));
-  add('Scraping / sanding / washing / biocide instruction — check the safety wording',
-    sentencesMatching(text, SAFETY_PATTERNS));
-  add('Phone number or street address — must match 705-787-1401 / 836 Greer Road, Port Sydney',
+  add('must', 'Asbestos or lead mention — check the caution wording (2\u20133 sentences, no regulation citations)',
+    sentencesMatching(text, HAZARD_SERIOUS_PATTERNS));
+  add('must', 'Chemical or pressure-washing instruction — check the safety wording',
+    sentencesMatching(text, SAFETY_CHEMICAL_PATTERNS));
+  add('must', 'Phone number or street address — must match 705-787-1401 / 836 Greer Road, Port Sydney',
     sentencesMatching(text, CONTACT_PATTERNS));
 
-  const towns = TOWNS.filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(text));
-  add('Town names mentioned (retired areas must not appear)', towns);
+  const retired = retiredTowns().filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(text));
+  add('must', 'Retired service area named — must not appear', retired);
 
-  // Meta description vs body: every content word of the summary should have
-  // some support in the article.
+  // ---- FYI
+  add('fyi', 'Absolute promise word used in a claim about our work or a result',
+    sentencesMatching(text, ABSOLUTE_PATTERNS, (s) => CLAIM_CONTEXT_PATTERN.test(s)));
+  add('fyi', 'Textured / popcorn / stipple / stucco ceiling named',
+    sentencesMatching(text, HAZARD_CEILING_PATTERNS));
+  add('fyi', 'Scraping / sanding / grinding instruction',
+    sentencesMatching(text, SAFETY_ABRASIVE_PATTERNS));
+
+  // Meta description vs body: only a real claim counts — a number, a duration,
+  // or an absolute word that appears nowhere in the article.
   if (excerpt) {
-    const stop = new Set(['the','and','for','with','that','this','from','your','you','our','are','can','how','why','what','when','will','into','more','than','their','them','they','has','have','its','not','but','all','any','about','over','under','most','been','also']);
-    const words = stripTags(excerpt).toLowerCase().match(/[a-z]{4,}/g) || [];
+    const summary = stripTags(excerpt);
     const lower = text.toLowerCase();
-    const orphans = [...new Set(words.filter((w) => !stop.has(w) && !lower.includes(w)))];
-    if (orphans.length) {
-      add('Meta description claims not found in the body', [
-        `summary: "${stripTags(excerpt)}"`,
-        `unsupported terms: ${orphans.join(', ')}`,
+    const claims = [];
+    for (const m of summary.match(/\b\d+(?:[.,]\d+)?\s*(?:%|percent|years?|months?|hours?|sq\.? ?ft|square feet|\$)?/gi) || []) {
+      if (!lower.includes(m.trim().toLowerCase())) claims.push(`number/duration: "${m.trim()}"`);
+    }
+    for (const re of [...ABSOLUTE_PATTERNS, /year[- ]round/i]) {
+      const hit = summary.match(re);
+      if (hit && !new RegExp(hit[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(text)) {
+        claims.push(`absolute word: "${hit[0]}"`);
+      }
+    }
+    if (claims.length) {
+      add('fyi', 'Meta description makes a claim the body never supports', [
+        `summary: "${summary}"`, ...[...new Set(claims)],
       ]);
     }
   }
 
-  const count = findings.reduce((n, f) => n + f.items.length, 0);
-  return { slug, title, findings, count };
+  const count = findings
+    .filter((f) => f.tier === 'must')
+    .reduce((n, f) => n + f.items.length, 0) + blockers.length;
+
+  return { slug, title, findings, count, blockers };
 }
 
 /** Render the per-article checklist that goes into the pull request body. */
@@ -451,7 +540,7 @@ export function renderReviewReport(reviews, edits = []) {
   lines.push('');
   lines.push('## Verdict');
   for (const r of reviews) {
-    lines.push(`- **${r.slug}** — ${r.count === 0 ? 'CLEAN' : `${r.count} item${r.count === 1 ? '' : 's'} need a human read`}`);
+    lines.push(`- **${r.slug}** — ${r.count === 0 ? 'CLEAN' : `${r.count} item${r.count === 1 ? ' needs' : 's need'} a human read`}`);
   }
   lines.push('');
   lines.push('Approved credential list (`scripts/lib/approved-credentials.mjs`): ' + APPROVED_CREDENTIALS.join('; ') + '.');
@@ -463,16 +552,38 @@ export function renderReviewReport(reviews, edits = []) {
     lines.push(`## ${r.title || r.slug}`);
     lines.push(`\`src/data/blog/posts/${r.slug}.ts\``);
     lines.push('');
-    if (!r.findings.length) {
-      lines.push('- [x] CLEAN — nothing flagged.');
+
+    if (r.blockers && r.blockers.length) {
+      lines.push('### A HUMAN MUST REWRITE THIS BY HAND — not imported');
+      for (const b of r.blockers) lines.push(`- [ ] ${b}`);
       lines.push('');
-      continue;
     }
-    for (const f of r.findings) {
-      lines.push(`- [ ] **${f.label}**`);
-      for (const item of f.items) lines.push(`  - ${item}`);
+
+    const must = r.findings.filter((f) => f.tier === 'must');
+    const fyi = r.findings.filter((f) => f.tier === 'fyi');
+
+    if (!must.length && !(r.blockers || []).length) {
+      lines.push('- [x] CLEAN — nothing that needs your decision.');
+    } else if (must.length) {
+      lines.push('### MUST READ');
+      for (const f of must) {
+        lines.push(`- [ ] **${f.label}**`);
+        for (const item of f.items) lines.push(`  - ${item}`);
+      }
     }
     lines.push('');
+
+    if (fyi.length) {
+      lines.push('<details><summary>FYI — lower-priority notes</summary>');
+      lines.push('');
+      for (const f of fyi) {
+        lines.push(`- **${f.label}**`);
+        for (const item of f.items) lines.push(`  - ${item}`);
+      }
+      lines.push('');
+      lines.push('</details>');
+      lines.push('');
+    }
   }
   if (edits.length) {
     lines.push('## Automated corrections already applied');
@@ -486,3 +597,4 @@ export function renderReviewReport(reviews, edits = []) {
   lines.push('Short form: ' + WARRANTY_SHORT);
   return lines.join('\n');
 }
+

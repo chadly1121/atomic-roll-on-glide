@@ -24,13 +24,19 @@ import {
   readingTimeOf, downloadImage, postFileExists, writePostFile, appendToIndex,
   addToSitemap, addToEdgeSitemap, AUTHOR, SITE_URL, reviewArticle, renderReviewReport,
 } from './lib/soro.mjs';
+import { runSelfTestOrExit } from './lib/soro-selftest.mjs';
 import fs from 'node:fs/promises';
 
 // Where the pull-request body is written. The workflow points this at a temp
 // file and feeds it to create-pull-request via body-path.
 const REVIEW_FILE = process.env.SORO_REVIEW_FILE || '.soro-review.md';
 
-const DRY = process.argv.includes('--dry');
+const DRY = process.argv.includes('--dry') || process.argv.includes('--dry-run');
+
+// Never import anything until the normaliser and the review tiers prove
+// themselves against the known-bad cases.
+runSelfTestOrExit();
+
 
 const manifest = await fetchManifest();
 console.log(`Embed manifest: ${manifest.length} articles`);
@@ -57,12 +63,13 @@ for (const a of pending) {
   const { html, edits, blockers: b } = sanitizeContent(raw, a.slug);
   allEdits.push(...edits);
   blockers.push(...b);
-  if (b.length) continue;
 
   // Read the article before anything is written, and record what a human
-  // still needs to check. Findings never block the import; they go into the
-  // pull request body as a checklist.
-  reviews.push(reviewArticle({ slug: a.slug, title: a.title, html, excerpt: a.excerpt }));
+  // still needs to check. Blocked articles are reviewed too, so the pull
+  // request says why they were held back.
+  reviews.push(reviewArticle({ slug: a.slug, title: a.title, html, excerpt: a.excerpt, blockers: b }));
+  if (b.length) continue;
+
 
   const tags = generateTags(a.title, html);
   const image = DRY ? a.image : await downloadImage(a.image, a.slug);
