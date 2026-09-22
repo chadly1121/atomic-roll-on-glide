@@ -10,7 +10,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { VALID_DESTINATIONS } from './seo-routes.mjs';
+import { VALID_DESTINATIONS, UNLISTED_ROUTES } from './seo-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -118,6 +118,45 @@ for (const { source, destination, status } of sorted) {
 }
 
 lines.push('');
+
+// ---------------------------------------------------------------------------
+// SPA shell rewrites for unlisted routes (auth, Stripe return, admin, client).
+//
+// These routes are deliberately absent from sitemap.xml, so they are never
+// prerendered and no /<route>/index.html exists. Without an explicit 200 rule
+// Cloudflare Pages serves public/404.html for them, which means /login 404s in
+// production (nobody can sign in) and a client refreshing /client/dashboard is
+// thrown out. Derived from UNLISTED_ROUTES in scripts/seo-routes.mjs so the two
+// can never drift. Placed AFTER the legacy 301s (a legacy URL still redirects)
+// and BEFORE the 404 and SPA-fallback rules (first match wins).
+// Excluded: /catalog (already has a real 301) and the dynamic patterns
+// /blog/:slug and /:slug (their concrete URLs are prerendered).
+// ---------------------------------------------------------------------------
+{
+  const unlisted = [...UNLISTED_ROUTES].filter((r) => r !== '/catalog' && r !== '/blog/:slug' && r !== '/:slug');
+  const groups = new Map(); // first segment -> routes
+  for (const r of unlisted) {
+    const seg = '/' + r.split('/').filter(Boolean)[0];
+    if (!groups.has(seg)) groups.set(seg, []);
+    groups.get(seg).push(r);
+  }
+  const spaRules = [];
+  for (const [seg, routes] of [...groups.entries()].sort()) {
+    const hasDynamicChild = routes.some((r) => r.includes(':'));
+    if (hasDynamicChild) {
+      // Cover the whole tree with a glob so /admin/quotes/abc123 survives a refresh.
+      spaRules.push(seg, `${seg}/*`);
+    } else {
+      for (const r of routes.sort()) spaRules.push(r);
+    }
+  }
+  lines.push(`# SPA shell rewrites for unlisted routes (${spaRules.length} rules from UNLISTED_ROUTES)`);
+  for (const r of spaRules) {
+    lines.push(`${pad(r, 60)}${pad('/index.html', 50)}200`);
+  }
+  lines.push('');
+  console.log(`✓ Added ${spaRules.length} SPA shell rewrites for unlisted routes`);
+}
 
 // Retired blog posts from the old Soro/GetAutoSEO feed. These 64-char hex ids
 // have no matching post file in src/data/blog/posts/, so the SPA rendered a
