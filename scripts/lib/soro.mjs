@@ -9,6 +9,7 @@
  * (hand edits to imported posts survive future syncs).
  */
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -437,70 +438,99 @@ export async function addToEdgeSitemap(entries) {
 
 // ---------------------------------------------------------------- review
 
-const TOWNS = [
-  'Muskoka', 'Huntsville', 'Bracebridge', 'Gravenhurst', 'Port Sydney', 'Port Carling',
-  'Parry Sound', 'Orillia', 'Baysville', 'Dorset', 'Dwight', 'Rosseau', 'Utterson',
-  'Barrie', 'Bowmanville', 'Collingwood', 'Midland',
-];
+/**
+ * The communities we actually serve, read straight from
+ * src/data/serviceAreas.ts so this list can never drift from the site.
+ */
+export function servedCommunities() {
+  const src = fsSync.readFileSync(path.join(ROOT, 'src', 'data', 'serviceAreas.ts'), 'utf8');
+  return [...src.matchAll(/name:\s*"([^"]+)"/g)].map((m) => m[1]);
+}
+
+/** Retired towns only — anything we serve is removed from the check. */
+export function retiredTowns() {
+  const served = new Set(servedCommunities().map((s) => s.toLowerCase()));
+  return RETIRED_TOWNS.filter((t) => !served.has(t.toLowerCase()));
+}
 
 function stripTags(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function sentencesMatching(text, patterns) {
+function sentencesMatching(text, patterns, extraTest) {
   const hits = [];
   for (const s of text.split(/(?<=[.!?])\s+/)) {
     for (const re of patterns) {
-      if (re.test(s)) { hits.push(s.trim()); break; }
+      if (re.test(s) && (!extraTest || extraTest(s))) { hits.push(s.trim()); break; }
     }
   }
   return [...new Set(hits)].slice(0, 12);
 }
 
 /**
- * Read an article the way an editor would and report everything that needs a
- * human decision. Returns { slug, title, findings: [{label, items[]}], count }.
- * Nothing here rewrites content — sanitizeContent already applied the
- * unambiguous corrections; this is the "needs Chad's eyes" list.
+ * Read an article the way an editor would.
+ *
+ * Findings are tiered: MUST READ is what can get the owner in trouble, FYI is
+ * everything else. The verdict counts MUST READ items only, so an article
+ * with nothing but FYI notes reports CLEAN.
+ *
+ * Returns { slug, title, findings: [{label, items, tier}], count, blockers }.
  */
-export function reviewArticle({ slug, title = '', html = '', excerpt = '' }) {
+export function reviewArticle({ slug, title = '', html = '', excerpt = '', blockers = [] }) {
   const text = stripTags(html);
   const findings = [];
-  const add = (label, items) => { if (items.length) findings.push({ label, items }); };
+  const add = (tier, label, items) => { if (items.length) findings.push({ tier, label, items }); };
 
-  add('Credential / affiliation claim not on the approved list',
+  // ---- MUST READ
+  add('must', 'Credential / affiliation claim not on the approved list',
     sentencesMatching(text, CREDENTIAL_PATTERNS));
-  add('Warranty, guarantee or lifespan claim',
+  add('must', 'Warranty, guarantee or lifespan claim',
     sentencesMatching(text, WARRANTY_PATTERNS));
-  add('Absolute promise word',
-    sentencesMatching(text, ABSOLUTE_PATTERNS));
-  add('Hazard mention — check the caution wording (2\u20133 sentences, no regulation citations)',
-    sentencesMatching(text, HAZARD_PATTERNS));
-  add('Scraping / sanding / washing / biocide instruction — check the safety wording',
-    sentencesMatching(text, SAFETY_PATTERNS));
-  add('Phone number or street address — must match 705-787-1401 / 836 Greer Road, Port Sydney',
+  add('must', 'Asbestos or lead mention — check the caution wording (2\u20133 sentences, no regulation citations)',
+    sentencesMatching(text, HAZARD_SERIOUS_PATTERNS));
+  add('must', 'Chemical or pressure-washing instruction — check the safety wording',
+    sentencesMatching(text, SAFETY_CHEMICAL_PATTERNS));
+  add('must', 'Phone number or street address — must match 705-787-1401 / 836 Greer Road, Port Sydney',
     sentencesMatching(text, CONTACT_PATTERNS));
 
-  const towns = TOWNS.filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(text));
-  add('Town names mentioned (retired areas must not appear)', towns);
+  const retired = retiredTowns().filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(text));
+  add('must', 'Retired service area named — must not appear', retired);
 
-  // Meta description vs body: every content word of the summary should have
-  // some support in the article.
+  // ---- FYI
+  add('fyi', 'Absolute promise word used in a claim about our work or a result',
+    sentencesMatching(text, ABSOLUTE_PATTERNS, (s) => CLAIM_CONTEXT_PATTERN.test(s)));
+  add('fyi', 'Textured / popcorn / stipple / stucco ceiling named',
+    sentencesMatching(text, HAZARD_CEILING_PATTERNS));
+  add('fyi', 'Scraping / sanding / grinding instruction',
+    sentencesMatching(text, SAFETY_ABRASIVE_PATTERNS));
+
+  // Meta description vs body: only a real claim counts — a number, a duration,
+  // or an absolute word that appears nowhere in the article.
   if (excerpt) {
-    const stop = new Set(['the','and','for','with','that','this','from','your','you','our','are','can','how','why','what','when','will','into','more','than','their','them','they','has','have','its','not','but','all','any','about','over','under','most','been','also']);
-    const words = stripTags(excerpt).toLowerCase().match(/[a-z]{4,}/g) || [];
+    const summary = stripTags(excerpt);
     const lower = text.toLowerCase();
-    const orphans = [...new Set(words.filter((w) => !stop.has(w) && !lower.includes(w)))];
-    if (orphans.length) {
-      add('Meta description claims not found in the body', [
-        `summary: "${stripTags(excerpt)}"`,
-        `unsupported terms: ${orphans.join(', ')}`,
+    const claims = [];
+    for (const m of summary.match(/\b\d+(?:[.,]\d+)?\s*(?:%|percent|years?|months?|hours?|sq\.? ?ft|square feet|\$)?/gi) || []) {
+      if (!lower.includes(m.trim().toLowerCase())) claims.push(`number/duration: "${m.trim()}"`);
+    }
+    for (const re of [...ABSOLUTE_PATTERNS, /year[- ]round/i]) {
+      const hit = summary.match(re);
+      if (hit && !new RegExp(hit[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(text)) {
+        claims.push(`absolute word: "${hit[0]}"`);
+      }
+    }
+    if (claims.length) {
+      add('fyi', 'Meta description makes a claim the body never supports', [
+        `summary: "${summary}"`, ...[...new Set(claims)],
       ]);
     }
   }
 
-  const count = findings.reduce((n, f) => n + f.items.length, 0);
-  return { slug, title, findings, count };
+  const count = findings
+    .filter((f) => f.tier === 'must')
+    .reduce((n, f) => n + f.items.length, 0) + blockers.length;
+
+  return { slug, title, findings, count, blockers };
 }
 
 /** Render the per-article checklist that goes into the pull request body. */
@@ -522,16 +552,38 @@ export function renderReviewReport(reviews, edits = []) {
     lines.push(`## ${r.title || r.slug}`);
     lines.push(`\`src/data/blog/posts/${r.slug}.ts\``);
     lines.push('');
-    if (!r.findings.length) {
-      lines.push('- [x] CLEAN — nothing flagged.');
+
+    if (r.blockers && r.blockers.length) {
+      lines.push('### A HUMAN MUST REWRITE THIS BY HAND — not imported');
+      for (const b of r.blockers) lines.push(`- [ ] ${b}`);
       lines.push('');
-      continue;
     }
-    for (const f of r.findings) {
-      lines.push(`- [ ] **${f.label}**`);
-      for (const item of f.items) lines.push(`  - ${item}`);
+
+    const must = r.findings.filter((f) => f.tier === 'must');
+    const fyi = r.findings.filter((f) => f.tier === 'fyi');
+
+    if (!must.length && !(r.blockers || []).length) {
+      lines.push('- [x] CLEAN — nothing that needs your decision.');
+    } else if (must.length) {
+      lines.push('### MUST READ');
+      for (const f of must) {
+        lines.push(`- [ ] **${f.label}**`);
+        for (const item of f.items) lines.push(`  - ${item}`);
+      }
     }
     lines.push('');
+
+    if (fyi.length) {
+      lines.push('<details><summary>FYI — lower-priority notes</summary>');
+      lines.push('');
+      for (const f of fyi) {
+        lines.push(`- **${f.label}**`);
+        for (const item of f.items) lines.push(`  - ${item}`);
+      }
+      lines.push('');
+      lines.push('</details>');
+      lines.push('');
+    }
   }
   if (edits.length) {
     lines.push('## Automated corrections already applied');
@@ -545,3 +597,4 @@ export function renderReviewReport(reviews, edits = []) {
   lines.push('Short form: ' + WARRANTY_SHORT);
   return lines.join('\n');
 }
+
