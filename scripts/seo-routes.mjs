@@ -136,38 +136,9 @@ export const CANONICAL_ORIGIN = 'https://www.roll-onpainting.com';
  * production while working perfectly in dev.
  */
 export const UNLISTED_ROUTES = new Set([
-  // Auth surfaces — no SEO value, must not be indexed.
-  '/login',
-  '/reset-password',
-  '/portal',
-  '/.lovable/oauth/consent',
-
   // Transactional endpoint reached only after a Stripe checkout.
+  // Public catalog return URL — nothing to do with the removed portal.
   '/payment-success',
-
-  // Admin portal — authenticated staff only.
-  '/admin',
-  '/admin/dashboard',
-  '/admin/quotes',
-  '/admin/quotes/:id',
-  '/admin/orders',
-  '/admin/orders/:id',
-  '/admin/clients',
-  '/admin/products',
-  '/admin/profiles',
-  '/admin/species',
-  '/admin/labour',
-  '/admin/shake-pricing',
-
-  // Client portal — authenticated clients only.
-  '/client',
-  '/client/dashboard',
-  '/client/quote/new',
-  '/client/quotes',
-  '/client/quotes/:id',
-  '/client/orders',
-  '/client/orders/:id',
-  '/client/profile',
 
   // Legacy alias: a real 301 to /portfolio lives in redirect-map.json, so the
   // router <Navigate> is only a fallback and the URL must not be advertised.
@@ -177,6 +148,7 @@ export const UNLISTED_ROUTES = new Set([
   '/blog/:slug',
   '/:slug',
 ]);
+
 
 /**
  * Unlisted routes a person can actually land on or refresh, which therefore
@@ -193,17 +165,9 @@ export const UNLISTED_ROUTES = new Set([
  * a noindex robots meta added. They are NOT prerendered (no Playwright, no
  * authenticated UI rendered) and must never enter the sitemap.
  *
- * Dynamic children (/admin/quotes/:id, /client/orders/:id …) cannot have a
- * file each. They rely on the parent shell plus the /admin/* and /client/*
- * forcing rules, which may or may not survive Cloudflare's precedence — that
- * has to be verified live, it cannot be asserted here.
+ * The prefinishing portal (login, admin, client) was deleted; /payment-success
+ * is the only landing route left that needs a shell.
  */
 export const SHELL_ROUTES = [
-  '/login',
-  '/reset-password',
-  '/portal',
   '/payment-success',
-  '/.lovable/oauth/consent',
-  '/admin',
-  '/client',
 ];
