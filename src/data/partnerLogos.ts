@@ -22,12 +22,6 @@ export const partnerLogos: PartnerLogo[] = [
     url: "https://www.sansin.com/"
   },
   {
-    name: "Painting Contractors Association",
-    logo: "/partner-logos/pca.png",
-    altText: "Painting Contractors Association - Professional Certification",
-    url: "https://pcapainted.org/"
-  },
-  {
     name: "Dulux",
     logo: "/partner-logos/dulux.png",
     altText: "Dulux - Quality Paints and Coatings",

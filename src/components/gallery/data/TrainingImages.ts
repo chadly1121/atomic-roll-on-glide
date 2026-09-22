@@ -34,9 +34,9 @@ export const trainingImages: GalleryImage[] = [
   },
   {
     id: 196,
-    src: "/lovable-uploads/commercial-training-pca-certificate.webp",
+    src: "/lovable-uploads/commercial-training-best-practice-certificate.webp",
     category: "training",
-    title: "PCA Trade Best Practice Series — Certification"
+    title: "Trade Best Practice Series — Training Certificate"
   },
   {
     id: 197,

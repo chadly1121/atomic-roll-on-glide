@@ -146,7 +146,7 @@ const content = `<p>If you've owned a wood deck or dock for more than one season
 <h2>Maintenance Reality (No BS Version)</h2>
 <p>Every deck needs maintenance. But with Sansin:</p>
 <ul>
-  <li>No peeling or scraping</li>
+  <li>Penetrating stains weather rather than forming a film, so they are not prone to the peeling and scraping that film-forming coatings bring</li>
   <li>No full strip required</li>
   <li>Just clean and recoat</li>
 </ul>
@@ -184,7 +184,7 @@ const content = `<p>If you've owned a wood deck or dock for more than one season
 <p>If you want:</p>
 <ul>
   <li>Less maintenance</li>
-  <li>No peeling</li>
+  <li>A finish that weathers rather than peeling or blistering off the surface</li>
   <li>Longer lifespan</li>
   <li>Better performance in Muskoka</li>
 </ul>
