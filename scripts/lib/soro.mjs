@@ -88,38 +88,20 @@ export function sanitizeContent(rawHtml, slug) {
     if (html !== before) edits.push(`${slug}: ${label}`);
   };
 
-  // Perfect Finish Promise / warranty — normalise any variant to the canonical
-  // wording in scripts/lib/approved-credentials.mjs.
-  sub(
-    /a lifetime complimentary touch-up promise on painting projects/gi,
-    WARRANTY_LONG,
-    'normalised a touch-up promise to the canonical warranty wording'
-  );
-  sub(
-    /lifetime complimentary touch-ups( on painting projects)?/gi,
-    WARRANTY_LONG,
-    'normalised a touch-up promise to the canonical warranty wording'
-  );
-  sub(
-    /two hours of (free|complimentary) touch-ups (each|every|per) calendar year[^.]*\./gi,
-    WARRANTY_LONG,
-    'normalised "per calendar year" touch-ups to the canonical warranty wording'
-  );
-  sub(
-    /(two hours of (free|complimentary) touch-ups (every|each) year( you own the (home|property))?)/gi,
-    'two hours of complimentary touch-ups per year of ownership',
-    'normalised touch-up wording to "per year of ownership"'
-  );
-  sub(
-    /[^.<>]*\b(?:five|5)[- ]year warranty\b[^.<>]*\./gi,
-    WARRANTY_LONG,
-    'replaced a five-year warranty claim with the canonical three-year wording'
-  );
+  // Perfect Finish Promise / warranty — normalised at SENTENCE level below,
+  // never by splicing into a clause. Retired stand-alone sentence first.
   sub(
     /It is not a workmanship or material warranty\.?/gi,
     '',
     'removed the retired "not a workmanship or material warranty" sentence'
   );
+  {
+    const r = normalisePromiseSentences(html, slug);
+    html = r.html;
+    edits.push(...r.edits);
+    blockers.push(...r.blockers);
+  }
+
 
   // Canadian spelling.
   sub(/\bmold\b/g, 'mould', 'standardised "mold" to "mould"');
