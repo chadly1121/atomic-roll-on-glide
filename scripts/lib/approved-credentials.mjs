@@ -53,6 +53,15 @@ export const WARRANTY_PATTERNS = [
   /\blifetime\b/i,
 ];
 
+/** Absolute promise words that must never stand unqualified. */
+export const ABSOLUTE_PATTERNS = [
+  /\bguarantee\w*\b/i, /\bensures?\b/i, /\bprevents?\b/i, /\bpermanent(ly)?\b/i,
+  /\blifetime\b/i, /\bweatherproof\b/i, /\bwaterproof\b/i, /\beliminates?\b/i,
+  /\bnever\b/i, /\balways\b/i, /\byear[- ]round\b/i,
+];
+
+
+
 /**
  * Sentences that assert our own promise. Used by the sentence-level
  * normaliser — a sentence matching any of these is either replaced whole or
