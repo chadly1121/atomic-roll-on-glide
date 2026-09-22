@@ -95,6 +95,8 @@ if (blockers.length) {
 }
 
 if (DRY) {
+  console.log('\n[dry run] review report:\n');
+  console.log(renderReviewReport(reviews, allEdits));
   console.log(`\n[dry run] would import ${entries.length} articles`);
   for (const e of entries) console.log(`  ${e.slug} [${e.tags.join(', ')}]`);
   if (allEdits.length) { console.log('\n[dry run] content edits:'); allEdits.forEach((e) => console.log('  - ' + e)); }
