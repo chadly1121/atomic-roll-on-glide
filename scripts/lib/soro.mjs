@@ -375,3 +375,114 @@ export async function addToEdgeSitemap(entries) {
   await fs.writeFile(EDGE_SITEMAP_FILE, src);
   return added;
 }
+
+// ---------------------------------------------------------------- review
+
+const TOWNS = [
+  'Muskoka', 'Huntsville', 'Bracebridge', 'Gravenhurst', 'Port Sydney', 'Port Carling',
+  'Parry Sound', 'Orillia', 'Baysville', 'Dorset', 'Dwight', 'Rosseau', 'Utterson',
+  'Barrie', 'Bowmanville', 'Collingwood', 'Midland',
+];
+
+function stripTags(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function sentencesMatching(text, patterns) {
+  const hits = [];
+  for (const s of text.split(/(?<=[.!?])\s+/)) {
+    for (const re of patterns) {
+      if (re.test(s)) { hits.push(s.trim()); break; }
+    }
+  }
+  return [...new Set(hits)].slice(0, 12);
+}
+
+/**
+ * Read an article the way an editor would and report everything that needs a
+ * human decision. Returns { slug, title, findings: [{label, items[]}], count }.
+ * Nothing here rewrites content — sanitizeContent already applied the
+ * unambiguous corrections; this is the "needs Chad's eyes" list.
+ */
+export function reviewArticle({ slug, title = '', html = '', excerpt = '' }) {
+  const text = stripTags(html);
+  const findings = [];
+  const add = (label, items) => { if (items.length) findings.push({ label, items }); };
+
+  add('Credential / affiliation claim not on the approved list',
+    sentencesMatching(text, CREDENTIAL_PATTERNS));
+  add('Warranty, guarantee or lifespan claim',
+    sentencesMatching(text, WARRANTY_PATTERNS));
+  add('Absolute promise word',
+    sentencesMatching(text, ABSOLUTE_PATTERNS));
+  add('Hazard mention — check the caution wording (2\u20133 sentences, no regulation citations)',
+    sentencesMatching(text, HAZARD_PATTERNS));
+  add('Scraping / sanding / washing / biocide instruction — check the safety wording',
+    sentencesMatching(text, SAFETY_PATTERNS));
+  add('Phone number or street address — must match 705-787-1401 / 836 Greer Road, Port Sydney',
+    sentencesMatching(text, CONTACT_PATTERNS));
+
+  const towns = TOWNS.filter((t) => new RegExp(`\\b${t}\\b`, 'i').test(text));
+  add('Town names mentioned (retired areas must not appear)', towns);
+
+  // Meta description vs body: every content word of the summary should have
+  // some support in the article.
+  if (excerpt) {
+    const stop = new Set(['the','and','for','with','that','this','from','your','you','our','are','can','how','why','what','when','will','into','more','than','their','them','they','has','have','its','not','but','all','any','about','over','under','most','been','also']);
+    const words = stripTags(excerpt).toLowerCase().match(/[a-z]{4,}/g) || [];
+    const lower = text.toLowerCase();
+    const orphans = [...new Set(words.filter((w) => !stop.has(w) && !lower.includes(w)))];
+    if (orphans.length) {
+      add('Meta description claims not found in the body', [
+        `summary: "${stripTags(excerpt)}"`,
+        `unsupported terms: ${orphans.join(', ')}`,
+      ]);
+    }
+  }
+
+  const count = findings.reduce((n, f) => n + f.items.length, 0);
+  return { slug, title, findings, count };
+}
+
+/** Render the per-article checklist that goes into the pull request body. */
+export function renderReviewReport(reviews, edits = []) {
+  const lines = [];
+  lines.push('Automated import from the Soro embed feed. **Do not auto-merge.**');
+  lines.push('');
+  lines.push('## Verdict');
+  for (const r of reviews) {
+    lines.push(`- **${r.slug}** — ${r.count === 0 ? 'CLEAN' : `${r.count} item${r.count === 1 ? '' : 's'} need a human read`}`);
+  }
+  lines.push('');
+  lines.push('Approved credential list (`scripts/lib/approved-credentials.mjs`): ' + APPROVED_CREDENTIALS.join('; ') + '.');
+  if (PENDING_CREDENTIALS.length) {
+    lines.push('Pending / NOT approved: ' + PENDING_CREDENTIALS.join('; ') + '.');
+  }
+  lines.push('');
+  for (const r of reviews) {
+    lines.push(`## ${r.title || r.slug}`);
+    lines.push(`\`src/data/blog/posts/${r.slug}.ts\``);
+    lines.push('');
+    if (!r.findings.length) {
+      lines.push('- [x] CLEAN — nothing flagged.');
+      lines.push('');
+      continue;
+    }
+    for (const f of r.findings) {
+      lines.push(`- [ ] **${f.label}**`);
+      for (const item of f.items) lines.push(`  - ${item}`);
+    }
+    lines.push('');
+  }
+  if (edits.length) {
+    lines.push('## Automated corrections already applied');
+    for (const e of [...new Set(edits)]) lines.push(`- ${e}`);
+    lines.push('');
+  }
+  lines.push('## Canonical warranty wording');
+  lines.push('');
+  lines.push('Long form: ' + WARRANTY_LONG);
+  lines.push('');
+  lines.push('Short form: ' + WARRANTY_SHORT);
+  return lines.join('\n');
+}
