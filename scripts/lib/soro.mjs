@@ -11,6 +11,12 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  APPROVED_CREDENTIALS, PENDING_CREDENTIALS, CREDENTIAL_PATTERNS, WARRANTY_PATTERNS,
+  ABSOLUTE_PATTERNS, HAZARD_PATTERNS, SAFETY_PATTERNS, CONTACT_PATTERNS,
+  WARRANTY_LONG, WARRANTY_SHORT,
+} from './approved-credentials.mjs';
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(__dirname, '..', '..');
