@@ -252,6 +252,13 @@ try {
   // prerendered page works and every fileless portal route did not.
   // scripts/write-spa-shells.mjs writes those files during `npm run build`.
   //
+  // AND public/_routes.json must exclude the path. THIS IS THE DECIDING PIECE:
+  // _routes.json `include: ["/*"]` hands every path to the Functions layer, and
+  // for a path claimed by Functions neither _redirects nor a real static file
+  // is ever consulted — the request falls through to 404.html. So the shell
+  // file and the 200! rule are both inert unless the path is in `exclude`.
+  // That cost three deploys to discover; do not remove this check.
+  //
   // LIMITATION (unchanged): this proves only that the file and the rule exist
   // in the build output. It cannot prove how Cloudflare resolves them at the
   // edge, and it says nothing about dynamic children such as
