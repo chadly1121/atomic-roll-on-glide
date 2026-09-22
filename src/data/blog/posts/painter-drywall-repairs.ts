@@ -14,7 +14,7 @@ const content = `<p>A freshly painted room can still look unfinished when a repa
 <h2>A Proper Repair Process Before Painting</h2>
 <p>High-quality drywall work is a sequence, not a single patch-and-paint visit. The goal is to make the repair disappear once the final coating system is dry.</p>
 <h3>Inspect the cause, not just the mark</h3>
-<p>The first step is assessing the condition of the wall or ceiling. This includes checking for moisture, loose material, active cracking, damaged framing around an opening, and prior repairs that have failed. If there is any concern about a leak, mold, or structural movement, it should be handled before cosmetic work proceeds.</p>
+<p>The first step is assessing the condition of the wall or ceiling. This includes checking for moisture, loose material, active cracking, damaged framing around an opening, and prior repairs that have failed. If there is any concern about a leak, mould, or structural movement, it should be handled before cosmetic work proceeds.</p>
 <h3>Prepare and protect the space</h3>
 <p>Drywall sanding produces fine dust, so professional containment and cleanup matter. Floors, furniture, fixtures, and nearby surfaces should be protected before repair materials are applied. A tidy work area is especially valuable in furnished homes, occupied commercial spaces, and cottages where owners want work completed with minimal disruption. Sanding crews should also wear eye protection and a properly fitted respirator suited to fine dust, and use a HEPA-filtered vacuum rather than a standard shop vacuum, which pushes the finest particles straight back into the air.</p>
 <h3>Rebuild the damaged area in thin layers</h3>
