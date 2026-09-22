@@ -23,7 +23,7 @@ const TrustBadges: React.FC = () => {
     {
       icon: <Shield className="h-12 w-12" aria-hidden="true" />,
       title: "Uniformed Professional Painters",
-      description: "GoNano certified applicator"
+      description: "GoNano certified installer and reseller"
     },
     {
       icon: <BadgeCheck className="h-12 w-12" aria-hidden="true" />,

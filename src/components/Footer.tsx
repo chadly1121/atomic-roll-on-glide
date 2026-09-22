@@ -188,7 +188,7 @@ const Footer = () => {
                 © {new Date().getFullYear()} {businessInfo.legalName}. All rights reserved.
               </p>
               <p className="text-gray-500 text-xs mt-1">
-                WSIB Covered · $5M Liability Insurance · GoNano Certified
+                WSIB Covered · $5M Liability Insurance · GoNano Certified Installer & Reseller
               </p>
               <p className="text-gray-500 text-xs mt-1">
                 Serving Muskoka, Port Sydney, Huntsville, Bracebridge, Gravenhurst & surrounding areas
