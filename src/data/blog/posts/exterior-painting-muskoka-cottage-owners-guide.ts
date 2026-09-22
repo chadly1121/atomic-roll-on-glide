@@ -40,7 +40,7 @@ const content = `<p>If you've invested in a property on one of Muskoka's lakes, 
 <p>For most Muskoka exteriors, a 100% acrylic latex is the right choice. It expands and contracts with the substrate through freeze-thaw cycles without cracking, and it breathes enough to allow moisture to escape rather than trap it behind the film.</p>
 <p>Sheen matters. Higher-sheen finishes are more durable and easier to clean but show surface imperfections. Satin and eggshell are often preferred on Muskoka cottages where a softer, more natural look suits the setting. Trim typically gets a semi-gloss for durability and definition.</p>
 <p>For exterior wood — decks, docks, fences — we use Sansin penetrating stains rather than film-forming coatings. Sansin bonds at a molecular level within the wood fibre, allowing the wood to breathe while protecting against water infiltration, UV, and biological growth. It won't crack, peel, or trap moisture the way surface coatings do. In Muskoka conditions, that matters enormously.</p>
-<p>Our exterior painting starts at $5.75 per square foot and includes a 5-year warranty on workmanship.</p>
+<p>Our exterior painting starts at $5.75 per square foot. Roll On Painting warrants its workmanship for three years from substantial completion. Decks, docks, railing caps and runoff zones are not covered, and other exclusions apply — the written terms set them out.</p>
 
 <h2>When to Paint: Timing in Muskoka</h2>
 <p>Exterior painting is seasonal — and timing matters more here than in most markets.</p>
@@ -51,7 +51,7 @@ const content = `<p>If you've invested in a property on one of Muskoka's lakes, 
 <h2>Frequently Asked Questions</h2>
 
 <h3>How much does exterior painting cost for a Muskoka cottage?</h3>
-<p>Exterior painting in Muskoka starts at $5.75 per square foot and comes with a 5-year warranty on workmanship. The final investment depends on the size and condition of the surfaces, the complexity of the architecture, and the finish selections. Cottages with extensive cedar trim, multiple elevations, or significant substrate repairs will sit toward the higher end of the range. A standard 2,000 square foot cottage exterior is a meaningful project — plan accordingly and get a proper on-site estimate before budgeting.</p>
+<p>Exterior painting in Muskoka starts at $5.75 per square foot. Roll On Painting warrants its workmanship for three years from substantial completion, with decks, docks, railing caps and runoff zones excluded along with the other exclusions set out in the written terms. The final investment depends on the size and condition of the surfaces, the complexity of the architecture, and the finish selections. Cottages with extensive cedar trim, multiple elevations, or significant substrate repairs will sit toward the higher end of the range. A standard 2,000 square foot cottage exterior is a meaningful project — plan accordingly and get a proper on-site estimate before budgeting.</p>
 
 <h3>Why does my cottage paint keep peeling after just a few years?</h3>
 <p>Peeling almost always traces back to one of three causes: inadequate surface preparation, skipped or improper priming, or a paint product that wasn't formulated for the temperature range and moisture levels in Muskoka. In many cases, all three contribute. If you're seeing failure within two or three seasons, the previous job was likely painted over poorly prepared or contaminated surfaces. The fix is a proper strip-and-prep, not another topcoat.</p>
