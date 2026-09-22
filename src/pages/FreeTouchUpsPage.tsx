@@ -49,7 +49,7 @@ const FreeTouchUpsPage = () => {
     },
     {
       title: "Two Hours Every Calendar Year",
-      description: "Two hours of touch-ups per calendar year, for as long as you own the property. Unused hours don’t carry over to the following year."
+      description: "Two hours of touch-ups per year of ownership, for as long as you own the property. Unused hours don’t carry over to the following year."
     },
     {
       title: "A Courtesy, Not a Warranty",
@@ -211,7 +211,7 @@ const FreeTouchUpsPage = () => {
                 <AlertTriangle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground space-y-2">
                   <p className="font-semibold text-foreground">Disclaimer</p>
-                  <p>The Perfect Finish Promise provides two hours of free touch-ups per calendar year, for as long as the original client owns the property. It is a goodwill courtesy offered by Roll On Painting — it is not a warranty and not a guarantee. It applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Unused hours do not carry over to the following year, and the courtesy is suspended while any invoice is overdue. Contact us for full details and to book your two hours.</p>
+                  <p>The Perfect Finish Promise provides two hours of free touch-ups per year of ownership, for as long as the original client owns the property. It is a goodwill courtesy offered by Roll On Painting — it is not a warranty and not a guarantee. It applies only to painting services and excludes new construction projects. Touch-ups apply only to work originally performed by Roll On Painting, for the original property owner who purchased our services, and must be the same colour as originally painted. Unused hours do not carry over to the following year, and the courtesy is suspended while any invoice is overdue. Contact us for full details and to book your two hours.</p>
                 </div>
               </div>
             </div>
