@@ -157,7 +157,7 @@ export const servicesGrouped = {
     {
       name: "Exterior Painting",
       description: "Enhance your home's curb appeal with durable exterior painting services that withstand the elements.",
-      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "5-year warranty on vertical surfaces"]
+      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "Three-year workmanship warranty"]
     },
     {
       name: "Kitchen Cabinet Refinishing",
@@ -219,11 +219,11 @@ export const verifiedFAQs = [
   },
   {
     question: "Do you offer free touch-ups?",
-    answer: "Yes — two hours a year, free, every year you own the home. Scuffs, marks, small chips, the corner the dog found. Book it whenever suits you. It's a goodwill courtesy rather than part of our warranty, unused hours don't carry over, and we ask that any outstanding invoice is settled first."
+    answer: "Yes — two hours of complimentary touch-ups per year of ownership. Scuffs, marks, small chips, the corner the dog found. Book it whenever suits you. It's a goodwill courtesy rather than part of our warranty, unused hours do not carry over, and we ask that any outstanding invoice is settled first."
   },
   {
     question: "What is your warranty on exterior painting?",
-    answer: "Five years on vertical surfaces above the splash and snow zones — siding, soffit, fascia, vertical trim, doors and railing uprights. Those are the surfaces that shed water, and we'll stand behind them for five years. What we don't warrant, and what no honest painter in Muskoka will, is the horizontal stuff and the zones that take the worst of it: decks, docks, railing caps, the band at the bottom of a wall where roof runoff bounces back — most cottages here have no eavestrough — and anywhere snow piles against the building all winter. Those areas still get looked after under our Perfect Finish Promise; they just can't carry a five-year warranty. Interior work carries a three-year workmanship warranty. Full details are in our terms, and Chad walks you through it on the visit."
+    answer: "Roll On Painting warrants its workmanship for three years from substantial completion. Decks, docks, railing caps and runoff zones are not covered, and other exclusions apply — the written terms set them out. Separately, our Perfect Finish Promise provides two hours of complimentary touch-ups per year of ownership as a goodwill courtesy; unused hours do not carry over. Full details are in our terms, and Chad walks you through it on the visit."
   },
   {
     question: "What areas does Roll On Painting serve?",

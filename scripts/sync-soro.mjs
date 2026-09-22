@@ -8,6 +8,7 @@
  * For each article in the embed manifest that has no file in
  * src/data/blog/posts/ it will:
  *   1. download the body and run the content scan (corrections + hard stops)
+ *   1b. run the editorial review and record findings for the pull request body
  *   2. download the featured image into public/lovable-uploads/blog/
  *   3. write src/data/blog/posts/<slug>.ts
  *   4. add the metadata entry to src/data/blog/index.ts
@@ -21,8 +22,13 @@
 import {
   fetchManifest, fetchArticleBody, sanitizeContent, generateTags, generateKeywords,
   readingTimeOf, downloadImage, postFileExists, writePostFile, appendToIndex,
-  addToSitemap, addToEdgeSitemap, AUTHOR, SITE_URL,
+  addToSitemap, addToEdgeSitemap, AUTHOR, SITE_URL, reviewArticle, renderReviewReport,
 } from './lib/soro.mjs';
+import fs from 'node:fs/promises';
+
+// Where the pull-request body is written. The workflow points this at a temp
+// file and feeds it to create-pull-request via body-path.
+const REVIEW_FILE = process.env.SORO_REVIEW_FILE || '.soro-review.md';
 
 const DRY = process.argv.includes('--dry');
 
@@ -44,6 +50,7 @@ console.log(`New articles: ${pending.length}`);
 const entries = [];
 const allEdits = [];
 const blockers = [];
+const reviews = [];
 
 for (const a of pending) {
   const raw = await fetchArticleBody(a.id);
@@ -51,6 +58,11 @@ for (const a of pending) {
   allEdits.push(...edits);
   blockers.push(...b);
   if (b.length) continue;
+
+  // Read the article before anything is written, and record what a human
+  // still needs to check. Findings never block the import; they go into the
+  // pull request body as a checklist.
+  reviews.push(reviewArticle({ slug: a.slug, title: a.title, html, excerpt: a.excerpt }));
 
   const tags = generateTags(a.title, html);
   const image = DRY ? a.image : await downloadImage(a.image, a.slug);
@@ -83,11 +95,16 @@ if (blockers.length) {
 }
 
 if (DRY) {
+  console.log('\n[dry run] review report:\n');
+  console.log(renderReviewReport(reviews, allEdits));
   console.log(`\n[dry run] would import ${entries.length} articles`);
   for (const e of entries) console.log(`  ${e.slug} [${e.tags.join(', ')}]`);
   if (allEdits.length) { console.log('\n[dry run] content edits:'); allEdits.forEach((e) => console.log('  - ' + e)); }
   process.exit(blockers.length ? 1 : 0);
 }
+
+await fs.writeFile(REVIEW_FILE, renderReviewReport(reviews, allEdits) + '\n', 'utf8');
+console.log(`Review report written to ${REVIEW_FILE}`);
 
 for (const e of entries) await writePostFile(e.slug, e._html);
 const indexed = await appendToIndex(entries.map(({ _html, ...m }) => m));
