@@ -74,7 +74,7 @@ const SEOHelmet: React.FC = () => {
         "hasCredential": [
           { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "WSIB Covered" },
           { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "$5 Million Liability Insurance" },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "GoNano Certified Applicator" }
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "GoNano Certified Installer and Reseller" }
         ],
         "knowsAbout": [
           "Interior Painting", "Exterior Painting", "Commercial Painting",
