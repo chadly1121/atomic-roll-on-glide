@@ -125,7 +125,7 @@ export function normalisePromiseSentences(html, slug = 'article') {
       .split(/\s+/)
       .filter((w) => w.length > 2);
 
-    if (residual.length > 6) {
+    if (residual.length > 4) {
       blockers.push(
         `${slug}: a warranty/touch-up claim is mixed with other content and must be rewritten by hand — "${text}"`
       );
