@@ -19,7 +19,7 @@ const FreeTouchUpsPage = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Perfect Finish Promise: Two Hours of Free Touch-Ups Every Year | Roll On Painting",
-    "description": "Two hours of free touch-ups every calendar year, for as long as you own the property. A goodwill courtesy from Roll On Painting — not a warranty. Learn what's included.",
+    "description": "Two hours of complimentary touch-ups per year of ownership, for as long as you own the property. A goodwill courtesy from Roll On Painting — not a warranty. Learn what's included.",
     "url": pageUrl,
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -84,7 +84,7 @@ const FreeTouchUpsPage = () => {
     <>
       <Helmet>
         <title>Perfect Finish Promise: Two Hours of Free Touch-Ups Every Year | Roll On Painting Muskoka</title>
-        <meta name="description" content="Two hours of free touch-ups every calendar year, for as long as you own the property. A goodwill courtesy from Roll On Painting in Muskoka — not a warranty." />
+        <meta name="description" content="Two hours of complimentary touch-ups per year of ownership, for as long as you own the property. A goodwill courtesy from Roll On Painting in Muskoka — not a warranty." />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content="Perfect Finish Promise | Roll On Painting" />
         <meta property="og:description" content="Two hours of free touch-ups every year, for as long as you own the property. A goodwill courtesy, not a warranty." />
@@ -114,7 +114,7 @@ const FreeTouchUpsPage = () => {
               Two Hours of Free Touch-Ups, <span className="text-secondary">Every Year</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Every painting project we complete comes with two hours of free touch-ups every calendar year, for as long as you own the property. It’s a goodwill courtesy — not a warranty, and not a guarantee — and it’s ours to keep offering because we like standing behind what we paint.
+              Every painting project we complete comes with two hours of complimentary touch-ups per year of ownership, for as long as you own the property. Unused hours do not carry over. It’s a goodwill courtesy — not a warranty, and not a guarantee — and it’s ours to keep offering because we like standing behind what we paint.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2">
@@ -138,7 +138,7 @@ const FreeTouchUpsPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">How It Works</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              It’s simple. After we complete your painting project, you get two hours of free touch-ups every calendar year you own the home.
+              It’s simple. After we complete your painting project, you get two hours of complimentary touch-ups per year of ownership. Unused hours do not carry over.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
