@@ -69,7 +69,11 @@ export const ABSOLUTE_PATTERNS = [
  */
 export const PROMISE_TRIGGER_PATTERNS = [
   /perfect finish promise/i,
-  /touch[- ]ups?\b/i,
+  // Touch-ups only count as OUR promise when the sentence frames them as an
+  // entitlement. "Who handles touch-ups?" is a scope question, not a promise.
+  /\b(?:free|complimentary|lifetime|two hours of)\b[^.]{0,40}touch[- ]ups?\b/i,
+  /touch[- ]ups?\b[^.]{0,60}\b(?:per (?:calendar )?year|every year|each year|year of ownership|for life)\b/i,
+
   /\b(?:five|three|5|3)[- ]year warranty\b/i,
   /roll on painting warrants/i,
   /\bwarrant(?:y|ies|s)\b[^.]{0,60}\b(?:workmanship|our work)\b/i,
@@ -113,8 +117,13 @@ export const BROKEN_SENTENCE_PATTERNS = [
 
 /** Hazards that always need a human read. */
 export const HAZARD_SERIOUS_PATTERNS = [
-  /\basbestos\b/i, /\blead\b(?!ing|er|s\b)/i,
+  /\basbestos\b/i,
+  // "lead to" / "leading" are not the metal. Require paint context.
+  /\blead[- ](?:paint|based|dust|safe|abatement|hazard|exposure|levels?|content)\b/i,
+  /\b(?:paint|coating|surface)s?\s+(?:that\s+)?contains?\s+lead\b/i,
+  /\blead\s+(?:paint|dust|abatement|testing|test)\b/i,
 ];
+
 
 /** Hazard cues that are merely worth a glance. */
 export const HAZARD_CEILING_PATTERNS = [
