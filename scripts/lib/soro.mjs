@@ -111,7 +111,7 @@ export function sanitizeContent(rawHtml, slug) {
     'normalised touch-up wording to "per year of ownership"'
   );
   sub(
-    /\b(five|5)[- ]year warranty\b[^.]*\./gi,
+    /[^.<>]*\b(?:five|5)[- ]year warranty\b[^.<>]*\./gi,
     WARRANTY_LONG,
     'replaced a five-year warranty claim with the canonical three-year wording'
   );
