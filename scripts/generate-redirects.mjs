@@ -204,6 +204,8 @@ try {
     '/media',
     '/service-areas',
     '/free-touch-ups',
+    '/services',
+    '/how-we-quote',
     '/private-client-muskoka-property-care',
     // Service pages
     '/interior-painting',
