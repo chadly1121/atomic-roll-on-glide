@@ -63,12 +63,13 @@ for (const a of pending) {
   const { html, edits, blockers: b } = sanitizeContent(raw, a.slug);
   allEdits.push(...edits);
   blockers.push(...b);
-  if (b.length) continue;
 
   // Read the article before anything is written, and record what a human
-  // still needs to check. Findings never block the import; they go into the
-  // pull request body as a checklist.
-  reviews.push(reviewArticle({ slug: a.slug, title: a.title, html, excerpt: a.excerpt }));
+  // still needs to check. Blocked articles are reviewed too, so the pull
+  // request says why they were held back.
+  reviews.push(reviewArticle({ slug: a.slug, title: a.title, html, excerpt: a.excerpt, blockers: b }));
+  if (b.length) continue;
+
 
   const tags = generateTags(a.title, html);
   const image = DRY ? a.image : await downloadImage(a.image, a.slug);
