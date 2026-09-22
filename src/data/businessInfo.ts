@@ -101,8 +101,8 @@ export const businessInfo = {
   credentials: {
     wsib: true,
     liabilityInsurance: "5 Million",
-    pcaMember: true, // Painting Contractors Association
-    description: "WSIB covered with $5 million liability insurance. Member of the Painting Contractors Association."
+    gonanoCertified: true,
+    description: "WSIB covered with $5 million liability insurance. GoNano certified applicator."
   },
   
   // TV Appearances

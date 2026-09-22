@@ -135,7 +135,7 @@ const OurValuesSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          {['$5M Liability Insured', 'WSIB Covered', 'PCA Member', '5× on HGTV', '15× in Dockside Magazine'].map((badge) => (
+          {['$5M Liability Insured', 'WSIB Covered', 'GoNano Certified', '5× on HGTV', '15× in Dockside Magazine'].map((badge) => (
             <span key={badge} className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-atomic-turquoise" />
               <span className="font-medium">{badge}</span>
