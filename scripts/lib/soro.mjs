@@ -13,9 +13,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   APPROVED_CREDENTIALS, PENDING_CREDENTIALS, CREDENTIAL_PATTERNS, WARRANTY_PATTERNS,
-  ABSOLUTE_PATTERNS, HAZARD_PATTERNS, SAFETY_PATTERNS, CONTACT_PATTERNS,
-  WARRANTY_LONG, WARRANTY_SHORT,
+  ABSOLUTE_PATTERNS, CONTACT_PATTERNS, WARRANTY_LONG, WARRANTY_SHORT,
+  PROMISE_TRIGGER_PATTERNS, PROMISE_VOCABULARY, BROKEN_SENTENCE_PATTERNS,
+  HAZARD_SERIOUS_PATTERNS, HAZARD_CEILING_PATTERNS,
+  SAFETY_CHEMICAL_PATTERNS, SAFETY_ABRASIVE_PATTERNS,
+  CLAIM_CONTEXT_PATTERN, RETIRED_TOWNS,
 } from './approved-credentials.mjs';
+
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -74,8 +78,81 @@ export async function fetchArticleBody(id) {
 
 // ---------------------------------------------------------------- content scan
 
+// ---------------------------------------------------------------- content scan
+
 /**
- * Corrects imported copy against the real record and strips anything that
+ * Split HTML into sentence-sized chunks. A chunk keeps whatever tags and
+ * whitespace surround it, so re-joining the chunks reproduces the input
+ * exactly.
+ */
+export function splitSentences(html) {
+  return html.split(/(?<=\.)(?=\s*(?:<|["\u201c]?[A-Z]|$))/);
+}
+
+/** Plain text of a chunk, whitespace collapsed. */
+function chunkText(chunk) {
+  return chunk.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Replace WHOLE sentences that assert a Perfect Finish Promise, a touch-up
+ * entitlement or a Roll On warranty term with the canonical wording.
+ *
+ * Rules, in order:
+ *   - a sentence already inside the canonical wording is left alone;
+ *   - a sentence that is *only* a promise is replaced in full;
+ *   - a sentence that mixes a promise with substantive content it would be
+ *     wrong to discard is NOT touched — it becomes a blocker for a human;
+ *   - after replacement the result is sanity-checked, and any spliced-looking
+ *     output fails the import rather than being written.
+ */
+export function normalisePromiseSentences(html, slug = 'article') {
+  const edits = [];
+  const blockers = [];
+  const canonical = WARRANTY_LONG.replace(/\s+/g, ' ');
+
+  const out = splitSentences(html).map((chunk) => {
+    const text = chunkText(chunk);
+    if (!text) return chunk;
+    if (!PROMISE_TRIGGER_PATTERNS.some((re) => re.test(text))) return chunk;
+    if (canonical.includes(text)) return chunk; // already canonical
+
+    // What remains once the promise vocabulary is stripped out? Anything
+    // meaningful means the sentence carries content we must not throw away.
+    const residual = text
+      .replace(PROMISE_VOCABULARY, ' ')
+      .replace(/[^A-Za-z ]/g, ' ')
+      .split(/\s+/)
+      .filter((w) => w.length > 2);
+
+    if (residual.length > 6) {
+      blockers.push(
+        `${slug}: a warranty/touch-up claim is mixed with other content and must be rewritten by hand — "${text}"`
+      );
+      return chunk;
+    }
+
+    // Swap the sentence text, keeping any surrounding tags and whitespace.
+    const m = chunk.match(/^((?:\s|<[^>]+>)*)([\s\S]*?)((?:\s|<[^>]+>)*)$/);
+    const replaced = `${m[1]}${WARRANTY_LONG}${m[3]}`;
+
+    const broken = BROKEN_SENTENCE_PATTERNS.find((re) => re.test(chunkText(replaced)));
+    if (broken) {
+      blockers.push(
+        `${slug}: normalising a promise sentence produced ungrammatical output (${broken}) — rewrite by hand: "${text}"`
+      );
+      return chunk;
+    }
+
+    edits.push(`${slug}: replaced a whole promise sentence with the canonical warranty wording`);
+    return replaced;
+  }).join('');
+
+  return { html: out, edits, blockers };
+}
+
+/**
+
  * shouldn't ship. Returns { html, edits: string[], blockers: string[] }.
  */
 export function sanitizeContent(rawHtml, slug) {
