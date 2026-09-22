@@ -69,6 +69,6 @@ const content = `<p>If you've invested in a property on one of Muskoka's lakes, 
 <p>Exterior painting on a Muskoka property is a significant investment — and done right, it's one that pays back in curb appeal, property value, and years of low-maintenance enjoyment. Done wrong, it's a frustrating cycle of premature failure and repair.</p>
 <p>If your cottage is due for exterior work this season, the time to act is now. We serve Huntsville, Bracebridge, Gravenhurst, Port Carling, and 44 other communities across the Muskoka region.</p>
 <p>Book your consultation at <a href="https://www.roll-onpainting.com/contact">roll-onpainting.com/contact</a> — or call Chad directly at <a href="tel:+17057871401" data-analytics-location="blog">705-787-1401</a> to talk through your project.</p>
-<p><em>Related reading: <a href="https://www.roll-onpainting.com/services/exterior-painting">Exterior Painting</a> · <a href="https://www.roll-onpainting.com/services/deck-fence-staining">Deck &amp; Fence Staining</a></em></p>`;
+<p><em>Related reading: <a href="https://www.roll-onpainting.com/exterior-painting">Exterior Painting</a> · <a href="https://www.roll-onpainting.com/deck-staining">Deck &amp; Dock Staining</a></em></p>`;
 
 export default content;

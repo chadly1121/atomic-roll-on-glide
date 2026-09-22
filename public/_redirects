@@ -144,7 +144,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /blog/df82062a53eec14105508e436770dc34fbef3e1ce0386db24420abf38887924a /404.html                                         404
 /blog/fe992cc0cb66ac11007de2a53bf83b8e3da3252048c45625de5883e614a58188 /404.html                                         404
 
-# Prerendered route overrides (132 from sitemap.xml) — must come BEFORE SPA fallback
+# Prerendered route overrides (137 from sitemap.xml) — must come BEFORE SPA fallback
 /about                                                      /about/index.html                                 200!
 /blog                                                       /blog/index.html                                  200!
 /blog/bathroom-paint-humidity                               /blog/bathroom-paint-humidity/index.html          200!
@@ -219,6 +219,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /forest-hill-muskoka-cottage-painting                       /forest-hill-muskoka-cottage-painting/index.html  200!
 /free-touch-ups                                             /free-touch-ups/index.html                        200!
 /gonano                                                     /gonano/index.html                                200!
+/how-we-quote                                               /how-we-quote/index.html                          200!
 /institutional-painting                                     /institutional-painting/index.html                200!
 /interior-painting                                          /interior-painting/index.html                     200!
 /interior-painting-gravenhurst                              /interior-painting-gravenhurst/index.html         200!
@@ -226,6 +227,7 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /interior-painting-port-carling                             /interior-painting-port-carling/index.html        200!
 /lawrence-park-muskoka-cottage-painting                     /lawrence-park-muskoka-cottage-painting/index.html 200!
 /media                                                      /media/index.html                                 200!
+/oakville-muskoka-cottage-painting                          /oakville-muskoka-cottage-painting/index.html     200!
 /painters-algonquin-park                                    /painters-algonquin-park/index.html               200!
 /painters-bala                                              /painters-bala/index.html                         200!
 /painters-baysville                                         /painters-baysville/index.html                    200!
@@ -264,12 +266,15 @@ http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!
 /painters-utterson                                          /painters-utterson/index.html                     200!
 /painters-windermere                                        /painters-windermere/index.html                   200!
 /portfolio                                                  /portfolio/index.html                             200!
+/post-road-muskoka-cottage-painting                         /post-road-muskoka-cottage-painting/index.html    200!
 /power-washing                                              /power-washing/index.html                         200!
 /power-washing-muskoka                                      /power-washing-muskoka/index.html                 200!
 /prefinishing                                               /prefinishing/index.html                          200!
 /private-client-muskoka-property-care                       /private-client-muskoka-property-care/index.html  200!
 /reviews                                                    /reviews/index.html                               200!
+/rosedale-muskoka-cottage-painting                          /rosedale-muskoka-cottage-painting/index.html     200!
 /service-areas                                              /service-areas/index.html                         200!
+/services                                                   /services/index.html                              200!
 /spray-finishing                                            /spray-finishing/index.html                       200!
 /spray-painting-muskoka                                     /spray-painting-muskoka/index.html                200!
 /staining-muskoka                                           /staining-muskoka/index.html                      200!
