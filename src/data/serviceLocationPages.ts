@@ -24,7 +24,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Clean job sites — we leave your home cleaner than we found it',
         'Sharp, consistent paint lines with no flashing or lap marks',
         'Final walkthrough with you to ensure every detail meets your standards',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior painting project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed interior painting project'
       ],
       whoItsFor: [
         'Muskoka homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -53,7 +53,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance for your protection',
       'Premium Benjamin Moore, Dulux, and PPG paints — never builder-grade products',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'Clean, respectful, and punctual crews who treat your home like their own',
       'Proper preparation is everything — we never skip steps',
       'Consistent, flawless finishes without flashing, lap marks, or drips',
@@ -128,7 +128,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Gutter, soffit, and fascia painting when included in scope',
         'Deck and porch floor coating available as an add-on',
         'Full site cleanup — no paint cans, no drop cloths, no mess left behind',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project'
       ],
       whoItsFor: [
         'Muskoka homeowners protecting their investment from harsh weather',
@@ -159,7 +159,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'WSIB covered with $5 million liability insurance',
       'Thorough preparation prevents peeling, cracking, and premature failure',
       'Experienced with cedar, pine, wood siding, vinyl, stucco, brick, and log homes',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'We partner with Sansin for premium wood treatments and natural finishes',
       'Clean, professional crews who respect your property and landscaping'
     ],
@@ -169,7 +169,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint rated for Canadian climates, applied by experienced crews.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail is finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project.' }
     ],
     faqs: [
       {
@@ -231,7 +231,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Cabinets, built-ins, and custom millwork',
         'Exterior fences, decks, siding, and garage doors',
         'Full cleanup and inspection — no overspray left behind',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed spray painting project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed spray painting project'
       ],
       whoItsFor: [
         'Homeowners who want a smooth, brushstroke-free finish on trim and doors',
@@ -262,7 +262,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Over 25 years of professional spray painting experience in Muskoka',
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'We use professional airless and HVLP equipment — not consumer-grade sprayers',
       'Meticulous masking protects every surface not being painted'
     ],
@@ -327,7 +327,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Reinstallation of all doors, drawers, and hardware',
         'Optional hardware replacement and soft-close hinge upgrades',
         'Full kitchen cleanup and protection throughout the process',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cabinet project'
       ],
       whoItsFor: [
         'Muskoka homeowners updating dated or worn kitchen cabinets',
@@ -359,7 +359,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Over 25 years of professional painting experience in Muskoka',
       'Featured 5 times on HGTV\'s Scott\'s Vacation House Rules',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'Minimal disruption to your daily routine — we work clean and fast',
       'Premium primers and paints designed specifically for kitchen cabinets'
     ],
@@ -426,7 +426,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Specialty finishes for log homes, timber frames, and exposed wood',
         'Floor, furniture, and fixture protection throughout the project',
         'Complete cleanup — we leave your cottage spotless',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners refreshing for summer',
@@ -457,7 +457,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Weather-resistant exterior products rated for -30°C Canadian winters',
       'We coordinate around your cottage schedule — work while you\'re away',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'Clean, respectful crews who protect your cottage furnishings and landscaping',
       'Premium Benjamin Moore, Dulux, PPG, and Sansin products — never builder-grade',
       'We handle everything from docks and boathouses to great rooms and lofts'
@@ -534,7 +534,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Optional decorative flake broadcast for texture and style',
         'Clear polyaspartic or urethane topcoat for maximum durability',
         'Full garage/space cleanup and curing instructions',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed epoxy project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed epoxy project'
       ],
       whoItsFor: [
         'Muskoka homeowners upgrading garage floors',
@@ -564,7 +564,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Transforms dull concrete into an attractive, professional-looking surface',
       'Over 25 years of professional experience in Muskoka',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project',
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project',
       'Professional diamond grinding ensures superior adhesion',
       'Fast installation — most garages completed in 2-3 days'
     ],
@@ -739,7 +739,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Staining of railings, stairs, trim, and detail work',
         'UV-resistant and water-repellent formulas for Muskoka weather',
         'Full site cleanup and stain disposal',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed staining project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed staining project'
       ],
       whoItsFor: [
         'Muskoka homeowners maintaining decks, docks, and fences',
@@ -772,7 +772,7 @@ export const serviceLocationPages: ServicePageData[] = [
       'Specialized log home and timber-frame staining expertise',
       'Over 25 years of wood finishing experience in Muskoka',
       'WSIB covered with $5 million liability insurance',
-      'Perfect Finish Promise — two hours of free touch-ups every year — on every completed project'
+      'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project'
     ],
     process: [
       { step: 'Wood Assessment', description: 'We inspect your wood surfaces for rot, damage, and existing finish condition to determine the right approach.' },
@@ -847,7 +847,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Window, door, and trim detailing with clean, sharp lines',
         'Soffit, fascia, and gutter painting included when in scope',
         'Full site cleanup — no mess left on your Bracebridge property',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project'
       ],
       whoItsFor: [
         'Bracebridge homeowners protecting their property from freeze-thaw cycles and UV damage',
@@ -885,7 +885,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — we fix every issue so paint adheres properly and lasts through Bracebridge winters.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by experienced crews who know Muskoka conditions.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters — every detail finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project.' }
     ],
     faqs: [
       { question: 'How much does exterior painting cost in Bracebridge?', answer: 'Exterior painting in Bracebridge starts at $5.75 per square foot with Roll On Painting. This includes power washing, full surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
@@ -893,7 +893,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'How long does exterior paint last in Bracebridge?', answer: 'With proper preparation and quality paint, exterior finishes last 7-10 years in Bracebridge. Surfaces facing south or exposed to lake spray may need attention sooner. Our thorough prep work maximizes longevity.' },
       { question: 'Do you paint log homes in Bracebridge?', answer: 'Yes. We specialize in log homes and cabins using Sansin and other premium wood treatments designed for Canadian log structures. We also handle chinking and log restoration in the Bracebridge area.' },
       { question: 'Can you paint my Bracebridge cottage while I\'m away?', answer: 'Absolutely. Many Bracebridge cottage owners are seasonal. We coordinate access, send photo updates throughout the project, and ensure everything is perfect before you arrive.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed exterior project with Roll On Painting includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If your paint gets scuffed or damaged after we finish, we come back and fix it — no charge. No other Bracebridge painter offers this.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed exterior project with Roll On Painting includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If your paint gets scuffed or damaged after we finish, we come back and fix it — no charge. No other Bracebridge painter offers this.' },
       { question: 'Are you insured for exterior painting in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage. We are fully insured for all exterior painting work in Bracebridge and across Muskoka.' },
       { question: 'What paint brands do you use for exteriors in Bracebridge?', answer: 'We use Benjamin Moore Aura Exterior, Sherwin-Williams Duration, and Sansin wood treatments — all rated for Canadian climates. We never use builder-grade products.' }
     ],
@@ -922,7 +922,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Complete floor, furniture, and fixture protection',
         'Clean job sites — we leave your Bracebridge home cleaner than we found it',
         'Final walkthrough to ensure every detail meets your standards',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed interior project'
       ],
       whoItsFor: [
         'Bracebridge homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -967,7 +967,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you paint cottage interiors in Bracebridge?', answer: 'Yes. We specialize in cottage interiors including pine ceilings, exposed beams, shiplap walls, and lakefront living areas. We use products suited to cottage environments.' },
       { question: 'What paint brands do you use in Bracebridge?', answer: 'We use premium paints from Benjamin Moore and Sherwin-Williams. We recommend specific sheens based on the room — scrubbable eggshell for high-traffic areas, flat for ceilings.' },
       { question: 'Do I need to move furniture before painting?', answer: 'No. We handle all furniture moving and protection. Large items are covered and floors are fully protected with drop cloths.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If your walls get scuffed or nicked, we come back and fix them at no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If your walls get scuffed or nicked, we come back and fix them at no charge.' },
       { question: 'Are you insured for painting in Bracebridge?', answer: 'Yes. We carry $5 million liability insurance and full WSIB coverage for all work in Bracebridge and across Muskoka.' },
       { question: 'Do you offer colour consultations in Bracebridge?', answer: 'Yes. We help you select colours that complement your Bracebridge home\'s architecture, lighting, and style. We can bring sample boards and make recommendations based on 25+ years of experience.' }
     ],
@@ -996,7 +996,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Weather-resistant coatings that withstand freeze-thaw, UV, and lake moisture',
         'Remote coordination for seasonal owners — we work while you\'re away',
         'Photo updates throughout the project so you see progress in real time',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners in the Bracebridge area who need reliable painters',
@@ -1034,7 +1034,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Preparation', description: 'Power washing, scraping, sanding, caulking, and priming — proper prep for Muskoka\'s demanding conditions.' },
       { step: 'Professional Painting', description: 'Interior and exterior painting with premium, weather-resistant products selected for cottage environments.' },
       { step: 'Photo Updates', description: 'We send you photos at each stage so you can see the progress from wherever you are.' },
-      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus our Perfect Finish Promise — two hours of free touch-ups every year — on every completed project.' }
+      { step: 'Final Inspection & Warranty', description: 'Walk-through when you arrive plus our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project.' }
     ],
     faqs: [
       { question: 'Can you paint my Bracebridge cottage while I\'m in the city?', answer: 'Yes — this is one of our specialties. Many Bracebridge cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is perfect before you arrive.' },
@@ -1043,7 +1043,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What paint is best for Bracebridge cottage interiors?', answer: 'We recommend Benjamin Moore Aura or Regal Select for cottage interiors. For pine ceilings and exposed beams, we use specialized stains and clear coats that enhance the natural wood grain.' },
       { question: 'When should I schedule cottage painting in Bracebridge?', answer: 'Book early — spring and summer fill up fast. Exterior work is best May-October. Interior painting can be done year-round. Contact us in winter to lock in your preferred dates.' },
       { question: 'Do you offer seasonal cottage maintenance in Bracebridge?', answer: 'Yes. Many of our clients use our annual touch-up and maintenance service. We inspect your cottage each season and address any painting needs before small issues become big problems.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cottage project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Scuffs, marks, or wear — we come back and fix them at no charge. No other Bracebridge painter offers this.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cottage project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Scuffs, marks, or wear — we come back and fix them at no charge. No other Bracebridge painter offers this.' },
       { question: 'Are you insured for cottage work in Bracebridge?', answer: 'Yes. We carry $5 million liability insurance and full WSIB coverage for all cottage painting work in Bracebridge and across Muskoka.' }
     ],
     galleryImages: [
@@ -1108,7 +1108,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Sanding & Prep', description: 'We sand the deck to open the wood grain, ensuring maximum stain penetration and adhesion.' },
       { step: 'Stain Application', description: 'Two coats of premium, UV-resistant deck stain applied for maximum protection and colour depth.' },
       { step: 'Detail Work', description: 'Railings, steps, posts, and edges — every surface stained consistently and thoroughly.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed deck staining project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed deck staining project.' }
     ],
     faqs: [
       { question: 'How much does deck staining cost in Bracebridge?', answer: 'Deck staining in Bracebridge starts at $4.00 per square foot. This includes power washing, sanding, and two coats of premium stain. Larger decks, docks, and multi-level structures are quoted individually.' },
@@ -1117,7 +1117,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you stain docks and boathouses in Bracebridge?', answer: 'Yes. We stain docks, boathouses, Muskoka chairs, fences, and all outdoor wood structures. We use marine-grade and UV-resistant products for waterfront applications.' },
       { question: 'Can you strip and re-stain my old deck in Bracebridge?', answer: 'Absolutely. We power wash, sand, and strip old finishes before applying new stain. Proper removal of failed coatings is essential for a lasting result.' },
       { question: 'When is the best time to stain a deck in Bracebridge?', answer: 'Late spring through early fall is ideal — temperatures above 10°C and dry weather for 48 hours after application. We schedule around weather to ensure optimal results.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed deck staining project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If areas wear prematurely or get damaged, we come back and address them — no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed deck staining project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If areas wear prematurely or get damaged, we come back and address them — no charge.' },
       { question: 'Are you insured for deck work in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for all deck staining and outdoor work in Bracebridge.' }
     ],
     galleryImages: [
@@ -1143,7 +1143,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Two coats of durable cabinet-grade paint or lacquer',
         'Hardware removal and reinstallation',
         'Full masking and protection of countertops, floors, and appliances',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cabinet project'
       ],
       whoItsFor: [
         'Bracebridge homeowners wanting a kitchen refresh without a full renovation',
@@ -1188,7 +1188,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What finish options do you offer for cabinets?', answer: 'We offer matte, satin, semi-gloss, and high-gloss finishes. Satin is most popular for a modern, fingerprint-resistant look. We can also do two-tone finishes (upper/lower or island contrast).' },
       { question: 'Is cabinet painting worth it vs. new cabinets?', answer: 'If your cabinets are structurally sound, painting is absolutely worth it. You get a brand-new look for roughly 1/3 the cost of replacement. Most Bracebridge clients save $10,000-$20,000 by refinishing instead of replacing.' },
       { question: 'Do you spray cabinets on-site or off-site?', answer: 'We typically spray on-site using professional HVLP spray equipment with full masking and containment. For some projects, we remove doors and spray them in our controlled environment for the best possible finish.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cabinet project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If a door gets chipped or marked, we come back and fix it — no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cabinet project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If a door gets chipped or marked, we come back and fix it — no charge.' },
       { question: 'Are you insured for kitchen work in Bracebridge?', answer: 'Yes. Roll On Painting carries $5 million liability insurance and full WSIB coverage for all cabinet and kitchen painting work in Bracebridge.' }
     ],
     galleryImages: [
@@ -1216,7 +1216,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Window, door, and trim detailing with clean, sharp lines',
         'Soffit, fascia, and gutter painting when in scope',
         'Full site cleanup — no mess left on your Huntsville property',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project'
       ],
       whoItsFor: [
         'Huntsville homeowners protecting their property from harsh Northern Ontario weather',
@@ -1254,7 +1254,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Prep & Repair', description: 'Scraping, sanding, caulking, and priming — every issue fixed so paint lasts through Huntsville\'s harsh winters.' },
       { step: 'Paint Application', description: 'Two coats of weather-resistant exterior paint applied by crews who know Northern Ontario conditions.' },
       { step: 'Detail Work', description: 'Windows, doors, trim, soffits, and gutters finished with clean, precise lines.' },
-      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed exterior project.' }
+      { step: 'Cleanup & Warranty', description: 'Full site cleanup and our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed exterior project.' }
     ],
     faqs: [
       { question: 'How much does exterior painting cost in Huntsville?', answer: 'Exterior painting in Huntsville starts at $5.75 per square foot. This includes power washing, surface prep, primer, and two coats of weather-resistant paint. Log homes and specialty finishes may cost more. Contact us for a free estimate.' },
@@ -1262,7 +1262,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'How long does exterior paint last in Huntsville?', answer: 'With proper prep and quality paint, 7-10 years in Huntsville. North-facing surfaces may last longer (less UV), while south-facing walls may need earlier attention. Our thorough prep maximizes longevity.' },
       { question: 'Do you paint log homes in Huntsville?', answer: 'Yes. We specialize in log home staining and restoration using Sansin and other premium Canadian wood treatments. Huntsville has many log homes and we understand the specific maintenance they require.' },
       { question: 'Can you paint my Huntsville cottage while I\'m away?', answer: 'Absolutely. Many Huntsville-area cottage owners are seasonal. We coordinate access, send photo updates, and ensure everything is completed to your standards before you arrive.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed exterior project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If your paint gets scuffed or damaged, we come back and fix it at no charge. No other Huntsville painter offers this.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed exterior project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If your paint gets scuffed or damaged, we come back and fix it at no charge. No other Huntsville painter offers this.' },
       { question: 'Are you local to Huntsville?', answer: 'Yes — we\'re based in Port Sydney, just 10 minutes south of Huntsville. Owner Chad Gilchrist has been painting in the Huntsville area for over 25 years.' },
       { question: 'What paint brands do you use for Huntsville exteriors?', answer: 'Benjamin Moore Aura Exterior, Sherwin-Williams Duration, and Sansin wood treatments — all rated for harsh Northern Ontario climates.' }
     ],
@@ -1291,7 +1291,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Complete floor, furniture, and fixture protection',
         'Clean job sites — we leave your Huntsville home cleaner than we found it',
         'Final walkthrough to ensure every detail meets your standards',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed interior project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed interior project'
       ],
       whoItsFor: [
         'Huntsville homeowners refreshing living rooms, bedrooms, kitchens, and bathrooms',
@@ -1336,7 +1336,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you paint cottage interiors near Huntsville?', answer: 'Yes. We specialize in cottage interiors including pine ceilings, exposed beams, shiplap, and lakefront living areas around Lake Vernon and Peninsula Lake.' },
       { question: 'What paint brands do you use in Huntsville?', answer: 'Premium paints from Benjamin Moore and Sherwin-Williams. We never use builder-grade products. We recommend sheens based on room use and traffic level.' },
       { question: 'Do I need to move furniture before painting?', answer: 'No. We handle all furniture moving and protection. Large items are covered and floors are fully protected.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Scuffs or nicks? We come back and fix them — no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Scuffs or nicks? We come back and fix them — no charge.' },
       { question: 'Are you local to Huntsville?', answer: 'Yes — based in Port Sydney, 10 minutes south. Owner Chad Gilchrist has painted in Huntsville for over 25 years.' },
       { question: 'Do you offer colour consultations in Huntsville?', answer: 'Yes. We help select colours that complement your home\'s architecture and lighting. We bring samples and make recommendations based on decades of experience.' }
     ],
@@ -1364,7 +1364,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Weather-resistant coatings for Huntsville\'s demanding Northern Ontario climate',
         'Remote coordination for seasonal owners — we work while you\'re away',
         'Photo updates throughout the project',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cottage project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cottage project'
       ],
       whoItsFor: [
         'Seasonal cottage owners on Lake Vernon, Peninsula Lake, and Fairy Lake',
@@ -1411,7 +1411,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What paint is best for Huntsville cottage interiors?', answer: 'Benjamin Moore Aura or Regal Select for walls, specialized stains for pine ceilings and beams. We select products suited to cottage environments.' },
       { question: 'When should I book cottage painting near Huntsville?', answer: 'Book early — spring and summer fill fast. Exterior: May-October. Interior: year-round. Contact us in winter to secure preferred dates.' },
       { question: 'Do you offer seasonal cottage maintenance near Huntsville?', answer: 'Yes. Many clients use our annual touch-up service. We inspect your cottage each season and address painting needs before issues grow.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cottage project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Scuffs, marks, or wear — we fix them at no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cottage project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Scuffs, marks, or wear — we fix them at no charge.' },
       { question: 'Are you close to Huntsville?', answer: 'Yes — based in Port Sydney, 10 minutes south. We\'ve been painting Huntsville-area cottages for over 25 years.' }
     ],
     galleryImages: [
@@ -1476,7 +1476,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Sanding & Prep', description: 'Sanding to open wood grain, ensuring maximum stain penetration and adhesion.' },
       { step: 'Stain Application', description: 'Two coats of premium, UV-resistant stain for maximum protection and colour depth.' },
       { step: 'Detail Work', description: 'Railings, steps, posts, and edges stained consistently and thoroughly.' },
-      { step: 'Cleanup & Warranty', description: 'Full cleanup and our Perfect Finish Promise — two hours of free touch-ups every year — on every completed project.' }
+      { step: 'Cleanup & Warranty', description: 'Full cleanup and our Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed project.' }
     ],
     faqs: [
       { question: 'How much does deck staining cost in Huntsville?', answer: 'Deck staining in Huntsville starts at $4.00 per square foot including power washing, sanding, and two coats of premium stain. Larger structures quoted individually.' },
@@ -1485,7 +1485,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you stain docks on Lake Vernon and Peninsula Lake?', answer: 'Yes. We stain docks, boathouses, and all waterfront wood using marine-grade and UV-resistant products.' },
       { question: 'Can you strip and re-stain my old deck near Huntsville?', answer: 'Yes. We power wash, sand, and strip old finishes before applying new stain. Proper removal of failed coatings is essential for lasting results.' },
       { question: 'When is the best time to stain a deck in Huntsville?', answer: 'Late spring through early fall — temperatures above 10°C with 48 hours of dry weather after application. Book early as summer fills fast.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed deck staining project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Premature wear or damage? We come back — no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed deck staining project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Premature wear or damage? We come back — no charge.' },
       { question: 'Are you close to Huntsville?', answer: 'Based in Port Sydney, 10 minutes south. We\'ve been staining decks in the Huntsville area for over 25 years.' }
     ],
     galleryImages: [
@@ -1511,7 +1511,7 @@ export const serviceLocationPages: ServicePageData[] = [
         'Two coats of durable cabinet-grade paint or lacquer',
         'Hardware removal and reinstallation',
         'Full masking and protection of countertops, floors, and appliances',
-        'Perfect Finish Promise — two hours of free touch-ups every year — on every completed cabinet project'
+        'Perfect Finish Promise — two hours of complimentary touch-ups per year of ownership — on every completed cabinet project'
       ],
       whoItsFor: [
         'Huntsville homeowners wanting a kitchen refresh without full renovation',
@@ -1547,7 +1547,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { step: 'Spray Application', description: 'Two coats of durable cabinet-grade paint or lacquer sprayed for a flawless finish.' },
       { step: 'Reassembly', description: 'Doors, drawers, and hardware reinstalled with proper alignment and smooth operation.' },
       { step: 'Final Inspection', description: 'Walk-through to check every door, drawer, and surface for perfection.' },
-      { step: 'Perfect Finish Promise', description: 'Your completed cabinet project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property.' }
+      { step: 'Perfect Finish Promise', description: 'Your completed cabinet project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership.' }
     ],
     faqs: [
       { question: 'How much does cabinet painting cost in Huntsville?', answer: 'Cabinet painting in Huntsville starts at $3,500 per kitchen. Final pricing depends on door count, drawer fronts, and complexity. Island cabinets and specialty finishes may cost more.' },
@@ -1556,7 +1556,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What finish options are available?', answer: 'Matte, satin, semi-gloss, and high-gloss. Satin is most popular for modern, fingerprint-resistant look. Two-tone finishes available.' },
       { question: 'Is cabinet painting worth it vs. new cabinets in Huntsville?', answer: 'If cabinets are structurally sound, absolutely. Save $10,000-$20,000 by refinishing instead of replacing. Brand-new look at roughly 1/3 the cost.' },
       { question: 'Do you spray on-site or off-site?', answer: 'Typically on-site with HVLP spray equipment and full containment. Some projects may have doors sprayed in our controlled shop environment.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cabinet project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Chips or marks? We fix them — no charge.' },
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every completed cabinet project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Chips or marks? We fix them — no charge.' },
       { question: 'Are you close to Huntsville?', answer: 'Based in Port Sydney, 10 minutes south. We\'ve been doing kitchen work in Huntsville for over 25 years.' }
     ],
     galleryImages: [
@@ -1599,7 +1599,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you handle wood rot repair before painting?', answer: 'Yes. We repair rotted trim, fascia, and siding before painting. Proper substrate repair is essential for a lasting finish in Muskoka.' },
       { question: 'What paint brands do you use?', answer: 'Benjamin Moore Aura Exterior and Regal Select — premium products engineered to withstand Muskoka UV, humidity, and freeze-thaw.' },
       { question: 'Are you insured for work in Gravenhurst?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Certificates available on request.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every exterior project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If paint chips or peels, we fix it — no charge, no expiry.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every exterior project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If paint chips or peels, we fix it — no charge, no expiry.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
   },
@@ -1625,7 +1625,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What paint brands do you recommend for cottage interiors?', answer: 'Benjamin Moore Regal Select for most applications. For high-moisture areas like bathrooms and kitchens, we use Aura Bath & Spa.' },
       { question: 'Do I need to move my furniture?', answer: 'No. We move and protect all furniture as part of our preparation. Everything is returned to its original position.' },
       { question: 'Do you paint cottage log interiors?', answer: 'Yes. We handle log cabin interiors with appropriate stains and finishes designed for natural wood surfaces.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every interior project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Scuffs, marks, or wear — we fix them at no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every interior project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Scuffs, marks, or wear — we fix them at no charge.' }
     ],
     galleryImages: ['/lovable-uploads/interior-modern-cottage-living.webp', '/lovable-uploads/interior-kitchen-masking-prep.webp']
   },
@@ -1651,7 +1651,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you stain decks and docks as part of cottage painting?', answer: 'Yes. We offer complete exterior care — painting, deck staining, dock refinishing, trim, and siding maintenance.' },
       { question: 'What products do you use on cottage exteriors?', answer: 'Premium Benjamin Moore exterior paints and high-performance stains rated for Muskoka\'s UV, moisture, and freeze-thaw conditions.' },
       { question: 'Is there a minimum project size?', answer: 'We focus on whole-property care. Most cottage projects include multiple surfaces — exterior walls, deck, dock, and trim.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every cottage project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Weather wear, chips, or fading — we address it at no cost.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every cottage project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Weather wear, chips, or fading — we address it at no cost.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
   },
@@ -1677,7 +1677,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Can you strip old stain before re-staining?', answer: 'Yes. We offer full stripping and brightening as part of our prep process when the old finish needs to be removed.' },
       { question: 'When is the best time to stain a deck in Gravenhurst?', answer: 'Late May through September when temperatures are consistently above 10°C and rain risk is manageable.' },
       { question: 'Do you stain pressure-treated wood?', answer: 'Yes, once it has properly dried (usually 6-12 months after installation). We confirm moisture levels before application.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every staining project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. If the finish wears prematurely, we touch it up — no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every staining project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. If the finish wears prematurely, we touch it up — no charge.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
   },
@@ -1703,7 +1703,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Can you paint cottage kitchen cabinets?', answer: 'Yes. We frequently paint cottage kitchen cabinets in the Gravenhurst area. Work can be completed while you\'re not at the cottage.' },
       { question: 'What finish options are available?', answer: 'Matte, satin, semi-gloss, and high-gloss. We recommend satin or semi-gloss for kitchens — durable and easy to clean.' },
       { question: 'Can you change the colour of my cabinets?', answer: 'Yes. Any colour change is possible. We handle everything from dark stained oak to bright white modern finishes.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every cabinet project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Chips or marks from daily use? We fix them — no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every cabinet project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Chips or marks from daily use? We fix them — no charge.' }
     ],
     galleryImages: ['/lovable-uploads/interior-kitchen-masking-prep.webp']
   },
@@ -1733,7 +1733,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'How far in advance should I book?', answer: 'For Port Carling, we recommend booking 8-12 weeks ahead. Premium waterfront properties require careful scheduling.' },
       { question: 'Do you work on Lake Joseph properties?', answer: 'Absolutely. We serve all of Lake Joseph, Lake Rosseau, and surrounding Port Carling waterfront communities.' },
       { question: 'Are you insured for waterfront work?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Essential for waterfront estate work.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Weather wear, fading, or chips — we fix them at no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Weather wear, fading, or chips — we fix them at no charge.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
   },
@@ -1759,7 +1759,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'What paint sheen is best for cottage interiors?', answer: 'Eggshell for walls, satin for trim and high-traffic areas, and semi-gloss for kitchens and bathrooms. We advise based on your space.' },
       { question: 'Do I need to be at the cottage during the work?', answer: 'No. We coordinate access with you or your property manager. Photo updates keep you informed throughout.' },
       { question: 'How long does interior painting take in a Port Carling cottage?', answer: 'Depends on size — a typical 3-bedroom cottage takes 4-6 days. Larger estates with multiple buildings take longer.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every interior project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Scuffs, marks, or wear — we fix them at no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every interior project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Scuffs, marks, or wear — we fix them at no charge.' }
     ],
     galleryImages: ['/lovable-uploads/interior-modern-cottage-living.webp']
   },
@@ -1785,7 +1785,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Do you offer seasonal maintenance programs?', answer: 'Yes. Many Port Carling clients join our Private Client program for ongoing season-over-season property care.' },
       { question: 'What products do you use on waterfront cottages?', answer: 'Benjamin Moore Aura Exterior, Arborcoat stains, and marine-grade finishes for docks — all rated for Muskoka conditions.' },
       { question: 'Are you insured for multi-structure properties?', answer: 'Fully insured with $5M liability coverage and WSIB-covered crews. Certificates available on request.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every cottage project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Chips, peeling, or weather wear — we fix it at no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every cottage project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Chips, peeling, or weather wear — we fix it at no charge.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp', '/lovable-uploads/exterior-red-cottage.webp']
   },
@@ -1811,7 +1811,7 @@ export const serviceLocationPages: ServicePageData[] = [
       { question: 'Can you stain my deck while I\'m in the city?', answer: 'Yes. We coordinate access and handle everything on-site. Photo updates provided throughout the process.' },
       { question: 'Do you power wash before staining?', answer: 'Yes. Thorough power washing and wood brightening is included in every staining project. Proper prep is essential for adhesion.' },
       { question: 'Can you stain a new cedar deck?', answer: 'Yes, once properly dried. New cedar typically needs 3-6 months before staining. We test moisture levels before application.' },
-      { question: 'What is the Perfect Finish Promise?', answer: 'Every staining project includes our Perfect Finish Promise: two hours of free touch-ups every year you own the property. Wear or fading — we touch it up at no charge.' }
+      { question: 'What is the Perfect Finish Promise?', answer: 'Every staining project includes our Perfect Finish Promise: two hours of complimentary touch-ups per year of ownership. Wear or fading — we touch it up at no charge.' }
     ],
     galleryImages: ['/lovable-uploads/exterior-cottage-brown.webp']
   },

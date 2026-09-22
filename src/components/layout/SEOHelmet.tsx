@@ -280,7 +280,7 @@ const SEOHelmet: React.FC = () => {
         "@type": "Service", "@id": `${siteUrl}/#service-exterior-painting`,
         "name": "Exterior Painting", "serviceType": "Exterior painting",
         "url": `${siteUrl}/exterior-painting`,
-        "description": "Weather-resistant exterior painting built to withstand harsh Muskoka winters. 5-year warranty included.",
+        "description": "Weather-resistant exterior painting built to withstand harsh Muskoka winters. Three-year workmanship warranty; decks, docks, railing caps and runoff zones excluded.",
         "provider": { "@id": `${siteUrl}/#localbusiness` },
         "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
       },
@@ -424,7 +424,7 @@ const SEOHelmet: React.FC = () => {
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Painters Muskoka | HGTV Featured | Roll On Painting" />
-      <meta property="og:description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured. Interior, exterior, cabinet & cottage painting. Two hours of free touch-ups every year. 705-787-1401." />
+      <meta property="og:description" content="Muskoka's #1 rated painters. HGTV featured, $5M insured. Interior, exterior, cabinet & cottage painting. Two hours of complimentary touch-ups per year of ownership. 705-787-1401." />
       <meta property="og:url" content={`${siteUrl}/`} />
       <meta property="og:site_name" content={businessInfo.name} />
       <meta property="og:locale" content="en_CA" />

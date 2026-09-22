@@ -33,7 +33,7 @@ const pricingTiers: PricingTier[] = [
       "Thorough surface preparation",
       "Primer application",
       "Two coats of paint",
-      "5-year warranty"
+      "Three-year workmanship warranty"
     ],
     isPopular: true
   },

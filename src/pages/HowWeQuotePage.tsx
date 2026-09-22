@@ -59,7 +59,7 @@ const HowWeQuotePage: React.FC = () => {
     {
       title: "Exterior cottage repaint",
       subtitle: "siding, trim, eaves, doors",
-      body: "From $5.75 per finished square foot, with a 5-year warranty included. Lakefront access, log treatments, board & batten, and stain work are quoted separately."
+      body: "From $5.75 per finished square foot, with a three-year workmanship warranty included. Lakefront access, log treatments, board & batten, and stain work are quoted separately."
     },
     {
       title: "Cabinet refinishing",

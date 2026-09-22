@@ -87,12 +87,12 @@ const FreeTouchUpsPage = () => {
         <meta name="description" content="Two hours of complimentary touch-ups per year of ownership, for as long as you own the property. A goodwill courtesy from Roll On Painting in Muskoka — not a warranty." />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content="Perfect Finish Promise | Roll On Painting" />
-        <meta property="og:description" content="Two hours of free touch-ups every year, for as long as you own the property. A goodwill courtesy, not a warranty." />
+        <meta property="og:description" content="Two hours of complimentary touch-ups per year of ownership, for as long as you own the property. A goodwill courtesy, not a warranty." />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Perfect Finish Promise | Roll On Painting" />
-        <meta name="twitter:description" content="Two hours of free touch-ups every year, for as long as you own the property in Muskoka." />
+        <meta name="twitter:description" content="Two hours of complimentary touch-ups per year of ownership, for as long as you own the property in Muskoka." />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
@@ -223,7 +223,7 @@ const FreeTouchUpsPage = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Get a free quote on your painting project — and two hours of free touch-ups every year you own the home.
+              Get a free quote on your painting project — and two hours of complimentary touch-ups per year of ownership.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CallToAction text="Request a Private Proposal" href="/contact" variant="primary" size="lg" />

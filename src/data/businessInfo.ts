@@ -157,7 +157,7 @@ export const servicesGrouped = {
     {
       name: "Exterior Painting",
       description: "Enhance your home's curb appeal with durable exterior painting services that withstand the elements.",
-      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "5-year warranty on vertical surfaces"]
+      includes: ["Weather-resistant paints", "Thorough surface preparation", "Primer application", "Three-year workmanship warranty"]
     },
     {
       name: "Kitchen Cabinet Refinishing",

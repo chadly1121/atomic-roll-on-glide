@@ -78,7 +78,7 @@ export const servicePages: ServicePageData[] = [
       'Over 25 years of professional painting experience',
       'WSIB covered with $5 million liability insurance',
       'Premium Benjamin Moore, Dulux, and PPG paints',
-      'Two hours of free touch-ups every year you own the home',
+      'Two hours of complimentary touch-ups per year of ownership',
       'Clean, respectful, and punctual crews'
     ],
     faqs: [
@@ -133,7 +133,7 @@ export const servicePages: ServicePageData[] = [
     name: 'Exterior Painting',
     headline: 'Exterior Painting That Withstands Muskoka Weather',
     description: 'Protect and beautify your home with durable exterior painting built to withstand harsh Muskoka winters and humid summers. Roll On Painting uses weather-resistant products and proven techniques for lasting results.',
-    metaDescription: 'Exterior painting from $5.75/sq ft in Muskoka. Weather-resistant finishes, 5-year warranty on vertical surfaces. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
+    metaDescription: 'Exterior painting from $5.75/sq ft in Muskoka. Weather-resistant finishes, three-year workmanship warranty. HGTV featured, $5M insured. Free estimates — Huntsville, Bracebridge, Gravenhurst. 705-787-1401.',
     category: 'residential',
     priceFrom: { amount: 5.75, unit: 'sq ft' },
     aiAnswerBlock: {
@@ -169,7 +169,7 @@ export const servicePages: ServicePageData[] = [
     },
     benefits: [
       'Weather-resistant paints rated for Canadian climates',
-      '5-year warranty on vertical surfaces above the splash and snow zones',
+      'Three-year workmanship warranty from substantial completion (decks, docks, railing caps and runoff zones excluded)',
       'Thorough preparation prevents peeling and cracking',
       'WSIB covered with $5 million liability insurance',
       'Experienced with cedar, wood siding, stucco, and more'
