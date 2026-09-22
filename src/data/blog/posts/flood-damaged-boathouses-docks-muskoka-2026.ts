@@ -17,7 +17,7 @@ const content = `<p>If you've been watching the water rise this spring — and i
   <li>It becomes completely saturated, right through to the core fibres — not just surface wet</li>
   <li>The cellular structure weakens, making it more vulnerable to splitting and checking as it dries</li>
   <li>Tannins and natural resins leach out, reducing the wood's natural rot resistance</li>
-  <li>Mold, mildew, and algae colonize quickly, especially in the warm May air that follows a cold-water flood</li>
+  <li>Mould, mildew, and algae colonize quickly, especially in the warm May air that follows a cold-water flood</li>
   <li>Existing coatings fail — floodwater gets under coatings and breaks the bond at the substrate</li>
 </ul>
 <p>The wood you're looking at when the water drops is not the same wood that went in. It needs to be treated accordingly.</p>
@@ -50,7 +50,7 @@ const content = `<p>If you've been watching the water rise this spring — and i
 <p><strong>Surface damage (paintable/stainable):</strong></p>
 <ul>
   <li>Peeling or bubbling paint or stain — any coating that was applied over now-saturated wood</li>
-  <li>Grey or black discolouration from mold and mildew</li>
+  <li>Grey or black discolouration from mould and mildew</li>
   <li>White mineral deposits (efflorescence) on concrete foundations or block</li>
   <li>Tannin bleed-through — brown or rust-coloured staining from the wood itself</li>
 </ul>
@@ -60,7 +60,7 @@ const content = `<p>If you've been watching the water rise this spring — and i
 <p>We say it on every project and we'll say it again here: the prep is everything. With flood-damaged wood, cutting corners on prep doesn't just reduce the lifespan of the finish — it can accelerate the rot process you're trying to stop.</p>
 <p><strong>The correct prep sequence for flood-affected boathouse wood:</strong></p>
 <ol>
-  <li><strong>Mold and mildew treatment first.</strong> Before any sanding or stripping, treat all affected surfaces with a proper wood cleaner and mildewcide solution. This kills the biological growth at the surface and prevents it from being ground deeper into the wood by sanding. Let it dwell and rinse thoroughly.</li>
+  <li><strong>Mould and mildew treatment first.</strong> Before any sanding or stripping, treat all affected surfaces with a proper wood cleaner and mildewcide solution. This kills the biological growth at the surface and prevents it from being ground deeper into the wood by sanding. Let it dwell and rinse thoroughly.</li>
   <li><strong>Stripping existing failed coatings.</strong> Any coating that has peeled, bubbled, or lost adhesion must come off completely. Do not try to coat over it. Use appropriate strippers for paint or stain, then scrape, and follow with a thorough cleaning. Partial adhesion is not good enough — floodwater will have found the weak points.</li>
   <li><strong>Wood brightener application.</strong> After stripping and cleaning, apply a quality wood brightener (oxalic acid-based). This neutralizes the tannin staining, removes grey oxidation, and opens the wood grain to accept new product. Flood-damaged wood typically benefits from two applications. This step is often skipped on standard projects — after a flood, it is non-negotiable.</li>
   <li><strong>Sanding.</strong> Once clean and bright, sand with 60–80 grit to open the grain and ensure the new coating penetrates rather than sitting on the surface. Pay particular attention to areas where old coatings were removed — those surfaces need to be scuffed back to clean, bare wood. Skip this step and your new finish will peel within one season.</li>
@@ -77,7 +77,7 @@ const content = `<p>If you've been watching the water rise this spring — and i
 <p>This is a patience game, and we know that's frustrating when you're looking at a waterlogged structure every morning.</p>
 <p><strong>Our honest timeline recommendation for Muskoka flood recovery projects in 2026:</strong></p>
 <ul>
-  <li><strong>May:</strong> Assess, document, clean, treat mold, strip failed coatings. Let the wood dry.</li>
+  <li><strong>May:</strong> Assess, document, clean, treat mould, strip failed coatings. Let the wood dry.</li>
   <li><strong>June:</strong> Moisture check, wood brightening, sanding. Begin coating if readings are acceptable.</li>
   <li><strong>Late June through July:</strong> Ideal window for <a href="/deck-staining">exterior wood staining</a> and painting once wood is properly dry and temperatures are consistent.</li>
 </ul>
@@ -94,11 +94,11 @@ const content = `<p>If you've been watching the water rise this spring — and i
 <h3>How long does flood-soaked dock wood need to dry before I can stain it?</h3>
 <p>In Muskoka spring conditions — cool nights, limited sun on some dock sections — plan for a minimum of 4–8 weeks after the water drops before any stain application. Use a moisture meter to confirm you're at or below 18% before proceeding. Early June is typically the earliest realistic window for most properties affected by the 2026 flooding.</p>
 <h3>Is there anything I can do right now while the wood is still wet?</h3>
-<p>Yes. Clean off debris and silt, treat visible mold with a mildewcide solution, and document everything with photos. Do not power wash wet, softened wood. Do not apply any coating. Get a moisture meter so you can track the drying progress.</p>
+<p>Yes. Clean off debris and silt, treat visible mould with a mildewcide solution, and document everything with photos. Do not power wash wet, softened wood. Do not apply any coating. Get a moisture meter so you can track the drying progress.</p>
 <h3>My dock was treated with stain last summer. Do I still need to strip it?</h3>
 <p>Inspect it carefully. If the stain is still adhering well with no bubbling, peeling, or loss of bond, you may only need to clean, brighten, and recoat once the wood is dry. If there is any lifting or adhesion failure, those areas need to be fully stripped. The flood will have found every weak point in the existing finish.</p>
-<h3>Should I be worried about mold inside the boathouse structure?</h3>
-<p>Yes, particularly on interior wood surfaces that were submerged or heavily splashed and are now in a warm, enclosed environment. Treat all affected surfaces with a proper mildewcide before closing the structure up. Ensure maximum ventilation through May and June. If you see black mold on structural timbers, have it assessed — surface mold and deep rot mold require different responses.</p>
+<h3>Should I be worried about mould inside the boathouse structure?</h3>
+<p>Yes, particularly on interior wood surfaces that were submerged or heavily splashed and are now in a warm, enclosed environment. Treat all affected surfaces with a proper mildewcide before closing the structure up. Ensure maximum ventilation through May and June. If you see black mould on structural timbers, have it assessed — surface mould and deep rot mould require different responses.</p>
 
 <h2>We're Your Neighbours. We Know What This Feels Like.</h2>
 <p>We've been part of Muskoka since 1999. We've watched the lakes through good springs and brutal ones. The low-lying area near Huntsville's Main Street bridge and the Town Dock went underwater this spring, and major closures included Town Dock Park, Hunter's Bay Trail, and Avery Beach. We've had clients calling us all week.</p>
