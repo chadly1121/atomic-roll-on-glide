@@ -18,7 +18,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PRIORITY_ROUTES, CANONICAL_ORIGIN, UNLISTED_ROUTES } from './seo-routes.mjs';
+import { PRIORITY_ROUTES, CANONICAL_ORIGIN, UNLISTED_ROUTES, SHELL_ROUTES } from './seo-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(process.env.DIST_DIR || path.join(__dirname, '..', 'dist'));
@@ -241,6 +241,53 @@ try {
     );
   }
   console.log(`✓ unlisted routes: ${checked} routes have forcing SPA-shell 200! rules in public/_redirects`);
+
+  // -------------------------------------------------------------------------
+  // Every landing route in SHELL_ROUTES must ALSO have a real file in dist/.
+  //
+  // The rule alone is not enough and we have the production evidence: the
+  // forcing `200!` rules were deployed and /login still returned 404.html. On
+  // Cloudflare Pages a path with a real file in the build output returns 200
+  // and a path without one gets the custom 404.html, which is why every
+  // prerendered page works and every fileless portal route did not.
+  // scripts/write-spa-shells.mjs writes those files during `npm run build`.
+  //
+  // LIMITATION (unchanged): this proves only that the file and the rule exist
+  // in the build output. It cannot prove how Cloudflare resolves them at the
+  // edge, and it says nothing about dynamic children such as
+  // /client/quotes/<id>, which have no file of their own and depend on the
+  // /client/* glob. Both still require a live check after each deploy.
+  // -------------------------------------------------------------------------
+  let shellsChecked = 0;
+  for (const route of SHELL_ROUTES) {
+    const file = path.join(DIST, route.replace(/^\//, ''), 'index.html');
+    let html = '';
+    try {
+      html = await fs.readFile(file, 'utf8');
+    } catch {
+      errors.push(
+        `Landing route "${route}" has no SPA-shell file at ${path.relative(DIST, file)} in the build output. ` +
+        `Cloudflare Pages serves public/404.html for any path with no matching file — a forcing 200! rule does not ` +
+        `override that (it was deployed and /login still 404'd). ` +
+        `Fix: scripts/write-spa-shells.mjs writes these from SHELL_ROUTES in scripts/seo-routes.mjs — it runs in \`npm run build\`.`
+      );
+      continue;
+    }
+    if (!/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(html)) {
+      errors.push(
+        `SPA shell for "${route}" is missing its noindex robots meta. These routes must never be indexed. ` +
+        `Fix: scripts/write-spa-shells.mjs.`
+      );
+    }
+    if (!covers(route)) {
+      errors.push(
+        `Landing route "${route}" has a shell file but no forcing 200! rule in public/_redirects. ` +
+        `Both are required. Fix: re-run \`npm run generate:redirects\`.`
+      );
+    }
+    shellsChecked++;
+  }
+  console.log(`✓ landing routes: ${shellsChecked} routes have BOTH a noindex SPA-shell file in dist/ and a forcing 200! rule`);
 } catch (e) {
   errors.push(`Unlisted-route SPA rewrite check failed: ${e.message}`);
 }

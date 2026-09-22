@@ -177,3 +177,33 @@ export const UNLISTED_ROUTES = new Set([
   '/blog/:slug',
   '/:slug',
 ]);
+
+/**
+ * Unlisted routes a person can actually land on or refresh, which therefore
+ * need a REAL FILE in the build output.
+ *
+ * WHY: on Cloudflare Pages a custom public/404.html takes precedence over the
+ * SPA fallback for any path with no matching file. A path that has a file at
+ * build time returns 200; a path that does not gets 404.html. Neither the
+ * site-wide `/* /index.html 200` catch-all nor the forcing `200!` form beat
+ * that — both were shipped and both still 404'd in production.
+ *
+ * So these routes get a plain SPA-shell file written by
+ * scripts/write-spa-shells.mjs: the same index.html the app boots from, with
+ * a noindex robots meta added. They are NOT prerendered (no Playwright, no
+ * authenticated UI rendered) and must never enter the sitemap.
+ *
+ * Dynamic children (/admin/quotes/:id, /client/orders/:id …) cannot have a
+ * file each. They rely on the parent shell plus the /admin/* and /client/*
+ * forcing rules, which may or may not survive Cloudflare's precedence — that
+ * has to be verified live, it cannot be asserted here.
+ */
+export const SHELL_ROUTES = [
+  '/login',
+  '/reset-password',
+  '/portal',
+  '/payment-success',
+  '/.lovable/oauth/consent',
+  '/admin',
+  '/client',
+];

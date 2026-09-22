@@ -12,6 +12,7 @@ import { existsSync, createReadStream, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { CANONICAL_ORIGIN } from './seo-routes.mjs';
+import { writeSpaShells } from './write-spa-shells.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, '..', 'dist');
@@ -311,6 +312,19 @@ async function runPool(items, worker) {
 }
 
 async function main() {
+  // Plain SPA-shell files for the unlisted portal/auth routes. Written before
+  // (and independently of) prerendering: no browser, no authenticated render,
+  // never in the sitemap. They exist purely so those paths have a real file in
+  // the build output, because public/404.html otherwise wins on Cloudflare.
+  // Idempotent — `npm run build` writes them too.
+  try {
+    const shells = await writeSpaShells(DIST);
+    console.log(`✓ Wrote ${shells.length} SPA shell files for unlisted routes (noindex, not prerendered)`);
+  } catch (e) {
+    console.error(`SPA shell generation failed: ${e.message}`);
+    process.exit(1);
+  }
+
   console.log('Starting static server for dist/…');
   const server = await startServer();
   console.log(`Serving dist/ on http://127.0.0.1:${PORT}`);
