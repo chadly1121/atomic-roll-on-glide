@@ -115,7 +115,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 5,
     _seo: {
-      meta_description: 'Sansin Dec, SDF & WoodForce protect Muskoka decks and docks with deep penetration — no peeling, no blistering. Expert prep & application guide from Roll On Painting.',
+      meta_description: 'Sansin Dec, SDF & WoodForce penetrate Muskoka deck and dock wood rather than forming a surface film, so they weather instead of peeling or blistering. Expert prep & application guide from Roll On Painting.',
       meta_keywords: [
       'Sansin stain Muskoka',
       'Sansin Dec deck stain',
@@ -141,7 +141,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 4,
     _seo: {
-      meta_description: 'GoNano NuRoof Revive rejuvenates aging asphalt shingles in Muskoka — extend roof life 5–15 years, repel water, and avoid early replacement. Expert guide from Roll On Painting.',
+      meta_description: 'GoNano NuRoof Revive rejuvenates aging asphalt shingles in Muskoka. GoNano publishes an added roof life of 5–15 years. Expert guide from Roll On Painting.',
       meta_keywords: [
       'GoNano NuRoof Revive',
       'roof rejuvenation Muskoka',

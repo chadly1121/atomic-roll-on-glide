@@ -108,7 +108,7 @@ const content = `<p>If your roof is starting to look worn—but isn't completely
 <h3>Should I replace my roof or treat it?</h3>
 <p>If the structure is still good, treatment can extend its life by years at a fraction of the cost.</p>
 <h3>How long does it last?</h3>
-<p>Typically extends roof life by 5–15 years, depending on exposure and condition.</p>
+<p>GoNano's published figures put the added roof life at 5–15 years, depending on exposure and condition.</p>
 <h3>Will it fix leaks?</h3>
 <p>No. This is a preservation system, not a repair product.</p>
 <h3>Will it change the look?</h3>
