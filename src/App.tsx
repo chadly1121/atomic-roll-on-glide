@@ -10,9 +10,6 @@ import NotFound from "./pages/NotFound";
 import PageBreadcrumbs from "./components/nav/PageBreadcrumbs";
 import FloatingCallButton from "./components/conversion/FloatingCallButton";
 import PhoneClickTracker from "./components/analytics/PhoneClickTracker";
-import { AuthProvider } from "@/contexts/AuthContext";
-import ProtectedRoute from "@/components/portal/ProtectedRoute";
-import PortalLayout from "@/components/portal/PortalLayout";
 
 // Import lucide icons to make them available globally
 import "@/lib/lucide-icons";
@@ -37,30 +34,6 @@ const CottageOwnerPage = lazy(() => import("./pages/CottageOwnerPage"));
 const HowWeQuotePage = lazy(() => import("./pages/HowWeQuotePage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 
-// Portal pages
-const LoginPage = lazy(() => import("./pages/portal/LoginPage"));
-const ResetPasswordPage = lazy(() => import("./pages/portal/ResetPasswordPage"));
-const ClientDashboard = lazy(() => import("./pages/portal/client/DashboardPage"));
-const QuoteBuilderPage = lazy(() => import("./pages/portal/client/QuoteBuilderPage"));
-const ClientQuotes = lazy(() => import("./pages/portal/client/QuotesPage"));
-const ClientQuoteDetail = lazy(() => import("./pages/portal/client/QuoteDetailPage"));
-const ClientOrders = lazy(() => import("./pages/portal/client/OrdersPage"));
-const ClientOrderDetail = lazy(() => import("./pages/portal/client/OrderDetailPage"));
-const ClientProfile = lazy(() => import("./pages/portal/client/ProfilePage"));
-const PortalIndex = lazy(() => import("./pages/portal/PortalIndex"));
-const AdminPlaceholder = lazy(() => import("./pages/portal/AdminPlaceholder"));
-const AdminDashboard = lazy(() => import("./pages/portal/admin/DashboardPage"));
-const AdminProducts = lazy(() => import("./pages/portal/admin/ProductsPage"));
-const AdminProfiles = lazy(() => import("./pages/portal/admin/ProfilesPage"));
-const AdminSpecies = lazy(() => import("./pages/portal/admin/SpeciesPage"));
-const AdminLabour = lazy(() => import("./pages/portal/admin/LabourPage"));
-const AdminShakePricing = lazy(() => import("./pages/portal/admin/ShakePricingPage"));
-const AdminQuotes = lazy(() => import("./pages/portal/admin/QuotesPage"));
-const AdminQuoteDetail = lazy(() => import("./pages/portal/admin/QuoteDetailPage"));
-const AdminOrders = lazy(() => import("./pages/portal/admin/OrdersPage"));
-const AdminOrderDetail = lazy(() => import("./pages/portal/admin/OrderDetailPage"));
-const AdminClients = lazy(() => import("./pages/portal/admin/ClientsPage"));
-const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 // Create QueryClient with improved error handling
 const queryClient = new QueryClient({
@@ -95,54 +68,10 @@ const App = () => {
             <Sonner />
             
             <BrowserRouter>
-              <AuthProvider>
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
 
-                  {/* Portal */}
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/reset-password" element={<ResetPasswordPage />} />
-                  <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
-                  <Route path="/portal" element={<PortalIndex />} />
-                  <Route
-                    path="/admin"
-                    element={
-                      <ProtectedRoute requireRole="admin">
-                        <PortalLayout />
-                      </ProtectedRoute>
-                    }
-                  >
-                    <Route index element={<PortalIndex />} />
-                    <Route path="dashboard" element={<AdminDashboard />} />
-                    <Route path="quotes" element={<AdminQuotes />} />
-                    <Route path="quotes/:id" element={<AdminQuoteDetail />} />
-                    <Route path="orders" element={<AdminOrders />} />
-                    <Route path="orders/:id" element={<AdminOrderDetail />} />
-                    <Route path="clients" element={<AdminClients />} />
-                    <Route path="products" element={<AdminProducts />} />
-                    <Route path="profiles" element={<AdminProfiles />} />
-                    <Route path="species" element={<AdminSpecies />} />
-                    <Route path="labour" element={<AdminLabour />} />
-                    <Route path="shake-pricing" element={<AdminShakePricing />} />
-                  </Route>
-                  <Route
-                    path="/client"
-                    element={
-                      <ProtectedRoute requireRole="client">
-                        <PortalLayout />
-                      </ProtectedRoute>
-                    }
-                  >
-                    <Route index element={<PortalIndex />} />
-                    <Route path="dashboard" element={<ClientDashboard />} />
-                    <Route path="quote/new" element={<QuoteBuilderPage />} />
-                    <Route path="quotes" element={<ClientQuotes />} />
-                    <Route path="quotes/:id" element={<ClientQuoteDetail />} />
-                    <Route path="orders" element={<ClientOrders />} />
-                    <Route path="orders/:id" element={<ClientOrderDetail />} />
-                    <Route path="profile" element={<ClientProfile />} />
-                  </Route>
 
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
@@ -177,8 +106,8 @@ const App = () => {
                   } />
                 </Routes>
               </Suspense>
-              </AuthProvider>
               <FloatingCallButton />
+
               <PhoneClickTracker />
             </BrowserRouter>
           </TooltipProvider>
