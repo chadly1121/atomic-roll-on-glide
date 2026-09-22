@@ -18,7 +18,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PRIORITY_ROUTES, CANONICAL_ORIGIN } from './seo-routes.mjs';
+import { PRIORITY_ROUTES, CANONICAL_ORIGIN, UNLISTED_ROUTES } from './seo-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(process.env.DIST_DIR || path.join(__dirname, '..', 'dist'));
@@ -117,6 +117,119 @@ for (const route of PRIORITY_ROUTES) {
     }
   }
 }
+
+// ---------------------------------------------------------------------------
+// Router <-> sitemap parity.
+//
+// WHY THIS EXISTS: scripts/prerender.mjs takes its route list from
+// sitemap.xml and nothing else. A route registered in src/App.tsx but missing
+// from public/sitemap.xml is therefore never prerendered, no
+// /<route>/index.html is emitted, no `200!` override is written into
+// public/_redirects — and public/404.html then takes precedence over the SPA
+// fallback on Cloudflare Pages. The result is a page that works perfectly in
+// dev and returns 404 in production. That has happened twice.
+//
+// TO FIX A FAILURE: add the URL to public/sitemap.xml (the normal case), or,
+// only if the page genuinely must never be crawled, add the route to
+// UNLISTED_ROUTES in scripts/seo-routes.mjs with a comment saying why.
+// ---------------------------------------------------------------------------
+const ROOT = path.join(__dirname, '..');
+let routerRoutes = [];
+try {
+  const appSrc = await fs.readFile(path.join(ROOT, 'src', 'App.tsx'), 'utf8');
+  let parent = '';
+  for (const m of appSrc.matchAll(/path=["']([^"']+)["']/g)) {
+    const p = m[1];
+    if (p === '*') continue;
+    if (p.startsWith('/')) {
+      parent = p;
+      routerRoutes.push(p);
+    } else {
+      // Relative path — a child of the most recent absolute route.
+      routerRoutes.push(`${parent.replace(/\/$/, '')}/${p}`);
+    }
+  }
+  routerRoutes = [...new Set(routerRoutes)];
+  if (routerRoutes.length < 10) errors.push(`Router parse found only ${routerRoutes.length} routes in src/App.tsx — the parser is probably broken`);
+} catch (e) {
+  errors.push(`Could not parse routes from src/App.tsx: ${e.message}`);
+}
+
+let sitemapRoutes = [];
+try {
+  const sitemapXml = await fs.readFile(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
+  sitemapRoutes = [...sitemapXml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)]
+    .map(m => m[1].replace(CANONICAL_ORIGIN, ''))
+    .map(u => (u === '' ? '/' : u.replace(/\/$/, '') || '/'));
+} catch (e) {
+  errors.push(`Could not read public/sitemap.xml: ${e.message}`);
+}
+const sitemapSet = new Set(sitemapRoutes);
+
+for (const route of routerRoutes) {
+  if (UNLISTED_ROUTES.has(route)) continue;
+  if (sitemapSet.has(route)) continue;
+  errors.push(
+    `Route "${route}" is registered in src/App.tsx but is NOT in public/sitemap.xml. ` +
+    `It will not be prerendered, so public/404.html wins over the SPA fallback on Cloudflare Pages ` +
+    `and the page returns 404 in production (while working fine in dev). ` +
+    `Fix: add it to public/sitemap.xml, or add it to UNLISTED_ROUTES in scripts/seo-routes.mjs if it must never be crawled.`
+  );
+}
+
+// Reverse: every sitemap URL must be served by some route.
+const staticRouteSet = new Set(routerRoutes);
+const hasSlugRoute = routerRoutes.includes('/:slug');
+const hasBlogSlugRoute = routerRoutes.includes('/blog/:slug');
+for (const url of sitemapSet) {
+  if (staticRouteSet.has(url)) continue;
+  const segments = url.split('/').filter(Boolean);
+  if (segments.length === 1 && hasSlugRoute) continue;              // /<service-or-town>
+  if (segments.length === 2 && segments[0] === 'blog' && hasBlogSlugRoute) continue;
+  errors.push(
+    `public/sitemap.xml lists "${url}" but no route in src/App.tsx matches it. ` +
+    `Crawlers and the prerenderer will both hit the catch-all and the URL will 404. ` +
+    `Fix: remove it from public/sitemap.xml, or add the route in src/App.tsx.`
+  );
+}
+if (routerRoutes.length) console.log(`✓ router/sitemap parity: ${routerRoutes.length} routes in src/App.tsx, ${sitemapSet.size} sitemap URLs`);
+
+// ---------------------------------------------------------------------------
+// Internal links inside blog article bodies must resolve to a real route.
+// A dead link in a published article should break the build, not sit there.
+// ---------------------------------------------------------------------------
+try {
+  const postsDir2 = path.join(ROOT, 'src', 'data', 'blog', 'posts');
+  const files = (await fs.readdir(postsDir2)).filter(f => f.endsWith('.ts'));
+  let checked = 0;
+  for (const f of files) {
+    const src = await fs.readFile(path.join(postsDir2, f), 'utf8');
+    for (const m of src.matchAll(/href=["']([^"']+)["']/g)) {
+      let href = m[1].trim();
+      if (/^(mailto:|tel:|#)/i.test(href)) continue;
+      if (/^https?:\/\//i.test(href)) {
+        if (!href.startsWith(CANONICAL_ORIGIN)) continue;           // external link
+        href = href.slice(CANONICAL_ORIGIN.length) || '/';
+      }
+      if (!href.startsWith('/')) continue;
+      const clean = href.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+      checked++;
+      if (staticRouteSet.has(clean)) continue;
+      const segs = clean.split('/').filter(Boolean);
+      if (segs.length === 1 && hasSlugRoute && sitemapSet.has(clean)) continue;
+      if (segs.length === 2 && segs[0] === 'blog' && hasBlogSlugRoute && sitemapSet.has(clean)) continue;
+      errors.push(
+        `Dead internal link in src/data/blog/posts/${f}: "${href}" matches no route in src/App.tsx ` +
+        `and is not a prerendered URL in public/sitemap.xml — readers get a 404. ` +
+        `Fix: repoint it at a real page, or remove the link.`
+      );
+    }
+  }
+  console.log(`✓ blog internal links: ${checked} hrefs checked across ${files.length} posts`);
+} catch (e) {
+  errors.push(`Blog internal link check failed: ${e.message}`);
+}
+
 
 // Blog sitemap sync: every post body file in src/data/blog/posts/ must be
 // listed in public/sitemap.xml and in the metadata index, and the sitemap must
