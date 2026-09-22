@@ -921,7 +921,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     id: 'soro-64010171-e78f-4083-aa2d-313936265ae0',
     slug: 'stucco-ceiling-removal-muskoka',
     title: 'Stucco Ceiling Removal Muskoka Homeowners Trust',
-    summary: 'Stucco ceiling removal Muskoka homeowners can trust starts with safe testing, dust control, careful repairs, and a smooth, durable painted finish. results.',
+    summary: 'Stucco ceiling removal Muskoka homeowners can trust starts with asbestos testing, dust control, careful repairs, and a smooth, durable painted finish.',
     image: '/lovable-uploads/blog/stucco-ceiling-removal-muskoka.webp',
     url: 'https://www.roll-onpainting.com/blog/stucco-ceiling-removal-muskoka',
     tags: ['Stucco Removal', 'Muskoka'],
@@ -931,7 +931,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 7,
     _seo: {
-      meta_description: 'Stucco ceiling removal Muskoka homeowners can trust starts with safe testing, dust control, careful repairs, and a smooth, durable painted finish. results.',
+      meta_description: 'Stucco ceiling removal Muskoka homeowners can trust starts with asbestos testing, dust control, careful repairs, and a smooth, durable painted finish.',
       meta_keywords: [
       'stucco ceiling removal muskoka homeowners trust',
       'stucco removal',
@@ -1199,7 +1199,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     id: 'soro-716c1c3b-0d74-4557-bdd6-c7f5216cd894',
     slug: 'exterior-painters-muskoka-homeowners-can-trust',
     title: 'Exterior Painters Muskoka Homeowners Can Trust',
-    summary: 'Exterior painters Muskoka property owners trust for thorough prep, durable coatings, clean worksites, and reliable year-round care for homes and cottages.',
+    summary: 'Exterior painters Muskoka property owners trust for thorough prep, durable coatings, clean worksites, and reliable seasonal care for homes and cottages.',
     image: '/lovable-uploads/blog/exterior-painters-muskoka-homeowners-can-trust.webp',
     url: 'https://www.roll-onpainting.com/blog/exterior-painters-muskoka-homeowners-can-trust',
     tags: ['Exterior Painting', 'Muskoka', 'Staining', 'Surface Preparation'],
@@ -1209,7 +1209,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 7,
     _seo: {
-      meta_description: 'Exterior painters Muskoka property owners trust for thorough prep, durable coatings, clean worksites, and reliable year-round care for homes and cottages.',
+      meta_description: 'Exterior painters Muskoka property owners trust for thorough prep, durable coatings, clean worksites, and reliable seasonal care for homes and cottages.',
       meta_keywords: [
       'exterior painters muskoka homeowners trust',
       'exterior painting',
