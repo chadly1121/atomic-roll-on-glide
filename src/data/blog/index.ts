@@ -966,7 +966,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     id: 'soro-c7d6e802-8900-45ce-ba31-be29e1b57cbf',
     slug: 'pre-staining-wood-siding',
     title: 'Pre Staining Wood Siding for Better Results',
-    summary: 'Pre staining wood siding protects every board before installation for a more even, durable finish on exposed exterior walls.',
+    summary: 'Pre staining wood siding helps protect all six faces of each board before installation, for a more even, longer-lasting finish on exposed exterior walls.',
     image: '/lovable-uploads/blog/pre-staining-wood-siding.webp',
     url: 'https://www.roll-onpainting.com/blog/pre-staining-wood-siding',
     tags: ['Exterior Painting', 'Staining'],
@@ -976,7 +976,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 8,
     _seo: {
-      meta_description: 'Pre staining wood siding protects every board before installation for a more even, durable finish on exposed exterior walls.',
+      meta_description: 'Pre staining wood siding helps protect all six faces of each board before installation, for a more even, longer-lasting finish on exposed exterior walls.',
       meta_keywords: [
       'pre staining wood siding better results',
       'exterior painting',
@@ -989,7 +989,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     id: 'soro-49d63d00-f6f0-43a9-996c-eb0d66bb684a',
     slug: 'pressure-washing-driveway-muskoka',
     title: 'Pressure Washing Your Driveway in Muskoka',
-    summary: 'Pressure washing driveway Muskoka properties protects curb appeal, removes seasonal grime, and prepares concrete or asphalt for proper care all year-round.',
+    summary: 'Pressure washing a Muskoka driveway lifts seasonal grime from concrete or asphalt and restores curb appeal, with guidance on safe technique and the right time of year to wash.',
     image: '/lovable-uploads/blog/pressure-washing-driveway-muskoka.webp',
     url: 'https://www.roll-onpainting.com/blog/pressure-washing-driveway-muskoka',
     tags: ['Driveways', 'Power Washing', 'Muskoka', 'Staining'],
@@ -999,7 +999,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 7,
     _seo: {
-      meta_description: 'Pressure washing driveway Muskoka properties protects curb appeal, removes seasonal grime, and prepares concrete or asphalt for proper care all year-round.',
+      meta_description: 'Pressure washing a Muskoka driveway lifts seasonal grime from concrete or asphalt and restores curb appeal, with guidance on safe technique and the right time of year to wash.',
       meta_keywords: [
       'pressure washing driveway muskoka',
       'driveways',
@@ -1012,8 +1012,8 @@ export const blogPostsMeta: BlogPostMeta[] = [
   {
     id: 'soro-e24c6254-ec48-427e-be46-f4e0dff242ab',
     slug: 'soft-washing-house-siding',
-    title: 'Soft Washing House Siding Without the Damage',
-    summary: 'Soft washing house siding removes algae, mildew, and grime safely while protecting paint, wood, vinyl, and Muskoka cottage exteriors from damage year-round.',
+    title: 'Soft Washing House Siding: A Gentler Way to Clean',
+    summary: 'Soft washing uses low pressure and a cleaning solution to lift algae, mildew and grime from Muskoka siding, with far less risk to paint, wood and vinyl than pressure washing.',
     image: '/lovable-uploads/blog/soft-washing-house-siding.webp',
     url: 'https://www.roll-onpainting.com/blog/soft-washing-house-siding',
     tags: ['Exterior Painting', 'Power Washing'],
@@ -1023,7 +1023,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 7,
     _seo: {
-      meta_description: 'Soft washing house siding removes algae, mildew, and grime safely while protecting paint, wood, vinyl, and Muskoka cottage exteriors from damage year-round.',
+      meta_description: 'Soft washing uses low pressure and a cleaning solution to lift algae, mildew and grime from Muskoka siding, with far less risk to paint, wood and vinyl than pressure washing.',
       meta_keywords: [
       'soft washing house siding without damage',
       'exterior painting',
@@ -1082,8 +1082,8 @@ export const blogPostsMeta: BlogPostMeta[] = [
   {
     id: 'soro-e87dde1c-2196-4273-a6e4-690ad14d4b78',
     slug: 'weatherproof-cottage-siding-painting',
-    title: 'Weatherproof Cottage Siding Painting That Lasts',
-    summary: 'Weatherproof cottage siding painting protects Muskoka homes from rain, sun, and seasonal movement with prep, premium coatings, and skilled application.',
+    title: 'Weather-Resistant Cottage Siding Painting That Lasts',
+    summary: 'Weather-resistant cottage siding painting helps protect Muskoka homes from rain, sun, and seasonal movement with thorough prep, quality coatings, and skilled application.',
     image: '/lovable-uploads/blog/weatherproof-cottage-siding-painting.webp',
     url: 'https://www.roll-onpainting.com/blog/weatherproof-cottage-siding-painting',
     tags: ['Exterior Painting', 'Cottage Maintenance', 'Muskoka'],
@@ -1093,7 +1093,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 8,
     _seo: {
-      meta_description: 'Weatherproof cottage siding painting protects Muskoka homes from rain, sun, and seasonal movement with prep, premium coatings, and skilled application.',
+      meta_description: 'Weather-resistant cottage siding painting helps protect Muskoka homes from rain, sun, and seasonal movement with thorough prep, quality coatings, and skilled application.',
       meta_keywords: [
       'weatherproof cottage siding painting lasts',
       'exterior painting',
