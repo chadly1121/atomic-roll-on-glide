@@ -268,7 +268,8 @@ try {
     '/contact',
     '/reviews',
     '/faq',
-    '/blog',
+    // '/blog' is deliberately NOT excluded: it is the one path handled by a
+    // Pages Function (functions/blog.ts) — see FUNCTION_ROUTES below.
     '/blog/*',
     '/careers',
     '/media',
@@ -340,14 +341,21 @@ try {
     );
     return re.test(route);
   };
-  const uncovered = routes.filter((r) => !excludePatterns.some((p) => matchesPattern(r, p)));
+  // Paths served by a Pages Function (functions/<name>.ts). The function
+  // passes through to the static prerendered file via next(), so these are
+  // "covered" even though they are not excluded. Keep this list minimal —
+  // it is the ONLY thing in `include`, so nothing else reaches Functions.
+  const FUNCTION_ROUTES = ['/blog'];
+  const uncovered = routes.filter(
+    (r) => !FUNCTION_ROUTES.includes(r) && !excludePatterns.some((p) => matchesPattern(r, p))
+  );
   if (uncovered.length) {
     fail(`${uncovered.length} prerendered route(s) not covered by exclude patterns:\n  - ${uncovered.join('\n  - ')}`);
   }
 
   const routesManifest = {
     version: 1,
-    include: ['/*'],
+    include: FUNCTION_ROUTES,
     exclude: excludePatterns,
   };
   await fs.writeFile(OUT_ROUTES_FILE, JSON.stringify(routesManifest, null, 2) + '\n', 'utf8');

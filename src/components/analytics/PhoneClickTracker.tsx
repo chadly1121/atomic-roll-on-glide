@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { trackEvent, currentPath } from '@/lib/analytics';
+import { currentPath } from '@/lib/analytics';
+import { trackPhoneClick } from '@/lib/trackPhoneClick';
 
 /**
  * Global, delegated tracker for every telephone link/button on the site.
@@ -28,15 +29,11 @@ const PhoneClickTracker = () => {
       if (!link) return;
 
       const href = link.getAttribute('href') || '';
-      const phoneNumber = href.startsWith('tel:')
-        ? href.slice(4)
-        : link.getAttribute('data-phone-cta') || '';
+      const linkUrl = href.startsWith('tel:')
+        ? href
+        : `tel:${link.getAttribute('data-phone-cta') || ''}`;
 
-      trackEvent('phone_call_click', {
-        location: resolveLocation(link),
-        page_path: currentPath(),
-        phone_number: phoneNumber,
-      });
+      trackPhoneClick(linkUrl, resolveLocation(link));
     };
 
     document.addEventListener('click', onClick, true);
