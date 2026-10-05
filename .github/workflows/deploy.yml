@@ -161,11 +161,20 @@ jobs:
           check /blog/ 200 || fail=1
           check /blog/deck-stain-fading/ 200 || fail=1
           check /this-page-does-not-exist-live-check/ 404 || fail=1
-          # Query-string redirect: checked without the cache-buster param.
+          # DELIBERATE SCOPE REDUCTION (owner decision, 2026-10-05): the
+          # `/blog/?post=deck-stain-fading -> 301 */blog/deck-stain-fading/`
+          # assertion was removed because the Functions routing was reverted to
+          # include ["/blog"] only, so that redirect is not expected to fire.
+          # This is NOT silencing a real failure. RESTORE this assertion when
+          # the Functions routing for /blog/ is fixed.
+
+          # Canonical on a live article must be the trailing-slash URL itself.
+          want_canon="$BASE/blog/deck-stain-fading/"
           for i in 1 2 3 4 5 6; do
-            read -r code loc < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' "$BASE/blog/?post=deck-stain-fading")
-            if [ "$code" = 301 ] && [[ "$loc" == */blog/deck-stain-fading/ ]]; then echo "OK   /blog/?post=deck-stain-fading -> $code $loc"; break; fi
-            echo "wait /blog/?post=deck-stain-fading -> $code $loc, attempt $i"; sleep $((i * 15))
-            [ $i = 6 ] && { echo "FAIL /blog/?post=deck-stain-fading -> $code $loc (want 301 */blog/deck-stain-fading/)"; fail=1; }
+            canon=$(curl -s -H 'Cache-Control: no-cache' "$want_canon?cb=$GITHUB_RUN_ID-c$i" \
+              | grep -oiE '<link[^>]+rel="canonical"[^>]*>' | head -1 | grep -oE 'href="[^"]*"' | sed 's/^href="//;s/"$//')
+            if [ "$canon" = "$want_canon" ]; then echo "OK   canonical on /blog/deck-stain-fading/ = $canon"; break; fi
+            echo "wait canonical on /blog/deck-stain-fading/ = '$canon' (want $want_canon), attempt $i"; sleep $((i * 15))
+            [ $i = 6 ] && { echo "FAIL canonical on /blog/deck-stain-fading/ = '$canon' (want $want_canon)"; fail=1; }
           done
           exit $fail
