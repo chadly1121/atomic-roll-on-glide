@@ -425,6 +425,23 @@ for (const [file, min] of [['llms.txt', MIN_LLMS], ['llms-full.txt', MIN_LLMS_FU
 if (errors.length) {
   console.error('\n❌ SEO/AI assertions failed:');
   for (const e of errors) console.error('  - ' + e);
+
+  // Surface failures where they can be read without log access (CI only).
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    // Workflow-command escaping so each error stays one annotation.
+    const esc = (s) => String(s).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+    for (const e of errors) console.log(`::error title=SEO assertion failed::${esc(e)}`);
+  }
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    try {
+      const summary =
+        `## ❌ SEO/AI assertions failed (${errors.length})\n\n` +
+        errors.map((e) => `- ${e.replace(/\r?\n/g, ' ')}`).join('\n') + '\n';
+      await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary, 'utf8');
+    } catch (e) {
+      console.error(`(could not write GITHUB_STEP_SUMMARY: ${e.message})`);
+    }
+  }
   process.exit(1);
 }
 console.log(`\n✅ All SEO + AI assertions passed across ${PRIORITY_ROUTES.length} priority routes.`);
