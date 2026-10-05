@@ -1,9 +1,7 @@
 {
   "version": 1,
   "include": [
-    "/blog",
-    "/blog/",
-    "/blog/*"
+    "/blog"
   ],
   "exclude": [
     "/about",
@@ -11,6 +9,7 @@
     "/contact",
     "/reviews",
     "/faq",
+    "/blog/*",
     "/careers",
     "/media",
     "/service-areas",
