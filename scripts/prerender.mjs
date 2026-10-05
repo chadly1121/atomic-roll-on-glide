@@ -8,7 +8,7 @@
 import { chromium } from '@playwright/test';
 import http from 'node:http';
 import fs from 'node:fs/promises';
-import { existsSync, createReadStream, statSync } from 'node:fs';
+import { existsSync, createReadStream, statSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { CANONICAL_ORIGIN } from './seo-routes.mjs';
@@ -48,18 +48,26 @@ function safeJoin(root, urlPath) {
 }
 
 function startServer() {
+  // Snapshot the pristine SPA shell BEFORE any route is written. Prerendering
+  // overwrites dist/index.html (the "/" route) mid-run; serving that file as
+  // the fallback would bake the homepage's canonical/meta into every later
+  // route's DOM. Every route must boot from the same clean shell.
+  const SHELL = readFileSync(path.join(DIST, 'index.html'));
   const server = http.createServer((req, res) => {
     const target = safeJoin(DIST, req.url || '/');
     if (!target) { res.writeHead(403); return res.end('Forbidden'); }
 
     let filePath = target;
     try {
-      if (existsSync(filePath) && statSync(filePath).isDirectory()) {
-        filePath = path.join(filePath, 'index.html');
-      }
-      if (!existsSync(filePath)) {
-        // SPA fallback to root index.html
-        filePath = path.join(DIST, 'index.html');
+      // Route requests (directories, the root, or no matching file) always get
+      // the pristine shell — never a previously prerendered page.
+      if (
+        (existsSync(filePath) && statSync(filePath).isDirectory()) ||
+        !existsSync(filePath) ||
+        filePath === path.join(DIST, 'index.html')
+      ) {
+        res.writeHead(200, { 'Content-Type': MIME['.html'] });
+        return res.end(SHELL);
       }
       const ext = path.extname(filePath).toLowerCase();
       res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
@@ -148,6 +156,32 @@ function dedupeSeoTags(html, route, seo) {
   return html;
 }
 
+// A content/SEO gate tripped. Retryable: usually a half-hydrated capture.
+class GateError extends Error {
+  constructor(gate, detail) { super(`gate "${gate}" tripped — ${detail}`); this.gate = gate; }
+}
+// Never retried, never captured: a wrong canonical is a code defect, not timing.
+class FatalGateError extends GateError {}
+
+const MAX_ATTEMPTS = 3; // 1 try + 2 retries
+
+async function prerenderWithRetry(browser, route, idx, total) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await prerenderOne(browser, route, idx, total);
+    } catch (err) {
+      const retryable = err instanceof GateError && !(err instanceof FatalGateError);
+      if (retryable && attempt < MAX_ATTEMPTS) {
+        console.warn(`[${idx + 1}/${total}] ↻ ${route} — ${err.message}; retry ${attempt}/${MAX_ATTEMPTS - 1}`);
+        continue;
+      }
+      const why = err instanceof FatalGateError ? 'fatal, not retried'
+        : retryable ? `after ${MAX_ATTEMPTS} attempts` : 'not retryable';
+      throw new Error(`${err.message} (${why})`);
+    }
+  }
+}
+
 async function prerenderOne(browser, route, idx, total) {
   const ctx = await browser.newContext({
     userAgent: 'LovablePrerender/1.0 (+https://www.roll-onpainting.com)',
@@ -179,12 +213,12 @@ async function prerenderOne(browser, route, idx, total) {
         return (root.innerHTML || '').length > 5000;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — neither <h1> nor 5KB+ #root after ${NAV_TIMEOUT}ms; capturing anyway`);
+      throw new GateError('h1-or-root', `neither <h1> nor 5KB+ #root after ${NAV_TIMEOUT}ms`);
     }
-    // Wait for react-helmet-async to set a non-empty <title>. Canonical mismatch
-    // is non-fatal — we'll warn and still write the prerendered HTML (the
-    // dedupeSeoTags step injects the correct canonical for this route).
-    const expectedCanonical = `${ORIGIN}${route === '/' ? '/' : route}`;
+    // Wait for react-helmet-async to set a non-empty <title>. A canonical
+    // mismatch is FATAL (see below): the client render must emit the same
+    // trailing-slash canonical that dedupeSeoTags writes into the HTML.
+    const expectedCanonical = `${ORIGIN}${route === '/' ? '/' : `${route}/`}`;
     try {
       await page.waitForFunction(
         () => !!(document.title || '').trim(),
@@ -206,7 +240,7 @@ async function prerenderOne(browser, route, idx, total) {
         return last.trim().split(/\s+/).length >= 5;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — description never reached 5 words; capturing whatever is present`);
+      throw new GateError('description', 'meta description never reached 5 words');
     }
     // Small settle to let any remaining meta tags flush
     await page.waitForTimeout(300);
@@ -248,15 +282,13 @@ async function prerenderOne(browser, route, idx, total) {
         return (root.innerHTML || '').length > 5000;
       }, null, { timeout: NAV_TIMEOUT, polling: 100 });
     } catch {
-      console.warn(`[${idx + 1}/${total}] ⚠ ${route} — root content below thresholds; capturing anyway`);
+      throw new GateError('root-content', '#root below 200 chars of text and 5KB of HTML');
     }
     if (!actualTitle.trim()) {
       throw new Error(`Empty title for ${route}`);
     }
-    const canonicalOk =
-      actualCanonical.replace(/\/$/, '') === expectedCanonical.replace(/\/$/, '');
-    if (!canonicalOk) {
-      console.warn(`[${idx + 1}/${total}] ⚠ canonical mismatch for ${route} (got "${actualCanonical}", expected "${expectedCanonical}") — writing anyway`);
+    if (actualCanonical !== expectedCanonical) {
+      throw new FatalGateError('canonical', `got "${actualCanonical}", expected "${expectedCanonical}"`);
     }
     const capturedHtml = await page.content();
     const finalHtml = dedupeSeoTags(capturedHtml, route, seo);
@@ -338,7 +370,7 @@ async function main() {
   );
   let failures = [];
   try {
-    failures = await runPool(routes, (route, idx, total) => prerenderOne(browser, route, idx, total));
+    failures = await runPool(routes, (route, idx, total) => prerenderWithRetry(browser, route, idx, total));
   } finally {
     await browser.close();
     server.close();
@@ -346,14 +378,14 @@ async function main() {
 
   const successCount = routes.length - failures.length;
   if (failures.length) {
-    console.warn(`\n⚠ ${failures.length} routes failed to prerender:`);
-    for (const f of failures) console.warn(`  - ${f.item}: ${f.error}`);
-  }
-  console.log(`\n✅ Prerendered ${successCount}/${routes.length} routes successfully.`);
-  if (successCount === 0) {
-    console.error('No routes were prerendered — failing build.');
+    // ANY failed route fails the build. A route that is not captured would
+    // ship without its prerendered HTML; a half-hydrated capture used to ship
+    // silently and only the downstream SEO audit noticed (sometimes).
+    console.error(`\n❌ ${failures.length}/${routes.length} routes failed to prerender — failing build:`);
+    for (const f of failures) console.error(`  - ${f.item}: ${f.error}`);
     process.exit(1);
   }
+  console.log(`\n✅ Prerendered ${successCount}/${routes.length} routes successfully.`);
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });

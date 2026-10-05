@@ -64,7 +64,13 @@ for (const [i, e] of entries.entries()) {
   if (typeof status !== 'number' || !VALID_STATUSES.has(status)) errors.push(`${ctx}: invalid status ${status}`);
   if (source === destination) errors.push(`${ctx}: self-redirect "${source}"`);
   if (sources.has(source)) errors.push(`${ctx}: duplicate source "${source}"`);
-  if (!VALID_DESTINATIONS.has(destination)) errors.push(`${ctx}: destination "${destination}" not in seo-routes VALID_DESTINATIONS`);
+  // Route targets must be the trailing-slash form: Cloudflare Pages 308s
+  // /route to /route/, so a no-slash target costs every visitor a second hop.
+  if (typeof destination === 'string' && destination !== '/' && !destination.endsWith('/')) {
+    errors.push(`${ctx}: destination "${destination}" must end with "/" (use "${destination}/") — no-slash targets double-hop via Cloudflare's 308`);
+  }
+  const destRoute = typeof destination === 'string' && destination !== '/' ? destination.replace(/\/$/, '') : destination;
+  if (!VALID_DESTINATIONS.has(destRoute)) errors.push(`${ctx}: destination "${destination}" not in seo-routes VALID_DESTINATIONS`);
   sources.set(source, destination);
   graph.set(source, destination);
 }
