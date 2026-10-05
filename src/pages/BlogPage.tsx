@@ -99,14 +99,14 @@ const BlogPage = () => {
       <Helmet>
         <title>Painting Tips & Blog | Roll On Painting Muskoka</title>
         <meta name="description" content="Painting tips, color trends, and project showcases from Roll On Painting in Muskoka. Expert advice for homeowners and cottage owners." />
-        <link rel="canonical" href={`${siteUrl}/blog`} />
+        <link rel="canonical" href={`${siteUrl}/blog/`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Painting Tips & Blog | Roll On Painting" />
         <meta property="og:description" content="Expert painting tips, color trends, and project showcases from Muskoka's premier painting service." />
-        <meta property="og:url" content={`${siteUrl}/blog`} />
+        <meta property="og:url" content={`${siteUrl}/blog/`} />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:image" content={ogImage} />

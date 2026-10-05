@@ -68,7 +68,7 @@ const BlogPostPage = () => {
 
   const metaDesc = post?._seo?.meta_description || post?.summary || '';
   const metaKeywords = post?._seo?.meta_keywords?.join(', ') || '';
-  const canonicalUrl = `${siteUrl}/blog/${slug}`;
+  const canonicalUrl = `${siteUrl}/blog/${slug}/`;
 
   const jsonLd = post ? {
     '@context': 'https://schema.org',

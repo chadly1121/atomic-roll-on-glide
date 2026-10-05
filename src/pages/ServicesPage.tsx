@@ -67,9 +67,9 @@ const ServicesPage: React.FC = () => {
           content="Interior, exterior, cottage, cabinet, deck, GoNano coatings, and more. Every painting service Roll On Painting offers across Muskoka. 25+ years, 5x HGTV featured, $5M insured."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${siteUrl}/services`} />
+        <link rel="canonical" href={`${siteUrl}/services/`} />
         <meta property="og:title" content="Painting Services in Muskoka — Roll On Painting" />
-        <meta property="og:url" content={`${siteUrl}/services`} />
+        <meta property="og:url" content={`${siteUrl}/services/`} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

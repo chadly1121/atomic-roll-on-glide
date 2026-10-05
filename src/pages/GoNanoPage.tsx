@@ -139,14 +139,14 @@ const GoNanoPage = () => {
       <Helmet>
         <title>GoNano Roof & Surface Sealers | Extend Roof Life 15 Years | From $0.99/sq ft</title>
         <meta name="description" content="GoNano nano-enhanced roof sealers, concrete sealers & wood sealers. Extend your roof life up to 15 years. As seen on Dragon's Den. From $0.99/sq ft. Free estimates — 705-787-1401." />
-        <link rel="canonical" href={`${siteUrl}/gonano`} />
+        <link rel="canonical" href={`${siteUrl}/gonano/`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="GoNano Roof & Surface Sealers | Extend Roof Life 15 Years | $0.99/sq ft" />
         <meta property="og:description" content="Nano-enhanced roof sealers, concrete sealers & wood sealers. Extend shingle life up to 15 years. Dragon's Den featured. From $0.99/sq ft." />
-        <meta property="og:url" content={`${siteUrl}/gonano`} />
+        <meta property="og:url" content={`${siteUrl}/gonano/`} />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:image" content={ogImage} />

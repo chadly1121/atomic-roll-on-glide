@@ -15,55 +15,55 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://www.roll-onpainting.com/about</loc>
+    <loc>https://www.roll-onpainting.com/about/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/portfolio</loc>
+    <loc>https://www.roll-onpainting.com/portfolio/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/reviews</loc>
+    <loc>https://www.roll-onpainting.com/reviews/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/faq</loc>
+    <loc>https://www.roll-onpainting.com/faq/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/contact</loc>
+    <loc>https://www.roll-onpainting.com/contact/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/private-client-muskoka-property-care</loc>
+    <loc>https://www.roll-onpainting.com/private-client-muskoka-property-care/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/gonano</loc>
+    <loc>https://www.roll-onpainting.com/gonano/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/services</loc>
+    <loc>https://www.roll-onpainting.com/services/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/how-we-quote</loc>
+    <loc>https://www.roll-onpainting.com/how-we-quote/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -71,7 +71,7 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://www.roll-onpainting.com/blog</loc>
+    <loc>https://www.roll-onpainting.com/blog/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -79,79 +79,79 @@
 
   <!-- Service Pages -->
   <url>
-    <loc>https://www.roll-onpainting.com/interior-painting</loc>
+    <loc>https://www.roll-onpainting.com/interior-painting/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/exterior-painting</loc>
+    <loc>https://www.roll-onpainting.com/exterior-painting/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/commercial-painting</loc>
+    <loc>https://www.roll-onpainting.com/commercial-painting/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/cabinet-refinishing</loc>
+    <loc>https://www.roll-onpainting.com/cabinet-refinishing/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/deck-staining</loc>
+    <loc>https://www.roll-onpainting.com/deck-staining/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/epoxy-coatings</loc>
+    <loc>https://www.roll-onpainting.com/epoxy-coatings/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/spray-finishing</loc>
+    <loc>https://www.roll-onpainting.com/spray-finishing/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/wallpaper-removal</loc>
+    <loc>https://www.roll-onpainting.com/wallpaper-removal/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/wallpaper-installation</loc>
+    <loc>https://www.roll-onpainting.com/wallpaper-installation/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/stucco-removal</loc>
+    <loc>https://www.roll-onpainting.com/stucco-removal/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/institutional-painting</loc>
+    <loc>https://www.roll-onpainting.com/institutional-painting/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/prefinishing</loc>
+    <loc>https://www.roll-onpainting.com/prefinishing/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/power-washing</loc>
+    <loc>https://www.roll-onpainting.com/power-washing/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -159,67 +159,67 @@
 
   <!-- Location Pages -->
   <url>
-    <loc>https://www.roll-onpainting.com/painters-bracebridge</loc>
+    <loc>https://www.roll-onpainting.com/painters-bracebridge/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-huntsville</loc>
+    <loc>https://www.roll-onpainting.com/painters-huntsville/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-gravenhurst</loc>
+    <loc>https://www.roll-onpainting.com/painters-gravenhurst/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-port-carling</loc>
+    <loc>https://www.roll-onpainting.com/painters-port-carling/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-lake-of-bays</loc>
+    <loc>https://www.roll-onpainting.com/painters-lake-of-bays/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-parry-sound</loc>
+    <loc>https://www.roll-onpainting.com/painters-parry-sound/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-bala</loc>
+    <loc>https://www.roll-onpainting.com/painters-bala/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-lake-rosseau</loc>
+    <loc>https://www.roll-onpainting.com/painters-lake-rosseau/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-lake-joseph</loc>
+    <loc>https://www.roll-onpainting.com/painters-lake-joseph/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-lake-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/painters-lake-muskoka/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-port-sydney</loc>
+    <loc>https://www.roll-onpainting.com/painters-port-sydney/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -227,151 +227,151 @@
 
   <!-- New Location Pages (March 2026) -->
   <url>
-    <loc>https://www.roll-onpainting.com/painters-baysville</loc>
+    <loc>https://www.roll-onpainting.com/painters-baysville/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-milford-bay</loc>
+    <loc>https://www.roll-onpainting.com/painters-milford-bay/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-minett</loc>
+    <loc>https://www.roll-onpainting.com/painters-minett/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-port-sandfield</loc>
+    <loc>https://www.roll-onpainting.com/painters-port-sandfield/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-utterson</loc>
+    <loc>https://www.roll-onpainting.com/painters-utterson/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-windermere</loc>
+    <loc>https://www.roll-onpainting.com/painters-windermere/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-mactier</loc>
+    <loc>https://www.roll-onpainting.com/painters-mactier/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-rosseau</loc>
+    <loc>https://www.roll-onpainting.com/painters-rosseau/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-torrance</loc>
+    <loc>https://www.roll-onpainting.com/painters-torrance/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-algonquin-park</loc>
+    <loc>https://www.roll-onpainting.com/painters-algonquin-park/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-burks-falls</loc>
+    <loc>https://www.roll-onpainting.com/painters-burks-falls/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-dorset</loc>
+    <loc>https://www.roll-onpainting.com/painters-dorset/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-dwight</loc>
+    <loc>https://www.roll-onpainting.com/painters-dwight/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-emsdale</loc>
+    <loc>https://www.roll-onpainting.com/painters-emsdale/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-katrine</loc>
+    <loc>https://www.roll-onpainting.com/painters-katrine/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-kearney</loc>
+    <loc>https://www.roll-onpainting.com/painters-kearney/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-magnetawan</loc>
+    <loc>https://www.roll-onpainting.com/painters-magnetawan/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-novar</loc>
+    <loc>https://www.roll-onpainting.com/painters-novar/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-south-river</loc>
+    <loc>https://www.roll-onpainting.com/painters-south-river/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-sprucedale</loc>
+    <loc>https://www.roll-onpainting.com/painters-sprucedale/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-sundridge</loc>
+    <loc>https://www.roll-onpainting.com/painters-sundridge/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-seguin</loc>
+    <loc>https://www.roll-onpainting.com/painters-seguin/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-the-archipelago</loc>
+    <loc>https://www.roll-onpainting.com/painters-the-archipelago/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-orillia</loc>
+    <loc>https://www.roll-onpainting.com/painters-orillia/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/painters-six-mile-lake</loc>
+    <loc>https://www.roll-onpainting.com/painters-six-mile-lake/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -379,7 +379,7 @@
 
   <!-- Service Areas -->
   <url>
-    <loc>https://www.roll-onpainting.com/service-areas</loc>
+    <loc>https://www.roll-onpainting.com/service-areas/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -387,7 +387,7 @@
 
   <!-- Free Touch Ups -->
   <url>
-    <loc>https://www.roll-onpainting.com/free-touch-ups</loc>
+    <loc>https://www.roll-onpainting.com/free-touch-ups/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -395,7 +395,7 @@
 
   <!-- Careers -->
   <url>
-    <loc>https://www.roll-onpainting.com/careers</loc>
+    <loc>https://www.roll-onpainting.com/careers/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -403,7 +403,7 @@
 
   <!-- Media / Press -->
   <url>
-    <loc>https://www.roll-onpainting.com/media</loc>
+    <loc>https://www.roll-onpainting.com/media/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -411,49 +411,49 @@
 
   <!-- Service + Location Combo Pages -->
   <url>
-    <loc>https://www.roll-onpainting.com/interior-painting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/interior-painting-muskoka/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/exterior-painting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/exterior-painting-muskoka/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/spray-painting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/spray-painting-muskoka/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/cabinet-painting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/cabinet-painting-muskoka/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/cottage-painting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/cottage-painting-muskoka/</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/epoxy-floors-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/epoxy-floors-muskoka/</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/power-washing-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/power-washing-muskoka/</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/staining-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/staining-muskoka/</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -461,332 +461,332 @@
 
   <!-- New Location Pages (April 2026) -->
   <url>
-    <loc>https://www.roll-onpainting.com/painters-severn-bridge</loc>
+    <loc>https://www.roll-onpainting.com/painters-severn-bridge/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Service+Town Combo Pages — Gravenhurst -->
-  <url><loc>https://www.roll-onpainting.com/exterior-painting-gravenhurst</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/interior-painting-gravenhurst</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/cottage-painting-gravenhurst</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/deck-staining-gravenhurst</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/cabinet-painting-gravenhurst</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/exterior-painting-gravenhurst/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/interior-painting-gravenhurst/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/cottage-painting-gravenhurst/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/deck-staining-gravenhurst/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/cabinet-painting-gravenhurst/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Service+Town Combo Pages — Port Carling -->
-  <url><loc>https://www.roll-onpainting.com/exterior-painting-port-carling</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/interior-painting-port-carling</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/cottage-painting-port-carling</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.roll-onpainting.com/deck-staining-port-carling</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/exterior-painting-port-carling/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/interior-painting-port-carling/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/cottage-painting-port-carling/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.roll-onpainting.com/deck-staining-port-carling/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 
   <!-- Cottage Owner Pages — New Cities -->
-  <url><loc>https://www.roll-onpainting.com/forest-hill-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.roll-onpainting.com/lawrence-park-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.roll-onpainting.com/vaughan-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.roll-onpainting.com/rosedale-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.roll-onpainting.com/oakville-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.roll-onpainting.com/post-road-muskoka-cottage-painting</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/forest-hill-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/lawrence-park-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/vaughan-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/rosedale-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/oakville-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.roll-onpainting.com/post-road-muskoka-cottage-painting/</loc><lastmod>2026-04-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://www.roll-onpainting.com/blog/best-interior-paint-colours-muskoka-cottage</loc>
+    <loc>https://www.roll-onpainting.com/blog/best-interior-paint-colours-muskoka-cottage/</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/exterior-painting-muskoka-cottage-owners-guide</loc>
+    <loc>https://www.roll-onpainting.com/blog/exterior-painting-muskoka-cottage-owners-guide/</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/flood-damaged-boathouses-docks-muskoka-2026</loc>
+    <loc>https://www.roll-onpainting.com/blog/flood-damaged-boathouses-docks-muskoka-2026/</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
 
-    <loc>https://www.roll-onpainting.com/blog/sansin-exterior-stains-decks-docks-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/sansin-exterior-stains-decks-docks-muskoka/</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/gonano-nuroof-revive-extend-roof-life-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/gonano-nuroof-revive-extend-roof-life-muskoka/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/gonano-wood-saver-decks-docks-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/gonano-wood-saver-decks-docks-muskoka/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/spray-painting-versus-brush-painting</loc>
+    <loc>https://www.roll-onpainting.com/blog/spray-painting-versus-brush-painting/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/deck-stain-fading</loc>
+    <loc>https://www.roll-onpainting.com/blog/deck-stain-fading/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/guide-to-paint-project-estimates</loc>
+    <loc>https://www.roll-onpainting.com/blog/guide-to-paint-project-estimates/</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/new-construction-sequencing</loc>
+    <loc>https://www.roll-onpainting.com/blog/new-construction-sequencing/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/best-garage-floor-coatings</loc>
+    <loc>https://www.roll-onpainting.com/blog/best-garage-floor-coatings/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/rental-property-repainting-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/rental-property-repainting-muskoka/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/guide-to-moisture-resistant-paint-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/guide-to-moisture-resistant-paint-muskoka/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/professional-painter-versus-handyman</loc>
+    <loc>https://www.roll-onpainting.com/blog/professional-painter-versus-handyman/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/paint-warranty-review</loc>
+    <loc>https://www.roll-onpainting.com/blog/paint-warranty-review/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/best-wall-coatings-for-bathrooms</loc>
+    <loc>https://www.roll-onpainting.com/blog/best-wall-coatings-for-bathrooms/</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/epoxy-versus-polyaspartic-floors</loc>
+    <loc>https://www.roll-onpainting.com/blog/epoxy-versus-polyaspartic-floors/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/matte-versus-satin-paint</loc>
+    <loc>https://www.roll-onpainting.com/blog/matte-versus-satin-paint/</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/trim-prefinishing-results</loc>
+    <loc>https://www.roll-onpainting.com/blog/trim-prefinishing-results/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/painted-cabinet-repairs</loc>
+    <loc>https://www.roll-onpainting.com/blog/painted-cabinet-repairs/</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/best-finishes-for-wood-trim</loc>
+    <loc>https://www.roll-onpainting.com/blog/best-finishes-for-wood-trim/</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/selecting-paint-sheen-for-bedrooms</loc>
+    <loc>https://www.roll-onpainting.com/blog/selecting-paint-sheen-for-bedrooms/</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/bathroom-paint-humidity</loc>
+    <loc>https://www.roll-onpainting.com/blog/bathroom-paint-humidity/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/how-to-wash-cedar-siding</loc>
+    <loc>https://www.roll-onpainting.com/blog/how-to-wash-cedar-siding/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/washing-mould-from-exterior-surfaces</loc>
+    <loc>https://www.roll-onpainting.com/blog/washing-mould-from-exterior-surfaces/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/controlled-shop-finishing-guide</loc>
+    <loc>https://www.roll-onpainting.com/blog/controlled-shop-finishing-guide/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/solid-stain-versus-transparent-stain</loc>
+    <loc>https://www.roll-onpainting.com/blog/solid-stain-versus-transparent-stain/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/cottage-repainting-frequency-muskoka-homes</loc>
+    <loc>https://www.roll-onpainting.com/blog/cottage-repainting-frequency-muskoka-homes/</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/how-to-prepare-walls</loc>
+    <loc>https://www.roll-onpainting.com/blog/how-to-prepare-walls/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/what-causes-peeling-exterior-paint</loc>
+    <loc>https://www.roll-onpainting.com/blog/what-causes-peeling-exterior-paint/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/painter-drywall-repairs</loc>
+    <loc>https://www.roll-onpainting.com/blog/painter-drywall-repairs/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/cottage-colour-trends-muskoka-homes</loc>
+    <loc>https://www.roll-onpainting.com/blog/cottage-colour-trends-muskoka-homes/</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/choosing-an-insured-painter</loc>
+    <loc>https://www.roll-onpainting.com/blog/choosing-an-insured-painter/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/cottage-maintenance-painting-checklist-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/cottage-maintenance-painting-checklist-muskoka/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/weathered-siding-restoration-muskoka-homes</loc>
+    <loc>https://www.roll-onpainting.com/blog/weathered-siding-restoration-muskoka-homes/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/best-paints-for-cottage-interiors-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/best-paints-for-cottage-interiors-muskoka/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/how-long-cottage-paint-lasts</loc>
+    <loc>https://www.roll-onpainting.com/blog/how-long-cottage-paint-lasts/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/stucco-ceiling-removal-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/stucco-ceiling-removal-muskoka/</loc>
     <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/gonano-protective-coating-canada-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/gonano-protective-coating-canada-muskoka/</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/pre-staining-wood-siding</loc>
+    <loc>https://www.roll-onpainting.com/blog/pre-staining-wood-siding/</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/pressure-washing-driveway-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/pressure-washing-driveway-muskoka/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/soft-washing-house-siding</loc>
+    <loc>https://www.roll-onpainting.com/blog/soft-washing-house-siding/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/wallpaper-installation-service-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/wallpaper-installation-service-muskoka/</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/fence-staining-contractor-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/fence-staining-contractor-muskoka/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/weatherproof-cottage-siding-painting</loc>
+    <loc>https://www.roll-onpainting.com/blog/weatherproof-cottage-siding-painting/</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/pre-finish-millwork</loc>
+    <loc>https://www.roll-onpainting.com/blog/pre-finish-millwork/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/popcorn-ceiling-removal</loc>
+    <loc>https://www.roll-onpainting.com/blog/popcorn-ceiling-removal/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/deck-staining-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/deck-staining-muskoka/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/cabinet-refinishing-muskoka</loc>
+    <loc>https://www.roll-onpainting.com/blog/cabinet-refinishing-muskoka/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.roll-onpainting.com/blog/exterior-painters-muskoka-homeowners-can-trust</loc>
+    <loc>https://www.roll-onpainting.com/blog/exterior-painters-muskoka-homeowners-can-trust/</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -124,7 +124,7 @@ function dedupeSeoTags(html, route, seo) {
     html = html.replace(re1, '').replace(re2, '');
   }
 
-  const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : route}`;
+  const canonicalHref = `${CANONICAL_ORIGIN}${route === '/' ? '/' : `${route}/`}`;
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
   const tags = [];
   tags.push(`<link rel="canonical" href="${esc(canonicalHref)}">`);

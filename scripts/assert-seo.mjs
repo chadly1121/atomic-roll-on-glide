@@ -66,7 +66,7 @@ function extractMeta(html) {
 }
 
 function expectedCanonicalFor(route) {
-  return route === '/' ? `${CANONICAL_ORIGIN}/` : `${CANONICAL_ORIGIN}${route}`;
+  return route === '/' ? `${CANONICAL_ORIGIN}/` : `${CANONICAL_ORIGIN}${route}/`;
 }
 
 function normalizeCanonical(c) {
@@ -101,7 +101,9 @@ for (const route of PRIORITY_ROUTES) {
   if (m.canonical) {
     if (!m.canonical.startsWith(CANONICAL_ORIGIN)) {
       errors.push(`${route}: canonical "${m.canonical}" does not use ${CANONICAL_ORIGIN}`);
-    } else if (normalizeCanonical(m.canonical) !== normalizeCanonical(expectedCanonicalFor(route))) {
+    } else if (m.canonical !== expectedCanonicalFor(route)) {
+      // Exact match, trailing slash included: Cloudflare Pages 308s the
+      // no-slash form, so a no-slash canonical points at a redirect.
       errors.push(`${route}: canonical "${m.canonical}" should be "${expectedCanonicalFor(route)}"`);
     }
   }
@@ -165,6 +167,12 @@ try {
   errors.push(`Could not read public/sitemap.xml: ${e.message}`);
 }
 const sitemapSet = new Set(sitemapRoutes);
+try {
+  const xml = await fs.readFile(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
+  const noSlash = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map(m => m[1]).filter(u => !u.endsWith('/'));
+  if (noSlash.length) errors.push(`public/sitemap.xml has ${noSlash.length} <loc> without a trailing slash (Pages 308s those): ${noSlash.slice(0, 5).join(', ')}`);
+  else console.log('✓ sitemap.xml: every <loc> uses the trailing-slash form that serves 200');
+} catch { /* read error already reported above */ }
 
 for (const route of routerRoutes) {
   if (UNLISTED_ROUTES.has(route)) continue;
@@ -383,7 +391,7 @@ try {
   );
   const sitemapXml = await fs.readFile(path.join(__dirname, '..', 'public', 'sitemap.xml'), 'utf8');
   const sitemapSlugs = new Set(
-    [...sitemapXml.matchAll(/<loc>[^<]*\/blog\/([^<\/]+)<\/loc>/g)].map(m => m[1])
+    [...sitemapXml.matchAll(/<loc>[^<]*\/blog\/([^<\/]+)\/?<\/loc>/g)].map(m => m[1])
   );
   for (const s of postSlugs) {
     if (!sitemapSlugs.has(s)) errors.push(`public/sitemap.xml is missing blog post /blog/${s} (a body file exists in src/data/blog/posts/) — it would not be prerendered and would 404`);

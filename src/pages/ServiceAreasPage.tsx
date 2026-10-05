@@ -63,13 +63,13 @@ const ServiceAreasPage: React.FC = () => {
           content={`Roll On Painting serves ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia. Professional painting in Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia and surrounding areas.`}
         />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://www.roll-onpainting.com/service-areas" />
+        <link rel="canonical" href="https://www.roll-onpainting.com/service-areas/" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Service Areas | Roll On Painting Muskoka" />
         <meta property="og:description" content={`Professional painting in ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia.`} />
-        <meta property="og:url" content="https://www.roll-onpainting.com/service-areas" />
+        <meta property="og:url" content="https://www.roll-onpainting.com/service-areas/" />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
         

@@ -13,7 +13,7 @@ const FreeTouchUpsPage = () => {
   }, []);
 
   const siteUrl = 'https://www.roll-onpainting.com';
-  const pageUrl = `${siteUrl}/free-touch-ups`;
+  const pageUrl = `${siteUrl}/free-touch-ups/`;
 
   const schema = {
     "@context": "https://schema.org",

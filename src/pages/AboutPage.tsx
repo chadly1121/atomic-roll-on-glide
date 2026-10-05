@@ -52,13 +52,13 @@ const AboutPage: React.FC = () => {
           content="Chad Gilchrist runs Roll On Painting in Port Sydney, Ontario. He built a cottage on a Muskoka island with his own hands. He paints yours like he built it."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${siteUrl}/about`} />
+        <link rel="canonical" href={`${siteUrl}/about/`} />
         <meta property="og:title" content="About Chad Gilchrist — Roll On Painting" />
         <meta
           property="og:description"
           content="Chad Gilchrist runs Roll On Painting in Port Sydney, Ontario. He built a cottage on a Muskoka island with his own hands. He paints yours like he built it."
         />
-        <meta property="og:url" content={`${siteUrl}/about`} />
+        <meta property="og:url" content={`${siteUrl}/about/`} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

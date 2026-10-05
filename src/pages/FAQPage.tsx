@@ -41,10 +41,10 @@ const FAQPage: React.FC = () => {
         <title>FAQ | Painting Questions Answered | Roll On Painting Muskoka</title>
         <meta name="description" content="Frequently asked questions about painting services in Muskoka. Pricing, insurance, services, GoNano coating, and more. Roll On Painting — 25+ years experience." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${siteUrl}/faq`} />
+        <link rel="canonical" href={`${siteUrl}/faq/`} />
         <meta property="og:title" content="FAQ | Roll On Painting Muskoka" />
         <meta property="og:description" content="Get answers to common painting questions. Pricing, services, insurance, and more." />
-        <meta property="og:url" content={`${siteUrl}/faq`} />
+        <meta property="og:url" content={`${siteUrl}/faq/`} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

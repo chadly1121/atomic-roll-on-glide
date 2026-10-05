@@ -95,9 +95,9 @@ const lines = [
   'https://roll-onpainting.com/*  https://www.roll-onpainting.com/:splat  301!',
   'http://roll-onpainting.com/*   https://www.roll-onpainting.com/:splat  301!',
   '',
-  '# Canonicalize: strip trailing slashes (except root)',
-  '/*/  /:splat  301!',
-  '',
+  // No trailing-slash rule: Cloudflare Pages serves every prerendered
+  // <route>/index.html at <route>/ and 308s the no-slash form to it, before
+  // _redirects is consulted. The trailing-slash URL is therefore canonical.
   '# Static assets — serve directly, never SPA-fallback',
   '/sitemap.xml      /sitemap.xml      200!',
   '/robots.txt       /robots.txt       200!',
@@ -270,7 +270,8 @@ try {
     '/faq',
     // '/blog' is deliberately NOT excluded: it is the one path handled by a
     // Pages Function (functions/blog.ts) — see FUNCTION_ROUTES below.
-    '/blog/*',
+    // '/blog/*' is NOT excluded either: /blog/ is handled by the middleware
+    // (functions/_middleware.ts). Posts pass straight through via next().
     '/careers',
     '/media',
     '/service-areas',
@@ -345,9 +346,11 @@ try {
   // passes through to the static prerendered file via next(), so these are
   // "covered" even though they are not excluded. Keep this list minimal —
   // it is the ONLY thing in `include`, so nothing else reaches Functions.
-  const FUNCTION_ROUTES = ['/blog'];
+  const FUNCTION_ROUTES = ['/blog', '/blog/', '/blog/*'];
   const uncovered = routes.filter(
-    (r) => !FUNCTION_ROUTES.includes(r) && !excludePatterns.some((p) => matchesPattern(r, p))
+    (r) =>
+      !FUNCTION_ROUTES.some((p) => matchesPattern(r, p)) &&
+      !excludePatterns.some((p) => matchesPattern(r, p))
   );
   if (uncovered.length) {
     fail(`${uncovered.length} prerendered route(s) not covered by exclude patterns:\n  - ${uncovered.join('\n  - ')}`);

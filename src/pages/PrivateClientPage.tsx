@@ -13,7 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import GhlContactForm from '@/components/contact/GhlContactForm';
 
 const siteUrl = "https://www.roll-onpainting.com";
-const pageUrl = `${siteUrl}/private-client-muskoka-property-care`;
+const pageUrl = `${siteUrl}/private-client-muskoka-property-care/`;
 
 const PrivateClientPage: React.FC = () => {
   const [formData, setFormData] = useState({

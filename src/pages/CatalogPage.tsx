@@ -261,14 +261,14 @@ const CatalogPage = () => {
           name="description"
           content="Browse our fixed-price service catalog — painter for a day, power washing, roof washing, and GoNano roof protection. Transparent pricing with instant online booking."
         />
-        <link rel="canonical" href={`${siteUrl}/catalog`} />
+        <link rel="canonical" href={`${siteUrl}/catalog/`} />
         <meta name="robots" content="index, follow" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Service Catalog & Pricing | Roll On Painting" />
         <meta property="og:description" content="Fixed-price painting, washing, and GoNano nanotechnology packages. Transparent pricing, instant online booking." />
-        <meta property="og:url" content={`${siteUrl}/catalog`} />
+        <meta property="og:url" content={`${siteUrl}/catalog/`} />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:image" content="https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg" />
