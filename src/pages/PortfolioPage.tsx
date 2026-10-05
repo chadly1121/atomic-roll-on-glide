@@ -70,10 +70,10 @@ const PortfolioPage: React.FC = () => {
         <title>Portfolio | Painting Projects Gallery | Roll On Painting Muskoka</title>
         <meta name="description" content="Browse Roll On Painting's portfolio of completed projects in Muskoka. Interior, exterior, commercial, epoxy, and GoNano coating projects. See our quality firsthand." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${siteUrl}/portfolio`} />
+        <link rel="canonical" href={`${siteUrl}/portfolio/`} />
         <meta property="og:title" content="Portfolio | Roll On Painting Muskoka" />
         <meta property="og:description" content="See our completed painting projects across Muskoka — interior, exterior, commercial, and specialty coatings." />
-        <meta property="og:url" content={`${siteUrl}/portfolio`} />
+        <meta property="og:url" content={`${siteUrl}/portfolio/`} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

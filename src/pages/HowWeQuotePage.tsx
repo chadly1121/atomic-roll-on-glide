@@ -87,13 +87,13 @@ const HowWeQuotePage: React.FC = () => {
           content="Most painters give you a number. We give you a quote. How Roll On Painting engineers every estimate from real surfaces, real production rates, and 25 years of measured data. Honest ballpark ranges included."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${siteUrl}/how-we-quote`} />
+        <link rel="canonical" href={`${siteUrl}/how-we-quote/`} />
         <meta property="og:title" content="How We Quote — Roll On Painting" />
         <meta
           property="og:description"
           content="Most painters give you a number. We give you a quote. How Roll On Painting engineers every estimate from real surfaces, real production rates, and 25 years of measured data."
         />
-        <meta property="og:url" content={`${siteUrl}/how-we-quote`} />
+        <meta property="og:url" content={`${siteUrl}/how-we-quote/`} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>

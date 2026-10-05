@@ -43,10 +43,10 @@ const CareersPage: React.FC = () => {
         <title>{"Careers | Join Muskoka's Elite Painting Team | Roll On Painting"}</title>
         <meta name="description" content="Think you have what it takes? Roll On Painting only hires the best. We're looking for elite craftspeople who share our obsession with perfection. Apply now." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href={`${siteUrl}/careers`} />
+        <link rel="canonical" href={`${siteUrl}/careers/`} />
         <meta property="og:title" content="Careers | Roll On Painting — We Don't Hire Just Anyone" />
         <meta property="og:description" content="We're not for everyone. Roll On Painting hires only the most dedicated, skilled painters in Muskoka. Think you qualify?" />
-        <meta property="og:url" content={`${siteUrl}/careers`} />
+        <meta property="og:url" content={`${siteUrl}/careers/`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />

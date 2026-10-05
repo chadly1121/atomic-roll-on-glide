@@ -75,7 +75,7 @@ Deno.serve((req) => {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${SITE_URL}/blog</loc>
+    <loc>${SITE_URL}/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -83,7 +83,7 @@ Deno.serve((req) => {
 
   for (const post of POSTS) {
     xml += `  <url>
-    <loc>${SITE_URL}/blog/${post.slug}</loc>
+    <loc>${SITE_URL}/blog/${post.slug}/</loc>
     <lastmod>${post.lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

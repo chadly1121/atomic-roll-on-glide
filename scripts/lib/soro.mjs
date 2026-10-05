@@ -408,7 +408,7 @@ export async function addToSitemap(entries) {
   let added = 0;
   let block = '';
   for (const e of entries) {
-    const loc = `${SITE_URL}/blog/${e.slug}`;
+    const loc = `${SITE_URL}/blog/${e.slug}/`;
     if (xml.includes(`<loc>${loc}</loc>`)) continue;
     block += `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${e.date_modified.slice(0, 10)}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
     added++;

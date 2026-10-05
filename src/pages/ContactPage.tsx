@@ -76,14 +76,14 @@ const ContactPage = () => {
       <Helmet>
         <title>Contact Us | Roll On Painting Muskoka - Free Quotes</title>
         <meta name="description" content="Contact Roll On Painting for a free painting estimate in Muskoka. Call 705-787-1401, email info@roll-onpainting.com, or fill out our online quote form. WSIB covered, $5M insurance." />
-        <link rel="canonical" href={`${siteUrl}/contact`} />
+        <link rel="canonical" href={`${siteUrl}/contact/`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact Roll On Painting | Free Quotes in Muskoka" />
         <meta property="og:description" content="Get a free painting quote from Muskoka's premier painting service. Call 705-787-1401 or fill out our online form." />
-        <meta property="og:url" content={`${siteUrl}/contact`} />
+        <meta property="og:url" content={`${siteUrl}/contact/`} />
         <meta property="og:site_name" content={businessInfo.name} />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:image" content={ogImage} />

@@ -13,7 +13,7 @@ interface CottageOwnerPageTemplateProps {
 
 const CottageOwnerPageTemplate: React.FC<CottageOwnerPageTemplateProps> = ({ page }) => {
   const siteUrl = "https://www.roll-onpainting.com";
-  const pageUrl = `${siteUrl}/${page.slug}`;
+  const pageUrl = `${siteUrl}/${page.slug}/`;
   const ogImage = "https://res.cloudinary.com/dxqfou8jh/image/upload/f_auto,q_80,w_1200/v1745866797/IMG_20190920_121835_fchin4.jpg";
 
   const graphSchema = {
