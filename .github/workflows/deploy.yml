@@ -134,3 +134,38 @@ jobs:
           command: pages deploy dist-audited --project-name=roll-onpainting --branch=main
       - name: Ping IndexNow (Bing)
         run: node scripts/indexnow-ping.mjs
+
+  live-check:
+    name: Live production check
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assert real status codes on www.roll-onpainting.com
+        shell: bash
+        run: |
+          BASE=https://www.roll-onpainting.com
+          check() {  # path expected_code [location_suffix]
+            local path="$1" want="$2" loc="${3:-}" code got_loc
+            for i in 1 2 3 4 5 6; do
+              read -r code got_loc < <(curl -s -o /dev/null -H 'Cache-Control: no-cache' \
+                -w '%{http_code} %{redirect_url}\n' "$BASE$path?cb=$GITHUB_RUN_ID-$i" | sed 's/?cb=[^ ]*//')
+              if [ "$code" = "$want" ] && { [ -z "$loc" ] || [[ "$got_loc" == *"$loc" ]]; }; then
+                echo "OK   $path -> $code $got_loc"; return 0
+              fi
+              echo "wait $path -> $code $got_loc (want $want $loc), attempt $i"; sleep $((i * 15))
+            done
+            echo "FAIL $path -> $code $got_loc (want $want $loc)"; return 1
+          }
+          fail=0
+          check /blog/ 200 || fail=1
+          check /blog/deck-stain-fading/ 200 || fail=1
+          check /this-page-does-not-exist-live-check/ 404 || fail=1
+          # Query-string redirect: checked without the cache-buster param.
+          for i in 1 2 3 4 5 6; do
+            read -r code loc < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' "$BASE/blog/?post=deck-stain-fading")
+            if [ "$code" = 301 ] && [[ "$loc" == */blog/deck-stain-fading/ ]]; then echo "OK   /blog/?post=deck-stain-fading -> $code $loc"; break; fi
+            echo "wait /blog/?post=deck-stain-fading -> $code $loc, attempt $i"; sleep $((i * 15))
+            [ $i = 6 ] && { echo "FAIL /blog/?post=deck-stain-fading -> $code $loc (want 301 */blog/deck-stain-fading/)"; fail=1; }
+          done
+          exit $fail
