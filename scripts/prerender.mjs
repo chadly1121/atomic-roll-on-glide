@@ -8,7 +8,7 @@
 import { chromium } from '@playwright/test';
 import http from 'node:http';
 import fs from 'node:fs/promises';
-import { existsSync, createReadStream, statSync } from 'node:fs';
+import { existsSync, createReadStream, statSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { CANONICAL_ORIGIN } from './seo-routes.mjs';
