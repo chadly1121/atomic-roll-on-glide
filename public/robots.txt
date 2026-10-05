@@ -4,6 +4,9 @@
 
 User-agent: *
 Allow: /
+# Block legacy crawler artifact paths
+Disallow: /index.php/tools/
+Disallow: /index.php/
 
 # Allow all search engines
 User-agent: Googlebot
@@ -20,6 +23,7 @@ Allow: /
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 5
 
 User-agent: YandexBot
 Allow: /
@@ -72,14 +76,6 @@ Allow: /
 
 User-agent: meta-externalagent
 Allow: /
-
-# Block legacy crawler artifact paths
-Disallow: /index.php/tools/
-Disallow: /index.php/
-
-# Crawl delay for certain bots
-User-agent: Baiduspider
-Crawl-delay: 5
 
 # Sitemap location
 Sitemap: https://www.roll-onpainting.com/sitemap.xml

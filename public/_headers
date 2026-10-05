@@ -1,16 +1,19 @@
-# Cache policy for Roll On Painting
-# Compatible with Cloudflare Pages, Netlify, and Lovable hosting
-# Updated: 2026-05-02 (post video cleanup)
+# Cache policy for Roll On Painting (Cloudflare Pages)
+#
+# RULE: no two entries may match the same URL. Cloudflare Pages applies EVERY
+# matching rule and concatenates their values, so overlapping rules produce a
+# doubled Cache-Control header. Splats (*) match across "/" segments, so a
+# directory rule like /assets/* overlaps with /*.png — that is why the hashed
+# build assets are listed by extension below instead of by directory.
 
-# Hashed/fingerprinted build assets — safe to cache forever
-/assets/*
+# Hashed build output (JS/CSS) — safe to cache forever
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*.css
   Cache-Control: public, max-age=31536000, immutable
 
-# User-uploaded images (filenames include UUIDs, effectively immutable)
-/lovable-uploads/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Static images and fonts at the root
+# Images and fonts anywhere (build assets, /lovable-uploads/, /partner-logos/,
+# root icons). Filenames are hashed or UUID-based — effectively immutable.
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
 /*.jpg
@@ -29,6 +32,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
+
 # SEO/discovery files — short cache, must revalidate
 /sitemap.xml
   Cache-Control: public, max-age=3600, must-revalidate
@@ -41,12 +45,13 @@
 /site.webmanifest
   Cache-Control: public, max-age=86400
 
-# HTML — short cache, always revalidate so deploys go live quickly
+# HTML files requested by name (e.g. /404.html)
 /*.html
   Cache-Control: public, max-age=3600, must-revalidate
 
-# SPA root and all unhashed routes — short cache, must revalidate
+# Pages: the root and every trailing-slash route (the canonical 200 form).
+# No-slash forms are 308s from Cloudflare and need no cache rule.
 /
   Cache-Control: public, max-age=3600, must-revalidate
-/*
+/*/
   Cache-Control: public, max-age=3600, must-revalidate
