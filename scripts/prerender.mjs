@@ -48,18 +48,26 @@ function safeJoin(root, urlPath) {
 }
 
 function startServer() {
+  // Snapshot the pristine SPA shell BEFORE any route is written. Prerendering
+  // overwrites dist/index.html (the "/" route) mid-run; serving that file as
+  // the fallback would bake the homepage's canonical/meta into every later
+  // route's DOM. Every route must boot from the same clean shell.
+  const SHELL = readFileSync(path.join(DIST, 'index.html'));
   const server = http.createServer((req, res) => {
     const target = safeJoin(DIST, req.url || '/');
     if (!target) { res.writeHead(403); return res.end('Forbidden'); }
 
     let filePath = target;
     try {
-      if (existsSync(filePath) && statSync(filePath).isDirectory()) {
-        filePath = path.join(filePath, 'index.html');
-      }
-      if (!existsSync(filePath)) {
-        // SPA fallback to root index.html
-        filePath = path.join(DIST, 'index.html');
+      // Route requests (directories, the root, or no matching file) always get
+      // the pristine shell — never a previously prerendered page.
+      if (
+        (existsSync(filePath) && statSync(filePath).isDirectory()) ||
+        !existsSync(filePath) ||
+        filePath === path.join(DIST, 'index.html')
+      ) {
+        res.writeHead(200, { 'Content-Type': MIME['.html'] });
+        return res.end(SHELL);
       }
       const ext = path.extname(filePath).toLowerCase();
       res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
