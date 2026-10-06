@@ -29,7 +29,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "rosedale-muskoka-cottage-painting",
     cityName: "Rosedale",
-    metaTitle: "Rosedale to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Rosedale to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Own a cottage in Muskoka? We work with Rosedale homeowners to handle painting, staining, and maintenance while you're in the city.",
     headline: "Own a Cottage in Muskoka? We Handle It While You're in the City.",
     subheadline: "We work with homeowners in Rosedale to manage, paint, and maintain their Muskoka cottages—so it's ready before they arrive.",
@@ -68,7 +68,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "oakville-muskoka-cottage-painting",
     cityName: "Oakville",
-    metaTitle: "Oakville to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Oakville to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Own a Muskoka cottage? We help Oakville homeowners manage painting, staining, and maintenance while they're still in the city.",
     headline: "Own a Muskoka Cottage? We Keep It Ready.",
     subheadline: "We work with Oakville homeowners to handle painting, staining, and seasonal exterior maintenance for Muskoka properties.",
@@ -107,7 +107,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "post-road-muskoka-cottage-painting",
     cityName: "Post Road",
-    metaTitle: "Post Road to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Post Road to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Discreet, fully managed Muskoka cottage painting and maintenance for homeowners in Post Road and the Bridle Path.",
     headline: "We Maintain Your Muskoka Property — Without You Needing to Be There",
     subheadline: "Serving homeowners in Post Road and the Bridle Path with full-service cottage painting, staining, and maintenance.",
@@ -146,7 +146,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "forest-hill-muskoka-cottage-painting",
     cityName: "Forest Hill",
-    metaTitle: "Forest Hill to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Forest Hill to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Own a Muskoka cottage? We help Forest Hill homeowners manage painting, staining, and seasonal maintenance while they're in the city.",
     headline: "Own a Muskoka Cottage? We Handle Everything.",
     subheadline: "We work with Forest Hill homeowners to paint, stain, and maintain their Muskoka cottages — ready before you arrive.",
@@ -170,7 +170,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "lawrence-park-muskoka-cottage-painting",
     cityName: "Lawrence Park",
-    metaTitle: "Lawrence Park to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Lawrence Park to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Own a Muskoka cottage? We help Lawrence Park homeowners manage painting, staining, and maintenance — ready when you arrive.",
     headline: "Your Muskoka Cottage, Maintained While You're in the City",
     subheadline: "We work with Lawrence Park families to manage, paint, and maintain their Muskoka properties — professionally and on schedule.",
@@ -194,7 +194,7 @@ export const cottageOwnerPages: CottageOwnerPageData[] = [
   {
     slug: "vaughan-muskoka-cottage-painting",
     cityName: "Vaughan",
-    metaTitle: "Vaughan to Muskoka Cottage Painting | Roll-On Painting",
+    metaTitle: "Vaughan to Muskoka Cottage Painting | Roll On Painting",
     metaDescription: "Own a Muskoka cottage? We help Vaughan homeowners manage painting, staining, and seasonal maintenance while they're in the city.",
     headline: "Own a Muskoka Cottage? We Keep It Ready.",
     subheadline: "We work with Vaughan homeowners to handle painting, staining, and exterior care for their Muskoka properties — no trips required.",

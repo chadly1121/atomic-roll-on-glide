@@ -83,7 +83,7 @@ const FreeTouchUpsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Perfect Finish Promise: Two Hours of Free Touch-Ups Every Year | Roll On Painting Muskoka</title>
+        <title>Perfect Finish Promise: Free Annual Touch-Ups</title>
         <meta name="description" content="Two hours of complimentary touch-ups per year of ownership, for as long as you own the property. A goodwill courtesy from Roll On Painting in Muskoka — not a warranty." />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content="Perfect Finish Promise | Roll On Painting" />

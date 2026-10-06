@@ -102,7 +102,7 @@ const MediaPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>In The Media — Roll On Painting | 5× HGTV & 15× Dockside Magazine</title>
+        <title>In The Media | 5x HGTV & 15x Dockside | Roll On Painting</title>
         <meta name="description" content="Roll On Painting featured 5 times on Scott's Vacation House Rules (Home Network / HGTV Canada) and 15 times in Dockside Magazine. 20 media features make us Muskoka's most recognized painting contractor. See episodes, photos, and articles." />
         <meta name="keywords" content="Roll On Painting HGTV, Scott's Vacation House Rules painter, Muskoka painter TV, HGTV painting contractor, Dockside Magazine Roll On Painting, Muskoka Softwash media, painters Muskoka featured, cottage painting HGTV, Whimsical Woodlands painter, Bayside Bungalow painter, Lakeside Landing painter, Heritage Hideaway painter, European Villa painter, Home Network painting, Scott McGillivray painter Muskoka" />
         <link rel="canonical" href={`${siteUrl}/media/`} />

@@ -57,7 +57,7 @@ const ServiceAreasPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Service Areas | Roll On Painting | Muskoka, Parry Sound, Orillia</title>
+        <title>Service Areas | Muskoka & Parry Sound | Roll On Painting</title>
         <meta 
           name="description" 
           content={`Roll On Painting serves ${allServiceAreaNames.length} communities across Muskoka, Almaguin, Parry Sound, Georgian Bay and Orillia. Professional painting in Huntsville, Bracebridge, Gravenhurst, Parry Sound, Orillia and surrounding areas.`}

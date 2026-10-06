@@ -31,6 +31,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 10,
     _seo: {
+      title: 'Best Interior Paint Colours for a Muskoka Cottage',
       meta_description: 'What paint colours work best for a Muskoka cottage interior? From nature-inspired neutrals to moody darks and limewash finishes — a colour guide for Port Carling, Bala, Lake of Bays, and beyond.',
       meta_keywords: [
       'Muskoka cottage paint colours',
@@ -59,6 +60,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 9,
     _seo: {
+      title: 'Exterior Painting in Muskoka: A Cottage Owner\'s Guide',
       meta_description: 'Exterior painting in Muskoka requires more prep than most contractors admit. Here\'s what cottage owners in Huntsville, Bracebridge, Gravenhurst, and Port Carling need to know.',
       meta_keywords: [
       'exterior painting Muskoka',
@@ -87,6 +89,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 10,
     _seo: {
+      title: 'Flood-Damaged Docks & Boathouses: Protecting Muskoka Wood',
       meta_description: 'Muskoka\'s 2026 spring flooding has submerged docks and boathouses across Huntsville and Bracebridge. Here\'s how to assess, dry, prep, and protect your wood after floodwater recedes.',
       meta_keywords: [
       'Muskoka flood 2026',
@@ -115,6 +118,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 5,
     _seo: {
+      title: 'Sansin Stains for Muskoka Decks & Docks: A Guide',
       meta_description: 'Sansin Dec, SDF & WoodForce penetrate Muskoka deck and dock wood rather than forming a surface film, so they weather instead of peeling or blistering. Expert prep & application guide from Roll On Painting.',
       meta_keywords: [
       'Sansin stain Muskoka',
@@ -141,6 +145,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 4,
     _seo: {
+      title: 'GoNano NuRoof Revive: Extend Your Roof\'s Life in Muskoka',
       meta_description: 'GoNano NuRoof Revive rejuvenates aging asphalt shingles in Muskoka. GoNano publishes an added roof life of 5–15 years. Expert guide from Roll On Painting.',
       meta_keywords: [
       'GoNano NuRoof Revive',
@@ -167,6 +172,7 @@ export const blogPostsMeta: BlogPostMeta[] = [
     language: 'en-CA',
     readingTime: 4,
     _seo: {
+      title: 'GoNano Wood Saver for Muskoka Decks & Docks',
       meta_description: 'GoNano Wood Saver protects Muskoka decks & docks at the wood-fibre level — stops rot, slippery moss, and freeze-thaw damage. Expert guide from Roll On Painting.',
       meta_keywords: [
       'GoNano Wood Saver',

@@ -40,7 +40,7 @@ const CareersPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{"Careers | Join Muskoka's Elite Painting Team | Roll On Painting"}</title>
+        <title>Careers | Muskoka Painting Jobs | Roll On Painting</title>
         <meta name="description" content="Think you have what it takes? Roll On Painting only hires the best. We're looking for elite craftspeople who share our obsession with perfection. Apply now." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href={`${siteUrl}/careers/`} />

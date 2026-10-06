@@ -22,6 +22,8 @@ export interface BlogPostMeta {
   language: string;
   readingTime: number;
   _seo?: {
+    /** Optional <title> override when the headline is too long for search results. */
+    title?: string;
     meta_description?: string;
     meta_keywords?: string[];
   };

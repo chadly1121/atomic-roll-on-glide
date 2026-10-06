@@ -137,7 +137,7 @@ const GoNanoPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GoNano Roof & Surface Sealers | Extend Roof Life 15 Years | From $0.99/sq ft</title>
+        <title>GoNano Roof & Surface Sealers | Roll On Painting</title>
         <meta name="description" content="GoNano nano-enhanced roof sealers, concrete sealers & wood sealers. Extend your roof life up to 15 years. As seen on Dragon's Den. From $0.99/sq ft. Free estimates — 705-787-1401." />
         <link rel="canonical" href={`${siteUrl}/gonano/`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
