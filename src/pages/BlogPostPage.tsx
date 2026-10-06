@@ -223,7 +223,7 @@ const BlogPostPage = () => {
     <div className="min-h-screen bg-background">
       {post && (
         <Helmet>
-          <title>{post.title} | Roll On Painting</title>
+          <title>{post._seo?.title || post.title}</title>
           <meta name="description" content={metaDesc} />
           {metaKeywords && <meta name="keywords" content={metaKeywords} />}
           <link rel="canonical" href={canonicalUrl} />

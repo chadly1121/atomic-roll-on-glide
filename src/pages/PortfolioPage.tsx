@@ -67,7 +67,7 @@ const PortfolioPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Portfolio | Painting Projects Gallery | Roll On Painting Muskoka</title>
+        <title>Portfolio | Muskoka Painting Projects | Roll On Painting</title>
         <meta name="description" content="Browse Roll On Painting's portfolio of completed projects in Muskoka. Interior, exterior, commercial, epoxy, and GoNano coating projects. See our quality firsthand." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${siteUrl}/portfolio/`} />
